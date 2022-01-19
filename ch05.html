@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>변수, 값, 표현식, 명령문 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>함수 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -116,7 +116,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   변수, 값, 표현식, 명령문
+   함수
   </a>
  </li>
  <li class="toctree-l1">
@@ -363,38 +363,21 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id21">
-   튜링 기계
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id22">
-     튜링 완전성과 처치-튜링 테제
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id23">
-     정지문제
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id24">
    주석
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id25">
+  <a class="reference internal nav-link" href="#id22">
    프로그램 오류와 디버깅
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id26">
+    <a class="reference internal nav-link" href="#id23">
      구문 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id27">
+    <a class="reference internal nav-link" href="#id24">
      런타임 오류
     </a>
     <ul class="nav section-nav flex-column">
@@ -411,14 +394,14 @@
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id28">
+    <a class="reference internal nav-link" href="#id25">
      의미 오류
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id29">
+  <a class="reference internal nav-link" href="#id26">
    연습문제
   </a>
  </li>
@@ -432,7 +415,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>변수, 값, 표현식, 명령문</h1>
+                <h1>함수</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -577,38 +560,21 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id21">
-   튜링 기계
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id22">
-     튜링 완전성과 처치-튜링 테제
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id23">
-     정지문제
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id24">
    주석
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id25">
+  <a class="reference internal nav-link" href="#id22">
    프로그램 오류와 디버깅
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id26">
+    <a class="reference internal nav-link" href="#id23">
      구문 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id27">
+    <a class="reference internal nav-link" href="#id24">
      런타임 오류
     </a>
     <ul class="nav section-nav flex-column">
@@ -625,14 +591,14 @@
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id28">
+    <a class="reference internal nav-link" href="#id25">
      의미 오류
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id29">
+  <a class="reference internal nav-link" href="#id26">
    연습문제
   </a>
  </li>
@@ -646,9 +612,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>변수, 값, 표현식, 명령문<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p><em><a class="reference external" href="http://greenteapress.com/thinkpython2/html/thinkpython2003.html">Think Python의 2장</a>
-내용을 요약 및 수정한 내용입니다.</em></p>
+<h1>함수<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>변수와 변수 할당<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>변수는 특정한 값을 가리키도록 하는 도구이며, 기본 역할은 두 가지이다.</p>
@@ -723,54 +687,33 @@
 <ul class="simple">
 <li><p>해당 사이트 접속해서 코드 확인 및 수정 후 ‘Visualize Execution’ 버튼 누름.</p></li>
 </ul>
-<p>
-<table cellspacing="20">
-<tr>
-<td>
-<img src="images/pythontutor06.png" style="width:700px">
-</td>
-</tr>
-</table>
-</p><ul class="simple">
+<figure>
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/pythontutor06.png" width="70%">
+    </div>
+</figure><ul class="simple">
 <li><p>이후 아래 화면에서 ‘Forward’ 버튼을 반복해서 누르면
 각각의 명령문이 차례대로 실행되는 과정에서 일어나는 프레임(Global frame)의 변화를 확인할 수 있다.
 ‘Global frame’은 전역 변수를 담당하는 전역 프레임을 가리킨다.
 전역 변수에 대한 정의는 이후에 다룬다.</p></li>
 </ul>
-<p>
-<table cellspacing="20">
-<tr>
-<td>
-<img src="images/pythontutor02.png" style="width:700px">
-</td>
-</tr>
-</table>
-</p><p>
-<table cellspacing="20">
-<tr>
-<td>
-<img src="images/pythontutor03.png" style="width:700px">
-</td>
-</tr>
-</table>
-</p>
-<p>
-<table cellspacing="20">
-<tr>
-<td>
-<img src="images/pythontutor04.png" style="width:700px">
-</td>
-</tr>
-</table>
-</p><p>
-<table cellspacing="20">
-<tr>
-<td>
-<img src="images/pythontutor05.png" style="width:700px">
-</td>
-</tr>
-</table>
-</p></div>
+<figure>
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/pythontutor02.png" width="90%">
+    </div>
+</figure><figure>
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/pythontutor03.png" width="90%">
+    </div>
+</figure><figure>
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/pythontutor04.png" width="90%">
+    </div>
+</figure><figure>
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/pythontutor05.png" width="90%">
+    </div>
+</figure></div>
 </div>
 <div class="section" id="id5">
 <h3>변수 이름<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
@@ -789,57 +732,39 @@
 <ul class="simple">
 <li><p>숫자로 시작</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="n">trombones</span> <span class="o">=</span> <span class="s1">&#39;big parade&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="n">trombones</span> <span class="o">=</span> <span class="s1">&#39;big parade&#39;</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_553/795954469.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">7</span><span class="n">trombones</span> <span class="o">=</span> <span class="s1">&#39;big parade&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;/tmp/ipykernel_882/795954469.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="mi">7</span><span class="n">trombones</span> <span class="o">=</span> <span class="s1">&#39;big parade&#39;</span>
      <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
 </pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p>공백 사용</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">big</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">1000000</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">big</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">1000000</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-5-a60a52f44533&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;/tmp/ipykernel_882/2232769824.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="n">big</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">1000000</span>
-             <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
 </pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p>지정어 사용: 예를 들어, <code class="docutils literal notranslate"><span class="pre">class</span></code>는 파이썬에서 클래스를 선언할 때 사용되는 특수한 기능을 갖는다.
 클래스는 이후에 다룬다.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>class = &#39;Advanced Theoretical Zymurgy&#39;
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>class = &#39;Advanced Theoretical Zymurgy&#39;
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;&lt;ipython-input-6-73fc4ce1a15a&gt;&quot;, line 1
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  File &quot;/tmp/ipykernel_882/3803549429.py&quot;, line 1
     class = &#39;Advanced Theoretical Zymurgy&#39;
           ^
 SyntaxError: invalid syntax
 </pre></div>
-</div>
-</div>
 </div>
 <p>파이썬의 지정어들은 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span>      <span class="k">class</span>      <span class="nc">finally</span>    <span class="ow">is</span>         <span class="k">return</span>
@@ -992,21 +917,15 @@ SyntaxError: invalid syntax
 </div>
 </div>
 <p>셋째, 숫자는 0으로 시작하면 안된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 청와대 우편번호</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 청와대 우편번호</span>
 <span class="n">zipcode</span> <span class="o">=</span> <span class="mi">03048</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-14-ad5082053b72&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;/tmp/ipykernel_1081/521329660.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="n">zipcode</span> <span class="o">=</span> <span class="mi">03048</span>
                   <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid token
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">leading</span> <span class="n">zeros</span> <span class="ow">in</span> <span class="n">decimal</span> <span class="n">integer</span> <span class="n">literals</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">permitted</span><span class="p">;</span> <span class="n">use</span> <span class="n">an</span> <span class="mi">0</span><span class="n">o</span> <span class="n">prefix</span> <span class="k">for</span> <span class="n">octal</span> <span class="n">integers</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>우편번호는 연산이 아니라 구역 식별용으로 사용되기에,
 고유명사처럼 문자열로 처리하는 것이 좋다.</p>
@@ -1329,44 +1248,7 @@ None None
 </div>
 </div>
 <div class="section" id="id21">
-<h2>튜링 기계<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
-<p><strong>튜링기계</strong>(Turing machine)는 계산을 기계적으로 다루기 위한 수학적 모형의 일종이며,
-1936년에 튜링(A. Turing)이 고안한 가상장치이다.
-튜링기계에 대한 자세한 소개는 <a class="reference external" href="https://ko.wikipedia.org/wiki/%ED%8A%9C%EB%A7%81_%EA%B8%B0%EA%B3%84">위키피디아: 튜링기계</a>를
-추천한다.</p>
-<div class="section" id="id22">
-<h3>튜링 완전성과 처치-튜링 테제<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
-<p>앞서 언급된 기본 명령문들만으로도 파이썬 프로그래밍 언어가 충분히 강력하다.
-여기서 충분하다는 의미는 기존에 알려진 가장 강력한 프로그래밍 언어와 동급이란 의미이다.
-보다 전문적으로 <strong>튜링 완전</strong>(Turing complete)하다라고 말하며,
-이는 튜링기계와 원칙적으로 동일한 성능을 갖는다 것을 의미한다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 등과 같은 다른 기본 명령문들이 있다.
-하지만 프로그래밍의 편의성을 높이는 데에 유용하지만 이론적으로 더 강력한
-프로그래밍 언어를 만들지는 못한다.
-즉, 튜링 완전성을 벗어나지는 못한다.</p>
-<p>어떤 프로그래밍 언어도 튜링 완전성 이상의 성능을 내지 못한다는 주장이 있다.
-즉, 미래의 어떤 컴퓨터도 튜링 완전성을 뛰어 넘지 못할 것이다 라는 주장이며
-이를 처치-튜링 테제(Church-Turing thesis)라고 부른다.
-처치-튜링 테제는 하나의 주장이다.
-왜냐하면 미래에 어떤 종류의 컴퓨터가 출현할지 모르기 때문이다.
-하지만 현 시점까지는 튜링 완전성을 뛰어 넘는 컴퓨터나 프로그래밍 언어는
-존재하지 않았다.</p>
-</div>
-<div class="section" id="id23">
-<h3>정지문제<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
-<p>앞서 언급한 튜링 완전성은 약간 오해의 소지가 있다.
-왜냐하면 튜링기계가 완전하다, 즉, 모든 문제를 해결할 수 있다라는 생각을 하게 만들기 때문이다.
-하지만 튜링 완전성은 다른 기계 또는 프로그래밍 언어가 튜링 기계와 이론적으로 동일한 능력을 보유한다라는
-의미이지, 튜링기계가 완전하다는 의미가 아니다.</p>
-<p>실제로 튜링기계는 완전하지 않으며, 튜링기계의 불완전성은 튜링 자신이 소위
-<strong>정지문제</strong>(halting problem)로 알려진 문제의 답을 내려는 시도 과정에서 증명하였다.
-정지문제에 대한 쉽고 재밌는 설명은 한글자막이 지원되는 유튜브 동영상
-<a class="reference external" href="https://www.youtube.com/watch?time_continue=308&amp;v=92WHN-pAFCs&amp;feature=emb_logo">컴퓨터가 모든 것을 해결할 수 없다는 증명 (정지 문제)</a>에서
-들을 수 있다.</p>
-</div>
-</div>
-<div class="section" id="id24">
-<h2>주석<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<h2>주석<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
 <p>프로그램 코드 중간중간에 사용된 명령문과 관련된 설명을 적어 놓으면 코드를 보다 쉽게 이해할 수 있게 된다.
 이와 같이 코드의 실행과 무관한 설명 문장을 <strong>주석</strong>(comment)이라 부르며,
 코드가 실행될 때 파이썬 해석기에 의해 무시된다.</p>
@@ -1405,60 +1287,47 @@ None None
 </div>
 </div>
 </div>
-<div class="section" id="id25">
-<h2>프로그램 오류와 디버깅<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id22">
+<h2>프로그램 오류와 디버깅<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
 <p>변수 이름으로 <code class="docutils literal notranslate"><span class="pre">class</span></code> 등의 지정어를 사용하거나, <code class="docutils literal notranslate"><span class="pre">odd~job</span></code> 나 <code class="docutils literal notranslate"><span class="pre">US$</span></code>처럼
 허용되지 않은 문자나 기호를 포함하는 경우에 파이썬 해석기는 오류를 발생시키며 프로그램의 실행을 멈춘다.
 예를 들어, 아래와 같이 변수 이름에 공백을 사용하여 실행한 결과를 확인해 보자.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="n">bad</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-38-67877bfd5d2a&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">bad</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="o">---------------------------------------------------------------------------</span>
+  <span class="n">File</span> <span class="s2">&quot;/tmp/ipykernel_868/870302018.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="n">bad</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">5</span>
-           <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>이와 같이 오류가 발생하면 오류의 원인을 찾아 해결해야 한다.
 이렇게 프로그램의 오류를 찾아 해결하는 과정을 <strong>디버깅</strong>(debugging)이라 부른다.</p>
 <p>프로그램의 오류는 크게 세 가지 유형이 있다.</p>
-<div class="section" id="id26">
-<h3>구문 오류<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id23">
+<h3>구문 오류<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <p>변수 이름을 잘못 지정하는 경우 위와 같이 구문 오류(<code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">invalid</span> <span class="pre">syntax</span></code>)가 발생한다.
 구문 오류는 해석기가 프로그램을 실행하기 전에 일종의 문법 검사를 통해 찾아낸다.</p>
 </div>
-<div class="section" id="id27">
-<h3>런타임 오류<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id24">
+<h3>런타임 오류<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
 <p>런타임 오류는 구문 오류를 포함하지 않는 프로그램이 실행되는 과정에서 발생하는 오류이다.
 런타임 오류는 다양한 경우에 발생한다.
 여기서는 두 가지 경우를 살펴본다.</p>
 <div class="section" id="zerodivisionerror">
 <h4>ZeroDivisionError<a class="headerlink" href="#zerodivisionerror" title="Permalink to this headline">¶</a></h4>
 <p>런타임 에러의 또다는 대표적인 예는 <strong>0으로 나누기 오류</strong>이다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="n">num</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">41</span><span class="o">-</span><span class="mi">3</span><span class="n">df8eca315da</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="n">num</span><span class="p">)</span>
 
-<span class="ne">ZeroDivisionError</span>: division by zero
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span>                         <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_868</span><span class="o">/</span><span class="mf">2927743795.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+      <span class="mi">1</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="o">----&gt;</span> <span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="n">num</span><span class="p">)</span>
+
+<span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> 라고 표시되는데,
 이는 0으로 나눗셈을 시도하는 경우 발생한다.
@@ -1472,30 +1341,23 @@ None None
 <h4>NameError<a class="headerlink" href="#nameerror" title="Permalink to this headline">¶</a></h4>
 <p>예를 들어 아래 코드에는 문법적인 오류가 없다.
 하지만 실행을 하면 ‘a_number’ 라는 이름이 선언되어 있지 없기 때문에 문제가 발생한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_Number</span> <span class="o">=</span> <span class="mf">327.68</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_Number</span> <span class="o">=</span> <span class="mf">327.68</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a_number</span> <span class="o">*</span> <span class="mi">3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">42</span><span class="o">-</span><span class="n">d991d12a2fd0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a_Number</span> <span class="o">=</span> <span class="mf">327.68</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a_number</span> <span class="o">*</span> <span class="mi">3</span>
 
-<span class="ne">NameError</span>: name &#39;a_number&#39; is not defined
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_868</span><span class="o">/</span><span class="mf">830051863.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+      <span class="mi">1</span> <span class="n">a_Number</span> <span class="o">=</span> <span class="mf">327.68</span>
+<span class="o">----&gt;</span> <span class="mi">2</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a_number</span> <span class="o">*</span> <span class="mi">3</span>
+
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;a_number&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>자세히 살펴보면 ‘a_number’와 ‘a_Number’ 둘 중에 하나는 오타임을 알 수 있다.</p>
 </div>
 </div>
-<div class="section" id="id28">
-<h3>의미 오류<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id25">
+<h3>의미 오류<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
 <p>프로그램이 실행은 되지만 원하는 기능을 지원하지 못한다면 프로그램을 제대로 구현하지 못한 것이다.
 프로그램은 작동하기 때문에 구문 오류나 런타임 오류와는 달리 원인을 바로 확인하기 어려울 수 있다.
 이와같은 오류를 <strong>의미 오류</strong>(semantic error)라 부르며,
@@ -1513,8 +1375,21 @@ None None
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>숫자를 입력하세요: 3
-입력한 값의 두 배는 9 입니다.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1311</span><span class="o">/</span><span class="mf">2180275725.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;숫자를 입력하세요: &quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">doubleNum</span> <span class="o">=</span> <span class="n">num</span><span class="o">**</span><span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력한 값의 두 배는&quot;</span><span class="p">,</span> <span class="n">doubleNum</span><span class="p">,</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
+
+<span class="nn">~/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">-&gt; </span><span class="mi">1003</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1004</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
@@ -1525,12 +1400,11 @@ None None
 경우에 따라 잔디밭에서 바늘찾기처럼 어렵거나 불가능할 수 있다.</p>
 </div>
 </div>
-<div class="section" id="id29">
-<h2>연습문제<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>아래 명령문들을 실행하였을 때 무슨 일이 발생하는지를 확인하라.</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span>
+<div class="section" id="id26">
+<h2>연습문제<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>아래 명령문들을 실행하였을 때 무슨 일이 발생하는지를 확인하라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World&quot;)</span>
 <span class="nb">print</span><span class="p">(</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
@@ -1539,27 +1413,25 @@ None None
 <span class="nb">print</span><span class="p">(</span><span class="mi">21</span> <span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="simple">
+</li>
 <li><p>변수 선언과 할당 관련 주의해야할 점들을 다룬다.
-아래 명령문들을 실행하였을 때 무슨 일이 발생하는지를 확인하라.</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">23</span> <span class="o">=</span> <span class="n">n</span>
+아래 명령문들을 실행하였을 때 무슨 일이 발생하는지를 확인하라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">23</span> <span class="o">=</span> <span class="n">n</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">1.</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="n">y</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>아래와 같이 변수들이 선언 및 할당되었다고 가정하자.</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">width</span> <span class="o">=</span> <span class="mi">17</span>
+</li>
+<li><p>아래와 같이 변수들이 선언 및 할당되었다고 가정하자.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">width</span> <span class="o">=</span> <span class="mi">17</span>
 <span class="n">height</span> <span class="o">=</span> <span class="mf">12.0</span>
 <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>
 </pre></div>
 </div>
 <p>다음에 오는 각각의 표현식들에 대해, 표현식의 값과 (표현식의 값이 갖는) 자료형을 확인하라.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">width</span><span class="o">//</span><span class="mi">2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">width</span><span class="o">//</span><span class="mi">2</span>
 <span class="n">width</span><span class="o">/</span><span class="mi">2</span>
 <span class="n">width</span><span class="o">/</span><span class="mf">2.0</span>
 <span class="n">height</span><span class="o">/</span><span class="mi">3</span>
@@ -1567,33 +1439,25 @@ None None
 <span class="n">delimiter</span><span class="o">*</span><span class="mi">5</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>파이썬을 계산기처럼 사용할 수 있다.
-<br><br></p>
+</li>
+<li><p>파이썬을 계산기처럼 사용할 수 있다.</p>
 <ol class="simple">
 <li><p>반지름이 r인 구의 부피는 <span class="math notranslate nohighlight">\(\frac{4}{3} \pi r^3\)</span> 이다. 반지름이 5인 구의 부피는 얼마인가?
-<br>
-(<strong>힌트:</strong> 392.7은 답이 아니다.)
-<br><br></p></li>
+(<strong>힌트:</strong> 392.7은 답이 아니다.)</p></li>
 <li><p>책의 정가는 권당 <span class="math notranslate nohighlight">\(24,950\)</span>원이지만, 각 권당 <span class="math notranslate nohighlight">\(10\%\)</span> 의 할인을 받는다고 가정하자.
 첫 한 권의 운송료는 <span class="math notranslate nohighlight">\(2,000\)</span>원 이고, 두 권째 부터는 권당 500원을 추가로 내야 한다.
-60권을 사서 배송을 받고자 하면 얼마를 지불해야 하는가?
-<br><br></p></li>
+60권을 사서 배송을 받고자 하면 얼마를 지불해야 하는가?</p></li>
 <li><p>오전 6:52 에 집을 떠나서, 가볍게 (km당 8분 15초 소요) 1km을 뛰고,
 이어서 좀 빠르게 (km당 7분 12초 소요) 3km를 뛴 후, 다시 가볍게 1km를 마저 달린다면,
-아침 식사를 위해 집에 돌아오는 시간은 언제인가?
-<br><br></p></li>
+아침 식사를 위해 집에 돌아오는 시간은 언제인가?</p></li>
 <li><p>만약 10 킬로미터를 43분 30초 만에 달렸다면, 마일당 소요 시간은 얼마인가?
 시간당 마일로 계산한 평균 속도는 얼마인가?
-<br>
-(<strong>힌트:</strong> 1마일은 1.61 킬로미터로 계산한다.)
-<br><br></p></li>
+(<strong>힌트:</strong> 1마일은 1.61 킬로미터로 계산한다.)</p></li>
 </ol>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">print</span></code> 함수의 성질을 조사한다.
 즉, <code class="docutils literal notranslate"><span class="pre">print</span></code> 함수가 받아들일 수 있는 인자와 리턴값에 대해 알아본다.
 설명을 예를 들면서 하면 더욱 좋다.
-<br><br>
 (힌트: <code class="docutils literal notranslate"><span class="pre">help(print)</span></code> 명령문을 실행하면 <code class="docutils literal notranslate"><span class="pre">print</span></code> 함수에 대한 기초정보를 확인할 수 있다.)</p></li>
 </ol>
 </div>

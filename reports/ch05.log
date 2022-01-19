@@ -17,13 +17,25 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-7trombones = 'big parade'
+num = int(input("숫자를 입력하세요: "))
+doubleNum = num**2
+print("입력한 값의 두 배는", doubleNum, "입니다.")
 ------------------
 
-[0;36m  File [0;32m"/tmp/ipykernel_553/795954469.py"[0;36m, line [0;32m1[0m
-[0;31m    7trombones = 'big parade'[0m
-[0m     ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+[0;32m/tmp/ipykernel_1311/2180275725.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mnum[0m [0;34m=[0m [0mint[0m[0;34m([0m[0minput[0m[0;34m([0m[0;34m"숫자를 입력하세요: "[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0mdoubleNum[0m [0;34m=[0m [0mnum[0m[0;34m**[0m[0;36m2[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0mprint[0m[0;34m([0m[0;34m"입력한 값의 두 배는"[0m[0;34m,[0m [0mdoubleNum[0m[0;34m,[0m [0;34m"입니다."[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-SyntaxError: invalid syntax (795954469.py, line 1)
+[0;32m~/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py[0m in [0;36mraw_input[0;34m(self, prompt)[0m
+[1;32m   1001[0m         """
+[1;32m   1002[0m         [0;32mif[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_allow_stdin[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1003[0;31m             raise StdinNotImplementedError(
+[0m[1;32m   1004[0m                 [0;34m"raw_input was called, but this frontend does not support input requests."[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1005[0m             )
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
 
