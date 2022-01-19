@@ -53,7 +53,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="마크다운과 주피터 노트북" href="ch20.html" />
+    <link rel="next" title="변수, 값, 표현식, 명령문" href="ch05.html" />
     <link rel="prev" title="프로그래밍 시작하기" href="ch03.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -111,6 +111,11 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
+   변수, 값, 표현식, 명령문
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch05.html">
    변수, 값, 표현식, 명령문
   </a>
  </li>
@@ -358,38 +363,21 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id21">
-   튜링 기계
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id22">
-     튜링 완전성과 처치-튜링 테제
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id23">
-     정지문제
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id24">
    주석
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id25">
+  <a class="reference internal nav-link" href="#id22">
    프로그램 오류와 디버깅
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id26">
+    <a class="reference internal nav-link" href="#id23">
      구문 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id27">
+    <a class="reference internal nav-link" href="#id24">
      런타임 오류
     </a>
     <ul class="nav section-nav flex-column">
@@ -406,14 +394,14 @@
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id28">
+    <a class="reference internal nav-link" href="#id25">
      의미 오류
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id29">
+  <a class="reference internal nav-link" href="#id26">
    연습문제
   </a>
  </li>
@@ -572,38 +560,21 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id21">
-   튜링 기계
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id22">
-     튜링 완전성과 처치-튜링 테제
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id23">
-     정지문제
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id24">
    주석
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id25">
+  <a class="reference internal nav-link" href="#id22">
    프로그램 오류와 디버깅
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id26">
+    <a class="reference internal nav-link" href="#id23">
      구문 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id27">
+    <a class="reference internal nav-link" href="#id24">
      런타임 오류
     </a>
     <ul class="nav section-nav flex-column">
@@ -620,14 +591,14 @@
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id28">
+    <a class="reference internal nav-link" href="#id25">
      의미 오류
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id29">
+  <a class="reference internal nav-link" href="#id26">
    연습문제
   </a>
  </li>
@@ -718,54 +689,33 @@
 <ul class="simple">
 <li><p>해당 사이트 접속해서 코드 확인 및 수정 후 ‘Visualize Execution’ 버튼 누름.</p></li>
 </ul>
-<p>
-<table cellspacing="20">
-<tr>
-<td>
-<img src="images/pythontutor06.png" style="width:700px">
-</td>
-</tr>
-</table>
-</p><ul class="simple">
+<figure>
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/pythontutor06.png" width="70%">
+    </div>
+</figure><ul class="simple">
 <li><p>이후 아래 화면에서 ‘Forward’ 버튼을 반복해서 누르면
 각각의 명령문이 차례대로 실행되는 과정에서 일어나는 프레임(Global frame)의 변화를 확인할 수 있다.
 ‘Global frame’은 전역 변수를 담당하는 전역 프레임을 가리킨다.
 전역 변수에 대한 정의는 이후에 다룬다.</p></li>
 </ul>
-<p>
-<table cellspacing="20">
-<tr>
-<td>
-<img src="images/pythontutor02.png" style="width:700px">
-</td>
-</tr>
-</table>
-</p><p>
-<table cellspacing="20">
-<tr>
-<td>
-<img src="images/pythontutor03.png" style="width:700px">
-</td>
-</tr>
-</table>
-</p>
-<p>
-<table cellspacing="20">
-<tr>
-<td>
-<img src="images/pythontutor04.png" style="width:700px">
-</td>
-</tr>
-</table>
-</p><p>
-<table cellspacing="20">
-<tr>
-<td>
-<img src="images/pythontutor05.png" style="width:700px">
-</td>
-</tr>
-</table>
-</p></div>
+<figure>
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/pythontutor02.png" width="90%">
+    </div>
+</figure><figure>
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/pythontutor03.png" width="90%">
+    </div>
+</figure><figure>
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/pythontutor04.png" width="90%">
+    </div>
+</figure><figure>
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/pythontutor05.png" width="90%">
+    </div>
+</figure></div>
 </div>
 <div class="section" id="id5">
 <h3>변수 이름<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
@@ -791,7 +741,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_2722/795954469.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_535/795954469.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
 <span class="g g-Whitespace">    </span><span class="mi">7</span><span class="n">trombones</span> <span class="o">=</span> <span class="s1">&#39;big parade&#39;</span>
      <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -1324,44 +1274,7 @@ None None
 </div>
 </div>
 <div class="section" id="id21">
-<h2>튜링 기계<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
-<p><strong>튜링기계</strong>(Turing machine)는 계산을 기계적으로 다루기 위한 수학적 모형의 일종이며,
-1936년에 튜링(A. Turing)이 고안한 가상장치이다.
-튜링기계에 대한 자세한 소개는 <a class="reference external" href="https://ko.wikipedia.org/wiki/%ED%8A%9C%EB%A7%81_%EA%B8%B0%EA%B3%84">위키피디아: 튜링기계</a>를
-추천한다.</p>
-<div class="section" id="id22">
-<h3>튜링 완전성과 처치-튜링 테제<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
-<p>앞서 언급된 기본 명령문들만으로도 파이썬 프로그래밍 언어가 충분히 강력하다.
-여기서 충분하다는 의미는 기존에 알려진 가장 강력한 프로그래밍 언어와 동급이란 의미이다.
-보다 전문적으로 <strong>튜링 완전</strong>(Turing complete)하다라고 말하며,
-이는 튜링기계와 원칙적으로 동일한 성능을 갖는다 것을 의미한다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 등과 같은 다른 기본 명령문들이 있다.
-하지만 프로그래밍의 편의성을 높이는 데에 유용하지만 이론적으로 더 강력한
-프로그래밍 언어를 만들지는 못한다.
-즉, 튜링 완전성을 벗어나지는 못한다.</p>
-<p>어떤 프로그래밍 언어도 튜링 완전성 이상의 성능을 내지 못한다는 주장이 있다.
-즉, 미래의 어떤 컴퓨터도 튜링 완전성을 뛰어 넘지 못할 것이다 라는 주장이며
-이를 처치-튜링 테제(Church-Turing thesis)라고 부른다.
-처치-튜링 테제는 하나의 주장이다.
-왜냐하면 미래에 어떤 종류의 컴퓨터가 출현할지 모르기 때문이다.
-하지만 현 시점까지는 튜링 완전성을 뛰어 넘는 컴퓨터나 프로그래밍 언어는
-존재하지 않았다.</p>
-</div>
-<div class="section" id="id23">
-<h3>정지문제<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
-<p>앞서 언급한 튜링 완전성은 약간 오해의 소지가 있다.
-왜냐하면 튜링기계가 완전하다, 즉, 모든 문제를 해결할 수 있다라는 생각을 하게 만들기 때문이다.
-하지만 튜링 완전성은 다른 기계 또는 프로그래밍 언어가 튜링 기계와 이론적으로 동일한 능력을 보유한다라는
-의미이지, 튜링기계가 완전하다는 의미가 아니다.</p>
-<p>실제로 튜링기계는 완전하지 않으며, 튜링기계의 불완전성은 튜링 자신이 소위
-<strong>정지문제</strong>(halting problem)로 알려진 문제의 답을 내려는 시도 과정에서 증명하였다.
-정지문제에 대한 쉽고 재밌는 설명은 한글자막이 지원되는 유튜브 동영상
-<a class="reference external" href="https://www.youtube.com/watch?time_continue=308&amp;v=92WHN-pAFCs&amp;feature=emb_logo">컴퓨터가 모든 것을 해결할 수 없다는 증명 (정지 문제)</a>에서
-들을 수 있다.</p>
-</div>
-</div>
-<div class="section" id="id24">
-<h2>주석<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<h2>주석<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
 <p>프로그램 코드 중간중간에 사용된 명령문과 관련된 설명을 적어 놓으면 코드를 보다 쉽게 이해할 수 있게 된다.
 이와 같이 코드의 실행과 무관한 설명 문장을 <strong>주석</strong>(comment)이라 부르며,
 코드가 실행될 때 파이썬 해석기에 의해 무시된다.</p>
@@ -1400,8 +1313,8 @@ None None
 </div>
 </div>
 </div>
-<div class="section" id="id25">
-<h2>프로그램 오류와 디버깅<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id22">
+<h2>프로그램 오류와 디버깅<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
 <p>변수 이름으로 <code class="docutils literal notranslate"><span class="pre">class</span></code> 등의 지정어를 사용하거나, <code class="docutils literal notranslate"><span class="pre">odd~job</span></code> 나 <code class="docutils literal notranslate"><span class="pre">US$</span></code>처럼
 허용되지 않은 문자나 기호를 포함하는 경우에 파이썬 해석기는 오류를 발생시키며 프로그램의 실행을 멈춘다.
 예를 들어, 아래와 같이 변수 이름에 공백을 사용하여 실행한 결과를 확인해 보자.</p>
@@ -1423,13 +1336,13 @@ None None
 <p>이와 같이 오류가 발생하면 오류의 원인을 찾아 해결해야 한다.
 이렇게 프로그램의 오류를 찾아 해결하는 과정을 <strong>디버깅</strong>(debugging)이라 부른다.</p>
 <p>프로그램의 오류는 크게 세 가지 유형이 있다.</p>
-<div class="section" id="id26">
-<h3>구문 오류<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id23">
+<h3>구문 오류<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <p>변수 이름을 잘못 지정하는 경우 위와 같이 구문 오류(<code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">invalid</span> <span class="pre">syntax</span></code>)가 발생한다.
 구문 오류는 해석기가 프로그램을 실행하기 전에 일종의 문법 검사를 통해 찾아낸다.</p>
 </div>
-<div class="section" id="id27">
-<h3>런타임 오류<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id24">
+<h3>런타임 오류<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
 <p>런타임 오류는 구문 오류를 포함하지 않는 프로그램이 실행되는 과정에서 발생하는 오류이다.
 런타임 오류는 다양한 경우에 발생한다.
 여기서는 두 가지 경우를 살펴본다.</p>
@@ -1489,8 +1402,8 @@ None None
 <p>자세히 살펴보면 ‘a_number’와 ‘a_Number’ 둘 중에 하나는 오타임을 알 수 있다.</p>
 </div>
 </div>
-<div class="section" id="id28">
-<h3>의미 오류<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id25">
+<h3>의미 오류<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
 <p>프로그램이 실행은 되지만 원하는 기능을 지원하지 못한다면 프로그램을 제대로 구현하지 못한 것이다.
 프로그램은 작동하기 때문에 구문 오류나 런타임 오류와는 달리 원인을 바로 확인하기 어려울 수 있다.
 이와같은 오류를 <strong>의미 오류</strong>(semantic error)라 부르며,
@@ -1520,8 +1433,8 @@ None None
 경우에 따라 잔디밭에서 바늘찾기처럼 어렵거나 불가능할 수 있다.</p>
 </div>
 </div>
-<div class="section" id="id29">
-<h2>연습문제<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id26">
+<h2>연습문제<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>아래 명령문들을 실행하였을 때 무슨 일이 발생하는지를 확인하라.</p></li>
 </ol>
@@ -1626,10 +1539,10 @@ None None
             <p class="prev-next-title">프로그래밍 시작하기</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="ch20.html" title="next page">
+    <a class='right-next' id="next-link" href="ch05.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">마크다운과 주피터 노트북</p>
+        <p class="prev-next-title">변수, 값, 표현식, 명령문</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
