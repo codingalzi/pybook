@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>파이썬 프로그래밍 개발환경 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>2. 파이썬 프로그래밍 개발 환경 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="프로그래밍 시작하기" href="ch03.html" />
-    <link rel="prev" title="프로그래밍이란?" href="ch01.html" />
+    <link rel="next" title="3. 프로그래밍 시작하기" href="ch03.html" />
+    <link rel="prev" title="1. 프로그래밍이란?" href="ch01.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,39 +87,44 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   서문
+   소개
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="ch01.html">
-   프로그래밍이란?
+   1. 프로그래밍이란?
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   파이썬 프로그래밍 개발환경
+   2. 파이썬 프로그래밍 개발 환경
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch03.html">
-   프로그래밍 시작하기
+   3. 프로그래밍 시작하기
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch04.html">
-   변수, 값, 표현식, 명령문
+   4. 변수, 값, 표현식, 명령문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch05.html">
-   함수
+   5. 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch20.html">
-   마크다운과 주피터 노트북
+   6. 마크다운과 주피터 노트북
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch21.html">
+   7. 파이썬 프로그래밍 개발환경
   </a>
  </li>
 </ul>
@@ -163,9 +168,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/ch02.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/ch02.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -199,6 +204,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/notebooks/ch02.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -210,36 +232,24 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
+  <a class="reference internal nav-link" href="#id2">
+   2.1. 아나콘다 설치
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-are-roles-and-directives">
-   What are roles and directives?
+  <a class="reference internal nav-link" href="#id3">
+   2.2. 비주얼 스튜디오 코드 설치
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-a-directive">
-     Using a directive
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-a-role">
-     Using a role
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-a-citation">
-     Adding a citation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#executing-code-in-your-markdown-files">
-     Executing code in your markdown files
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   2.3. 설치없이 파이썬 사용하기1 - 레플릿
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   2.4. 설치없이 파이썬 사용하기2 - 구글 코랩
+  </a>
  </li>
 </ul>
 
@@ -247,164 +257,141 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>파이썬 프로그래밍 개발환경</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>파이썬 프로그래밍 개발 환경</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
+  <a class="reference internal nav-link" href="#id2">
+   2.1. 아나콘다 설치
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-are-roles-and-directives">
-   What are roles and directives?
+  <a class="reference internal nav-link" href="#id3">
+   2.2. 비주얼 스튜디오 코드 설치
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-a-directive">
-     Using a directive
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-a-role">
-     Using a role
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-a-citation">
-     Adding a citation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#executing-code-in-your-markdown-files">
-     Executing code in your markdown files
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   2.3. 설치없이 파이썬 사용하기1 - 레플릿
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   2.4. 설치없이 파이썬 사용하기2 - 구글 코랩
+  </a>
  </li>
 </ul>
 
-                </nav>
+                        </nav>
+                    </div>
+                </div>
             </div>
             
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>파이썬 프로그래밍 개발환경<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.</p>
-<div class="section" id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">¶</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
+<h1><span class="section-number">2. </span>파이썬 프로그래밍 개발 환경<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>프로그래밍을 하려면, 개발 도구부터 설치해야 하는데, 이때 통합 개발 환경을 설치해주는 것이 좋다. (수정 필요)지금부터는 파이썬 프로그래밍에 많이 사용하는 통합 개발 환경인  비주얼 스튜디오 코드(Visual Studio Code, VS code)의 설치 방법에 대해서 살펴본다.</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>통합 개발 환경<font size="1">Integrated Development Environment(IDE)</font>은 코딩, 디버그, 컴파일 등 프로그램 개발과 관련된 작업을 하나의 프로그램으로 처리하는 소프트웨어이다.</p>
 </div>
-<div class="section" id="what-are-roles-and-directives">
-<h2>What are roles and directives?<a class="headerlink" href="#what-are-roles-and-directives" title="Permalink to this headline">¶</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<div class="section" id="using-a-directive">
-<h3>Using a directive<a class="headerlink" href="#using-a-directive" title="Permalink to this headline">¶</a></h3>
-<p>At its simplest, you can insert a directive into your book’s content like so:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mydirectivename}
-My directive content
-```
-</pre></div>
+<ol class="simple">
+<li><p>아나콘다 설치 → spyder or jupyter notebook</p></li>
+<li><p>아나콘다 설치 &amp; vs code 설치 → vs code
+별도의 프로그램 설치 없이 파이썬을 사용하는 방법도 있다.</p></li>
+<li><p><a class="reference external" href="http://Repl.it">Repl.it</a> or colab</p></li>
+</ol>
+<p>공유도 간편하게 할 수 있다. 작업 내용이 자동으로 저장됨.</p>
+<div class="section" id="id2">
+<h2><span class="section-number">2.1. </span>아나콘다 설치<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>파이썬을 아직 설치하지 않았다면, 데이터 분석에 필요한 라이브러리가 포함되어 있는 아나콘다<font size="1">Anaconda</font>를 설치하는 것이 좋다.</p>
+<p>아나콘다를 설치하려면 먼저 설치 프로그램을 다운로드해야 한다.</p>
+<p>① 아나콘다
+사이트<font size="1"><a class="reference external" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a></font>에
+접속한다.
+그리고 화면 오른쪽에 있는 다운로드 버튼을 눌러 아나콘다 설치 프로그램을 다운로드한다.</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>아나콘다 사이트에 접속하면, 접속자의 운영체제를 확인하여 설치 가능한 파이썬 최신 버전을 보여준다. 이 글을 작성하는 시점에는 파이썬 3.9가 최신 버전이다.</p>
 </div>
-<p>This will only work if a directive with name <code class="docutils literal notranslate"><span class="pre">mydirectivename</span></code> already exists
-(which it doesn’t). There are many pre-defined directives associated with
-Jupyter Book. For example, to insert a note box into your content, you can
-use the following directive:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{note}
-Here is a note
-```
-</pre></div>
+<p>② 다운로드한 Anaconda3-Window_64.exe 실행파일을 더블 클릭하여 설치를 시작한다. 설치화면이 아래와 같이 나오면 Next 버튼을 눌러서 다음 화면으로 넘어간다.</p>
+<p>③ 약관이 나타나면, 동의하는 I Agree 버튼을 눌러 다음 화면으로 넘어간다.</p>
+<p>④ 사용자 환경에 따라 권한을 설정한 다음, Next 버튼을 눌러 다음 화면으로 넘어간다.</p>
+<p>⑤ 설치 경로를 지정한 다음, Next 버튼을 눌러 다음 화면으로 넘어간다.</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>특별한 경우가 아니면, 기본 경로를 그대로 두고 다음으로 넘어가면 된다.</p>
 </div>
-<p>This results in:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
+<p>⑥ 아나콘다를 기본 파이썬으로 설정하고, Install 버튼을 눌러 설치를 진행한다.</p>
+<p>⑦ 설치 시간은 보통 1~3분 정도 걸리며, 컴퓨터 환경에 따라 5분이상 소요되기도 한다. 설치 완료가 되면, Next를 눌러 다음 화면으로 넘어간다.</p>
+<p>⑧ Finish 버튼을 눌러 설치를 완료한다.</p>
 </div>
-<p>In your built book.</p>
-<p>For more information on writing directives, see the
-<a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
+<div class="section" id="id3">
+<h2><span class="section-number">2.2. </span>비주얼 스튜디오 코드 설치<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>비주얼 스튜디오 코드<font size="1">Visual Studio Code</font>를
+설치하려면 먼저 설치 프로그램을 다운로드해야 한다.</p>
+<p>① 비주얼 스튜디오 코드
+사이트<font size="1"><a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></font> 에 접속한다.
+그리고 화면 왼쪽에 있는 다운로드 버튼을 눌러 비주얼 스튜디오 코드
+설치 프로그램을 다운로드한다.</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>비주얼 스튜디오 코드 사이트에 접속하면, 접속자의 운영체제를 확인하여 설치 가능한 버전을 보여준다.</p>
 </div>
-<div class="section" id="using-a-role">
-<h3>Using a role<a class="headerlink" href="#using-a-role" title="Permalink to this headline">¶</a></h3>
-<p>Roles are very similar to directives, but they are less-complex and written
-entirely on one line. You can insert a role into your book’s content with
-this pattern:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Some content {rolename}`and here is my role&#39;s content!`
-</pre></div>
+<p>② 다운로드한 VSCodeUserSetup.exe 실행파일을 더블 클릭하여 설치를 시작한다. 약관이 나타나면, 동의합니다를 선택하고, 다음을 눌러서 다음 화면으로 넘어간다.</p>
+<p>③ 설치 경로를 지정한 다음, 다음 버튼을 눌러 다음 화면으로 넘어간다.</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>특별한 경우가 아니면, 기본 경로를 그대로 두고 다음으로 넘어가면 된다.</p>
 </div>
-<p>Again, roles will only work if <code class="docutils literal notranslate"><span class="pre">rolename</span></code> is a valid role’s name. For example,
-the <code class="docutils literal notranslate"><span class="pre">doc</span></code> role can be used to refer to another page in your book. You can
-refer directly to another page by its relative path. For example, the
-role syntax <code class="docutils literal notranslate"><span class="pre">{doc}`intro`</span></code> will result in: <a class="reference internal" href="intro.html"><span class="doc">서문</span></a>.</p>
-<p>For more information on writing roles, see the
-<a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
+<p>④ 시작 메뉴에 비주얼 스튜디오 코드가 보이도록 하고 싶다면 다음을 누르고, 아니라면 시작 메뉴 폴더를 만들지 않음을 선택하고 다음을 눌러 다음으로 넘어가면 된다.</p>
+<p>⑤ 추가로 필요한 작업이 있다면, 선택하고 다음을 눌러 다음 화면으로 넘어가면 된다.</p>
+<p>⑥ 앞에서 선택한 항목들을 보여준다. 확인 후 설치를 눌러 설치를 진행한다.</p>
+<p>⑦ 설치 시간은 보통 1~3분 정도 걸리며, 컴퓨터 환경에 따라 5분이상 소요되기도 한다.</p>
+<p>⑧ 종료 버튼을 눌러 설치를 완료한다.</p>
+<ul class="simple">
+<li><p>vs code python extension 설치 및 설정</p></li>
+</ul>
 </div>
-<div class="section" id="adding-a-citation">
-<h3>Adding a citation<a class="headerlink" href="#adding-a-citation" title="Permalink to this headline">¶</a></h3>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id2">[<a class="reference internal" href="#id4">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{bibliography}
-```
-</pre></div>
+<div class="section" id="id4">
+<h2><span class="section-number">2.3. </span>설치없이 파이썬 사용하기1 - 레플릿<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>레플릿<font size="1">Repl.it</font>을 사용하면,
+별도의 프로그램 설치 없이 파이썬을 사용할 수 있다. 사용 방법은 간단하다.</p>
+<p>① 레플릿
+사이트<font size="1"><a class="reference external" href="https://replit.com/">https://replit.com/</a></font>에
+접속한다.
+그리고 오른쪽 위의 Sign up을 눌러 회원가입을 하고, 로그인을 한다.</p>
+<p>② 로그인하면 아래와 같은 화면이 나온다. 왼쪽 위의 +Create 버튼을 누르면, Create a repl 창이 나온다. 여기서 Template은 Python을 선택하고, 제목Title은 적당한 것으로 변경한 다음 오른쪽 아래에 보이는 +Create Repl 버튼을 누르면 된다.</p>
+<p>③ 코드 편집기와</p>
 </div>
-<p>Resulting in a rendered bibliography that looks like:</p>
-<p id="id3"><dl class="citation">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">HdHPK14</a></span></dt>
-<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</dd>
-</dl>
-</p>
-</div>
-<div class="section" id="executing-code-in-your-markdown-files">
-<h3>Executing code in your markdown files<a class="headerlink" href="#executing-code-in-your-markdown-files" title="Permalink to this headline">¶</a></h3>
-<p>If you’d like to include computational content inside these markdown files,
-you can use MyST Markdown to define cells that will be executed when your
-book is built. Jupyter Book uses <em>jupytext</em> to do this.</p>
-<p>First, add Jupytext metadata to the file. For example, to add Jupytext metadata
-to this markdown page, run this command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
-</pre></div>
-</div>
-<p>Once a markdown file has Jupytext metadata in it, you can add the following
-directive to run the code at build time:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{code-cell}
-print(&quot;Here is some code to execute&quot;)
-```
-</pre></div>
-</div>
-<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.</p>
-<p>For more information about executing computational content with Jupyter Book,
-see <a class="reference external" href="https://myst-nb.readthedocs.io/">The MyST-NB documentation</a>.</p>
-</div>
+<div class="section" id="id5">
+<h2><span class="section-number">2.4. </span>설치없이 파이썬 사용하기2 - 구글 코랩<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>구글 코랩<font size="1">Google Colab</font>은
+구글에서 제공하는 주피터 노트북이다.</p>
+<p>Colaboratory 줄여서 Colab이라고 함. 브라우저 내에서 python 스크립트를 작성하고 실행할 수 있다.</p>
+<ul class="simple">
+<li><p>설치가 필요하지 않음.</p></li>
+<li><p>GPU 무료 액세스</p></li>
+<li><p>간편한 공유</p></li>
+</ul>
+<p>필요사항</p>
+<ul class="simple">
+<li><p>구글계정</p></li>
+<li><p>웹 브라우저(ex. 크롬)</p></li>
+</ul>
+<p>Hello, Python!</p>
 </div>
 </div>
 
@@ -430,164 +417,25 @@ see <a class="reference external" href="https://myst-nb.readthedocs.io/">The MyS
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>파이썬 프로그래밍 개발환경<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.</p>
-<div class="section" id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">¶</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
-</div>
-<div class="section" id="what-are-roles-and-directives">
-<h2>What are roles and directives?<a class="headerlink" href="#what-are-roles-and-directives" title="Permalink to this headline">¶</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<div class="section" id="using-a-directive">
-<h3>Using a directive<a class="headerlink" href="#using-a-directive" title="Permalink to this headline">¶</a></h3>
-<p>At its simplest, you can insert a directive into your book’s content like so:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mydirectivename}
-My directive content
-```
-</pre></div>
-</div>
-<p>This will only work if a directive with name <code class="docutils literal notranslate"><span class="pre">mydirectivename</span></code> already exists
-(which it doesn’t). There are many pre-defined directives associated with
-Jupyter Book. For example, to insert a note box into your content, you can
-use the following directive:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{note}
-Here is a note
-```
-</pre></div>
-</div>
-<p>This results in:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
-</div>
-<p>In your built book.</p>
-<p>For more information on writing directives, see the
-<a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
-</div>
-<div class="section" id="using-a-role">
-<h3>Using a role<a class="headerlink" href="#using-a-role" title="Permalink to this headline">¶</a></h3>
-<p>Roles are very similar to directives, but they are less-complex and written
-entirely on one line. You can insert a role into your book’s content with
-this pattern:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Some content {rolename}`and here is my role&#39;s content!`
-</pre></div>
-</div>
-<p>Again, roles will only work if <code class="docutils literal notranslate"><span class="pre">rolename</span></code> is a valid role’s name. For example,
-the <code class="docutils literal notranslate"><span class="pre">doc</span></code> role can be used to refer to another page in your book. You can
-refer directly to another page by its relative path. For example, the
-role syntax <code class="docutils literal notranslate"><span class="pre">{doc}`intro`</span></code> will result in: <a class="reference internal" href="intro.html"><span class="doc">서문</span></a>.</p>
-<p>For more information on writing roles, see the
-<a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
-</div>
-<div class="section" id="adding-a-citation">
-<h3>Adding a citation<a class="headerlink" href="#adding-a-citation" title="Permalink to this headline">¶</a></h3>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id2">[<a class="reference internal" href="#id4">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{bibliography}
-```
-</pre></div>
-</div>
-<p>Resulting in a rendered bibliography that looks like:</p>
-<p id="id3"><dl class="citation">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">HdHPK14</a></span></dt>
-<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</dd>
-</dl>
-</p>
-</div>
-<div class="section" id="executing-code-in-your-markdown-files">
-<h3>Executing code in your markdown files<a class="headerlink" href="#executing-code-in-your-markdown-files" title="Permalink to this headline">¶</a></h3>
-<p>If you’d like to include computational content inside these markdown files,
-you can use MyST Markdown to define cells that will be executed when your
-book is built. Jupyter Book uses <em>jupytext</em> to do this.</p>
-<p>First, add Jupytext metadata to the file. For example, to add Jupytext metadata
-to this markdown page, run this command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
-</pre></div>
-</div>
-<p>Once a markdown file has Jupytext metadata in it, you can add the following
-directive to run the code at build time:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{code-cell}
-print(&quot;Here is some code to execute&quot;)
-```
-</pre></div>
-</div>
-<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.</p>
-<p>For more information about executing computational content with Jupyter Book,
-see <a class="reference external" href="https://myst-nb.readthedocs.io/">The MyST-NB documentation</a>.</p>
-</div>
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./."
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="ch01.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">프로그래밍이란?</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>프로그래밍이란?</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ch03.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">프로그래밍 시작하기</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>프로그래밍 시작하기</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
