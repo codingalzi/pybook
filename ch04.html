@@ -89,7 +89,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   서문
+   소개
   </a>
  </li>
 </ul>
@@ -101,7 +101,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch02.html">
-   2. 파이썬 프로그래밍 개발환경
+   2. 파이썬 프로그래밍 개발 환경
   </a>
  </li>
  <li class="toctree-l1">
@@ -122,6 +122,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="ch20.html">
    6. 마크다운과 주피터 노트북
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch21.html">
+   7. 파이썬 프로그래밍 개발환경
   </a>
  </li>
 </ul>
@@ -425,16 +430,18 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1><span class="section-number">4. </span>변수, 값, 표현식, 명령문<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p><strong>변수</strong>(variables)는 (컴퓨터 메모리에) 저장된 하나의 값을 가리키는 이름이며,
-파이썬 프로그래밍 언어의 핵심 기능 중의 하나가 바로 변수가 가리키는 값을
-조작하는 것이다.
-여기서는 다양한 방식으로 <strong>값</strong>(values)을 표현하는 <strong>표현식</strong>(expressions)과,
-값을 조작하도록 하는 <strong>명령문</strong>(statements)의
+<p><strong>변수</strong><font size="1">variables</font>는
+(컴퓨터 메모리에) 저장된 하나의 값을 가리키는 이름이며,
+파이썬과 같은 명령형 프로그래밍 언어의 핵심 기능 중의 하나가
+바로 변수가 가리키는 값을 조작하는 것이다.
+여기서는 다양한 방식으로 <strong>값</strong><font size="1">values</font>을
+표현하는 <strong>표현식</strong><font size="1">expressions</font>과,
+값을 조작하도록 하는 <strong>명령문</strong><font size="1">statements</font>의
 기본 개념을 소개한다.</p>
 <div class="section" id="id2">
 <h2><span class="section-number">4.1. </span>변수와 변수 할당<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>변수를 선언하려면 해당 변수가 하나의 값을 가리키도록 하는
-<strong>변수 할당</strong>(variable assignment)을 명령해야 한다.
+<strong>변수 할당</strong><font size="1">variable assignment</font>을 명령해야 한다.
 변수 할당 명령문의 형식은 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">변수</span> <span class="o">=</span> <span class="n">값</span>
 </pre></div>
@@ -453,10 +460,12 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">greetings</span></code> 변수가 가리키는 값은 <code class="docutils literal notranslate"><span class="pre">'안녕하세요!'</span></code> 라는 문장이다.
 단, 변수 이름과는 달리 값으로 사용되는 문장 또는 단어는
-항상 인용부호로 감싸져야 하며, <strong>문자열</strong>(string)이라 불린다.</p></li>
+항상 인용부호로 감싸져야 하며,
+<strong>문자열</strong><font size="1">string</font>이라 불린다.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">num</span></code> 변수가 가리키는 값은 정수 <code class="docutils literal notranslate"><span class="pre">17</span></code>이다.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pi</span></code> 변수가 가리키는 값은 유리수 <code class="docutils literal notranslate"><span class="pre">3.1415926535897932</span></code>이다.
-유리수는 공식적으로 <strong>부동소수점</strong>(floating points)이라 불린다.</p></li>
+유리수는 공식적으로
+<strong>부동소수점</strong><font size="1">floating points</font>이라 불린다.</p></li>
 </ul>
 <p>선언된 변수는 할당된 값과 동일하게 취급된다.</p>
 <div class="cell docutils container">
@@ -520,7 +529,8 @@
 <div class="admonition- admonition">
 <p class="admonition-title">참고: 파이썬 튜터와 프레임</p>
 <p>변수 할당은 <strong>컴퓨터 메모리</strong> 상에서 이루어지며,
-변수와 변수에 할당된 값 사이의 관계는 <strong>프레임</strong>(frames)을 통해 관리된다.
+변수와 변수에 할당된 값 사이의 관계는
+<strong>프레임</strong><font size="1">frames</font>을 통해 관리된다.
 컴퓨터 메모리 상에서 일어나는 변화를 직접 눈으로 볼 수는 없다.
 하지만 <strong>파이썬 튜터</strong>(<a class="reference external" href="https://pythontutor.com/">https://pythontutor.com/</a>)를
 이용하면 프레임의 변화를 시각적으로 추적할 수 있다.</p>
@@ -544,7 +554,8 @@
 <li><p>숫자로 시작할 수 없다.</p></li>
 <li><p>공백을 사용할 수 없다.</p></li>
 <li><p>골뱅이 기호 (&#64;), 물결 기호(~)는 사용할 수 없다.</p></li>
-<li><p>파이썬에서 특별한 역할을 수행하는 <strong>키워드</strong>(keyword)는 사용할 수 없다.</p></li>
+<li><p>파이썬에서 특별한 역할을 수행하는
+<strong>키워드</strong><font size="1">keyword</font>는 사용할 수 없다.</p></li>
 </ul>
 <p>허용되지 않는 사례 몇 가지를 살펴보자.</p>
 <ul>
@@ -572,7 +583,8 @@
 </li>
 </ul>
 <ul>
-<li><p>키워드 사용: 예를 들어, <code class="docutils literal notranslate"><span class="pre">False</span></code>는 거짓을 나타내는 부울값(Boolean value)이기에
+<li><p>키워드 사용: 예를 들어, <code class="docutils literal notranslate"><span class="pre">False</span></code>는 거짓을 나타내는
+부울값<font size="1">Boolean value</font>이기에
 다른 의미로 사용될 수 없다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kc">False</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -599,7 +611,8 @@
 <p><strong>소문자와 대문자</strong></p>
 <p>영어 알파벳의 소문자와 대문자는 엄연히 구분된다.
 예를 들어, <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>와 <code class="docutils literal notranslate"><span class="pre">'Hello'</span></code>는 서로 다른 단어, 즉 서로 다른 문자열이다.
-아래 식에서 사용되는 <code class="docutils literal notranslate"><span class="pre">==</span></code> 기호는 양편에 위치한 두 값의 동치(equality) 여부를 판단한다.</p>
+아래 식에서 사용되는 <code class="docutils literal notranslate"><span class="pre">==</span></code> 기호는 양편에 위치한 두 값의
+동치<font size="1">equality</font> 여부를 판단한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;hello&#39;</span> <span class="o">==</span> <span class="s1">&#39;Hello&#39;</span>
@@ -625,7 +638,8 @@
 </div>
 <p>아래 식에서 덧셈 기호(<code class="docutils literal notranslate"><span class="pre">+</span></code>)는 두 문자열과 함께 사용될 때
 두 문자열을 차례대로 연결하여
-새로운 문자열을 생성하는 <strong>연결</strong>(concatenation) 연산자로
+새로운 문자열을 생성하는
+<strong>연결</strong><font size="1">concatenation</font> 연산자로
 작동한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -678,7 +692,7 @@
 기능을 의미한다.
 하지만 연산은 수 이외에도 문자열 등 다른 종류의 값도 대상으로 삼는다.
 이렇게 특정 값들을 대상으로 연산을 수행하는 기호를
-<strong>연산자</strong>(operators)라 하며
+<strong>연산자</strong><font size="1">operators</font>라 하며
 가장 많이 사용되는 연산자는 다음과 같다.</p>
 <ul class="simple">
 <li><p>사칙 연산자: 덧셈(<code class="docutils literal notranslate"><span class="pre">+</span></code>), 뺄셈(<code class="docutils literal notranslate"><span class="pre">-</span></code>), 곱셈(<code class="docutils literal notranslate"><span class="pre">*</span></code>), 나눗셈(<code class="docutils literal notranslate"><span class="pre">/</span></code>)</p></li>
@@ -780,7 +794,8 @@
 각 함수는 사용하는 인자의 종류와 개수가 다르다는 점만을 강조한다.</p>
 </div>
 <p>변수, 정수, 유리수, 문자열 등을 연산자 또는 함수와 함께 조합하여
-하나의 값(value)을 표현하도록 작성된 식을 <strong>표현식</strong>이라 부른다.
+하나의 값(value)을 표현하도록 작성된 식을
+<strong>표현식</strong><font size="1">expression</font>이라 부른다.
 예를 들어 <code class="docutils literal notranslate"><span class="pre">max()</span></code>가 주어진 두 수의 최댓값을 계산하는 함수이고
 <code class="docutils literal notranslate"><span class="pre">num</span></code>이 정수 <code class="docutils literal notranslate"><span class="pre">5</span></code>를 가리키면
 <code class="docutils literal notranslate"><span class="pre">max(17,</span> <span class="pre">num)</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">/</span> <span class="pre">(num</span> <span class="pre">+</span> <span class="pre">1)</span></code> 는 유리수 <code class="docutils literal notranslate"><span class="pre">17.5</span></code>를 가리키는 표현식이 된다.</p>
@@ -806,13 +821,13 @@
 </div>
 <div class="section" id="id6">
 <h2><span class="section-number">4.3. </span>자료형<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>모든 값들은 각각 고유의 <strong>자료형</strong>에 속한다.
+<p>모든 값들은 각각 고유의 <strong>자료형</strong><font size="1">data type</font>에 속한다.
 예를 들어,</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-2</span></code>, <code class="docutils literal notranslate"><span class="pre">-1</span></code>, <code class="docutils literal notranslate"><span class="pre">0,</span></code> <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, … 등은 <strong>정수</strong> 자료형(<code class="docutils literal notranslate"><span class="pre">int</span></code>)에 속하고,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">3.141592</span></code>, <code class="docutils literal notranslate"><span class="pre">2.71</span></code>, <code class="docutils literal notranslate"><span class="pre">-0.23</span></code> 등의 유리수는 <strong>부동소수점</strong> 자료형(<code class="docutils literal notranslate"><span class="pre">float</span></code>)에 속하고,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-2</span></code>, <code class="docutils literal notranslate"><span class="pre">-1</span></code>, <code class="docutils literal notranslate"><span class="pre">0,</span></code> <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, … 등은 <strong>정수</strong> 자료형 <code class="docutils literal notranslate"><span class="pre">int</span></code>에 속하고,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3.141592</span></code>, <code class="docutils literal notranslate"><span class="pre">2.71</span></code>, <code class="docutils literal notranslate"><span class="pre">-0.23</span></code> 등의 유리수는 <strong>부동소수점</strong> 자료형 <code class="docutils literal notranslate"><span class="pre">float</span></code>에 속하고,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'강아지'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World!'</span></code>, <code class="docutils literal notranslate"><span class="pre">'파이썬은</span> <span class="pre">재밌어요!'</span></code> 등의 단어 또는 문장은
-<strong>문자열</strong>(<code class="docutils literal notranslate"><span class="pre">str</span></code>) 자료형에 속한다.</p></li>
+<strong>문자열</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> 자료형에 속한다.</p></li>
 </ul>
 <p>만약 값이 어떤 자료형에 속하는지 모르겠다면 아래와 같이 <code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수를 이용할 수 있다.</p>
 <div class="cell docutils container">
@@ -852,7 +867,7 @@
 </div>
 </div>
 <p><strong>수 표기 주의사항</strong></p>
-<p>수(numbers)를 표기할 때 다음 세 가지 사항들에 주의해야 한다.</p>
+<p>수<font size="1">number</font>를 표기할 때 다음 세 가지 사항들에 주의해야 한다.</p>
 <p>첫째, <code class="docutils literal notranslate"><span class="pre">'17'</span></code>, <code class="docutils literal notranslate"><span class="pre">'3.2'</span></code> 등은 작은 따옴표(인용부호)로 둘러싸여 있어서
 수가 아닌 숫자 기호들로 이루어진 문자열이며,
 연산이 다르게 작동한다.</p>
@@ -883,7 +898,8 @@
 <p>둘째, 수를 표기할 때 쉼표(콤마)를 사용하면 다른 의미로 해석된다.
 예를 들어 <code class="docutils literal notranslate"><span class="pre">1,000,000</span></code> 이라고 입력하면 백만이 아니라 1, 0, 0 세 개의 수를 항목으로 갖는
 길이가 3인 튜플 자료형으로 인식된다.
-<strong>튜플</strong>(tuple)은 여러 개의 값을 하나로 묶어서 사용하는 값들의 자료형이며
+<strong>튜플</strong><font size="1">tuple</font>은 여러 개의 값을
+하나로 묶어서 사용하는 값들의 자료형이며
 나중에 자세히 다룬다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -967,9 +983,10 @@
 </div>
 <div class="section" id="id8">
 <h2><span class="section-number">4.4. </span>명령문<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<p>컴퓨터에 의해 실행될 수 있는 문장을 <strong>명령문</strong>이라 부른다.
-프로그래밍 언어에 따라 명령문 작성 규칙이 정해져 있다.
-명령문들을 규칙에 맞게 적절히 구상하여 원하는 프로그램을 구현한다.</p>
+<p>컴퓨터에 의해 실행될 수 있는 문장을
+<strong>명령문</strong><font size="1">statement</font>이라 부른다.
+모든 프로그래밍 언어는 고유의 명령문 작성 규칙을 제공하며,
+<strong>프로그램</strong>은 명령문들을 규칙에 맞게 적절히 구성한 결과물이다.</p>
 <p>명령문은 기본 명령문들을 조합해서 생성된다.
 지금까지 살펴본 기본 명령문들은 다음과 같다.</p>
 <ul class="simple">
@@ -1057,10 +1074,12 @@
 <div class="section" id="id9">
 <h2><span class="section-number">4.5. </span>주석<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <p>프로그램 중간중간에 사용된 명령문과 관련된 설명을 적어 놓으면 프로그램을 보다 쉽게 이해할 수 있게 된다.
-이와 같이 프로그램의 실행과 무관한 설명 문장을 <strong>주석</strong>(comment)이라 부르며,
+이와 같이 프로그램의 실행과 무관한 설명 문장을
+<strong>주석</strong><font size="1">comment</font>이라 부르며,
 프로그램이 실행될 때 파이썬 해석기에 의해 무시된다.</p>
 <ul class="simple">
-<li><p>한 줄 주석: 우물 정 또는 영어로 샵(sharp)이라 불리는 기호(<code class="docutils literal notranslate"><span class="pre">#</span></code>, 샵)로 시작하며
+<li><p>한 줄 주석: 우물 정 또는 영어로
+샵<font size="1">sharp</font>이라 불리는 기호(<code class="docutils literal notranslate"><span class="pre">#</span></code>, 샵)로 시작하며
 <code class="docutils literal notranslate"><span class="pre">#</span></code> 이후의 문장은 실행과정에서 무시된다.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -1113,12 +1132,14 @@
 <p>프로그램의 오류는 크게 세 가지 유형이 있다.</p>
 <div class="section" id="id11">
 <h3><span class="section-number">4.6.1. </span>구문 오류<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<p>변수 이름을 잘못 지정하는 경우 위와 같이 구문 오류(<code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">invalid</span> <span class="pre">syntax</span></code>)가 발생한다.
+<p>변수 이름을 잘못 지정하는 경우 <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">invalid</span> <span class="pre">syntax</span></code>와
+같은 <strong>구문 오류</strong><font size="1">syntax error</font>가 발생한다.
 구문 오류는 해석기가 프로그램을 실행하기 전에 일종의 문법 검사를 통해 찾아낸다.</p>
 </div>
 <div class="section" id="id12">
 <h3><span class="section-number">4.6.2. </span>런타임 오류<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<p>런타임 오류는 구문 오류를 포함하지 않는 프로그램이 실행되는 과정에서 발생하는 오류이다.
+<p><strong>런타임 오류</strong><font size="1">runtime error</font>는
+구문 오류를 포함하지 않는 프로그램이 실행되는 과정에서 발생하는 오류이다.
 런타임 오류는 다양한 경우에 발생한다.
 여기서는 두 가지 경우를 살펴본다.</p>
 <div class="section" id="zerodivisionerror">
@@ -1167,7 +1188,8 @@
 <h3><span class="section-number">4.6.3. </span>의미 오류<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>프로그램이 실행은 되지만 원하는 기능을 지원하지 못한다면 프로그램을 제대로 구현하지 못한 것이다.
 프로그램은 작동하기 때문에 구문 오류나 런타임 오류와는 달리 원인을 바로 확인하기 어려울 수 있다.
-이와같은 오류를 <strong>의미 오류</strong>(semantic error)라 부르며,
+이와같은 오류를
+<strong>의미 오류</strong><font size="1">semantic error</font>라 부르며,
 발생원인은 매우 다양하다.</p>
 <p>수학 문제를 풀다가 계산실수를 하거나, 기호를 다르게 적거나, 문제를 잘못 이해했거나 해서
 풀 수 있었던 문제를 틀렸던 경험이 있을 것이다.
@@ -1237,21 +1259,22 @@
 <ol class="simple">
 <li><p>반지름이 r인 구의 부피는 <span class="math notranslate nohighlight">\(\frac{4}{3} \pi r^3\)</span> 이다. 반지름이 5인 구의 부피는 얼마인가?
 (<strong>힌트:</strong> 392.7은 답이 아니다.)</p></li>
-<li><p>책의 정가는 권당 <span class="math notranslate nohighlight">\(24,950\)</span>원이지만, 각 권당 <span class="math notranslate nohighlight">\(10\%\)</span> 의 할인을 받는다고 가정하자.
-첫 한 권의 운송료는 <span class="math notranslate nohighlight">\(2,000\)</span>원 이고, 두 권째 부터는 권당 500원을 추가로 내야 한다.
+<li><p>책의 정가는 권당 24,950원이지만, 각 권당 10% 의 할인을 받는다고 가정하자.
+첫 한 권의 운송료는 2,000원 이고, 두 권째 부터는 권당 500원을 추가로 내야 한다.
 60권을 사서 배송을 받고자 하면 얼마를 지불해야 하는가?</p></li>
 <li><p>오전 6:52 에 집을 떠나서, 가볍게 (km당 8분 15초 소요) 1km을 뛰고,
 이어서 좀 빠르게 (km당 7분 12초 소요) 3km를 뛴 후, 다시 가볍게 1km를 마저 달린다면,
 아침 식사를 위해 집에 돌아오는 시간은 언제인가?</p></li>
-<li><p>만약 10 킬로미터를 43분 30초 만에 달렸다면, 마일당 소요 시간은 얼마인가?
+<li><p>만약 10km를 43분 30초 만에 달렸다면,
+마일<font size="1">mile</font>당 소요 시간은 얼마인가?
 시간당 마일로 계산한 평균 속도는 얼마인가?
-(<strong>힌트:</strong> 1마일은 1.61 킬로미터로 계산한다.)</p></li>
+(힌트: 1마일은 1.61km로 계산한다.)</p></li>
 </ol>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">print</span></code> 함수의 성질을 조사한다.
-즉, <code class="docutils literal notranslate"><span class="pre">print</span></code> 함수가 받아들일 수 있는 인자와 리턴값에 대해 알아본다.
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 성질을 조사한다.
+즉, <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수가 받아들일 수 있는 인자와 리턴값에 대해 알아본다.
 설명을 예를 들면서 하면 더욱 좋다.
-(힌트: <code class="docutils literal notranslate"><span class="pre">help(print)</span></code> 명령문을 실행하면 <code class="docutils literal notranslate"><span class="pre">print</span></code> 함수에 대한 기초정보를 확인할 수 있다.)</p></li>
+(힌트: <code class="docutils literal notranslate"><span class="pre">help(print)</span></code> 명령문을 실행하면 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수에 대한 기초정보를 확인할 수 있다.)</p></li>
 </ol>
 </div>
 </div>
