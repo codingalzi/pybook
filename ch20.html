@@ -101,7 +101,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch02.html">
-   2. 파이썬 프로그래밍 개발 환경
+   2. 프로그래밍 시작하기
   </a>
  </li>
  <li class="toctree-l1">
@@ -294,6 +294,30 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1><span class="section-number">6. </span>마크다운과 주피터 노트북<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>kgkgk</p>
+</div>
+<div class="admonition- admonition">
+<p class="admonition-title">참고</p>
+<p>변수 할당은 <strong>컴퓨터 메모리</strong> 상에서 이루어지며,
+변수들과 변수들에 할당된 값들 사이의 관계는 <strong>프레임</strong>(frames)을 통해 관리된다.
+즉, 변수 할당 명령문을 실행하면 컴퓨터 메모리 상에서 변수들과 변수들에 할당된 값들 사이의 관계에
+변화가 발생하며, 이는 프레임에 변화를 초래한다.</p>
+<p>컴퓨터 메모리 상에서 일어나는 변화를 사람이 직접 눈으로 볼 수는 없다.
+하지만 파이썬 튜터(<a class="reference external" href="https://pythontutor.com/">https://pythontutor.com/</a>)가 프레임의 변화를 시각적으로 보여주는 기능을 지원한다.
+앞서 변수 세 개의 할당을 실행하면 프레임이 어떻게 변화하는지를
+<a class="reference external" href="https://pythontutor.com/visualize.html#code=greetings%20%3D%20%27%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%21%27%0An%20%3D%2017%0Api%20%3D%203.1415926535897932&amp;cumulative=false&amp;heapPrimitives=nevernest&amp;mode=edit&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">pythontutor.com: 변수 할당</a>에
+접속해서 확인할 수 있다.</p>
+<p>파이썬튜터 사용법은 다음과 같다.</p>
+<ul class="simple">
+<li><p>해당 사이트에 접속해서 코드 확인 및 수정 후 <kbd>Visualize Execution</kbd> 버튼을 누른다.</p></li>
+<li><p>이후 화면에서 <kbd>Next&gt;</kbd> 버튼을 반복해서 누르면
+각각의 명령문이 차례대로 실행되는 과정에서 발생하는 프레임의 변화를 확인할 수 있다.
+Global frame은 전역 변수를 담당하는 전역 프레임을 가리킨다.
+전역 변수에 대한 정의는 이후에 다룬다.</p></li>
+</ul>
+</div>
 <table class="table" id="id2">
 <caption><span class="caption-number">Table 6.1 </span><span class="caption-text">테이블 만들기</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -355,7 +379,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x7f80bc577f10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x7f32416e6fd0&gt;
 </pre></div>
 </div>
 </div>
@@ -384,7 +408,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ch20_4_0.png" src="_images/ch20_4_0.png" />
+<img alt="_images/ch20_6_0.png" src="_images/ch20_6_0.png" />
 </div>
 </div>
 <p>There is a lot more that you can do with outputs (such as including interactive outputs)
