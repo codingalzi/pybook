@@ -53,7 +53,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. 함수" href="ch05.html" />
+    <link rel="next" title="5. 기본자료형" href="ch05.html" />
     <link rel="prev" title="3. 프로그래밍 시작하기" href="ch03.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -101,7 +101,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch02.html">
-   2. 프로그래밍 시작하기
+   2. 파이썬 프로그래밍 개발환경
   </a>
  </li>
  <li class="toctree-l1">
@@ -116,17 +116,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch05.html">
-   5. 함수
+   5. 기본자료형
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch06.html">
+   6. 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch20.html">
-   6. 마크다운과 주피터 노트북
+   7. 마크다운과 주피터 노트북
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch21.html">
-   7. 파이썬 프로그래밍 개발환경
+   8. MyST 활용 예제
   </a>
  </li>
 </ul>
@@ -266,8 +271,19 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#type">
+     4.3.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       type
+      </span>
+     </code>
+     함수
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     4.3.1. 변수의 자료형
+     4.3.2. 변수의 자료형
     </a>
    </li>
   </ul>
@@ -374,8 +390,19 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#type">
+     4.3.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       type
+      </span>
+     </code>
+     함수
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     4.3.1. 변수의 자료형
+     4.3.2. 변수의 자료형
     </a>
    </li>
   </ul>
@@ -845,9 +872,10 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">-2</span></code>, <code class="docutils literal notranslate"><span class="pre">-1</span></code>, <code class="docutils literal notranslate"><span class="pre">0,</span></code> <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, … 등은 <strong>정수</strong> 자료형 <code class="docutils literal notranslate"><span class="pre">int</span></code>에 속하고,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">3.141592</span></code>, <code class="docutils literal notranslate"><span class="pre">2.71</span></code>, <code class="docutils literal notranslate"><span class="pre">-0.23</span></code> 등의 유리수는 <strong>부동소수점</strong> 자료형 <code class="docutils literal notranslate"><span class="pre">float</span></code>에 속하고,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'강아지'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World!'</span></code>, <code class="docutils literal notranslate"><span class="pre">'파이썬은</span> <span class="pre">재밌어요!'</span></code> 등의 단어 또는 문장은
-<strong>문자열</strong> 자료형<code class="docutils literal notranslate"><span class="pre">str</span></code>에 속한다.</p></li>
+<strong>문자열</strong> 자료형 <code class="docutils literal notranslate"><span class="pre">str</span></code>에 속한다.</p></li>
 </ul>
-<p><strong><code class="docutils literal notranslate"><span class="pre">type</span></code> 함수</strong></p>
+<div class="section" id="type">
+<h3><span class="section-number">4.3.1. </span><code class="docutils literal notranslate"><span class="pre">type</span></code> 함수<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">type</span></code> 함수는 인자의 자료형을 확인해준다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -922,14 +950,14 @@
 나중에 자세히 다룬다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i_am_a_tuple</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">000</span><span class="p">,</span><span class="mi">000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">저는튜플입니다</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">000</span><span class="p">,</span><span class="mi">000</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">i_am_a_tuple</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">저는튜플입니다</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -941,7 +969,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">i_am_a_tuple</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">저는튜플입니다</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -973,8 +1001,9 @@
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="id8">
-<h3><span class="section-number">4.3.1. </span>변수의 자료형<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.2. </span>변수의 자료형<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>변수의 자료형은 변수가 현재 가리키는 값의 자료형으로 지정된다.
 따라서 변수에 할당된 값의 자료형이 달라지면 변수의 자료형도 함께 달라진다.</p>
 <div class="cell docutils container">
@@ -1020,13 +1049,13 @@
 </div>
 <div class="section" id="id9">
 <h2><span class="section-number">4.4. </span>명령문<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<p>컴퓨터에 의해 실행될 수 있는 문장을
-<strong>명령문</strong><font size="2">statement</font>이라 부른다.
-즉, 컴퓨터에게
+<p>컴퓨터에 명령을 내리려면
+<strong>명령문</strong><font size="2">statement</font>을 작성해야 하며,
+이를 위해 하나의 프로그래밍 언어를 선택해야 한다.
 모든 프로그래밍 언어는 고유의 명령문 작성 규칙을 제공하며,
-<strong>프로그램</strong>은 명령문들을 규칙에 맞게 적절히 구성한 결과물이다.</p>
-<p>명령문은 기본 명령문들을 조합해서 생성된다.
-지금까지 살펴본 기본 명령문들은 다음과 같다.</p>
+언어의 특성에 따라 명령문 작성법과 작성된 명령문의 모양이 크게 다를 수 있다.</p>
+<p>파이썬 명령문은 <strong>기본 명령문</strong>들을 지정된 규칙에 따라 조합해서 생성한다.
+지금까지 간략하게나마 살펴본 기본 명령문들은 다음과 같다.</p>
 <ul class="simple">
 <li><p>변수 할당</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">print</span></code></p></li>
@@ -1352,7 +1381,7 @@
     <a class='right-next' id="next-link" href="ch05.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>함수</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>기본자료형</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
