@@ -266,8 +266,14 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#none">
+    <a class="reference internal nav-link" href="#print-none">
      6.1.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       print()
+      </span>
+     </code>
+     함수와
      <code class="docutils literal notranslate">
       <span class="pre">
        None
@@ -436,8 +442,14 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#none">
+    <a class="reference internal nav-link" href="#print-none">
      6.1.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       print()
+      </span>
+     </code>
+     함수와
      <code class="docutils literal notranslate">
       <span class="pre">
        None
@@ -577,9 +589,10 @@
 <h1><span class="section-number">6. </span>함수<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>프로그램은 명령문의 합성으로 구현된다.
 그런데 특정 기능을 수행하는 명령문의 일부가 너무 길거나,
-반복적으로 사용되어 보다 편하게 사용하고 싶을 때가 있다.
+반복적으로 사용되어 보다 편하게 사용하고 싶거나
+프로그램을 보다 체계적으로 구현하도록 하고 싶을 때가 있다.
 그럴 때 특정 기능을 수행하는 명령문에 이름을 주고
-필요할 때 그 이름을 대신 활용하도록 할 수 있다.</p>
+필요에 따라 해당 이름을 대신 활용할 수 있다.</p>
 <p>예를 들어 <code class="docutils literal notranslate"><span class="pre">print('함수란</span> <span class="pre">...')</span></code>는 실행되면
 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수에 내재된
 명령문이 작동하여 모니터 화면에
@@ -588,9 +601,8 @@
 사용자는 쉽게 알지 못하고 또 굳이 알 필요도 없다.
 화면에 문자열을 출력하고 싶을 때 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를
 사용할 수 있다는 사실만 기억하고 있으면 된다.</p>
-<p>이렇게 함수는 숨겨진 명령문의 기능을 수행한다.
-이런 의미에서 함수는 특정 명령문을 대신하는 이름이며
-해당 명령문을 실행하려면 지정된 이름을
+<p>이렇게 함수는 함수의 이름에 가려진 명령문을 대행하며
+해당 명령문을 실행하려면 지정된 함수를
 <strong>호출</strong><font size="2">call</font>하면 된다.</p>
 <div class="section" id="id2">
 <h2><span class="section-number">6.1. </span>함수 호출<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -664,21 +676,49 @@
 <p>함수를 호출하면 함수에 의해 지정된 명령문을 실행한 후에
 최종적으로 어떤 값을
 반환<font size="2">return</font>하기도 한다.
-즉, 아래 그림에서처럼 인자를 함수의 입력<font size="2">input</font>값으로
-넣어주면 어떤 값을 결괏값<font size="2">output</font>으로 반환한다.
-반환되는 값은 <code class="docutils literal notranslate"><span class="pre">return</span></code> 키워드를 이용하여 함수를 정의할 때 지정된다.</p>
-<div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Function_machine2.svg/440px-Function_machine2.svg.png" style="width:250px;"></div>
-<p>&lt;그림 출처: <a class="reference external" href="https://ko.wikipedia.org/wiki/%ED%95%A8%EC%88%98">함수, 위키백과</a>&gt;</p>
+반환값은 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">반환값</span></code> 형식의 명령문으로 지정된다.</p>
 <p>예를 들어 <code class="docutils literal notranslate"><span class="pre">int(3.14)</span></code>는 정수 <code class="docutils literal notranslate"><span class="pre">3</span></code>을,
 <code class="docutils literal notranslate"><span class="pre">type(2.37)</span></code>은 부동소수점의 자료형인 <code class="docutils literal notranslate"><span class="pre">float</span></code>를
-함수 실행의 결괏값으로 반환한다.</p>
+함수 실행의 결괏값으로 반환하며,
+반환된 값은 다른 연산에 재활용될 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
 <div class="info admonition">
 <p class="admonition-title">자료형과 값</p>
 <p><code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> 등과 같은 자료형도 하나의 값으로 취급한다.
-앞으로 보겠지만, 파이썬에서 다루는 모든 <strong>대상</strong><font size="2">object</font>은
+앞으로 보겠지만, 파이썬에서 다루는 모든 <strong>객체</strong><font size="2">object</font>는
 값으로 사용될 수 있다.</p>
 </div>
-<p>반면에 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 어떠한 값도 반환하지 않는다.
+</div>
+<div class="section" id="print-none">
+<h3><span class="section-number">6.1.3. </span><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">None</span></code> 값<a class="headerlink" href="#print-none" title="Permalink to this headline">¶</a></h3>
+<p>파이썬은 모든 함수가 반환값을 갖도록 강제한다.
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수처럼 반환값이 없는 것처럼 보이는 함수도
+공식적으로는 아무런 의미가 없는 값을 의미하는 <code class="docutils literal notranslate"><span class="pre">None</span></code>을
+반환값으로 사용한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code>은 <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> 자료형에 속하는 하나의 값이다.
+따라서 변수 할당에 사용되어 저장될 수 있다.
+하지만 연산 등에 사용하면 오류가 발생한다.
+즉, 아무런 기능을 수행하지 못한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">unsupported operand type(s) for +: &#39;NoneType&#39; and &#39;int&#39;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수에 의해
 화면에 출력되는 문자열은 반환값이 아니고
 화면에 지정된 값을 출력하는 명령문의 실행 결과에 불과하다.
 함수의 반환값은 변수에 할당해서 활용할 수 있지만
@@ -710,38 +750,6 @@
 </pre></div>
 </div>
 </div>
-</div>
-<p>반면에 <code class="docutils literal notranslate"><span class="pre">int()</span></code> 함수의 결과는 재활용할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="none">
-<h3><span class="section-number">6.1.3. </span><code class="docutils literal notranslate"><span class="pre">None</span></code> 값<a class="headerlink" href="#none" title="Permalink to this headline">¶</a></h3>
-<p>파이썬은 모든 함수에 대해 반환값을 갖도록 강제한다.
-그래서 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수처럼 반환값이 지정되지 않는 함수는
-공식적으로는 아무런 의미가 없는 값을 가리키는 <code class="docutils literal notranslate"><span class="pre">None</span></code>을
-반환값으로 사용한다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">None</span></code>은 <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> 자료형에 속하는 하나의 값이다.
-따라서 변수 할당에 사용되어 저장될 수 있다.
-하지만 연산 등에 사용하면 오류가 발생한다.
-즉, 아무런 기능을 수행하지 못한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-<span class="gr">TypeError</span>: <span class="n">unsupported operand type(s) for +: &#39;NoneType&#39; and &#39;int&#39;</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -829,7 +837,7 @@
 </div>
 <div class="section" id="id5">
 <h2><span class="section-number">6.3. </span>수학 함수<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p><span class="math notranslate nohighlight">\(\sin\)</span>, <span class="math notranslate nohighlight">\(\cos\)</span>, <span class="math notranslate nohighlight">\(\sqrt{\,\,\,}\)</span>, <span class="math notranslate nohighlight">\(\log\)</span> 등
+<p><span class="math notranslate nohighlight">\(\sin x\)</span>, <span class="math notranslate nohighlight">\(\cos x\)</span>, <span class="math notranslate nohighlight">\(\sqrt{x}\)</span>, <span class="math notranslate nohighlight">\(\log x\)</span>, <span class="math notranslate nohighlight">\(e^x\)</span> 등
 수학에서 많이 사용되는 함수를 파이썬에서 기본으로 제공한다.</p>
 <div class="section" id="math">
 <h3><span class="section-number">6.3.1. </span><code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h3>
@@ -837,7 +845,8 @@
 <code class="docutils literal notranslate"><span class="pre">math</span></code> 라는 모듈<font size="2">module</font>을
 불러와야<font size="2">import</font> 한다.
 모듈은 <a class="reference internal" href="ch07.html#ch-module"><span class="std std-numref">7 장</span></a>에서 자세히 살펴볼 것이며,
-여기서는 다양한 함수를 모아 놓은 파이썬 코드 파일이라는 사실 정도만 기억하면 된다.
+여기서는 모듈이 다양한 함수를 모아 놓은 파이썬 코드 파일이라는
+사실 정도만 기억하면 된다.
 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈을 불러오는 방식은 다음과 같다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -846,23 +855,19 @@
 </div>
 </div>
 </div>
-<p>앞서 언급했듯이 파이썬에 다루는 모든 대상은 값으로 취급될 수 있으며
-따라서 자료형도 갖는다.
-<code class="docutils literal notranslate"><span class="pre">math</span></code>가 <code class="docutils literal notranslate"><span class="pre">module</span></code> 자료형에 속함을 다음과 같이 확인할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+<div class="info admonition">
+<p class="admonition-title">자료형과 값</p>
+<p>앞서 언급했듯이 파이썬에 다루는 모든 객체는 특정
+자료형에 속하는 하나의 값이다.
+<code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈 조차도 하나의 값이며
+<code class="docutils literal notranslate"><span class="pre">module</span></code> 자료형에 속한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+<span class="go">&lt;class &#39;module&#39;&gt;</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>module
-</pre></div>
-</div>
-</div>
-</div>
-<p>모듈에 포함된 함수를 호출하려면 모듈과 함수를 마침표로 구분해서 명시해야 한다.
-예를 들어 정수 10을 밑으로 하는 상용로그 함수 <span class="math notranslate nohighlight">\(\log_{10}\)</span>을 구현한
+<p>모듈에 포함된 함수를 호출하려면 모듈과 함수를 구두점으로 구분해서 명시해야 한다.
+예를 들어 정수 10을 밑으로 하는 상용로그 함수 <span class="math notranslate nohighlight">\(\log_{10}\)</span>에 해당하는
 <code class="docutils literal notranslate"><span class="pre">log10()</span></code> 함수를 사용하는 방법은 다음과 같다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -888,7 +893,7 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">math.log</span></code>는 자연로그(<span class="math notranslate nohighlight">\(\ln = \log_e\)</span>)를 가리킨다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">math.log()</span></code>는 자연로그 함수(<span class="math notranslate nohighlight">\(\ln = \log_e\)</span>)를 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -913,7 +918,7 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code>는 제곱근 함수를 가리킨다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code>는 제곱근 함수 <span class="math notranslate nohighlight">\(\sqrt{x}\)</span>를 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -966,17 +971,25 @@
 행렬, 다차원 배열 등을 효율적으로 빠르게
 처리하는 많은 수학 함수를 지원하는 파이썬 라이브러리 패키지이며
 데이터분석, 계산과학 등 컴퓨터를 이용한 계산이 필요한 영역에서 많이 활용된다.
-파이썬의 기본 패키지에는 포함되지 않지만
+파이썬의 기본 패키지에는 없지만
 <a class="reference external" href="https://www.anaconda.com">아나콘다<font size="2">Anaconda</font></a>에는
 포함되어 있다.</p>
+<div class="info admonition">
+<p class="admonition-title">모듈과 패키지</p>
+<p>패키지<font size="2">package</font>는 일종의 모듈 모음집이다.
+즉, 많이 활용되는 함수 등을 기능과 분야별로 여러 개의 모듈로 분류해서 모아놓은 것을 가리킨다.
+모듈과 패키지를 파일과 폴더에 비유할 수 있다.
+하나의 폴더 안에 내용에 따라 여러 개의 파일로 정리하는 것과 유사하다.
+파일이 많아지면 폴더를 여러 개의 하위 폴더로 분류해서 파일을 분류하는 것처럼
+패키지를 여러 개의 하위 패키지로 구분하기도 한다.
+하위 패키지에 포함된 모듈의 활용법도 기본적으로 모듈의 함수를 사용하는 방법과 동일하다.
+나중에 그래프를 그릴 때 필요한 패키지와 모듈을 사용해야 할 때 활용 예제를 보게 될 것이다.</p>
+</div>
 <p>넘파이 패키지는 앞서 언급한 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈에서 지원하는 함수들을 포함해서 보다 많은 함수와 기능을 지원한다.
 앞으로 필요할 때마다 하나씩 넘파이 모듈의 기능을 활용할 것이다.
 넘파이를 사용하려면 먼저 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 모듈을 불러오면 된다.
-그런데 <code class="docutils literal notranslate"><span class="pre">numpy</span></code>를 보통 <code class="docutils literal notranslate"><span class="pre">np</span></code>라는 약칭으로 불러온다.
-모듈에 약칭을 지정해서 불러오는 방식은 다음과 같다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">모듈이름</span> <span class="k">as</span> <span class="nn">약칭</span>
-</pre></div>
-</div>
+그런데 <code class="docutils literal notranslate"><span class="pre">numpy</span></code>를 보통 <code class="docutils literal notranslate"><span class="pre">np</span></code>라는 약칭으로
+아래처럼 불러온다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -984,7 +997,7 @@
 </div>
 </div>
 </div>
-<p>모듈에 포함된 함수를 사용하는 방식은 <code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code> 처럼 마침표를 사용한다.
+<p>모듈에 포함된 함수를 사용하는 방식은 <code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code> 처럼 구두점을 사용한다.
 다만 모듈 이름대신 지정한 약칭을 사용해야 한다.
 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 모듈에 포함된 수학 함수의 이름은 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈의 경우와 기본적으로 동일하다.</p>
 <div class="cell docutils container">
@@ -1049,16 +1062,15 @@
 </div>
 </div>
 </div>
-<div class="info admonition">
-<p class="admonition-title">모듈과 패키지</p>
-<p>패키지<font size="2">package</font>는 일종의 모듈 모음집이다.
-즉, 많이 활용되는 함수 등을 기능과 분야별로 여러 개의 모듈로 분류해서 모아놓은 것을 가리킨다.
-모듈과 패키지를 파일과 폴더에 비유할 수 있다.
-하나의 폴더 안에 내용에 따라 여러 개의 파일로 정리하는 것과 유사하다.
-파일이 많아지면 폴더를 여러 개의 하위 폴더로 분류해서 파일을 분류하는 것처럼
-패키지를 여러 개의 하위 패키지로 구분하기도 한다.
-하위 패키지에 포함된 모듈의 활용법도 기본적으로 모듈의 함수를 사용하는 방법과 동일하다.
-나중에 그래프를 그릴 때 필요한 패키지와 모듈을 사용해야 할 때 활용 예제를 보게 될 것이다.</p>
+<div class="warning admonition">
+<p class="admonition-title">동일 이름의 두 함수</p>
+<p><code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 두 모듈에 포함된 많은 함수가 동일한 이름을 사용한다.
+하지만 함수의 이름이 갖다고 해서 동일한 함수는 아니다.
+서로 다른 모듈에 속하는 동일 이름의 함수는
+비록 반환값이 같을 수는 있어도 반환값 계산에 사용된 명령문은
+기본적으로 다르다.
+실제로 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 모듈이 제공하는 수학 함수가 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈이
+제공하는 동일 이름의 수학 함수보다 실행속도가 빠른 경우가 많다.</p>
 </div>
 </div>
 </div>
@@ -1086,11 +1098,11 @@
 </div>
 <p>표현식은 함수와 변수, 정수, 유리수, 문자열 등을 조합하여
 하나의 값(value)을 표현하도록 작성된 식이라고
-<a class="reference internal" href="ch04.html#sec-representation"><span class="std std-numref">4.2.3 절</span></a>에서 언급했다.</p>
-<p>동시에 <code class="docutils literal notranslate"><span class="pre">f(x1,</span> <span class="pre">...,</span> <span class="pre">xn)</span></code> 형식은 함수 호출을 의미하며 지정된 명령문을 실행한다.
-즉, 함수를 활용한 표현식은 기본적으로 함수 호출을 동반하며
-표현식이 가리키는 값은 바로 최종적으로 실행된 함수의 반환값이다.
-아래 코드에서 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값은 지수승 함수 <code class="docutils literal notranslate"><span class="pre">np.exp()</span></code>가
+<a class="reference internal" href="ch04.html#sec-representation"><span class="std std-numref">4.2.3 절</span></a>에서 언급했다.
+표현식 <code class="docutils literal notranslate"><span class="pre">f(x1,</span> <span class="pre">...,</span> <span class="pre">xn)</span></code>은 또한 함수 호출을 의미하며 지정된 명령문을 실행한다.
+실행 도중 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">표현식</span></code>이 실행되면
+<code class="docutils literal notranslate"><span class="pre">표현식</span></code>이 가리키는 값을 계산하여 반환한다.</p>
+<p>아래 코드에서 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값은 지수승 함수 <code class="docutils literal notranslate"><span class="pre">np.exp()</span></code>가
 <code class="docutils literal notranslate"><span class="pre">np.log(2)</span></code>를 인자로 사용했을 때의 반환값을 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1220,11 +1232,6 @@ Python
 사용된 인자들을 한 칸씩 띄어서 한 줄에 보여준다.
 그런데 <code class="docutils literal notranslate"><span class="pre">sep</span></code>에 대한 인자를 줄바꿈을 의미하는 문자열 <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>를 사용하여
 하나의 인자를 출력할 때마다 줄바꿈을 실행하도록 하였다.</p>
-<div class="tip admonition">
-<p class="admonition-title">키워드 인자의 키워드</p>
-<p>키워드 인자의 키워드는 인자와 연관된 매개변수를 일종의 키워드로 사용한다는 의미로
-이해할 수 있다.</p>
-</div>
 <p>이렇듯 경우에 따라 키워드 인자를 사용하는 매개변수를
 함수 정의에 사용할 수 있다.
 <code class="docutils literal notranslate"><span class="pre">print()</span></code>함수는
@@ -1333,7 +1340,7 @@ Python
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_7297</span><span class="o">/</span><span class="mf">3882888228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1395</span><span class="o">/</span><span class="mf">3882888228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">two_hour</span> <span class="o">=</span> <span class="n">hour_to_min</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">minutes</span><span class="p">)</span>
 
@@ -1472,7 +1479,8 @@ Python
         <span class="nb">print</span><span class="p">(</span><span class="n">항목</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>위 명령문은 리스트의 항목이 또 다른 리스트이면 그 리스트의 항목들을 대상으로 동일한 확인작업을 수행하며,
+<p>위 명령문은 리스트의 항목이 또 다른 리스트이면 그 리스트의 항목들을
+대상으로 동일한 확인작업을 수행하며,
 더 이상 리스트가 다른 리스트의 항목으로 포함되지 않을 때 까지 반복된다.
 즉, 모든 중첩 리스트가 해체될 까지 리스트 여부를 반복하며,
 리스트가 아니면 해당 항목을 화면에 출력한다.</p>
@@ -1879,7 +1887,8 @@ Python
 <div class="section" id="id19">
 <h3><span class="section-number">6.10.2. </span>고계 함수와 제1종 객체<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <p>파이썬에서는 함수도 하나의 값으로 간주된다.
-이렇게 하나의 값으로 간주되는 대상을 <strong>제1종 객체</strong>(first-class object)라고 부른다.
+이렇게 하나의 값으로 간주되는 객체를
+<strong>제1종 객체</strong>(first-class object)라고 부른다.
 제1종 객체로 간주되는 값은 변수에 할당되거나, 함수의 인자 또는 반환값으로 사용될 수 있다.</p>
 <p>함수를 인자로 받거나 내주는 값으로 사용하는 함수를 <strong>고계 함수</strong>(higher-order function)라 부른다.</p>
 </div>
