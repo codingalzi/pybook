@@ -1152,27 +1152,28 @@ Python
 </div>
 </div>
 </div>
-<p>위에서 사용된 <code class="docutils literal notranslate"><span class="pre">sep</span></code>은 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 숨겨진 매개변수이며
+<p><code class="docutils literal notranslate"><span class="pre">sep='\n'</span></code>의 <code class="docutils literal notranslate"><span class="pre">sep</span></code>은 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 숨겨진 매개변수이며
 인자를 굳이 지정하지 않으면 <strong>키워드 인자</strong><font size="2">keyword argument</font>로
 지정된 값을 사용한다.
-<code class="docutils literal notranslate"><span class="pre">sep</span></code>의 키워드 인자는 한 칸 띄어쓰기를 의미하는 문자열 <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code>이며,
-사용된 인자들을 한 칸씩 띄어서 한 줄에 보여준다.
-그런데 <code class="docutils literal notranslate"><span class="pre">sep</span></code>에 대한 인자를 줄바꿈을 의미하는 문자열 <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>를 사용하여
-하나의 인자를 출력할 때마다 줄바꿈을 실행하도록 하였다.</p>
-<p>이렇듯 경우에 따라 키워드 인자를 사용하는 매개변수를
-함수 정의에 사용할 수 있다.
-<code class="docutils literal notranslate"><span class="pre">print()</span></code>함수는
-<code class="docutils literal notranslate"><span class="pre">sep</span></code> 이외에 <code class="docutils literal notranslate"><span class="pre">end</span></code>, <code class="docutils literal notranslate"><span class="pre">file</span></code>, <code class="docutils literal notranslate"><span class="pre">flush</span></code> 가
+매개변수 <code class="docutils literal notranslate"><span class="pre">sep</span></code>의 원래 키워드 인자는 한 칸 띄어쓰기를 의미하는 문자열(<code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code>)이며,
+사용된 인자들을 한 칸씩 띄어서 한 줄에 보여주도록 한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code>함수에는
+<code class="docutils literal notranslate"><span class="pre">sep</span></code> 이외에 <code class="docutils literal notranslate"><span class="pre">end</span></code>, <code class="docutils literal notranslate"><span class="pre">file</span></code>, <code class="docutils literal notranslate"><span class="pre">flush</span></code>가
 키워드 인자를 갖는 매개변수이다.
 실제로 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 헤더는 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>둘째 매개변수 자리에 위치한 <code class="docutils literal notranslate"><span class="pre">...</span></code>은 화면에 출력할 여러 개의 값이 사용될 수 있음을 의미한다.</p></li>
+<li><p>둘째 매개변수 자리에 위치한 <code class="docutils literal notranslate"><span class="pre">...</span></code>은 화면에 출력할 여러 개의 값이 인자로 사용될 수 있음을 의미한다.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">end='\n'</span></code> 매개변수는 지정된 인자들을 출력한 후에 기본적으로 줄바꿈을 실행하는 것을 의미한다.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">file</span></code>과 <code class="docutils literal notranslate"><span class="pre">flush</span></code>는 거의 사용할 일이 없다.</p></li>
 </ul>
+<div class="info admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">file</span></code>과 <code class="docutils literal notranslate"><span class="pre">flush</span></code> 매개변수</p>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 <code class="docutils literal notranslate"><span class="pre">file</span></code>과 <code class="docutils literal notranslate"><span class="pre">flush</span></code> 두 매개변수는 특별한 경우에 활용되며
+간단한 예제는 <a class="reference external" href="https://velog.io/&#64;janeljs/python-print-sep-end-file-flush">print() 함수의 새로운 면모</a>
+블로그에서 확인할 수 있다.</p>
+</div>
 <div class="proof example admonition" id="keyword_argument">
 <p class="admonition-title"><span class="caption-number">Example 6.4 </span></p>
 <div class="example-content section" id="proof-content">
@@ -1185,11 +1186,11 @@ Python
 </div>
 <p>따라서 둘째 인자를 반드시 입력하지 않아도 되며,
 그럴 경우 둘째 인자는 10으로 지정된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># right=10</span>
 <span class="go">15</span>
 </pre></div>
 </div>
-<p>그리고 둘째 인자를 따로 지정하면 지정된 값이 사용된다.</p>
+<p>둘째 인자를 별도로 지정할 수도 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="go">25</span>
 </pre></div>
@@ -1311,7 +1312,7 @@ Python
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1287</span><span class="o">/</span><span class="mf">3882888228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1397</span><span class="o">/</span><span class="mf">3882888228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">two_hour</span> <span class="o">=</span> <span class="n">hour_to_min</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">minutes</span><span class="p">)</span>
 
