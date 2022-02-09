@@ -131,13 +131,18 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="ch08.html">
+   8. 재귀
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="ch20.html">
-   8. 마크다운과 주피터 노트북
+   9. 마크다운과 주피터 노트북
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch21.html">
-   9. MyST 활용 예제
+   10. MyST 활용 예제
   </a>
  </li>
 </ul>
@@ -314,90 +319,73 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   6.4. 함수 합성과 표현식
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
-   6.5. 함수 정의하기
+   6.4. 함수 정의하기
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     6.4.1. 함수의 반환값
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     6.5.1. 함수의 반환값
+     6.4.2. 매개변수와 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     6.5.2. 매개변수와 인자
+     6.4.3. 키워드 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id10">
-     6.5.3. 키워드 인자
+     6.4.4. 함수 합성과 표현식
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id11">
-   6.6. 함수호출
+   6.5. 함수호출 실행과정
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     6.6.1. 함수호출 실행과정
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
-     6.6.2. 예제
+     6.5.1. 예제
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id14">
-   6.7. 지역변수와 전역변수
+  <a class="reference internal nav-link" href="#id13">
+   6.6. 지역변수와 전역변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
-   6.8. 재귀함수
+  <a class="reference internal nav-link" href="#id14">
+   6.7. 함수호출과 스택 다이어그램
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vs">
+   6.8. 동적 타이핑 vs. 정적 타이핑
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     6.8.1. 파이썬과 정적 타이핑
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id16">
-     6.8.1. 예제: 콜라츠 추측
+     6.8.2. 고계 함수와 제1종 객체
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id17">
-   6.9. 함수호출과 스택 다이어그램
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vs">
-   6.10. 동적 타이핑 vs. 정적 타이핑
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     6.10.1. 파이썬과 정적 타이핑
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id19">
-     6.10.2. 고계 함수와 제1종 객체
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id20">
-   6.11. 연습문제
+   6.9. 연습문제
   </a>
  </li>
 </ul>
@@ -490,90 +478,73 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   6.4. 함수 합성과 표현식
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
-   6.5. 함수 정의하기
+   6.4. 함수 정의하기
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     6.4.1. 함수의 반환값
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     6.5.1. 함수의 반환값
+     6.4.2. 매개변수와 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     6.5.2. 매개변수와 인자
+     6.4.3. 키워드 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id10">
-     6.5.3. 키워드 인자
+     6.4.4. 함수 합성과 표현식
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id11">
-   6.6. 함수호출
+   6.5. 함수호출 실행과정
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     6.6.1. 함수호출 실행과정
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
-     6.6.2. 예제
+     6.5.1. 예제
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id14">
-   6.7. 지역변수와 전역변수
+  <a class="reference internal nav-link" href="#id13">
+   6.6. 지역변수와 전역변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
-   6.8. 재귀함수
+  <a class="reference internal nav-link" href="#id14">
+   6.7. 함수호출과 스택 다이어그램
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vs">
+   6.8. 동적 타이핑 vs. 정적 타이핑
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     6.8.1. 파이썬과 정적 타이핑
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id16">
-     6.8.1. 예제: 콜라츠 추측
+     6.8.2. 고계 함수와 제1종 객체
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id17">
-   6.9. 함수호출과 스택 다이어그램
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vs">
-   6.10. 동적 타이핑 vs. 정적 타이핑
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     6.10.1. 파이썬과 정적 타이핑
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id19">
-     6.10.2. 고계 함수와 제1종 객체
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id20">
-   6.11. 연습문제
+   6.9. 연습문제
   </a>
  </li>
 </ul>
@@ -1075,53 +1046,9 @@
 </div>
 </div>
 <div class="section" id="id6">
-<h2><span class="section-number">6.4. </span>함수 합성과 표현식<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>수학에서 <span class="math notranslate nohighlight">\(f, g\)</span> 두 개의 함수를 합성해서 새로운 함수 <span class="math notranslate nohighlight">\(f\circ g\)</span>를 정의해서 사용한다.</p>
-<div class="math notranslate nohighlight">
-\[
-(f\circ g) (x) := f(g(x))
-\]</div>
-<p>동일한 방식을 파이썬에서 지원한다.
-아래 코드는 곱셈, 나눗셈, 사인 함수의 합성을 활용한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">degree</span> <span class="o">/</span> <span class="mf">360.0</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-</pre></div>
-</div>
-</div>
-</div>
-<p>표현식은 함수와 변수, 정수, 유리수, 문자열 등을 조합하여
-하나의 값(value)을 표현하도록 작성된 식이라고
-<a class="reference internal" href="ch04.html#sec-representation"><span class="std std-numref">4.2.3 절</span></a>에서 언급했다.
-표현식 <code class="docutils literal notranslate"><span class="pre">f(x1,</span> <span class="pre">...,</span> <span class="pre">xn)</span></code>은 또한 함수 호출을 의미하며 지정된 명령문을 실행한다.
-실행 도중 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">표현식</span></code>이 실행되면
-<code class="docutils literal notranslate"><span class="pre">표현식</span></code>이 가리키는 값을 계산하여 반환한다.</p>
-<p>아래 코드에서 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값은 지수승 함수 <code class="docutils literal notranslate"><span class="pre">np.exp()</span></code>가
-<code class="docutils literal notranslate"><span class="pre">np.log(2)</span></code>를 인자로 사용했을 때의 반환값을 가리킨다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="id7">
-<h2><span class="section-number">6.5. </span>함수 정의하기<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<p>파이썬에서 함수를 임의로 정의해서 사용할 수 있다.
-함수를 정의하는 방식은 기본적으로 다음과 같다.</p>
+<h2><span class="section-number">6.4. </span>함수 정의하기<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>파이썬에서 함수를 사용자가 임의로 정의해서 사용할 수 있다.
+함수를 정의하는 방식은 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">함수이름</span><span class="p">(</span><span class="n">매개변수1</span><span class="p">,</span> <span class="n">매개변수2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">매개변수n</span><span class="p">):</span>
     <span class="n">명령문</span>
 </pre></div>
@@ -1135,8 +1062,8 @@
 <li><p>함수 본체에 사용되는 명령문은 들여쓰며, 보통 탭<font size="2">tab</font> 키 한 번 누르는 것에
 해당한다.</p></li>
 </ul>
-<div class="section" id="id8">
-<h3><span class="section-number">6.5.1. </span>함수의 반환값<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3><span class="section-number">6.4.1. </span>함수의 반환값<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>함수의 반환값은 본문에 사용된 명령문을 실행하다가
 어느 순간 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">표현식</span></code> 모양의 기본 명령문을 실행하는 순간 결정된다.
 함수는 그순간 지정된 <code class="docutils literal notranslate"><span class="pre">표현식</span></code>이 가리키는 값을 반환하면서 실행을 멈춘다.</p>
@@ -1144,8 +1071,8 @@
 그 함수의 반환값은 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 경우처럼 <code class="docutils literal notranslate"><span class="pre">None</span></code>으로 자동 지정된다.
 단, 오류로 인해 실행이 멈추는 경우엔 반환값이 전혀 지정되지 않는다.</p>
 </div>
-<div class="section" id="id9">
-<h3><span class="section-number">6.5.2. </span>매개변수와 인자<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3><span class="section-number">6.4.2. </span>매개변수와 인자<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p><strong>매개변수</strong><font size="2">parameter</font>는
 함수 호출에 사용되는 <strong>인자</strong><font size="2">argument</font>를
 함수 본체 명령문에 전달하는 역할을 수행한다.
@@ -1194,8 +1121,8 @@
 <p>결국 <code class="docutils literal notranslate"><span class="pre">z</span></code>는 정수 <code class="docutils literal notranslate"><span class="pre">3</span></code>을 가리키게 되어 함수의 실행은 3을 반환<font size="2">return</font>하면서 종료한다.</p>
 </div>
 </div></div>
-<div class="section" id="id10">
-<h3><span class="section-number">6.5.3. </span>키워드 인자<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3><span class="section-number">6.4.3. </span>키워드 인자<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">print</span></code> 함수를 이용하여 화면에 출력할 때 여러 개의 인자를 사용하면
 각 인자를 공백<font size="2">space</font>로 구분하여 함께 한 줄에 출력한다.</p>
 <div class="cell docutils container">
@@ -1269,11 +1196,56 @@ Python
 </div>
 </div>
 </div></div>
+<div class="section" id="id10">
+<h3><span class="section-number">6.4.4. </span>함수 합성과 표현식<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>수학에서 <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(g\)</span> 두 개의 함수를 합성해서 새로운 함수 <span class="math notranslate nohighlight">\(f\circ g\)</span> 를
+다음과 같이 정의한다.</p>
+<div class="math notranslate nohighlight">
+\[
+(f\circ g) (x) := f(g(x))
+\]</div>
+<p>동일한 방식으로 표현식을 생성할 수 있다.
+아래 코드는 곱셈, 나눗셈, 사인 함수의 합성을 활용한 표현식을
+변수 할당에 사용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">degree</span> <span class="o">/</span> <span class="mf">360.0</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>표현식은 함수와 변수, 정수, 유리수, 문자열 등을 조합하여
+하나의 값(value)을 표현하도록 작성된 식이라고
+<a class="reference internal" href="ch04.html#sec-representation"><span class="std std-numref">4.2.3 절</span></a>에서 언급했다.
+그런데 <code class="docutils literal notranslate"><span class="pre">f(x1,</span> <span class="pre">...,</span> <span class="pre">xn)</span></code>와 같은 함수 호출 표현식은 또한
+함수 본문에 지정된 명령문을 실행하며,
+실행 도중 <code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문을 만나면
+지정된 값을 반환한다.</p>
+<p>예를 들어 아래 코드에서 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값은 지수승 함수 <code class="docutils literal notranslate"><span class="pre">np.exp()</span></code>가
+<code class="docutils literal notranslate"><span class="pre">np.log(2)</span></code>를 인자로 사용했을 때의 반환값을 가리킨다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="id11">
-<h2><span class="section-number">6.6. </span>함수호출<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id12">
-<h3><span class="section-number">6.6.1. </span>함수호출 실행과정<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">6.5. </span>함수호출 실행과정<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <p>함수호출 과정을 좀 더 자세히 살펴보자.
 예를 들어, 아래 함수 표현식이 가리키는 값이 어떤 순서대로 계산되는가를 확인하고 한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mul</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">mul</span><span class="p">(</span><span class="mh">0x4</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">)),</span> <span class="n">add</span><span class="p">(</span><span class="mh">0x3</span><span class="p">,</span> <span class="mo">0o5</span><span class="p">))</span>
@@ -1302,9 +1274,8 @@ Python
 <p>최종적으로 208이 계산되는 과정을 그림으로 나타내면 다음과 같다.
 아래 그림에서 ① ~ ⑧번 사이의 번호가 배정된 네모상자로 둘러싸인 부분이
 현재 실행중인 함수호출 또는 함수호출의 결과값을 나타낸다.</p>
-<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/fun_call.png" style="width:600px;"></div></div>
-<div class="section" id="id13">
-<h3><span class="section-number">6.6.2. </span>예제<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/fun_call.png" style="width:600px;"></div><div class="section" id="id12">
+<h3><span class="section-number">6.5.1. </span>예제<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20myAdd%28left,%20right%29%3A%0A%20%20%20%20return%20left%2Bright%0A%20%20%20%20%0Adef%20myMul%28left,%20right%29%3A%0A%20%20%20%20return%20left*right%0A%0AmyMul%28myAdd%282,%20myMul%280x4,%200x6%29%29,%20myAdd%280x3,%200o5%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 함수호출 실행과정</a>에서
 앞서 사용한 표현식과 동일하게 작동하는 표현식이 계산되는 과정을 살펴볼 수 있다.</p>
 <p><strong>주의:</strong> <code class="docutils literal notranslate"><span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">mul</span></code>과 같이 파이썬에서 이미 정의된 내장함수들의 계산과정은 시각화해서 보여지지 않는다.
@@ -1312,8 +1283,8 @@ Python
 함수의 이름만 다를 뿐 동일한 표현식이다.</p>
 </div>
 </div>
-<div class="section" id="id14">
-<h2><span class="section-number">6.7. </span>지역변수와 전역변수<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h2><span class="section-number">6.6. </span>지역변수와 전역변수<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <p>함수를 선언할 때 사용되는 매개변수와 함수 본체에서 선언되는 변수는 함수가 실행되는 동안에만 의미를 갖는 변수들이며,
 이런 변수들을 <strong>지역변수</strong>라 부른다.
 지역변수 가인 변수들은 <strong>전역변수</strong>라 부른다.</p>
@@ -1340,7 +1311,7 @@ Python
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1395</span><span class="o">/</span><span class="mf">3882888228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1055</span><span class="o">/</span><span class="mf">3882888228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">two_hour</span> <span class="o">=</span> <span class="n">hour_to_min</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">minutes</span><span class="p">)</span>
 
@@ -1375,413 +1346,8 @@ Python
 <a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20hour_to_min%28hour%29%3A%0A%20%20%20%20minutes%20%3D%20hour%20*%2060%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour_to_min%282%29%0Aprint%28minutes%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역변수 전역변수</a>에서
 <code class="docutils literal notranslate"><span class="pre">hour</span></code>와 <code class="docutils literal notranslate"><span class="pre">minutes</span></code>의 생존주기, 즉, 언제 생성되고 언제 사라지는지를 확인할 수 있다.</p>
 </div>
-<div class="section" id="id15">
-<h2><span class="section-number">6.8. </span>재귀함수<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
-<p>봉 감독의 영화(Movies by Bong, moBong)를 담고 있는 리스트가 아래와 같이 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moBong</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;기생충&quot;</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;설국열차&quot;</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;살인의 추억&quot;</span><span class="p">,</span> <span class="mi">2003</span><span class="p">]]]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>위 리스트는 3중이다. 리스트 안에 리스트, 또 리스트 안에 리스트.
-이제 아래와 같이 모든 항목을 나열하고자 한다.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">기생충</span>
-<span class="mi">2019</span>
-<span class="n">설국열차</span>
-<span class="mi">2013</span>
-<span class="n">살인의</span> <span class="n">추억</span>
-<span class="mi">2003</span>
-</pre></div>
-</div>
-<p>먼저, 위 리스트의 항목들을 하나씩 확인하려면 아래와 같이 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 활용해보자.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">moBong</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>기생충
-2019
-[&#39;설국열차&#39;, 2013, [&#39;살인의 추억&#39;, 2003]]
-</pre></div>
-</div>
-</div>
-</div>
-<p>그런데 위와 같이 하면 중첩으로 되어 있는 영화들을 제대로 풀어헤칠 수 없다.
-2중 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 활용해보자.</p>
-<p><strong>주의:</strong> 아래 코드에서 <code class="docutils literal notranslate"><span class="pre">isinstance(item,</span> <span class="pre">list)</span></code>는 <code class="docutils literal notranslate"><span class="pre">item</span></code> 변수가 가리키는 항목이
-리스트 자료형 여부를 확인한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">moBong</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">itemN</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">itemN</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>기생충
-2019
-설국열차
-2013
-[&#39;살인의 추억&#39;, 2003]
-</pre></div>
-</div>
-</div>
-</div>
-<p>여전히 삼중 리스트의 모든 항목을 나열하진 못한다.
-3중 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 활용해보자.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">moBong</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">itemN</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">itemN</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-                <span class="k">for</span> <span class="n">itemNN</span> <span class="ow">in</span> <span class="n">itemN</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="n">itemNN</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">itemN</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>기생충
-2019
-설국열차
-2013
-살인의 추억
-2003
-</pre></div>
-</div>
-</div>
-</div>
-<p>그런데 프로그램을 이렇게 구현하면 안된다.
-만약에 영화목록이 4중, 5중으로 구성된 리스트로 작성되었다면
-위 프로그램은 4중, 5중 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문으로 수정해야 하고,
-그러면서 프로그램의 길이와 복잡도가 기하급수적으로 증가하기 때문이다.</p>
-<p>처리해야 하는 데이터에 따라 프로그램이 수정되거나 복잡도가 증가하지 않는
-프로그램을 구현해야 한다.</p>
-<p>다시 한 번 위 세 개의 프로그램을 살펴보자.
-세 개의 프로그램은 사실상 아래 명령문을 반복해서 사용한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">항목</span> <span class="ow">in</span> <span class="n">리스트</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">항목</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-        <span class="n">명령문</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">항목</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>위 명령문은 리스트의 항목이 또 다른 리스트이면 그 리스트의 항목들을
-대상으로 동일한 확인작업을 수행하며,
-더 이상 리스트가 다른 리스트의 항목으로 포함되지 않을 때 까지 반복된다.
-즉, 모든 중첩 리스트가 해체될 까지 리스트 여부를 반복하며,
-리스트가 아니면 해당 항목을 화면에 출력한다.</p>
-<p>이런 반복작업을 <strong>재귀</strong>(recursion)라 부르며,
-반복되는 작업에 이름을 주면, 위 세 개의 코드를 하나의 함수로 정의할 수 있다.
-예를 들어, 아래와 같이 앞서 언급된 명령문에 <code class="docutils literal notranslate"><span class="pre">printItems</span></code>이란 이름을 주어 함수로 정의해보자.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printItems</span><span class="p">(</span><span class="n">aList</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">aList</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-            <span class="n">printItems</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">printItems</span></code> 함수는 좀 이상하다.
-정의가 끝나지 않았는데 자신을 자신 본체에서 사용한다.
-(4번 줄 참조)</p>
-<p>실제로 <code class="docutils literal notranslate"><span class="pre">printItems</span></code> 함수를 호출하면 실행과정 중에
-자신을 또다시 호출한다.
-단, 사용되는 인자가 다르며, 애초에 사용된 리스트의 항목이면서
-또다른 리스트가 인자로 사용된다.
-이런 함수를 자기 자신을 호출한다는 의미로 <strong>재귀함수</strong>(recursive function)라 부른다.</p>
-<p>사실 임의로 중첩된 리스트를 인자로 받아도 중첩을 모두 풀어버린다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">printItems</span><span class="p">(</span><span class="n">moBong</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>기생충
-2019
-설국열차
-2013
-살인의 추억
-2003
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="id16">
-<h3><span class="section-number">6.8.1. </span>예제: 콜라츠 추측<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
-<p>독일 수학자인 콜라츠(Collatz, L.)가 1937년에 아래 알고리즘을
-얼마나 많이 반복하면 최종적으로 숫자 1에 다다를 것인가를 질문했다.</p>
-<ul class="simple">
-<li><p>주어진 숫자가 짝수면 2로 나눈다.</p></li>
-<li><p>주어진 숫자가 홀수면 3배한 후 1을 더한다.</p></li>
-</ul>
-<p>실제로 숫자 7부터 시작해서 위 과정을 16번 반복하면 1에 다다른다.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1
-</pre></div>
-</div>
-<p>반면에 숫자 128부터 시작하면 7번만 반복하면 된다.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>128, 64, 32, 16, 8, 4, 2, 1
-</pre></div>
-</div>
-<p>즉, 처음 시작하는 값이 작다고 해서 반드시 먼저 끝나는 것이 아니다.
-또한 무지 오랫동안 반복해야 하는 경우도 있다.
-예를 들어, 129로 시작하면 무려 122번 반복해야 한다.</p>
-<p>아래 그림은 10,000까지의 숫자들과 관련된 반복회수를 보여준다.
-그림에서 알 수 있듯이 반복회수와 관련된 수학적 특징을 확인하기 어렵다.
-실제로 콜라츠의 질문에 대한 답이 여전히 알려지지 않았다.
-반면에 무한 반복되는 경우도 알려지지 않았다.</p>
-<p>콜라츠는 어떤 숫자로 시작하든지 반복잡업이 언젠가는 끝난다고 추측하였지만,
-언제 끝나는가는 수학적으로 알아내지 못했으며, 여전히 미해결 문제로 남아 있다.</p>
-<div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Collatz-stopping-time.svg/440px-Collatz-stopping-time.svg.png" style="width:400px;"></div>
-<p>&lt;그림출처: <a class="reference external" href="https://en.wikipedia.org/wiki/Collatz_conjecture">위키백과</a>&gt;</p>
-<p>콜라츠의 질문에 답하는 함수를 아래와 같이 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 이용하여 구현할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatzWhile</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0:
-            <span class="n">num</span> <span class="o">=</span> <span class="n">num</span><span class="o">//</span><span class="mi">2</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">num</span> <span class="o">=</span> <span class="n">num</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span>
-        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span>
-    <span class="k">return</span> <span class="n">count</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatzWhile</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatzWhile</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatzWhile</span><span class="p">(</span><span class="mi">129</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>121
-</pre></div>
-</div>
-</div>
-</div>
-<p>반면에 재귀를 이용할 경우 아래와 같이 구현한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz_</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0:
-        <span class="k">return</span> <span class="n">collatz_</span><span class="p">(</span><span class="n">num</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">collatz_</span><span class="p">(</span><span class="n">num</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatz_</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatz_</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatz_</span><span class="p">(</span><span class="mi">129</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>121
-</pre></div>
-</div>
-</div>
-</div>
-<p>반복되는 과정을 보고 싶으면 반복될 때마다 숫자를 출력하면 된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatzWhile_</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0:
-            <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
-            <span class="n">num</span> <span class="o">=</span> <span class="n">num</span><span class="o">//</span><span class="mi">2</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
-            <span class="n">num</span> <span class="o">=</span> <span class="n">num</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span>
-        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span>
-    <span class="k">return</span> <span class="n">count</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatzWhile_</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatzWhile_</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>128, 64, 32, 16, 8, 4, 2, 
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatzWhile_</span><span class="p">(</span><span class="mi">129</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>129, 388, 194, 97, 292, 146, 73, 220, 110, 55, 166, 83, 250, 125, 376, 188, 94, 47, 142, 71, 214, 107, 322, 161, 484, 242, 121, 364, 182, 91, 274, 137, 412, 206, 103, 310, 155, 466, 233, 700, 350, 175, 526, 263, 790, 395, 1186, 593, 1780, 890, 445, 1336, 668, 334, 167, 502, 251, 754, 377, 1132, 566, 283, 850, 425, 1276, 638, 319, 958, 479, 1438, 719, 2158, 1079, 3238, 1619, 4858, 2429, 7288, 3644, 1822, 911, 2734, 1367, 4102, 2051, 6154, 3077, 9232, 4616, 2308, 1154, 577, 1732, 866, 433, 1300, 650, 325, 976, 488, 244, 122, 61, 184, 92, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>121
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0:
-        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">collatz</span><span class="p">(</span><span class="n">num</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">collatz</span><span class="p">(</span><span class="n">num</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatz</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatz</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>128, 64, 32, 16, 8, 4, 2, 1
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatz</span><span class="p">(</span><span class="mi">129</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>129, 388, 194, 97, 292, 146, 73, 220, 110, 55, 166, 83, 250, 125, 376, 188, 94, 47, 142, 71, 214, 107, 322, 161, 484, 242, 121, 364, 182, 91, 274, 137, 412, 206, 103, 310, 155, 466, 233, 700, 350, 175, 526, 263, 790, 395, 1186, 593, 1780, 890, 445, 1336, 668, 334, 167, 502, 251, 754, 377, 1132, 566, 283, 850, 425, 1276, 638, 319, 958, 479, 1438, 719, 2158, 1079, 3238, 1619, 4858, 2429, 7288, 3644, 1822, 911, 2734, 1367, 4102, 2051, 6154, 3077, 9232, 4616, 2308, 1154, 577, 1732, 866, 433, 1300, 650, 325, 976, 488, 244, 122, 61, 184, 92, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>121
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="id17">
-<h2><span class="section-number">6.9. </span>함수호출과 스택 다이어그램<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h2><span class="section-number">6.7. </span>함수호출과 스택 다이어그램<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <p>함수를 호출하여 실행을 하면 컴퓨터 메모리의 스택(stack) 영역에 함수의 호출과 실행과정,
 그리고 실행 결과값과 관련된 정보의 변화가 일어난다.
 이런 정보의 변화를 <strong>프레임</strong>(frame)으로 다루며,
@@ -1811,7 +1377,7 @@ Python
 즉, 스택 다이어그램의 변화를 살펴볼 수 있다.</p>
 </div>
 <div class="section" id="vs">
-<h2><span class="section-number">6.10. </span>동적 타이핑 vs. 정적 타이핑<a class="headerlink" href="#vs" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.8. </span>동적 타이핑 vs. 정적 타이핑<a class="headerlink" href="#vs" title="Permalink to this headline">¶</a></h2>
 <p>함수는 임의의 값을 인자로 받는다.
 하지만 함수마다 다룰 수 있는 값들의 자료형이 존재하며,
 다룰 수 없는 자료형의 값이 인자로 사용되면 오류가 발생한다.</p>
@@ -1841,8 +1407,8 @@ Python
 즉, 처음부터 인자의 자료형을 지정하거나 확인하는 게 아니라
 프로그램을 실행하는 도중에 사용되는 함수 인자들의 자료형을 확인한다는 의미이다.
 이는 함수가 다루는 모든 값에 대해 동일하다.</p>
-<div class="section" id="id18">
-<h3><span class="section-number">6.10.1. </span>파이썬과 정적 타이핑<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3><span class="section-number">6.8.1. </span>파이썬과 정적 타이핑<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p>C, Java 등 많은 프로그래밍 언어는 동적 타이핑 대신에 <strong>정적 타이핑</strong>(static typing)을 지원한다.
 즉, 함수나 변수를 선언할 때 사용되는 변수들의 자료형과 인자 및 반환값의 자료형을
 애초부터 명시해야 하며 지정된 자료형이 사용되지 않을 경우 오류를 발생시킨다.</p>
@@ -1884,8 +1450,8 @@ Python
 <p>즉, 자료형의 명시는 함수 정의의 의도를 전달하는 역할만 수행하며,
 파이썬이 정적타이피을 지원한다는 의미는 아님에 주의해야 한다.</p>
 </div>
-<div class="section" id="id19">
-<h3><span class="section-number">6.10.2. </span>고계 함수와 제1종 객체<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3><span class="section-number">6.8.2. </span>고계 함수와 제1종 객체<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>파이썬에서는 함수도 하나의 값으로 간주된다.
 이렇게 하나의 값으로 간주되는 객체를
 <strong>제1종 객체</strong>(first-class object)라고 부른다.
@@ -1893,64 +1459,63 @@ Python
 <p>함수를 인자로 받거나 내주는 값으로 사용하는 함수를 <strong>고계 함수</strong>(higher-order function)라 부른다.</p>
 </div>
 </div>
-<div class="section" id="id20">
-<h2><span class="section-number">6.11. </span>연습문제<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+<div class="section" id="id17">
+<h2><span class="section-number">6.9. </span>연습문제<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<ol>
 <li><p>다음 조건을 만족시키는 <code class="docutils literal notranslate"><span class="pre">right_justify</span></code>라는 함수를 정의하라.</p>
 <ul class="simple">
 <li><p>인자는 하나만 받으며, 매개변수는 <code class="docutils literal notranslate"><span class="pre">s</span></code>라 부른다.</p></li>
-<li><p>문자열 하나를 인자로 받아 실행하면 해당 문자열의 끝이 70번째 칸에 위치하도록
+<li><p>문자열 하나를 인자로 받아 실행하면 해당 문자열의 끝이 20번째 칸에 위치하도록
 입력받은 문자열 앞에 충분한 공백이 위치하도록 출력(print)한다.</p></li>
 </ul>
-</li>
-</ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">right_justify</span><span class="p">(</span><span class="s1">&#39;monty&#39;</span><span class="p">)</span>
-<span class="go">                                                                monty</span>
+<span class="go">                   monty</span>
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>힌트: 문자열 결합 및 반복, 그리고 문자열의 길이를 되돌려주는 내장함수 `len` 활용 가능.
-</pre></div>
-</div>
-<p><br><br></p>
-<ol class="simple">
+<p>힌트: 문자열 결합 및 반복, 그리고 문자열의 길이를 되돌려주는 내장함수 <code class="docutils literal notranslate"><span class="pre">len</span></code> 활용 가능.
+<br><br></p>
+</li>
 <li><p>파이썬은 정의된 함수도 하나의 값으로 취급한다.
 따라서 함수를 다른 함수의 인자로 사용하거나 변수에 할당되는 값으로 사용될 수 있다.
 예를 들어, 아래에 정의된 <code class="docutils literal notranslate"><span class="pre">do_twice</span></code> 함수는 함수 <code class="docutils literal notranslate"><span class="pre">f</span></code>를 인자로 입력받으면
-그 함수를 두 번 호출하여 실행하도록 하는 함수이다.</p></li>
-</ol>
+그 함수를 두 번 호출하여 실행하도록 하는 함수이다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_twice</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
     <span class="n">f</span><span class="p">()</span>
     <span class="n">f</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>그리고 `print_spam` 이라는 함수를 두 번 호출하도록 `do_twice`를 활용하고자 하면 
-아래와 같이 프로그램을 작성하면 된다.
-```python
-def print_spam():
-    print(&#39;spam&#39;)
+<p>그리고 <code class="docutils literal notranslate"><span class="pre">print_spam</span></code> 이라는 함수를 두 번 호출하도록 <code class="docutils literal notranslate"><span class="pre">do_twice</span></code>를 활용하고자 하면
+아래와 같이 프로그램을 작성하면 된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_spam</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">)</span>
 
-do_twice(print_spam)
-```
-1. 이 프로그램을 직접 입력해서 실행해 보라.
-1. 아래 조건을 만족하도록 `do_twice` 함수를 수정하라. 
-    * 두 개의 인자를 사용한다.
-    * 첫째 매개변수는 하나의 인자를 받는 함수를 인자로 입력받는다.
-    * 둘째 매개변수는 첫째 인자에 사용된 함수의 인자로 사용될 수 있는 값을 인자로 입력받는다.
-    * 첫째 인자로 사용된 함수를 둘째 인자로 사용된 값을 이용하여 두 번 연속 호출한다. 
-1. 아래 조건을 만족하도록 `do_four` 함수를 수정하라. 
-    * 두 개의 인자를 사용한다.
-    * 첫째 매개변수는 하나의 인자를 받는 함수를 인자로 입력받는다.
-    * 둘째 매개변수는 첫째 인자에 사용된 함수의 인자로 사용될 수 있는 값을 인자로 입력받는다.
-    * 첫째 인자로 사용된 함수를 둘째 인자로 사용된 값을 이용하여 네 번 연속 호출한다. 
-    * 앞서 정의된 `do_twice` 함수를 반드시 활용한다.
+<span class="n">do_twice</span><span class="p">(</span><span class="n">print_spam</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><br><br>
+<ol class="simple">
+<li><p>이 프로그램을 직접 입력해서 실행해 보라.</p></li>
+<li><p>아래 조건을 만족하도록 <code class="docutils literal notranslate"><span class="pre">do_twice</span></code> 함수를 수정하라.</p>
+<ul class="simple">
+<li><p>두 개의 인자를 사용한다.</p></li>
+<li><p>첫째 매개변수는 하나의 인자를 받는 함수를 인자로 입력받는다.</p></li>
+<li><p>둘째 매개변수는 첫째 인자에 사용된 함수의 인자로 사용될 수 있는 값을 인자로 입력받는다.</p></li>
+<li><p>첫째 인자로 사용된 함수를 둘째 인자로 사용된 값을 이용하여 두 번 연속 호출한다.</p></li>
+</ul>
+</li>
+<li><p>아래 조건을 만족하도록 <code class="docutils literal notranslate"><span class="pre">do_four</span></code> 함수를 수정하라.</p>
+<ul class="simple">
+<li><p>두 개의 인자를 사용한다.</p></li>
+<li><p>첫째 매개변수는 하나의 인자를 받는 함수를 인자로 입력받는다.</p></li>
+<li><p>둘째 매개변수는 첫째 인자에 사용된 함수의 인자로 사용될 수 있는 값을 인자로 입력받는다.</p></li>
+<li><p>첫째 인자로 사용된 함수를 둘째 인자로 사용된 값을 이용하여 네 번 연속 호출한다.</p></li>
+<li><p>앞서 정의된 <code class="docutils literal notranslate"><span class="pre">do_twice</span></code> 함수를 반드시 활용한다.
+<br><br>
 답: <a class="reference external" href="http://greenteapress.com/thinkpython2/code/do_four.py">http://greenteapress.com/thinkpython2/code/do_four.py</a>
-<br><br></p>
-<ol>
-<li><p>이번 문제는 지금까지 배운 내용을로 풀 수 있다.</p>
-<ol>
+<br><br></p></li>
+</ul>
+</li>
+</ol>
+</li>
 <li><p>다음과 같은 격자를 그리는 함수를 작성하라.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
 <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
@@ -1971,70 +1536,26 @@ do_twice(print_spam)
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">print</span></code> 함수는 기본적으로 줄바꿈을 실행한다.
 줄바꿈을 하지 않기 위해서는 에를 들어 아래와 같이 실행하면 된다.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>위 프로그램을 실행하면 <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span></code> 형식으로 출력된다.
 <br><br></p>
 </li>
-<li><p>4개의 행과 4개의 열을 갖는 격자를 그리는 함수를 작성하라.</p></li>
-</ol>
+<li><p>4개의 행과 4개의 열을 갖는 격자를 그리는 함수를 작성하라.</p>
 <p>답: <a class="reference external" href="http://greenteapress.com/thinkpython2/code/grid.py">http://greenteapress.com/thinkpython2/code/grid.py</a>
 <br><br>
 이 연습문제는 아래 책의 Oualline에 포함된 연습문제를 응용하였다.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     Practical C Programming, Third Edition, O’Reilly Media, 1997.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Practical C Programming, Third Edition, O’Reilly Media, 1997.
 </pre></div>
 </div>
+</li>
+</ol>
+<p><br><br></p>
 <ol class="simple">
 <li><p>위 함수를 일반화 하라. 즉, 입력값 n이 주어지면
-n개의 행과 n개의 열을 갖는 격자를 그리는 함수를 작성하라.
-<br><br></p></li>
-</ol>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">printItems</span></code> 수정하여 <code class="docutils literal notranslate"><span class="pre">moBong</span></code>에 포함된 항목들을 아래와 같이
-출력하도록 하는 <code class="docutils literal notranslate"><span class="pre">printItems2</span></code> 함수를 구현하라.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> 기생충
- 2019
-     설국열차
-     2013
-         살인의 추억
-         2003
-</pre></div>
-</div>
-<p><strong>힌트</strong></p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">printItems</span></code> 함수의 인자를 두 개로 수정한다.
-하나는 리스트의 인자를 다루며, 다른 하나는 들어쓰기 정도를 다루는
-인자를 하나 받는다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printItems2</span><span class="p">(</span><span class="n">aList</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
-<span class="n">명령문</span>
-</pre></div>
-</div>
-</li>
-<li><p>위에서 <code class="docutils literal notranslate"><span class="pre">level</span></code> 매개변수의 인자는 탭키를 사용하는 횟수를 나타내도록 한다.
-그러면 <code class="docutils literal notranslate"><span class="pre">printItems2(moBong,</span> <span class="pre">0)</span></code>을 실행하면 원하는 결과가 나와야 한다.</p></li>
-<li><p>탭 출력은 <code class="docutils literal notranslate"><span class="pre">print('\t')</span></code>를 이용하면 된다.
-<br><br></p></li>
-</ul>
-</li>
-<li><p>위 과제에서 구현한 <code class="docutils literal notranslate"><span class="pre">printItems2</span></code> 함수를 아래와 같이 수정하라.</p>
-<ul>
-<li><p>인자수를 세 개로 늘린다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printItems3</span><span class="p">(</span><span class="n">aList</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="n">명령문</span>
-</pre></div>
-</div>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">indent</span></code> 매개변수의 키워드인자 값이 <code class="docutils literal notranslate"><span class="pre">True</span></code>이면 연습4에서 처럼 들여쓰기를 하고,
-<code class="docutils literal notranslate"><span class="pre">False</span></code>이면 들여쓰기를 하지 않아야 한다.
-<br><br></p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">printItems</span></code> 함수를 재귀가 아닌 <code class="docutils literal notranslate"><span class="pre">while</span></code> 함수를 이용하여 구현하라.</p>
-<p><strong>힌트:</strong> <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문에 사용되는 조건식을 선택하는 게 핵심이다.
-재귀로 구현된 함수로부터 이에대한 힌트를 얻을 수 있다.</p>
-</li>
+n개의 행과 n개의 열을 갖는 격자를 그리는 함수를 작성하라.</p></li>
 </ol>
 </div>
 </div>
