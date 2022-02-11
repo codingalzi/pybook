@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. 기본 자료형 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>11. 모음 자료형 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. 함수" href="ch06.html" />
-    <link rel="prev" title="4. 변수, 값, 표현식, 명령문" href="ch04.html" />
+    <link rel="next" title="12. 마크다운과 주피터 노트북" href="ch20.html" />
+    <link rel="prev" title="10. 반복문" href="ch10.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,8 +113,8 @@
    4. 변수, 값, 표현식, 명령문
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch05.html">
    5. 기본 자료형
   </a>
  </li>
@@ -143,8 +143,8 @@
    10. 반복문
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch11.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    11. 모음 자료형
   </a>
  </li>
@@ -199,7 +199,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/ch05.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/ch11.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -219,7 +219,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Fch05.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Fch11.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -240,7 +240,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/notebooks/ch05.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/notebooks/ch11.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -257,6 +257,44 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sec-string">
+   11.1. 문자열
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   11.2. 리스트
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   11.3. 튜플
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   11.4. 사전
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   11.5. 집합
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   11.6. 조건제시법
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -264,11 +302,49 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>기본 자료형</h1>
+                <h1>모음 자료형</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sec-string">
+   11.1. 문자열
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   11.2. 리스트
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   11.3. 튜플
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   11.4. 사전
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   11.5. 집합
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   11.6. 조건제시법
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -276,27 +352,24 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">5. </span>기본 자료형<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>참고: <a class="reference external" href="https://scipy-lectures.org/intro/language/basic_types.html">SciPy 2.2장</a></p>
-<ol class="simple">
-<li><p>기본자료형이란?</p></li>
-<li><p>정수 자료형(int)</p></li>
-<li><p>부동소수점 자료형(float)</p></li>
-<li><p>부울 자료형(bool) (간단히, 나중에 if, for 명령문과 함께 자세히.)</p></li>
-<li><p>문자열 자료형(str) (간단히, 나중에 모음 자료형 다룰 때 보다 자세히.)</p>
-<ul class="simple">
-<li><p>input() 함수 소개 및 활용. print() 명령문과 함께.\</p></li>
-<li><p>whitespace 언급할 것: <a class="reference external" href="https://www.unf.edu/~cwinton/html/cop3601/s10/class.notes/C4-PurgeBlnkLns.pdf">여기</a>와 <a class="reference external" href="https://www.geeksforgeeks.org/string-whitespace-in-python/">여기</a> 참고.</p></li>
-<li><p>다음 사항고 언급</p></li>
-</ul>
-</li>
-</ol>
-<div class="info admonition">
-<p class="admonition-title">문자열 <code class="docutils literal notranslate"><span class="pre">''</span></code> 와 문자의 <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> 차이점</p>
-<p>빈 문자열<font size="2">empty string</font> <code class="docutils literal notranslate"><span class="pre">''</span></code> 는
-아무런 문자를 포함하지 않으며 따라서 문자열의 길이, 즉 문자열에 포함된 문자의 개수가 0이다.
-반면에 <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> 는 눈에 보이지는 않지만 공백 문자 하나를 포함하는 문자열이며 길이가 1이다.</p>
-<p>참고: <a class="reference internal" href="ch11.html#sec-string"><span class="std std-numref">11.1 절</span></a></p>
+<h1><span class="section-number">11. </span>모음 자료형<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sec-string">
+<span id="id2"></span><h2><span class="section-number">11.1. </span>문자열<a class="headerlink" href="#sec-string" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">11.2. </span>리스트<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">11.3. </span>튜플<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">11.4. </span>사전<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">11.5. </span>집합<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id7">
+<h2><span class="section-number">11.6. </span>조건제시법<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -325,17 +398,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="ch04.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="ch10.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4. </span>변수, 값, 표현식, 명령문</p>
+            <p class="prev-next-title"><span class="section-number">10. </span>반복문</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="ch06.html" title="next page">
+    <a class='right-next' id="next-link" href="ch20.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>함수</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>마크다운과 주피터 노트북</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
