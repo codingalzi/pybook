@@ -129,13 +129,18 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="ch08.html">
+   8. 재귀
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="ch20.html">
-   8. 마크다운과 주피터 노트북
+   9. 마크다운과 주피터 노트북
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch21.html">
-   9. MyST 활용 예제
+   10. MyST 활용 예제
   </a>
  </li>
 </ul>
@@ -240,17 +245,14 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>기본 자료형</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                    </div>
-                </div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>기본 자료형</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
             </div>
             
               <div>
@@ -290,8 +292,51 @@ input() 함수 소개 및 활용. print() 명령문과 함께.</p></li>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1><span class="section-number">5. </span>기본 자료형<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>참고: <a class="reference external" href="https://scipy-lectures.org/intro/language/basic_types.html">SciPy 2.2장</a></p>
+<ol class="simple">
+<li><p>기본자료형이란?</p></li>
+<li><p>정수 자료형(int)</p></li>
+<li><p>부동소수점 자료형(float)</p></li>
+<li><p>부울 자료형(bool) (간단히, 나중에 if, for 명령문과 함께 자세히.)</p></li>
+<li><p>문자열 자료형(str) (간단히, 나중에 모음 자료형 다룰 때 보다 자세히.)
+input() 함수 소개 및 활용. print() 명령문과 함께.</p></li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="ch04.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -308,7 +353,7 @@ input() 함수 소개 및 활용. print() 명령문과 함께.</p></li>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+        
         </div>
     </div>
     <footer class="footer">

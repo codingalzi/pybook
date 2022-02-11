@@ -17,16 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-two_hour = hour_to_min(2)
-print(minutes)
+abs('-3.3')
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1397/3882888228.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0mtwo_hour[0m [0;34m=[0m [0mhour_to_min[0m[0;34m([0m[0;36m2[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0mprint[0m[0;34m([0m[0mminutes[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m/tmp/ipykernel_2799/4224452616.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mabs[0m[0;34m([0m[0;34m'-3.3'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mNameError[0m: name 'minutes' is not defined
-NameError: name 'minutes' is not defined
+[0;31mTypeError[0m: bad operand type for abs(): 'str'
+TypeError: bad operand type for abs(): 'str'
 
