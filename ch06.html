@@ -353,7 +353,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#sec-keyword-arguments">
      6.4.4. 키워드 인자
     </a>
    </li>
@@ -505,7 +505,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#sec-keyword-arguments">
      6.4.4. 키워드 인자
     </a>
    </li>
@@ -1182,52 +1182,73 @@ first-class와 second-class는 사용법상 구분을 나타내는 반면에
 <span class="gp">&gt;&gt;&gt; </span>
 </pre></div>
 </div>
-<div class="proof example admonition" id="exp:first-class-function">
-<p class="admonition-title"><span class="caption-number">Example 6.4 </span></p>
+<div class="info admonition">
+<p class="admonition-title">C 언어의 포인터 활용</p>
+<p>C 언어는 제1종 객체의 범위가 매우 제한적이다.
+반면에 파이썬,
+C++, C#,
+자바<font size="2">Java</font>,
+자바스크립트<font size="2">Javascript</font>,
+스위프트<font size="2">Swift</font> 등
+보다 현대적인 프로그래밍 언어는
+이미 또는 점점 더 거의 모든 객체를 제1종 객체로 지원한다.</p>
+<p>C 언어는 함수, 구조체 등 제1종 객체가 아닌 객체를
+포인터를 이용하여 다룬다.
+포인터가 C 언어에서 핵심적인 역할을 수행하는 이유가 여기에 있다.</p>
+</div>
+<div class="proof example admonition" id="exp:first-class-function_1">
+<p class="admonition-title"><span class="caption-number">Example 6.4 </span> (함수를 인자로 받는 함수)</p>
 <div class="example-content section" id="proof-content">
-<p><code class="docutils literal notranslate"><span class="pre">do_twice()</span></code>는 인자 없는 함수 하나를 입력 받아
-해당 함수를 두 번 호출한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_twice</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-    <span class="n">f</span><span class="p">()</span>
-    <span class="n">f</span><span class="p">()</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">print_spam()</span></code>은 <code class="docutils literal notranslate"><span class="pre">'스팸'</span></code> 이란 단어를 출력한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_spam</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;스팸&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>이제 <code class="docutils literal notranslate"><span class="pre">print_spam()</span></code> 함수를 두 번 호출해서 <code class="docutils literal notranslate"><span class="pre">'스팸'</span></code> 단어를
-두 번 출력하기 위해 <code class="docutils literal notranslate"><span class="pre">do_twice()</span></code> 함수를 호출할 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">do_twice</span><span class="p">(</span><span class="n">print_spam</span><span class="p">)</span>
-<span class="go">스팸</span>
-<span class="go">스팸</span>
-</pre></div>
-</div>
-<p>아래 조건을 만족하도록 <code class="docutils literal notranslate"><span class="pre">do_twice()</span></code> 함수를 수정해보자.</p>
+<p>아래 조건을 만족하도록 <code class="docutils literal notranslate"><span class="pre">do_twice()</span></code> 함수를 정의해보자.</p>
 <ul class="simple">
 <li><p>두 개의 인자를 받는다.</p></li>
 <li><p>첫째 인자는 하나의 인자를 받는 함수가 사용된다.</p></li>
 <li><p>둘째 인자는 첫째 인자로 사용된 함수의 인자로 사용될 값이다.</p></li>
-<li><p>첫째 인자로 들어온 함수를 둘째 인자로 들어온 값과 함께 2번 연속 호출한다.</p></li>
+<li><p>둘째 인자로 들어온 값에 대해 두 번 연속 적용한 값을 반환한다.</p></li>
 </ul>
-<p>다음과 같이 할 수 있다.</p>
+<p>함수 <code class="docutils literal notranslate"><span class="pre">f</span></code>를 인자 <code class="docutils literal notranslate"><span class="pre">x</span></code>에 두 번 연속 적용한다는 의미는<code class="docutils literal notranslate"><span class="pre">f(f(x))</span></code>를 의미한다.
+따라서 <code class="docutils literal notranslate"><span class="pre">do_twice()</span></code> 함수를 다음과 같이 정의할 수 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_twice</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
-    <span class="n">func</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-    <span class="n">func</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>아래 조건을 만족하도록 <code class="docutils literal notranslate"><span class="pre">do_four()</span></code> 함수를 정의해보자.</p>
-<ul class="simple">
-<li><p>두 개의 인자를 받는다.</p></li>
-<li><p>첫째 인자는 하나의 인자를 받는 함수가 사용된다.</p></li>
-<li><p>둘째 인자는 첫째 인자로 사용된 함수의 인자로 사용될 값이다.</p></li>
-<li><p>첫째 인자로 들어온 함수를 둘째 인자로 들어온 값을 이용하여 4번 연속 호출한다.</p></li>
-<li><p>앞서 정의한 <code class="docutils literal notranslate"><span class="pre">do_twice()</span></code> 함수를 반드시 활용한다.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">do_four</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
-    <span class="n">do_twice</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
-    <span class="n">do_twice</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
+<p><code class="docutils literal notranslate"><span class="pre">three_times()</span></code> 함수는 인자의 세 배를 반환한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">three_times</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">three_times()</span></code> 함수를 정수 <code class="docutils literal notranslate"><span class="pre">2</span></code>에 대해 연속으로 적용한 값은 18이다.
+실제로 2의 세 배는 6, 6의 세 배는 18이다.
+다음과 같이 확인할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">do_twice</span><span class="p">(</span><span class="n">three_times</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">18</span>
+</pre></div>
+</div>
+<p>위 계산은 다음과 동일하다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">three_times</span><span class="p">(</span><span class="n">three_times</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">18</span>
+</pre></div>
+</div>
+</div>
+</div><div class="proof example admonition" id="exp:first-class-function_2">
+<p class="admonition-title"><span class="caption-number">Example 6.5 </span> (함수를 반환하는 함수)</p>
+<div class="example-content section" id="proof-content">
+<p><code class="docutils literal notranslate"><span class="pre">adding_n_func(n)</span></code>를 호출하면
+<code class="docutils literal notranslate"><span class="pre">n</span></code>을 더하는 함수 <code class="docutils literal notranslate"><span class="pre">myAdd_n()</span></code>을 반환한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">adding_n_func</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">myAdd_n</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">m</span>
+    
+    <span class="k">return</span> <span class="n">myAdd_n</span>
+</pre></div>
+</div>
+<p>그려면 <code class="docutils literal notranslate"><span class="pre">adding_n_func(10)</span></code>은 입력값에 10을 더한 값을 반환하는 함수를
+반환한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myAdd10</span> <span class="o">=</span> <span class="n">adding_n_func</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myAdd10</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">13</span>
 </pre></div>
 </div>
 </div>
@@ -1246,8 +1267,8 @@ C++, C#,
 포인터가 C 언어에서 핵심적인 역할을 수행하는 이유가 여기에 있다.</p>
 </div>
 </div>
-<div class="section" id="id10">
-<h3><span class="section-number">6.4.4. </span>키워드 인자<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="sec-keyword-arguments">
+<span id="id10"></span><h3><span class="section-number">6.4.4. </span>키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 여러 개의 인자를 받을 수 있다.
 그러면 각 인자를 공백<font size="2">space</font>으로 구분하여
 함께 한 줄에 출력한다.</p>
@@ -1321,17 +1342,16 @@ Python
 간단한 예제는 <a class="reference external" href="https://velog.io/&#64;janeljs/python-print-sep-end-file-flush">이곳</a>에서 확인할 수 있다.</p>
 </div>
 <div class="proof example admonition" id="keyword_argument">
-<p class="admonition-title"><span class="caption-number">Example 6.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 6.6 </span></p>
 <div class="example-content section" id="proof-content">
-<p>아래 함수는 <code class="docutils literal notranslate"><span class="pre">myAdd()</span></code> 처럼 두 인자의 합을 구한다.
-다만 둘째 매개 변수가 10을 키워드 인자로 사용한다.</p>
+<p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">myAdd10()</span></code> 함수를 키워드 인자를 이용하여
+정의하는 방식을 보여준다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myAdd10</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">add10</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
     <span class="k">return</span> <span class="n">add10</span>
 </pre></div>
 </div>
-<p>따라서 둘째 인자를 반드시 입력하지 않아도 되며,
-그럴 경우 둘째 인자는 자동으로 10이 사용된다.</p>
+<p>둘째 인자가 생략되면 자동으로 10이 대신 사용된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># right=10</span>
 <span class="go">15</span>
 </pre></div>
@@ -1452,7 +1472,7 @@ Python
 <p>함수의 실행과 함께 생성된 프레임은 함수의 실행이 종료되면 스택에서 사라진다.
 하지만 함수의 반환값은 지정된 변수에 할당되거나 다른 함수의 인자로 전달된다.</p>
 <div class="proof example admonition" id="stack-diagram">
-<span id="exp-stack-diagram"></span><p class="admonition-title"><span class="caption-number">Example 6.6 </span> (프레임의 생성과 사멸)</p>
+<span id="exp-stack-diagram"></span><p class="admonition-title"><span class="caption-number">Example 6.7 </span> (프레임의 생성과 사멸)</p>
 <div class="example-content section" id="proof-content">
 <p>다음 코드를 이용하여 함수 호출과 프레임 생성 및 사멸의 관계를 알아보자.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hour2min</span><span class="p">(</span><span class="n">hour</span><span class="p">):</span>
@@ -1495,7 +1515,7 @@ Python
 이렇게 작동하는 구조를 일반적으로 <strong>스택 자료구조</strong>라 하며,
 이런 의미에서 이와 같은 프레임의 구조를
 <strong>스택 다이어그램</strong>(stack diagram)이라 부른다.</p>
-<p><a class="reference internal" href="#exp-stack-diagram"><span class="std std-numref">Example 6.6</span></a>의 프로그램 실행 과정에서의
+<p><a class="reference internal" href="#exp-stack-diagram"><span class="std std-numref">Example 6.7</span></a>의 프로그램 실행 과정에서의
 스택 다이어그램의 변화는 다음과 같다.</p>
 <ul class="simple">
 <li><p>프레임 생성 순서</p></li>
@@ -1529,6 +1549,8 @@ Python
 <p>힌트: 입력 문자열의 길이를 확인 한 후에 출력할 문자열을 지정하라.
 문자열의 길이는 <code class="docutils literal notranslate"><span class="pre">len()</span></code> 함수를 이용한다.</p>
 </li>
+<li><p>지금까지 배운 방식만을 이용하여 다음 문제를 해결하라.</p>
+<ol>
 <li><p>다음과 같은 격자를 그리는 함수를 작성하라.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
 <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
@@ -1543,32 +1565,11 @@ Python
 <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
 </pre></div>
 </div>
-<p>힌트: 한 줄에 하나 이상의 값을 출력하려면 <code class="docutils literal notranslate"><span class="pre">print</span></code> 함수에 여러 인자를 사용하면 된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">print</span></code> 함수는 기본적으로 줄바꿈을 실행한다.
-줄바꿈을 하지 않기 위해서는 에를 들어 아래와 같이 실행하면 된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>위 프로그램을 실행하면 <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span></code> 형식으로 출력된다.
-<br><br></p>
+<p>힌트: <a class="reference internal" href="#sec-keyword-arguments"><span class="std std-numref">6.4.4</span></a>절의 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수 설명 참고.</p>
 </li>
-<li><p>4개의 행과 4개의 열을 갖는 격자를 그리는 함수를 작성하라.</p>
-<p>답: <a class="reference external" href="http://greenteapress.com/thinkpython2/code/grid.py">http://greenteapress.com/thinkpython2/code/grid.py</a>
-<br><br>
-이 연습문제는 아래 책의 Oualline에 포함된 연습문제를 응용하였다.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Practical C Programming, Third Edition, O’Reilly Media, 1997.
-</pre></div>
-</div>
-</li>
+<li><p>위 문제와 유사하게 4개의 행과 4개의 열을 갖는 격자를 그리는 함수를 작성하라.</p></li>
 </ol>
-<p><br><br></p>
-<ol class="simple">
-<li><p>위 함수를 일반화 하라. 즉, 입력값 n이 주어지면
-n개의 행과 n개의 열을 갖는 격자를 그리는 함수를 작성하라.</p></li>
+</li>
 </ol>
 </div>
 </div>
