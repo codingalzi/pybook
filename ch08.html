@@ -282,16 +282,16 @@
      8.1.1. 비교 연산자
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     8.1.2. 논리 연산자
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   8.2. 논리 연산자
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if-else">
-   8.3.
+   8.2.
    <code class="docutils literal notranslate">
     <span class="pre">
      if
@@ -311,12 +311,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chained-conditionals">
-   8.4. Chained conditionals
+   8.3. Chained conditionals
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nested-conditionals">
-   8.5. Nested conditionals
+   8.4. Nested conditionals
   </a>
  </li>
 </ul>
@@ -349,16 +349,16 @@
      8.1.1. 비교 연산자
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     8.1.2. 논리 연산자
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   8.2. 논리 연산자
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if-else">
-   8.3.
+   8.2.
    <code class="docutils literal notranslate">
     <span class="pre">
      if
@@ -378,12 +378,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chained-conditionals">
-   8.4. Chained conditionals
+   8.3. Chained conditionals
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nested-conditionals">
-   8.5. Nested conditionals
+   8.4. Nested conditionals
   </a>
  </li>
 </ul>
@@ -523,9 +523,8 @@
 </div>
 </div>
 </div></div>
-</div>
 <div class="section" id="id4">
-<h2><span class="section-number">8.2. </span>논리 연산자<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">8.1.2. </span>논리 연산자<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>There are three <strong>logical operators</strong>: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>.
 The semantics (meaning) of these operators is
 similar to their meaning in English.  For example,
@@ -547,8 +546,9 @@ Any nonzero number is interpreted as <code class="docutils literal notranslate">
 it that might be confusing.  You might want to avoid it (unless
 you know what you are doing).</p>
 </div>
+</div>
 <div class="section" id="if-else">
-<h2><span class="section-number">8.3. </span><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span> <span class="pre">...</span></code> 조건문<a class="headerlink" href="#if-else" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2. </span><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span> <span class="pre">...</span></code> 조건문<a class="headerlink" href="#if-else" title="Permalink to this headline">¶</a></h2>
 <p>변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 음수가 아닐 때에는 음수가 아니다 라는 내용을 출력하려면
 다음과 같이 조건문을 작성한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -570,7 +570,7 @@ you know what you are doing).</p>
 </ul>
 </div>
 <div class="section" id="chained-conditionals">
-<h2><span class="section-number">8.4. </span>Chained conditionals<a class="headerlink" href="#chained-conditionals" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.3. </span>Chained conditionals<a class="headerlink" href="#chained-conditionals" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes there are more than two possibilities and we need more than
 two branches.  One way to express a computation like that is a
 <strong>chained conditional</strong>:</p>
@@ -601,7 +601,7 @@ ends.  Even if more than one condition is true, only the
 first true branch runs.</p>
 </div>
 <div class="section" id="nested-conditionals">
-<h2><span class="section-number">8.5. </span>Nested conditionals<a class="headerlink" href="#nested-conditionals" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.4. </span>Nested conditionals<a class="headerlink" href="#nested-conditionals" title="Permalink to this headline">¶</a></h2>
 <p>One conditional can also be nested within another.  We could have
 written the example in the previous section like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
