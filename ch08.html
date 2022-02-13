@@ -273,8 +273,25 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   8.1. 부울 표현식
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     8.1.1. 비교 연산자
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   8.2. 논리 연산자
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if-else">
-   8.1.
+   8.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      if
@@ -290,23 +307,6 @@
     </span>
    </code>
    조건문
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   8.2. 부울 표현식
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     8.2.1. 비교 연산자
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   8.3. 논리 연산자
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -340,8 +340,25 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   8.1. 부울 표현식
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     8.1.1. 비교 연산자
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   8.2. 논리 연산자
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if-else">
-   8.1.
+   8.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      if
@@ -357,23 +374,6 @@
     </span>
    </code>
    조건문
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   8.2. 부울 표현식
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     8.2.1. 비교 연산자
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   8.3. 논리 연산자
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -407,40 +407,19 @@
 <p>위 조건문이 실행되는 순간 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 0보다 작으면 <code class="docutils literal notranslate"><span class="pre">'x는</span> <span class="pre">음수'</span></code>
 라는 문장을 출력하고,
 그렇지 않으면 다음 명령문으로 넘어간다.</p>
-<p>키워드 <code class="docutils literal notranslate"><span class="pre">if</span></code> 다음에 나온 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>이 <strong>조건식</strong><font size="2">condition</font>이며
-그 조건이 참일 때만 들여쓰기와 함께 작성된 명령문,
-즉 조건문의 본문이 실행된다.
-조건문의 본문에 임의의 명령문이 사용될 수 있으며 비어둘 수 없다.</p>
-<p>조건문의 본문을 비워 둔 다음에 나중에 다시 살펴보고자 하는 경우
+<p>키워드 <code class="docutils literal notranslate"><span class="pre">if</span></code> 다음에 나온 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>이 <strong>조건</strong><font size="2">condition</font>이며
+참 또는 거짓을 가리키는 부울 표현식<font size="2">boolean expression</font>이 사용된다.
+조건이 참일 때만 들여쓰기와 함께 작성된 명령문,
+즉 조건문의 본문이 실행된다.</p>
+<p>조건문의 본문은 임의의 명령문이 사용될 수 있으며 비어둘 수 없다.
+조건문의 본문을 비워 둔 다음에 나중에 다시 살펴보고자 하는 경우
 아무 것도 하지 말고 지나가라는 의미의 <code class="docutils literal notranslate"><span class="pre">pass</span></code> 명령문을 사용하곤 한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="k">pass</span>          <span class="c1"># 음수인 경우 할 일을 나중에 추가할 것!</span>
 </pre></div>
 </div>
-<div class="section" id="if-else">
-<h2><span class="section-number">8.1. </span><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span> <span class="pre">...</span></code> 조건문<a class="headerlink" href="#if-else" title="Permalink to this headline">¶</a></h2>
-<p>변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 음수가 아닐 때에는 음수가 아니다 라는 내용을 출력하려면
-다음과 같이 조건문을 작성한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수 아님!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>이처럼 조건 제어문의 일반적인 형식은 다음과 같다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건식</span><span class="p">:</span>
-    <span class="n">명령문1</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">명령문2</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">명령문1</span></code>: 조건식이 참일 때 실행</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">명령문2</span></code>: 조건식이 거짓일 때 실행</p></li>
-</ul>
-</div>
 <div class="section" id="id2">
-<h2><span class="section-number">8.2. </span>부울 표현식<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.1. </span>부울 표현식<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p><strong>부울 표현식</strong><font size="2">boolean expression</font>은
 <code class="docutils literal notranslate"><span class="pre">True</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">False</span></code>를 가리키는 표현식이다.
 예를 들어, 두 값을 동치성 여부를 판단하는 연산자 <code class="docutils literal notranslate"><span class="pre">==</span></code>를
@@ -501,7 +480,7 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h3><span class="section-number">8.2.1. </span>비교 연산자<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.1. </span>비교 연산자<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">==</span></code>는 두 값의 동치여부를 판단하는 비교 연산자이다.
 이외에 다음 비교 연산자가 참, 거짓을 가리키는 부울 표현식에 많이 사용된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span>       <span class="c1"># x와 y가 서로 다른 값을 가리킬 때 참</span>
@@ -546,7 +525,7 @@
 </div></div>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">8.3. </span>논리 연산자<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2. </span>논리 연산자<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>There are three <strong>logical operators</strong>: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>.
 The semantics (meaning) of these operators is
 similar to their meaning in English.  For example,
@@ -567,6 +546,28 @@ Any nonzero number is interpreted as <code class="docutils literal notranslate">
 <p>This flexibility can be useful, but there are some subtleties to
 it that might be confusing.  You might want to avoid it (unless
 you know what you are doing).</p>
+</div>
+<div class="section" id="if-else">
+<h2><span class="section-number">8.3. </span><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span> <span class="pre">...</span></code> 조건문<a class="headerlink" href="#if-else" title="Permalink to this headline">¶</a></h2>
+<p>변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 음수가 아닐 때에는 음수가 아니다 라는 내용을 출력하려면
+다음과 같이 조건문을 작성한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수 아님!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>이처럼 조건 제어문의 일반적인 형식은 다음과 같다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건식</span><span class="p">:</span>
+    <span class="n">명령문1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">명령문2</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">명령문1</span></code>: 조건식이 참일 때 실행</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">명령문2</span></code>: 조건식이 거짓일 때 실행</p></li>
+</ul>
 </div>
 <div class="section" id="chained-conditionals">
 <h2><span class="section-number">8.4. </span>Chained conditionals<a class="headerlink" href="#chained-conditionals" title="Permalink to this headline">¶</a></h2>
