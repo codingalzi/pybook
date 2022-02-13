@@ -54,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. 모듈" href="ch07.html" />
+    <link rel="next" title="7. 함수의 인터페이스" href="ch07.html" />
     <link rel="prev" title="5. 기본 자료형" href="ch05.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -127,7 +127,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch07.html">
-   7. 모듈
+   7. 함수의 인터페이스
   </a>
  </li>
  <li class="toctree-l1">
@@ -151,13 +151,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="ch12.html">
+   12. 파일
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   13. 모듈
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="ch20.html">
-   12. 마크다운과 주피터 노트북
+   14. 마크다운과 주피터 노트북
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch21.html">
-   13. MyST 활용 예제
+   15. MyST 활용 예제
   </a>
  </li>
 </ul>
@@ -627,14 +637,14 @@
 <p class="admonition-title">인자를 받지 않는 함수의 호출</p>
 <p>인자를 사용하지 않는 함수라 하더라도
 함수 호출은 열고닫기 괄호를 반드시 사용해야 한다.
-예를 들어 <code class="docutils literal notranslate"><span class="pre">dir()</span></code> 함수는 인자 없이 호출하면 현재 사용가능한 함수 또는 변수의
-목록을 반환한다.</p>
+예를 들어 <code class="docutils literal notranslate"><span class="pre">dir()</span></code> 함수는 인자를 사용하지 않고 호출하면
+현재 사용가능한 함수 또는 변수의 목록을 반환한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">()</span>
 <span class="go">[&#39;__annotations__&#39;, &#39;__builtins__&#39;, &#39;__doc__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__spec__&#39;]</span>
 </pre></div>
 </div>
-<p>반면에 괄호를 사용하지 않으면 예를 들어
-<code class="docutils literal notranslate"><span class="pre">dir</span></code> 가 내장 함수임을 확인해준다.</p>
+<p>반면에 괄호를 사용하지 않으면 함수 자체에 대한 정보를 확인해준다.
+예를 들어 다음과 같이 <code class="docutils literal notranslate"><span class="pre">dir</span></code> 가 내장 함수임을 확인해준다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span>
 <span class="go">&lt;built-in function dir&gt;</span>
 </pre></div>
@@ -834,7 +844,7 @@
 <p>파이썬에서 기본으로 제공하는 다양한 수학 함수를 사용하려면 먼저
 <code class="docutils literal notranslate"><span class="pre">math</span></code> 라는 모듈<font size="2">module</font>을
 불러와야<font size="2">import</font> 한다.
-모듈은 <a class="reference internal" href="ch07.html#ch-module"><span class="std std-numref">7 장</span></a>에서 자세히 살펴볼 것이며,
+모듈은 <a class="reference internal" href="ch13.html#ch-module"><span class="std std-numref">13 장</span></a>에서 자세히 살펴볼 것이며,
 여기서는 모듈이 다양한 함수를 모아 놓은 파이썬 코드 파일이라는
 사실 정도만 기억하면 된다.
 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈을 불러오는 방식은 다음과 같다.</p>
@@ -1051,15 +1061,18 @@
 </div>
 </div>
 </div>
-<div class="warning admonition">
-<p class="admonition-title">동일 이름의 두 함수</p>
+<div class="info admonition">
+<p class="admonition-title">함수 중복 정의</p>
 <p><code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 두 모듈에 포함된 많은 함수가 동일한 이름을 사용한다.
-하지만 함수의 이름이 갖다고 해서 동일한 함수는 아니다.
-서로 다른 모듈에 속하는 동일 이름의 함수는
-비록 반환값이 같을 수는 있어도 반환값 계산에 사용된 명령문은
-기본적으로 다르다.
+하지만 다른 모듈의 동일한 이름의 두 함수는 서로 다른 함수이다.
+일반 구문상 <code class="docutils literal notranslate"><span class="pre">math.exp()</span></code>와 <code class="docutils literal notranslate"><span class="pre">np.exp()</span></code> 처럼 모듈의 이름으로 구분된다.</p>
+<p>동일한 기능을 수해하는 함수라 하더라도
+각 함수의 본문에 사용된 명령문은 기본적으로 다르다.
 실제로 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 모듈이 제공하는 수학 함수가 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈이
 제공하는 동일 이름의 수학 함수보다 실행속도가 빠른 경우가 많다.</p>
+<p>하나의 모듈에서 동일한 이름의 두 함수를 지원하는 기능을
+<strong>함수 중복 정의</strong> 또는 <strong>함수 오버로딩</strong><font size="2">function overloading</font>이라 한다.
+파이썬과 C 언어는 이 기능을 지원하지 않는 반면에 Java, C++, C# 등은 지원한다.</p>
 </div>
 </div>
 </div>
@@ -1092,8 +1105,8 @@
 <div class="info admonition">
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code> 명령문</p>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 반환값이 없다는 의미는
-<code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문이 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 본체에 포함되지 않았다는 것을 의미하며,
-이런 경우 파이썬 해석기는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code>을 자동으로 실행한다.</p>
+<code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문이 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 본문에 포함되지 않았다는 것을 의미하며,
+이런 경우 파이썬 해석기는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code>을 자동으로 실행하면서 함수 호출을 종료한다.</p>
 </div>
 </div>
 <div class="section" id="id8">
@@ -1119,17 +1132,18 @@
 <p>두 숫자의 합을 계산하는 함수 <code class="docutils literal notranslate"><span class="pre">myAdd</span></code>를 아래와 같이 직접 정의할 수 있다.
 더해야 할 두 개의 값을 입력받아야 하기에 두 개의 매개 변수가 필요하다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myAdd</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
-    <span class="k">return</span> <span class="n">z</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
+    <span class="k">return</span> <span class="nb">sum</span>
 </pre></div>
 </div>
 <p>이제 <code class="docutils literal notranslate"><span class="pre">myAdd(-2,</span> <span class="pre">5)</span></code>를 실행하면 아래 명령문이 실행된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">left</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
 <span class="n">right</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
 </pre></div>
 </div>
-<p>결국 <code class="docutils literal notranslate"><span class="pre">z</span></code>는 정수 <code class="docutils literal notranslate"><span class="pre">3</span></code>을 가리키게 되어 함수의 실행은 3을 반환<font size="2">return</font>하면서 종료한다.</p>
+<p>결국 <code class="docutils literal notranslate"><span class="pre">sum</span></code>은 정수 <code class="docutils literal notranslate"><span class="pre">3</span></code>을 가리키게 되어 함수의 실행은 3을
+반환하면서 종료한다.</p>
 </div>
 </div><div class="proof example admonition" id="no-parameters">
 <p class="admonition-title"><span class="caption-number">Example 6.3 </span> (인자 없는 함수)</p>
@@ -1609,7 +1623,7 @@ Python
     <a class='right-next' id="next-link" href="ch07.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>모듈</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>함수의 인터페이스</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
