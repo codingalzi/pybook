@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -682,7 +679,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9569305949843704
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.317583103890027
 </pre></div>
 </div>
 </div>
@@ -695,7 +692,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5632330260199699
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8636218354032449
 </pre></div>
 </div>
 </div>
@@ -712,10 +709,10 @@
 개인적으로 추가하고 관리하기 어려운 경우 사용할 수 있다.
 예를 들어, 아나콘다 패키지는 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 등 파이썬
 데이터분석과 관련된 다수의 패키지를 함께 제공한다.
-또한 Repl.it, 구글 코랩 등도 파이썬 기본 이외에 다양한 패키지를 함께 제공한다.</p>
+또한 <a class="reference external" href="http://Repl.it">Repl.it</a>, 구글 코랩 등도 파이썬 기본 이외에 다양한 패키지를 함께 제공한다.</p>
 <p>현재 이 노트북을 실행하는 서버 또한 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 등을 포함해서
 다양한 제3자 제공 라이브러리가 함께 설치되어 있다.
-Repl.it 및 구글 코랩에서 문제없이 작동하는 코드만 여기에서 사용한다.</p>
+<a class="reference external" href="http://Repl.it">Repl.it</a> 및 구글 코랩에서 문제없이 작동하는 코드만 여기에서 사용한다.</p>
 <div class="section" id="id6">
 <h3><span class="section-number">13.4.1. </span>제3자 라이브러리 모듈 불러오기<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>예를 들어, 고차원 어레이를 편하게 다룰 수 있도록 도와주는 많은 도구를 담고 있는 넘파이 패키지를 활용하려면
@@ -747,7 +744,7 @@ Repl.it 및 구글 코랩에서 문제없이 작동하는 코드만 여기에서
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6256416511714106
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2359377738240921
 </pre></div>
 </div>
 </div>
@@ -759,7 +756,7 @@ Repl.it 및 구글 코랩에서 문제없이 작동하는 코드만 여기에서
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5147568533286184
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5641577852452591
 </pre></div>
 </div>
 </div>
@@ -775,7 +772,7 @@ Repl.it 및 구글 코랩에서 문제없이 작동하는 코드만 여기에서
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2371</span><span class="o">/</span><span class="mf">3003934882.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_930</span><span class="o">/</span><span class="mf">3003934882.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
 
 <span class="ne">NameError</span>: name &#39;numpy&#39; is not defined

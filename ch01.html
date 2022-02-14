@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -374,10 +371,10 @@
 출력장치는 CPU가 처리한 결과를 출력하는 장치로,
 예를 들어, 모니터, 스피커, 프린터 등이 있다.</p></li>
 </ul>
-<p>::::{admonition} 참고
-:class: info</p>
-<p>참고) 마이크로프로세서(Microprocessor) : CPU를 하나의 칩으로 만든 것을 말한다. 컴퓨터에도 마이크로프로세서가 사용된다.
-::::</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>참고) 마이크로프로세서(Microprocessor) : CPU를 하나의 칩으로 만든 것을 말한다. 컴퓨터에도 마이크로프로세서가 사용된다.</p>
+</div>
 <p>반면 소프트웨어는 하드웨어를 사용하여 특정 기능을 수행하도록 하는 명령문의 모음으로, 크게 응용 소프트웨어(application software 또는 어플, 앱)과 시스템 소프트웨어(system software)로 구분된다.</p>
 <ul class="simple">
 <li><p><strong>시스템 소프트웨어</strong>: 하드웨어와 응용소프트웨어를 효율적으로
@@ -392,8 +389,8 @@
 <h2><span class="section-number">1.2. </span>컴퓨터 프로그램, 프로그래밍, 프로그래밍 언어<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p><strong>컴퓨터 프로그램</strong>(computer program)이란, 어떤 주어진 문제를 해결하기 위해서 특정 프로그래밍 언어를 이용하여 컴퓨터가 수행해야 할 작업들을 모아 놓은 명령문의 모음이라고 볼 수 있다.</p>
 <p>프로그램의 핵심은 문제해결을 위한 특정 알고리즘이며, 동일한 알고리즘을 이용하더라도 서로 다르게 보이는 프로그램을 구현할 수 있고, 사용하는 프로그래밍 언어와 작성자에 따라 여러 종류의 프로그램이 존재한다.</p>
-<p>::::{admonition} 소프트웨어, 프로그램, 소스 코드, 코드, 명령문
-:class: tip</p>
+<div class="tip admonition">
+<p class="admonition-title">소프트웨어, 프로그램, 소스 코드, 코드, 명령문</p>
 <p>소프트웨어, 프로그램, 소스 코드(원시 코드), 코드, 명령문 등이 특별한 구분 없이
 사용되곤 한다.
 네 개념을 엄밀히 구분하는 기준은 없다.
@@ -404,17 +401,17 @@
 <li><p>소스 코드<font size="2">source code</font>: 프로그램 구현에 사용된 명령문 모음집.
 원시 코드라고도 불림.</p></li>
 <li><p>코드<font size="2">code</font>: 소스 코드의 일부분 또는 전체.</p></li>
-<li><p>명령문<font size="2">statements 또는 commands</font>: 소스 코드의 구성요소
-::::</p></li>
+<li><p>명령문<font size="2">statements 또는 commands</font>: 소스 코드의 구성요소</p></li>
 </ul>
+</div>
 <p><strong>프로그래밍</strong>(programming)은 특정 목적을 달성하기 위해 컴퓨터가 실행할 수 있는 컴퓨터 프로그램을 디자인 및 구현하는 과정을 말한다.</p>
-<p>::::{admonition} 프로그래밍과 코딩
-:class: tip</p>
+<div class="tip admonition">
+<p class="admonition-title">프로그래밍과 코딩</p>
 <p>일상적으로 프로그래밍<font size="2">programming</font>과
 코딩<font size="2">coding</font>이 동의어로 사용된다.
 다만 프로그래밍은 프로그래머<font size="2">programmer</font>의 직업과 관련된 개념으로
-코딩은 “코드를 작성한다”의 의미로 보다 많이 사용된다.
-::::</p>
+코딩은 “코드를 작성한다”의 의미로 보다 많이 사용된다.</p>
+</div>
 <p><strong>프로그래밍 언어</strong>(programming language)는 컴퓨터 프로그램을 만들 때 사용하는 언어를 말한다. 자연어와 마찬가지로 다양한 프로그래밍 언어가 있으며, 일반적으로 저수준 언어(low-level language)와 고수준 언어(high-level language)로 나눈다.</p>
 <ul class="simple">
 <li><p>저수준 언어는 컴퓨터가 이해하기 쉽게 작성된 프로그래밍 언어로, 일반적으로 기계어(machine language)와 어셈블리어(assembly language)를 말한다. 이때 기계어는 CPU가 직접 해석하고 실행할 수 있는 숫자로만 구성된 언어를 말하는데, 이를 보고 사람이 이해하기는 어렵다. 어셈블리어는 기계어를 사람이 이해할 수 있는 문자 형태로 변경한 것을 말하는데, 숫자를 문자로 바꾸기 만한 것이라 여전히 사람이 이해하기는 어렵다. 어셈블리어를 기계어로 변경해주는 프로그램을 어셈블러(assembler)라고 말한다.</p></li>
@@ -454,10 +451,10 @@
 </div>
 <p>위 파이썬 코드는 프로그래밍에 대한 경험이 전혀 없는 사람도 대략적으로 의미를 유추하는 것이 가능할 정도로 자연어와 유사하다. 파이썬은 들여쓰기로 코드 블록을 구분하는 데, 이는 코드의 가독성을 높인다. 또, 파이썬의 간결하고 쉬운 문법은 오류가 발생할 가능성을 낮춰 프로그램 개발 속도와 생산성을 높일 수 있다.</p>
 <p>이에 구글<font size="1">Google</font>, 드롭박스<font size="1">Dropbox</font>, 인스타그램<font size="1">Instagram</font> 등 많은 회사에서 소프트웨어 개발에 파이썬을 사용하고 있다. 반면, 실무에서 사용하는 프로그래밍 언어는 다루기 어려워서 보통 프로그래밍 입문자에게 추천하지 않는데, 파이썬은 상대적으로 배우기 쉬운 프로그래밍 언어라 실무에서뿐만 아니라 입문자 교육용으로도 많이 사용되고 있다.</p>
-<p>::::{admonition} 참고
-:class: info</p>
-<p>귀도 반 로섬은 어느 인터뷰에서 당시 프로그램 개발에 사용했던 C언어의 생산성이 낮아 새로운 언어의 필요성을 느꼈다고 말하였다.
-::::</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>귀도 반 로섬은 어느 인터뷰에서 당시 프로그램 개발에 사용했던 C언어의 생산성이 낮아 새로운 언어의 필요성을 느꼈다고 말하였다.</p>
+</div>
 <p>이러한 파이썬의 특징을 몇 가지 살펴보면, 다음과 같다.</p>
 <ul class="simple">
 <li><p>범용 프로그래밍 언어</p></li>
@@ -476,18 +473,18 @@ GUI 프로그래밍<font size="1">Graphical User Interface programming</font> �
 <p>또한 파이썬은 C++이나 자바(Java) 등과 같은 OOP,  즉
 <strong>객체 지향 언어</strong><font size="1">Object-Oriented Programming</font>이다.
 파이썬은 모든 것이 객체로 잘 설계되어 있어서 매우 편리하고 강력한 기능을 제공한다.</p>
-<p>:::{admonition} 참고
-:class: info</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
 <p>OOP는 구현해야 할 객체들을 선택하고, 객체들 사이의 유기적인 관계를 논리적으로 묘사하는 것을 중요하게 여기는 프로그래밍 기법으로, 프로그램 전체를 하나로 묶어서 구현하는 것이 아니라 프로그램을 구성하는 객체들을 중심으로 하여 구현해야 할 프로그램을 완성시키는 방식으로 프로그래밍을 진행하는 것을 말한다. OOP를 잘 활용하면 코드의 재사용성을 높이고, 유지보수하기 좋은 코드를 작성할 수 있다.</p>
-<p>보통 OOP와 대비하여 절차 지향 프로그래밍(Procedural Programming)을 언급한다. 절차 지향 프로그래밍에서는 수행해야 할 일을 순차적으로 처리하는 과정을 묘사하는 것을 중요하게 여기며, 프로그램 전체가 유기적으로 연결되도록 만드는 프로그래밍 기법이다. 대표적인 절차 지향 프로그래밍 언어로는 C와 HTML이 있다.
-:::</p>
+<p>보통 OOP와 대비하여 절차 지향 프로그래밍(Procedural Programming)을 언급한다. 절차 지향 프로그래밍에서는 수행해야 할 일을 순차적으로 처리하는 과정을 묘사하는 것을 중요하게 여기며, 프로그램 전체가 유기적으로 연결되도록 만드는 프로그래밍 기법이다. 대표적인 절차 지향 프로그래밍 언어로는 C와 HTML이 있다.</p>
+</div>
 <p>파이썬은 <strong>동적 타이핑</strong><font size="1">Dynamic typing</font>을 지원한다.
 동적 타이핑은 변수를 미리 선언하지 않고, 변수를 생성하고자 할 때
 값을 초기화하여 사용하는 것을 말한다.
 변수의 자료형은 파이썬이 알아서 판단하기 때문에
 동적 타이핑은 프로그래밍을 처음 접하는 사람들에게 편리하다.</p>
-<p>:::{admonition} 참고
-:class: info</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
 <p>동적 타이핑과는 달리 변수를 사용하기 전 미리 선언해야 하는
 <strong>정적 타이핑</strong><font size="1">Static Typing</font>도 있다.
 C나 자바처럼 주로 컴파일 방식의 언어가 정적 타이핑을 지원한다.
@@ -497,11 +494,12 @@ C나 자바처럼 주로 컴파일 방식의 언어가 정적 타이핑을 지�
 선언 후 사용하지 않는 변수가 있는지를 확인하여 버그 발생 확률을
 낮출 수 있다는 장점이 있다.
 이에 동적 타이핑을 지원하는 파이썬에서도 타입 힌트를 명시하기도 한다.</p>
+</div>
 <p>이뿐만 아니라 파이썬은 다양한 분야에서 사용할 수 있는 수많은 라이브러리를 제공하고 있다. 예를 들어, 데이터과학에서 유용한 파이썬 라이브러리로는 Numpy, Pandas, TensorFlow, Keras, Matplotlib등이 있고, 웹 프레임워크 라이브러리로는 Django, Flask 등이 있다. 라이브러리의 사용은 쉽게 다양한 기능을 사용할 수 있게 하고 더 적은 코드를 작성하여 더 많은 일을 할 수 있도록 한다. 즉, 적절히 라이브러리를 사용하면 빠른 개발 속도로 생산성을 높일 수 있다.</p>
 <p>이외에도 파이썬은 C나 C++와 연동가능하다. 즉, C나 C++로 만든 프로그램을 파이썬에서 사용할 수 있다. 파이썬은 다루기 쉬운 반면 컴파일러 방식의 언어에 비해 처리 속도가 느리다는 단점이 있는데 C나 C++과 연동함으로써 이러한 단점을 보완할 수 있다. 대표적인 예로는 넘파이(Numpy)가 있다. C언어로 만든 넘파이의 사용은 파이썬으로도 빠르고 효율적인 방법으로 데이터를 처리하고 저장할 수 있게 한다.</p>
 <p>지금까지 살펴본 파이썬의 특징으로 인해  파이썬의 인기는 날이 갈수록 높아지고 있다.
 프로그래밍 언어들의 인기도를 측정하는
-TIOBE 인덱스<font size="1">https://www.tiobe.com/tiobe-index//</font>에
+TIOBE 인덱스<font size="1"><a class="reference external" href="https://www.tiobe.com/tiobe-index//">https://www.tiobe.com/tiobe-index//</a></font>에
 따르면, 2022년 1월 기준으로 파이썬은 가장 인기있는 프로그래밍 언어이다.
 이에 지금 당장 프로그래밍을 배우고자 한다면, 파이썬을 추천한다.</p>
 <div align="center">

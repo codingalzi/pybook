@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -464,12 +461,12 @@
 </div>
 </div>
 </div>
-<p>:::{admonition} <code class="docutils literal notranslate"><span class="pre">==</span></code> vs. <code class="docutils literal notranslate"><span class="pre">=</span></code>
-:class: warning</p>
+<div class="warning admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">==</span></code> vs. <code class="docutils literal notranslate"><span class="pre">=</span></code></p>
 <p>등호 기호가 하나인 경우와 두 개인 경우는 완전히 다르다.
 등호 기호 두 개 <code class="docutils literal notranslate"><span class="pre">==</span></code> 는 동치 여부를 판단하는 비교 연산자인 반면에
-하나의 등호 기호 <code class="docutils literal notranslate"><span class="pre">=</span></code> 는 변수 할당에 사용되는 특별한 기호이다.
-:::</p>
+하나의 등호 기호 <code class="docutils literal notranslate"><span class="pre">=</span></code> 는 변수 할당에 사용되는 특별한 기호이다.</p>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">True</span></code>와 <code class="docutils literal notranslate"><span class="pre">False</span></code>는 <code class="docutils literal notranslate"><span class="pre">bool</span></code> 자료형에 속하는 유일한 두 개의 값이다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -506,8 +503,9 @@
     <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span>       <span class="c1"># x가 y보다 작거나 같을 때 참</span>
 </pre></div>
 </div>
-<p>::::{prf:example}
-:label: exp_comparison</p>
+<div class="proof example admonition" id="exp_comparison">
+<p class="admonition-title"><span class="caption-number">Example 8.1 </span></p>
+<div class="example-content section" id="proof-content">
 <p>변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 짝수이면 2로 나눈 값을,
 그렇지 않으면 두 배한 값을 출력하도록 해보자.</p>
 <p>정수의 짝수 여부는 2로 나눈 나머지가 0 또는 1인지 여부로 판단할 수 있다.
@@ -536,8 +534,8 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>::::</p>
 </div>
+</div></div>
 <div class="section" id="id4">
 <h3><span class="section-number">8.1.2. </span>논리 연산자<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>논리 연산자를 이용하여 보다 복잡한 부울식을 생성할 수 있다.
@@ -680,8 +678,9 @@
 <p>일반적으로 3번 이상의 중첩을 사용하는 것은 권장되지 않는다.
 이유는 경우의 구분이 너무 복잡해질 수 있기 때문이다.
 가능하면 중첩 조건문 대신에 <code class="docutils literal notranslate"><span class="pre">elif</span></code> 문을 활용할 것이 권장된다.</p>
-<p>::::{prf:example}
-:label: exp_nested_conditionals</p>
+<div class="proof example admonition" id="exp_nested_conditionals">
+<p class="admonition-title"><span class="caption-number">Example 8.2 </span></p>
+<div class="example-content section" id="proof-content">
 <p>논리 연산자를 활용하여 중첩 조건문의 활용을 피할 수도 있다.</p>
 <p>아래 코드는 중첩 조건문을 사용하여 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 크면서 동시에 10보다 작은 경우를 다룬다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
@@ -701,8 +700,8 @@
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 0보다 크고 동시에 10보다 작은 경우&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>::::</p>
 </div>
+</div></div>
 </div>
 
     <script type="text/x-thebe-config">
