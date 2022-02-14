@@ -38,13 +38,14 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -633,8 +634,8 @@
 </div>
 </div>
 </div>
-<div class="info admonition">
-<p class="admonition-title">인자를 받지 않는 함수의 호출</p>
+<p>:::{admonition} 인자를 받지 않는 함수의 호출
+:class: info</p>
 <p>인자를 사용하지 않는 함수라 하더라도
 함수 호출은 열고닫기 괄호를 반드시 사용해야 한다.
 예를 들어 <code class="docutils literal notranslate"><span class="pre">dir()</span></code> 함수는 인자를 사용하지 않고 호출하면
@@ -650,7 +651,6 @@
 </pre></div>
 </div>
 <p><strong>내장 함수</strong><font size="2">built-in function</font>란 파이썬에서 기본으로 제공하는 함수라는 의미이다.</p>
-</div>
 <div class="section" id="id3">
 <h3><span class="section-number">6.1.1. </span>함수의 인자<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>모든 함수는 호출될 때 적절한 개수의 인자를 사용해야 한다.
@@ -664,12 +664,12 @@
 <span class="gr">TypeError</span>: <span class="n">type() takes 1 or 3 arguments</span>
 </pre></div>
 </div>
-<div class="info admonition">
-<p class="admonition-title">세 개의 인자를 사용하는 <code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수</p>
+<p>:::{admonition} 세 개의 인자를 사용하는 <code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수
+:class: info</p>
 <p><code class="docutils literal notranslate"><span class="pre">type(2.37)</span></code>처럼 하나의 인자를 사용하면 인자의 자료형을 확인해준다.
 반면에 세 개의 인자를 사용하는 경우는 특정 클래스의 객체를
-생성할 때 사용하며, 여기서는 자세히 다루지 않는다.</p>
-</div>
+생성할 때 사용하며, 여기서는 자세히 다루지 않는다.
+:::</p>
 </div>
 <div class="section" id="return">
 <h3><span class="section-number">6.1.2. </span>함수의 반환값과 <code class="docutils literal notranslate"><span class="pre">return</span></code> 키워드<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h3>
@@ -694,12 +694,12 @@
 </div>
 </div>
 </div>
-<div class="info admonition">
-<p class="admonition-title">자료형과 값</p>
+<p>:::{admonition} 자료형과 값
+:class: info</p>
 <p><code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> 등과 같은 자료형도 하나의 값으로 취급한다.
 앞으로 보겠지만, 파이썬에서 다루는 모든 <strong>객체</strong><font size="2">object</font>는
-값으로 사용될 수 있다.</p>
-</div>
+값으로 사용될 수 있다.
+:::</p>
 </div>
 <div class="section" id="print-none">
 <h3><span class="section-number">6.1.3. </span><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">None</span></code> 값<a class="headerlink" href="#print-none" title="Permalink to this headline">¶</a></h3>
@@ -837,7 +837,7 @@
 </div>
 <div class="section" id="id5">
 <h2><span class="section-number">6.3. </span>수학 함수<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p><span class="math notranslate nohighlight">\(\sin x\)</span>, <span class="math notranslate nohighlight">\(\cos x\)</span>, <span class="math notranslate nohighlight">\(\sqrt{x}\)</span>, <span class="math notranslate nohighlight">\(\log x\)</span>, <span class="math notranslate nohighlight">\(e^x\)</span> 등
+<p>$\sin x$, $\cos x$, $\sqrt{x}$, $\log x$, $e^x$ 등
 수학에서 많이 사용되는 함수를 파이썬에서 기본으로 제공한다.</p>
 <div class="section" id="math">
 <h3><span class="section-number">6.3.1. </span><code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h3>
@@ -855,8 +855,8 @@
 </div>
 </div>
 </div>
-<div class="info admonition">
-<p class="admonition-title">자료형과 값</p>
+<p>:::{admonition} 자료형과 값
+:class: info</p>
 <p>앞서 언급했듯이 파이썬에 다루는 모든 객체는 특정
 자료형에 속하는 하나의 값이다.
 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈 조차도 하나의 값이며
@@ -865,9 +865,9 @@
 <span class="go">&lt;class &#39;module&#39;&gt;</span>
 </pre></div>
 </div>
-</div>
+<p>:::</p>
 <p>모듈에 포함된 함수를 호출하려면 모듈과 함수를 구두점으로 구분해서 명시해야 한다.
-예를 들어 정수 10을 밑으로 하는 상용로그 함수 <span class="math notranslate nohighlight">\(\log_{10}\)</span>에 해당하는
+예를 들어 정수 10을 밑으로 하는 상용로그 함수 $\log_{10}$에 해당하는
 <code class="docutils literal notranslate"><span class="pre">log10()</span></code> 함수를 사용하는 방법은 다음과 같다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -893,7 +893,7 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">math.log()</span></code>는 자연로그 함수(<span class="math notranslate nohighlight">\(\ln = \log_e\)</span>)를 가리킨다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">math.log()</span></code>는 자연로그 함수($\ln = \log_e$)를 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -918,7 +918,7 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code>는 제곱근 함수 <span class="math notranslate nohighlight">\(\sqrt{x}\)</span>를 가리킨다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code>는 제곱근 함수 $\sqrt{x}$를 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -931,7 +931,7 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">math.exp()</span></code>는 지수 함수 <span class="math notranslate nohighlight">\(e^x\)</span>를 가리킨다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">math.exp()</span></code>는 지수 함수 $e^x$를 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -944,16 +944,14 @@
 </div>
 </div>
 </div>
-<div class="proof example admonition" id="degree2radian">
-<p class="admonition-title"><span class="caption-number">Example 6.1 </span></p>
-<div class="example-content section" id="proof-content">
+<p>::::{prf:example}
+:label: degree2radian</p>
 <p>일반각의 각도<font size="2">degree</font>를
 호도법의 라디안<font size="2">radian</font>으로
 변환하는 공식은 다음과 같다.</p>
-<div class="math notranslate nohighlight">
-\[
-\text{라디안} = \frac{\text{각도}}{180} \, \pi
-\]</div>
+<p>$$
+\text{라디안} = \frac{\text{각도}}{180} , \pi
+$$</p>
 <p>일반각 90도를 라디안으로 변환한 후에
 사인<font size="2">sine</font>값을 계산하는 과정은 다음과 같다.
 <code class="docutils literal notranslate"><span class="pre">math.pi</span></code>는 원주율을 가리킨다.</p>
@@ -964,7 +962,6 @@
 </pre></div>
 </div>
 </div>
-</div></div>
 <div class="section" id="numpy">
 <h3><span class="section-number">6.3.2. </span>NumPy 패키지<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://numpy.org">넘파이<font size="2">NumPy</font></a>는
@@ -975,16 +972,16 @@
 계산과학 툴킷인
 <a class="reference external" href="https://www.anaconda.com">아나콘다 파이썬 배포판<font size="2">Anaconda Python distribution</font></a>은
 함께 지원한다.</p>
-<div class="info admonition">
-<p class="admonition-title">모듈과 패키지</p>
+<p>:::{admonition} 모듈과 패키지
+:class: info</p>
 <p>패키지<font size="2">package</font>는 일종의 모듈 모음집이다.
 즉, 많이 활용되는 함수 등을 기능과 분야별로 여러 개의 모듈로 분류해서 모아놓은 것을 가리킨다.
 패키지와 모듈은 하나의 폴더 안에 내용에 따라 여러 개의 파일로 정리하는 개념과 유사하다.
 파일이 많아지면 폴더를 여러 개의 하위 폴더로 분류해서 파일을 분류하는 것처럼
 패키지를 여러 개의 하위 패키지로 구분하기도 한다.
 하위 패키지에 포함된 모듈의 활용법도 기본적으로 모듈의 함수를 사용하는 방법과 동일하다.
-나중에 그래프를 그릴 때 필요한 패키지와 모듈을 사용해야 할 때 활용 예제를 보게 될 것이다.</p>
-</div>
+나중에 그래프를 그릴 때 필요한 패키지와 모듈을 사용해야 할 때 활용 예제를 보게 될 것이다.
+:::</p>
 <p>넘파이 패키지는 앞서 언급한 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈에서 지원하는 함수들을 포함해서 보다 많은 함수와 기능을 지원한다.
 앞으로 필요할 때마다 하나씩 넘파이가 제공하는 기능을 활용할 것이다.
 넘파이를 사용하려면 먼저 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 모듈을 불러오면 된다.
@@ -1061,8 +1058,8 @@
 </div>
 </div>
 </div>
-<div class="info admonition">
-<p class="admonition-title">함수 중복 정의</p>
+<p>:::{admonition} 함수 중복 정의
+:class: info</p>
 <p><code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 두 모듈에 포함된 많은 함수가 동일한 이름을 사용한다.
 하지만 다른 모듈의 동일한 이름의 두 함수는 서로 다른 함수이다.
 일반 구문상 <code class="docutils literal notranslate"><span class="pre">math.exp()</span></code>와 <code class="docutils literal notranslate"><span class="pre">np.exp()</span></code> 처럼 모듈의 이름으로 구분된다.</p>
@@ -1072,8 +1069,8 @@
 제공하는 동일 이름의 수학 함수보다 실행속도가 빠른 경우가 많다.</p>
 <p>하나의 모듈에서 동일한 이름의 두 함수를 지원하는 기능을
 <strong>함수 중복 정의</strong> 또는 <strong>함수 오버로딩</strong><font size="2">function overloading</font>이라 한다.
-파이썬과 C 언어는 이 기능을 지원하지 않는 반면에 Java, C++, C# 등은 지원한다.</p>
-</div>
+파이썬과 C 언어는 이 기능을 지원하지 않는 반면에 Java, C++, C# 등은 지원한다.
+:::</p>
 </div>
 </div>
 <div class="section" id="id6">
@@ -1102,12 +1099,12 @@
 </div>
 <p>위 <code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문이 실행되는 순간
 지정된 <code class="docutils literal notranslate"><span class="pre">표현식</span></code>이 가리키는 값이 반환되면서 함수의 실행이 멈춘다.</p>
-<div class="info admonition">
-<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code> 명령문</p>
+<p>:::{admonition} <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code> 명령문
+:class: info</p>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 반환값이 없다는 의미는
 <code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문이 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 본문에 포함되지 않았다는 것을 의미하며,
-이런 경우 파이썬 해석기는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code>을 자동으로 실행하면서 함수 호출을 종료한다.</p>
-</div>
+이런 경우 파이썬 해석기는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code>을 자동으로 실행하면서 함수 호출을 종료한다.
+:::</p>
 </div>
 <div class="section" id="id8">
 <h3><span class="section-number">6.4.2. </span>매개 변수와 인자<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
@@ -1126,9 +1123,8 @@
 <span class="n">매개변수n</span> <span class="o">=</span> <span class="n">인자n</span>
 </pre></div>
 </div>
-<div class="proof example admonition" id="myAdd">
-<p class="admonition-title"><span class="caption-number">Example 6.2 </span></p>
-<div class="example-content section" id="proof-content">
+<p>::::{prf:example}
+:label: myAdd</p>
 <p>두 숫자의 합을 계산하는 함수 <code class="docutils literal notranslate"><span class="pre">myAdd</span></code>를 아래와 같이 직접 정의할 수 있다.
 더해야 할 두 개의 값을 입력받아야 하기에 두 개의 매개 변수가 필요하다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myAdd</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
@@ -1143,11 +1139,10 @@
 </pre></div>
 </div>
 <p>결국 <code class="docutils literal notranslate"><span class="pre">sum</span></code>은 정수 <code class="docutils literal notranslate"><span class="pre">3</span></code>을 가리키게 되어 함수의 실행은 3을
-반환하면서 종료한다.</p>
-</div>
-</div><div class="proof example admonition" id="no-parameters">
-<p class="admonition-title"><span class="caption-number">Example 6.3 </span> (인자 없는 함수)</p>
-<div class="example-content section" id="proof-content">
+반환하면서 종료한다.
+::::</p>
+<p>::::{prf:example} 인자 없는 함수
+:label: no-parameters</p>
 <p>매개 변수를 사용하지 않는 함수라 하더라도 반드시 괄호와 함께 호출해야 한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">myPrint</span><span class="p">():</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;인자 없어요!&#39;</span><span class="p">)</span>
@@ -1156,8 +1151,8 @@
 <span class="go">인자 없어요!</span>
 </pre></div>
 </div>
+<p>::::</p>
 </div>
-</div></div>
 <div class="section" id="id9">
 <h3><span class="section-number">6.4.3. </span>제1종 객체<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>프로그래밍 언어에서
@@ -1167,13 +1162,13 @@
 반면에 그렇지 않은 객체는
 <strong>제2종 객체</strong><font size="2">second-class object</font>라고
 한다.</p>
-<div class="tip admonition">
-<p class="admonition-title">C 언어의 포인터 활용</p>
+<p>:::{admonition} C 언어의 포인터 활용
+:class: tip</p>
 <p>first-class object를 주로 “일급 객체”로 번역되지만
 “제1종 객체”가 개념상 보다 적절하다.
 first-class와 second-class는 사용법상 구분을 나타내는 반면에
-일급, 이급 표현은 질적 차이를 내포한다.</p>
-</div>
+일급, 이급 표현은 질적 차이를 내포한다.
+:::</p>
 <p>프로그래밍 언어에 따라 제1종 객체의 기준이 다르다.
 대표적으로 C 언어의 경우 함수는 제1종 객체가 아니다.
 즉, 함수를 다른 함수의 인자 또는 반환값으로 사용할 수 없다.
@@ -1196,8 +1191,8 @@ first-class와 second-class는 사용법상 구분을 나타내는 반면에
 <span class="gp">&gt;&gt;&gt; </span>
 </pre></div>
 </div>
-<div class="info admonition">
-<p class="admonition-title">C 언어의 포인터 활용</p>
+<p>:::{admonition} C 언어의 포인터 활용
+:class: info</p>
 <p>C 언어는 제1종 객체의 범위가 매우 제한적이다.
 반면에 파이썬,
 C++, C#,
@@ -1208,11 +1203,10 @@ C++, C#,
 이미 또는 점점 더 거의 모든 객체를 제1종 객체로 지원한다.</p>
 <p>C 언어는 함수, 구조체 등 제1종 객체가 아닌 객체를
 포인터를 이용하여 다룬다.
-포인터가 C 언어에서 핵심적인 역할을 수행하는 이유가 여기에 있다.</p>
-</div>
-<div class="proof example admonition" id="exp:first-class-function_1">
-<p class="admonition-title"><span class="caption-number">Example 6.4 </span> (함수를 인자로 받는 함수)</p>
-<div class="example-content section" id="proof-content">
+포인터가 C 언어에서 핵심적인 역할을 수행하는 이유가 여기에 있다.
+:::</p>
+<p>::::{prf:example} 함수를 인자로 받는 함수
+:label: exp:first-class-function_1</p>
 <p>아래 조건을 만족하도록 <code class="docutils literal notranslate"><span class="pre">do_twice()</span></code> 함수를 정의해보자.</p>
 <ul class="simple">
 <li><p>두 개의 인자를 받는다.</p></li>
@@ -1244,10 +1238,9 @@ C++, C#,
 <span class="go">18</span>
 </pre></div>
 </div>
-</div>
-</div><div class="proof example admonition" id="exp:first-class-function_2">
-<p class="admonition-title"><span class="caption-number">Example 6.5 </span> (함수를 반환하는 함수)</p>
-<div class="example-content section" id="proof-content">
+<p>::::</p>
+<p>::::{prf:example} 함수를 반환하는 함수
+:label: exp:first-class-function_2</p>
 <p><code class="docutils literal notranslate"><span class="pre">adding_n_func(n)</span></code>를 호출하면
 <code class="docutils literal notranslate"><span class="pre">n</span></code>을 더하는 함수 <code class="docutils literal notranslate"><span class="pre">myAdd_n()</span></code>을 반환한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">adding_n_func</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1265,9 +1258,9 @@ C++, C#,
 <span class="go">13</span>
 </pre></div>
 </div>
-</div>
-</div><div class="info admonition">
-<p class="admonition-title">C 언어의 포인터 활용</p>
+<p>::::</p>
+<p>:::{admonition} C 언어의 포인터 활용
+:class: info</p>
 <p>C 언어는 제1종 객체의 범위가 매우 제한적이다.
 반면에 파이썬,
 C++, C#,
@@ -1278,8 +1271,8 @@ C++, C#,
 이미 또는 점점 더 거의 모든 객체를 제1종 객체로 지원한다.</p>
 <p>C 언어는 함수, 구조체 등 제1종 객체가 아닌 객체를
 포인터를 이용하여 다룬다.
-포인터가 C 언어에서 핵심적인 역할을 수행하는 이유가 여기에 있다.</p>
-</div>
+포인터가 C 언어에서 핵심적인 역할을 수행하는 이유가 여기에 있다.
+:::</p>
 </div>
 <div class="section" id="sec-keyword-arguments">
 <span id="id10"></span><h3><span class="section-number">6.4.4. </span>키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this headline">¶</a></h3>
@@ -1350,14 +1343,13 @@ Python
 </div>
 </li>
 </ul>
-<div class="info admonition">
-<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">file</span></code>과 <code class="docutils literal notranslate"><span class="pre">flush</span></code> 매개 변수</p>
+<p>:::{admonition} <code class="docutils literal notranslate"><span class="pre">file</span></code>과 <code class="docutils literal notranslate"><span class="pre">flush</span></code> 매개 변수
+:class: info</p>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 <code class="docutils literal notranslate"><span class="pre">file</span></code>과 <code class="docutils literal notranslate"><span class="pre">flush</span></code> 두 매개 변수는 특별한 경우에 활용되며
-간단한 예제는 <a class="reference external" href="https://velog.io/&#64;janeljs/python-print-sep-end-file-flush">이곳</a>에서 확인할 수 있다.</p>
-</div>
-<div class="proof example admonition" id="keyword_argument">
-<p class="admonition-title"><span class="caption-number">Example 6.6 </span></p>
-<div class="example-content section" id="proof-content">
+간단한 예제는 <a class="reference external" href="https://velog.io/&#64;janeljs/python-print-sep-end-file-flush">이곳</a>에서 확인할 수 있다.
+:::</p>
+<p>::::{prf:example}
+:label: keyword_argument</p>
 <p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">myAdd10()</span></code> 함수를 키워드 인자를 이용하여
 정의하는 방식을 보여준다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myAdd10</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
@@ -1375,16 +1367,15 @@ Python
 <span class="go">25</span>
 </pre></div>
 </div>
+<p>::::</p>
 </div>
-</div></div>
 <div class="section" id="id11">
 <h3><span class="section-number">6.4.5. </span>함수 합성과 함수 호출 표현식<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<p>수학에서 <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(g\)</span> 두 개의 함수를 합성해서 새로운 함수 <span class="math notranslate nohighlight">\(f\circ g\)</span> 를
+<p>수학에서 $f$, $g$ 두 개의 함수를 합성해서 새로운 함수 $f\circ g$ 를
 다음과 같이 정의한다.</p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 (f\circ g) (x) := f(g(x))
-\]</div>
+$$</p>
 <p>동일한 방식으로 파이썬 함수를 합성하여 새로운 표현식을 정의할 수 있다.
 다음은 곱셈, 나눗셈, 사인 함수의 합성을 활용한 표현식이다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">degree</span> <span class="o">/</span> <span class="mf">360.0</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
@@ -1467,11 +1458,11 @@ Python
 <span class="gr">NameError</span>: <span class="n">name &#39;hour&#39; is not defined</span>
 </pre></div>
 </div>
-<div class="info admonition">
-<p class="admonition-title">파이썬 튜터 활용: 지역 변수의 생존 주기</p>
+<p>:::{admonition} 파이썬 튜터 활용: 지역 변수의 생존 주기
+:class: info</p>
 <p><a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20hour_to_min%28hour%29%3A%0A%20%20%20%20minutes%20%3D%20hour%20*%2060%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour_to_min%282%29%0Aprint%28minutes%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수 전역 변수</a>에서
-<code class="docutils literal notranslate"><span class="pre">hour</span></code>와 <code class="docutils literal notranslate"><span class="pre">minutes</span></code>의 생존주기, 즉, 언제 생성되고 언제 사라지는지를 시각적으로 확인할 수 있다.</p>
-</div>
+<code class="docutils literal notranslate"><span class="pre">hour</span></code>와 <code class="docutils literal notranslate"><span class="pre">minutes</span></code>의 생존주기, 즉, 언제 생성되고 언제 사라지는지를 시각적으로 확인할 수 있다.
+:::</p>
 </div>
 <div class="section" id="id14">
 <h2><span class="section-number">6.6. </span>함수 호출과 스택 다이어그램<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
@@ -1485,9 +1476,8 @@ Python
 <h3><span class="section-number">6.6.1. </span>프레임의 생성과 사멸<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p>함수의 실행과 함께 생성된 프레임은 함수의 실행이 종료되면 스택에서 사라진다.
 하지만 함수의 반환값은 지정된 변수에 할당되거나 다른 함수의 인자로 전달된다.</p>
-<div class="proof example admonition" id="stack-diagram">
-<span id="exp-stack-diagram"></span><p class="admonition-title"><span class="caption-number">Example 6.7 </span> (프레임의 생성과 사멸)</p>
-<div class="example-content section" id="proof-content">
+<p id="exp-stack-diagram">::::{prf:example} 프레임의 생성과 사멸
+:label: stack-diagram</p>
 <p>다음 코드를 이용하여 함수 호출과 프레임 생성 및 사멸의 관계를 알아보자.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hour2min</span><span class="p">(</span><span class="n">hour</span><span class="p">):</span>
     <span class="nb">min</span> <span class="o">=</span> <span class="n">hour</span> <span class="o">*</span> <span class="mi">60</span>
@@ -1513,10 +1503,10 @@ Python
 변수 할당문 <code class="docutils literal notranslate"><span class="pre">min</span> <span class="pre">=</span> <span class="pre">hour2min(hour)</span></code>를 실행하면 먼저
 <code class="docutils literal notranslate"><span class="pre">hour2min()</span></code> 함수가 호출되기에 새로 생성된 프레임이다.
 매개 변수 <code class="docutils literal notranslate"><span class="pre">hour</span></code>와 지역 변수 <code class="docutils literal notranslate"><span class="pre">min</span></code>이 포함된다.
-지역 변수 <code class="docutils literal notranslate"><span class="pre">sec</span></code>은 <code class="docutils literal notranslate"><span class="pre">hour2min(hour)</span></code> 의 반환값이 정해지면 그때 포함된다.</p></li>
+지역 변수 <code class="docutils literal notranslate"><span class="pre">sec</span></code>은 <code class="docutils literal notranslate"><span class="pre">hour2min(hour)</span></code> 의 반환값이 정해지면 그때 포함된다.
+::::</p></li>
 </ul>
 </div>
-</div></div>
 <div class="section" id="id16">
 <h3><span class="section-number">6.6.2. </span>스택 다이어그램<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>위 코드의 전체 실행 과정을
@@ -1529,7 +1519,7 @@ Python
 이렇게 작동하는 구조를 일반적으로 <strong>스택 자료구조</strong>라 하며,
 이런 의미에서 이와 같은 프레임의 구조를
 <strong>스택 다이어그램</strong>(stack diagram)이라 부른다.</p>
-<p><a class="reference internal" href="#exp-stack-diagram"><span class="std std-numref">Example 6.7</span></a>의 프로그램 실행 과정에서의
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">Example</span> <span class="pre">%s</span></code>의 프로그램 실행 과정에서의
 스택 다이어그램의 변화는 다음과 같다.</p>
 <ul class="simple">
 <li><p>프레임 생성 순서</p></li>

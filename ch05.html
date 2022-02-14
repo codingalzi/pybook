@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -301,13 +304,13 @@
 </ul>
 </li>
 </ol>
-<div class="info admonition">
-<p class="admonition-title">문자열 <code class="docutils literal notranslate"><span class="pre">''</span></code> 와 문자의 <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> 차이점</p>
+<p>:::{admonition} 문자열 <code class="docutils literal notranslate"><span class="pre">''</span></code> 와 문자의 <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> 차이점
+:class: info</p>
 <p>빈 문자열<font size="2">empty string</font> <code class="docutils literal notranslate"><span class="pre">''</span></code> 는
 아무런 문자를 포함하지 않으며 따라서 문자열의 길이, 즉 문자열에 포함된 문자의 개수가 0이다.
 반면에 <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> 는 눈에 보이지는 않지만 공백 문자 하나를 포함하는 문자열이며 길이가 1이다.</p>
-<p>참고: <a class="reference internal" href="ch11.html#sec-string"><span class="std std-numref">11.1 절</span></a></p>
-</div>
+<p>참고: <a class="reference internal" href="ch11.html#sec-string"><span class="std std-numref">11.1 절</span></a>
+:::</p>
 </div>
 
     <script type="text/x-thebe-config">

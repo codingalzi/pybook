@@ -38,13 +38,14 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -275,26 +276,26 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recursion">
-   9.1. Recursion
+  <a class="reference internal nav-link" href="#id2">
+   9.1. 재귀 함수의 스택 다이어그램
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   9.2. 재귀함수
+  <a class="reference internal nav-link" href="#infinite-recursion">
+   9.2. Infinite recursion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   9.3. 재귀함수
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     9.2.1. 예제: 콜라츠 추측
+    <a class="reference internal nav-link" href="#id4">
+     9.3.1. 예제: 콜라츠 추측
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   9.3. 재귀 함수 호출과 스택 다이어그램
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
@@ -322,26 +323,26 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recursion">
-   9.1. Recursion
+  <a class="reference internal nav-link" href="#id2">
+   9.1. 재귀 함수의 스택 다이어그램
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   9.2. 재귀함수
+  <a class="reference internal nav-link" href="#infinite-recursion">
+   9.2. Infinite recursion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   9.3. 재귀함수
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     9.2.1. 예제: 콜라츠 추측
+    <a class="reference internal nav-link" href="#id4">
+     9.3.1. 예제: 콜라츠 추측
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   9.3. 재귀 함수 호출과 스택 다이어그램
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
@@ -359,165 +360,107 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1><span class="section-number">9. </span>재귀<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="recursion">
-<h2><span class="section-number">9.1. </span>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">¶</a></h2>
-<p>\label{recursion}
-\index{recursion}</p>
-<p>It is legal for one function to call another;
-it is also legal for a function to call itself.  It may not be obvious
-why that is a good thing, but it turns out to be one of the most
-magical things a program can do.
-For example, look at the following function:</p>
-<p>\begin{verbatim}
-def countdown(n):
-if n &lt;= 0:
-print(‘Blastoff!’)
-else:
-print(n)
-countdown(n-1)
-\end{verbatim}</p>
-<p>If {\tt n} is 0 or negative, it outputs the word, ``Blastoff!’’
-Otherwise, it outputs {\tt n} and then calls a function named {\tt
-countdown}—itself—passing {\tt n-1} as an argument.</p>
-<p>What happens if we call this function like this?</p>
-<p>\begin{verbatim}</p>
-<blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><p>countdown(3)
-\end{verbatim}</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-<p>The execution of {\tt countdown} begins with {\tt n=3}, and since
-{\tt n} is greater than 0, it outputs the value 3, and then calls itself…</p>
-<p>\begin{quote}
-The execution of {\tt countdown} begins with {\tt n=2}, and since
-{\tt n} is greater than 0, it outputs the value 2, and then calls itself…</p>
-<p>\begin{quote}
-The execution of {\tt countdown} begins with {\tt n=1}, and since
-{\tt n} is greater than 0, it outputs the value 1, and then calls itself…</p>
-<p>\begin{quote}
-The execution of {\tt countdown} begins with {\tt n=0}, and since {\tt
-n} is not greater than 0, it outputs the word, ``Blastoff!’’ and then
-returns.
-\end{quote}</p>
-<p>The {\tt countdown} that got {\tt n=1} returns.
-\end{quote}</p>
-<p>The {\tt countdown} that got {\tt n=2} returns.
-\end{quote}</p>
-<p>The {\tt countdown} that got {\tt n=3} returns.</p>
-<p>And then you’re back in \verb”<strong>main</strong>”.  So, the
-total output looks like this:
-\index{main}</p>
-<p>\begin{verbatim}
-3
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This text is <strong>standard</strong> <em>Markdown</em></p>
+</div>
+<p>하나의 함수가 실행되는 동안 다른 함수를 호출할 수 있으며
+심지어 실행되는 함수 자신을 다시 호출할 수 있다.
+예를 들어 아래 <code class="docutils literal notranslate"><span class="pre">countdown()</span></code> 함수의 본문에 현재 정의되고 있는 자신에 대한 호출이 포함되어 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;발사!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">countdown</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">countdown()</span></code> 함수의 작동 방식은 다음과 같다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> 이 0 이하인 경우: <code class="docutils literal notranslate"><span class="pre">'발사!'</span></code> 출력</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> 이 양의 정수인 경우: <code class="docutils literal notranslate"><span class="pre">n</span></code>을 출력한 다음 바로 <code class="docutils literal notranslate"><span class="pre">countdown(n-1)</span></code> 호출.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">n</span></code> 이 양수인 경우 동일한 함수가 호출되지만 인자가 1적어 지고 결국 <code class="docutils literal notranslate"><span class="pre">n</span></code>이 되어
+더 이상의 함수 호출이 없어 실행이 멈춘다.</p>
+<p>예를 들어 <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>을 호출하면 다음처럼 실행된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countdown</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 2
 1
-Blastoff!
-\end{verbatim}</p>
-<p>A function that calls itself is {\bf recursive}; the process of
-executing it is called {\bf recursion}.
-\index{recursion}
-\index{function!recursive}</p>
-<p>As another example, we can write a function that prints a
-string {\tt n} times.</p>
-<p>\begin{verbatim}
-def print_n(s, n):
-if n &lt;= 0:
-return
-print(s)
-print_n(s, n-1)
-\end{verbatim}</p>
-<p>If {\tt n &lt;= 0} the {\bf return statement} exits the function.  The
-flow of execution immediately returns to the caller, and the remaining
-lines of the function don’t run.
-\index{return statement}
-\index{statement!return}</p>
-<p>The rest of the function is similar to {\tt countdown}: it displays
-{\tt s} and then calls itself to display {\tt s} <span class="math notranslate nohighlight">\(n-1\)</span> additional
-times.  So the number of lines of output is {\tt 1 + (n - 1)}, which
-adds up to {\tt n}.</p>
-<p>For simple examples like this, it is probably easier to use a {\tt
-for} loop.  But we will see examples later that are hard to write
-with a {\tt for} loop and easy to write with recursion, so it is
-good to start early.
-\index{for loop}
-\index{loop!for}</p>
-<p>\section{Stack diagrams for recursive functions}
-\label{recursive.stack}
-\index{stack diagram}
-\index{function frame}
-\index{frame}</p>
-<p>In Section~\ref{stackdiagram}, we used a stack diagram to represent
-the state of a program during a function call.  The same kind of
-diagram can help interpret a recursive function.</p>
-<p>Every time a function gets called, Python creates a
-frame to contain the function’s local variables and parameters.
-For a recursive function, there might be more than one frame on the
-stack at the same time.</p>
-<p>Figure~\ref{fig.stack2} shows a stack diagram for {\tt countdown} called with
-{\tt n = 3}.</p>
-<p>\begin{figure}
-\centerline
-{\includegraphics[scale=0.8]{figs/stack2.pdf}}
-\caption{Stack diagram.}
-\label{fig.stack2}
-\end{figure}</p>
-<p>As usual, the top of the stack is the frame for \verb”<strong>main</strong>”.
+발사!
+</pre></div>
+</div>
+</div>
+</div>
+<p>함수 본문에 자신을 호출하는 함수를 기능을 <strong>재귀</strong><font size="2">recursion</font>라 하며,
+재귀 기능을 같는 함수를 <strong>재귀 함수</strong><font size="2">recursive function</font>라 한다.</p>
+<div class="section" id="id2">
+<h2><span class="section-number">9.1. </span>재귀 함수의 스택 다이어그램<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>재귀 함수의 실행과정 동안 많은 프레임의 생성과 소멸이 발생한다.
+스택 다이어그램의 변화가 경우에 따라 매우 복잡해지기도 한다.</p>
+<p>아래 그림 shows a stack diagram for <code class="docutils literal notranslate"><span class="pre">countdown</span></code> called with
+<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">3</span></code>.</p>
+<div align="center"><img src="https://greenteapress.com/thinkpython2/html/thinkpython2005.png" style="width:150px;"></div><p>예를 들어,
+<a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20collatz%28num%29%3A%0A%20%20%20%20if%20num%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20print%28num%29%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20elif%20num%252%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D%27,%20%27%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num//2%29%20%2B%201%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D%27,%20%27%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num*3%20%2B%201%29%20%2B%201%0A%20%20%20%20%20%20%20%20%0Acollatz%287%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 콜라츠 추측</a>에서
+재귀 함수 호출 과정 동안 메모리에서 벌어지는 프레임의 생성과 소멸 과정,
+즉, 스택 다이어그램의 변화를 살펴볼 수 있다.</p>
+<p>As usual, the top of the stack is the frame for <code class="docutils literal notranslate"><span class="pre">__main__</span></code>.
 It is empty because we did not create any variables in
-\verb”<strong>main</strong>” or pass any arguments to it.
-\index{base case}
-\index{recursion!base case}</p>
-<p>The four {\tt countdown} frames have different values for the
-parameter {\tt n}.  The bottom of the stack, where {\tt n=0}, is
-called the {\bf base case}.  It does not make a recursive call, so
+<code class="docutils literal notranslate"><span class="pre">__main__</span></code> or pass any arguments to it.</p>
+<p>The four <code class="docutils literal notranslate"><span class="pre">countdown</span></code> frames have different values for the
+parameter <code class="docutils literal notranslate"><span class="pre">n</span></code>.  The bottom of the stack, where <code class="docutils literal notranslate"><span class="pre">n=0</span></code>, is
+called the <strong>base case</strong>.  It does not make a recursive call, so
 there are no more frames.</p>
-<p>As an exercise, draw a stack diagram for \verb”print_n” called with
-\verb”s = ‘Hello’” and {\tt n=2}.
-Then write a function called \verb”do_n” that takes a function
-object and a number, {\tt n}, as arguments, and that calls
-the given function {\tt n} times.</p>
-<p>\section{Infinite recursion}
-\index{infinite recursion}
-\index{recursion!infinite}
-\index{runtime error}
-\index{error!runtime}
-\index{traceback}</p>
+<p>As an exercise, draw a stack diagram for <code class="docutils literal notranslate"><span class="pre">print_n</span></code> called with
+<code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">'Hello'</span></code> and <code class="docutils literal notranslate"><span class="pre">n=2</span></code>.
+Then write a function called <code class="docutils literal notranslate"><span class="pre">do_n</span></code> that takes a function
+object and a number, <code class="docutils literal notranslate"><span class="pre">n</span></code>, as arguments, and that calls
+the given function <code class="docutils literal notranslate"><span class="pre">n</span></code> times.</p>
+</div>
+<div class="section" id="infinite-recursion">
+<h2><span class="section-number">9.2. </span>Infinite recursion<a class="headerlink" href="#infinite-recursion" title="Permalink to this headline">¶</a></h2>
 <p>If a recursion never reaches a base case, it goes on making
 recursive calls forever, and the program never terminates.  This is
-known as {\bf infinite recursion}, and it is generally not
+known as <strong>infinite recursion</strong>, and it is generally not
 a good idea.  Here is a minimal program with an infinite recursion:</p>
-<p>\begin{verbatim}
-def recurse():
-recurse()
-\end{verbatim}</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recurse</span><span class="p">():</span>
+    <span class="n">recurse</span><span class="p">()</span>
+</pre></div>
+</div>
 <p>In most programming environments, a program with infinite recursion
 does not really run forever.  Python reports an error
-message when the maximum recursion depth is reached:
-\index{exception!RuntimeError}
-\index{RuntimeError}</p>
-<p>\begin{verbatim}
-File “<stdin>”, line 2, in recurse
-File “<stdin>”, line 2, in recurse
-File “<stdin>”, line 2, in recurse
-.<br />
-.
-.
-File “<stdin>”, line 2, in recurse
-RuntimeError: Maximum recursion depth exceeded
-\end{verbatim}</p>
+message when the maximum recursion depth is reached:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="n">recurse</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="n">recurse</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="n">recurse</span>
+                  <span class="o">.</span>   
+                  <span class="o">.</span>
+                  <span class="o">.</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="n">recurse</span>
+<span class="ne">RuntimeError</span><span class="p">:</span> <span class="n">Maximum</span> <span class="n">recursion</span> <span class="n">depth</span> <span class="n">exceeded</span>
+</pre></div>
+</div>
 <p>This traceback is a little bigger than the one we saw in the
 previous chapter.  When the error occurs, there are 1000
-{\tt recurse} frames on the stack!</p>
+<code class="docutils literal notranslate"><span class="pre">recurse</span></code> frames on the stack!</p>
 <p>If you encounter an infinite recursion by accident, review
 your function to confirm that there is a base case that does not
 make a recursive call.  And if there is a base case, check whether
 you are guaranteed to reach it.</p>
 </div>
-<div class="section" id="id2">
-<h2><span class="section-number">9.2. </span>재귀함수<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>봉 감독의 영화(Movies by Bong, moBong)를 담고 있는 리스트가 아래와 같이 있다.</p>
+<div class="section" id="id3">
+<h2><span class="section-number">9.3. </span>재귀함수<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>봉준호 감독의 영화(Movies by Bong, moBong)를 담고 있는 리스트가 아래와 같이 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moBong</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;기생충&quot;</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;설국열차&quot;</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;살인의 추억&quot;</span><span class="p">,</span> <span class="mi">2003</span><span class="p">]]]</span>
@@ -665,8 +608,8 @@ you are guaranteed to reach it.</p>
 </div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3><span class="section-number">9.2.1. </span>예제: 콜라츠 추측<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3><span class="section-number">9.3.1. </span>예제: 콜라츠 추측<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>독일 수학자인 콜라츠(Collatz, L.)가 1937년에 아래 알고리즘을
 얼마나 많이 반복하면 최종적으로 숫자 1에 다다를 것인가를 질문했다.</p>
 <ul class="simple">
@@ -919,15 +862,6 @@ you are guaranteed to reach it.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id4">
-<h2><span class="section-number">9.3. </span>재귀 함수 호출과 스택 다이어그램<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>재귀함수의 실행과정 동안 많은 프레임의 생성과 소멸이 발생한다.
-스택 다이어그램의 변화가 경우에 따라 매우 복잡해지기도 한다.</p>
-<p>예를 들어,
-<a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20collatz%28num%29%3A%0A%20%20%20%20if%20num%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20print%28num%29%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20elif%20num%252%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D%27,%20%27%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num//2%29%20%2B%201%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D%27,%20%27%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num*3%20%2B%201%29%20%2B%201%0A%20%20%20%20%20%20%20%20%0Acollatz%287%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 콜라츠 추측</a>에서
-재귀함수 호출 과정 동안 메모리에서 벌어지는 프레임의 생성과 소멸 과정,
-즉, 스택 다이어그램의 변화를 살펴볼 수 있다.</p>
 </div>
 <div class="section" id="id5">
 <h2><span class="section-number">9.4. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
