@@ -406,26 +406,13 @@
 재귀 기능을 같는 함수를 <strong>재귀 함수</strong><font size="2">recursive function</font>라 한다.</p>
 <div class="section" id="id2">
 <h2><span class="section-number">9.1. </span>재귀 함수의 스택 다이어그램<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>재귀 함수의 실행과정 동안 많은 프레임의 생성과 소멸이 발생한다.
-스택 다이어그램의 변화가 경우에 따라 매우 복잡해지기도 한다.</p>
-<p>아래 그림 shows a stack diagram for <code class="docutils literal notranslate"><span class="pre">countdown</span></code> called with
-<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">3</span></code>.</p>
-<div align="center"><img src="https://greenteapress.com/thinkpython2/html/thinkpython2005.png" style="width:150px;"></div><p>예를 들어,
+<p>재귀 함수의 실행과정 동안 많은 프레임의 생성과 소멸이 발생하여
+스택 다이어그램의 변화가 경우에 따라 매우 복잡해지기도 한다.
+아래 그림은 <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>을 호출했을 때의 스택 다이어그램의 상태 중 하나이다.</p>
+<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/count_down.jpg" style="width:300px;"></div><p>예를 들어,
 <a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20collatz%28num%29%3A%0A%20%20%20%20if%20num%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20print%28num%29%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20elif%20num%252%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D%27,%20%27%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num//2%29%20%2B%201%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D%27,%20%27%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num*3%20%2B%201%29%20%2B%201%0A%20%20%20%20%20%20%20%20%0Acollatz%287%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 콜라츠 추측</a>에서
 재귀 함수 호출 과정 동안 메모리에서 벌어지는 프레임의 생성과 소멸 과정,
 즉, 스택 다이어그램의 변화를 살펴볼 수 있다.</p>
-<p>As usual, the top of the stack is the frame for <code class="docutils literal notranslate"><span class="pre">__main__</span></code>.
-It is empty because we did not create any variables in
-<code class="docutils literal notranslate"><span class="pre">__main__</span></code> or pass any arguments to it.</p>
-<p>The four <code class="docutils literal notranslate"><span class="pre">countdown</span></code> frames have different values for the
-parameter <code class="docutils literal notranslate"><span class="pre">n</span></code>.  The bottom of the stack, where <code class="docutils literal notranslate"><span class="pre">n=0</span></code>, is
-called the <strong>base case</strong>.  It does not make a recursive call, so
-there are no more frames.</p>
-<p>As an exercise, draw a stack diagram for <code class="docutils literal notranslate"><span class="pre">print_n</span></code> called with
-<code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">'Hello'</span></code> and <code class="docutils literal notranslate"><span class="pre">n=2</span></code>.
-Then write a function called <code class="docutils literal notranslate"><span class="pre">do_n</span></code> that takes a function
-object and a number, <code class="docutils literal notranslate"><span class="pre">n</span></code>, as arguments, and that calls
-the given function <code class="docutils literal notranslate"><span class="pre">n</span></code> times.</p>
 </div>
 <div class="section" id="infinite-recursion">
 <h2><span class="section-number">9.2. </span>Infinite recursion<a class="headerlink" href="#infinite-recursion" title="Permalink to this headline">¶</a></h2>
