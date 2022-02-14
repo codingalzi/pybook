@@ -662,43 +662,46 @@
 <h2><span class="section-number">8.4. </span>중첩 조건문<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">elif</span></code> 키워드는 사실 없어도 된다.
 예를 들어 크거나, 작거나, 같은 세 가지 경우를 다음과 같이 다룰 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x and y are equal&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 작다&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is less than y&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 크다&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is greater than y&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x와 y가 같다&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The outer conditional contains two branches.  The
-first branch contains a simple statement.  The second branch
-contains another <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, which has two branches of its
-own.  Those two branches are both simple statements,
-although they could have been conditional statements as well.</p>
-<p>Although the indentation of the statements makes the structure
-apparent, <strong>nested conditionals</strong> become difficult to read very
-quickly.  It is a good idea to avoid them when you can.</p>
-<p>Logical operators often provide a way to simplify nested conditional
-statements.  For example, we can rewrite the following code using a
-single conditional:</p>
+<p>위와 같이 <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span> <span class="pre">...</span></code> 조건문을 중첩해서 사용하면
+원하는 대로 경우를 나누어서 처리할 수 있다.
+경우의 확인 순서는 바깥 쪽에 위치한 경우부터 시작해서
+점차 <code class="docutils literal notranslate"><span class="pre">else</span></code> 문 안쪽으로 진행한다.</p>
+<p>일반적으로 3번 이상의 중첩을 사용하는 것은 권장되지 않는다.
+이유는 경우의 구분이 너무 복잡해질 수 있기 때문이다.
+가능하면 중첩 조건문 대신에 <code class="docutils literal notranslate"><span class="pre">elif</span></code> 문을 활용할 것이 권장된다.</p>
+<div class="proof example admonition" id="exp_nested_conditionals">
+<p class="admonition-title"><span class="caption-number">Example 8.2 </span></p>
+<div class="example-content section" id="proof-content">
+<p>논리 연산자를 활용하여 중첩 조건문의 활용을 피할 수도 있다.</p>
+<p>아래 코드는 중첩 조건문을 사용하여 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 크면서 동시에 10보다 작은 경우를 다룬다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is a positive single-digit number.&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 0보다 크고 동시에 10보다 작은 경우&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> statement runs only if we make it past both
-conditionals, so we can get the same effect with the <code class="docutils literal notranslate"><span class="pre">and</span></code> operator:</p>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수가 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">x</span></code>와 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> 두 조건을 모두 만족하는 경우에만
+실행되기에 아래와 같이 <code class="docutils literal notranslate"><span class="pre">and</span></code> 연산자를 이용하면 굳이 조건문을
+중첩으로 사용할 필요가 없다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is a positive single-digit number.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 0보다 크고 동시에 10보다 작은 경우&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>For this kind of condition, Python provides a more concise option:</p>
+<p>참고로 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">x</span> <span class="pre">and</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>를 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>로 표현할 수 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is a positive single-digit number.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 0보다 크고 동시에 10보다 작은 경우&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</div></div>
 </div>
 
     <script type="text/x-thebe-config">
