@@ -286,7 +286,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#return">
-   9.3. 함수 실행 종료와
+   9.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      return
@@ -297,27 +297,34 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   9.4. 예제: 계승
+   9.4. 재귀 수학 함수 예제
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   9.5. 예제: 피보나치 수열
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   9.6. 예제: 콜라츠 추측
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
-   9.7. 영화 감독 봉준호
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     9.4.1. 계승
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     9.4.2. 피보나치 수열
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sec-collatz">
+     9.4.3. 콜라츠 추측
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   9.8. 연습문제
+   9.5. 영화 감독 봉준호
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   9.6. 연습문제
   </a>
  </li>
 </ul>
@@ -352,7 +359,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#return">
-   9.3. 함수 실행 종료와
+   9.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      return
@@ -363,27 +370,34 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   9.4. 예제: 계승
+   9.4. 재귀 수학 함수 예제
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   9.5. 예제: 피보나치 수열
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   9.6. 예제: 콜라츠 추측
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
-   9.7. 영화 감독 봉준호
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     9.4.1. 계승
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     9.4.2. 피보나치 수열
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sec-collatz">
+     9.4.3. 콜라츠 추측
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   9.8. 연습문제
+   9.5. 영화 감독 봉준호
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   9.6. 연습문제
   </a>
  </li>
 </ul>
@@ -495,7 +509,7 @@
 주의를 기울여야 한다.</p>
 </div>
 <div class="section" id="return">
-<h2><span class="section-number">9.3. </span>함수 실행 종료와 <code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3. </span><code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h2>
 <p>함수의 본문에 함수의 반환값을 지정하는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">표현식</span></code>이 여러 번
 사용될 수 있다.
 예를 들어 짝수이면 0, 홀수이면 1을 반환하는 함수는 다음과 같이 정의한다.</p>
@@ -619,7 +633,10 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">9.4. </span>예제: 계승<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.4. </span>재귀 수학 함수 예제<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>재귀 함수로 구현될 수 있는 세 개의 수학 함수를 살펴본다.</p>
+<div class="section" id="id5">
+<h3><span class="section-number">9.4.1. </span>계승<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>음이 아닌 정수 <span class="math notranslate nohighlight">\(n\)</span>이 주어졌을 때 1부터 <span class="math notranslate nohighlight">\(n\)</span> 까지의 곱을 <span class="math notranslate nohighlight">\(n\)</span>의 계승 또는
 팩토리얼<font size="2">factorial</font>이라 하고 <span class="math notranslate nohighlight">\(n!\)</span>로 표시한다.</p>
 <div class="math notranslate nohighlight">
@@ -648,8 +665,8 @@ n! &amp; = n \, (n-1)!\quad\text{단, $n&gt;0$.}
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2><span class="section-number">9.5. </span>예제: 피보나치 수열<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3><span class="section-number">9.4.2. </span>피보나치 수열<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p><strong>피보나치 수열</strong><font size="2">Fibonacci sequence</font>은
 처음엔 1과 1로 시작한 후에 이후의 항목은 이전 두 개의 항목의 합으로 생성된다.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
@@ -702,8 +719,8 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 따라서 피보나치 수열의 0번과 1번 값이 1, 2번 값은 2, 3번 값은 3 등이 된다.</p>
 </div>
 </div>
-<div class="section" id="id6">
-<h2><span class="section-number">9.6. </span>예제: 콜라츠 추측<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sec-collatz">
+<span id="id7"></span><h3><span class="section-number">9.4.3. </span>콜라츠 추측<a class="headerlink" href="#sec-collatz" title="Permalink to this headline">¶</a></h3>
 <p>독일 수학자 콜라츠(Collatz -&gt; L.)가 1937년에 아래 알고리즘을
 얼마나 많이 반복하면 최종적으로 숫자 1에 다다를 것인가를 질문했다.</p>
 <ul class="simple">
@@ -728,8 +745,8 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>                        <span class="c1"># 기저 조건</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>                  <span class="c1"># 짝수인 경우</span>
+        <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0:                  # 짝수인 경우
         <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span>
         <span class="n">collatz</span><span class="p">(</span><span class="n">num</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>                               <span class="c1"># 홀수인 경우</span>
@@ -840,8 +857,9 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 <strong>콜라츠 추측</strong><font size="2">Collatz conjecture</font>
 이라 부른다.</p>
 </div>
-<div class="section" id="id7">
-<h2><span class="section-number">9.7. </span>영화 감독 봉준호<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id8">
+<h2><span class="section-number">9.5. </span>영화 감독 봉준호<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>봉준호 영화 감독의 영화를 담고 있는 리스트가 아래와 같이 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -990,8 +1008,8 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 </div>
 </div>
 </div>
-<div class="section" id="id8">
-<h2><span class="section-number">9.8. </span>연습문제<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2><span class="section-number">9.6. </span>연습문제<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <ol>
 <li><p><code class="docutils literal notranslate"><span class="pre">printItems</span></code> 수정하여 <code class="docutils literal notranslate"><span class="pre">movie_Bong</span></code>에 포함된 항목들을 아래와 같이
 출력하도록 하는 <code class="docutils literal notranslate"><span class="pre">printItems2</span></code> 함수를 구현하라.</p>

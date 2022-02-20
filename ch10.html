@@ -43,6 +43,8 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -274,17 +276,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sec-variable-reassignment">
-   10.1. 변수 재할당
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sec-variable-update">
-   10.2. 변수 업데이트
+   10.1. 변수 재할당 / 변수 업데이트
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while">
-   10.3.
+   10.2.
    <code class="docutils literal notranslate">
     <span class="pre">
      while
@@ -294,42 +291,53 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     10.3.1. 무한 루프
+    <a class="reference internal nav-link" href="#id3">
+     10.2.1. 무한 루프
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     10.3.2. 콜라츠 추측
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#break-continue">
-     10.3.3.
+    <a class="reference internal nav-link" href="#break">
+     10.2.2.
      <code class="docutils literal notranslate">
       <span class="pre">
        break
       </span>
      </code>
-     와
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       continue
-      </span>
-     </code>
+     키워드
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     10.2.3. 뉴튼 방법
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for">
-   10.4.
+   10.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      for
     </span>
    </code>
    반복문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#break-continue">
+   10.4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     break
+    </span>
+   </code>
+   와
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     continue
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -354,17 +362,12 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sec-variable-reassignment">
-   10.1. 변수 재할당
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sec-variable-update">
-   10.2. 변수 업데이트
+   10.1. 변수 재할당 / 변수 업데이트
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while">
-   10.3.
+   10.2.
    <code class="docutils literal notranslate">
     <span class="pre">
      while
@@ -374,42 +377,53 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     10.3.1. 무한 루프
+    <a class="reference internal nav-link" href="#id3">
+     10.2.1. 무한 루프
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     10.3.2. 콜라츠 추측
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#break-continue">
-     10.3.3.
+    <a class="reference internal nav-link" href="#break">
+     10.2.2.
      <code class="docutils literal notranslate">
       <span class="pre">
        break
       </span>
      </code>
-     와
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       continue
-      </span>
-     </code>
+     키워드
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     10.2.3. 뉴튼 방법
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for">
-   10.4.
+   10.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      for
     </span>
    </code>
    반복문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#break-continue">
+   10.4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     break
+    </span>
+   </code>
+   와
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     continue
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -438,7 +452,7 @@
 변수 업데이트를 이해해야 한다.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문과 데이터분석 예제 추가!</strong></p>
 <div class="section" id="sec-variable-reassignment">
-<span id="id2"></span><h2><span class="section-number">10.1. </span>변수 재할당<a class="headerlink" href="#sec-variable-reassignment" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><span class="section-number">10.1. </span>변수 재할당 / 변수 업데이트<a class="headerlink" href="#sec-variable-reassignment" title="Permalink to this headline">¶</a></h2>
 <p><strong>변수 재할당</strong><font size="2">variable reassignment</font>은
 변수가 가리키는 값은 변경하는 것이다.
 예를 들어 아래 코드는 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값을 5에서 7로 재할당한다.</p>
@@ -459,9 +473,6 @@
 <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span></code> 가 실행될 당시에 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 5를 가리키고 있었기 때문에
 <code class="docutils literal notranslate"><span class="pre">y</span></code> 또한 5를 가리키도록 지정되었다.
 이후에 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값을 변경해도 <code class="docutils literal notranslate"><span class="pre">y</span></code>에게는 전혀 영향을 주지 않는다.</p>
-</div>
-<div class="section" id="sec-variable-update">
-<span id="id3"></span><h2><span class="section-number">10.2. </span>변수 업데이트<a class="headerlink" href="#sec-variable-update" title="Permalink to this headline">¶</a></h2>
 <p>반복문의 핵심은 변수가 가리키던 값을 이용하여 새로운 값을 생성한 후에 그 값을
 동일한 변수에 재할당하는 것이며, 이를
 <strong>변수 업데이트</strong><font size="2">variable update</font>라 한다.
@@ -480,7 +491,7 @@
 </div>
 </div>
 <div class="section" id="while">
-<h2><span class="section-number">10.3. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.2. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="ch09.html#ch-recursion"><span class="std std-numref">9장</span></a>에서 살펴 본 다음 재귀 함수는 카운트다운을 출력한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
@@ -559,8 +570,8 @@
 본문에 위치한 명령문을 실행한 후에
 다시 1단계로 이동한다.</p></li>
 </ol>
-<div class="section" id="id4">
-<h3><span class="section-number">10.3.1. </span>무한 루프<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3><span class="section-number">10.2.1. </span>무한 루프<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>헤더의 <code class="docutils literal notranslate"><span class="pre">부울식</span></code>이 계속해서 참이면 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 본문의 실행이 무한 반복된다.
 예를 들어 역시 <a class="reference internal" href="ch09.html#ch-recursion"><span class="std std-numref">9장</span></a>에서 살펴본 아래 재귀 함수를 다시 살펴보자.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_infinitely</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -584,16 +595,240 @@
 실행될 명령문이 없다.
 따라서 예를 들어 <code class="docutils literal notranslate"><span class="pre">count_infinitely(1)</span></code>을 호출하면 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 무한 반복되며
 이런 현상을 <strong>무한 루프</strong><font size="2">infinite loop</font>라 한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문으로 인해 무한 루프가 발생하는지 여부를
+경우에 따라 판단하기 매우 어렵거나 불가능할 수 있다.
+여기서는 콜라츠 추측에 사용된 알고리즘을 이용하여
+판단이 매우 어려운 경우를 소개한다.</p>
+<div class="proof example admonition" id="exp:collatz_while">
+<p class="admonition-title"><span class="caption-number">Example 10.1 </span> (콜라츠 추측과 무한 루프)</p>
+<div class="example-content section" id="proof-content">
+<p><a class="reference internal" href="ch09.html#sec-collatz"><span class="std std-numref">9.4.3절</span></a>에서 재귀로 구현한 <code class="docutils literal notranslate"><span class="pre">collatz()</span></code> 함수는 다음과 같다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>                        <span class="c1"># 기저 조건</span>
+        <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">num</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>                    <span class="c1"># 짝수인 경우</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span>
+        <span class="n">collatz</span><span class="p">(</span><span class="n">num</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>                               <span class="c1"># 홀수인 경우</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span>
+        <span class="n">collatz</span><span class="p">(</span><span class="n">num</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="id5">
-<h3><span class="section-number">10.3.2. </span>콜라츠 추측<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>함수 본문에서 반복되는 내용은 다음과 같다.</p>
+<ul class="simple">
+<li><p>기저 조건: <code class="docutils literal notranslate"><span class="pre">1</span></code> 출력</p></li>
+<li><p>짝수인 경우: 자신 출력 후 2로 나눈 값에 대해 재귀 적용</p></li>
+<li><p>홀수인 경우: 자신 출력 후 세 배 더하기 1한 값에 대해 재귀 적용</p></li>
+</ul>
+<p>따라서 <code class="docutils literal notranslate"><span class="pre">n</span></code>을 출력한 후에 짝수 또는 홀수인 경우에 따라 <code class="docutils literal notranslate"><span class="pre">n</span></code>의 값을 업데이트하는
+과정을 반복하는 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문으로 재귀를 대신할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; -&gt; &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>          <span class="c1"># 짝수인 경우</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>                 <span class="c1"># 홀수인 경우</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
+            
+    <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                  <span class="c1"># 기저 조건</span>
+</pre></div>
 </div>
-<div class="section" id="break-continue">
-<h3><span class="section-number">10.3.3. </span><code class="docutils literal notranslate"><span class="pre">break</span></code>와 <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#break-continue" title="Permalink to this headline">¶</a></h3>
+<p>이미 <a class="reference internal" href="ch09.html#sec-collatz"><span class="std std-numref">9.4.3절</span></a>에서 언급하였듯이 콜라츠 추측은 여전히 미해결 문제로
+남아 있다.
+즉, <code class="docutils literal notranslate"><span class="pre">collatz()</span></code> 함수의 본문에 사용된 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 경우에 따라
+무한 루프를 유발하는지 여부가 아직 알려지지 않았다.</p>
+</div>
+</div></div>
+<div class="section" id="break">
+<h3><span class="section-number">10.2.2. </span><code class="docutils literal notranslate"><span class="pre">break</span></code> 키워드<a class="headerlink" href="#break" title="Permalink to this headline">¶</a></h3>
+<p>반복 횟수를 미지 지정할 수 없지만
+특별한 상황이 발생하면 무한 루프를 중지시켜야 할 때
+<code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code>와 <code class="docutils literal notranslate"><span class="pre">break</span></code>를 함께 활용한다.</p>
+<p>예제 …</p>
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">10.2.3. </span>뉴튼 방법<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>무한 루프를 구하고자 하는 값의 근사치를 계산하는 데에 활용하곤 한다.
+예를 들어, 제곱근<font size="2">squnre root</font>을 계산하기 위해
+<strong>뉴튼 방법</strong><font size="2">Newton’s method</font>에 사용된 알고리즘을
+무한 루프를 이용하여 구현할 수 있다.</p>
+<p><span class="math notranslate nohighlight">\(n\)</span> 의 제곱근을 계산하려면 아래 식을 반복적으로 실행하면 된다.
+단 <span class="math notranslate nohighlight">\(x\)</span> 는 <span class="math notranslate nohighlight">\(n\)</span>의 제곱근의 임의의 근사치이다.</p>
+<div class="math notranslate nohighlight">
+\[
+y = \frac{x + \frac{n}{x}}{2}
+\]</div>
+<p>예를 들어, 2의 실제 제곱근은 다음과 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4142135623730951
+</pre></div>
+</div>
+</div>
+</div>
+<p>이제 <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">n</span></code>로 두고 <code class="docutils literal notranslate"><span class="pre">y</span></code> 값을 계산하면 다음과 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">n</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>계산된 <code class="docutils literal notranslate"><span class="pre">y</span></code>를 제곱근의 새로운 근사치로 지정하고 새로운 y를 계산해 보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4166666666666665
+</pre></div>
+</div>
+</div>
+</div>
+<p>2의 제곱근 값에 보다 가까워졌다.
+이 과정을 반복하면 보다 정확한 값을 얻는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4142156862745097
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4142135623746899
+</pre></div>
+</div>
+</div>
+</div>
+<p>이제 <code class="docutils literal notranslate"><span class="pre">np.sqrt(2)</span></code>와 거의 동일해졌다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.414213562373095
+</pre></div>
+</div>
+</div>
+</div>
+<p>정리하면 아래 명령문을 몇 번 반복하면 임의의 수의 제곱근을 계산한다.</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">(x</span> <span class="pre">+</span> <span class="pre">n/x)</span> <span class="pre">/</span> <span class="pre">2</span></code> 를 실행한다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>와 <code class="docutils literal notranslate"><span class="pre">y</span></code>를 비교해서, 두 수가 동치이면 실행을 멈추고 <code class="docutils literal notranslate"><span class="pre">y</span></code>를 반환한다.</p></li>
+<li><p>그렇지 않으면 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span></code>를 실행한 후에 1단계로 돌아간다.</p></li>
+</ol>
+<p>즉, <code class="docutils literal notranslate"><span class="pre">np.sqrt()</span></code> 함수처럼 작동하는 제곱근 함수를 다음과 같이 정의할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>그런데 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">!=</span> <span class="pre">y</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code> 처럼
+부동소수점<font size="2">floating point</font>
+두 개의 동치성 여부를
+비교하는 일은 매우 조심해야 한다.
+이에 대한 이유는 프로그래밍 초보자의 수준을 많이 벗어나기에 여기서는
+설명하지 않는다.</p>
+<p>두 부동소수점의 동치성 여부를 판단해야 하는 경우
+보통은 두 수의 오차가 일정 범위 안에 있는지 여부를 판단하는 하는 것으로 대신한다.
+즉, 오차가 충분히 작아지면 알고리즘의 실행을 멈추도록 하는 게 일반적이다.
+이 아이디어를 <code class="docutils literal notranslate"><span class="pre">my_sqrt()</span></code> 함수에 적용하면 다음과 같다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">abs()</span></code> 함수는 절댓값을 반환한다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">epsilon</span></code>은 오차의 한도를 지정하는 역할을 수행하는 매개 변수이다.
+“엡실론” 이라고 읽으며 오차 한도를 나타내는 변수 이름으로 많이 사용된다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>오차 허용 한도를 0.0001로 지정하고 2의 제곱근을 구해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4142135623746899
+</pre></div>
+</div>
+</div>
+</div>
+<p>오차 허용 한도를 0.000001로 지정하면 보다 엄밀한 근사치를 얻는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.000001</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.414213562373095
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="for">
-<h2><span class="section-number">10.4. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.3. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h2>
+<p>…</p>
+</div>
+<div class="section" id="break-continue">
+<h2><span class="section-number">10.4. </span><code class="docutils literal notranslate"><span class="pre">break</span></code>와 <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#break-continue" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
