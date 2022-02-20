@@ -276,7 +276,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   9.1. 재귀 함수의 스택 다이어그램
+   9.1. 재귀 함수의 콜 스택
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -286,7 +286,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#return">
-   9.3. 함수 실행의 종료와
+   9.3. 함수 실행 종료와
    <code class="docutils literal notranslate">
     <span class="pre">
      return
@@ -342,7 +342,7 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   9.1. 재귀 함수의 스택 다이어그램
+   9.1. 재귀 함수의 콜 스택
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -352,7 +352,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#return">
-   9.3. 함수 실행의 종료와
+   9.3. 함수 실행 종료와
    <code class="docutils literal notranslate">
     <span class="pre">
      return
@@ -436,16 +436,16 @@
 </div>
 </div>
 <p>함수 본문에 자신을 호출하는 함수를 기능을 <strong>재귀</strong><font size="2">recursion</font>라 하며,
-재귀 기능을 같는 함수를 <strong>재귀 함수</strong><font size="2">recursive function</font>라 한다.</p>
+<strong>재귀 함수</strong><font size="2">recursive function</font>는 재귀를 활용하는 함수이다.</p>
 <div class="section" id="id2">
-<h2><span class="section-number">9.1. </span>재귀 함수의 스택 다이어그램<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>재귀 함수의 콜 스택<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>재귀 함수의 실행과정 동안 많은 프레임의 생성과 소멸이 발생하여
-스택 다이어그램의 변화가 경우에 따라 매우 복잡해지기도 한다.
-아래 그림은 <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>을 호출했을 때의 스택 다이어그램의 상태 중 하나이다.</p>
+콜 스택의 변화가 경우에 따라 매우 복잡해지기도 한다.
+아래 그림은 <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>을 호출했을 때의 콜 스택의 상태를 스택 다이어그램으로 보여준다.</p>
 <div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/count_down.jpg" style="width:300px;"></div><p>예를 들어,
 <a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20collatz%28num%29%3A%0A%20%20%20%20if%20num%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20print%28num%29%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20elif%20num%252%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D%27,%20%27%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num//2%29%20%2B%201%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D%27,%20%27%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num*3%20%2B%201%29%20%2B%201%0A%20%20%20%20%20%20%20%20%0Acollatz%287%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 콜라츠 추측</a>에서
 재귀 함수 호출 과정 동안 메모리에서 벌어지는 프레임의 생성과 소멸 과정,
-즉, 스택 다이어그램의 변화를 살펴볼 수 있다.</p>
+즉, 콜 스택의 변화를 살펴볼 수 있다.</p>
 </div>
 <div class="section" id="id3">
 <h2><span class="section-number">9.2. </span>기저 조건과 무한 재귀<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
@@ -495,7 +495,7 @@
 주의를 기울여야 한다.</p>
 </div>
 <div class="section" id="return">
-<h2><span class="section-number">9.3. </span>함수 실행의 종료와 <code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3. </span>함수 실행 종료와 <code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h2>
 <p>함수의 본문에 함수의 반환값을 지정하는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">표현식</span></code>이 여러 번
 사용될 수 있다.
 예를 들어 짝수이면 0, 홀수이면 1을 반환하는 함수는 다음과 같이 정의한다.</p>
@@ -567,6 +567,12 @@
 </div>
 </div>
 </div>
+<p>하지만 <code class="docutils literal notranslate"><span class="pre">n</span></code>이 <code class="docutils literal notranslate"><span class="pre">0</span></code>보다 크면 <code class="docutils literal notranslate"><span class="pre">countdown_num(n-1)</span></code> 이
+재귀적으로 호출되어 실행이 종료할 때까지 기다렸다가
+반환값을 받아 <code class="docutils literal notranslate"><span class="pre">result</span></code>가 가리키는 값을 지정한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">1</span></code>이면 재귀 호출이 한 번 발생하며
+재귀 호출된 <code class="docutils literal notranslate"><span class="pre">countdown_num(0)</span></code>은 <code class="docutils literal notranslate"><span class="pre">0</span></code>을 반환하며 종료된다.
+따라서 <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">+</span> <span class="pre">1</span></code>이 실행되어 최종적으로 <code class="docutils literal notranslate"><span class="pre">1</span></code>을 반환한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;반환값:&#39;</span><span class="p">,</span> <span class="n">countdown_num</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
@@ -580,6 +586,8 @@
 </div>
 </div>
 </div>
+<p>일반적으로 <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">k</span></code>이면 재귀 호출이 <code class="docutils literal notranslate"><span class="pre">k-1</span></code> 번 발생하며
+재귀적으로 호출된 역순으로 계산된 값을 반환하며 실행을 종료한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;반환값:&#39;</span><span class="p">,</span> <span class="n">countdown_num</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
