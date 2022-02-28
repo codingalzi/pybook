@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -299,7 +296,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     1.3.2. 정적 타이핑
+     1.3.2. 동적 타이핑
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -363,7 +360,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     1.3.2. 정적 타이핑
+     1.3.2. 동적 타이핑
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -499,10 +496,7 @@ C, C++, C#, 자바 등이 컴파일러를 사용하여 소스코드를 변환한
 해석기 방식의 범용 프로그래밍 언어<font size="1">general-purpose programming language</font>이다.
 기존 프로그래밍 언어들의 한계를 극복하고자 만들어진 파이썬은
 자연어와 유사할 정도로 간결하고 쉬운 문법을 가지고 있다.</p>
-<p>위 파이썬 코드는 프로그래밍에 대한 경험이 전혀 없는 사람도
-대략적으로 의미를 유추하는 것이 가능할 정도로 자연어와 유사하여
-입문자 교육용으로도 많이 사용된다.
-예를 들어, 아래의 파이썬 코드는 <code class="docutils literal notranslate"><span class="pre">name</span></code>이 <code class="docutils literal notranslate"><span class="pre">members</span></code> 리스트에 없다면
+<p>예를 들어, 아래의 파이썬 코드는 <code class="docutils literal notranslate"><span class="pre">name</span></code>이 <code class="docutils literal notranslate"><span class="pre">members</span></code> 리스트에 없다면
 회원가입을 하라는 문구를 출력하는 코드이다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;강현&#39;</span>
 <span class="n">members</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;민경&#39;</span><span class="p">,</span> <span class="s1">&#39;재석&#39;</span><span class="p">,</span> <span class="s1">&#39;윤진&#39;</span><span class="p">,</span> <span class="s1">&#39;태연&#39;</span><span class="p">]</span>
@@ -511,21 +505,34 @@ C, C++, C#, 자바 등이 컴파일러를 사용하여 소스코드를 변환한
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;회원가입 하세요.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>파이썬은 들여쓰기로 코드 블록을 구분하는 데, 이는 코드의 가독성을 높인다.
-또, 파이썬의 간결하고 쉬운 문법은 오류가 발생할 가능성을 낮춰
+<p>위 파이썬 코드는 프로그래밍에 대한 경험이 전혀 없는 사람도
+대략적으로 의미를 유추하는 것이 가능하다.
+이렇듯 파이썬 언어는 자연어와 유사하여
+입문자 교육용으로도 많이 사용된다.
+파이썬은 또한 파이썬의 간결하고 쉬운 문법은 오류가 발생할 가능성을 낮춰
 프로그램 개발 속도와 생산성을 높일 수 있다.
-이에 구글<font size="1">Google</font>, 드롭박스<font size="1">Dropbox</font>,
-인스타그램<font size="1">Instagram</font> 등 많은 회사에서 소프트웨어 개발에 파이썬을 사용한다.</p>
+이에 삼성, LG, 네이버, 다음, 구글<font size="1">Google</font>, 드롭박스<font size="1">Dropbox</font>,
+인스타그램<font size="1">Instagram</font> 등 많은 IT 기업에서 소프트웨어 개발에 파이썬을 사용한다.</p>
+<p>이뿐만 아니라 파이썬은 다양한 분야에서 사용할 수 있는 수많은 라이브러리를 제공하고 있다.</p>
+<ul class="simple">
+<li><p>데이터 과학: Numpy, Pandas, Keras, Matplotlib, TensorFlow, PyTorch 등</p></li>
+<li><p>웹 프레임워크: Django, Flask 등</p></li>
+</ul>
+<p>파이썬이 제공하는 강력한 라이브러리는 더 적은 코드로 더 많은 프로그램을
+효율적으로 구현할 수 있도록 한다.
+즉, 프로그래머의 생산성을 향상시킨다.</p>
+<p>이외에도 파이썬은 C나 C++와 연동이 가능하다.
+예를 들어 C 또는 C++로 구현된 프로그램을 파이썬에서 활용할 수 있다.
+대표적으로 데이터 분석에서 가장 중요한 라이브러리 중에 하나인
+넘파이<font size="2">NumPy</font>는 C 로 구현되어 있지만
+사용자는 파이썬 라이브러리로 사용한다.</p>
 <div class="section" id="id7">
 <h3><span class="section-number">1.3.1. </span>객체 지향 프로그래밍<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>파이썬은 C++, C#, 자바 등과 같이 OOP,  즉
 <strong>객체 지향 프로그래밍</strong><font size="1">Object-Oriented Programming</font>을 지원한다.
-OOP는 프로그램 전체를 하나로 묶어서 구현하는 것이 아니라
-프로그램을 구성하는 객체와 객체들 사이의 관계를 구현하는
+OOP는 프로그램을 구성하는 객체와 객체들 사이의 관계를 구현하는
 프로그래밍 기법이다.
-OOP를 잘 활용하면 코드의 재사용성을 높이고,
-코드의 유지보수가 쉬워진다.</p>
-<p>파이썬은 모든 것이 객체로 잘 설계되어 있으며
+파이썬은 모든 것이 객체로 설계되어 있으며
 OOP를 쉽게 적용할 수 있는 매우 편리하고 강력한 기능을 제공한다.
 따라서 데이터 분석, 머신러닝, 데이터베이스 관리, 웹 개발, 웹 스크래핑,
 GUI 프로그래밍<font size="1">Graphical User Interface programming</font> 등
@@ -535,43 +542,23 @@ GUI 프로그래밍<font size="1">Graphical User Interface programming</font> �
 대표적인 절차 지향 프로그래밍 언어로 C와 HTML이 있다.</p>
 </div>
 <div class="section" id="id8">
-<h3><span class="section-number">1.3.2. </span>정적 타이핑<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>파이썬은 <strong>동적 타이핑</strong><font size="1">Dynamic typing</font>을 지원한다.
-동적 타이핑은 변수를 미리 선언하지 않고, 변수를 생성하고자 할 때
-값을 초기화하여 사용하는 것을 말한다.
-변수의 자료형은 파이썬이 알아서 판단하기 때문에
-동적 타이핑은 프로그래밍을 처음 접하는 사람들에게 편리하다.</p>
-<p>동적 타이핑과는 달리 변수를 사용하기 전 미리 선언해야 하는
-<strong>정적 타이핑</strong><font size="1">Static Typing</font>도 있다.
-C나 자바처럼 주로 컴파일 방식의 언어가 정적 타이핑을 지원한다.
-이처럼 사용할 변수와 변수에 할당될 값의 자료형을 미리 선언하는 것은
-불편해 보일 수도 있다.
-하지만 정적 타이핑은 컴파일하는 과정에서 선언한 자료형에 맞는 값을 할당하였는지,
-선언 후 사용하지 않는 변수가 있는지를 확인하여 버그 발생 확률을
-낮출 수 있다는 장점이 있다.
-이에 동적 타이핑을 지원하는 파이썬에서도 타입 힌트를 명시하기도 한다.</p>
-<p>이뿐만 아니라 파이썬은 다양한 분야에서 사용할 수 있는 수많은 라이브러리를 제공하고 있다. 예를 들어, 데이터과학에서 유용한 파이썬 라이브러리로는 Numpy, Pandas, TensorFlow, Keras, Matplotlib등이 있고, 웹 프레임워크 라이브러리로는 Django, Flask 등이 있다. 라이브러리의 사용은 쉽게 다양한 기능을 사용할 수 있게 하고 더 적은 코드를 작성하여 더 많은 일을 할 수 있도록 한다. 즉, 적절히 라이브러리를 사용하면 빠른 개발 속도로 생산성을 높일 수 있다.</p>
-<p>이외에도 파이썬은 C나 C++와 연동가능하다. 즉, C나 C++로 만든 프로그램을 파이썬에서 사용할 수 있다. 파이썬은 다루기 쉬운 반면 컴파일러 방식의 언어에 비해 처리 속도가 느리다는 단점이 있는데 C나 C++과 연동함으로써 이러한 단점을 보완할 수 있다. 대표적인 예로는 넘파이(Numpy)가 있다. C언어로 만든 넘파이의 사용은 파이썬으로도 빠르고 효율적인 방법으로 데이터를 처리하고 저장할 수 있게 한다.</p>
+<h3><span class="section-number">1.3.2. </span>동적 타이핑<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>파이썬은 <strong>동적 타이핑</strong><font size="2">dynamic typing</font>을 지원한다.
+동적 타이핑은 선언되는 변수의 자료형을 미리 지정하지 않고
+변수에 할당된 값을 해석기가 확인하여 프로그램 실행 중에
+허용되는 것과 그러지 않는 것이 구분되도록 한다.</p>
+<p>반면에 변수를 사용하기 전 미리 할당받을 수 있는 값의 자료형을 지정해야 하는 것을
+<strong>정적 타이핑</strong><font size="2">static typing</font>이라 한다.
+C, C++, C#, 자바 등 주로 컴파일러를 사용하는 언어가 정적 타이핑을 사용한다.</p>
 </div>
 <div class="section" id="id9">
 <h3><span class="section-number">1.3.3. </span>파이썬 인기도<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
-<p>파이썬의 특징을 정리하면 다음과 같다.</p>
-<ul class="simple">
-<li><p>범용 프로그래밍 언어</p></li>
-<li><p>해석기 언어</p></li>
-<li><p>거의 모든 운영체제 지원</p></li>
-<li><p>객체 지향 언어</p></li>
-<li><p>동적 타이핑 지원</p></li>
-<li><p>수많은 표준 라이브러리 제공</p></li>
-<li><p>C, C++ 등 타 프로그래밍 언어와 연동 가능</p></li>
-</ul>
 <p>지금까지 살펴본 파이썬의 특징으로 인해  파이썬의 인기는 날이 갈수록 높아지고 있다.
 프로그래밍 언어들의 인기도를 측정하는
-TIOBE 인덱스<font size="1"><a class="reference external" href="https://www.tiobe.com/tiobe-index//">https://www.tiobe.com/tiobe-index//</a></font>에
-따르면, 2022년 1월 기준으로 파이썬은 가장 인기있는 프로그래밍 언어이다.
-이에 지금 당장 프로그래밍을 배우고자 한다면, 파이썬을 추천한다.</p>
+<a class="reference external" href="https://www.tiobe.com/tiobe-index">TIOBE 인덱스</a>에
+따르면, 2022년 2월 기준으로 파이썬은 가장 인기있는 프로그래밍 언어이다.</p>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/tiobe-index.jpg" style="width:500px;">
+    <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/tiobe_index2202.jpg" style="width:500px;">
 </div></div>
 </div>
 </div>
