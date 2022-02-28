@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -52,7 +55,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. 프로그래밍이란?" href="ch01.html" />
+    <link rel="next" title="1. 프로그래밍" href="ch01.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -94,7 +97,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="ch01.html">
-   1. 프로그래밍이란?
+   1. 프로그래밍
   </a>
  </li>
  <li class="toctree-l1">
@@ -155,16 +158,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
    13. 모듈
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch20.html">
-   14. 마크다운과 주피터 노트북
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch21.html">
-   15. MyST 활용 예제
   </a>
  </li>
 </ul>
@@ -269,24 +262,23 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>소개<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>If you do much work on computers, eventually you find that there’s some task you’d like to automate. For example, you may wish to perform a search-and-replace over a large number of text files, or rename and rearrange a bunch of photo files in a complicated way. Perhaps you’d like to write a small custom database, or a specialized GUI application, or a simple game.</p>
-<p>Python is just the language for you.</p>
-<p>Python is simpler to use, available on Windows, macOS, and Unix operating systems, and will help you get the job done more quickly.</p>
-<p>Python is simple to use, but it is a real programming language, offering much more structure and support for
-large programs.</p>
-<p>On the other hand, Python has high-level data types built in, such as flexible arrays and dictionaries. Because of its more general data types Python is applicable to large problem domain.</p>
-<p>Python allows you to split your program into modules that can be reused in other Python programs. It comes with a large collection of standard modules that you can use as the basis of your programs — or as examples to start learning to program in Python. Some of these modules provide things like file I/O, system calls, sockets, and even interfaces to graphical user interface toolkits like Tk.</p>
-<p>Python is an interpreted language, which can save you considerable time during program development because no compilation and linking is necessary. The interpreter can be used interactively, which makes it easy to experiment with features of the language, to write throw-away programs, or to test functions during bottom-up program development. It is also a handy desk calculator.</p>
-<p>Python enables programs to be written compactly and readably. Programs written in Python are typically much shorter than equivalent C, C++, or Java programs, for several reasons:</p>
+<p>파이썬은 컴퓨터를 이용하여 다양한 문제를 해결하는 데에 매우 적합한 프로그래밍 언어다.</p>
 <ul class="simple">
-<li><p>the high-level data types allow you to express complex operations in a single statement;</p></li>
-<li><p>statement grouping is done by indentation instead of beginning and ending brackets;</p></li>
-<li><p>no variable or argument declarations are necessary.</p></li>
+<li><p>파일 탐색</p></li>
+<li><p>사진 정리</p></li>
+<li><p>데이터 베이스 관리</p></li>
+<li><p>GUI 앱 구현</p></li>
+<li><p>게임 구현</p></li>
+<li><p>…</p></li>
 </ul>
-<p>Python is extensible: if you know how to program in C it is easy to add a new built-in function or module to the interpreter, either to perform critical operations at maximum speed, or to link Python programs to libraries that may only be available in binary form (such as a vendor-specific graphics library). Once you are really hooked, you can link the Python interpreter into an application written in C and use it as an extension or command language for that application.</p>
-<p>By the way, the language is named after the BBC show “Monty Python’s Flying Circus” and has nothing to do with reptiles. Making references to Monty Python skits in documentation is not only allowed, it is encouraged!</p>
-<p>Now that you are all excited about Python, you’ll want to examine it in some more detail. Since the best way to learn a language is to use it, the tutorial invites you to play with the Python interpreter as you read.</p>
-<p>The rest of the tutorial introduces various features of the Python language and system through examples, beginning with simple expressions, statements and data types, through functions and modules, and finally touching upon advanced concepts like exceptions and user-defined classes.</p>
+<p>파이썬은 복잡하고 방대한 문제를 해결할 수 있는 능력을 갖추고 있음에도 불구하고
+사용법이 타 프로그래밍 언어에 비해 상대적으로 쉽다.
+파이썬을 이용하여 보다 간결하고 가독성이 높은 프로그램을 작성할 수 있다.
+따라서 C, C++, 자바 등에 비해 상대적으로 짧은 코드를 이용하여 동일한 기능의 프로그램을 구현할 수 있다.</p>
+<p>이 강의노트에서 파이썬을 활용한 프로그래밍의 기초를 소개한다.
+일반적으로 (프로그래밍) 언어를 배우는 최선의 방법은 그 언어를 직접 사용하는 것이다.
+따라서 강의노트에서 소개하는 모든 내용과 코드를 직접 자신의 손으로
+타이핑하면서 실행할 것을 추천한다.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -319,7 +311,7 @@ large programs.</p>
     <a class='right-next' id="next-link" href="ch01.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>프로그래밍이란?</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>프로그래밍</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

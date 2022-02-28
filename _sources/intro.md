@@ -1,41 +1,23 @@
 # 소개
 
 
-If you do much work on computers, eventually you find that there’s some task you’d like to automate. For example, you may wish to perform a search-and-replace over a large number of text files, or rename and rearrange a bunch of photo files in a complicated way. Perhaps you’d like to write a small custom database, or a specialized GUI application, or a simple game.
+파이썬은 컴퓨터를 이용하여 다양한 문제를 해결하는 데에 매우 적합한 프로그래밍 언어다.
+
+- 파일 탐색
+- 사진 정리
+- 데이터 베이스 관리
+- GUI 앱 구현
+- 게임 구현
+- ...
 
 
-Python is just the language for you.
+파이썬은 복잡하고 방대한 문제를 해결할 수 있는 능력을 갖추고 있음에도 불구하고
+사용법이 타 프로그래밍 언어에 비해 상대적으로 쉽다. 
+파이썬을 이용하여 보다 간결하고 가독성이 높은 프로그램을 작성할 수 있다.
+따라서 C, C++, 자바 등에 비해 상대적으로 짧은 코드를 이용하여 동일한 기능의 프로그램을 구현할 수 있다.
 
 
-Python is simpler to use, available on Windows, macOS, and Unix operating systems, and will help you get the job done more quickly.
-
-Python is simple to use, but it is a real programming language, offering much more structure and support for 
-large programs. 
-
-
-On the other hand, Python has high-level data types built in, such as flexible arrays and dictionaries. Because of its more general data types Python is applicable to large problem domain.
-
-
-Python allows you to split your program into modules that can be reused in other Python programs. It comes with a large collection of standard modules that you can use as the basis of your programs — or as examples to start learning to program in Python. Some of these modules provide things like file I/O, system calls, sockets, and even interfaces to graphical user interface toolkits like Tk.
-
-
-Python is an interpreted language, which can save you considerable time during program development because no compilation and linking is necessary. The interpreter can be used interactively, which makes it easy to experiment with features of the language, to write throw-away programs, or to test functions during bottom-up program development. It is also a handy desk calculator.
-
-
-Python enables programs to be written compactly and readably. Programs written in Python are typically much shorter than equivalent C, C++, or Java programs, for several reasons:
-
-- the high-level data types allow you to express complex operations in a single statement;
-- statement grouping is done by indentation instead of beginning and ending brackets;
-- no variable or argument declarations are necessary.
-
-
-Python is extensible: if you know how to program in C it is easy to add a new built-in function or module to the interpreter, either to perform critical operations at maximum speed, or to link Python programs to libraries that may only be available in binary form (such as a vendor-specific graphics library). Once you are really hooked, you can link the Python interpreter into an application written in C and use it as an extension or command language for that application.
-
-
-By the way, the language is named after the BBC show “Monty Python’s Flying Circus” and has nothing to do with reptiles. Making references to Monty Python skits in documentation is not only allowed, it is encouraged!
-
-
-Now that you are all excited about Python, you’ll want to examine it in some more detail. Since the best way to learn a language is to use it, the tutorial invites you to play with the Python interpreter as you read.
-
-
-The rest of the tutorial introduces various features of the Python language and system through examples, beginning with simple expressions, statements and data types, through functions and modules, and finally touching upon advanced concepts like exceptions and user-defined classes.
+이 강의노트에서 파이썬을 활용한 프로그래밍의 기초를 소개한다.
+일반적으로 (프로그래밍) 언어를 배우는 최선의 방법은 그 언어를 직접 사용하는 것이다.
+따라서 강의노트에서 소개하는 모든 내용과 코드를 직접 자신의 손으로
+타이핑하면서 실행할 것을 추천한다.
