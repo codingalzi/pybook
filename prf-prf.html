@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -92,67 +95,67 @@
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="ch01.html">
+  <a class="reference internal" href="programming.html">
    1. 컴퓨터 프로그래밍
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch02.html">
+  <a class="reference internal" href="environment.html">
    2. 프로그래밍 개발 환경
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch03.html">
+  <a class="reference internal" href="starting.html">
    3. 프로그래밍 시작하기
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch04.html">
+  <a class="reference internal" href="variables_expressions.html">
    4. 변수, 값, 표현식, 명령문
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch05.html">
+  <a class="reference internal" href="datatypes.html">
    5. 기본자료형
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch06.html">
+  <a class="reference internal" href="functions.html">
    6. 함수
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch07.html">
+  <a class="reference internal" href="function_interfaces.html">
    7. 함수의 인터페이스
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch08.html">
+  <a class="reference internal" href="conditionals.html">
    8. 조건문
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch09.html">
+  <a class="reference internal" href="recursion.html">
    9. 재귀 함수
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch10.html">
+  <a class="reference internal" href="iterations.html">
    10. 반복문
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch11.html">
+  <a class="reference internal" href="sequences.html">
    11. 모음 자료형
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch12.html">
+  <a class="reference internal" href="files.html">
    12. 파일
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch13.html">
+  <a class="reference internal" href="modules.html">
    13. 모듈
   </a>
  </li>
@@ -268,7 +271,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch06.html#degree2radian"><code class="xref">degree2radian</code></a> <em>(ch06)</em></td><td>
+       <a href="functions.html#degree2radian"><code class="xref">degree2radian</code></a> <em>(functions)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-exp-type"><td></td><td>
@@ -276,7 +279,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch04.html#exp-type"><code class="xref">exp-type</code></a> <em>(ch04)</em></td><td>
+       <a href="variables_expressions.html#exp-type"><code class="xref">exp-type</code></a> <em>(variables_expressions)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-exp:collatz_while"><td></td><td>
@@ -284,7 +287,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch10.html#exp:collatz_while"><code class="xref">exp:collatz_while</code></a> <em>(ch10)</em></td><td>
+       <a href="iterations.html#exp:collatz_while"><code class="xref">exp:collatz_while</code></a> <em>(iterations)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-exp:first-class-function_1"><td></td><td>
@@ -292,7 +295,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch06.html#exp:first-class-function_1"><code class="xref">exp:first-class-function_1</code></a> <em>(ch06)</em></td><td>
+       <a href="functions.html#exp:first-class-function_1"><code class="xref">exp:first-class-function_1</code></a> <em>(functions)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-exp:first-class-function_2"><td></td><td>
@@ -300,7 +303,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch06.html#exp:first-class-function_2"><code class="xref">exp:first-class-function_2</code></a> <em>(ch06)</em></td><td>
+       <a href="functions.html#exp:first-class-function_2"><code class="xref">exp:first-class-function_2</code></a> <em>(functions)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-exp_backslash"><td></td><td>
@@ -308,7 +311,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch05.html#exp_backslash"><code class="xref">exp_backslash</code></a> <em>(ch05)</em></td><td>
+       <a href="datatypes.html#exp_backslash"><code class="xref">exp_backslash</code></a> <em>(datatypes)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-exp_backslash_escape"><td></td><td>
@@ -316,7 +319,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch05.html#exp_backslash_escape"><code class="xref">exp_backslash_escape</code></a> <em>(ch05)</em></td><td>
+       <a href="datatypes.html#exp_backslash_escape"><code class="xref">exp_backslash_escape</code></a> <em>(datatypes)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-exp_comparison"><td></td><td>
@@ -324,7 +327,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch08.html#exp_comparison"><code class="xref">exp_comparison</code></a> <em>(ch08)</em></td><td>
+       <a href="conditionals.html#exp_comparison"><code class="xref">exp_comparison</code></a> <em>(conditionals)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-exp_nested_conditionals"><td></td><td>
@@ -332,7 +335,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch08.html#exp_nested_conditionals"><code class="xref">exp_nested_conditionals</code></a> <em>(ch08)</em></td><td>
+       <a href="conditionals.html#exp_nested_conditionals"><code class="xref">exp_nested_conditionals</code></a> <em>(conditionals)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-keyword_argument"><td></td><td>
@@ -340,7 +343,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch06.html#keyword_argument"><code class="xref">keyword_argument</code></a> <em>(ch06)</em></td><td>
+       <a href="functions.html#keyword_argument"><code class="xref">keyword_argument</code></a> <em>(functions)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-myAdd"><td></td><td>
@@ -348,7 +351,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch06.html#myAdd"><code class="xref">myAdd</code></a> <em>(ch06)</em></td><td>
+       <a href="functions.html#myAdd"><code class="xref">myAdd</code></a> <em>(functions)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-my_file"><td></td><td>
@@ -356,7 +359,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch12.html#my_file"><code class="xref">my_file</code></a> <em>(ch12)</em></td><td>
+       <a href="files.html#my_file"><code class="xref">my_file</code></a> <em>(files)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-nameerror"><td></td><td>
@@ -364,7 +367,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch04.html#nameerror"><code class="xref">nameerror</code></a> <em>(ch04)</em></td><td>
+       <a href="variables_expressions.html#nameerror"><code class="xref">nameerror</code></a> <em>(variables_expressions)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-no-parameters"><td></td><td>
@@ -372,7 +375,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch06.html#no-parameters"><code class="xref">no-parameters</code></a> <em>(ch06)</em></td><td>
+       <a href="functions.html#no-parameters"><code class="xref">no-parameters</code></a> <em>(functions)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-number-guessing"><td></td><td>
@@ -380,7 +383,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch04.html#number-guessing"><code class="xref">number-guessing</code></a> <em>(ch04)</em></td><td>
+       <a href="variables_expressions.html#number-guessing"><code class="xref">number-guessing</code></a> <em>(variables_expressions)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-zerodivision"><td></td><td>
@@ -388,7 +391,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ch04.html#zerodivision"><code class="xref">zerodivision</code></a> <em>(ch04)</em></td><td>
+       <a href="variables_expressions.html#zerodivision"><code class="xref">zerodivision</code></a> <em>(variables_expressions)</em></td><td>
        <em>example</em></td></tr>
    </table>
 

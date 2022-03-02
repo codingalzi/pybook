@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -54,8 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. 함수의 인터페이스" href="ch07.html" />
-    <link rel="prev" title="5. 기본자료형" href="ch05.html" />
+    <link rel="next" title="7. 함수의 인터페이스" href="function_interfaces.html" />
+    <link rel="prev" title="5. 기본자료형" href="datatypes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,27 +99,27 @@
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="ch01.html">
-   1. 프로그래밍
+  <a class="reference internal" href="programming.html">
+   1. 컴퓨터 프로그래밍
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch02.html">
+  <a class="reference internal" href="environment.html">
    2. 프로그래밍 개발 환경
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch03.html">
+  <a class="reference internal" href="starting.html">
    3. 프로그래밍 시작하기
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch04.html">
+  <a class="reference internal" href="variables_expressions.html">
    4. 변수, 값, 표현식, 명령문
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch05.html">
+  <a class="reference internal" href="datatypes.html">
    5. 기본자료형
   </a>
  </li>
@@ -126,37 +129,37 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch07.html">
+  <a class="reference internal" href="function_interfaces.html">
    7. 함수의 인터페이스
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch08.html">
+  <a class="reference internal" href="conditionals.html">
    8. 조건문
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch09.html">
+  <a class="reference internal" href="recursion.html">
    9. 재귀 함수
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch10.html">
+  <a class="reference internal" href="iterations.html">
    10. 반복문
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch11.html">
+  <a class="reference internal" href="sequences.html">
    11. 모음 자료형
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch12.html">
+  <a class="reference internal" href="files.html">
    12. 파일
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch13.html">
+  <a class="reference internal" href="modules.html">
    13. 모듈
   </a>
  </li>
@@ -201,7 +204,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/ch06.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/functions.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -221,7 +224,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Fch06.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Ffunctions.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -242,7 +245,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/notebooks/ch06.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/notebooks/functions.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -810,7 +813,7 @@
 <p>파이썬에서 기본으로 제공하는 다양한 수학 함수를 사용하려면 먼저
 <code class="docutils literal notranslate"><span class="pre">math</span></code> 라는 모듈<font size="2">module</font>을
 불러와야<font size="2">import</font> 한다.
-모듈은 <a class="reference internal" href="ch13.html#ch-module"><span class="std std-numref">13 장</span></a>에서 자세히 살펴볼 것이며,
+모듈은 <a class="reference internal" href="modules.html#ch-module"><span class="std std-numref">13 장</span></a>에서 자세히 살펴볼 것이며,
 여기서는 모듈이 다양한 함수를 모아 놓은 파이썬 코드 파일이라는
 사실 정도만 기억하면 된다.
 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈을 불러오는 방식은 다음과 같다.</p>
@@ -1464,7 +1467,10 @@ Python
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 시간은 7200 초입니다.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 시간은
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 7200 초입니다.
 </pre></div>
 </div>
 </div>
@@ -1577,14 +1583,14 @@ Python
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="ch05.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="datatypes.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">5. </span>기본자료형</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="ch07.html" title="next page">
+    <a class='right-next' id="next-link" href="function_interfaces.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">7. </span>함수의 인터페이스</p>

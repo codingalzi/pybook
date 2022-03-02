@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -54,8 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="11. 모음 자료형" href="ch11.html" />
-    <link rel="prev" title="9. 재귀 함수" href="ch09.html" />
+    <link rel="next" title="11. 모음 자료형" href="sequences.html" />
+    <link rel="prev" title="9. 재귀 함수" href="recursion.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,47 +99,47 @@
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="ch01.html">
-   1. 프로그래밍
+  <a class="reference internal" href="programming.html">
+   1. 컴퓨터 프로그래밍
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch02.html">
+  <a class="reference internal" href="environment.html">
    2. 프로그래밍 개발 환경
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch03.html">
+  <a class="reference internal" href="starting.html">
    3. 프로그래밍 시작하기
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch04.html">
+  <a class="reference internal" href="variables_expressions.html">
    4. 변수, 값, 표현식, 명령문
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch05.html">
+  <a class="reference internal" href="datatypes.html">
    5. 기본자료형
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch06.html">
+  <a class="reference internal" href="functions.html">
    6. 함수
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch07.html">
+  <a class="reference internal" href="function_interfaces.html">
    7. 함수의 인터페이스
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch08.html">
+  <a class="reference internal" href="conditionals.html">
    8. 조건문
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch09.html">
+  <a class="reference internal" href="recursion.html">
    9. 재귀 함수
   </a>
  </li>
@@ -146,17 +149,17 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch11.html">
+  <a class="reference internal" href="sequences.html">
    11. 모음 자료형
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch12.html">
+  <a class="reference internal" href="files.html">
    12. 파일
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ch13.html">
+  <a class="reference internal" href="modules.html">
    13. 모듈
   </a>
  </li>
@@ -201,7 +204,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/ch10.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/iterations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -221,7 +224,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Fch10.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Fiterations.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -242,7 +245,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/notebooks/ch10.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/notebooks/iterations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -377,7 +380,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문</p></li>
 </ul>
-<p>재귀는 <a class="reference internal" href="ch09.html#ch-recursion"><span class="std std-numref">9장</span></a>에서,
+<p>재귀는 <a class="reference internal" href="recursion.html#ch-recursion"><span class="std std-numref">9장</span></a>에서,
 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문의 간단한 활용법은 <code class="xref std std-numref docutils literal notranslate"><span class="pre">%s절(?)</span></code> 에서 살펴보았다.
 여기서는 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 소개한다.
 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 작동 과정을 이해하려면 먼저 변수가 가리키는 값을 변경하는 변수 재할당과
@@ -398,7 +401,7 @@
 <span class="go">12</span>
 </pre></div>
 </div>
-<p>이는 <a class="reference internal" href="ch08.html#sec-boolean-expression"><span class="std std-numref">8.1절</span></a>에서 설명한대로 하나의 등호 기호 <code class="docutils literal notranslate"><span class="pre">=</span></code> 는
+<p>이는 <a class="reference internal" href="conditionals.html#sec-boolean-expression"><span class="std std-numref">8.1절</span></a>에서 설명한대로 하나의 등호 기호 <code class="docutils literal notranslate"><span class="pre">=</span></code> 는
 두 값의 동치 여부가 아니라 왼편에 위치한 변수가 오른 편에 위치한 값을 가리키도록 하는
 명령문에 사용되는 특별한 의미를 갖기 때문이다.
 <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span></code> 가 실행될 당시에 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 5를 가리키고 있었기 때문에
@@ -423,7 +426,7 @@
 </div>
 <div class="section" id="while">
 <h2><span class="section-number">10.2. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="ch09.html#ch-recursion"><span class="std std-numref">9장</span></a>에서 살펴 본 다음 재귀 함수는 카운트다운을 출력한다.</p>
+<p><a class="reference internal" href="recursion.html#ch-recursion"><span class="std std-numref">9장</span></a>에서 살펴 본 다음 재귀 함수는 카운트다운을 출력한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;발사!&#39;</span><span class="p">)</span>
@@ -505,7 +508,7 @@
 <div class="section" id="id3">
 <h2><span class="section-number">10.3. </span>무한 루프<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>헤더의 <code class="docutils literal notranslate"><span class="pre">부울식</span></code>이 계속해서 참이면 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 본문의 실행이 무한 반복된다.
-예를 들어 역시 <a class="reference internal" href="ch09.html#ch-recursion"><span class="std std-numref">9장</span></a>에서 살펴본 아래 재귀 함수를 다시 살펴보자.</p>
+예를 들어 역시 <a class="reference internal" href="recursion.html#ch-recursion"><span class="std std-numref">9장</span></a>에서 살펴본 아래 재귀 함수를 다시 살펴보자.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_infinitely</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="n">count_finitely</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
@@ -534,7 +537,7 @@
 <div class="proof example admonition" id="exp:collatz_while">
 <p class="admonition-title"><span class="caption-number">Example 10.1 </span> (콜라츠 추측과 무한 루프)</p>
 <div class="example-content section" id="proof-content">
-<p><a class="reference internal" href="ch09.html#sec-collatz"><span class="std std-numref">9.4.3절</span></a>에서 재귀로 구현한 <code class="docutils literal notranslate"><span class="pre">collatz()</span></code> 함수는 다음과 같다.</p>
+<p><a class="reference internal" href="recursion.html#sec-collatz"><span class="std std-numref">9.4.3절</span></a>에서 재귀로 구현한 <code class="docutils literal notranslate"><span class="pre">collatz()</span></code> 함수는 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>                        <span class="c1"># 기저 조건</span>
         <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -565,7 +568,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                  <span class="c1"># 기저 조건</span>
 </pre></div>
 </div>
-<p>이미 <a class="reference internal" href="ch09.html#sec-collatz"><span class="std std-numref">9.4.3절</span></a>에서 언급하였듯이 콜라츠 추측은 여전히 미해결 문제로
+<p>이미 <a class="reference internal" href="recursion.html#sec-collatz"><span class="std std-numref">9.4.3절</span></a>에서 언급하였듯이 콜라츠 추측은 여전히 미해결 문제로
 남아 있다.
 즉, <code class="docutils literal notranslate"><span class="pre">collatz()</span></code> 함수의 본문에 사용된 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 경우에 따라
 무한 루프를 유발하는지 여부가 아직 알려지지 않았다.</p>
@@ -847,14 +850,14 @@ x_{n+1} &amp; = \frac{x_n + \frac{a}{x_n}}{2}
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="ch09.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="recursion.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">9. </span>재귀 함수</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="ch11.html" title="next page">
+    <a class='right-next' id="next-link" href="sequences.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">11. </span>모음 자료형</p>
