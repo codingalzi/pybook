@@ -616,16 +616,28 @@
 <p><strong>변수의 이름</strong></p>
 <p>변수의 이름은 임의로 정할 수 있지만 할당되는 값과 연관된 이름을 사용할 것을 권장한다.
 또한 아래 제한 사항을 지켜야 한다.</p>
-<ul class="simple">
-<li><p>알파벳, 숫자, 밑줄(_, underscore) 등을 조합해서 사용한다.</p>
 <ul>
+<li><p>알파벳, 숫자, 밑줄(_, underscore) 등을 조합해서 사용한다.</p>
+<ul class="simple">
 <li><p>마침표(.), 연산 기호(+, -, *, /, !, %, 등등), 골뱅이 기호(&#64;), 물결 기호(~)는 사용할 수 없다.</p></li>
 <li><p>공백<font size="2">space</font>을 사용할 수 없다.</p></li>
 </ul>
 </li>
 <li><p>숫자로 시작할 수 없다.</p></li>
 <li><p>파이썬에서 특별한 역할을 수행하는
-<strong>키워드</strong><font size="2">keyword</font>는 사용할 수 없다.</p></li>
+<strong>키워드</strong><font size="2">keyword</font>는 사용할 수 없다.</p>
+<p>파이썬 프로그래밍 언어의 키워드는 파이썬 최소 버전 3.7 이후로 총 35개이다.
+각 키워드의 역할은 필요할 때마다 설명될 것이다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span>      <span class="k">await</span>      <span class="k">else</span>       <span class="kn">import</span>     <span class="nn">pass</span>
+<span class="kc">None</span>       <span class="k">break</span>      <span class="k">except</span>     <span class="ow">in</span>         <span class="k">raise</span>
+<span class="kc">True</span>       <span class="k">class</span>      <span class="nc">finally</span>    <span class="ow">is</span>         <span class="k">return</span>
+<span class="ow">and</span>        <span class="k">continue</span>   <span class="k">for</span>        <span class="k">lambda</span>     <span class="k">try</span>
+<span class="k">as</span>         <span class="k">def</span>        <span class="nf">from</span>       <span class="k">nonlocal</span>   <span class="k">while</span>
+<span class="k">assert</span>     <span class="k">del</span>        <span class="k">global</span>     <span class="ow">not</span>        <span class="k">with</span>
+<span class="k">async</span>      <span class="k">elif</span>       <span class="k">if</span>         <span class="ow">or</span>         <span class="k">yield</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p>허용되지 않는 사례 몇 가지를 살펴보자.</p>
 <ul>
@@ -663,19 +675,6 @@
 </div>
 </li>
 </ul>
-<p><strong>파이썬 키워드</strong></p>
-<p>파이썬 프로그래밍 언어의 키워드는 3.8 버전 기준으로 다음과
-총 35개이다.
-각 키워드의 역할은 필요할 때마다 설명될 것이다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span>      <span class="k">await</span>      <span class="k">else</span>       <span class="kn">import</span>     <span class="nn">pass</span>
-<span class="kc">None</span>       <span class="k">break</span>      <span class="k">except</span>     <span class="ow">in</span>         <span class="k">raise</span>
-<span class="kc">True</span>       <span class="k">class</span>      <span class="nc">finally</span>    <span class="ow">is</span>         <span class="k">return</span>
-<span class="ow">and</span>        <span class="k">continue</span>   <span class="k">for</span>        <span class="k">lambda</span>     <span class="k">try</span>
-<span class="k">as</span>         <span class="k">def</span>        <span class="nf">from</span>       <span class="k">nonlocal</span>   <span class="k">while</span>
-<span class="k">assert</span>     <span class="k">del</span>        <span class="k">global</span>     <span class="ow">not</span>        <span class="k">with</span>
-<span class="k">async</span>      <span class="k">elif</span>       <span class="k">if</span>         <span class="ow">or</span>         <span class="k">yield</span>
-</pre></div>
-</div>
 <p><strong>소문자와 대문자</strong></p>
 <p>영어 알파벳의 소문자와 대문자는 엄연히 구분된다.
 예를 들어, <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>와 <code class="docutils literal notranslate"><span class="pre">'Hello'</span></code>는 서로 다른 단어, 즉 서로 다른 문자열이다.
