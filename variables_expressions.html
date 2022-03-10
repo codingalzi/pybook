@@ -1368,36 +1368,17 @@
 <div class="section" id="id16">
 <h2><span class="section-number">4.7. </span>연습문제<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
 <ol>
-<li><p>다음 명령문은 모두 실행되기 이전에 구문 오류를 발생시킨다.
-오류의 원인을 설명하라.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">23</span> <span class="o">=</span> <span class="n">n</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">1.</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="n">y</span>
+<li><p>반지름 <code class="docutils literal notranslate"><span class="pre">r</span></code>을 입력 받으면 구의 부피 <span class="math notranslate nohighlight">\(\frac{4}{3} \pi r^3\)</span>를 출력한다.
+힌트: 단 원주율(<span class="math notranslate nohighlight">\(\pi\)</span>)은 3.141592로 사용한다.</p>
+<p>입력:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">radius</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>출력:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">113.097312</span>
 </pre></div>
 </div>
 </li>
-<li><p>아래와 같이 변수들이 선언 및 할당되었다고 가정하자.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">width</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="n">height</span> <span class="o">=</span> <span class="mf">12.0</span>
-<span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>
-</pre></div>
-</div>
-<p>아래 각 표현식이 나타내는 값과 자료형을 확인하라.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">width</span><span class="o">//</span><span class="mi">2</span>
-<span class="n">width</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">width</span><span class="o">/</span><span class="mf">2.0</span>
-<span class="n">height</span><span class="o">/</span><span class="mi">3</span>
-<span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="mi">5</span>
-<span class="n">delimiter</span><span class="o">*</span><span class="mi">5</span>
-</pre></div>
-</div>
-</li>
-<li><p>파이썬을 계산기처럼 사용할 수 있다.</p>
-<ol class="simple">
-<li><p>반지름이 r인 구의 부피는 <span class="math notranslate nohighlight">\(\frac{4}{3} \pi r^3\)</span> 이다.
-반지름이 17인 구의 부피는 얼마인가?</p></li>
 <li><p>어떤 책의 정가는 권당 19,000원이지만,
 각 권당 10% 의 할인을 받는다고 가정하자.
 첫 한 권의 운송료는 2,000원 이고,
@@ -1411,7 +1392,143 @@
 마일<font size="2">mile</font>당 소요 시간은 얼마인가?
 또한 시간당 마일로 계산한 평균 속도는 얼마인가?
 단, 1마일은 1.61km로 계산한다.</p></li>
-</ol>
+<li><p>두 정수 a와 b를 입력받아
+<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">/</span> <span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">//</span> <span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code>를
+출력하는 코드를 작성하여라.</p>
+<p>입력:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>출력:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">5</span>  
+<span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">6</span> 
+<span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="mi">3</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>두 자연수 <span class="math notranslate nohighlight">\(x\)</span>와 <span class="math notranslate nohighlight">\(y\)</span>를 입력받아 두 수의
+산술평균<font size = "2">arithmetic mean</font>,
+기하평균<font size = "2">geometric mean</font>,
+조화평균<font size = "2">harmonic mean</font>을
+출력하는 코드를 작성하여라.</p>
+<p>두 자연수 x와 y의 산술평균(<span class="math notranslate nohighlight">\(M_a\)</span>), 기하평균(<span class="math notranslate nohighlight">\(M_g\)</span>), 조화평균(<span class="math notranslate nohighlight">\(M_h\)</span>)을 구하는 식은 아래와 같으며
+<code class="docutils literal notranslate"><span class="pre">math</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 모듈의 <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> 함수를 이용하여 제곱근을 계산할 수 있다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{align*}
+    M_a &amp;= \frac{x + y}{2}\\
+    M_g &amp;= \sqrt{x y} \\
+    M_h &amp;= \frac{2}{\frac{1}{x} + \frac{1}{y}}
+    \end{align*}
+    \end{split}\]</div>
+<p>입력:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+<p>출력</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ma</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">mg</span> <span class="o">=</span> <span class="mf">4.58257569495584</span>
+<span class="n">mh</span> <span class="o">=</span> <span class="mf">4.2</span>
+</pre></div>
+</div>
+</li>
+<li><p>오늘의 요일이 주어질 때, 100일 후의 요일을 출력하는 코드를 작성하여라.
+단, 월, 화, 수, 목, 금, 토, 일 각각은 1, 2, 3, 4, 5, 6, 0으로 대신한다.</p>
+<p>입력:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>출력:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span>
+</pre></div>
+</div>
+</li>
+<li><p>다음은 BTS의 버터(Butter) 가사 일부분이다.
+아래와 같이 문자열을 출력하는 코드를 작성하여라(따옴표 포함).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Smooth</span> <span class="n">like</span> <span class="s2">&quot;butter&quot;</span>
+<span class="n">Like</span> <span class="n">a</span> <span class="n">criminal</span> <span class="n">undercover</span>
+<span class="n">Gon</span><span class="s1">&#39; pop like trouble</span>
+<span class="n">Breakin</span><span class="s1">&#39; into your heart like that</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 정수를 입력받아,
+아래의 형식으로 그 값을 출력하는 코드를 작성하여라.
+단, 정수는 최대 6자리의 수를 입력한다고 가정한다.</p>
+<p>입력:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">123</span>
+</pre></div>
+</div>
+<p>출력:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">입력하신</span> <span class="n">숫자는</span> <span class="mi">000123</span><span class="n">입니다</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(30cm \times 30cm\)</span> 크기의 타일이 있다.
+타일은 온장을 그대로 사용할 수도 있고, 잘라서 일부분만 사용할 수도 있다.
+단, 잘라서 사용한 타일의 나머지는 사용하지 않는다.
+주어진 크기의 바닥에 타일을 깔기 위해 사용되는 온장 타일과
+잘라서 사용한 타일의 개수를 공백으로 구분하여 출력하는 코드를 작성하여라.</p>
+<p>입력:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">width</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">300</span>
+</pre></div>
+</div>
+<p>출력:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">130</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</li>
+<li><p>어느 대기실에는 N개의 의자가 일렬로 놓여 있다.
+어느 두 사람도 이웃하여 앉지 않을 때, 앉을 수 있는 최대 인원수와
+최소 인원수를 출력하는 코드를 구하여라.
+예를 들어, 5개의 의자가 일렬로 놓여 있을 때,
+최대 3명(ex, ■□■□■)이 앉을 수 있고, 최소 2명(ex, ■□□■□)이 앉을 수 있다.
+입력은 100이하의 자연수이고, 최대와 최소는 공백으로 구분하여 출력한다.</p>
+<p>Input : N = 5</p>
+<p>Output : 3 2</p>
+</li>
+<li><p>d m 길이의 철로 양끝에 서로 마주보고 있는 두 대의 기차 A, B가 있고,
+기차 A위에는 파리 한 마리가 있다.
+두 기차 A와 B가 서로를 향해 달릴 때,
+파리는 기차 A에서 기차 B까지 날아가다가 기차 B와 부딪히기 직전
+방향을 바꿔 기차 A에게 날아가고 다시 기차 A와 부딪히기 직전
+기차 B를 향해 날아가기를 반복한다.
+그러다가 기차 A, B는 부딪힌다.
+이때, 기차 A의 속력은 a m/s, 기차 B의 속력은 b m/s, 파리의 속력은 c m/s 이다.
+d, a, b, c가 주어졌을 때, 파리가 부딪히기 직전까지 날아다닌 거리(m)를
+구하는 코드를 작성하여라.
+단, d, a, b, c는 모두 10000이하의 자연수이고,
+a, b &lt; c &lt; d를 만족하도록 임의로 입력한다.</p>
+<p>Input : d = 16, a = 3, b = 5, c = 8</p>
+<p>Output : 16</p>
+</li>
+<li><p>다음과 같은 방법으로 (세 자리 수) × (세 자리 수) 를 계산할 수 있다.</p>
+ <div align="left">
+     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch04/pro01.png" style="width:250px;">
+ </div>  
+<p>두 세 자리 수가 주어질 때, ①, ②, ③, ④에 들어갈 값을 각각 줄변경하여
+출력하는 구하는 코드를 작성하여라.</p>
+<p>Input : a = 265, b = 112</p>
+<p>Output :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">530</span>   
+<span class="mi">265</span>  
+<span class="mi">265</span> 
+<span class="mi">29680</span>
+</pre></div>
+</div>
+</li>
+<li><p>A편의점은 500원, 100원, 50원, 10원을 보유하고 있고,
+동전의 개수를 최소화하여 거스름 돈을 주려고 한다.
+거슬러 줘야 하는 금액이 n원일 때, 최소 동전의 개수를 출력하는 코드를 작성하여라.
+단, n은 10의 배수이며 5000보다 작은 정수고, 모든 화폐는 무한하게 있다고 가정한다.</p>
+<p>Input : n = 1730</p>
+<p>Output : 8</p>
 </li>
 </ol>
 </div>
