@@ -379,8 +379,19 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for">
+    <a class="reference internal nav-link" href="#if">
      3.6.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     조건문
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for">
+     3.6.2.
      <code class="docutils literal notranslate">
       <span class="pre">
        for
@@ -391,7 +402,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#while">
-     3.6.2.
+     3.6.3.
      <code class="docutils literal notranslate">
       <span class="pre">
        while
@@ -551,8 +562,19 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for">
+    <a class="reference internal nav-link" href="#if">
      3.6.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     조건문
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for">
+     3.6.2.
      <code class="docutils literal notranslate">
       <span class="pre">
        for
@@ -563,7 +585,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#while">
-     3.6.2.
+     3.6.3.
      <code class="docutils literal notranslate">
       <span class="pre">
        while
@@ -1985,8 +2007,20 @@ ame
 <p>지금까지 살펴본 것은 파이썬 프로그래밍의 가장 간단한 기능들이다.
 앞으로 본격적으로 파이썬 프로그래밍의 진수를 배우기 전에
 보다 복잡한 문제를 해결하는 프로그램을 몇 개 살펴본다.</p>
+<div class="section" id="if">
+<h3><span class="section-number">3.6.1. </span><code class="docutils literal notranslate"><span class="pre">if</span></code> 조건문<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h3>
+<p>특정 조건의 성립여부에 따라 다른 일을 실행하게 만드는 명령문을 <strong>조건문</strong>이라 부른다.
+예를 들어 <code class="docutils literal notranslate"><span class="pre">guess</span></code> 와 <code class="docutils literal notranslate"><span class="pre">secret</span></code> 두 변수가 가리키는 값의 동치 여부에 따라
+다른 문장을 출력하도록 하려면 아래와 같이 한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secret</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;맞았습니다!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;틀렸습니다!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="for">
-<h3><span class="section-number">3.6.1. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.2. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문은 문자열과 리스트에 포함된 전체 항목을 대상으로
 동일한 작업을 실행하고자 할 때 활용되며
 아래 구문 형식을 사용한다.</p>
@@ -2040,9 +2074,29 @@ ame
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문이 실행되는 동안 <code class="docutils literal notranslate"><span class="pre">item</span></code> 변수가 1부터 10까지의 수를
 차례대로 가리키며 <code class="docutils literal notranslate"><span class="pre">sum</span></code>은 그만큼씩 증가한다.</p>
 </div>
+</div><div class="proof example admonition" id="for-loop_even-sum">
+<p class="admonition-title"><span class="caption-number">Example 3.3 </span></p>
+<div class="example-content section" id="proof-content">
+<p>정수 리스트에 포함된 항목 중에서 짝수들만의 합을 계산하는 코드는 다음과 같다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>                <span class="c1"># 항목을 차례대로 더한 값. 시작은 0부터.</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">num_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">item</span>        <span class="c1"># 짝수인 경우 합에 추가</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;짝수 항목의 합:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">짝수</span> <span class="n">항목의</span> <span class="n">합</span><span class="p">:</span> <span class="mi">30</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">item</span></code> 변수가 가리키는 값이 짝수일 때만 <code class="docutils literal notranslate"><span class="pre">sum</span></code>에 추가된다.</p>
+</div>
 </div></div>
 <div class="section" id="while">
-<h3><span class="section-number">3.6.2. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.3. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문은 특정 조건이 만족되는 동안 동일한 작업을 반복 수행하도록 할 때
 사용하는 명령문이며 다음 구문 형식으로 사용된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">조건논리식</span><span class="p">:</span>
@@ -2062,7 +2116,7 @@ ame
 </li>
 </ul>
 <div class="proof example admonition" id="while-fibonacci">
-<p class="admonition-title"><span class="caption-number">Example 3.3 </span> (피보나치 수열)</p>
+<p class="admonition-title"><span class="caption-number">Example 3.4 </span> (피보나치 수열)</p>
 <div class="example-content section" id="proof-content">
 <p><strong>피보나치 수열</strong><font size="2">Fibonacci sequence</font>의
 항목을 생성하는 코드를 구현해보자.
