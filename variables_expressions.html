@@ -1208,7 +1208,7 @@
 <p class="admonition-title"><span class="caption-number">Example 4.2 </span></p>
 <div class="example-content section" id="proof-content">
 <p>위 기본 명령문을 이용하여 숫자맞히기 게임을 아래와 같이 구현할 수 있다.
-조건문과 <code class="docutils literal notranslate"><span class="pre">while</span></code>을 아직 제대로 살펴보진 않았지만
+<code class="docutils literal notranslate"><span class="pre">if</span></code> 조건문과 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 아직 제대로 살펴보진 않았지만
 사용된 명령문의 의미를 어렵지 않게 이해할 수 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;숫자맞히기 게임에 환영합니다.&quot;</span><span class="p">)</span>
 
@@ -1219,10 +1219,11 @@
     <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;0부터 20 사이의 숫자를 입력하세요: &quot;</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secret</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;맞았습니다!&quot;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">secret</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 커요!&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 작아요!&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">secret</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 커요!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 작아요!&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;게임 종료!&quot;</span><span class="p">)</span>
 </pre></div>
