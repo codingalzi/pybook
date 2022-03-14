@@ -317,40 +317,45 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id10">
-     4.4.1. 함수 호출과 명령문
+     4.4.1. 기본 명령문
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     4.4.2. 함수 호출과 명령문
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
+  <a class="reference internal nav-link" href="#id12">
    4.5. 주석
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
+  <a class="reference internal nav-link" href="#id13">
    4.6. 프로그램 오류와 디버깅
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
+    <a class="reference internal nav-link" href="#id14">
      4.6.1. 구문 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
+    <a class="reference internal nav-link" href="#id15">
      4.6.2. 런타임 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id15">
+    <a class="reference internal nav-link" href="#id16">
      4.6.3. 의미 오류
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id16">
+  <a class="reference internal nav-link" href="#id17">
    4.7. 연습문제
   </a>
  </li>
@@ -431,40 +436,45 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id10">
-     4.4.1. 함수 호출과 명령문
+     4.4.1. 기본 명령문
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     4.4.2. 함수 호출과 명령문
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
+  <a class="reference internal nav-link" href="#id12">
    4.5. 주석
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
+  <a class="reference internal nav-link" href="#id13">
    4.6. 프로그램 오류와 디버깅
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
+    <a class="reference internal nav-link" href="#id14">
      4.6.1. 구문 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
+    <a class="reference internal nav-link" href="#id15">
      4.6.2. 런타임 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id15">
+    <a class="reference internal nav-link" href="#id16">
      4.6.3. 의미 오류
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id16">
+  <a class="reference internal nav-link" href="#id17">
    4.7. 연습문제
   </a>
  </li>
@@ -1194,6 +1204,8 @@
 이를 위해 하나의 프로그래밍 언어를 선택해야 한다.
 모든 프로그래밍 언어는 고유의 명령문 작성 규칙을 제공하며,
 언어의 특성에 따라 명령문 작성법과 작성된 명령문의 모양이 많이 다를 수 있다.</p>
+<div class="section" id="id10">
+<h3><span class="section-number">4.4.1. </span>기본 명령문<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>파이썬 명령문은 <strong>기본 명령문</strong>을
 지정된 규칙에 따라 합성해서 생성한다.
 지금까지 간략하게나마 살펴본 기본 명령문은 다음과 같다.</p>
@@ -1207,6 +1219,13 @@
 <strong>프로그램</strong><font size="2">program</font>은 바로
 특정 명령을 의도한대로 수행하는 명령문을 가리키는
 일상 언어 표현이다.</p>
+<p><a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html">파이썬 명령문의 엄밀한 정의</a>는
+꽤 복잡하다.
+웬만해서는 알 필요 없으며,
+원하는 기능을 옳바르게 수행하는 프로그램을 구현하는 훈련과
+작업을 통해 자연스럽게 명령문에 친숙해지는 것이 일반적이다.
+하지만 해석기, 컴파일러 등을 직접 구현해야 하는
+일을 하려면 반드시 알아야 한다.</p>
 <div class="proof example admonition" id="number-guessing">
 <p class="admonition-title"><span class="caption-number">Example 4.2 </span></p>
 <div class="example-content section" id="proof-content">
@@ -1232,29 +1251,20 @@
 </pre></div>
 </div>
 </div>
-</div><div class="section" id="id10">
-<h3><span class="section-number">4.4.1. </span>함수 호출과 명령문<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<p>숫자맞히기 게임 프로그램에 사용된 <code class="docutils literal notranslate"><span class="pre">print(&quot;맞았습니다!)</span></code>와 기본 명령문이 아니다.
-알고 있듯이 <code class="docutils literal notranslate"><span class="pre">print()</span></code>는 함수이며 인자로 사용된 값을 화면에 출력하는 기능을 수행한다.
-이처럼 함수를 지정된 인자와 함께 실행하도록 하는 것을
+</div></div>
+<div class="section" id="id11">
+<h3><span class="section-number">4.4.2. </span>함수 호출과 명령문<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>숫자맞히기 게임 프로그램에 사용된 <code class="docutils literal notranslate"><span class="pre">print(&quot;맞았습니다!)</span></code> 는 기본 명령문이 아니다.
+알고 있듯이 <code class="docutils literal notranslate"><span class="pre">print()</span></code>는 함수이며 인자로 사용된 값을 화면에 출력하는 기능을 수행한다.</p>
+<p>이처럼 함수를 지정된 인자와 함께 실행하도록 하는 것을
 <strong>함수 호출</strong><font size="2">function call</font>이라 부르며,
 함수 호출도 하나의 명령문 역할을 수행한다.
 나중에 함수에 대해 보다 자세히 설명할 때 그 이유를 자연스럽게 이해할 수 있을 것이다.
 여기서는 함수가 호출되면 해당 함수 내부에서 지정된 명령문이 실행된다는 정도로 이해하면 충분하다.</p>
-<div class="tip admonition">
-<p class="admonition-title">명령문의 엄밀한 정의</p>
-<p><a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html">파이썬 명령문의 엄밀한 정의</a>는
-꽤 복잡하다.
-웬만해서는 알 필요 없으며,
-원하는 기능을 옳바르게 수행하는 프로그램을 구현하는 훈련과
-작업을 통해 자연스럽게 명령문에 친숙해지는 것이 일반적이다.
-하지만 해석기, 컴파일러 등을 직접 구현해야 하는
-일을 하려면 반드시 알아야 한다.</p>
-</div>
 <p>반면에 <code class="docutils literal notranslate"><span class="pre">int(input(&quot;0부터</span> <span class="pre">20</span> <span class="pre">사이의</span> <span class="pre">숫자를</span> <span class="pre">입력하세요:</span> <span class="pre">&quot;))</span></code>는
 두 개의 함수 <code class="docutils literal notranslate"><span class="pre">input()</span></code>과 <code class="docutils literal notranslate"><span class="pre">int()</span></code>를 연속적으로 호출하여 생성된 값을 가리킨다.
 물론 앞서 언급한 대로 함수를 호출하면 특정 명령문이 실행되기에
-두 함수가 호출되면 특정 값을 생성하는 동시에 특정 명령을 수행한다.</p>
+두 함수가 호출되면 특정 값을 생성하는 것 이외에 특정 명령을 수행한다.</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수는 지정된 문자열을 화면에 출력하여
 사용자에게 어떤 종류의 값을 입력해야 하는지 정보를 전달하는
@@ -1302,8 +1312,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id11">
-<h2><span class="section-number">4.5. </span>주석<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h2><span class="section-number">4.5. </span>주석<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
 <p>프로그램에 사용된 명령문에 설명을 추가하면
 작성된 프로그램의 작동 원리를 보다 쉽게 이해할 수 있다.
 이와 같이 프로그램의 실행과는 무관하지만 명령문, 함수 등의
@@ -1342,8 +1352,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id12">
-<h2><span class="section-number">4.6. </span>프로그램 오류와 디버깅<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h2><span class="section-number">4.6. </span>프로그램 오류와 디버깅<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <p>변수 이름으로 <code class="docutils literal notranslate"><span class="pre">class</span></code> 등의 지정어를 사용하거나, <code class="docutils literal notranslate"><span class="pre">odd~job</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">US$</span></code>처럼
 허용되지 않은 기호를 포함하는 경우에 파이썬 해석기는
 <strong>오류</strong><font size="2">error</font>를 발생시키며 곧바로 프로그램의 실행을 멈춘다.
@@ -1358,14 +1368,14 @@
 <p>오류가 발생하면 오류의 원인을 찾아 해결해야 한다.
 이렇게 프로그램의 오류를 찾아 해결하는 과정을 <strong>디버깅</strong>(debugging)이라 부른다.</p>
 <p>프로그램의 오류는 크게 세 가지 유형으로 나뉜다.</p>
-<div class="section" id="id13">
-<h3><span class="section-number">4.6.1. </span>구문 오류<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3><span class="section-number">4.6.1. </span>구문 오류<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>변수의 이름을 잘못 지정하면 <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">invalid</span> <span class="pre">syntax</span></code>와
 같은 <strong>구문 오류</strong><font size="2">syntax error</font>가 발생한다.
 구문 오류는 해석기가 프로그램을 실행하기 전에 일종의 문법 검사를 통해 찾아낸다.</p>
 </div>
-<div class="section" id="id14">
-<h3><span class="section-number">4.6.2. </span>런타임 오류<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3><span class="section-number">4.6.2. </span>런타임 오류<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p><strong>런타임 오류</strong><font size="2">runtime error</font>는
 프로그램이 실행되는 중간에 발생하는 오류이다.
 프로그램 실행 중간에 예외 상황을 발생시키는 오류라는 의미에서 런타임 오류를
@@ -1402,8 +1412,8 @@
 <p>자세히 살펴보면 ‘a_number’와 ‘a_Number’ 둘 중에 하나는 오타임을 알 수 있다.</p>
 </div>
 </div></div>
-<div class="section" id="id15">
-<h3><span class="section-number">4.6.3. </span>의미 오류<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3><span class="section-number">4.6.3. </span>의미 오류<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>프로그램 실행은 잘 되지만 원하는 결과를 가져오지 못한다면 프로그램
 어딘가에 논리적 오류가 존재한다는 의미이다.
 이와같은 오류를
@@ -1434,7 +1444,7 @@
 <p>두 배하려면 <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">*</span> <span class="pre">2</span></code>를 사용했어야 하는데 실수로 <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">**</span> <span class="pre">2</span></code>를 사용하여서
 결과적으로 입력한 값의 제곱을 계산하게 된다.
 수천, 수만 줄로 이루어진 프로그램에서 이런 형식의 오류의 원인을 찾는 일은
-경우에 따라 잔디밭에서 바늘찾기처럼 매우 어렵거나 심지어 불가능할 수 있다.</p>
+경우에 따라 모래사장에서 바늘찾기처럼 매우 어렵거나 불가능할 수 있다.</p>
 <div class="info admonition">
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 인자</p>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수가 여러 개의 인자를 받으면
@@ -1445,8 +1455,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id16">
-<h2><span class="section-number">4.7. </span>연습문제<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h2><span class="section-number">4.7. </span>연습문제<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-variables_expressions.ipynb">(실습) 변수, 값, 표현식, 명령문</a></p>
 </div>
 </div>
