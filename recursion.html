@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -763,10 +760,7 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>129 -&gt; 388 -&gt; 194 -&gt; 97 -&gt; 292 -&gt; 146 -&gt; 73 -&gt; 220 -&gt; 110 -&gt; 55 -&gt; 166 -&gt; 83 -&gt; 250 -&gt; 125 -&gt; 376 -&gt; 188 -&gt; 94 -&gt; 47 -&gt; 142 -&gt; 71 -&gt; 214 -&gt; 107 -&gt; 322 -&gt; 161 -&gt; 484 -&gt; 242 -&gt; 121 -&gt; 364 -&gt; 182 -&gt; 91 -&gt; 274 -&gt; 137 -&gt; 412 -&gt; 206 -&gt; 103 -&gt; 310 -&gt; 155 -&gt; 466 -&gt; 233 -&gt; 700 -&gt; 350 -&gt; 175 -&gt; 526 -&gt; 263 -&gt; 790 -&gt; 395 -&gt; 1186 -&gt; 593 -&gt; 1780 -&gt; 890 -&gt; 445 -&gt; 1336 -&gt; 668 -&gt; 334 -&gt; 167 -&gt; 502 -&gt; 251 -&gt; 754 -&gt; 377 -&gt; 1132 -&gt; 566 -&gt; 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>283 -&gt; 850 -&gt; 425 -&gt; 1276 -&gt; 638 -&gt; 319 -&gt; 958 -&gt; 479 -&gt; 1438 -&gt; 719 -&gt; 2158 -&gt; 1079 -&gt; 3238 -&gt; 1619 -&gt; 4858 -&gt; 2429 -&gt; 7288 -&gt; 3644 -&gt; 1822 -&gt; 911 -&gt; 2734 -&gt; 1367 -&gt; 4102 -&gt; 2051 -&gt; 6154 -&gt; 3077 -&gt; 9232 -&gt; 4616 -&gt; 2308 -&gt; 1154 -&gt; 577 -&gt; 1732 -&gt; 866 -&gt; 433 -&gt; 1300 -&gt; 650 -&gt; 325 -&gt; 976 -&gt; 488 -&gt; 244 -&gt; 122 -&gt; 61 -&gt; 184 -&gt; 92 -&gt; 46 -&gt; 23 -&gt; 70 -&gt; 35 -&gt; 106 -&gt; 53 -&gt; 160 -&gt; 80 -&gt; 40 -&gt; 20 -&gt; 10 -&gt; 5 -&gt; 16 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>129 -&gt; 388 -&gt; 194 -&gt; 97 -&gt; 292 -&gt; 146 -&gt; 73 -&gt; 220 -&gt; 110 -&gt; 55 -&gt; 166 -&gt; 83 -&gt; 250 -&gt; 125 -&gt; 376 -&gt; 188 -&gt; 94 -&gt; 47 -&gt; 142 -&gt; 71 -&gt; 214 -&gt; 107 -&gt; 322 -&gt; 161 -&gt; 484 -&gt; 242 -&gt; 121 -&gt; 364 -&gt; 182 -&gt; 91 -&gt; 274 -&gt; 137 -&gt; 412 -&gt; 206 -&gt; 103 -&gt; 310 -&gt; 155 -&gt; 466 -&gt; 233 -&gt; 700 -&gt; 350 -&gt; 175 -&gt; 526 -&gt; 263 -&gt; 790 -&gt; 395 -&gt; 1186 -&gt; 593 -&gt; 1780 -&gt; 890 -&gt; 445 -&gt; 1336 -&gt; 668 -&gt; 334 -&gt; 167 -&gt; 502 -&gt; 251 -&gt; 754 -&gt; 377 -&gt; 1132 -&gt; 566 -&gt; 283 -&gt; 850 -&gt; 425 -&gt; 1276 -&gt; 638 -&gt; 319 -&gt; 958 -&gt; 479 -&gt; 1438 -&gt; 719 -&gt; 2158 -&gt; 1079 -&gt; 3238 -&gt; 1619 -&gt; 4858 -&gt; 2429 -&gt; 7288 -&gt; 3644 -&gt; 1822 -&gt; 911 -&gt; 2734 -&gt; 1367 -&gt; 4102 -&gt; 2051 -&gt; 6154 -&gt; 3077 -&gt; 9232 -&gt; 4616 -&gt; 2308 -&gt; 1154 -&gt; 577 -&gt; 1732 -&gt; 866 -&gt; 433 -&gt; 1300 -&gt; 650 -&gt; 325 -&gt; 976 -&gt; 488 -&gt; 244 -&gt; 122 -&gt; 61 -&gt; 184 -&gt; 92 -&gt; 46 -&gt; 23 -&gt; 70 -&gt; 35 -&gt; 106 -&gt; 53 -&gt; 160 -&gt; 80 -&gt; 40 -&gt; 20 -&gt; 10 -&gt; 5 -&gt; 16 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1
 </pre></div>
 </div>
 </div>
