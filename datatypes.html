@@ -139,7 +139,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="sequences.html">
+  <a class="reference internal" href="collections.html">
    11. 모음 자료형
   </a>
  </li>
@@ -151,6 +151,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
    13. 모듈
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classes.html">
+   14. 클래스
   </a>
  </li>
 </ul>
@@ -324,7 +329,7 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     5.4.1. 논리식
+     5.4.1. 비교 연산자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -341,7 +346,24 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id15">
-   5.6. 연습문제
+   5.6. 기타 자료형
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     5.6.1. 날짜와 시간
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     5.6.2. 날짜와 시간 연산
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id18">
+   5.7. 연습문제
   </a>
  </li>
 </ul>
@@ -431,7 +453,7 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     5.4.1. 논리식
+     5.4.1. 비교 연산자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -448,7 +470,24 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id15">
-   5.6. 연습문제
+   5.6. 기타 자료형
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     5.6.1. 날짜와 시간
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     5.6.2. 날짜와 시간 연산
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id18">
+   5.7. 연습문제
   </a>
  </li>
 </ul>
@@ -1378,13 +1417,12 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 </div>
-<div class="section" id="id12">
-<h3><span class="section-number">5.4.1. </span>논리식<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p><strong>논리식</strong><font size="2">boolearn expression</font>은
-참 또는 거짓으로 계산될 수 있는 표현식이다.
-논리식은 기본적으로 등식, 부등식 등의 <strong>비교 연산자</strong>를 이용하여 표현한다.
-또한 <strong>논리 연산자</strong>를 이용하여 보다 복잡한 논리식을 구성할 수 있다.</p>
-<p><strong>비교 연산자</strong></p>
+<code class="docutils literal notranslate"><span class="pre">True</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">False</span></code>를 가리키는 표현식이다.
+논리식은 기본적으로 등식, 부등식 등의 <strong>비교 연산자</strong>를 이용하여 표현하며,
+<strong>논리 연산자</strong>를 이용하여 보다 복잡한 논리식을 구성한다.</p>
+<div class="section" id="id12">
+<h3><span class="section-number">5.4.1. </span>비교 연산자<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>비교 연산자는 수, 문자열 등의 크기를 비교할 수 이며
 다음 연산자를 기본으로 지원한다.</p>
 <table class="colwidths-auto table">
@@ -1502,7 +1540,55 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </tr>
 </tbody>
 </table>
-<div class="info admonition">
+<p>논리 연산자들 사이의 우선순위는 <code class="docutils literal notranslate"><span class="pre">not</span></code> 이 가장 높고 <code class="docutils literal notranslate"><span class="pre">and</span></code> 와 <code class="docutils literal notranslate"><span class="pre">or</span></code> 는 동등하다.
+예를 들어</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p>는</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="ow">not</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p>와는 서로 동치이지만</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>와는 일반적으로 서로 다른 값을 가리킨다.</p>
+<div class="proof example admonition" id="logical_op1">
+<p class="admonition-title"><span class="caption-number">Example 5.3 </span></p>
+<div class="example-content section" id="proof-content">
+<p>세 개의 수 중에서 최댓값을 출력하는 코드는 다음과 같다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="k">elif</span> <span class="ow">not</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div><div class="proof example admonition" id="logical_op2">
+<p class="admonition-title"><span class="caption-number">Example 5.4 </span></p>
+<div class="example-content section" id="proof-content">
+<p>양수가 최소 하나라도 있는 경우에만 <code class="docutils literal notranslate"><span class="pre">True</span></code>를 출력한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">23</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">7</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div><div class="info admonition">
 <p class="admonition-title">참고</p>
 <p><code class="docutils literal notranslate"><span class="pre">and</span></code> 와 <code class="docutils literal notranslate"><span class="pre">or</span></code> 가 자연어의 <em>and</em> 와 <em>or</em> 와는 조금 다르게 작동한다.
 예를 들어, 아래와 같이  <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">3/0</span></code>를 실행하면 <code class="docutils literal notranslate"><span class="pre">False</span></code>로 계산되는데
@@ -1779,7 +1865,296 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="section" id="id15">
-<h2><span class="section-number">5.6. </span>연습문제<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.6. </span>기타 자료형<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>파이썬이 기본으로 제공하는 자료형은 지금까지 살펴 본 정수, 부동소수점, 문자열, 부울값 이외에
+<a class="reference internal" href="collections.html#ch-collections"><span class="std std-numref">11장</span></a>에서 자세히 다룰
+리스트, 튜플, 사전, 집합 등의
+모음<font size="2">collection</font> 자료형이 있다.
+그리고 사용자가 원하면 직접 새로운 자료형을 정의해서 사용할 수 있는 기능을
+파이썬이 제공한다.</p>
+<p>자료형을 직접 정의하는 방법은 나중에
+<a class="reference internal" href="classes.html#ch-classes"><span class="std std-numref">14장</span></a>에서
+클래스를 다룰 때 자세히 살펴볼 것이다.
+여기서는 판다스<font size="2">Pandas</font> 라는
+파이썬 추가 패키지가 제공하는 자료형인 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 를 소개한다.</p>
+<div class="section" id="id16">
+<h3><span class="section-number">5.6.1. </span>날짜와 시간<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>판다스의 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형은 날짜와 시간에 특화된 문자열 자료형으로 생각할 수 있다.
+하지만 문자열과는 달리 날짜와 시간과 관련된 연산을 지원한다.
+예를 들어 다음과 같이 1999년 10월 4일과
+오전 9시 30분을 문자열로 지정해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_str</span> <span class="o">=</span> <span class="s1">&#39;October 4, 1999&#39;</span>  <span class="c1"># 문자열로 작성된 날짜</span>
+<span class="n">time_str</span> <span class="o">=</span> <span class="s1">&#39;9:30:00&#39;</span>          <span class="c1"># 문자열로 작성된 시간</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>한글이 아닌 영어식 날짜를 사용하는 이유는 이어서 소개할 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형이
+영어만 지원하기 때문이다.</p>
+</div>
+<p>이렇게 문자열로 지정된 날짜와 시간은 일상에서 사용되는 날짜와 시간의 연산에 활용될 수 있다.
+예를 들어 1999년 10월 4일은 오늘 기준으로 며칠 전인지를 알고 싶거나,
+오전 9시 30분에서 3시간 15분 뒤는 몇 시 몇 분인지 알고 싶을 때
+문자열을 이용해서 바로 답을 구할 수 없다.
+하지만 판다스의 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형으로 변환하면 일상적인 연산이 가능해진다.</p>
+<p>판다스 모듈은 관습적으로 <code class="docutils literal notranslate"><span class="pre">pd</span></code> 라는 이름으로 사용되며
+아래와 같이 불러와야 한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>문자열로 작성된 날짜와 시간을 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형으로 변환하려면
+다음 방식으로 형변환한다.</p>
+<p>날짜만 지정되면 시간은 새벽 0시 0분 0초로 설정된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;1999-10-04 00:00:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>시간만 지정되면 날짜는 코드가 실행된 날의 정보를 이용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">time_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-03-16 09:30:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>날짜와 시간을 모두 지정할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthday</span> <span class="o">=</span> <span class="n">date_str</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">time_str</span>
+<span class="n">birthday</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;October 4, 1999 9:30:00&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_of_birth</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">birthday</span><span class="p">)</span>
+<span class="n">date_of_birth</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;1999-10-04 09:30:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 값으로부터 년, 월, 일, 시, 분, 초 정보를 확인할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_of_birth</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">date_of_birth</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">date_of_birth</span><span class="o">.</span><span class="n">day</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1999, 10, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_of_birth</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="n">date_of_birth</span><span class="o">.</span><span class="n">minute</span><span class="p">,</span> <span class="n">date_of_birth</span><span class="o">.</span><span class="n">second</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(9, 30, 0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>달과 요일을 영어 표현으로 확인할 수도 있다.
+1999년 10월 4일은 월요일이었다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_of_birth</span><span class="o">.</span><span class="n">day_name</span><span class="p">(),</span> <span class="n">date_of_birth</span><span class="o">.</span><span class="n">month_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Monday&#39;, &#39;October&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>현재 시각을 알고자 하면 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 클래스의 <code class="docutils literal notranslate"><span class="pre">now()</span></code> 메서드를 호출한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">now</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">now</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-03-16 02:45:17.094866&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">메서드</p>
+<p><strong>메서드</strong><font size="2">method</font>는 특정 자료형과
+함께 사용되는 함수이다.
+<a class="reference internal" href="collections.html#ch-collections"><span class="std std-numref">11장에서</span></a>
+모음 자료형을 설명할 때 다양한 메서드를 살펴볼 것이다.</p>
+</div>
+</div>
+<div class="section" id="id17">
+<h3><span class="section-number">5.6.2. </span>날짜와 시간 연산<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형은 특정 연산을 지원한다.
+예를 들어 나이는 현재 시간과 생일 사이의 차이로 계산된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">date_of_birth</span>
+<span class="n">age</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8198 days 17:15:17.094866&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>뺄셈 연산 결과는 <code class="docutils literal notranslate"><span class="pre">Timedelta</span></code> 자료형의 값으로 지정되며
+일, 시, 분, 초, 마이크로초(<span class="math notranslate nohighlight">\(10^{-6}\)</span>초) 단위로 계산된다.</p>
+<div class="seealso admonition">
+<p class="admonition-title">참고</p>
+<p>델타<font size="2">delta</font>는 그리스어 알파벳(<span class="math notranslate nohighlight">\(\Delta\)</span>)이지만 증가량 또는 차이를 나타내는 의미로 많이 사용된다.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">components</span></code> 속성에 차이 내용을 별도로 저장된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span><span class="o">.</span><span class="n">components</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8198, hours=17, minutes=15, seconds=17, milliseconds=94, microseconds=866, nanoseconds=0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>차이를 일 단위로 따로 확인할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span><span class="o">.</span><span class="n">days</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8198
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Timedelta</span></code> 에 저장되는 가장 큰 단위는 년(year)이 아니라 일(day)이다.
+사실 일 년이 365일이기도 하고 366일 이기도 하기에 년 단위로 계산하면 부정확해진다.
+실제로 지구의 공전 주기는 약 365.24일이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_year</span> <span class="o">=</span> <span class="mf">365.24</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>이 정보를 이용하여 나이를 계산하면 다음과 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span><span class="o">.</span><span class="n">days</span> <span class="o">/</span> <span class="n">a_year</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.44551527762567
+</pre></div>
+</div>
+</div>
+</div>
+<p>나이를 말할 때 보통 소수점 이하는 버린다.
+이를 위해 넘파이 모듈의 <code class="docutils literal notranslate"><span class="pre">floor()</span></code> 함수를 사용할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">age</span><span class="o">.</span><span class="n">days</span> <span class="o">/</span> <span class="mf">365.24</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ceil()</span></code> 함수를 이용하여 나이를 올림할 수도 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">age</span><span class="o">.</span><span class="n">days</span> <span class="o">/</span> <span class="mf">365.24</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="proof example admonition" id="exp_timestamp_comparison">
+<p class="admonition-title"><span class="caption-number">Example 5.5 </span></p>
+<div class="example-content section" id="proof-content">
+<p><code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형의 값들을 서로 크기 비교가 가능하다.
+예를 들어 생일이 지났는지 여부를 다음과 같이 확인할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 올해의 생일 날짜</span>
+<span class="n">bday_this_year</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+                              <span class="n">date_of_birth</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> 
+                              <span class="n">date_of_birth</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+<span class="n">bday_this_year</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2022-10-04 00:00:00&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>크기 비교 연산자 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 를 이용하여 <code class="docutils literal notranslate"><span class="pre">now</span></code> 가 가리키는 값과 비교하면 생일이 지났는지 여부를
+알 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">now</span> <span class="o">&gt;</span> <span class="n">bday_this_year</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div></div>
+</div>
+<div class="section" id="id18">
+<h2><span class="section-number">5.7. </span>연습문제<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-datatypes.ipynb">(실습) 기본자료형</a></p>
 </div>
 </div>
