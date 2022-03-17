@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11. 모음 자료형 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>12. 모음 자료형 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -52,8 +55,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="12. 파일" href="files.html" />
-    <link rel="prev" title="10. 반복문" href="iterations.html" />
+    <link rel="next" title="13. 파일" href="files.html" />
+    <link rel="prev" title="11. 반복문" href="iterations.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -112,48 +115,53 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="functions.html">
-   6. 함수
+  <a class="reference internal" href="casestudy_game_programming.html">
+   6. 사례 연구: 게임 프로그래밍
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="function_interfaces.html">
-   7. 함수의 인터페이스
+  <a class="reference internal" href="functions.html">
+   7. 함수
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="casestudy_function_interfaces.html">
+   8. 사례 연구: 함수 인터페이스
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="conditionals.html">
-   8. 조건문
+   9. 조건문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="recursion.html">
-   9. 재귀 함수
+   10. 재귀 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="iterations.html">
-   10. 반복문
+   11. 반복문
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   11. 모음 자료형
+   12. 모음 자료형
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   12. 파일
+   13. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   13. 모듈
+   14. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
-   14. 클래스
+   15. 클래스
   </a>
  </li>
 </ul>
@@ -262,44 +270,44 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sec-string">
-   11.1. 문자열
+   12.1. 문자열
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sec-list">
-   11.2. 리스트
+   12.2. 리스트
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     11.2.1. 영화 감독 봉준호
+     12.2.1. 영화 감독 봉준호
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   11.3. 튜플
+   12.3. 튜플
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   11.4. 사전
+   12.4. 사전
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   11.5. 집합
+   12.5. 집합
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   11.6. 조건제시법
+   12.6. 조건제시법
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id9">
-   11.7. 연습문제
+   12.7. 연습문제
   </a>
  </li>
 </ul>
@@ -324,44 +332,44 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sec-string">
-   11.1. 문자열
+   12.1. 문자열
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sec-list">
-   11.2. 리스트
+   12.2. 리스트
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     11.2.1. 영화 감독 봉준호
+     12.2.1. 영화 감독 봉준호
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   11.3. 튜플
+   12.3. 튜플
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   11.4. 사전
+   12.4. 사전
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   11.5. 집합
+   12.5. 집합
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   11.6. 조건제시법
+   12.6. 조건제시법
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id9">
-   11.7. 연습문제
+   12.7. 연습문제
   </a>
  </li>
 </ul>
@@ -374,9 +382,9 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ch-collections">
-<span id="id1"></span><h1><span class="section-number">11. </span>모음 자료형<a class="headerlink" href="#ch-collections" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">12. </span>모음 자료형<a class="headerlink" href="#ch-collections" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="sec-string">
-<span id="id2"></span><h2><span class="section-number">11.1. </span>문자열<a class="headerlink" href="#sec-string" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><span class="section-number">12.1. </span>문자열<a class="headerlink" href="#sec-string" title="Permalink to this headline">¶</a></h2>
 <div class="info admonition">
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">char</span></code> 대 <code class="docutils literal notranslate"><span class="pre">str</span></code></p>
 <p>C, 자바 등의 언어에서는 길이가 1인 문자열을 <strong>character</strong> 자료형으로 별도 관리하며,
@@ -387,11 +395,11 @@
 </div>
 </div>
 <div class="section" id="sec-list">
-<span id="id3"></span><h2><span class="section-number">11.2. </span>리스트<a class="headerlink" href="#sec-list" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2><span class="section-number">12.2. </span>리스트<a class="headerlink" href="#sec-list" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>변수 재할당을 다시 한 번 설명할 것.</p>
 <ul>
-<li><p><a class="reference internal" href="iterations.html#sec-variable-reassignment"><span class="std std-numref">10.1절</span></a> 참고</p></li>
+<li><p><a class="reference internal" href="iterations.html#sec-variable-reassignment"><span class="std std-numref">11.1절</span></a> 참고</p></li>
 <li><p>아래 코드 참고</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
@@ -405,7 +413,7 @@
 </li>
 </ul>
 <div class="section" id="id4">
-<h3><span class="section-number">11.2.1. </span>영화 감독 봉준호<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.2.1. </span>영화 감독 봉준호<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>봉준호 영화 감독의 영화를 담고 있는 리스트가 아래와 같이 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -556,19 +564,19 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h2><span class="section-number">11.3. </span>튜플<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.3. </span>튜플<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id6">
-<h2><span class="section-number">11.4. </span>사전<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.4. </span>사전<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id7">
-<h2><span class="section-number">11.5. </span>집합<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.5. </span>집합<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id8">
-<h2><span class="section-number">11.6. </span>조건제시법<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.6. </span>조건제시법<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id9">
-<h2><span class="section-number">11.7. </span>연습문제<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.7. </span>연습문제<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <ol>
 <li><p><code class="docutils literal notranslate"><span class="pre">printItems</span></code> 수정하여 <code class="docutils literal notranslate"><span class="pre">movie_Bong</span></code>에 포함된 항목들을 아래와 같이
 출력하도록 하는 <code class="docutils literal notranslate"><span class="pre">printItems2</span></code> 함수를 구현하라.</p>
@@ -646,13 +654,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">10. </span>반복문</p>
+            <p class="prev-next-title"><span class="section-number">11. </span>반복문</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="files.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>파일</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>파일</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

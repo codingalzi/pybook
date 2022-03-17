@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6. 함수 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>7. 함수 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -54,8 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. 함수의 인터페이스" href="function_interfaces.html" />
-    <link rel="prev" title="5. 기본자료형" href="datatypes.html" />
+    <link rel="next" title="8. 사례 연구: 함수 인터페이스" href="casestudy_function_interfaces.html" />
+    <link rel="prev" title="6. 사례 연구: 게임 프로그래밍" href="casestudy_game_programming.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,49 +116,54 @@
    5. 기본자료형
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="casestudy_game_programming.html">
+   6. 사례 연구: 게임 프로그래밍
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   6. 함수
+   7. 함수
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="function_interfaces.html">
-   7. 함수의 인터페이스
+  <a class="reference internal" href="casestudy_function_interfaces.html">
+   8. 사례 연구: 함수 인터페이스
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="conditionals.html">
-   8. 조건문
+   9. 조건문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="recursion.html">
-   9. 재귀 함수
+   10. 재귀 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="iterations.html">
-   10. 반복문
+   11. 반복문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections.html">
-   11. 모음 자료형
+   12. 모음 자료형
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   12. 파일
+   13. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   13. 모듈
+   14. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
-   14. 클래스
+   15. 클래스
   </a>
  </li>
 </ul>
@@ -264,17 +272,17 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   6.1. 함수 호출
+   7.1. 함수 호출
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     6.1.1. 함수의 인자
+     7.1.1. 함수의 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#return">
-     6.1.2. 함수의 반환값과
+     7.1.2. 함수의 반환값과
      <code class="docutils literal notranslate">
       <span class="pre">
        return
@@ -285,7 +293,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#print-none">
-     6.1.3.
+     7.1.3.
      <code class="docutils literal notranslate">
       <span class="pre">
        print()
@@ -304,17 +312,17 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   6.2. 형변환 함수
+   7.2. 형변환 함수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   6.3. 수학 함수
+   7.3. 수학 함수
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#math">
-     6.3.1.
+     7.3.1.
      <code class="docutils literal notranslate">
       <span class="pre">
        math
@@ -325,61 +333,61 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numpy">
-     6.3.2. NumPy 패키지
+     7.3.2. NumPy 패키지
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   6.4. 함수 정의하기
+   7.4. 함수 정의하기
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     6.4.1. 함수의 반환값
+     7.4.1. 함수의 반환값
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     6.4.2. 매개 변수와 인자
+     7.4.2. 매개 변수와 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     6.4.3. 제1종 객체
+     7.4.3. 제1종 객체
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sec-keyword-arguments">
-     6.4.4. 키워드 인자
+     7.4.4. 키워드 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
-     6.4.5. 함수 합성과 함수 호출 표현식
+     7.4.5. 함수 합성과 함수 호출 표현식
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     6.4.6. 프로그램 실행과 함수 호출
+     7.4.6. 프로그램 실행과 함수 호출
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id13">
-   6.5. 지역 변수와 전역 변수
+   7.5. 지역 변수와 전역 변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id14">
-   6.6. 콜 스택: 프레임의 생성과 사멸
+   7.6. 콜 스택: 프레임의 생성과 사멸
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id15">
-   6.7. 연습문제
+   7.7. 연습문제
   </a>
  </li>
 </ul>
@@ -404,17 +412,17 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   6.1. 함수 호출
+   7.1. 함수 호출
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     6.1.1. 함수의 인자
+     7.1.1. 함수의 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#return">
-     6.1.2. 함수의 반환값과
+     7.1.2. 함수의 반환값과
      <code class="docutils literal notranslate">
       <span class="pre">
        return
@@ -425,7 +433,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#print-none">
-     6.1.3.
+     7.1.3.
      <code class="docutils literal notranslate">
       <span class="pre">
        print()
@@ -444,17 +452,17 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   6.2. 형변환 함수
+   7.2. 형변환 함수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   6.3. 수학 함수
+   7.3. 수학 함수
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#math">
-     6.3.1.
+     7.3.1.
      <code class="docutils literal notranslate">
       <span class="pre">
        math
@@ -465,61 +473,61 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numpy">
-     6.3.2. NumPy 패키지
+     7.3.2. NumPy 패키지
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   6.4. 함수 정의하기
+   7.4. 함수 정의하기
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     6.4.1. 함수의 반환값
+     7.4.1. 함수의 반환값
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     6.4.2. 매개 변수와 인자
+     7.4.2. 매개 변수와 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     6.4.3. 제1종 객체
+     7.4.3. 제1종 객체
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sec-keyword-arguments">
-     6.4.4. 키워드 인자
+     7.4.4. 키워드 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
-     6.4.5. 함수 합성과 함수 호출 표현식
+     7.4.5. 함수 합성과 함수 호출 표현식
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     6.4.6. 프로그램 실행과 함수 호출
+     7.4.6. 프로그램 실행과 함수 호출
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id13">
-   6.5. 지역 변수와 전역 변수
+   7.5. 지역 변수와 전역 변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id14">
-   6.6. 콜 스택: 프레임의 생성과 사멸
+   7.6. 콜 스택: 프레임의 생성과 사멸
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id15">
-   6.7. 연습문제
+   7.7. 연습문제
   </a>
  </li>
 </ul>
@@ -532,7 +540,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ch-functions">
-<span id="id1"></span><h1><span class="section-number">6. </span>함수<a class="headerlink" href="#ch-functions" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">7. </span>함수<a class="headerlink" href="#ch-functions" title="Permalink to this headline">¶</a></h1>
 <p>프로그램은 명령문의 합성으로 구현된다.
 그런데 특정 기능을 수행하는 명령문의 일부가 너무 길거나,
 반복적으로 사용되어 보다 편하게 사용하고 싶거나
@@ -551,7 +559,7 @@
 해당 명령문을 실행하려면 지정된 함수를
 <strong>호출</strong><font size="2">call</font>하면 된다.</p>
 <div class="section" id="id2">
-<h2><span class="section-number">6.1. </span>함수 호출<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.1. </span>함수 호출<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p><strong>함수 호출</strong><font size="2">function call</font>은
 함수 이름과 연관된 명령문을 실행하도록 하는 일종의 명령문이다.
 함수 호출의 일반적인 형식은 다음과 같다.</p>
@@ -616,7 +624,7 @@
 <p><strong>내장 함수</strong><font size="2">built-in function</font>란 파이썬에서 기본으로 제공하는 함수라는 의미이다.</p>
 </div>
 <div class="section" id="id3">
-<h3><span class="section-number">6.1.1. </span>함수의 인자<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.1. </span>함수의 인자<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>모든 함수는 호출될 때 적절한 개수의 인자를 사용해야 한다.
 그렇지 않은 경우 오류가 발생한다.
 예를 들어, <code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수는 1개 또는 3개의 인자와 함께
@@ -636,7 +644,7 @@
 </div>
 </div>
 <div class="section" id="return">
-<h3><span class="section-number">6.1.2. </span>함수의 반환값과 <code class="docutils literal notranslate"><span class="pre">return</span></code> 키워드<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2. </span>함수의 반환값과 <code class="docutils literal notranslate"><span class="pre">return</span></code> 키워드<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h3>
 <p>함수를 호출하면 함수에 의해 지정된 명령문을 실행한 후에
 최종적으로 어떤 값을
 반환<font size="2">return</font>하기도 한다.
@@ -666,7 +674,7 @@
 </div>
 </div>
 <div class="section" id="print-none">
-<h3><span class="section-number">6.1.3. </span><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">None</span></code> 값<a class="headerlink" href="#print-none" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.3. </span><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">None</span></code> 값<a class="headerlink" href="#print-none" title="Permalink to this headline">¶</a></h3>
 <p>파이썬은 모든 함수가 반환값을 갖도록 강제한다.
 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수처럼 반환값이 없는 것처럼 보이는 함수도
 공식적으로는 아무런 의미가 없는 값을 의미하는 <code class="docutils literal notranslate"><span class="pre">None</span></code>을
@@ -718,7 +726,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">6.2. </span>형변환 함수<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2. </span>형변환 함수<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>부동소수점 또는 정수 모양의 문자열을 정수로 변환하는 <code class="docutils literal notranslate"><span class="pre">int()</span></code> 함수는
 하나의 자료형을 다른 자료형으로 변환된 값을 반환한다.
 이처럼 자료형을 변환하는 것을 <strong>형변환</strong><font size="2">type casting 또는 type conversion</font>라 하며
@@ -800,15 +808,15 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h2><span class="section-number">6.3. </span>수학 함수<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3. </span>수학 함수<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p><span class="math notranslate nohighlight">\(\sin x\)</span>, <span class="math notranslate nohighlight">\(\cos x\)</span>, <span class="math notranslate nohighlight">\(\sqrt{x}\)</span>, <span class="math notranslate nohighlight">\(\log x\)</span>, <span class="math notranslate nohighlight">\(e^x\)</span> 등
 수학에서 많이 사용되는 함수를 파이썬에서 기본으로 제공한다.</p>
 <div class="section" id="math">
-<h3><span class="section-number">6.3.1. </span><code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.1. </span><code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h3>
 <p>파이썬에서 기본으로 제공하는 다양한 수학 함수를 사용하려면 먼저
 <code class="docutils literal notranslate"><span class="pre">math</span></code> 라는 모듈<font size="2">module</font>을
 불러와야<font size="2">import</font> 한다.
-모듈은 <a class="reference internal" href="modules.html#ch-module"><span class="std std-numref">13 장</span></a>에서 자세히 살펴볼 것이며,
+모듈은 <a class="reference internal" href="modules.html#ch-module"><span class="std std-numref">14 장</span></a>에서 자세히 살펴볼 것이며,
 여기서는 모듈이 다양한 함수를 모아 놓은 파이썬 코드 파일이라는
 사실 정도만 기억하면 된다.
 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈을 불러오는 방식은 다음과 같다.</p>
@@ -909,7 +917,7 @@
 </div>
 </div>
 <div class="proof example admonition" id="degree2radian">
-<p class="admonition-title"><span class="caption-number">Example 6.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 7.1 </span></p>
 <div class="example-content section" id="proof-content">
 <p>일반각의 각도<font size="2">degree</font>를
 호도법의 라디안<font size="2">radian</font>으로
@@ -930,7 +938,7 @@
 </div>
 </div></div>
 <div class="section" id="numpy">
-<h3><span class="section-number">6.3.2. </span>NumPy 패키지<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.2. </span>NumPy 패키지<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://numpy.org">넘파이<font size="2">NumPy</font></a>는
 행렬, 다차원 배열 등을 효율적으로 빠르게
 처리하는 많은 수학 함수를 지원하는 파이썬 라이브러리 패키지이며
@@ -1041,7 +1049,7 @@
 </div>
 </div>
 <div class="section" id="id6">
-<h2><span class="section-number">6.4. </span>함수 정의하기<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.4. </span>함수 정의하기<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>파이썬에서 사용자가 임의로 함수를 정의해서 사용할 수 있다.
 함수를 정의하는 방식은 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">함수이름</span><span class="p">(</span><span class="n">매개변수1</span><span class="p">,</span> <span class="n">매개변수2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">매개변수n</span><span class="p">):</span>
@@ -1058,7 +1066,7 @@
 해당한다.</p></li>
 </ul>
 <div class="section" id="id7">
-<h3><span class="section-number">6.4.1. </span>함수의 반환값<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.1. </span>함수의 반환값<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>함수의 반환값은 본문에 사용된 명령문을 실행하다가
 어느 순간 아래 모양의 기본 명령문을 실행하는 순간 결정된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">표현식</span>
@@ -1074,7 +1082,7 @@
 </div>
 </div>
 <div class="section" id="id8">
-<h3><span class="section-number">6.4.2. </span>매개 변수와 인자<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.2. </span>매개 변수와 인자<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p><strong>매개 변수</strong><font size="2">parameter</font>는
 함수 호출에 사용되는 <strong>인자</strong><font size="2">argument</font>를
 함수 본문 명령문에 전달하는 역할을 수행한다.
@@ -1091,7 +1099,7 @@
 </pre></div>
 </div>
 <div class="proof example admonition" id="myAdd">
-<p class="admonition-title"><span class="caption-number">Example 6.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 7.2 </span></p>
 <div class="example-content section" id="proof-content">
 <p>두 숫자의 합을 계산하는 함수 <code class="docutils literal notranslate"><span class="pre">myAdd</span></code>를 아래와 같이 직접 정의할 수 있다.
 더해야 할 두 개의 값을 입력받아야 하기에 두 개의 매개 변수가 필요하다.</p>
@@ -1110,7 +1118,7 @@
 반환하면서 종료한다.</p>
 </div>
 </div><div class="proof example admonition" id="no-parameters">
-<p class="admonition-title"><span class="caption-number">Example 6.3 </span> (인자 없는 함수)</p>
+<p class="admonition-title"><span class="caption-number">Example 7.3 </span> (인자 없는 함수)</p>
 <div class="example-content section" id="proof-content">
 <p>매개 변수를 사용하지 않는 함수라 하더라도 반드시 괄호와 함께 호출해야 한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">myPrint</span><span class="p">():</span>
@@ -1123,7 +1131,7 @@
 </div>
 </div></div>
 <div class="section" id="id9">
-<h3><span class="section-number">6.4.3. </span>제1종 객체<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.3. </span>제1종 객체<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>프로그래밍 언어에서
 <strong>제1종 객체</strong><font size="2">first-class object</font>는
 변수 할당, 함수의 인자, 함수의 반환값 등으로 사용될 수 있는
@@ -1175,7 +1183,7 @@ C++, C#,
 포인터가 C 언어에서 핵심적인 역할을 수행하는 이유가 바로 여기에 있다.</p>
 </div>
 <div class="proof example admonition" id="exp:first-class-function_1">
-<p class="admonition-title"><span class="caption-number">Example 6.4 </span> (함수를 인자로 받는 함수)</p>
+<p class="admonition-title"><span class="caption-number">Example 7.4 </span> (함수를 인자로 받는 함수)</p>
 <div class="example-content section" id="proof-content">
 <p>아래 조건을 만족하도록 <code class="docutils literal notranslate"><span class="pre">do_twice()</span></code> 함수를 정의해보자.</p>
 <ul class="simple">
@@ -1210,7 +1218,7 @@ C++, C#,
 </div>
 </div>
 </div><div class="proof example admonition" id="exp:first-class-function_2">
-<p class="admonition-title"><span class="caption-number">Example 6.5 </span> (함수를 반환하는 함수)</p>
+<p class="admonition-title"><span class="caption-number">Example 7.5 </span> (함수를 반환하는 함수)</p>
 <div class="example-content section" id="proof-content">
 <p><code class="docutils literal notranslate"><span class="pre">adding_n_func(n)</span></code>를 호출하면
 <code class="docutils literal notranslate"><span class="pre">n</span></code>을 더하는 함수 <code class="docutils literal notranslate"><span class="pre">myAdd_n()</span></code>을 반환한다.</p>
@@ -1246,7 +1254,7 @@ C++, C#,
 </div>
 </div>
 <div class="section" id="sec-keyword-arguments">
-<span id="id10"></span><h3><span class="section-number">6.4.4. </span>키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this headline">¶</a></h3>
+<span id="id10"></span><h3><span class="section-number">7.4.4. </span>키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 여러 개의 인자를 받을 수 있다.
 그러면 각 인자를 공백<font size="2">space</font>으로 구분하여
 함께 한 줄에 출력한다.</p>
@@ -1320,7 +1328,7 @@ Python
 간단한 예제는 <a class="reference external" href="https://velog.io/&#64;janeljs/python-print-sep-end-file-flush">이곳</a>에서 확인할 수 있다.</p>
 </div>
 <div class="proof example admonition" id="keyword_argument">
-<p class="admonition-title"><span class="caption-number">Example 6.6 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 7.6 </span></p>
 <div class="example-content section" id="proof-content">
 <p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">myAdd10()</span></code> 함수를 키워드 인자를 이용하여
 정의하는 방식을 보여준다.</p>
@@ -1342,7 +1350,7 @@ Python
 </div>
 </div></div>
 <div class="section" id="id11">
-<h3><span class="section-number">6.4.5. </span>함수 합성과 함수 호출 표현식<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.5. </span>함수 합성과 함수 호출 표현식<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>수학에서 <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(g\)</span> 두 개의 함수를 합성해서 새로운 함수 <span class="math notranslate nohighlight">\(f\circ g\)</span> 를
 다음과 같이 정의한다.</p>
 <div class="math notranslate nohighlight">
@@ -1368,7 +1376,7 @@ Python
 </div>
 </div>
 <div class="section" id="id12">
-<h3><span class="section-number">6.4.6. </span>프로그램 실행과 함수 호출<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.6. </span>프로그램 실행과 함수 호출<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>파이썬 프로그램의 실행은 기본적으로
 “위에서 아래로”와 “왼쪽에서 오른쪽으로”의 두 기준으로
 더 이상 실행할 명령문이 없을 때까지 진행된다.</p>
@@ -1384,7 +1392,7 @@ Python
 </div>
 </div>
 <div class="section" id="id13">
-<h2><span class="section-number">6.5. </span>지역 변수와 전역 변수<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.5. </span>지역 변수와 전역 변수<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <p>함수를 선언할 때 사용되는 매개 변수와 함수 본문에서 선언되는 변수는
 함수가 실행되는 동안에만 의미를 가지며,
 이런 의미에서 <strong>지역 변수</strong><font size="2">local variable</font>라 한다.
@@ -1438,7 +1446,7 @@ Python
 </div>
 </div>
 <div class="section" id="id14">
-<h2><span class="section-number">6.6. </span>콜 스택: 프레임의 생성과 사멸<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.6. </span>콜 스택: 프레임의 생성과 사멸<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <p>함수가 실행되는 동안 발생하는 모든 정보는 컴퓨터 메모리 상에서
 <strong>프레임</strong><font size="2">frame</font> 형식으로 관리된다.
 프레임은 하나의 함수가 실행되는 동안 발생하는 지역 변수의 생성 및 값 할당,
@@ -1508,7 +1516,7 @@ Python
 </div>
 </div>
 <div class="section" id="id15">
-<h2><span class="section-number">6.7. </span>연습문제<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.7. </span>연습문제<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <ol>
 <li><p>다음 조건을 만족시키는 <code class="docutils literal notranslate"><span class="pre">right_align()</span></code>라는 함수를 정의하라.</p>
 <ul class="simple">
@@ -1541,7 +1549,7 @@ Python
 <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
 </pre></div>
 </div>
-<p>힌트: <a class="reference internal" href="#sec-keyword-arguments"><span class="std std-numref">6.4.4</span></a>절의 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수 설명 참고.</p>
+<p>힌트: <a class="reference internal" href="#sec-keyword-arguments"><span class="std std-numref">7.4.4</span></a>절의 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수 설명 참고.</p>
 </li>
 <li><p>위 문제와 유사하게 4개의 행과 4개의 열을 갖는 격자를 그리는 함수를 작성하라.</p></li>
 </ol>
@@ -1575,17 +1583,17 @@ Python
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="datatypes.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="casestudy_game_programming.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>기본자료형</p>
+            <p class="prev-next-title"><span class="section-number">6. </span>사례 연구: 게임 프로그래밍</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="function_interfaces.html" title="next page">
+    <a class='right-next' id="next-link" href="casestudy_function_interfaces.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>함수의 인터페이스</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>사례 연구: 함수 인터페이스</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

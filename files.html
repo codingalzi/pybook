@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12. 파일 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>13. 파일 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -52,8 +55,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="13. 모듈" href="modules.html" />
-    <link rel="prev" title="11. 모음 자료형" href="collections.html" />
+    <link rel="next" title="14. 모듈" href="modules.html" />
+    <link rel="prev" title="12. 모음 자료형" href="collections.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -112,48 +115,53 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="functions.html">
-   6. 함수
+  <a class="reference internal" href="casestudy_game_programming.html">
+   6. 사례 연구: 게임 프로그래밍
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="function_interfaces.html">
-   7. 함수의 인터페이스
+  <a class="reference internal" href="functions.html">
+   7. 함수
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="casestudy_function_interfaces.html">
+   8. 사례 연구: 함수 인터페이스
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="conditionals.html">
-   8. 조건문
+   9. 조건문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="recursion.html">
-   9. 재귀 함수
+   10. 재귀 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="iterations.html">
-   10. 반복문
+   11. 반복문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections.html">
-   11. 모음 자료형
+   12. 모음 자료형
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   12. 파일
+   13. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   13. 모듈
+   14. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
-   14. 클래스
+   15. 클래스
   </a>
  </li>
 </ul>
@@ -262,12 +270,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   12.1. 파일 생성 및 저장
+   13.1. 파일 생성 및 저장
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   12.2. 매직 커맨드와 주피터 노트북
+   13.2. 매직 커맨드와 주피터 노트북
   </a>
  </li>
 </ul>
@@ -292,12 +300,12 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   12.1. 파일 생성 및 저장
+   13.1. 파일 생성 및 저장
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   12.2. 매직 커맨드와 주피터 노트북
+   13.2. 매직 커맨드와 주피터 노트북
   </a>
  </li>
 </ul>
@@ -310,17 +318,17 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">12. </span>파일<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">13. </span>파일<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2><span class="section-number">12.1. </span>파일 생성 및 저장<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1. </span>파일 생성 및 저장<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>…</p>
 </div>
 <div class="section" id="id3">
-<h2><span class="section-number">12.2. </span>매직 커맨드와 주피터 노트북<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.2. </span>매직 커맨드와 주피터 노트북<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://repl.it">repl.it</a> 에서 코드 작성후 RUN 한 후에 콘솔 창에서 파일 내용을 실행할 수 있는 기능을
 주피터 노트북에서는 아래 예제에서 설명하는 방식으로 구현할 수 있다.</p>
 <div class="proof example admonition" id="my_file">
-<p class="admonition-title"><span class="caption-number">Example 12.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 13.1 </span></p>
 <div class="example-content section" id="proof-content">
 <p>아래 내용을 담은 <em>my_file.py</em> 파일을 작성하고 저장하라.
 여기서는 <em>codes</em> 라는 하위 디렉터리(폴더)에 저장되어 있다고 가정한다.</p>
@@ -388,13 +396,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">11. </span>모음 자료형</p>
+            <p class="prev-next-title"><span class="section-number">12. </span>모음 자료형</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="modules.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>모듈</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>모듈</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

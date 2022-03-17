@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8. 조건문 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>9. 조건문 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -52,8 +55,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="9. 재귀 함수" href="recursion.html" />
-    <link rel="prev" title="7. 함수의 인터페이스" href="function_interfaces.html" />
+    <link rel="next" title="10. 재귀 함수" href="recursion.html" />
+    <link rel="prev" title="8. 사례 연구: 함수 인터페이스" href="casestudy_function_interfaces.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -112,48 +115,53 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="functions.html">
-   6. 함수
+  <a class="reference internal" href="casestudy_game_programming.html">
+   6. 사례 연구: 게임 프로그래밍
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="function_interfaces.html">
-   7. 함수의 인터페이스
+  <a class="reference internal" href="functions.html">
+   7. 함수
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="casestudy_function_interfaces.html">
+   8. 사례 연구: 함수 인터페이스
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   8. 조건문
+   9. 조건문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="recursion.html">
-   9. 재귀 함수
+   10. 재귀 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="iterations.html">
-   10. 반복문
+   11. 반복문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections.html">
-   11. 모음 자료형
+   12. 모음 자료형
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   12. 파일
+   13. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   13. 모듈
+   14. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
-   14. 클래스
+   15. 클래스
   </a>
  </li>
 </ul>
@@ -262,24 +270,24 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sec-boolean-expression">
-   8.1. 부울식
+   9.1. 부울식
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     8.1.1. 비교 연산자
+     9.1.1. 비교 연산자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     8.1.2. 논리 연산자
+     9.1.2. 논리 연산자
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if-else">
-   8.2.
+   9.2.
    <code class="docutils literal notranslate">
     <span class="pre">
      if
@@ -299,7 +307,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#elif">
-   8.3.
+   9.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      elif
@@ -310,12 +318,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   8.4. 중첩 조건문
+   9.4. 중첩 조건문
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   8.5. 연습문제
+   9.5. 연습문제
   </a>
  </li>
 </ul>
@@ -340,24 +348,24 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sec-boolean-expression">
-   8.1. 부울식
+   9.1. 부울식
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     8.1.1. 비교 연산자
+     9.1.1. 비교 연산자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     8.1.2. 논리 연산자
+     9.1.2. 논리 연산자
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if-else">
-   8.2.
+   9.2.
    <code class="docutils literal notranslate">
     <span class="pre">
      if
@@ -377,7 +385,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#elif">
-   8.3.
+   9.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      elif
@@ -388,12 +396,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   8.4. 중첩 조건문
+   9.4. 중첩 조건문
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   8.5. 연습문제
+   9.5. 연습문제
   </a>
  </li>
 </ul>
@@ -406,7 +414,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">8. </span>조건문<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>조건문<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p><strong>조건문</strong><font size="2">conditional statement</font>은
 특정 조건의 성립여부에 따라 다른 일을 하게 만드는 명령문이다.
 조건문의 가장 간단한 형식은 다음과 같다.</p>
@@ -430,7 +438,7 @@
 </pre></div>
 </div>
 <div class="section" id="sec-boolean-expression">
-<span id="id2"></span><h2><span class="section-number">8.1. </span>부울식<a class="headerlink" href="#sec-boolean-expression" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><span class="section-number">9.1. </span>부울식<a class="headerlink" href="#sec-boolean-expression" title="Permalink to this headline">¶</a></h2>
 <p><strong>부울식</strong><font size="2">boolean expression</font>은
 <code class="docutils literal notranslate"><span class="pre">True</span></code>와 <code class="docutils literal notranslate"><span class="pre">False</span></code> 두 개의 값중 하나를 가리키는 표현식이다.
 예를 들어, 두 표현식의 동치성 여부를 판단하는 연산자 <code class="docutils literal notranslate"><span class="pre">==</span></code>를
@@ -531,7 +539,7 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h3><span class="section-number">8.1.1. </span>비교 연산자<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.1.1. </span>비교 연산자<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">==</span></code>는 두 값의 동치여부를 판단하는 <strong>비교 연산자</strong>이다.
 이외에 다음 비교 연산자가 참, 거짓을 가리키는 부울식에 많이 사용된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span>       <span class="c1"># x와 y가 서로 다른 값을 가리킬 때 참</span>
@@ -542,7 +550,7 @@
 </pre></div>
 </div>
 <div class="proof example admonition" id="exp_comparison">
-<p class="admonition-title"><span class="caption-number">Example 8.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 9.1 </span></p>
 <div class="example-content section" id="proof-content">
 <p>변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 짝수이면 2로 나눈 값을,
 그렇지 않으면 두 배한 값을 출력하도록 해보자.</p>
@@ -575,7 +583,7 @@
 </div>
 </div></div>
 <div class="section" id="id4">
-<h3><span class="section-number">8.1.2. </span>논리 연산자<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.1.2. </span>논리 연산자<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>논리 연산자를 이용하여 보다 복잡한 부울식을 생성할 수 있다.
 <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code> 세 개의 논리 연산자가 기본으로 제공되며
 기능과 사용법은 영어 단어의 일반적인 의미와 유사하다.</p>
@@ -627,7 +635,7 @@
 </div>
 </div>
 <div class="section" id="if-else">
-<h2><span class="section-number">8.2. </span><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span> <span class="pre">...</span></code> 조건문<a class="headerlink" href="#if-else" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2. </span><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span> <span class="pre">...</span></code> 조건문<a class="headerlink" href="#if-else" title="Permalink to this headline">¶</a></h2>
 <p>변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 음수가 아닐 때에는 음수가 아니다 라는 내용도 출력하는
 기능을 추가하려면 다음과 같이 조건문을 작성한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -649,7 +657,7 @@
 </ul>
 </div>
 <div class="section" id="elif">
-<h2><span class="section-number">8.3. </span><code class="docutils literal notranslate"><span class="pre">elif</span></code> 키워드<a class="headerlink" href="#elif" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3. </span><code class="docutils literal notranslate"><span class="pre">elif</span></code> 키워드<a class="headerlink" href="#elif" title="Permalink to this headline">¶</a></h2>
 <p>세 개 이상의 경우를 다루고자 할 경우
 다음과 같은 형식을 사용한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
@@ -697,7 +705,7 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h2><span class="section-number">8.4. </span>중첩 조건문<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.4. </span>중첩 조건문<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">elif</span></code> 키워드는 사실 없어도 된다.
 예를 들어 크거나, 작거나, 같은 세 가지 경우를 다음과 같이 다룰 수 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
@@ -717,7 +725,7 @@
 이유는 경우의 구분이 너무 복잡해질 수 있기 때문이다.
 가능하면 중첩 조건문 대신에 <code class="docutils literal notranslate"><span class="pre">elif</span></code> 문을 활용할 것이 권장된다.</p>
 <div class="proof example admonition" id="exp_nested_conditionals">
-<p class="admonition-title"><span class="caption-number">Example 8.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 9.2 </span></p>
 <div class="example-content section" id="proof-content">
 <p>논리 연산자를 활용하여 중첩 조건문의 활용을 피할 수도 있다.</p>
 <p>아래 코드는 중첩 조건문을 사용하여 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 크면서 동시에 10보다 작은 경우를 다룬다.</p>
@@ -741,7 +749,7 @@
 </div>
 </div></div>
 <div class="section" id="id6">
-<h2><span class="section-number">8.5. </span>연습문제<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.5. </span>연습문제<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://formal.hknu.ac.kr/ProgInPython/notebooks/PiPy01A-ProgrammingStart.html">숫자 맞히기</a></p>
 </div>
 </div>
@@ -771,17 +779,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="function_interfaces.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="casestudy_function_interfaces.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">7. </span>함수의 인터페이스</p>
+            <p class="prev-next-title"><span class="section-number">8. </span>사례 연구: 함수 인터페이스</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="recursion.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>재귀 함수</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>재귀 함수</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
