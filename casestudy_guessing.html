@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>소개 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>5. 사례 연구: 숫자 맞히기 게임 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,7 +55,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. 컴퓨터 프로그래밍" href="programming.html" />
+    <link rel="next" title="6. 기본자료형" href="datatypes.html" />
+    <link rel="prev" title="4. 변수, 값, 표현식, 명령문" href="variables_expressions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,7 +88,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="programming.html">
    1. 컴퓨터 프로그래밍
@@ -108,8 +109,8 @@
    4. 변수, 값, 표현식, 명령문
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="casestudy_guessing.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    5. 사례 연구: 숫자 맞히기 게임
   </a>
  </li>
@@ -204,9 +205,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/casestudy_guessing.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -224,7 +225,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Fcasestudy_guessing.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -240,6 +241,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/jupyter-book/casestudy_guessing.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -252,7 +270,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>소개</h1>
+                <h1>사례 연구: 숫자 맞히기 게임</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -264,25 +282,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>소개<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>파이썬은 컴퓨터를 이용하여 다양한 문제를 해결하는 데에 매우 적합한 프로그래밍 언어다.</p>
-<ul class="simple">
-<li><p>데이터 분석</p></li>
-<li><p>웹 프로그래밍</p></li>
-<li><p>데이터 베이스 프로그래밍</p></li>
-<li><p>GUI 프로그래밍</p></li>
-<li><p>게임 프로그래밍</p></li>
-</ul>
-<p>파이썬은 복잡하고 방대한 문제를 해결할 수 있는 능력을 갖추고 있음에도 불구하고
-사용법이 타 프로그래밍 언어에 비해 상대적으로 쉽다.
-파이썬을 이용하여 보다 간결하고 가독성이 높은 프로그램을 작성할 수 있다.
-따라서 C, C++, 자바 등에 비해 상대적으로 짧은 코드를 이용하여 동일한 기능의 프로그램을 구현할 수 있다.</p>
-<p>이 강의노트에서 파이썬을 활용한 프로그래밍의 기초를 소개한다.
-일반적으로 (프로그래밍) 언어를 배우는 최선의 방법은 그 언어를 직접 사용하는 것이다.
-따라서 강의노트에서 소개하는 모든 내용과 코드를 직접 자신의 손으로
-타이핑하면서 실행할 것을 추천한다.</p>
-<div class="toctree-wrapper compound">
-</div>
+<h1><span class="section-number">5. </span>사례 연구: 숫자 맞히기 게임<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -309,11 +309,18 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="programming.html" title="next page">
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="variables_expressions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>변수, 값, 표현식, 명령문</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="datatypes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>컴퓨터 프로그래밍</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>기본자료형</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
