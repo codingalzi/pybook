@@ -314,17 +314,6 @@
      6.3.5. 문자열 포매팅
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input">
-     6.3.6. 문자열과
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       input()
-      </span>
-     </code>
-     함수
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -436,17 +425,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id10">
      6.3.5. 문자열 포매팅
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input">
-     6.3.6. 문자열과
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       input()
-      </span>
-     </code>
-     함수
     </a>
    </li>
   </ul>
@@ -1348,48 +1326,6 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 </div>
-<div class="section" id="input">
-<h3><span class="section-number">6.3.6. </span>문자열과 <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h3>
-<p>사용자의 입력은 <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수를 사용하여 받을 수 있다.
-아래와 같이 <code class="docutils literal notranslate"><span class="pre">input()</span></code>을 입력하고 코드를 실행하면, 그 아래에 값을 입력하라는 창이 나온다.
-예를 들어 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">python!</span></code>을 입력하고 엔터 키 <kbd>Enter</kbd>를 누르면
-입력한 내용이 그대로 출력된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span><span class="p">()</span>
-<span class="go">Hello, Python!</span>
-<span class="go">&#39;Hello, Python!&#39;</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수는 입력받은 내용을 문자열로 반환한다.
-따라서 변수에 할당하여 사용할 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<span class="go">&#39;파이썬 좋아!&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;진짜로 &#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
-<span class="go">진짜로 &#39;파이썬 좋아!&#39;</span>
-</pre></div>
-</div>
-<p>사용자가 숫자를 입력하더라도 문자열로 처리된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<span class="go">17</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<span class="go">&lt;class &#39;str&#39;&gt;</span>
-</pre></div>
-</div>
-<p>따라서 입력받은 정수를 연산에 활용하려면
-먼저 <code class="docutils literal notranslate"><span class="pre">int()</span></code> 함수 또는 <code class="docutils literal notranslate"><span class="pre">float()</span></code> 함수를 이용하여 정수 또는 부동소수점으로
-자료형을 변환해야 한다.
-아래 <a class="reference internal" href="#sec-type-casting"><span class="std std-numref">6.5절</span></a>에서 두 함수를 자세히 소개한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
-<span class="go">5.666666666666667</span>
-</pre></div>
-</div>
-<p>문자열 인자를 이용하여 입력사항을 안내할 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">input_num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;정수를 입력하세요 : &quot;</span><span class="p">)</span>
-<span class="go">정수를 입력하세요 : 23</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는 &quot;</span> <span class="o">+</span> <span class="n">input_num</span> <span class="o">+</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
-<span class="go">입력하신 정수는 23입니다.</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="id11">
 <h2><span class="section-number">6.4. </span>부울값<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
@@ -2019,7 +1955,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-03-20 00:33:05.607542&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-03-20 01:04:09.534595&#39;)
 </pre></div>
 </div>
 </div>
@@ -2044,7 +1980,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8202 days 15:03:05.607542&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8202 days 15:34:09.534595&#39;)
 </pre></div>
 </div>
 </div>
@@ -2063,7 +1999,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8202, hours=15, minutes=3, seconds=5, milliseconds=607, microseconds=542, nanoseconds=0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8202, hours=15, minutes=34, seconds=9, milliseconds=534, microseconds=595, nanoseconds=0)
 </pre></div>
 </div>
 </div>
