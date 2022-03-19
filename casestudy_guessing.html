@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>사례 연구: 프로그램 개발 과정 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>&lt;no title&gt; &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -108,7 +108,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_guessing_numbers.html">
-   5. 사례 연구: 프로그램 개발
+   5. 사례 연구: 프로그램 구상
   </a>
  </li>
  <li class="toctree-l1">
@@ -260,6 +260,14 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -267,204 +275,27 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>사례 연구: 프로그램 개발 과정</h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>사례 연구: 프로그램 개발 과정<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>프로그램을 구현하는 일련의 과정을 숫자 맞히기 게임을 이용하여 단계별로 설명한다.</p>
-<p>1~100 사이의 정수가 주어졌을 때 추측으로 알아맞히는 게임을 구현한다.</p>
-<p>최종적으로 아래 코드를 구현하고자 하며 단계별로</p>
-<ul class="simple">
-<li><p>각 단계의 내용이 충족되도록 전 단계의 코드를 수정 보완하여라.<br />
-예를 들어, 2단계에 작성하는 코드는 1단계와 2단계의 내용이 모두 충족되어야 한다.</p></li>
-<li><p>1~100 사이의 정수를 하나 선택하여 <code class="docutils literal notranslate"><span class="pre">answer</span></code> 변수에 할당한다.<br />
-<code class="docutils literal notranslate"><span class="pre">answer</span> <span class="pre">=</span> <span class="pre">15</span>&#160;&#160; <span class="pre">#</span> <span class="pre">다른</span> <span class="pre">값으로</span> <span class="pre">변경</span> <span class="pre">가능</span></code></p></li>
-</ul>
-<p>1단계) <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수를 이용하여 1에서 100사이의 정수를 입력받는 코드를 작성하여라.</p>
-<blockquote>
-<div><p>1에서 100사이의 정수를 입력하세요 :<br />
-입력하신 정수는 OO 입니다.</p>
-</div></blockquote>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;1에서 100사이의 정수를 입력하세요 :&quot;</span><span class="p">)</span>
-<span class="n">num_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_input</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는&quot;</span><span class="p">,</span> <span class="n">num_input</span><span class="p">,</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>2단계) 참여자가 임의의 숫자를 입력하여 <code class="docutils literal notranslate"><span class="pre">answer</span></code>를 맞히면 <code class="docutils literal notranslate"><span class="pre">You</span> <span class="pre">win!</span></code>을, 아니면 <code class="docutils literal notranslate"><span class="pre">You</span> <span class="pre">lose!</span></code>를 출력하여라.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="mi">15</span>
-
-<span class="n">num_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;1에서 100사이의 정수를 입력하세요 :&quot;</span><span class="p">)</span>
-<span class="n">num_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_input</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는&quot;</span><span class="p">,</span> <span class="n">num_input</span><span class="p">,</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">num_input</span> <span class="o">==</span> <span class="n">answer</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="mi">15</span>
-
-<span class="n">num_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;1에서 100사이의 정수를 입력하세요 :&quot;</span><span class="p">)</span>
-<span class="n">num_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_input</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는&quot;</span><span class="p">,</span> <span class="n">num_input</span><span class="p">,</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">num_input</span> <span class="o">==</span> <span class="n">answer</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>3단계) 참여자가 입력한 값이 <code class="docutils literal notranslate"><span class="pre">answer</span></code>와 다르다면, 큰지 작은지 여부를 알려줄 수 있는 코드를 작성하여라.</p>
-<p>ex) 너무 작아요(Too low), 너무 커요(Too high)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="mi">15</span>
-
-<span class="n">num_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;1에서 100사이의 정수를 입력하세요 :&quot;</span><span class="p">)</span>
-<span class="n">num_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_input</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는&quot;</span><span class="p">,</span> <span class="n">num_input</span><span class="p">,</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">num_input</span> <span class="o">==</span> <span class="n">answer</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">num_input</span> <span class="o">&gt;</span> <span class="n">answer</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 커요(Too high)&quot;</span><span class="p">)</span> 
-<span class="k">else</span><span class="p">:</span> 
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 작아요(Too low)&quot;</span><span class="p">)</span> 
-</pre></div>
-</div>
-<p>4단계) <code class="docutils literal notranslate"><span class="pre">try...except</span></code>를 이용하여 참여자가 정수가 아닌 값을 입력하면 <code class="docutils literal notranslate"><span class="pre">정수를</span> <span class="pre">입력하세요</span></code>를 출력하여라.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="mi">15</span>
-
-<span class="k">try</span> <span class="p">:</span>
-  <span class="n">num_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;1에서 100사이의 정수를 입력하세요 :&quot;</span><span class="p">)</span>
-  <span class="n">num_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_input</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는&quot;</span><span class="p">,</span> <span class="n">num_input</span><span class="p">,</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
-
-  <span class="k">if</span> <span class="n">num_input</span> <span class="o">==</span> <span class="n">answer</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
-  <span class="k">elif</span> <span class="n">num_input</span> <span class="o">&gt;</span> <span class="n">answer</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 커요(Too high)&quot;</span><span class="p">)</span> 
-  <span class="k">else</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 작아요(Too low)&quot;</span><span class="p">)</span> 
-
-<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;정수를 입력하세요&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>5단계) 참여자가 1에서 100사이의 정수가 아닌 수를 입력하면 <code class="docutils literal notranslate"><span class="pre">1에서</span> <span class="pre">100사이의</span> <span class="pre">정수만</span> <span class="pre">입력해야</span> <span class="pre">합니다</span></code>를 출력하여라.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="mi">15</span>
-
-<span class="k">try</span> <span class="p">:</span>
-  
-  <span class="n">num_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;1에서 100사이의 정수를 입력하세요 :&quot;</span><span class="p">)</span>
-  <span class="n">num_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_input</span><span class="p">)</span>
-
-  <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">num_input</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는&quot;</span><span class="p">,</span> <span class="n">num_input</span><span class="p">,</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">num_input</span> <span class="o">==</span> <span class="n">answer</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">num_input</span> <span class="o">&gt;</span> <span class="n">answer</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 커요(Too high)&quot;</span><span class="p">)</span> 
-    <span class="k">else</span><span class="p">:</span> 
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 작아요(Too low)&quot;</span><span class="p">)</span> 
-    
-  <span class="k">else</span><span class="p">:</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1에서 100사이의 정수만 입력해야 합니다&quot;</span><span class="p">)</span>
- 
-
-<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;정수를 입력하세요&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>6단계) 참여자가 정답을 맞힐 때까지 입력을 요구하여라.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="mi">15</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-
-  <span class="k">try</span> <span class="p">:</span>
-    
-    <span class="n">num_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;1에서 100사이의 정수를 입력하세요 :&quot;</span><span class="p">)</span>
-    <span class="n">num_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_input</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">num_input</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는&quot;</span><span class="p">,</span> <span class="n">num_input</span><span class="p">,</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
-
-      <span class="k">if</span> <span class="n">num_input</span> <span class="o">==</span> <span class="n">answer</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
-        <span class="k">break</span>
-        
-      <span class="k">elif</span> <span class="n">num_input</span> <span class="o">&gt;</span> <span class="n">answer</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 커요(Too high)&quot;</span><span class="p">)</span> 
-      <span class="k">else</span><span class="p">:</span> 
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 작아요(Too low)&quot;</span><span class="p">)</span> 
-      
-    <span class="k">else</span><span class="p">:</span>
-
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1에서 100사이의 정수만 입력해야 합니다&quot;</span><span class="p">)</span>
-  
-
-  <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;정수를 입력하세요&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>7단계) 참여자가 몇 번 시도하여 정답을 맞혔는지를 보여줘라.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count_trial</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">answer</span> <span class="o">=</span> <span class="mi">15</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-  
-  <span class="k">try</span> <span class="p">:</span>
-    
-    <span class="n">num_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;1에서 100사이의 정수를 입력하세요 :&quot;</span><span class="p">)</span>
-    <span class="n">count_trial</span> <span class="o">=</span> <span class="n">count_trial</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="n">num_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_input</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">num_input</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는&quot;</span><span class="p">,</span> <span class="n">num_input</span><span class="p">,</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
-
-      <span class="k">if</span> <span class="n">num_input</span> <span class="o">==</span> <span class="n">answer</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;시도하신 횟수는: &quot;</span><span class="p">,</span> <span class="n">count_trial</span><span class="p">,</span> <span class="s1">&#39;번 입니다.&#39;</span><span class="p">)</span>
-        <span class="k">break</span>
-        
-      <span class="k">elif</span> <span class="n">num_input</span> <span class="o">&gt;</span> <span class="n">answer</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 커요(Too high)&quot;</span><span class="p">)</span> 
-      <span class="k">else</span><span class="p">:</span> 
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You lose!&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 작아요(Too low)&quot;</span><span class="p">)</span> 
-      
-    <span class="k">else</span><span class="p">:</span>
-
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1에서 100사이의 정수만 입력해야 합니다&quot;</span><span class="p">)</span>
-  
-
-  <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;정수를 입력하세요&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>문제2) 키와 몸무게를 인자로 받아 체질량지수(BMI)를 구하는 코드를 작성하여라. 아래의 사항들을 참고한다.</strong></p>
+  <p><strong>문제</strong></p>
+<p>키와 몸무게를 인자로 받아 체질량지수(BMI)를 구하는 코드를 작성하여라. 아래의 사항들을 참고한다.</p>
 <div class="math notranslate nohighlight">
 \[\texttt{BMI} = \frac{\texttt{weight}}{\texttt{height}^2}\]</div>
 <ul class="simple">
@@ -484,31 +315,8 @@
 </ul>
 </li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">weight_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;몸무게를 입력해주세요 (kg):&quot;</span><span class="p">)</span>
-<span class="n">weight_input</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">weight_input</span><span class="p">)</span>
-
-<span class="n">height_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;키를 입력해주세요 (m):&quot;</span><span class="p">)</span>
-<span class="n">height_input</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">height_input</span><span class="p">)</span>
-
-<span class="n">BMI</span> <span class="o">=</span> <span class="n">weight_input</span><span class="o">/</span><span class="p">(</span><span class="n">height_input</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">BMI</span> <span class="o">&lt;=</span> <span class="mf">18.5</span> <span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;저체중입니다.&quot;</span><span class="p">)</span>
-
-<span class="k">elif</span> <span class="n">BMI</span> <span class="o">&lt;=</span> <span class="mi">23</span> <span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;정상체중입니다.&quot;</span><span class="p">)</span>
-
-<span class="k">elif</span> <span class="n">BMI</span> <span class="o">&lt;=</span> <span class="mi">25</span> <span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;과체중입니다.&quot;</span><span class="p">)</span>
-
-<span class="k">elif</span> <span class="n">BMI</span> <span class="o">&lt;=</span> <span class="mi">30</span> <span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;비만입니다.&quot;</span><span class="p">)</span>
-
-<span class="k">else</span> <span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;고도비만입니다.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>문제3) 두 개의 정수 <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>를 입력받아 <code class="docutils literal notranslate"><span class="pre">a/b</span></code>를 계산하는 코드를 작성하여라.</strong></p>
+<p><strong>문제</strong></p>
+<p>두 개의 정수 <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>를 입력받아 <code class="docutils literal notranslate"><span class="pre">a/b</span></code>를 계산하는 코드를 작성하여라.</p>
 <p>단, 아래의 내용을 만족하도록 코드를 작성한다.</p>
 <ul class="simple">
 <li><p>정수가 아닌 값이 입력될 경우, 정수를 입력하라고 전달한다.</p></li>
@@ -532,7 +340,8 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0이 아닌 b를 입력해주세요&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>문제4) 숫자 야구 게임 코드를 작성하여라.</strong></p>
+<p><strong>문제</strong></p>
+<p>숫자 야구 게임 코드를 작성하여라.</p>
 <p>숫자 야구 게임은 임의로 정한 3자리의 수(<code class="docutils literal notranslate"><span class="pre">ans</span></code>)를 참여자가 맞히는 게임으로, 아래의 규칙을 따른다.</p>
 <ul class="simple">
 <li><p>사용되는 수는 1~9까지의 서로 다른 정수이다.</p></li>
@@ -551,14 +360,7 @@
 <li><p>3자리 수를 하나 선택하여 <code class="docutils literal notranslate"><span class="pre">ans</span></code> 변수에 할당한다.<br />
 <code class="docutils literal notranslate"><span class="pre">ans</span> <span class="pre">=</span> <span class="pre">157</span>&#160;&#160; <span class="pre">#</span> <span class="pre">다른</span> <span class="pre">값으로</span> <span class="pre">변경</span> <span class="pre">가능</span></code></p></li>
 </ul>
-<p>1단계) 3자리의 수를 입력받는 코드를 작성하여라.</p>
-<blockquote>
-<div><p>3자리의 수를 입력하세요 :</p>
-</div></blockquote>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">baseball_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;3자리의 수를 입력하세요: &quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>2단계) 참여자가 입력한 3자리의 수와 <code class="docutils literal notranslate"><span class="pre">ans</span></code>를 비교하여, 스트라이크가 몇 인지를 출력하여라.</p>
+<p>참여자가 입력한 3자리의 수와 <code class="docutils literal notranslate"><span class="pre">ans</span></code>를 비교하여, 스트라이크가 몇 인지를 출력하여라.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="mi">157</span>
 <span class="n">ans</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
 
@@ -573,187 +375,203 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">count_strike</span><span class="p">,</span> <span class="s2">&quot; 스트라이크!&quot;</span><span class="p">)</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-
-
-
-
-
-
-
-
-
-<span class="o">.</span>
-</pre></div>
-</div>
-<p>연습을 더 하고 싶다면, 아래의 문제를 풀어보세요!</p>
+<p><strong>문제</strong></p>
 <p><strong>[추가 문제1] 문제4)를 완성해보자.</strong><br />
 3단계) 참여자가 입력한 3자리의 수와 <code class="docutils literal notranslate"><span class="pre">ans</span></code>를 비교하여, 스트라이크와 볼이 몇 인지를 출력하여라.</p>
-<p>ans = 157
-ans = str(ans)</p>
-<p>baseball_input = input(“3자리의 수를 입력하세요: “)</p>
-<p>count_strike = 0
-count_ball = 0</p>
-<p>for i in range(3):</p>
-<p>if ans[i] in baseball_input:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if ans[i] == baseball_input[i]:
-  count_strike = count_strike + 1
-else:
-  count_ball = count_ball + 1
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="mi">157</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+
+<span class="n">baseball_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;3자리의 수를 입력하세요: &quot;</span><span class="p">)</span>
+
+<span class="n">count_strike</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_ball</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+
+  <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">baseball_input</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">baseball_input</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+      <span class="n">count_strike</span> <span class="o">=</span> <span class="n">count_strike</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">count_ball</span> <span class="o">=</span> <span class="n">count_ball</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">count_strike</span><span class="p">,</span> <span class="s2">&quot; 스트라이크!&quot;</span><span class="p">,</span> <span class="n">count_ball</span><span class="p">,</span> <span class="s2">&quot; 볼!&quot;</span><span class="p">)</span>
+ 
 </pre></div>
 </div>
-<p>print(count_strike, ” 스트라이크!”, count_ball, ” 볼!”)</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4766</span><span class="o">/</span><span class="mf">2383343097.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ans</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">baseball_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;3자리의 수를 입력하세요: &quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">count_strike</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nn">~/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">-&gt; </span><span class="mi">1003</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1004</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
 <p>4단계) 참여자가 입력한 3자리의 수와 <code class="docutils literal notranslate"><span class="pre">ans</span></code>를 비교하여, 아웃이면 아웃을, 아니면 스트라이크와 볼이 몇 인지를 출력하여라.</p>
-<p>ans = 157
-ans = str(ans)</p>
-<p>baseball_input = input(“3자리의 수를 입력하세요: “)</p>
-<p>count_strike = 0
-count_ball = 0</p>
-<p>for i in range(3):</p>
-<p>if ans[i] in baseball_input:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if ans[i] == baseball_input[i]:
-  count_strike = count_strike + 1
-else:
-  count_ball = count_ball + 1
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="mi">157</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+
+<span class="n">baseball_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;3자리의 수를 입력하세요: &quot;</span><span class="p">)</span>
+
+<span class="n">count_strike</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_ball</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+
+  <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">baseball_input</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">baseball_input</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+      <span class="n">count_strike</span> <span class="o">=</span> <span class="n">count_strike</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">count_ball</span> <span class="o">=</span> <span class="n">count_ball</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">count_strike</span> <span class="o">+</span> <span class="n">count_ball</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;아웃!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">count_strike</span><span class="p">,</span> <span class="s2">&quot; 스트라이크!&quot;</span><span class="p">,</span> <span class="n">count_ball</span><span class="p">,</span> <span class="s2">&quot; 볼!&quot;</span><span class="p">)</span>
+ 
 </pre></div>
 </div>
-<p>if count_strike + count_ball == 0:
-print(“아웃!”)
-else:
-print(count_strike, ” 스트라이크!”, count_ball, ” 볼!”)</p>
-<p>들여쓰기를 주의해 주세요!</p>
+</div>
+</div>
 <p>5단계) 참여자가 정답을 맞힐 때까지 입력을 요구하여라.</p>
-<p>ans = 157
-ans = str(ans)</p>
-<p>while True:</p>
-<p>baseball_input = input(“3자리의 수를 입력하세요: “)</p>
-<p>count_strike = 0
-count_ball = 0</p>
-<p>for i in range(3):</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if ans[i] in baseball_input:
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="mi">157</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
 
-  if ans[i] == baseball_input[i]:
-    count_strike = count_strike + 1
-  else:1
-    count_ball = count_ball + 1
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+  <span class="n">baseball_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;3자리의 수를 입력하세요: &quot;</span><span class="p">)</span>
+
+  <span class="n">count_strike</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">count_ball</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">baseball_input</span><span class="p">:</span>
+
+      <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">baseball_input</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">count_strike</span> <span class="o">=</span> <span class="n">count_strike</span> <span class="o">+</span> <span class="mi">1</span>
+      <span class="k">else</span><span class="p">:</span><span class="mi">1</span>
+        <span class="n">count_ball</span> <span class="o">=</span> <span class="n">count_ball</span> <span class="o">+</span> <span class="mi">1</span>
+
+  <span class="k">if</span> <span class="n">count_strike</span> <span class="o">+</span> <span class="n">count_ball</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;아웃!&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count_strike</span><span class="p">,</span> <span class="s2">&quot; 스트라이크!&quot;</span><span class="p">,</span> <span class="n">count_ball</span><span class="p">,</span> <span class="s2">&quot; 볼!&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">count_strike</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;게임 끝!&quot;</span><span class="p">)</span>
+      <span class="k">break</span>
+  
 </pre></div>
 </div>
-<p>if count_strike + count_ball == 0:
-print(“아웃!”)
-else:
-print(count_strike, ” 스트라이크!”, count_ball, ” 볼!”)
-if count_strike == 3:
-print(“게임 끝!”)
-break</p>
+</div>
+</div>
 <p>6단계) 숫자가 아닌 값을 입력하면, <code class="docutils literal notranslate"><span class="pre">숫자를</span> <span class="pre">입력하세요</span></code>를 출력하여라.</p>
-<p>ans = 157
-ans = str(ans)</p>
-<p>while True:</p>
-<p>try:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>baseball_input = input(&quot;3자리의 수를 입력하세요: &quot;)
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="mi">157</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
 
-baseball_int = int(baseball_input)
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 
-count_strike = 0
-count_ball = 0
+  <span class="k">try</span><span class="p">:</span>
 
-for i in range(3):
+    <span class="n">baseball_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;3자리의 수를 입력하세요: &quot;</span><span class="p">)</span>
 
-  if ans[i] in baseball_input:
+    <span class="n">baseball_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">baseball_input</span><span class="p">)</span>
 
-    if ans[i] == baseball_input[i]:
-      count_strike = count_strike + 1
-    else:
-      count_ball = count_ball + 1
+    <span class="n">count_strike</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">count_ball</span> <span class="o">=</span> <span class="mi">0</span>
 
-if count_strike + count_ball == 0:
-  print(&quot;아웃!&quot;)
-else:
-  print(count_strike, &quot; 스트라이크!&quot;, count_ball, &quot; 볼!&quot;)
-  if count_strike == 3:
-    print(&quot;게임 끝!&quot;)
-    break
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+
+      <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">baseball_input</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">baseball_input</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+          <span class="n">count_strike</span> <span class="o">=</span> <span class="n">count_strike</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">count_ball</span> <span class="o">=</span> <span class="n">count_ball</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">count_strike</span> <span class="o">+</span> <span class="n">count_ball</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;아웃!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">count_strike</span><span class="p">,</span> <span class="s2">&quot; 스트라이크!&quot;</span><span class="p">,</span> <span class="n">count_ball</span><span class="p">,</span> <span class="s2">&quot; 볼!&quot;</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">count_strike</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;게임 끝!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+  
+  <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;숫자를 입력하세요&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>except ValueError:
-print(“숫자를 입력하세요”)</p>
+</div>
+</div>
 <p>[note] while문은 반드시 loop를 빠져나올 수 있도록 코드를 고려한다</p>
 <p>7단계) 세 자리 미만의 수를 입력하면, <code class="docutils literal notranslate"><span class="pre">세</span> <span class="pre">자리의</span> <span class="pre">수를</span> <span class="pre">입력하세요</span></code>를 출력하여라.</p>
-<p>ans = 157
-ans = str(ans)</p>
-<p>while True:</p>
-<p>try:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>baseball_input = input(&quot;3자리의 수를 입력하세요: &quot;)
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="mi">157</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
 
-baseball_int = int(baseball_input)
-baseball_3digit = baseball_input[2]
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 
+  <span class="k">try</span><span class="p">:</span>
 
-count_strike = 0
-count_ball = 0
+    <span class="n">baseball_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;3자리의 수를 입력하세요: &quot;</span><span class="p">)</span>
 
-for i in range(3):
+    <span class="n">baseball_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">baseball_input</span><span class="p">)</span>
+    <span class="n">baseball_3digit</span> <span class="o">=</span> <span class="n">baseball_input</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    
 
-  if ans[i] in baseball_input:
+    <span class="n">count_strike</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">count_ball</span> <span class="o">=</span> <span class="mi">0</span>
 
-    if ans[i] == baseball_input[i]:
-      count_strike = count_strike + 1
-    else:
-      count_ball = count_ball + 1
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
 
-if count_strike + count_ball == 0:
-  print(&quot;아웃!&quot;)
-else:
-  print(count_strike, &quot; 스트라이크!&quot;, count_ball, &quot; 볼!&quot;)
-  if count_strike == 3:
-    print(&quot;게임 끝!&quot;)
-    break
+      <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">baseball_input</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">baseball_input</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+          <span class="n">count_strike</span> <span class="o">=</span> <span class="n">count_strike</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">count_ball</span> <span class="o">=</span> <span class="n">count_ball</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">count_strike</span> <span class="o">+</span> <span class="n">count_ball</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;아웃!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">count_strike</span><span class="p">,</span> <span class="s2">&quot; 스트라이크!&quot;</span><span class="p">,</span> <span class="n">count_ball</span><span class="p">,</span> <span class="s2">&quot; 볼!&quot;</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">count_strike</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;게임 끝!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+  
+  <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;숫자를 입력하세요&quot;</span><span class="p">)</span>
+    
+  <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;세 자리의 수를 입력하세요&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>except ValueError:
-print(“숫자를 입력하세요”)</p>
-<p>except IndexError:
-print(“세 자리의 수를 입력하세요”)</p>
-<p><strong>[추가문제2] 영어단어를 입력받아 알파벳순으로 출력하는 코드를 작성하여라.</strong><br />
-예를 들어, <code class="docutils literal notranslate"><span class="pre">dog</span></code>를 입력하면, <code class="docutils literal notranslate"><span class="pre">dgo</span></code>를 출력한다.</p>
-<p>word_input = input(“영어단어를 입력해주세요 :”)
-word_input = word_input.lower() # 소문자로 변환</p>
-<p>word_output = word_input</p>
-<p>for i in range(len(word_input)):</p>
-<p>minindex = i</p>
-<p>for j in range(i,len(word_input)):
-if word_output[j] &lt; word_output[minindex]:
-minindex = j</p>
-<p>word_temp = “”  ## i와 minindex의 위치를 교환하기 위한 temp 변수</p>
-<p>for k in range(len(word_input)):</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if k == i:
-  word_temp = word_temp + word_output[minindex]
-elif k == minindex:
-  word_temp = word_temp + word_output[i]
-else:
-  word_temp = word_temp + word_output[k]
-</pre></div>
 </div>
-<p>word_output = word_temp</p>
-<p>print(“알파벳순 : ” + word_output)</p>
-<p>[note] list를 이용하면 간편하게 풀 수 있다.</p>
-<p><strong>[추가문제3] 다음 중 오류가 발생하는 코드는 무엇인가</strong></p>
-<p>(a)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span> <span class="ow">or</span> <span class="kc">True</span> <span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>(b)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span> <span class="ow">or</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span> <span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>if 3/0 or True :
-print(“A”)</p>
-<p>if True or 3/0 :
-print(“B”)</p>
-<p>or 연산은 앞이 True이면 뒤를 계산하지 않고 코드를 실행한다!</p>
 </div>
 
     <script type="text/x-thebe-config">
