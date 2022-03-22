@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -730,14 +727,11 @@
 <code class="docutils literal notranslate"><span class="pre">정수를</span> <span class="pre">입력하세요.</span></code> 라는 문장이 출력된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;1부터 100 사이의 정수 하나를 입력하세요: &quot;</span><span class="p">))</span>
-    
-    <span class="c1"># 기타 명령문</span>
-    
 <span class="k">except</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;정수를 입력하세요.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">except</span></code> 에 <code class="docutils literal notranslate"><span class="pre">continue</span></code> 를 대신 사용한다.
+<p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">except</span></code> 부분에 에 <code class="docutils literal notranslate"><span class="pre">continue</span></code> 를 대신 사용한다.
 <code class="docutils literal notranslate"><span class="pre">continue</span></code> 는 현재 실행중인 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을
 다시 시작하라고 지정할 때 사용하는 명령문이다.
 따라서 정수가 아닌 값이 입력되면 <code class="docutils literal notranslate"><span class="pre">while</span></code> 명령문의 처음으로 돌아가서
@@ -750,20 +744,21 @@
 <span class="n">guess</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
 <span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">secret</span><span class="p">:</span>
+    
     <span class="k">try</span><span class="p">:</span>  <span class="c1"># 정수 입력이 아닌 경우 대처             </span>
         <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;1부터 100 사이의 정수 하나를 입력하세요: &quot;</span><span class="p">))</span>
-
-        <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">break</span>
-        
-        <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secret</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;맞았습니다!&quot;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">secret</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 커요!&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 작아요!&quot;</span><span class="p">)</span>
     <span class="k">except</span><span class="p">:</span> 
-        <span class="k">continue</span>  <span class="c1"># 정수 입력이 아닌 경우 while 반복문 새로 시작</span>
+        <span class="k">continue</span>  <span class="c1"># while 반복문의 처음으로 돌아가기</span>
+
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secret</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;맞았습니다!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">secret</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 커요!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;너무 작아요!&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;게임 종료!&quot;</span><span class="p">)</span>
 </pre></div>
