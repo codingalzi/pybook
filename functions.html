@@ -296,13 +296,12 @@
        print()
       </span>
      </code>
-     함수와
+     함수의 반환값
      <code class="docutils literal notranslate">
       <span class="pre">
        None
       </span>
      </code>
-     값
     </a>
    </li>
   </ul>
@@ -436,13 +435,12 @@
        print()
       </span>
      </code>
-     함수와
+     함수의 반환값
      <code class="docutils literal notranslate">
       <span class="pre">
        None
       </span>
      </code>
-     값
     </a>
    </li>
   </ul>
@@ -671,13 +669,16 @@
 </div>
 </div>
 <div class="section" id="print-none">
-<h3><span class="section-number">7.1.3. </span><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">None</span></code> 값<a class="headerlink" href="#print-none" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.3. </span><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 반환값 <code class="docutils literal notranslate"><span class="pre">None</span></code><a class="headerlink" href="#print-none" title="Permalink to this headline">¶</a></h3>
 <p>파이썬은 모든 함수가 반환값을 갖도록 강제한다.
 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수처럼 반환값이 없는 것처럼 보이는 함수도
 공식적으로는 아무런 의미가 없는 값을 의미하는 <code class="docutils literal notranslate"><span class="pre">None</span></code>을
-반환값으로 사용한다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">None</span></code>은 <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> 자료형에 속하는 하나의 값이다.
-따라서 변수 할당에 사용되어 저장될 수 있다.
+반환값으로 사용한다.
+즉, 아래 명령문이 항상 마지막에 실행된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code>도 하나의 값이라서 변수 할당에 사용되어 저장될 수 있다.
 하지만 연산 등에 사용하면 오류가 발생한다.
 즉, 아무런 기능을 수행하지 못한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
@@ -687,13 +688,12 @@
 <span class="gr">TypeError</span>: <span class="n">unsupported operand type(s) for +: &#39;NoneType&#39; and &#39;int&#39;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수에 의해
-화면에 출력되는 문자열은 반환값이 아니고
-화면에 지정된 값을 출력하는 명령문의 실행 결과에 불과하다.
-함수의 반환값은 변수에 할당해서 활용할 수 있지만
-화면에 출력된 문자열은 그럴 수 없다는 데서 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 특정한 반환값을
-생성하지 않고, 대신에 <code class="docutils literal notranslate"><span class="pre">None</span></code>이 반환값으로 사용된다는 것을 확인할 수 있다.</p>
-<p>예를 들어 아래 할당 명령문을 실행할 때 화면에 보여지는 <code class="docutils literal notranslate"><span class="pre">3.14</span></code>는
+<p>반면에 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수에 의해
+화면에 출력되는 문자열은 반환값이 아니다.
+다만 화면에 지정된 값을 출력하는 명령문의 실행 결과에 불과하다.</p>
+<p>함수의 반환값은 변수에 할당해서 활용할 수 있지만
+화면에 출력된 문자열은 그럴 수 없다는 데서 그 차이를 알 수 있다.
+예를 들어 아래 할당 명령문을 실행할 때 화면에 보여지는 <code class="docutils literal notranslate"><span class="pre">3.14</span></code>는
 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 아니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1071,12 +1071,6 @@
 </div>
 <p>위 <code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문이 실행되는 순간
 지정된 <code class="docutils literal notranslate"><span class="pre">표현식</span></code>이 가리키는 값이 반환되면서 함수의 실행이 멈춘다.</p>
-<div class="info admonition">
-<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code> 명령문</p>
-<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 반환값이 없다는 의미는
-<code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문이 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 본문에 포함되지 않았다는 것을 의미하며,
-이런 경우 파이썬 해석기는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code>을 자동으로 실행하면서 함수 호출을 종료한다.</p>
-</div>
 </div>
 <div class="section" id="id8">
 <h3><span class="section-number">7.4.2. </span>매개 변수와 인자<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
@@ -1124,39 +1118,35 @@
 <p class="admonition-title"><span class="caption-number">Example 7.3 </span> (인자 없는 함수)</p>
 <div class="example-content section" id="proof-content">
 <p>아래 코드에서 정의된 <code class="docutils literal notranslate"><span class="pre">grid2()</span></code> 함수는 인자를 받지 않으며, 반환값도 없다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pm</span> <span class="o">=</span> <span class="s2">&quot;+ - - - - &quot;</span>
-<span class="n">bs</span> <span class="o">=</span> <span class="s2">&quot;|         &quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pm</span> <span class="o">=</span> <span class="s2">&quot;+ - - &quot;</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="s2">&quot;|     &quot;</span>
 <span class="n">plus</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span>
 <span class="n">bar</span> <span class="o">=</span> <span class="s2">&quot;|&quot;</span>
 
 <span class="k">def</span> <span class="nf">print_pm</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">print_bs</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">print_ps</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
     
 <span class="k">def</span> <span class="nf">grid2</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">num1</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
         <span class="n">print_pm</span><span class="p">(</span><span class="n">pm</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">plus</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">num2</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
-            <span class="n">print_bs</span><span class="p">(</span><span class="n">bs</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">bar</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">num2</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+            <span class="n">print_ps</span><span class="p">(</span><span class="n">ps</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">bar</span><span class="p">)</span>
 
     <span class="n">print_pm</span><span class="p">(</span><span class="n">pm</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="n">plus</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">grid()</span></code> 함수를 호출하면 아래 모양의 격자가 그려진다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span><span class="p">()</span>
-<span class="go">+ - - - - + - - - - +</span>
-<span class="go">|         |         |</span>
-<span class="go">|         |         |</span>
-<span class="go">|         |         |</span>
-<span class="go">|         |         |</span>
-<span class="go">+ - - - - + - - - - +</span>
-<span class="go">|         |         |</span>
-<span class="go">|         |         |</span>
-<span class="go">|         |         |</span>
-<span class="go">|         |         |</span>
-<span class="go">+ - - - - + - - - - +</span>
+<span class="go">+ - - + - - +</span>
+<span class="go">|     |     |</span>
+<span class="go">|     |     |</span>
+<span class="go">+ - - + - - +</span>
+<span class="go">|     |     |</span>
+<span class="go">|     |     |</span>
+<span class="go">+ - - + - - +</span>
 </pre></div>
 </div>
 </div>
