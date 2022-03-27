@@ -360,29 +360,34 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     7.4.5. 함수 합성과 함수 호출 표현식
+    <a class="reference internal nav-link" href="#sec-boolean-functions">
+     7.4.5. 부울값 함수
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     7.4.6. 프로그램 실행과 함수 호출
+     7.4.6. 함수 합성과 함수 호출 표현식
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     7.4.7. 프로그램 실행과 함수 호출
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id13">
+  <a class="reference internal nav-link" href="#id14">
    7.5. 지역 변수와 전역 변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id14">
+  <a class="reference internal nav-link" href="#id15">
    7.6. 콜 스택: 프레임의 생성과 사멸
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
+  <a class="reference internal nav-link" href="#id16">
    7.7. 연습문제
   </a>
  </li>
@@ -499,29 +504,34 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     7.4.5. 함수 합성과 함수 호출 표현식
+    <a class="reference internal nav-link" href="#sec-boolean-functions">
+     7.4.5. 부울값 함수
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     7.4.6. 프로그램 실행과 함수 호출
+     7.4.6. 함수 합성과 함수 호출 표현식
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     7.4.7. 프로그램 실행과 함수 호출
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id13">
+  <a class="reference internal nav-link" href="#id14">
    7.5. 지역 변수와 전역 변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id14">
+  <a class="reference internal nav-link" href="#id15">
    7.6. 콜 스택: 프레임의 생성과 사멸
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
+  <a class="reference internal nav-link" href="#id16">
    7.7. 연습문제
   </a>
  </li>
@@ -914,7 +924,7 @@
 </div>
 </div>
 <div class="proof example admonition" id="degree2radian">
-<p class="admonition-title"><span class="caption-number">Example 7.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 7.6 </span></p>
 <div class="example-content section" id="proof-content">
 <p>일반각의 각도<font size="2">degree</font>를
 호도법의 라디안<font size="2">radian</font>으로
@@ -1294,7 +1304,7 @@ C++, C#,
 </div>
 </div>
 <div class="proof example admonition" id="map_function">
-<p class="admonition-title"><span class="caption-number">Example 7.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 7.4 </span> (<code class="docutils literal notranslate"><span class="pre">map()</span></code> 함수)</p>
 <div class="example-content section" id="proof-content">
 <p><code class="docutils literal notranslate"><span class="pre">map()</span></code> 함수는 하나의 함수 <code class="docutils literal notranslate"><span class="pre">f</span></code> 와 하나의 리스트 또는 튜플 등을 모음 자료형 값 <code class="docutils literal notranslate"><span class="pre">iter</span></code> 을 인자로 받는다.
 그러면 함수 <code class="docutils literal notranslate"><span class="pre">f</span></code> 를 <code class="docutils literal notranslate"><span class="pre">iter</span></code> 에 포함된 각 항목에 적용하여 반환된 값들로 이루어진
@@ -1405,8 +1415,93 @@ Python
 </div>
 </div>
 </div></div>
-<div class="section" id="id11">
-<h3><span class="section-number">7.4.5. </span>함수 합성과 함수 호출 표현식<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="sec-boolean-functions">
+<span id="id11"></span><h3><span class="section-number">7.4.5. </span>부울값 함수<a class="headerlink" href="#sec-boolean-functions" title="Permalink to this headline">¶</a></h3>
+<p>부울값을 반환하는 함수를 이용하면 복잡한 테스트를 쉽게 진행할 수 있다.
+예를 들어 아래 함수는 두 정수를 대상으로 약수, 배수의 관계가 있는지 여부를 판단할 때
+사용될 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>위 함수를 다음과 같이 보다 간단하게 정의할 수도 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>부울값 함수를 조건문 등에 쉽게 활용할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="k">if</span> <span class="n">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> 을(를) </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1"> (으)로 나눌 수 있다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16 을(를) 4 (으)로 나눌 수 있다.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="proof example admonition" id="degree2radian">
+<p class="admonition-title"><span class="caption-number">Example 7.6 </span> (<code class="docutils literal notranslate"><span class="pre">filter()</span></code> 함수)</p>
+<div class="example-content section" id="proof-content">
+<p><code class="docutils literal notranslate"><span class="pre">filter()</span></code> 함수는 첫째 인자로 부울값 함수를, 둘째 인자로 리스트, 튜플 등을 사용한다.
+단, 부울값 함수 인자는 한 개의 인자만 사용하는 함수이어야 한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">filter(f,</span> <span class="pre">aList)</span></code> 방식으로 호출하면 <code class="docutils literal notranslate"><span class="pre">aList</span></code> 에 포함된 항목 <code class="docutils literal notranslate"><span class="pre">item</span></code> 중에서 <code class="docutils literal notranslate"><span class="pre">f(item)</span></code> 이
+참이 되는 <code class="docutils literal notranslate"><span class="pre">item</span></code> 만 모은다.
+반환값은 <code class="docutils literal notranslate"><span class="pre">filter</span></code> 유형의 값이지만 <code class="docutils literal notranslate"><span class="pre">list()</span></code> 함수를
+이용하면 쉽게 리스트로 반환된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divisible_by_3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">divisible_by_3</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]))</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div></div>
+<div class="section" id="id12">
+<h3><span class="section-number">7.4.6. </span>함수 합성과 함수 호출 표현식<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>수학에서 <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(g\)</span> 두 개의 함수를 합성해서 새로운 함수 <span class="math notranslate nohighlight">\(f\circ g\)</span> 를
 다음과 같이 정의한다.</p>
 <div class="math notranslate nohighlight">
@@ -1431,8 +1526,8 @@ Python
 </div>
 </div>
 </div>
-<div class="section" id="id12">
-<h3><span class="section-number">7.4.6. </span>프로그램 실행과 함수 호출<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3><span class="section-number">7.4.7. </span>프로그램 실행과 함수 호출<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>파이썬 프로그램의 실행은 기본적으로
 “위에서 아래로”와 “왼쪽에서 오른쪽으로”의 두 기준으로
 더 이상 실행할 명령문이 없을 때까지 진행된다.</p>
@@ -1447,8 +1542,8 @@ Python
 추적하고 관리한다.</p>
 </div>
 </div>
-<div class="section" id="id13">
-<h2><span class="section-number">7.5. </span>지역 변수와 전역 변수<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h2><span class="section-number">7.5. </span>지역 변수와 전역 변수<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <p>함수를 선언할 때 사용되는 매개 변수와 함수 본문에서 선언되는 변수는
 함수가 실행되는 동안에만 의미를 가지며,
 이런 의미에서 <strong>지역 변수</strong><font size="2">local variable</font>라 한다.
@@ -1501,8 +1596,8 @@ Python
 <code class="docutils literal notranslate"><span class="pre">hour</span></code>와 <code class="docutils literal notranslate"><span class="pre">minutes</span></code>의 생존주기, 즉, 언제 생성되고 언제 사라지는지를 시각적으로 확인할 수 있다.</p>
 </div>
 </div>
-<div class="section" id="id14">
-<h2><span class="section-number">7.6. </span>콜 스택: 프레임의 생성과 사멸<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h2><span class="section-number">7.6. </span>콜 스택: 프레임의 생성과 사멸<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p>함수가 실행되는 동안 발생하는 모든 정보는 컴퓨터 메모리 상에서
 <strong>프레임</strong><font size="2">frame</font> 형식으로 관리된다.
 프레임은 하나의 함수가 실행되는 동안 발생하는 지역 변수의 생성 및 값 할당,
@@ -1571,8 +1666,8 @@ Python
 </pre></div>
 </div>
 </div>
-<div class="section" id="id15">
-<h2><span class="section-number">7.7. </span>연습문제<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id16">
+<h2><span class="section-number">7.7. </span>연습문제<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-functions.ipynb">(실습) 함수</a></p>
 </div>
 </div>
