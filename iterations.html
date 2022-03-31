@@ -858,7 +858,12 @@ x_{n+1} &amp; = \frac{x_n + \frac{a}{x_n}}{2}
 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">!=</span> <span class="pre">y</span></code> 처럼
 부동소수점<font size="2">floating point</font>의 동치성을
 비교하는 일은 매우 조심해서 사용해야 한다.
-이에 대한 이유는 이 강의노트의 수준을 많이 벗어나기에 더 이상 설명하지 않는다.</p>
+예를 들어 아래와 기대와 다른 결과를 얻을 수 있기 때문이다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">==</span> <span class="mf">0.3</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>이에 대한 이유는 이 강의노트의 수준을 많이 벗어나기에 더 이상 설명하지 않는다.</p>
 </div>
 <p>두 부동소수점의 동치성 여부를 판단해야 하는 경우
 보통은 두 수의 오차가 일정 범위 안에 있는지 여부를 판단하는 하는 것으로 대신한다.
