@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -148,27 +145,27 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections.html">
-   12. 모음 자료형
+   12. 시퀀스형
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   13. 파일
+   23. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   14. 모듈
+   24. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
-   15. 클래스
+   25. 클래스
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_classes.html">
-   16. 사례 연구: 클래스와 자료형
+   26. 사례 연구: 클래스와 자료형
   </a>
  </li>
 </ul>
@@ -1985,13 +1982,13 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 <div class="section" id="id16">
 <h2><span class="section-number">6.6. </span>기타 자료형<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
 <p>파이썬이 기본으로 제공하는 자료형은 지금까지 살펴 본 정수, 부동소수점, 문자열, 부울값 이외에
-<a class="reference internal" href="collections.html#ch-collections"><span class="std std-numref">12장</span></a>에서 자세히 다룰
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">%s장</span></code>에서 자세히 다룰
 리스트, 튜플, 사전, 집합 등의
 모음<font size="2">collection</font> 자료형이 있다.
 그리고 사용자가 원하면 직접 새로운 자료형을 정의해서 사용할 수 있는 기능을
 파이썬이 제공한다.</p>
 <p>자료형을 직접 정의하는 방법은 나중에
-<a class="reference internal" href="classes.html#ch-classes"><span class="std std-numref">15장</span></a>에서
+<a class="reference internal" href="classes.html#ch-classes"><span class="std std-numref">25장</span></a>에서
 클래스를 다룰 때 자세히 살펴볼 것이다.
 여기서는 판다스<font size="2">Pandas</font> 라는
 파이썬 추가 패키지가 제공하는 자료형인 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 를 소개한다.</p>
@@ -2051,7 +2048,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-03-31 09:30:00&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-04-03 09:30:00&#39;)
 </pre></div>
 </div>
 </div>
@@ -2131,7 +2128,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-03-31 19:19:07.233858&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-04-03 09:10:10.903229&#39;)
 </pre></div>
 </div>
 </div>
@@ -2140,7 +2137,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 <p class="admonition-title">메서드</p>
 <p><strong>메서드</strong><font size="2">method</font>는 특정 자료형과
 함께 사용되는 함수이다.
-<a class="reference internal" href="collections.html#ch-collections"><span class="std std-numref">12장에서</span></a>
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">%s장에서</span></code>
 모음 자료형을 설명할 때 다양한 메서드를 살펴볼 것이다.</p>
 </div>
 </div>
@@ -2156,7 +2153,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8214 days 09:49:07.233858&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8216 days 23:40:10.903229&#39;)
 </pre></div>
 </div>
 </div>
@@ -2175,7 +2172,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8214, hours=9, minutes=49, seconds=7, milliseconds=233, microseconds=858, nanoseconds=0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8216, hours=23, minutes=40, seconds=10, milliseconds=903, microseconds=229, nanoseconds=0)
 </pre></div>
 </div>
 </div>
@@ -2188,7 +2185,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8214
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8216
 </pre></div>
 </div>
 </div>
@@ -2211,7 +2208,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.48932208958493
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.494797941079838
 </pre></div>
 </div>
 </div>
