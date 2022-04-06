@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13. 모음 자료형 2부 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>13. 모음 자료형 2부: 집합, 사전 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="14. 모음 자료형 3부" href="collections3.html" />
-    <link rel="prev" title="12. 모음 자료형 1부" href="collections1.html" />
+    <link rel="next" title="14. 모음 자료형 3부: range, 조건제시법, 이터레이터, 제너레이터" href="collections3.html" />
+    <link rel="prev" title="12. 모음 자료형 1부: 문자열, 리스트, 튜플" href="collections1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -143,17 +143,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections1.html">
-   12. 모음 자료형 1부
+   12. 모음 자료형 1부: 문자열, 리스트, 튜플
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   13. 모음 자료형 2부
+   13. 모음 자료형 2부: 집합, 사전
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections3.html">
-   14. 모음 자료형 3부
+   14. 모음 자료형 3부: range, 조건제시법, 이터레이터, 제너레이터
   </a>
  </li>
  <li class="toctree-l1">
@@ -339,7 +339,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>모음 자료형 2부</h1>
+                <h1>모음 자료형 2부: 집합, 사전</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -408,7 +408,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ch-collections2">
-<span id="id1"></span><h1><span class="section-number">13. </span>모음 자료형 2부<a class="headerlink" href="#ch-collections2" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">13. </span>모음 자료형 2부: 집합, 사전<a class="headerlink" href="#ch-collections2" title="Permalink to this headline">¶</a></h1>
 <p>집합과 사전 두 개의 비순차 자료형을 살펴본다.</p>
 <div class="section" id="id2">
 <h2><span class="section-number">13.1. </span>집합<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -429,7 +429,8 @@
 </div>
 </div>
 </div>
-<p>집합의 원소는 모두 불변 자료형이어야 한다. 예를 들어 리스트는 집합의 원소가 될 수 없다.</p>
+<p>집합의 원소는 모두 <strong>해시 가능</strong><font size="2">hashable</font>이어야 한다.
+예를 들어 가변 자료형인 리스트는 해시 가능이지 않으며 따라서 집합의 원소가 될 수 없다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">}</span>
 <span class="go">TypeError                                 Traceback (most recent call last)</span>
 <span class="go">/tmp/ipykernel_1817/2739416386.py in &lt;module&gt;</span>
@@ -437,6 +438,14 @@
 
 <span class="go">TypeError: unhashable type: &#39;list&#39;</span>
 </pre></div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">해시 가능성</p>
+<p><code class="docutils literal notranslate"><span class="pre">hash()</span></code> 함수에 의해 특정 정수로 변환될 수 있는 값을 <strong>해시 가능</strong>이다라고 말한다.]
+해시 함수는 모든 객체에 대해 유일한 값을 계산한다.
+따라서 두 객체의 동일성을 확인하는 데에 사용된다.
+반면에 리스트와 같은 가변 자료형은 항목이 변할 수 있기에 해시 가능이 아니다.
+더 이상의 해시 함수에 대한 자세한 설명은 생략한다.</p>
 </div>
 <p><strong>공집합</strong></p>
 <p>공집합<font size = "2">empty set</font>은 아무것도 포함하지 않는 집합을 의미한다.
@@ -804,7 +813,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;Hello&#39;</span> <span class="p">:</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span> <span class="p">:</span> <span class="s1">&#39;세계&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>정수, 부동소수점, 문자열, 튜플 등 불변 자료형만 사전의 키로 사용될 수 있다.<br />
+<p>정수, 부동소수점, 문자열, 튜플 등 해시 가능인 자료형만 사전의 키로 사용될 수 있다.<br />
 단, 튜플의 경우 리스트 등 가변 자료형을 포함할 수 없다.
 이는 키로 사용되는 값은 변하지 않아야 하기 때문이다.</p>
 <p><strong>빈 사전</strong></p>
@@ -1426,7 +1435,7 @@
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">dict()</span></code> 함수</strong></p>
 <p>키-값의 튜플 형식의 항목을 갖는 모음 자료형을 사전으로 변환한다.
-단, 키로 사용되는 값은 해시가능이어야 한다.</p>
+단, 키로 사용되는 값은 해시 가능이어야 한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;안녕&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="s1">&#39;세계&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Programming&#39;</span><span class="p">,</span> <span class="s1">&#39;프로그래밍&#39;</span><span class="p">)]</span>
@@ -1497,13 +1506,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">12. </span>모음 자료형 1부</p>
+            <p class="prev-next-title"><span class="section-number">12. </span>모음 자료형 1부: 문자열, 리스트, 튜플</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="collections3.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>모음 자료형 3부</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>모음 자료형 3부: range, 조건제시법, 이터레이터, 제너레이터</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
