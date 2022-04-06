@@ -38,22 +38,20 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="7. 함수" href="functions.html" />
@@ -156,23 +154,28 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="collections3.html">
+   14. 모음 자료형 3부
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   14. 파일
+   15. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   15. 모듈
+   16. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
-   16. 클래스
+   17. 클래스
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_classes.html">
-   17. 사례 연구: 클래스와 자료형
+   18. 사례 연구: 클래스와 자료형
   </a>
  </li>
 </ul>
@@ -1989,13 +1992,13 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 <div class="section" id="id16">
 <h2><span class="section-number">6.6. </span>기타 자료형<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
 <p>파이썬이 기본으로 제공하는 자료형은 지금까지 살펴 본 정수, 부동소수점, 문자열, 부울값 이외에
-<a class="reference internal" href="collections1.html#ch-collections"><span class="std std-numref">12장</span></a>에서 자세히 다룰
+<a class="reference internal" href="collections3.html#ch-collections"><span class="std std-numref">14장</span></a>에서 자세히 다룰
 리스트, 튜플, 사전, 집합 등의
 모음<font size="2">collection</font> 자료형이 있다.
 그리고 사용자가 원하면 직접 새로운 자료형을 정의해서 사용할 수 있는 기능을
 파이썬이 제공한다.</p>
 <p>자료형을 직접 정의하는 방법은 나중에
-<a class="reference internal" href="classes.html#ch-classes"><span class="std std-numref">16장</span></a>에서
+<a class="reference internal" href="classes.html#ch-classes"><span class="std std-numref">17장</span></a>에서
 클래스를 다룰 때 자세히 살펴볼 것이다.
 여기서는 판다스<font size="2">Pandas</font> 라는
 파이썬 추가 패키지가 제공하는 자료형인 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 를 소개한다.</p>
@@ -2055,7 +2058,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-04-06 09:30:00&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-04-07 09:30:00&#39;)
 </pre></div>
 </div>
 </div>
@@ -2135,7 +2138,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-04-06 14:07:34.764306&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-04-07 00:03:45.325375&#39;)
 </pre></div>
 </div>
 </div>
@@ -2144,7 +2147,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 <p class="admonition-title">메서드</p>
 <p><strong>메서드</strong><font size="2">method</font>는 특정 자료형과
 함께 사용되는 함수이다.
-<a class="reference internal" href="collections1.html#ch-collections"><span class="std std-numref">12장에서</span></a>
+<a class="reference internal" href="collections3.html#ch-collections"><span class="std std-numref">14장에서</span></a>
 모음 자료형을 설명할 때 다양한 메서드를 살펴볼 것이다.</p>
 </div>
 </div>
@@ -2160,7 +2163,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8220 days 04:37:34.764306&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8220 days 14:33:45.325375&#39;)
 </pre></div>
 </div>
 </div>
@@ -2179,7 +2182,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8220, hours=4, minutes=37, seconds=34, milliseconds=764, microseconds=306, nanoseconds=0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8220, hours=14, minutes=33, seconds=45, milliseconds=325, microseconds=375, nanoseconds=0)
 </pre></div>
 </div>
 </div>

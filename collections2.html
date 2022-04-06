@@ -38,23 +38,21 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="14. 파일" href="files.html" />
+    <link rel="next" title="14. 모음 자료형 3부" href="collections3.html" />
     <link rel="prev" title="12. 모음 자료형 1부" href="collections1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -154,23 +152,28 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="collections3.html">
+   14. 모음 자료형 3부
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   14. 파일
+   15. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   15. 모듈
+   16. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
-   16. 클래스
+   17. 클래스
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_classes.html">
-   17. 사례 연구: 클래스와 자료형
+   18. 사례 연구: 클래스와 자료형
   </a>
  </li>
 </ul>
@@ -326,33 +329,6 @@ const thebe_selector_output = ".output, .cell_output"
    13.3. 형변환 함수
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
-   13.4. 조건제시법
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     13.4.1. 리스트 조건제시법
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
-     13.4.2. 집합 조건제시법
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
-     13.4.3. 사전 조건제시법
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
-   13.5. 연습문제
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -422,33 +398,6 @@ const thebe_selector_output = ".output, .cell_output"
    13.3. 형변환 함수
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
-   13.4. 조건제시법
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     13.4.1. 리스트 조건제시법
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
-     13.4.2. 집합 조건제시법
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
-     13.4.3. 사전 조건제시법
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
-   13.5. 연습문제
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -480,8 +429,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="info admonition">
-<p class="admonition-title">참고</p>
 <p>집합의 원소는 모두 불변 자료형이어야 한다. 예를 들어 리스트는 집합의 원소가 될 수 없다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">}</span>
 <span class="go">TypeError                                 Traceback (most recent call last)</span>
@@ -490,7 +437,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="go">TypeError: unhashable type: &#39;list&#39;</span>
 </pre></div>
-</div>
 </div>
 <p><strong>공집합</strong></p>
 <p>공집합<font size = "2">empty set</font>은 아무것도 포함하지 않는 집합을 의미한다.
@@ -510,7 +456,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="caution admonition">
 <p class="admonition-title">주의</p>
-<p>빈 집합을 만들 때는 <code class="docutils literal notranslate"><span class="pre">set()</span></code>을 사용해야 한다. <code class="docutils literal notranslate"><span class="pre">{}</span></code>은 빈 딕셔너리이다.</p>
+<p>빈 집합을 만들 때는 <code class="docutils literal notranslate"><span class="pre">set()</span></code>을 사용해야 한다. <code class="docutils literal notranslate"><span class="pre">{}</span></code>은 이어서 소개할
+빈 사전<font size="2">empty dictionary</font>이다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="go">dict</span>
@@ -545,7 +492,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p><strong>집합 연산(수학)</strong></p>
+<p><strong>합집합, 교집합, 차집합, 부분집합</strong></p>
 <p>합집합, 교집합, 차집합 계산과 부분집합 여부 등을 확인하는 연산은
 수학에서 사용되는 개념과 동일하게 작동한다.
 반면에 덧셈과 곱셈 연산자는 지원되지 않는다.</p>
@@ -1187,10 +1134,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="id10">
 <h2><span class="section-number">13.3. </span>형변환 함수<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <p><strong><code class="docutils literal notranslate"><span class="pre">list()</span></code> 함수</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">list()</span></code> : 리스트형으로 변환.</p>
+<p>임의의 모음 자료형을 리스트로 변환한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>  <span class="c1">#문자열의 각 문자를 항목으로 갖는 리스트 반환</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1224,27 +1171,73 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>사전은 여러 방식으로 변환된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Hello&#39;</span> <span class="p">:</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span> <span class="p">:</span> <span class="s1">&#39;세계&#39;</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dic</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>키 리스트</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hello&#39;, &#39;World&#39;]
-[&#39;Hello&#39;, &#39;World&#39;]
-[&#39;안녕&#39;, &#39;세계&#39;]
-[(&#39;Hello&#39;, &#39;안녕&#39;), (&#39;World&#39;, &#39;세계&#39;)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hello&#39;, &#39;World&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hello&#39;, &#39;World&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>값 리스트</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;안녕&#39;, &#39;세계&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>(키, 값) 리스트</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Hello&#39;, &#39;안녕&#39;), (&#39;World&#39;, &#39;세계&#39;)]
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">tuple()</span></code> 함수</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">tuple()</span></code> : 튜플형으로 변환.</p>
+<p>임의의 모음 자료형을 튜플로 변환한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
@@ -1281,27 +1274,65 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>사전에 대해서는 <code class="docutils literal notranslate"><span class="pre">list()</span></code> 함수와 동일한 방식으로 작동한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Hello&#39;</span> <span class="p">:</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span> <span class="p">:</span> <span class="s1">&#39;세계&#39;</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">dic</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">tuple</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Hello&#39;, &#39;World&#39;)
-(&#39;Hello&#39;, &#39;World&#39;)
-(&#39;안녕&#39;, &#39;세계&#39;)
-((&#39;Hello&#39;, &#39;안녕&#39;), (&#39;World&#39;, &#39;세계&#39;))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Hello&#39;, &#39;World&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">tuple</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Hello&#39;, &#39;World&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">tuple</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;안녕&#39;, &#39;세계&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">tuple</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((&#39;Hello&#39;, &#39;안녕&#39;), (&#39;World&#39;, &#39;세계&#39;))
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">set()</span></code> 함수</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">set()</span></code> : 집합형으로 변환.</p>
+<p>임의의 모음 자료형을 집합으로 변환한다.
+이 과정에서 순서와 중복이 무시된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
@@ -1340,26 +1371,62 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Hello&#39;</span> <span class="p">:</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span> <span class="p">:</span> <span class="s1">&#39;세계&#39;</span><span class="p">,</span> <span class="s1">&#39;Hi&#39;</span> <span class="p">:</span> <span class="s1">&#39;안녕&#39;</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">dic</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Hello&#39;</span> <span class="p">:</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span> <span class="p">:</span> <span class="s1">&#39;세계&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Hi&#39;, &#39;Hello&#39;, &#39;World&#39;}
-{&#39;Hi&#39;, &#39;Hello&#39;, &#39;World&#39;}
-{&#39;안녕&#39;, &#39;세계&#39;}
-{(&#39;World&#39;, &#39;세계&#39;), (&#39;Hello&#39;, &#39;안녕&#39;), (&#39;Hi&#39;, &#39;안녕&#39;)}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Hello&#39;, &#39;World&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Hello&#39;, &#39;World&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;세계&#39;, &#39;안녕&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{(&#39;Hello&#39;, &#39;안녕&#39;), (&#39;World&#39;, &#39;세계&#39;)}
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">dict()</span></code> 함수</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">dict()</span></code> : 사전형으로 변환.</p>
-<p>사전의 각 항목은 키와 값으로 이루어졌기 때문에 적절하게 짝지어진 데이터를 사용해야 사전을 만들 수 있다.</p>
+<p>키-값의 튜플 형식의 항목을 갖는 모음 자료형을 사전으로 변환한다.
+단, 키로 사용되는 값은 해시가능이어야 한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;안녕&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="s1">&#39;세계&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Programming&#39;</span><span class="p">,</span> <span class="s1">&#39;프로그래밍&#39;</span><span class="p">)]</span>
@@ -1399,165 +1466,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="id11">
-<h2><span class="section-number">13.4. </span>조건제시법<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
-<p>리스트, 집합, 사전은 조건제시법<font size = "2">comprehension</font>을 이용하여 정의할 수 있다.</p>
-<div class="section" id="id12">
-<h3><span class="section-number">13.4.1. </span>리스트 조건제시법<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<p>리스트 조건제시법은 수학에서 집합을 정의할 때 사용하는 조건제시법과 매우 유사한다.</p>
-<ul class="simple">
-<li><p>0과 10사이에 있는 홀수들의 제곱을 원소로 갖는 집합을 조건제시법으로 표현한다.<br />
-{ x^2 | 0 &lt;= x &lt;= 10, 단 x는 홀수 }</p></li>
-<li><p>집합 기호를 리스트 기호로 대체한다.<br />
-[ x^2 | 0 &lt;= x &lt;= 10, 단 x는 홀수 ]</p></li>
-<li><p>집합의 짝대기(|) 기호는 <code class="docutils literal notranslate"><span class="pre">for</span></code>로 대체한다.<br />
-[ x^2 for 0 &lt;= x &lt;= 10, 단 x는 홀수 ]</p></li>
-<li><p>짝대기 기호 왼편에 위치한 x^2를 파이썬 수식으로 변경한다. 즉, x ** 2로 변경한다.<br />
-[ x ** 2 for 0 &lt;= x &lt;= 10, 단 x는 홀수 ]</p></li>
-<li><p>짝대기 기호 오른편에 위치하고, 변수 x가 어느 범위에서 움직이는지를 설명하는 부등식인 0 &lt;= x &lt;= 10 부분을 파이썬 수식으로 변경한다. 주로, 기존에 정의된 리스트를 사용하거나 <code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수를 사용하여 범위를 x in … 형식으로 지정한다.<br />
-[ x ** 2 for x in range(11), 단 x는 홀수 ]</p></li>
-</ul>
-<div class="info admonition">
-<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수  </p>
-<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수는 규칙성을 가진 정수들의 모음<font size = "2">collection</font>을 반환한다. 반환된 값은 range객체이며, 리스트와 유사하게 작동한다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수는 인자를 최대 세 개까지 받을 수 있다. 각 인자들의 역할은 슬라이싱에 사용되는 세 개의 인자들의 역할과 동일하다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">range([start,</span> <span class="pre">]</span> <span class="pre">stop</span> <span class="pre">[,</span> <span class="pre">step])</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>의 경우 주어지지 않으면 <code class="docutils literal notranslate"><span class="pre">0</span></code>을 기본값으로 갖는다.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code>의 경우 주어지지 않으면 <code class="docutils literal notranslate"><span class="pre">1</span></code>을 기본값으로 갖는다.</p></li>
-</ul>
-<p>예를 들어, 0부터 10까지의 정수들로 이루어진 <code class="docutils literal notranslate"><span class="pre">range</span></code>객체는 다음과 같이 생성한다.<br />
-리스트로 형변환하면 <code class="docutils literal notranslate"><span class="pre">range(11)</span></code> 안에 포함된 항목을 확인할 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
-<span class="go">range(0, 11)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">)))</span>
-<span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
-</pre></div>
-</div>
-<p>range형은 불변 시퀀스이다.</p>
-</div>
-<ul class="simple">
-<li><p>마지막으로 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>에 대한 제한조건인 <code class="docutils literal notranslate"><span class="pre">단</span> <span class="pre">x는</span> <span class="pre">홀수</span></code> 부분을 파이썬의 <code class="docutils literal notranslate"><span class="pre">if</span></code> 문장으로 변경한다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">x는</span> <span class="pre">홀수</span></code>는 파이썬의 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">1</span></code>로 나타낼 수 있다.<br />
-<code class="docutils literal notranslate"><span class="pre">[x**2</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">range(11)</span> <span class="pre">if</span> <span class="pre">x</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">1]</span></code></p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">a_list</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 9, 25, 49, 81]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="info admonition">
-<p class="admonition-title">참고</p>
-<p>위의 조건제시법은 다음 장에서 소개하는 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 활용한 코드와 동일하다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="p">:</span>
-<span class="go">        if x % 2 == 1 :</span>
-<span class="go">            a_list.append(x ** 2)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
-<span class="go">[1, 9, 25, 49, 81]</span>
-</pre></div>
-</div>
-</div>
-<div class="info admonition">
-<p class="admonition-title">참고</p>
-<p>아래와 같이 리스트를 초기화할 때, 리스트 조건제시법을 사용하면 좋다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="go">[[0, 0, 0, 0, 0],</span>
-<span class="go"> [0, 0, 0, 0, 0],</span>
-<span class="go"> [0, 0, 0, 0, 0],</span>
-<span class="go"> [0, 0, 0, 0, 0],</span>
-<span class="go"> [0, 0, 0, 0, 0]]</span>
-</pre></div>
-</div>
-<p>리스트 <code class="docutils literal notranslate"><span class="pre">a</span></code>는 리스트<code class="docutils literal notranslate"><span class="pre">b</span></code>와 동일하지 않다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="go">[[0, 0, 0, 0, 0],</span>
-<span class="go"> [0, 0, 0, 0, 0],</span>
-<span class="go"> [0, 0, 0, 0, 0],</span>
-<span class="go"> [0, 0, 0, 0, 0],</span>
-<span class="go"> [0, 0, 0, 0, 0]]</span>
-</pre></div>
-</div>
-<p>아래 그림처럼 리스트 <code class="docutils literal notranslate"><span class="pre">a</span></code>의 각 항목은 서로 다른 리스트를 참조한다. 반면 리스트 <code class="docutils literal notranslate"><span class="pre">b</span></code>의 각 항목은 하나의 리스트를 참조한다.</p>
-<div align="center">
-    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch04/list_comp01.png" style="width:400px;">
-</div>
-<p>이러한 성질로 아래와 같은 일이 발생한다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">a[2][3]</span> <span class="pre">=</span> <span class="pre">1</span></code> 코드를 사용하여 리스트 <code class="docutils literal notranslate"><span class="pre">a</span></code>의 3행 4열의 값을 1로 변경하고자 하면, 해당 값이 1로 변경된 것을 볼 수 있다. 반면 <code class="docutils literal notranslate"><span class="pre">b[2][3]</span> <span class="pre">=</span> <span class="pre">1</span></code> 코드를 사용한 다음, <code class="docutils literal notranslate"><span class="pre">b</span></code>를 확인해보면 4열의 값이 모두 1로 변경된 것을 볼 수 있다. 즉, 리스트 <code class="docutils literal notranslate"><span class="pre">b</span></code>는 원하는 대로 동작하지 않는다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="go">[[0, 0, 0, 0, 0],</span>
-<span class="go"> [0, 0, 0, 0, 0],</span>
-<span class="go"> [0, 0, 0, 1, 0],</span>
-<span class="go"> [0, 0, 0, 0, 0],</span>
-<span class="go"> [0, 0, 0, 0, 0]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="go">[[0, 0, 0, 1, 0],</span>
-<span class="go"> [0, 0, 0, 1, 0],</span>
-<span class="go"> [0, 0, 0, 1, 0],</span>
-<span class="go"> [0, 0, 0, 1, 0],</span>
-<span class="go"> [0, 0, 0, 1, 0]]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="id13">
-<h3><span class="section-number">13.4.2. </span>집합 조건제시법<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<p>조건제시법을 이용하여 집합을 생성하는 과정은 리스트 조건제시법과 비슷하다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="s1">&#39;Python is a general purpose language&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-<span class="n">words_len</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span> <span class="c1"># 리스트 조건제시법</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">words_len</span><span class="p">)</span>
-<span class="n">unique_len</span> <span class="o">=</span> <span class="p">{</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">words</span><span class="p">}</span> <span class="c1"># 집합 조건제시법</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">unique_len</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Python&#39;, &#39;is&#39;, &#39;a&#39;, &#39;general&#39;, &#39;purpose&#39;, &#39;language&#39;]
-[6, 2, 1, 7, 7, 8]
-{1, 2, 6, 7, 8}
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="id14">
-<h3><span class="section-number">13.4.3. </span>사전 조건제시법<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<p>조건제시법을 이용하여 사전을 생성하는 과정도 유사하다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="s1">&#39;Python is a general purpose language&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-<span class="n">len_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">words</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">len_dict</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Python&#39;, &#39;is&#39;, &#39;a&#39;, &#39;general&#39;, &#39;purpose&#39;, &#39;language&#39;]
-{&#39;Python&#39;: 6, &#39;is&#39;: 2, &#39;a&#39;: 1, &#39;general&#39;: 7, &#39;purpose&#39;: 7, &#39;language&#39;: 8}
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="id15">
-<h2><span class="section-number">13.5. </span>연습문제<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
-<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-collections.ipynb">(실습) 모음 자료형</a></p>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1592,10 +1500,10 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-title"><span class="section-number">12. </span>모음 자료형 1부</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="files.html" title="next page">
+    <a class='right-next' id="next-link" href="collections3.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>파일</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>모음 자료형 3부</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>16. 클래스 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>17. 클래스 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -38,24 +38,22 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="17. 사례 연구: 클래스와 자료형" href="casestudy_classes.html" />
-    <link rel="prev" title="15. 모듈" href="modules.html" />
+    <link rel="next" title="18. 사례 연구: 클래스와 자료형" href="casestudy_classes.html" />
+    <link rel="prev" title="16. 모듈" href="modules.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -154,23 +152,28 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="collections3.html">
+   14. 모음 자료형 3부
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   14. 파일
+   15. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   15. 모듈
+   16. 모듈
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   16. 클래스
+   17. 클래스
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_classes.html">
-   17. 사례 연구: 클래스와 자료형
+   18. 사례 연구: 클래스와 자료형
   </a>
  </li>
 </ul>
@@ -291,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ch-classes">
-<span id="id1"></span><h1><span class="section-number">16. </span>클래스<a class="headerlink" href="#ch-classes" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">17. </span>클래스<a class="headerlink" href="#ch-classes" title="Permalink to this headline">¶</a></h1>
 <p>…</p>
 </div>
 
@@ -324,13 +327,13 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">15. </span>모듈</p>
+            <p class="prev-next-title"><span class="section-number">16. </span>모듈</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="casestudy_classes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">17. </span>사례 연구: 클래스와 자료형</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>사례 연구: 클래스와 자료형</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
