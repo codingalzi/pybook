@@ -1174,23 +1174,20 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">plus</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span>
 <span class="n">bar</span> <span class="o">=</span> <span class="s2">&quot;|&quot;</span>
 
-<span class="k">def</span> <span class="nf">print_pm</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">print_p</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">print_ps</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    
 <span class="k">def</span> <span class="nf">grid2</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">num1</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
-        <span class="n">print_pm</span><span class="p">(</span><span class="n">pm</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">plus</span><span class="p">)</span>
+        <span class="n">print_p</span><span class="p">(</span><span class="n">pm</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">plus</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">num2</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
-            <span class="n">print_ps</span><span class="p">(</span><span class="n">ps</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">bar</span><span class="p">)</span>
+            <span class="n">print_p</span><span class="p">(</span><span class="n">ps</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">bar</span><span class="p">)</span>
 
-    <span class="n">print_pm</span><span class="p">(</span><span class="n">pm</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="n">plus</span><span class="p">)</span>
+    <span class="n">print_p</span><span class="p">(</span><span class="n">pm</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="n">plus</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">grid()</span></code> 함수를 호출하면 아래 모양의 격자가 그려진다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span><span class="p">()</span>
+<p><code class="docutils literal notranslate"><span class="pre">grid2()</span></code> 함수를 호출하면 아래 모양의 격자가 그려진다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grid2</span><span class="p">()</span>
 <span class="go">+ - - + - - +</span>
 <span class="go">|     |     |</span>
 <span class="go">|     |     |</span>
