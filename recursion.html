@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10. 재귀 함수 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>11. 재귀 함수 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,8 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="11. 반복문" href="iterations.html" />
-    <link rel="prev" title="9. 조건문" href="conditionals.html" />
+    <link rel="next" title="12. 반복문" href="iterations.html" />
+    <link rel="prev" title="10. 조건문" href="conditionals.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -130,52 +130,52 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="conditionals.html">
-   9. 조건문
+   10. 조건문
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   10. 재귀 함수
+   11. 재귀 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="iterations.html">
-   11. 반복문
+   12. 반복문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections1.html">
-   12. 모음 자료형 1부: 문자열, 리스트, 튜플
+   13. 모음 자료형 1부: 문자열, 리스트, 튜플
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections2.html">
-   13. 모음 자료형 2부: 집합, 사전
+   14. 모음 자료형 2부: 집합, 사전
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections3.html">
-   14. 모음 자료형 3부: range, 조건제시법, 이터레이터, 제너레이터
+   15. 모음 자료형 3부: range, 조건제시법, 이터레이터, 제너레이터
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   15. 파일
+   16. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   16. 모듈
+   17. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
-   17. 클래스
+   18. 클래스
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_classes.html">
-   18. 사례 연구: 클래스와 자료형
+   19. 사례 연구: 클래스와 자료형
   </a>
  </li>
 </ul>
@@ -284,17 +284,17 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   10.1. 재귀 함수의 콜 스택
+   11.1. 재귀 함수의 콜 스택
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   10.2. 기저 조건과 무한 재귀
+   11.2. 기저 조건과 무한 재귀
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#return">
-   10.3.
+   11.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      return
@@ -305,29 +305,29 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   10.4. 재귀 수학 함수 예제
+   11.4. 재귀 수학 함수 예제
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     10.4.1. 계승
+     11.4.1. 계승
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     10.4.2. 피보나치 수열
+     11.4.2. 피보나치 수열
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sec-collatz">
-     10.4.3. 콜라츠 추측
+     11.4.3. 콜라츠 추측
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   10.5. 연습문제
+   11.5. 연습문제
   </a>
  </li>
 </ul>
@@ -352,17 +352,17 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   10.1. 재귀 함수의 콜 스택
+   11.1. 재귀 함수의 콜 스택
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   10.2. 기저 조건과 무한 재귀
+   11.2. 기저 조건과 무한 재귀
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#return">
-   10.3.
+   11.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      return
@@ -373,29 +373,29 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   10.4. 재귀 수학 함수 예제
+   11.4. 재귀 수학 함수 예제
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     10.4.1. 계승
+     11.4.1. 계승
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     10.4.2. 피보나치 수열
+     11.4.2. 피보나치 수열
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sec-collatz">
-     10.4.3. 콜라츠 추측
+     11.4.3. 콜라츠 추측
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   10.5. 연습문제
+   11.5. 연습문제
   </a>
  </li>
 </ul>
@@ -408,7 +408,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ch-recursion">
-<span id="id1"></span><h1><span class="section-number">10. </span>재귀 함수<a class="headerlink" href="#ch-recursion" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">11. </span>재귀 함수<a class="headerlink" href="#ch-recursion" title="Permalink to this headline">¶</a></h1>
 <p>하나의 함수가 실행되는 동안 다른 함수를 호출할 수 있으며
 심지어 실행되는 함수 자신을 다시 호출할 수 있다.
 예를 들어 아래 <code class="docutils literal notranslate"><span class="pre">countdown()</span></code> 함수의 본문에 현재 정의되고 있는 자신에 대한 호출이 포함되어 있다.</p>
@@ -450,7 +450,7 @@
 <p>함수 본문에 자신을 호출하는 함수를 기능을 <strong>재귀</strong><font size="2">recursion</font>라 하며,
 <strong>재귀 함수</strong><font size="2">recursive function</font>는 재귀를 활용하는 함수이다.</p>
 <div class="section" id="id2">
-<h2><span class="section-number">10.1. </span>재귀 함수의 콜 스택<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.1. </span>재귀 함수의 콜 스택<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>재귀 함수의 실행과정 동안 많은 프레임의 생성과 소멸이 발생하여
 콜 스택의 변화가 경우에 따라 매우 복잡해지기도 한다.
 아래 그림은 <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>을 호출했을 때의 콜 스택의 상태를 스택 다이어그램으로 보여준다.</p>
@@ -460,7 +460,7 @@
 즉, 콜 스택의 변화를 살펴볼 수 있다.</p>
 </div>
 <div class="section" id="id3">
-<h2><span class="section-number">10.2. </span>기저 조건과 무한 재귀<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.2. </span>기저 조건과 무한 재귀<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>재귀 함수의 실행이 멈추려면 재귀 호출 과정에서 언젠가는 더 이상 자신을 호출하지 않아야 한다.
 <code class="docutils literal notranslate"><span class="pre">countdown()</span></code> 함수는 <code class="docutils literal notranslate"><span class="pre">0</span></code>과 함께 호출될 때 더 이상 재귀 호출을 하지 않는다.
 이렇게 더 이상 재귀 호출이 발생하지 않도록 하는 경우를
@@ -507,7 +507,7 @@
 주의를 기울여야 한다.</p>
 </div>
 <div class="section" id="return">
-<h2><span class="section-number">10.3. </span><code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.3. </span><code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h2>
 <p>함수의 본문에 함수의 반환값을 지정하는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">표현식</span></code>이 여러 번
 사용될 수 있다.
 예를 들어 짝수이면 0, 홀수이면 1을 반환하는 함수는 다음과 같이 정의한다.</p>
@@ -631,10 +631,10 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">10.4. </span>재귀 수학 함수 예제<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.4. </span>재귀 수학 함수 예제<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>재귀 함수로 구현될 수 있는 세 개의 수학 함수를 살펴본다.</p>
 <div class="section" id="id5">
-<h3><span class="section-number">10.4.1. </span>계승<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.4.1. </span>계승<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>음이 아닌 정수 <span class="math notranslate nohighlight">\(n\)</span>이 주어졌을 때 1부터 <span class="math notranslate nohighlight">\(n\)</span> 까지의 곱을 <span class="math notranslate nohighlight">\(n\)</span>의 계승 또는
 팩토리얼<font size="2">factorial</font>이라 하고 <span class="math notranslate nohighlight">\(n!\)</span>로 표시한다.</p>
 <div class="math notranslate nohighlight">
@@ -664,7 +664,7 @@ n! &amp; = n \, (n-1)!\quad\text{단, $n&gt;0$.}
 </div>
 </div>
 <div class="section" id="id6">
-<h3><span class="section-number">10.4.2. </span>피보나치 수열<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.4.2. </span>피보나치 수열<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p><strong>피보나치 수열</strong><font size="2">Fibonacci sequence</font>은
 처음엔 1과 1로 시작한 후에 이후의 항목은 이전 두 개의 항목의 합으로 생성된다.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
@@ -718,7 +718,7 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 </div>
 </div>
 <div class="section" id="sec-collatz">
-<span id="id7"></span><h3><span class="section-number">10.4.3. </span>콜라츠 추측<a class="headerlink" href="#sec-collatz" title="Permalink to this headline">¶</a></h3>
+<span id="id7"></span><h3><span class="section-number">11.4.3. </span>콜라츠 추측<a class="headerlink" href="#sec-collatz" title="Permalink to this headline">¶</a></h3>
 <p>독일 수학자 콜라츠(Collatz -&gt; L.)가 1937년에 아래 알고리즘을
 얼마나 많이 반복하면 최종적으로 숫자 1에 다다를 것인가를 질문했다.</p>
 <ul class="simple">
@@ -857,7 +857,7 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 </div>
 </div>
 <div class="section" id="id8">
-<h2><span class="section-number">10.5. </span>연습문제<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.5. </span>연습문제<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>…</p></li>
 </ol>
@@ -893,13 +893,13 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9. </span>조건문</p>
+            <p class="prev-next-title"><span class="section-number">10. </span>조건문</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="iterations.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>반복문</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>반복문</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
