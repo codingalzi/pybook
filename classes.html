@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18. 클래스 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>19. 클래스 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="19. 사례 연구: 클래스와 자료형" href="casestudy_classes.html" />
-    <link rel="prev" title="17. 모듈" href="modules.html" />
+    <link rel="next" title="20. 상속" href="inheritance.html" />
+    <link rel="prev" title="18. 객체 지향 프로그래밍" href="oop.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -166,14 +166,24 @@
    17. 모듈
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="oop.html">
+   18. 객체 지향 프로그래밍
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   18. 클래스
+   19. 클래스
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="inheritance.html">
+   20. 상속
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_classes.html">
-   19. 사례 연구: 클래스와 자료형
+   21. 사례 연구: 클래스와 자료형
   </a>
  </li>
 </ul>
@@ -275,6 +285,51 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   19.1. 클래스 선언
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msdie">
+     19.1.1. 주사위 클래스:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MSDie
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   19.2. 비교 가능 클래스
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   19.3. 공개 여부
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getter-setter">
+   19.4. 게터(getter)와 세터(setter)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   19.5. 연습문제
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -287,6 +342,51 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   19.1. 클래스 선언
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msdie">
+     19.1.1. 주사위 클래스:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MSDie
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   19.2. 비교 가능 클래스
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   19.3. 공개 여부
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getter-setter">
+   19.4. 게터(getter)와 세터(setter)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   19.5. 연습문제
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -294,8 +394,603 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ch-classes">
-<span id="id1"></span><h1><span class="section-number">18. </span>클래스<a class="headerlink" href="#ch-classes" title="Permalink to this headline">¶</a></h1>
-<p>…</p>
+<span id="id1"></span><h1><span class="section-number">19. </span>클래스<a class="headerlink" href="#ch-classes" title="Permalink to this headline">¶</a></h1>
+<p><strong>참고:</strong> 아래 내용은 <a class="reference external" href="https://runestone.academy/ns/books/published/pythonds3/index.html">Problem Solving with Algorithms and Data Structures using Python</a>의 2장을
+정리, 요약하는 내용을 일부 담고 있습니다.</p>
+<div class="section" id="id2">
+<h2><span class="section-number">19.1. </span>클래스 선언<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>클래스를 선언할 때 아래 사항들을 기본적으로 지원하도록 해야 한다.</p>
+<ul>
+<li><p>문서화: <strong>독스트링</strong>(docstring) 기능을 이용하여 해당 클래스의 기능과 사용법 설명.
+세 개의 큰 따옴표(<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>)로 감싸인 문장으로 작성.</p></li>
+<li><p>출력 지원</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 매직 메서드 구현: <code class="docutils literal notranslate"><span class="pre">print()</span></code>함수를 이용하여 해당 인스턴스를 출력할 때 활용.</p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> 매직 메서드 구현: 대화형 쉘, 디버깅 과정, 또는 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의
+영향이 미치지 못하는 곳에서 해당 인스턴스를 보여줄 때 활용.</p></li>
+</ul>
+</li>
+<li><p>비교: 클래스의 인스턴스들에 대한 크기 비교 지원. 최소 아래 두 매직 메서드를 구현해야 함.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__eq__()</span></code>: 동등성 비교</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__lt__()</span></code>: 작은지 여부 비교</p></li>
+</ul>
+</li>
+<li><p>인스턴스 변수 각각에 대해 아래 사항 지정</p>
+<ul class="simple">
+<li><p>공개 여부</p></li>
+<li><p>읽기 전용 여부</p></li>
+</ul>
+</li>
+</ul>
+<p>다면체 주사위 클래스를 선언하는 과정을 살펴보면서 파이썬 클래스 선언에
+기본적으로 필요한 요소를 확인한다.</p>
+<div class="section" id="msdie">
+<h3><span class="section-number">19.1.1. </span>주사위 클래스: <code class="docutils literal notranslate"><span class="pre">MSDie</span></code><a class="headerlink" href="#msdie" title="Permalink to this headline">¶</a></h3>
+<p>다면체 주사위 객체를 인스턴스로 갖는 <code class="docutils literal notranslate"><span class="pre">MSDie</span></code> 클래스를 선언한 후에 한 단계씩
+업데이트 하는 과정을 살펴본다.
+생성되는 주사위는 지정된 개수의 면을 갖는다.
+즉, 4면체, 6면체, 7면체 등 다면체 주사위 객체를 생성할 수 있도록 생성자를 정의한다.
+또한 주사위 객체를 생성할 때 주사위가 가리키는 값을 하나 무작위로 지정하도록 한 다음에
+필요에 따라 주사위 굴리기를 실행하고 그 결과를 저장하도록 한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">MSDie</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    다면체 주사위</span>
+<span class="sd">    </span>
+<span class="sd">    인스턴스 변수: </span>
+<span class="sd">        num_sides: 면 개수</span>
+<span class="sd">        current_value: 주사위를 굴린 결과</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span> <span class="o">=</span> <span class="n">num_sides</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">roll</span><span class="p">()</span>   <span class="c1"># 주사위 굴리기 먼저 실행</span>
+
+    <span class="k">def</span> <span class="nf">roll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>   <span class="c1"># 주사위 굴리기</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>6면체 주사위 객체를 하나 생성하여 5번 굴린 결과를 확인한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_die</span> <span class="o">=</span> <span class="n">MSDie</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">my_die</span><span class="p">,</span> <span class="n">my_die</span><span class="o">.</span><span class="n">current_value</span><span class="p">)</span>
+    <span class="n">my_die</span><span class="o">.</span><span class="n">roll</span><span class="p">()</span>    <span class="c1"># 주사위 새로 굴리기</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7feb0019cfd0&gt; 3
+&lt;__main__.MSDie object at 0x7feb0019cfd0&gt; 1
+&lt;__main__.MSDie object at 0x7feb0019cfd0&gt; 2
+&lt;__main__.MSDie object at 0x7feb0019cfd0&gt; 2
+&lt;__main__.MSDie object at 0x7feb0019cfd0&gt; 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">MSDie</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">MSDie</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7feb0019c460&gt;, &lt;__main__.MSDie object at 0x7feb0019c490&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">print(my_die)</span></code>가 <code class="docutils literal notranslate"><span class="pre">num_sides</span></code>와 <code class="docutils literal notranslate"><span class="pre">current_value</span></code>를 활용하여 적절한 출력을
+만들어 내도록 하려면 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 매직 메서드가 적절한 문자열을 출력하도록 해야 한다.
+또한 리스트의 항목으로 사용된 경우처럼 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수가 영향을 미치지 못하는 곳에서
+객체를 적절하게 출력하도록 하려면 <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> 매직 메서드의 반환값을
+적절한 문자열로 지정해야 한다.
+이유는
+리스트를 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 인자로 사용하면
+리스트의 항목을 출력하기 위해 <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> 메서드가 사용된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">MSDie</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    다면체 주사위</span>
+<span class="sd">    </span>
+<span class="sd">    인스턴스 변수: </span>
+<span class="sd">        num_sides: 면 개수</span>
+<span class="sd">        current_value: 주사위를 굴린 결과</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span> <span class="o">=</span> <span class="n">num_sides</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">roll</span><span class="p">()</span>   <span class="c1"># 주사위 굴리기 먼저 실행</span>
+
+    <span class="k">def</span> <span class="nf">roll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>   <span class="c1"># 주사위 굴리기</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;MSDie(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">current_value</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_die</span> <span class="o">=</span> <span class="n">MSDie</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">my_die</span><span class="p">)</span>
+    <span class="n">my_die</span><span class="o">.</span><span class="n">roll</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+2
+2
+4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">MSDie</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">MSDie</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6): 6, MSDie(20): 7]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">19.2. </span>비교 가능 클래스<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>두 개의 주사위 객체의 동등성(equality) 여부를 어떻게 판단할까?
+두 주사위가 가리키는 값이 같을 때? 주사위 면의 수가 다르면?
+두 주사위의 크기 비교는 어떻게?</p>
+<p>아래 질문들에 답하려면 객체 비교와 관련된 몇 개의 매직 메서드를 선언해야 한다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__lt__</span></code>: 작다 연산자(<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>) 지원</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__gt__</span></code>: 크다 연산자(<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>) 지원</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__eq__</span></code>: 동등성 연산자(<code class="docutils literal notranslate"><span class="pre">==</span></code>) 지원</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__le__</span></code>: 작거나 같다 연산자(<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>) 지원</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__ge__</span></code>: 크거나 같다 연산자(<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>) 지원</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__ne__</span></code>: 비동등성(<code class="docutils literal notranslate"><span class="pre">!=</span></code>) 지원</p></li>
+</ul>
+<p>여기서는 두 주사의 크기 비교를 주사위기 가리키는 값(<code class="docutils literal notranslate"><span class="pre">current_value</span></code>)만 이용하여 지정한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">MSDie</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    다면체 주사위</span>
+<span class="sd">    </span>
+<span class="sd">    인스턴스 변수: </span>
+<span class="sd">        num_sides: 면 개수</span>
+<span class="sd">        current_value: 주사위를 굴린 결과</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span> <span class="o">=</span> <span class="n">num_sides</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">roll</span><span class="p">()</span>   <span class="c1"># 주사위 굴리기 먼저 실행</span>
+
+    <span class="k">def</span> <span class="nf">roll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>   <span class="c1"># 주사위 굴리기</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;MSDie(</span><span class="si">{}</span><span class="s2">) : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">current_value</span>
+
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">current_value</span>
+
+    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">&lt;=</span> <span class="n">other</span><span class="o">.</span><span class="n">current_value</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<p>비교 연산자들의 활용법은 모두 아래 형식을 따른다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: 비교 중심 객체</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: 비교 대상 객체</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">MSDie</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">MSDie</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">x</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">y</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;=</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+False
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>최소로 필요한 비교 연산자</strong></p>
+<p>앞서 <code class="docutils literal notranslate"><span class="pre">__gt__()</span></code>, <code class="docutils literal notranslate"><span class="pre">__ge__()</span></code>, <code class="docutils literal notranslate"><span class="pre">__ne__()</span></code> 매직 메서드를 정의하지 않았지만
+자동으로 지원된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>동등성 대 동일성</strong></p>
+<p>동등성과 동일성(identity)는 다름에 주의하라.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">y</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>    <span class="c1"># 동등성</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span><span class="p">)</span>    <span class="c1"># 동일성</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">19.3. </span>공개 여부<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>자바 언어의 클래스 선언에 사용되는 private, default, protected, public 등과 같은
+접근 제어자는 파이썬이 지원하지 않으며 파이썬 클래스의 모든 것은 원칙적으로 공개(public)되며
+접근 및 수정될 수 있다.
+하지만 일부 변수와 메서드는 특별한 방식으로 이름을 지어 외부 노출을 최대한 줄인다.</p>
+<ul class="simple">
+<li><p>두 개의 밑줄(<code class="docutils literal notranslate"><span class="pre">__</span></code>)로 시작하기: 숨기고자 하는 속성 변수와 메서드 이름</p></li>
+<li><p>한 개의 밑줄(<code class="docutils literal notranslate"><span class="pre">_</span></code>)로 시작하기: 굳이 사용자가 알 필요 없는 속성 변수와 메서드 이름</p></li>
+</ul>
+<p>아래 코드는 MSDie 클래스의 생성자를 조금 수정하였다.
+수정된 내용은 주사위를 굴렸을 때 나온 값에 <code class="docutils literal notranslate"><span class="pre">__hidden1</span></code>을 곱한 후에 <code class="docutils literal notranslate"><span class="pre">_hidden2</span></code>로
+나눈 결과를 <code class="docutils literal notranslate"><span class="pre">current_value</span></code>로 가리키도록 하였다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">MSDie</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    다면체 주사위</span>
+<span class="sd">    </span>
+<span class="sd">    인스턴스 변수: </span>
+<span class="sd">        num_sides: 면 개수</span>
+<span class="sd">        current_value: 주사위를 굴린 결과</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__hidden1</span> <span class="o">=</span> <span class="mi">3</span>                  <span class="c1"># 네임 맹글링</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hidden2</span> <span class="o">=</span> <span class="mi">7</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span> <span class="o">=</span> <span class="n">num_sides</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">roll</span><span class="p">()</span>    <span class="c1"># 주사위 굴리기 먼저 실행</span>
+
+    <span class="k">def</span> <span class="nf">roll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>   <span class="c1"># 주사위 굴리기</span>
+        <span class="n">randNum</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__hidden1</span> <span class="o">*</span> <span class="n">randNum</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hidden2</span> 
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">MSDie</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">current_value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>그런데 두 밑줄로 시작하는 <code class="docutils literal notranslate"><span class="pre">__hidden1</span></code> 속성은 인스턴스 변수로 확인할 수 없다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">__hidden1</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span>                            <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">5</span><span class="n">b793c2c1cb0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">x</span><span class="o">.</span><span class="n">__hidden1</span>
+
+<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;MSDie&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;__hidden1&#39;</span>
+</pre></div>
+</div>
+<p>반면에 하나의 밑줄로 시작하는 <code class="docutils literal notranslate"><span class="pre">_hidden2</span></code> 속성은 인스턴스 변수로 값이 확인된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">_hidden2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 변수</strong></p>
+<p>객체 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 갖는 인스턴스 속성을 확인하면 다음과 같이
+속성 변수와 해당 속성값으로 이루어진 사전을 얻는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="vm">__dict__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;_MSDie__hidden1&#39;: 3, &#39;_hidden2&#39;: 7, &#39;num_sides&#39;: 6, &#39;current_value&#39;: 6}
+</pre></div>
+</div>
+</div>
+</div>
+<p>그런데 <code class="docutils literal notranslate"><span class="pre">__hidden1</span></code> 변수 대신에 <code class="docutils literal notranslate"><span class="pre">_MSDie__hidden1</span></code>과 속성값이 확인된다.
+이처럼 두 개의 밑줄로 시작하는 변수의 이름이 내부적으로 클래스 이름이 붙는 방식으로 변경된다.
+이를 <strong>네임 맹글링</strong>(name mangling)이라 한다.
+변경된 이름을 이용하면 속성이 확인된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">_MSDie__hidden1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="getter-setter">
+<h2><span class="section-number">19.4. </span>게터(getter)와 세터(setter)<a class="headerlink" href="#getter-setter" title="Permalink to this headline">¶</a></h2>
+<p>반면에 하나의 밑줄을 사용하는 <code class="docutils literal notranslate"><span class="pre">_hidden2</span></code>는 숨길 것 까지는 아니지만 클래스 내부에서만
+사용되는 것을 반영한 이름이다.
+이런 변수와 메서드는 사용자가 직접 값을 수정하기 보다는 세터와 게터 메서드를 이용하여
+외부와 내부를 중개하는 역할을 수행하도록 하는 것이 좋다.
+이유는 사용자 입장에서 최소한의 정보를 이용하여 객체 속성 정보를 확인하고 이용하도록 만들기 위해서이다.</p>
+<p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">current_value</span></code>를 지정하고 확인하는 세터와 게터,
+그리고 <code class="docutils literal notranslate"><span class="pre">_hidden2</span></code>를 지정하는 세터를 선언한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">MSDie</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    다면체 주사위</span>
+<span class="sd">    </span>
+<span class="sd">    인스턴스 변수: </span>
+<span class="sd">        num_sides: 면 개수</span>
+<span class="sd">        current_value: 주사위를 굴린 결과</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__hidden1</span> <span class="o">=</span> <span class="mi">3</span>                  <span class="c1"># 네임 맹글링</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hidden2</span> <span class="o">=</span> <span class="mi">7</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span> <span class="o">=</span> <span class="n">num_sides</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">roll</span><span class="p">()</span>    <span class="c1"># 주사위 굴리기 먼저 실행</span>
+
+    <span class="k">def</span> <span class="nf">roll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>   <span class="c1"># 주사위 굴리기</span>
+        <span class="n">randNum</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__hidden1</span> <span class="o">*</span> <span class="n">randNum</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hidden2</span> 
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span>
+        
+    <span class="k">def</span> <span class="nf">get_current_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span>
+    
+    <span class="k">def</span> <span class="nf">set_current_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_value</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__hidden1</span> <span class="o">*</span> <span class="n">num</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hidden2</span>
+    
+    <span class="k">def</span> <span class="nf">set_hidden2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hidden2</span> <span class="o">=</span> <span class="n">num</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">MSDie</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">current_value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">set_current_value</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">get_current_value</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">set_current_value</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">get_current_value</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">set_hidden2</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">set_current_value</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">get_current_value</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">set_current_value</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">get_current_value</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">__dir__()</span></code>  매직 메서드</strong></p>
+<p>객체의 모든 속성과 메서드를 확인하기 위해 아래와 같이 실행한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;_MSDie__hidden1&#39;,
+ &#39;_hidden2&#39;,
+ &#39;num_sides&#39;,
+ &#39;current_value&#39;,
+ &#39;__module__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__init__&#39;,
+ &#39;roll&#39;,
+ &#39;get_current_value&#39;,
+ &#39;set_current_value&#39;,
+ &#39;set_hidden2&#39;,
+ &#39;__dict__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__str__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__le__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__format__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__class__&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">__class__</span></code> 변수는 객체가 속하는 클래스 이름을 속성값으로 갖는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="vm">__class__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__.MSDie
+</pre></div>
+</div>
+</div>
+</div>
+<p>기타 다른 매직 메서드들은 앞으로 필요할 때마다 설명된다.</p>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">19.5. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-classes.ipynb">(실습) 클래스</a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -323,17 +1018,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="modules.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="oop.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">17. </span>모듈</p>
+            <p class="prev-next-title"><span class="section-number">18. </span>객체 지향 프로그래밍</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="casestudy_classes.html" title="next page">
+    <a class='right-next' id="next-link" href="inheritance.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">19. </span>사례 연구: 클래스와 자료형</p>
+        <p class="prev-next-title"><span class="section-number">20. </span>상속</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
