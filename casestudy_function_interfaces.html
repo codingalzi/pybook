@@ -563,7 +563,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>그러면 <code class="docutils literal notranslate"><span class="pre">square()</span></code> 함수를 <code class="docutils literal notranslate"><span class="pre">bob</span></code> 과 함께 호출하면 <code class="docutils literal notranslate"><span class="pre">bob</span></code> 지정된 크기의 정사각형을 그린다.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">square</span><span class="p">(</span><span class="n">bob</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">square</span><span class="p">(</span><span class="n">bob</span><span class="p">)</span>
 </pre></div>
 </div>
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle02.png" width="300"/></div><p>다른 거북이를 지정하면 해당 거북이가 정사각형을 그린다.</p>
@@ -584,8 +584,8 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>그러면 다양한 크기의 정사각형을 그릴 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">square</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">square</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">square</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">square</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>다각형 그리기</strong></p>
@@ -601,7 +601,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>다음은 정7각형을 그린다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polygon</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polygon</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
 </pre></div>
 </div>
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle03.png" width="300"/></div><p><strong>키워드 인자 활용</strong></p>
@@ -616,7 +616,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>그러면 <code class="docutils literal notranslate"><span class="pre">n</span></code> 과 <code class="docutils literal notranslate"><span class="pre">length</span></code> 에 대한 값을 지정하지 않아도 동일한 정7각형을 얻는다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polygon</span><span class="p">(</span><span class="n">bob</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polygon</span><span class="p">(</span><span class="n">bob</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -645,7 +645,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>반지름이 200 픽셀인 원은 다음과 같다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">circle</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">circle</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 </pre></div>
 </div>
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle04.png" width="300"/></div><p>원을 매우 큰 n 을 이용하여 n-각형으로 표현한다.
@@ -754,7 +754,10 @@ n-각형의 한 변의 길이는 3 정도로 제한하는 게 보다 좋다.
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">polyline</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">:</span> <span class="n">거북이</span> <span class="n">객체</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Help</span> <span class="n">on</span> <span class="n">fuction</span> <span class="n">polyline</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
+    
+<span class="n">polyline</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+<span class="n">t</span><span class="p">:</span> <span class="n">거북이</span> <span class="n">객체</span>
 <span class="n">n</span><span class="p">:</span> <span class="n">선분</span> <span class="n">그리기</span> <span class="n">반복</span> <span class="n">횟수</span>
 <span class="n">length</span><span class="p">:</span> <span class="n">선분의</span> <span class="n">길이</span>
 <span class="n">angle</span><span class="p">:</span> <span class="n">회전</span> <span class="n">각도</span><span class="o">.</span> <span class="n">즉</span><span class="p">,</span> <span class="n">두</span> <span class="n">선분</span> <span class="n">사이의</span> <span class="n">각도</span>
