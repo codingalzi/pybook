@@ -337,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   8.6. 문서화 문자열
+   8.6. 독스트링: 문서화 문자열
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -415,7 +415,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   8.6. 문서화 문자열
+   8.6. 독스트링: 문서화 문자열
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -783,10 +783,10 @@ n-각형의 한 변의 길이는 3 정도로 제한하는 게 보다 좋다.
 </div>
 </div>
 <div class="section" id="id8">
-<h2><span class="section-number">8.6. </span>문서화 문자열<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<p>함수의 인터페이스를 설명하는 주석을 <strong>문서화 문자열</strong>,
-영어로는 독스트링<font size='2'>docstring</font>이라 한다.
-문서화 문자열은 함수의 본체가 시작되기 전에 세 개의 큰 따옴표로 감싼 주석으로 작성된다.</p>
+<h2><span class="section-number">8.6. </span>독스트링: 문서화 문자열<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>함수의 인터페이스를 설명하는 주석을 <strong>독스트링</strong><font size='2'>docstring</font> 또는
+<strong>문서화 문자열</strong>이라 한다.
+독스트링은 함수의 본체가 시작되기 전에 세 개의 큰 따옴표로 감싼 주석으로 작성된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">polyline</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;t: 거북이 객체</span>
 <span class="sd">    n: 선분 그리기 반복 횟수</span>
@@ -801,7 +801,7 @@ n-각형의 한 변의 길이는 3 정도로 제한하는 게 보다 좋다.
         <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>문서화 문자열은 함수의 정보를 확인하는 데에 사용된다.</p>
+<p>독스트링은 함수의 정보를 확인하는 데에 사용된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">polyline</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -825,7 +825,7 @@ n-각형의 한 변의 길이는 3 정도로 제한하는 게 보다 좋다.
 <code class="docutils literal notranslate"><span class="pre">n</span></code> 은 양의 정수,
 <code class="docutils literal notranslate"><span class="pre">length</span></code> 와 <code class="docutils literal notranslate"><span class="pre">angle</span></code> 은 양수 이어야 한다.</p>
 <p>이런 조건들이 <code class="docutils literal notranslate"><span class="pre">arc()</span></code> 함수의 <strong>사전 조건</strong><font size='2'>pre-condition</font>이다.
-즉, 선조건이 만족되게 하는 인자들을 사용해야만 함수가 제대로 실행된다.
+즉, 사전 조건이 만족되게 하는 인자들을 사용해야만 함수가 제대로 실행된다.
 반면에 함수의 실행이 끝나면 만족해야 하는 조건은 <strong>사후 조건</strong><font size='2'>post-condition</font>이다.</p>
 <p>만약에 사전 조건을 충족하는 인자가 사용되었지만 사후 조건이 성립하지 않는 결과를 얻게 된다면,
 함수가 제대로 구현되지 않았음을 의미한다.</p>

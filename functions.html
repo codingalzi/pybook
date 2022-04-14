@@ -373,22 +373,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     7.4.3. 문서화 문자열
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     7.4.4. 제1종 객체
+     7.4.3. 제1종 객체
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sec-keyword-arguments">
-     7.4.5. 키워드 인자
+     7.4.4. 키워드 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     7.4.6. 함수 합성
+    <a class="reference internal nav-link" href="#id11">
+     7.4.5. 함수 합성
     </a>
    </li>
   </ul>
@@ -399,29 +394,29 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id14">
+  <a class="reference internal nav-link" href="#id13">
    7.6. 익명함수(람다함수)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
+  <a class="reference internal nav-link" href="#id14">
    7.7. 지역 변수와 전역 변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id16">
+  <a class="reference internal nav-link" href="#id15">
    7.8. 프로그램 실행과 함수 호출
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
+    <a class="reference internal nav-link" href="#id16">
      7.8.1. 콜 스택: 프레임의 생성과 사멸
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id18">
+  <a class="reference internal nav-link" href="#id17">
    7.9. 연습문제
   </a>
  </li>
@@ -524,22 +519,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     7.4.3. 문서화 문자열
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     7.4.4. 제1종 객체
+     7.4.3. 제1종 객체
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sec-keyword-arguments">
-     7.4.5. 키워드 인자
+     7.4.4. 키워드 인자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     7.4.6. 함수 합성
+    <a class="reference internal nav-link" href="#id11">
+     7.4.5. 함수 합성
     </a>
    </li>
   </ul>
@@ -550,29 +540,29 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id14">
+  <a class="reference internal nav-link" href="#id13">
    7.6. 익명함수(람다함수)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
+  <a class="reference internal nav-link" href="#id14">
    7.7. 지역 변수와 전역 변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id16">
+  <a class="reference internal nav-link" href="#id15">
    7.8. 프로그램 실행과 함수 호출
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
+    <a class="reference internal nav-link" href="#id16">
      7.8.1. 콜 스택: 프레임의 생성과 사멸
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id18">
+  <a class="reference internal nav-link" href="#id17">
    7.9. 연습문제
   </a>
  </li>
@@ -1200,38 +1190,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div></div>
 <div class="section" id="id9">
-<h3><span class="section-number">7.4.3. </span>문서화 문자열<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
-<p>프로그래밍 코드를 저장한 파일에는 코드 외에 코드와 관련된 주석을 적절하게 포함하고 있어야 하는데, 이를 <strong>문서화</strong>라고 한다. 문서화가 제대로 되어있지 않으면 프로그램 개발 및 관리가 어렵기에 문서화는 코드 이상으로 중요하다. 문서화의 기본은 함수에 주석을 추가하는 것이다. 함수 정의에 사용되는 주석을 문서화 문자열<font size="2">docstring</font>이라고 부른다. 큰 따옴표 세 개(<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;...&quot;&quot;&quot;</span></code>) 또는 작은 따옴표 세 개(<code class="docutils literal notranslate"><span class="pre">'''...'''</span></code>)로 둘러싸인 부분이 문서화를 위해 사용되며 주석으로 처리된다. 예를 들어, 두 수를 인자로 받아, 그 합을 반환하는 함수 <code class="docutils literal notranslate"><span class="pre">my_sum()</span></code>에 문서화 문자열을 추가해보자.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        두 개의 숫자를 입력받아, 그 합을 되돌려준다. </span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>함수에 문서화 문자열을 추가하면, <code class="docutils literal notranslate"><span class="pre">help()</span></code>함수를 사용하여 해당 함수의 역할 및 사용법을 확인할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">my_sum</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function my_sum in module __main__:
-
-my_sum(a, b)
-    두 개의 숫자를 입력받아, 그 합을 되돌려준다.
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="id10">
-<h3><span class="section-number">7.4.4. </span>제1종 객체<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.3. </span>제1종 객체<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>프로그래밍 언어에서
 <strong>제1종 객체</strong><font size="2">first-class object</font>는
 변수 할당, 함수의 인자, 함수의 반환값 등으로 사용될 수 있는
@@ -1389,7 +1348,7 @@ C++, C#,
 </div>
 </div></div>
 <div class="section" id="sec-keyword-arguments">
-<span id="id11"></span><h3><span class="section-number">7.4.5. </span>키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this headline">¶</a></h3>
+<span id="id10"></span><h3><span class="section-number">7.4.4. </span>키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 여러 개의 인자를 받을 수 있다.
 그러면 각 인자를 공백<font size="2">space</font>으로 구분하여
 함께 한 줄에 출력한다.</p>
@@ -1484,8 +1443,8 @@ Python
 </div>
 </div>
 </div></div>
-<div class="section" id="id12">
-<h3><span class="section-number">7.4.6. </span>함수 합성<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3><span class="section-number">7.4.5. </span>함수 합성<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>수학에서 <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(g\)</span> 두 개의 함수를 합성해서 새로운 함수 <span class="math notranslate nohighlight">\(f\circ g\)</span> 를
 다음과 같이 정의한다.</p>
 <div class="math notranslate nohighlight">
@@ -1512,7 +1471,7 @@ Python
 </div>
 </div>
 <div class="section" id="sec-boolean-functions">
-<span id="id13"></span><h2><span class="section-number">7.5. </span>부울값 함수<a class="headerlink" href="#sec-boolean-functions" title="Permalink to this headline">¶</a></h2>
+<span id="id12"></span><h2><span class="section-number">7.5. </span>부울값 함수<a class="headerlink" href="#sec-boolean-functions" title="Permalink to this headline">¶</a></h2>
 <p>부울값을 반환하는 함수를 이용하면 복잡한 테스트를 쉽게 진행할 수 있다.
 예를 들어 아래 함수는 두 정수를 대상으로 약수, 배수의 관계가 있는지 여부를 판단할 때
 사용될 수 있다.</p>
@@ -1596,8 +1555,8 @@ Python
 </div>
 </div>
 </div></div>
-<div class="section" id="id14">
-<h2><span class="section-number">7.6. </span>익명함수(람다함수)<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h2><span class="section-number">7.6. </span>익명함수(람다함수)<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <p>파이썬은 익명함수 또는 lambda 함수라고 하는, 값을 반환하는 단순한 한 문장으로 이루어진 함수를 지원한다. 람다 함수를 사용하면 간결하게 코드를 작성할 수 있다. 람다 함수의 형식은 아래와 같다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">arguments</span> <span class="p">:</span> <span class="n">expression</span>
 </pre></div>
@@ -1668,8 +1627,8 @@ Python
 </div>
 </div>
 </div>
-<div class="section" id="id15">
-<h2><span class="section-number">7.7. </span>지역 변수와 전역 변수<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h2><span class="section-number">7.7. </span>지역 변수와 전역 변수<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <p>함수를 선언할 때 사용되는 매개 변수와 함수 본문에서 선언되는 변수는
 함수가 실행되는 동안에만 의미를 가지며,
 이런 의미에서 <strong>지역 변수</strong><font size="2">local variable</font>라 한다.
@@ -1722,8 +1681,8 @@ Python
 <code class="docutils literal notranslate"><span class="pre">hour</span></code>와 <code class="docutils literal notranslate"><span class="pre">minutes</span></code>의 생존주기, 즉, 언제 생성되고 언제 사라지는지를 시각적으로 확인할 수 있다.</p>
 </div>
 </div>
-<div class="section" id="id16">
-<h2><span class="section-number">7.8. </span>프로그램 실행과 함수 호출<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h2><span class="section-number">7.8. </span>프로그램 실행과 함수 호출<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p>파이썬 프로그램의 실행은 기본적으로
 “위에서 아래로”와 “왼쪽에서 오른쪽으로”의 두 기준으로
 더 이상 실행할 명령문이 없을 때까지 진행된다.</p>
@@ -1736,8 +1695,8 @@ Python
 프로그램의 실행은 무한정 복잡해질 수 있다.
 다행히도 파이썬 해석기가 프로그램의 실행 과정을 철저하게
 추적하고 관리한다.</p>
-<div class="section" id="id17">
-<h3><span class="section-number">7.8.1. </span>콜 스택: 프레임의 생성과 사멸<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3><span class="section-number">7.8.1. </span>콜 스택: 프레임의 생성과 사멸<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>함수가 실행되는 동안 발생하는 모든 정보는 컴퓨터 메모리 상에서
 <strong>프레임</strong><font size="2">frame</font> 형식으로 관리된다.
 프레임은 하나의 함수가 실행되는 동안 발생하는 지역 변수의 생성 및 값 할당,
@@ -1807,8 +1766,8 @@ Python
 </div>
 </div>
 </div>
-<div class="section" id="id18">
-<h2><span class="section-number">7.9. </span>연습문제<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h2><span class="section-number">7.9. </span>연습문제<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-functions.ipynb">(실습) 함수</a></p>
 </div>
 </div>
