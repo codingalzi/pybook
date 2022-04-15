@@ -38,19 +38,17 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -655,6 +653,12 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polygon</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="info admonition">
+<p class="admonition-title">정 n-각형의 외각</p>
+<p>정 n-각형의 외각은 180/n 도 이다.</p>
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/ExternalAngles.png" width="200"/></div>
+<p>&lt;그림 출처: <a class="reference external" href="https://ko.wikipedia.org/wiki/%EB%82%B4%EA%B0%81%EA%B3%BC_%EC%99%B8%EA%B0%81">wikipedia.org</a>&gt;</p>
+</div>
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle03.png" width="300"/></div><p><strong>키워드 인자 활용</strong></p>
 <p>만약에 기본적으로 한 변의 길이가 70인 정7각을 그리고 경우에 따라 다른 값을 사용하고자 한다면
 <code class="docutils literal notranslate"><span class="pre">n=7</span></code> 과 <code class="docutils literal notranslate"><span class="pre">length=70</span></code> 을 키워드 인자로 지정하면 된다.</p>
@@ -735,6 +739,8 @@ n-각형의 한 변의 길이는 3 정도로 제한하는 게 보다 좋다.
 <p>먼저 <code class="docutils literal notranslate"><span class="pre">circle()</span></code> 함수의 본문에 <code class="docutils literal notranslate"><span class="pre">polygon()</span></code> 함수가 사용됨에 주의한다.
 이유는 다각형은 원의 호를 그리는 데에 별로 도움되지 않기 때문이다.
 즉, <code class="docutils literal notranslate"><span class="pre">circle()</span></code> 과 <code class="docutils literal notranslate"><span class="pre">polygon()</span></code> 을 원의 호를 그리는 데에 사용할 수 없다.</p>
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/circle_slices.png" width="200"/></div>
+<p>&lt;그림 출처: <a class="reference external" href="https://ko.wikipedia.org/wiki/%EC%9B%90_(%EA%B8%B0%ED%95%98%ED%95%99)">wikipedia.org</a>&gt;</p>
 <p>원의 호는 원의 일부이다.
 따라서 원의 둘레를 그리는 과정을 호의 크기에 맞춰 멈추도록 해야 하며,
 이 방식으로 <code class="docutils literal notranslate"><span class="pre">circle()</span></code> 함수를 수정하면
