@@ -43,18 +43,17 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="18. 클래스" href="classes.html" />
+    <link rel="next" title="18. 클래스의 기본 요소" href="proper_classes.html" />
     <link rel="prev" title="16. 모듈" href="modules.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -150,7 +149,13 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections2.html">
-   13. 모음 자료형 2부: 집합, 사전
+   13. 모음 자료형 2부: 집합, 사전,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     range
+    </span>
+   </code>
+   , 조건제시법
   </a>
  </li>
  <li class="toctree-l1">
@@ -174,8 +179,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="classes.html">
-   18. 클래스
+  <a class="reference internal" href="proper_classes.html">
+   18. 클래스의 기본 요소
   </a>
  </li>
  <li class="toctree-l1">
@@ -293,41 +298,33 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fraction">
-   17.1.
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Fraction
-    </span>
-   </code>
-   클래스
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   17.2. 생성자
+   17.1. 클래스 선언
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   17.3. 인스턴스 생성
+   17.2. 생성자
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   17.4. 매직 메서드
+   17.3. 인스턴스
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     17.4.1. 동등성과 동일성
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   17.4. 인스턴스 변수와 속성
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   17.5. 연습문제
+   17.5. 매직 메서드
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   17.6. 연습문제
   </a>
  </li>
 </ul>
@@ -351,41 +348,33 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fraction">
-   17.1.
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Fraction
-    </span>
-   </code>
-   클래스
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   17.2. 생성자
+   17.1. 클래스 선언
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   17.3. 인스턴스 생성
+   17.2. 생성자
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   17.4. 매직 메서드
+   17.3. 인스턴스
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     17.4.1. 동등성과 동일성
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   17.4. 인스턴스 변수와 속성
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   17.5. 연습문제
+   17.5. 매직 메서드
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   17.6. 연습문제
   </a>
  </li>
 </ul>
@@ -399,22 +388,20 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1><span class="section-number">17. </span>객체 지향 프로그래밍<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p><strong>참고:</strong> 아래 내용은 <a class="reference external" href="https://runestone.academy/ns/books/published/pythonds3/index.html">Problem Solving with Algorithms and Data Structures using Python</a>의 1.13 절을
-정리, 요약하는 내용을 일부 담고 있습니다.</p>
-<p>파이썬은 객체 지향 프로그래밍 언어이며,
-지금까지 다양한 내장 클래스를 이용한 자료형와 자료 구조를 살펴보았다.
-객체 지향 프로그래밍 언어의 가장 큰 장점 중의 하나는 사용자가 직접
-문제 해결에 필요한 자료형을 클래스를 이용하여 정의할 수 있는 것이다.</p>
-<p>여기서는 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스를 선언하고 필요한 메서드를 추가하면서
-새로운 자료형을 선언 과정을 자세히 소개한다.
-즉, 자료형이 가져야 하는 <strong>상태</strong>(state)와 <strong>기능</strong>(메서드)을 제공하는 과정을
-자세히 살펴본다.</p>
-<div class="section" id="fraction">
-<h2><span class="section-number">17.1. </span><code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스<a class="headerlink" href="#fraction" title="Permalink to this headline">¶</a></h2>
+<p><strong>참고:</strong> 아래 내용은 <a class="reference external" href="https://runestone.academy/ns/books/published/pythonds3/index.html">Problem Solving with Algorithms and Data Structures using Python</a>의 1.13 절 내용을
+일부 담고 있다.</p>
+<p>파이썬은 객체 지향 프로그래밍 언어이다.
+객체 지향 프로그래밍 언어의 가장 큰 장점 중의 하나로,
+사용자가 직접 필요한 자료형을 클래스로 정의하고 객체를 생성하여 활용할 수 있다.</p>
+<p>여기서는 분수 자료형인 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스를 정의하기 위해 다양하며 필요한
+<strong>상태</strong><font size='2'>state</font>와 <strong>메서드</strong><font size='2'>method</font>를
+추가하는 과정을 자세히 소개한다.</p>
+<div class="section" id="id2">
+<h2><span class="section-number">17.1. </span>클래스 선언<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>분수들의 클래스를 자료형으로 정의해보자.
 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 상태는 아래 정보를 담는다.</p>
 <ul class="simple">
-<li><p>분수는 임의의 정수를 갖는 분자와 임의의 0이 아닌 정수를 갖는 분모로 구성된다.</p></li>
+<li><p>임의의 정수인 분자와 0이 아닌 임의의 정수인 분모</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스는 기본적으로 분수들의 사칙연산 기능을 제공해야 한다.
 또한 ‘3/5’와 같이 표현할 수 있어야 하며, 사칙연산의 계산결과는
@@ -426,13 +413,13 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h2><span class="section-number">17.2. </span>생성자<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>모든 파이썬 클래스는 __생성자__라는 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 메서드가 포함되어야 한다.
-생성자는 생성되는 클래스의 인스턴스(instance)의 상태 정보에 필요한 값들을
+<div class="section" id="id3">
+<h2><span class="section-number">17.2. </span>생성자<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>모든 파이썬 클래스는 인스턴스<font size='2'>instance</font>를 생성하는 <strong>생성자</strong>인
+<code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 메서드를 포함해야 한다.
+생성자는 생성되는 인스턴스의 상태<font size='2'>로 저장될 정보와 관련된 값을
 인자로 받는다.
-<code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 경우 분자와 분모에 해당하는 값을 받아 지정된 값으로
-이루어진 분수를 하나의 객체로 생성하는 데에 사용한다.</p>
+<code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 생성자는 분자와 분모에 해당하는 값을 받아 저장하는 기능을 수행한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
@@ -442,28 +429,25 @@
 <span class="sd">        top: 분자</span>
 <span class="sd">        bottom: 분모</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">top</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">den</span> <span class="o">=</span> <span class="n">bottom</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 생성자에 사용된 매개변수(parameter)와 인스턴스 변수는 다음과 같다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: 생성되는 인스턴스 자신을 가리킴. 파이썬 클래스의 모든 (인스턴스) 메서드의 첫째 인자로 사용됨.
-메서드를 호출할 때 <code class="docutils literal notranslate"><span class="pre">self</span></code>에 대한 인자는 사용하지 않음.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">top</span></code>: 생성되는 분수의 분자로 사용될 값을 받는 매개변수</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bottom</span></code>: 생성되는 분수의 분모로 사용될 값을 받는 매개변수</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">self.num</span></code>: 생성되는 분수의 분자로 사용되는 값을 가리키는 인스턴스 변수(속성 변수)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">self.den</span></code>: 생성되는 분수의 분모로 사용되는 값을 가리키는 인스턴스 변수(속성 변수)</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">self.num</span></code>과 <code class="docutils literal notranslate"><span class="pre">self.den</span></code>이 생성되는 분수의 상태(state)를 저장하는 역할을 수행한다.</p>
 </div>
-<div class="section" id="id3">
-<h2><span class="section-number">17.3. </span>인스턴스 생성<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 인스턴스, 즉 __하나의 분수에 해당하는 객체__를 선언하려면
-생성자 함수는 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 메서드를 분자, 분모에 해당하는 인자와 함께 호출해야 한다.
-생성자를 호출하려면 아래처럼 클래스 이름을 마치 함수처럼 활용한다.</p>
+<div class="section" id="id4">
+<h2><span class="section-number">17.3. </span>인스턴스<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 <strong>인스턴스</strong><font size='2'>instance</font>,
+즉 하나의 분수에 해당하는 <strong>객체</strong><font size='2'>object</font>를 생성하는 방식은 다음과 같다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Fraction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>그러면 생성자 함수 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 가 분자에 해당하는 3, 분모에 해당하는 5를 인자로 사용하여
+호출된다.
+아래 코드는 <code class="docutils literal notranslate"><span class="pre">3/5</span></code> 에 해당하는 객체, 즉 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 인스턴스를 가리키는
+<code class="docutils literal notranslate"><span class="pre">my_fraction</span></code> 변수를 선언한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_fraction</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -471,13 +455,41 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">my_fraction</span></code> 변수는 <span class="math notranslate nohighlight">\(\frac {3}{5}\)</span>에 해당하는 객체를 가리킨다(&lt;그림 5&gt; 참조).</p>
 <figure>
 <img src="https://raw.githubusercontent.com/codingalzi/problem_solving_with_algorithms/master/_sources/Introduction/Figures/fraction1.png" width="50%">
-    <figcaption>그림 5: Fraction 클래스의 인스턴스</figcaption>
-</figure></div>
-<div class="section" id="id4">
-<h2><span class="section-number">17.4. </span>매직 메서드<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</figure><div class="info admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">self</span></code>의 역할</p>
+<p><code class="docutils literal notranslate"><span class="pre">my_fraction</span> <span class="pre">=</span> <span class="pre">Fraction(3,</span> <span class="pre">5)</span></code> 방식으로 변수 할당이 실행되면
+파이썬 해석기는 다음을 싱행한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="n">my_fraction</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>즉, <code class="docutils literal notranslate"><span class="pre">self</span></code> 매개변수는 현재 생성되는 객체를 인자로 사용한다.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">17.4. </span>인스턴스 변수와 속성<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>클래스에서 선언된 <code class="docutils literal notranslate"><span class="pre">self.num</span></code> 과 <code class="docutils literal notranslate"><span class="pre">self.den</span></code> 은
+<strong>인스턴스 변수</strong><font size='2'>instance variable</font>다.
+인스턴스 변수는 해당 클래스의 영역 내에서만 의미를 가지며
+기본적으로 생성자가 실행되는 과정, 즉
+클래스의 인스턴스가 생성되는 과정에서 선언된다.</p>
+<p><strong>인스턴스 속성</strong><font size="2">instance attribute</font>은
+인스턴스 변수에 할당된 값이며,
+생성된 객체의 속성을 나타낸다.</p>
+<p>인스턴스 변수는 생성자 이외에도 클래스 내부에서 다른 방식으로 선언될 수 있다.</p>
+<div class="info admonition">
+<p class="admonition-title">클래스 변수</p>
+<p>클래스 내부에서 선언되는 변수는
+<code class="docutils literal notranslate"><span class="pre">self</span></code> 와 함께 선언되는 인스턴스 변수와
+<code class="docutils literal notranslate"><span class="pre">self</span></code> 없이 일반적인 변수처럼 선언되는
+<strong>클래스 변수</strong><font size='2'>class variable</font>로 구분된다.
+여기서는 인스턴스 변수만 다루면 클래스 변수는 나중에 소개한다.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">17.5. </span>매직 메서드<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">my_frantion</span></code>이 가리키는 분수는 ‘3/5’에 해당하는 분수이다.
 그런데 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 이용하여 이 사실을 확인하려면
 이상한 결과만 확인한다.</p>
@@ -488,7 +500,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f212c345610&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f7740435b50&gt;
 </pre></div>
 </div>
 </div>
@@ -496,7 +508,6 @@
 <p>이유는 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스가 자신의 인스턴스를 소개하는 기능을 제공하지 않았기 때문이다.
 결국 <code class="docutils literal notranslate"><span class="pre">my_fraction</span></code> 입장에서는 자신이 어떤 클래스의 인스턴스이며
 자신이 저장된 메모리 주소만을 알려준다.</p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드</strong></p>
 <p>파이썬의 모든 클래스는 생성자와 함께 기본적으로 포함하는 메서드 목록이 있다.
 이유는 파이썬의 모든 클래스는 기본적으로 최상위 클래스인 <code class="docutils literal notranslate"><span class="pre">object</span></code> 클래스를
 상속한다.
@@ -772,10 +783,9 @@
 </div>
 </div>
 </div>
-<p>이제 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code>의 인스턴스는 모두 두 개의 메서드를 갖는다(&lt;그림 6&gt;).</p>
+<p>이제 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code>의 인스턴스는 생성자를 제외하고 두 개의 메서드를 더 갖는다.</p>
 <figure>
 <img src="https://raw.githubusercontent.com/codingalzi/problem_solving_with_algorithms/master/_sources/Introduction/Figures/fraction2.png" width="50%">
-    <figcaption>그림 6: 두 개의 메서드를 갖는 Fraction 클래스의 인스턴스</figcaption>
 </figure><p>이제 8/6이 아니라 3/4를 반환한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -792,12 +802,11 @@
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3><span class="section-number">17.4.1. </span>동등성과 동일성<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">__eq__()</span></code> 메서드: 객체의 동등성과 동일성</strong></p>
 <p>두 객체의 <strong>동일성</strong>(identity) 여부는 비교되는 두 객체가 동일한 메모리 주소에 저장되었는가에 따라 결정된다.
 반면에 메모리의 주소가 아니라 객체가 표현하는 값의 동일성 여부에 따라
-두 값을 비교 판정하는 것은 <strong>동등성</strong>(equality) 여부이다.
-예를 들어, 아래 두 객체 모두 분수 1/2를 객체를 가리키지만 서로 독립적으로 생성되었기에
+두 값을 비교 판정하는 것은 <strong>동등성</strong>(equality) 여부이다.</p>
+<p>예를 들어, 아래 두 객체 모두 분수 1/2를 객체를 가리키지만 서로 독립적으로 생성되었기에
 서로 다른 메모리에 저장되며, 따라서 두 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>와 <code class="docutils literal notranslate"><span class="pre">y</span></code>는 서로 다른 객체를 참조한다.
 따라서 두 변수가 참조하는 값은 동등하지 않다고 판정된다.
 이와같이 두 값의 동등성을 판단하는 것을 <strong>얕은 동등성</strong>(shallow equality)이라 부른다.</p>
@@ -848,7 +857,6 @@ True
 </div>
 <figure>
 <img src="https://raw.githubusercontent.com/codingalzi/problem_solving_with_algorithms/master/_sources/Introduction/Figures/fraction3.png" width="80%">
-    <figcaption>표 7: 얕은 동일성 대 깊은 동일성</figcaption>
 </figure><p>반면에 <strong>깊은 동등성</strong>(deep equality)은 두 객체가 (의도된) 동일한 값을
 가리키는가 여부를 결정하며, 이를 위해
 <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> 매직 메서드를 이용한다.
@@ -889,6 +897,7 @@ True
 </div>
 </div>
 </div>
+<p>이제 동등성이 의도한대로 작동한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -903,6 +912,7 @@ True
 </div>
 </div>
 </div>
+<p>동일성은 동등성과 상관없이 전혀 변하지 않는다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -917,10 +927,65 @@ True
 </div>
 </div>
 </div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">__dir__()</span></code> 메서드</strong></p>
+<p>객체의 모든 속성과 메서드를 확인하기 위해 아래와 같이 실행한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h2><span class="section-number">17.5. </span>연습문제<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;num&#39;,
+ &#39;den&#39;,
+ &#39;__module__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__init__&#39;,
+ &#39;__str__&#39;,
+ &#39;__add__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__le__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__format__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__class__&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">__class__</span></code> 변수는 객체가 속하는 클래스 이름을 속성값으로 갖는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="vm">__class__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__.Fraction
+</pre></div>
+</div>
+</div>
+</div>
+<p>기타 다른 메서드들은 앞으로 필요할 때마다 설명된다.</p>
+</div>
+<div class="section" id="id7">
+<h2><span class="section-number">17.6. </span>연습문제<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-oop.ipynb">(실습) 객체 지향 프로그래밍</a></p>
 </div>
 </div>
@@ -957,10 +1022,10 @@ True
             <p class="prev-next-title"><span class="section-number">16. </span>모듈</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="classes.html" title="next page">
+    <a class='right-next' id="next-link" href="proper_classes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">18. </span>클래스</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>클래스의 기본 요소</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
