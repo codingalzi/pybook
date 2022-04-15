@@ -187,8 +187,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="casestudy_classes.html">
-   20. 사례 연구: 클래스와 자료형
+  <a class="reference internal" href="casestudy_game_programming.html">
+   20. 사례 연구: 게임 프로그래밍
   </a>
  </li>
 </ul>
@@ -387,7 +387,7 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="ch-classes">
 <span id="id1"></span><h1><span class="section-number">18. </span>클래스의 기본 요소<a class="headerlink" href="#ch-classes" title="Permalink to this headline">¶</a></h1>
 <p><strong>참고:</strong> 아래 내용은 <a class="reference external" href="https://runestone.academy/ns/books/published/pythonds3/index.html">Problem Solving with Algorithms and Data Structures using Python</a>의 2장 내용을
-일부 담고 있다.</p>
+일부 활용한다.</p>
 <div class="section" id="id2">
 <h2><span class="section-number">18.1. </span>기본 클래스<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>클래스를 선언할 때 아래 사항들을 기본적으로 지원하도록 해야 한다.</p>
@@ -445,11 +445,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7f156c21d1f0&gt; 3
-&lt;__main__.MSDie object at 0x7f156c21d1f0&gt; 3
-&lt;__main__.MSDie object at 0x7f156c21d1f0&gt; 6
-&lt;__main__.MSDie object at 0x7f156c21d1f0&gt; 1
-&lt;__main__.MSDie object at 0x7f156c21d1f0&gt; 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7f0e95814580&gt; 5
+&lt;__main__.MSDie object at 0x7f0e95814580&gt; 5
+&lt;__main__.MSDie object at 0x7f0e95814580&gt; 5
+&lt;__main__.MSDie object at 0x7f0e95814580&gt; 2
+&lt;__main__.MSDie object at 0x7f0e95814580&gt; 1
 </pre></div>
 </div>
 </div>
@@ -462,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7f156c21dfa0&gt;, &lt;__main__.MSDie object at 0x7f156c21df10&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7f0e9477bee0&gt;, &lt;__main__.MSDie object at 0x7f0e9477b520&gt;]
 </pre></div>
 </div>
 </div>
@@ -515,10 +515,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-1
-1
-4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+2
+3
+2
 4
 </pre></div>
 </div>
@@ -532,7 +532,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6): 1, MSDie(20): 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6): 3, MSDie(20): 7]
 </pre></div>
 </div>
 </div>
@@ -716,7 +716,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -753,7 +753,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;_MSDie__hidden1&#39;: 3, &#39;_hidden2&#39;: 7, &#39;num_sides&#39;: 6, &#39;current_value&#39;: 3}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;_MSDie__hidden1&#39;: 3, &#39;_hidden2&#39;: 7, &#39;num_sides&#39;: 6, &#39;current_value&#39;: 2}
 </pre></div>
 </div>
 </div>
@@ -841,7 +841,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -854,7 +854,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -957,7 +957,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -969,7 +969,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
