@@ -297,12 +297,17 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   19.1. 컨테이너 클래스 선언
+   19.1. 추상 클래스 대 구상 클래스
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   19.2. 컨테이너 클래스 선언
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#len">
-     19.1.1.
+     19.2.1.
      <code class="docutils literal notranslate">
       <span class="pre">
        len()
@@ -313,7 +318,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#for">
-     19.1.2.
+     19.2.2.
      <code class="docutils literal notranslate">
       <span class="pre">
        for
@@ -323,13 +328,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     19.1.3. 인덱싱 지원
+    <a class="reference internal nav-link" href="#id4">
+     19.2.3. 인덱싱 지원
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#getitem">
-     19.1.4. 이터러블 자료형과
+     19.2.4. 이터러블 자료형과
      <code class="docutils literal notranslate">
       <span class="pre">
        __getitem__()
@@ -341,35 +346,35 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   19.2. 이터레이터와 제너레이터
+  <a class="reference internal nav-link" href="#id5">
+   19.3. 이터레이터와 제너레이터
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     19.2.1. 이터러블 자료형과 이터레이터
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     19.2.2. 제너레이터
+     19.3.1. 이터러블 자료형과 이터레이터
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     19.2.3. 제너레이터 함수
+     19.3.2. 제너레이터
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     19.2.4. 제너레이터 표현식
+     19.3.3. 제너레이터 함수
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     19.3.4. 제너레이터 표현식
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
-   19.3. 연습문제
+  <a class="reference internal nav-link" href="#id10">
+   19.4. 연습문제
   </a>
  </li>
 </ul>
@@ -394,12 +399,17 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   19.1. 컨테이너 클래스 선언
+   19.1. 추상 클래스 대 구상 클래스
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   19.2. 컨테이너 클래스 선언
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#len">
-     19.1.1.
+     19.2.1.
      <code class="docutils literal notranslate">
       <span class="pre">
        len()
@@ -410,7 +420,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#for">
-     19.1.2.
+     19.2.2.
      <code class="docutils literal notranslate">
       <span class="pre">
        for
@@ -420,13 +430,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     19.1.3. 인덱싱 지원
+    <a class="reference internal nav-link" href="#id4">
+     19.2.3. 인덱싱 지원
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#getitem">
-     19.1.4. 이터러블 자료형과
+     19.2.4. 이터러블 자료형과
      <code class="docutils literal notranslate">
       <span class="pre">
        __getitem__()
@@ -438,35 +448,35 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   19.2. 이터레이터와 제너레이터
+  <a class="reference internal nav-link" href="#id5">
+   19.3. 이터레이터와 제너레이터
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     19.2.1. 이터러블 자료형과 이터레이터
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     19.2.2. 제너레이터
+     19.3.1. 이터러블 자료형과 이터레이터
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     19.2.3. 제너레이터 함수
+     19.3.2. 제너레이터
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     19.2.4. 제너레이터 표현식
+     19.3.3. 제너레이터 함수
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     19.3.4. 제너레이터 표현식
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
-   19.3. 연습문제
+  <a class="reference internal nav-link" href="#id10">
+   19.4. 연습문제
   </a>
  </li>
 </ul>
@@ -505,7 +515,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>데이터(객체) 사이의 관계를 보다 잘 이해할 수 있음.</p></li>
 </ul>
 <div class="section" id="id2">
-<h2><span class="section-number">19.1. </span>컨테이너 클래스 선언<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.1. </span>추상 클래스 대 구상 클래스<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><strong>참고:</strong> 아래 컨테이너 클래스는 추상 클래스 이야를 먼저 한 후에.
+구상 클래스는 활용 예제가 필요함.</p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">19.2. </span>컨테이너 클래스 선언<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>모음 자료형을 추상 자료형 클래스를 이용하여 정의하려면
 경우에 따라 아래 사항을 추가적으로 고려해야 한다.</p>
 <ul class="simple">
@@ -569,7 +584,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="len">
-<h3><span class="section-number">19.1.1. </span><code class="docutils literal notranslate"><span class="pre">len()</span></code> 함수 지원<a class="headerlink" href="#len" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.2.1. </span><code class="docutils literal notranslate"><span class="pre">len()</span></code> 함수 지원<a class="headerlink" href="#len" title="Permalink to this headline">¶</a></h3>
 <p>그런데 포함된 항목의 개수를 쉽게 확인할 수 없다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">oneD1</span><span class="p">)</span>
 <span class="o">---------------------------------------------------------------------------</span>
@@ -580,6 +595,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">TypeError</span><span class="p">:</span> <span class="nb">object</span> <span class="n">of</span> <span class="nb">type</span> <span class="s1">&#39;OneDArray&#39;</span> <span class="n">has</span> <span class="n">no</span> <span class="nb">len</span><span class="p">()</span>
 </pre></div>
 </div>
+<p><strong>참고: <code class="docutils literal notranslate"><span class="pre">list</span></code> 자료형을 상속하면 어떻게 되나?</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">len()</span></code> 함수가 사용되려면 <code class="docutils literal notranslate"><span class="pre">__len()__</span></code> 메서드가 적절하게 선언되어야 한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -706,7 +722,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="for">
-<h3><span class="section-number">19.1.2. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 지원<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.2.2. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 지원<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h3>
 <p>포함된 항목들을 대상으로 반복문을 실행할 수 없다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">oneD1</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -866,8 +882,8 @@ StopIteration: 더 이상 항목이 없어요!
 </div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3><span class="section-number">19.1.3. </span>인덱싱 지원<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3><span class="section-number">19.2.3. </span>인덱싱 지원<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>순차 자료형이 되려면 항목들의 순서를 이용한 인덱싱이 가능해야 한다.
 그런데 항목들의 순서를 고려해서 항목을 확인하고 수정하고자 하면 오류가 발생한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oneD2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -1063,7 +1079,7 @@ StopIteration: 더 이상 항목이 없어요!
 </div>
 </div>
 <div class="section" id="getitem">
-<h3><span class="section-number">19.1.4. </span>이터러블 자료형과 <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code> 메서드<a class="headerlink" href="#getitem" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.2.4. </span>이터러블 자료형과 <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code> 메서드<a class="headerlink" href="#getitem" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">__getitem_()</span></code> 메서드를 지원하는 클래스는 자동으로 이터레이터가 된다.
 아래에서 확인할 수 있듯이 <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> 와 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 메서드가 없어도
 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문이 작동한다.</p>
@@ -1169,13 +1185,13 @@ StopIteration: 더 이상 항목이 없어요!
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2><span class="section-number">19.2. </span>이터레이터와 제너레이터<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2><span class="section-number">19.3. </span>이터레이터와 제너레이터<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p><strong>참고</strong>: 아래 내용은 Vicent Driessen의
 <a class="reference external" href="https://nvie.com/posts/iterators-vs-generators/">Iterables vs. Iterators vs. Generators</a>
 블로그 내용을 참조합니다.</p>
-<div class="section" id="id5">
-<h3><span class="section-number">19.2.1. </span>이터러블 자료형과 이터레이터<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3><span class="section-number">19.3.1. </span>이터러블 자료형과 이터레이터<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p><strong>이터러블</strong>(iterable) 자료형은 <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> 메서드를 지원하는 자료형이다.
 <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> 메서드는 이터러블 객체의 항목들을 지정된 순서대로
 반환할 수 있는 능력을 갖춘 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 메서드를 지원하는 <strong>이터레이터</strong>(iterator)를
@@ -1183,8 +1199,8 @@ StopIteration: 더 이상 항목이 없어요!
 <div align="center"><img src="https://nvie.com/img/iterable-vs-iterator.png" style="width:600px;"></div>
 <p>그림 출처: <a class="reference external" href="https://nvie.com/posts/iterators-vs-generators/">Iterables vs. Iterators vs. Generators</a></p>
 </div>
-<div class="section" id="id6">
-<h3><span class="section-number">19.2.2. </span>제너레이터<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3><span class="section-number">19.3.2. </span>제너레이터<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p><strong>제너레이터</strong>(generator)는 간단한 방식으로 구현할 수 있는 이터레이터이며,
 크게 두 가지 방식으로 생성된다.</p>
 <ul class="simple">
@@ -1195,8 +1211,8 @@ StopIteration: 더 이상 항목이 없어요!
 <div align="center"><img src="https://nvie.com/img/relationships.png" style="width:700px;"></div>
 <p>그림 출처: <a class="reference external" href="https://nvie.com/posts/iterators-vs-generators/">Iterables vs. Iterators vs. Generators</a></p>
 </div>
-<div class="section" id="id7">
-<h3><span class="section-number">19.2.3. </span>제너레이터 함수<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3><span class="section-number">19.3.3. </span>제너레이터 함수<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>아래 코드는 피보나찌 수열을 무한정 생성하는 제너레이터를 정의한다.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">yield</span></code>: <code class="docutils literal notranslate"><span class="pre">return</span></code> 키워드 역할 수행. 하지만 실행을 멈추게 하지는 않음.</p></li>
@@ -1372,8 +1388,8 @@ StopIteration: 더 이상 항목이 없어요!
 </div>
 </div>
 </div>
-<div class="section" id="id8">
-<h3><span class="section-number">19.2.4. </span>제너레이터 표현식<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3><span class="section-number">19.3.4. </span>제너레이터 표현식<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>조건제시법을 이용하여 리스트를 아래와 같이 생성할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1399,7 +1415,7 @@ StopIteration: 더 이상 항목이 없어요!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x7f62c01ed190&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x7fade45c1890&gt;
 </pre></div>
 </div>
 </div>
@@ -1436,8 +1452,8 @@ StopIteration: 더 이상 항목이 없어요!
 </div>
 </div>
 </div>
-<div class="section" id="id9">
-<h2><span class="section-number">19.3. </span>연습문제<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2><span class="section-number">19.4. </span>연습문제<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-inheritance.ipynb">(실습) 상속</a></p>
 </div>
 </div>
