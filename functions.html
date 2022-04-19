@@ -1582,19 +1582,15 @@ Python
 </div>
 </div>
 </div>
-<p>람다 함수를 사용하면, 아래와 같이 코드를 작성할 수 있다.</p>
+<p>동일한 기능의 함수를 람다 함수를 사용하면, 아래와 같이 작성할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span> <span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">a</span> <span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
-30
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.&lt;lambda&gt;(a)&gt;
 </pre></div>
 </div>
 </div>
@@ -1602,16 +1598,37 @@ Python
 <p>두 숫자를 인자로 받아 그 곱을 반환하는 함수는 아래와 같이 정의할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-20
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.&lt;lambda&gt;(a, b)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>람다 함수는 이름이 없기에 호출하려면 함수 전체를 사용해야 한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span> <span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
@@ -1678,12 +1695,52 @@ Python
 <span class="gr">NameError</span>: <span class="n">name &#39;hour&#39; is not defined</span>
 </pre></div>
 </div>
-<div class="info admonition">
-<p class="admonition-title">파이썬 튜터 활용: 지역 변수의 생존 주기</p>
-<p><a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20hour_to_min%28hour%29%3A%0A%20%20%20%20minutes%20%3D%20hour%20*%2060%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour_to_min%282%29%0Aprint%28minutes%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수 전역 변수</a>에서
+<p><a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20hour_to_min%28hour%29%3A%0A%20%20%20%20minutes%20%3D%20hour%20*%2060%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour_to_min%282%29%0Aprint%28minutes%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수와 전역 변수 1</a>에서
 <code class="docutils literal notranslate"><span class="pre">hour</span></code>와 <code class="docutils literal notranslate"><span class="pre">minutes</span></code>의 생존주기, 즉, 언제 생성되고 언제 사라지는지를 시각적으로 확인할 수 있다.</p>
+<div class="proof example admonition" id="local_global1">
+<p class="admonition-title"><span class="caption-number">Example 7.7 </span></p>
+<div class="example-content section" id="proof-content">
+<p>아래 코드에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 가 전역 변수와 지역 변수로 사용된다.
+하지만 두 변수는 서로 상관이 없으며
+맨 마지막에 호출되는 <code class="docutils literal notranslate"><span class="pre">print(one_hour)</span></code> 는 60을 출력한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">one_hour</span> <span class="o">=</span> <span class="mi">60</span>       <span class="c1"># 1시간은 60분</span>
+
+<span class="k">def</span> <span class="nf">hour2min</span><span class="p">(</span><span class="n">hour</span><span class="p">):</span>
+    <span class="n">one_hour</span> <span class="o">=</span> <span class="mi">600</span>  <span class="c1"># 600분으로 오타</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="n">hour</span> <span class="o">*</span> <span class="n">one_hour</span>
+    <span class="k">return</span> <span class="n">minutes</span>
+
+<span class="n">two_hour</span> <span class="o">=</span> <span class="n">hour2min</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">one_hour</span><span class="p">)</span>
+</pre></div>
 </div>
+<p><a class="reference external" href="https://pythontutor.com/visualize.html#code=one_hour%20%3D%2060%20%20%20%20%20%20%20%23%201%EC%8B%9C%EA%B0%84%EC%9D%80%2060%EB%B6%84%0A%0Adef%20hour2min%28hour%29%3A%0A%20%20%20%20one_hour%20%3D%20600%20%20%23%20600%EB%B6%84%EC%9C%BC%EB%A1%9C%20%EC%98%A4%ED%83%80%0A%20%20%20%20minutes%20%3D%20hour%20*%20one_hour%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour2min%282%29%0A%0Aprint%28one_hour%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수와 전역 변수 2</a>에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 의 두 역할을 시각적으로 확인할 수 있다.</p>
 </div>
+</div><div class="proof example admonition" id="local_global2">
+<p class="admonition-title"><span class="caption-number">Example 7.8 </span></p>
+<div class="example-content section" id="proof-content">
+<p>반면에 아래 코드에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 는 하나의 전역 변수로만 사용된다.
+함수 내에서 <code class="docutils literal notranslate"><span class="pre">global</span></code> 명령문으로 변수를 지정한 후에 해당 전역 변수를
+함수 본체에서 수정하면 함수 밖에도 영향을 미친다.
+따라서 맨 마지막에 호출되는 <code class="docutils literal notranslate"><span class="pre">print(one_hour)</span></code> 는 600을 출력한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">one_hour</span> <span class="o">=</span> <span class="mi">60</span>  <span class="c1"># 1시간은 60분</span>
+
+<span class="k">def</span> <span class="nf">hour2min</span><span class="p">(</span><span class="n">hour</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">one_hour</span>
+    <span class="n">one_hour</span> <span class="o">=</span> <span class="mi">600</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="n">hour</span> <span class="o">*</span> <span class="n">one_hour</span>
+    <span class="k">return</span> <span class="n">minutes</span>
+
+<span class="n">two_hour</span> <span class="o">=</span> <span class="n">hour2min</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">one_hour</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://pythontutor.com/visualize.html#code=one_hour%20%3D%2060%20%20%20%20%20%20%20%23%201%EC%8B%9C%EA%B0%84%EC%9D%80%2060%EB%B6%84%0A%0Adef%20hour2min%28hour%29%3A%0A%20%20%20%20global%20one_hour%0A%20%20%20%20one_hour%20%3D%20600%20%20%23%20600%EB%B6%84%EC%9C%BC%EB%A1%9C%20%EC%98%A4%ED%83%80%0A%20%20%20%20minutes%20%3D%20hour%20*%20one_hour%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour2min%282%29%0A%0Aprint%28one_hour%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수와 전역 변수 3</a>에서 <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">one_hour</span></code> 의 의미를
+시각적으로 확인할 수 있다.</p>
+</div>
+</div></div>
 <div class="section" id="id15">
 <h2><span class="section-number">7.8. </span>프로그램 실행과 함수 호출<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p>파이썬 프로그램의 실행은 기본적으로
