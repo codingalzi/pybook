@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -469,7 +472,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>재귀 함수의 실행과정 동안 많은 프레임의 생성과 소멸이 발생하여
 콜 스택의 변화가 경우에 따라 매우 복잡해지기도 한다.
 아래 그림은 <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>을 호출했을 때의 콜 스택의 상태를 스택 다이어그램으로 보여준다.</p>
-<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/notebooks/images/count_down.jpg" style="width:300px;"></div><p>예를 들어,
+<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/count_down.jpg" style="width:300px;"></div><p>예를 들어,
 <a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20collatz%28num%29%3A%0A%20%20%20%20if%20num%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20print%28num%29%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20elif%20num%252%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D%27,%20%27%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num//2%29%20%2B%201%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D%27,%20%27%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num*3%20%2B%201%29%20%2B%201%0A%20%20%20%20%20%20%20%20%0Acollatz%287%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 콜라츠 추측</a>에서
 재귀 함수 호출 과정 동안 메모리에서 벌어지는 프레임의 생성과 소멸 과정,
 즉, 콜 스택의 변화를 살펴볼 수 있다.</p>
@@ -873,9 +876,7 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 </div>
 <div class="section" id="id8">
 <h2><span class="section-number">10.5. </span>연습문제<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>…</p></li>
-</ol>
+<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/recursion.ipynb">(실습) 재귀 함수</a></p>
 </div>
 </div>
 
