@@ -607,7 +607,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f8028703130&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f82e8e23df0&gt;
 </pre></div>
 </div>
 </div>
@@ -651,7 +651,7 @@ b
 </div>
 </div>
 </div>
-<p>모든 항목이 반환되면 더 이상 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 메서드를 사용할 수 있다.
+<p>모든 항목이 반환되면 더 이상 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 메서드를 사용할 수 없다.
 이유는 더 이상 반환해줄 항목이 없기에 실행하면 <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> 오류를 발생시키기 때문이다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_iter</span><span class="o">.</span><span class="fm">__next__</span><span class="p">()</span>
 <span class="go">StopIteration                             Traceback (most recent call last)</span>
@@ -677,7 +677,7 @@ b
 </div>
 </div>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">for</span></code>반복문과 이터러블 자료형</strong></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문과 이터러블 자료형</strong></p>
 <p>리스트 자체는 이터레이터 자료형이 아니지만 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문과 여러 번 사용할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -820,7 +820,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object squares at 0x7f802462ccf0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object squares at 0x7f82e44efb30&gt;
 </pre></div>
 </div>
 </div>
@@ -862,6 +862,8 @@ b
 </div>
 </div>
 </div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 사용하더라도
 이미 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 메서드가 반환된 값의 다음 항목부터 사용됨에 주의하라.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">squares_5</span><span class="p">:</span>
@@ -869,8 +871,6 @@ b
 <span class="go">16 25 </span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 <p><strong>제너레이터 표현식</strong></p>
 <p>조건제시법 방식을 튜플에 적용하면 제너레이터 표현식이 된다.
@@ -1022,9 +1022,7 @@ b
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>강현은 3월 7일에 태어났다.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>나현은 2월 23일에 태어났다.
+나현은 2월 23일에 태어났다.
 </pre></div>
 </div>
 </div>
