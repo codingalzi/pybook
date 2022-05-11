@@ -317,7 +317,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   14.5. 연습문제
+   14.5. 적극적 계산과 소극적 계산
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   14.6. 연습문제
   </a>
  </li>
 </ul>
@@ -362,7 +367,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   14.5. 연습문제
+   14.5. 적극적 계산과 소극적 계산
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   14.6. 연습문제
   </a>
  </li>
 </ul>
@@ -607,7 +617,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f82e8e23df0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f5ea06e0d00&gt;
 </pre></div>
 </div>
 </div>
@@ -820,7 +830,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object squares at 0x7f82e44efb30&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object squares at 0x7f5e9c5a0d60&gt;
 </pre></div>
 </div>
 </div>
@@ -1190,7 +1200,60 @@ b
 </div>
 </div>
 <div class="section" id="id6">
-<h2><span class="section-number">14.5. </span>연습문제<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">14.5. </span>적극적 계산과 소극적 계산<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">range</span></code> 객체처럼 모든 값을 미리 생성해서 준비해 놓는 대신에 필요할 때 필요한 항목을 생성하는 것을
+<strong>소극적</strong><font size='2'>lazy</font> 계산이라 부른다.
+반면에 호출 되자마자 바로 실행하는 것은 <strong>적극적</strong><font size='2'>eager</font> 계산이다.
+파이썬은 기본적으로 적극적 계산을 사용하지만 제너레이터 경우와 같이 부분적으로
+소극적 계산을 지원한다.</p>
+<p><strong>무한 수열 생성</strong></p>
+<p>제너레이터를 이용하면 무한 수열을 다룰 수 있다.
+이유는 소극적 계산을 따르는 제너레이터는 항상 요구되는 만큼만 생성하기에
+절대로 무한히 많은 값들을 한꺼번에 다루지 않기 때문이다.</p>
+<p>예를 들어, 아래 <code class="docutils literal notranslate"><span class="pre">natural_numbers</span></code> 함수는 모든 자연수를 생성할 준비가 된 제너레이터이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">natural_numbers</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;모든 자연수 생성 가능&quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">n</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>물론 위와 같이 무한 수열을 생성할 수 있는 제너레이터는 매우 조심해서 사용해야 한다.
+예를 들어 아래와 같이 사용하면 무한 반복(loop)이 발생한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">natural_numbers</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>무한히 많은 값을 생성할 수 있는 제너레이터는 <code class="docutils literal notranslate"><span class="pre">break</span></code> 명령문 등을 적절히
+섞어서 사용해야 한다.
+예를 들어, 1부터 시작하는 자연수 5개를 항목으로 갖는 리스트는 다음과 생성한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_5</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">natural_numbers</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="n">list_5</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">list_5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><span class="section-number">14.6. </span>연습문제<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-collections3.ipynb">(실습) 모음 자료형 3부: 이터러블, 이터레이터, 제너레이터</a></p>
 </div>
 </div>
