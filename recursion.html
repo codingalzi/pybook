@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -338,7 +341,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#sec-hanoi">
      10.4.5. 하노이의 탑
     </a>
    </li>
@@ -427,7 +430,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#sec-hanoi">
      10.4.5. 하노이의 탑
     </a>
    </li>
@@ -1041,8 +1044,8 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 <strong>콜라츠 추측</strong><font size="2">Collatz conjecture</font>
 이라 부른다.</p>
 </div>
-<div class="section" id="id10">
-<h3><span class="section-number">10.4.5. </span>하노이의 탑<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="sec-hanoi">
+<span id="id10"></span><h3><span class="section-number">10.4.5. </span>하노이의 탑<a class="headerlink" href="#sec-hanoi" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 이용하여 해결하기 어려운 문제를
 재귀 알고리즘으로 상대적으로 훨씬 간단하게 해결하는 예제로 하노이의 탑 문제를 다룬다.</p>
 <p><strong>하노이의 탑</strong><font size='2'>Tower of Hanoi</font> 문제는 세 개의 기둥 중에
@@ -1055,22 +1058,23 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 <figure>
 <div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Tower_of_Hanoi_4.gif" width="45%"></div>
 </figure>
-<p>&lt;그림 출처: <a class="reference external" href="https://ko.wikipedia.org/wiki/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98_%ED%83%91">위키백과: 하노이의 탑</a>&gt;</p>
+<p>&lt;그림 출처: <a class="reference external" href="https://ko.wikipedia.org/wiki/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98_%ED%83%91">(위키백과) 하노이의 탑</a>&gt;</p>
 <p><strong>참고</strong>: 일반적으로 원판이 <span class="math notranslate nohighlight">\(n\)</span>개 일 때, <span class="math notranslate nohighlight">\(2^n - 1\)</span>번의 이동으로 원판을 모두 옮길 수 있다.
 참고로 64개의 원판을 옮기는 데 총 <span class="math notranslate nohighlight">\(2^{64}-1\)</span> 번 원판을 움직여야 하고,
 1초에 하나의 원판을 옮긴다고 가정했을 때 5,849억년 정도 걸린다.</p>
 <p><strong>재귀 알고리즘</strong></p>
 <p>4개의 원판을 옮겨야 한다고 가정하자.
 아래 연속된 그림에서 볼 수 있듯이 3개의 원판을 옮기는 과정을 두 번 반복하면 된다.</p>
-<figure>
-<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/algopy/master/notebooks/_images/hanoi-tower-1.png" width="50%"></div>
-</figure><figure>
-<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/algopy/master/notebooks/_images/hanoi-tower-2.png" width="50%"></div>
-</figure><figure>
-<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/algopy/master/notebooks/_images/hanoi-tower-3.png" width="50%"></div>
-</figure><figure>
-<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/algopy/master/notebooks/_images/hanoi-tower-4.png" width="50%"></div>
-</figure><p>위 설명을 임의의 양의 정수 <code class="docutils literal notranslate"><span class="pre">n</span></code>에 대해 일반화하면 다음과 같다.</p>
+<table> 
+	<tr> 
+		<td><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/hanoi-tower-1.png" width="100%"></td> 
+		<td><img src="https://raw.githubusercontent.com/codingalzi/algopy/master/notebooks/_images/hanoi-tower-2.png" width="100%"></td> 
+	</tr> 
+	<tr> 
+		<td><img src="https://raw.githubusercontent.com/codingalzi/algopy/master/notebooks/_images/hanoi-tower-3.png" width="100%"></td> 
+		<td><img src="https://raw.githubusercontent.com/codingalzi/algopy/master/notebooks/_images/hanoi-tower-4.png" width="100%"></td> 
+	</tr> 
+</table> <p>위 설명을 임의의 양의 정수 <code class="docutils literal notranslate"><span class="pre">n</span></code>에 대해 일반화하면 다음과 같다.</p>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">n-1</span></code> 개의 원판을 중간 지점의 위치에 옮긴다.</p></li>
 <li><p>가장 큰 원판을 목적지로 옮긴다.</p></li>
@@ -1114,7 +1118,9 @@ B에서 A로 탑 원판 옮기기
 B에서 C로 탑 원판 옮기기
 A에서 C로 탑 원판 옮기기
 A에서 B로 탑 원판 옮기기
-C에서 B로 탑 원판 옮기기
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C에서 B로 탑 원판 옮기기
 C에서 A로 탑 원판 옮기기
 B에서 A로 탑 원판 옮기기
 C에서 B로 탑 원판 옮기기
