@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -552,8 +549,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>일반적으로 <strong>자료형</strong>으로 불리는
 <strong>데이터 유형</strong><font size = "2">data type</font>은 사용되는 데이터와
 관련된 많은 정보를 포함한다.
-해석기<font size = "2">interpreter</font> 또는
-컴파일러<font size = "2">compiler</font>는
+실행기<font size = "2">interpreter</font> 또는
+번역기<font size = "2">compiler</font>는
 자료형에 포함된 정보를 이용하여 해당 데이터의 사용법을 확인한다.
 이번 장에서는 파이썬 프로그래밍 언어가 제공하는
 기본 자료형 네 가지를 간단히 살펴본다.</p>
@@ -1759,7 +1756,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 <div class="section" id="sec-type-casting">
 <span id="id15"></span><h2><span class="section-number">6.5. </span>형변환<a class="headerlink" href="#sec-type-casting" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">2.3</span> <span class="pre">+</span> <span class="pre">3</span></code>을 실행하면 파이썬 해석기<font size="2">interpreter</font>는
+<p><code class="docutils literal notranslate"><span class="pre">2.3</span> <span class="pre">+</span> <span class="pre">3</span></code>을 실행하면 파이썬 실행기<font size="2">interpreter</font>는
 내부적으로 정수를 부동소수점으로 형변환하는 함수 <code class="docutils literal notranslate"><span class="pre">float()</span></code>를 이용하여
 정수 <code class="docutils literal notranslate"><span class="pre">3</span></code>을 부동소수점 <code class="docutils literal notranslate"><span class="pre">3.0</span></code>으로 유형을 변환한 후에
 덧셈을 처리한다.
@@ -2076,7 +2073,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-05-11 09:30:00&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-05-12 09:30:00&#39;)
 </pre></div>
 </div>
 </div>
@@ -2156,7 +2153,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-05-11 18:58:22.518077&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-05-12 01:02:32.166342&#39;)
 </pre></div>
 </div>
 </div>
@@ -2181,7 +2178,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8255 days 09:28:22.518077&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8255 days 15:32:32.166342&#39;)
 </pre></div>
 </div>
 </div>
@@ -2200,7 +2197,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8255, hours=9, minutes=28, seconds=22, milliseconds=518, microseconds=77, nanoseconds=0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8255, hours=15, minutes=32, seconds=32, milliseconds=166, microseconds=342, nanoseconds=0)
 </pre></div>
 </div>
 </div>

@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -875,7 +872,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p><strong>연산자 우선순위</strong></p>
-<p>표현식이 나타내는 값은 파이썬 해석기가
+<p>표현식이 나타내는 값은 파이썬 실행기가
 표현식에 사용된 연산자와 연관된 연산을 실행하는 방식으로 계산되며,
 계산 과정에서 연산자 별로 지정된 우선순위를 고려한다.
 사칙연산 등 많이 사용되는 수학 함수들의 우선순위는 일반적으로 알려진 것과 동일하다.</p>
@@ -1328,7 +1325,8 @@ const thebe_selector_output = ".output, .cell_output"
 웬만해서는 알 필요 없으며,
 원하는 기능을 옳바르게 수행하는 프로그램을 구현하는 훈련과
 작업을 통해 자연스럽게 명령문에 친숙해지는 것이 일반적이다.
-하지만 해석기, 컴파일러 등을 직접 구현해야 하는
+하지만 실행기<font size='2'>interpreter</font>,
+번역기<font size='2'>compiler</font> 등을 직접 구현해야 하는
 일을 하려면 반드시 알아야 한다.</p>
 </div>
 <div class="section" id="id11">
@@ -1350,7 +1348,7 @@ const thebe_selector_output = ".output, .cell_output"
 기능, 아이디어 등을 설명하는 문장이
 <strong>주석</strong><font size="2">comment</font>이다.
 주석은 일반 자연어를 사용하며,
-프로그램이 실행될 때 파이썬 해석기에 의해 무시된다.</p>
+프로그램이 실행될 때 파이썬 실행기에 의해 무시된다.</p>
 <p>주석은 한 줄 또는 여러 줄로 작성될 수 있다.
 한 줄 주석은 우물 정(영어로 샵<font size="2">sharp</font>) 기호(<code class="docutils literal notranslate"><span class="pre">#</span></code>)로 시작한다.</p>
 <div class="cell docutils container">
@@ -1385,7 +1383,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="id13">
 <h2><span class="section-number">4.6. </span>프로그램 오류와 디버깅<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <p>변수 이름으로 <code class="docutils literal notranslate"><span class="pre">class</span></code> 등의 지정어를 사용하거나, <code class="docutils literal notranslate"><span class="pre">odd~job</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">US$</span></code>처럼
-허용되지 않은 기호를 포함하는 경우에 파이썬 해석기는
+허용되지 않은 기호를 포함하는 경우에 파이썬 실행기는
 <strong>오류</strong><font size="2">error</font>를 발생시키며 곧바로 프로그램의 실행을 멈춘다.
 예를 들어, 아래와 같이 변수 이름에 공백을 사용하여 실행한 결과를 확인해 보자.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bad</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">5</span>
@@ -1402,7 +1400,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3><span class="section-number">4.6.1. </span>구문 오류<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>변수의 이름을 잘못 지정하면 <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">invalid</span> <span class="pre">syntax</span></code>와
 같은 <strong>구문 오류</strong><font size="2">syntax error</font>가 발생한다.
-구문 오류는 해석기가 프로그램을 실행하기 전에 일종의 문법 검사를 통해 찾아낸다.</p>
+구문 오류는 실행기가 프로그램을 실행하기 전에 일종의 문법 검사를 통해 찾아낸다.</p>
 </div>
 <div class="section" id="id15">
 <h3><span class="section-number">4.6.2. </span>런타임 오류<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
