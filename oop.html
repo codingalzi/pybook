@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>17. 객체 지향 프로그래밍 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>18. 객체 지향 프로그래밍 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -53,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="18. 클래스의 기본 요소" href="proper_classes.html" />
-    <link rel="prev" title="16. 모듈" href="modules.html" />
+    <link rel="next" title="19. 클래스의 기본 요소" href="proper_classes.html" />
+    <link rel="prev" title="17. 모듈" href="modules.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -164,33 +167,38 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="type_annotations.html">
+   15. 자료형 명시
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   15. 파일
+   16. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   16. 모듈
+   17. 모듈
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   17. 객체 지향 프로그래밍
+   18. 객체 지향 프로그래밍
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="proper_classes.html">
-   18. 클래스의 기본 요소
+   19. 클래스의 기본 요소
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="inheritance.html">
-   19. 상속
+   20. 상속
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_game_programming.html">
-   20. 사례 연구: 게임 프로그래밍
+   21. 사례 연구: 게임 프로그래밍
   </a>
  </li>
 </ul>
@@ -299,32 +307,32 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   17.1. 클래스 선언
+   18.1. 클래스 선언
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   17.2. 생성자
+   18.2. 생성자
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   17.3. 인스턴스
+   18.3. 인스턴스
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   17.4. 인스턴스 변수와 속성
+   18.4. 인스턴스 변수와 속성
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   17.5. 매직 메서드
+   18.5. 매직 메서드
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   17.6. 연습문제
+   18.6. 연습문제
   </a>
  </li>
 </ul>
@@ -349,32 +357,32 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   17.1. 클래스 선언
+   18.1. 클래스 선언
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   17.2. 생성자
+   18.2. 생성자
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   17.3. 인스턴스
+   18.3. 인스턴스
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   17.4. 인스턴스 변수와 속성
+   18.4. 인스턴스 변수와 속성
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   17.5. 매직 메서드
+   18.5. 매직 메서드
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   17.6. 연습문제
+   18.6. 연습문제
   </a>
  </li>
 </ul>
@@ -387,7 +395,7 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">17. </span>객체 지향 프로그래밍<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">18. </span>객체 지향 프로그래밍<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p><strong>참고:</strong> 아래 내용은 <a class="reference external" href="https://runestone.academy/ns/books/published/pythonds3/index.html">Problem Solving with Algorithms and Data Structures using Python</a>의 1.13 절 내용을
 일부 활용한다.</p>
 <p>파이썬은 객체 지향 프로그래밍 언어이다.
@@ -397,7 +405,7 @@ const thebe_selector_output = ".output, .cell_output"
 <strong>상태</strong><font size='2'>state</font>와 <strong>메서드</strong><font size='2'>method</font>를
 추가하는 과정을 자세히 소개한다.</p>
 <div class="section" id="id2">
-<h2><span class="section-number">17.1. </span>클래스 선언<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.1. </span>클래스 선언<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>분수들의 클래스를 자료형으로 정의해보자.
 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 상태는 아래 정보를 담는다.</p>
 <ul class="simple">
@@ -414,7 +422,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id3">
-<h2><span class="section-number">17.2. </span>생성자<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.2. </span>생성자<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>모든 파이썬 클래스는 인스턴스<font size='2'>instance</font>를 생성하는 <strong>생성자</strong>인
 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 메서드를 포함해야 한다.
 생성자는 생성되는 인스턴스의 상태<font size='2'>로 저장될 정보와 관련된 값을
@@ -438,7 +446,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">17.3. </span>인스턴스<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.3. </span>인스턴스<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 <strong>인스턴스</strong><font size='2'>instance</font>,
 즉 하나의 분수에 해당하는 <strong>객체</strong><font size='2'>object</font>를 생성하는 방식은 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Fraction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -468,7 +476,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id5">
-<h2><span class="section-number">17.4. </span>인스턴스 변수와 속성<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.4. </span>인스턴스 변수와 속성<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>클래스에서 선언된 <code class="docutils literal notranslate"><span class="pre">self.num</span></code> 과 <code class="docutils literal notranslate"><span class="pre">self.den</span></code> 은
 <strong>인스턴스 변수</strong><font size='2'>instance variable</font>다.
 인스턴스 변수는 해당 클래스의 영역 내에서만 의미를 가지며
@@ -485,11 +493,11 @@ const thebe_selector_output = ".output, .cell_output"
 <code class="docutils literal notranslate"><span class="pre">self</span></code> 를 사용하지 않는 <strong>클래스 변수</strong><font size='2'>class variable</font> 로
 구분된다.
 여기서는 인스턴스 변수만 다루며 클래스 변수는 이어지는
-<a class="reference internal" href="proper_classes.html#ch-classes"><span class="std std-numref">18장</span></a>에서 소개한다.</p>
+<a class="reference internal" href="proper_classes.html#ch-classes"><span class="std std-numref">19장</span></a>에서 소개한다.</p>
 </div>
 </div>
 <div class="section" id="id6">
-<h2><span class="section-number">17.5. </span>매직 메서드<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5. </span>매직 메서드<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p><strong><code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">my_frantion</span></code>이 가리키는 분수는 ‘3/5’에 해당하는 분수이다.
 그런데 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 이용하여 이 사실을 확인하려면
@@ -501,7 +509,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f264b1f5370&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f074068fdc0&gt;
 </pre></div>
 </div>
 </div>
@@ -723,7 +731,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>덧셈이 잘 작동하지만 결과값이 기약분수의 형태가 아니다.
 기약분수를 계산하려면 최대공약수(gcd)를 계산하는 알고리즘이 필요하다.</p>
 <div class="proof example admonition" id="euclid_gcd">
-<p class="admonition-title"><span class="caption-number">Example 17.1 </span> (유클리드 호젯법)</p>
+<p class="admonition-title"><span class="caption-number">Example 18.1 </span> (유클리드 호젯법)</p>
 <div class="example-content section" id="proof-content">
 <p>두 개의 정수 <span class="math notranslate nohighlight">\(m\)</span>과 <span class="math notranslate nohighlight">\(n\)</span>의 최대공약수를 가장 빠르고 효율적으로 계산하는 기법은 유클리드 호젯법이다.</p>
 <ul class="simple">
@@ -986,7 +994,7 @@ True
 <p>기타 다른 메서드들은 앞으로 필요할 때마다 설명된다.</p>
 </div>
 <div class="section" id="id7">
-<h2><span class="section-number">17.6. </span>연습문제<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.6. </span>연습문제<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-oop.ipynb">(실습) 객체 지향 프로그래밍</a></p>
 </div>
 </div>
@@ -1020,13 +1028,13 @@ True
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">16. </span>모듈</p>
+            <p class="prev-next-title"><span class="section-number">17. </span>모듈</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="proper_classes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">18. </span>클래스의 기본 요소</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>클래스의 기본 요소</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -51,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="15. 파일" href="files.html" />
+    <link rel="next" title="15. 자료형 명시" href="type_annotations.html" />
     <link rel="prev" title="13. 모음 자료형 2부: 집합, 사전, range, 조건제시법" href="collections2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -162,33 +165,38 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="type_annotations.html">
+   15. 자료형 명시
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   15. 파일
+   16. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   16. 모듈
+   17. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="oop.html">
-   17. 객체 지향 프로그래밍
+   18. 객체 지향 프로그래밍
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="proper_classes.html">
-   18. 클래스의 기본 요소
+   19. 클래스의 기본 요소
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="inheritance.html">
-   19. 상속
+   20. 상속
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_game_programming.html">
-   20. 사례 연구: 게임 프로그래밍
+   21. 사례 연구: 게임 프로그래밍
   </a>
  </li>
 </ul>
@@ -617,7 +625,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f5ea06e0d00&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7fac5221be50&gt;
 </pre></div>
 </div>
 </div>
@@ -830,7 +838,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object squares at 0x7f5e9c5a0d60&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object squares at 0x7fac501cd740&gt;
 </pre></div>
 </div>
 </div>
@@ -1290,10 +1298,10 @@ b
             <p class="prev-next-title"><span class="section-number">13. </span>모음 자료형 2부: 집합, 사전, <code class="docutils literal notranslate"><span class="pre">range</span></code>, 조건제시법</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="files.html" title="next page">
+    <a class='right-next' id="next-link" href="type_annotations.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>파일</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>자료형 명시</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

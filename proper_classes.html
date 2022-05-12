@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18. 클래스의 기본 요소 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>19. 클래스의 기본 요소 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -51,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="19. 상속" href="inheritance.html" />
-    <link rel="prev" title="17. 객체 지향 프로그래밍" href="oop.html" />
+    <link rel="next" title="20. 상속" href="inheritance.html" />
+    <link rel="prev" title="18. 객체 지향 프로그래밍" href="oop.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -162,33 +165,38 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="type_annotations.html">
+   15. 자료형 명시
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   15. 파일
+   16. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   16. 모듈
+   17. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="oop.html">
-   17. 객체 지향 프로그래밍
+   18. 객체 지향 프로그래밍
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   18. 클래스의 기본 요소
+   19. 클래스의 기본 요소
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="inheritance.html">
-   19. 상속
+   20. 상속
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_game_programming.html">
-   20. 사례 연구: 게임 프로그래밍
+   21. 사례 연구: 게임 프로그래밍
   </a>
  </li>
 </ul>
@@ -297,42 +305,42 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   18.1. 기본 클래스
+   19.1. 기본 클래스
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   18.2. 비교 가능 클래스
+   19.2. 비교 가능 클래스
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   18.3. 공개 여부
+   19.3. 공개 여부
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   18.4. 게터와 세터
+   19.4. 게터와 세터
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   18.5. 데코레이터
+   19.5. 데코레이터
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   18.6. 클래스 변수 대 인스턴스 변수
+   19.6. 클래스 변수 대 인스턴스 변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   18.7. 인스턴스 메서드, 클래스 메서드, 스태틱 메서드
+   19.7. 인스턴스 메서드, 클래스 메서드, 스태틱 메서드
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id9">
-   18.8. 연습문제
+   19.8. 연습문제
   </a>
  </li>
 </ul>
@@ -357,42 +365,42 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   18.1. 기본 클래스
+   19.1. 기본 클래스
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   18.2. 비교 가능 클래스
+   19.2. 비교 가능 클래스
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   18.3. 공개 여부
+   19.3. 공개 여부
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   18.4. 게터와 세터
+   19.4. 게터와 세터
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   18.5. 데코레이터
+   19.5. 데코레이터
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   18.6. 클래스 변수 대 인스턴스 변수
+   19.6. 클래스 변수 대 인스턴스 변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   18.7. 인스턴스 메서드, 클래스 메서드, 스태틱 메서드
+   19.7. 인스턴스 메서드, 클래스 메서드, 스태틱 메서드
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id9">
-   18.8. 연습문제
+   19.8. 연습문제
   </a>
  </li>
 </ul>
@@ -405,11 +413,11 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ch-classes">
-<span id="id1"></span><h1><span class="section-number">18. </span>클래스의 기본 요소<a class="headerlink" href="#ch-classes" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">19. </span>클래스의 기본 요소<a class="headerlink" href="#ch-classes" title="Permalink to this headline">¶</a></h1>
 <p><strong>참고:</strong> 아래 내용은 <a class="reference external" href="https://runestone.academy/ns/books/published/pythonds3/index.html">Problem Solving with Algorithms and Data Structures using Python</a>의 2장 내용을
 일부 활용한다.</p>
 <div class="section" id="id2">
-<h2><span class="section-number">18.1. </span>기본 클래스<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.1. </span>기본 클래스<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>클래스를 선언할 때 아래 사항들을 기본적으로 지원하도록 해야 한다.</p>
 <ul class="simple">
 <li><p>문서화: <strong>독스트링</strong>(docstring) 기능을 이용하여 해당 클래스의 기능과 사용법을 설명한다.
@@ -465,11 +473,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7fcdf7c89700&gt; 5
-&lt;__main__.MSDie object at 0x7fcdf7c89700&gt; 5
-&lt;__main__.MSDie object at 0x7fcdf7c89700&gt; 5
-&lt;__main__.MSDie object at 0x7fcdf7c89700&gt; 3
-&lt;__main__.MSDie object at 0x7fcdf7c89700&gt; 5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7faee78592b0&gt; 6
+&lt;__main__.MSDie object at 0x7faee78592b0&gt; 4
+&lt;__main__.MSDie object at 0x7faee78592b0&gt; 2
+&lt;__main__.MSDie object at 0x7faee78592b0&gt; 5
+&lt;__main__.MSDie object at 0x7faee78592b0&gt; 2
 </pre></div>
 </div>
 </div>
@@ -482,7 +490,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7fcdf7c2ad30&gt;, &lt;__main__.MSDie object at 0x7fcdf7c2ac70&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7faecefc1400&gt;, &lt;__main__.MSDie object at 0x7faee78590d0&gt;]
 </pre></div>
 </div>
 </div>
@@ -535,11 +543,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 5
-3
 4
-6
+4
+4
 </pre></div>
 </div>
 </div>
@@ -552,14 +560,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6): 4, MSDie(20): 16]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6): 5, MSDie(20): 20]
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="id3">
-<h2><span class="section-number">18.2. </span>비교 가능 클래스<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.2. </span>비교 가능 클래스<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>두 개의 주사위 객체의 동등성(equality) 여부를 어떻게 판단할까?
 두 주사위가 가리키는 값이 같을 때? 주사위 면의 수가 다르면?
 두 주사위의 크기 비교는 어떻게?</p>
@@ -681,7 +689,7 @@ False
 </div>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">18.3. </span>공개 여부<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.3. </span>공개 여부<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>자바<font size='2'>Java</font> 프로그래밍 언어의 클래스 선언에 사용되는
 private, default, protected, public 등과 같은
 접근 제어자는 파이썬에서 지원되지 않는다.</p>
@@ -796,7 +804,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="section" id="id5">
-<h2><span class="section-number">18.4. </span>게터와 세터<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.4. </span>게터와 세터<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>반면에 하나의 밑줄을 사용하는 <code class="docutils literal notranslate"><span class="pre">_hidden2</span></code>는 숨길 것 까지는 아니지만 클래스 내부에서만
 사용되는 것을 반영한 이름이다.
 이런 변수와 메서드는 사용자가 직접 값을 수정하기 보다는
@@ -861,7 +869,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -874,7 +882,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -908,7 +916,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="section" id="id6">
-<h2><span class="section-number">18.5. </span>데코레이터<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.5. </span>데코레이터<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>게터 메서드와 세터 메서드는 인스턴스 속성을 확인하고 변경한다.
 따라서 마치 하나의 인스턴스 변수처럼 다룰 수 있으면 보다 편할 것이다.
 여기서는 파이썬의 데코레이터를 이용하면 이것이 가능하게 만드는 것을 보인다.</p>
@@ -1103,13 +1111,13 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="section" id="id7">
-<h2><span class="section-number">18.6. </span>클래스 변수 대 인스턴스 변수<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6. </span>클래스 변수 대 인스턴스 변수<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id8">
-<h2><span class="section-number">18.7. </span>인스턴스 메서드, 클래스 메서드, 스태틱 메서드<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.7. </span>인스턴스 메서드, 클래스 메서드, 스태틱 메서드<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id9">
-<h2><span class="section-number">18.8. </span>연습문제<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.8. </span>연습문제<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-proper_classes.ipynb">(실습) 클래스의 기본 요소</a></p>
 </div>
 </div>
@@ -1143,13 +1151,13 @@ private, default, protected, public 등과 같은
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">17. </span>객체 지향 프로그래밍</p>
+            <p class="prev-next-title"><span class="section-number">18. </span>객체 지향 프로그래밍</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="inheritance.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">19. </span>상속</p>
+        <p class="prev-next-title"><span class="section-number">20. </span>상속</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
