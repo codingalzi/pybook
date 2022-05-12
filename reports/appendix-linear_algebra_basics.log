@@ -17,14 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import wc
+assert multM(E, identity_matrix(2)) == E
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_3588/816188502.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mimport[0m [0mwc[0m[0;34m[0m[0;34m[0m[0m
+[0;31mAssertionError[0m                            Traceback (most recent call last)
+[0;32m/tmp/ipykernel_2620/1421883923.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32massert[0m [0mmultM[0m[0;34m([0m[0mE[0m[0;34m,[0m [0midentity_matrix[0m[0;34m([0m[0;36m2[0m[0;34m)[0m[0;34m)[0m [0;34m==[0m [0mE[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mModuleNotFoundError[0m: No module named 'wc'
-ModuleNotFoundError: No module named 'wc'
+[0;31mAssertionError[0m: 
+AssertionError: 
 
