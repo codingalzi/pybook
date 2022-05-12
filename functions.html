@@ -194,17 +194,17 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="appendix-type_annotations.html">
-   21. 부록: 자료형 명시
+  <a class="reference internal" href="type_annotations.html">
+   21. 부록: 자료형 힌트
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="appendix-linear_algebra_basics.html">
+  <a class="reference internal" href="linear_algebra_basics.html">
    22. 부록: 선형대수 기초 밑바닥부터
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="appendix-statistics_basics.html">
+  <a class="reference internal" href="statistics_basics.html">
    23. 부록: 통계 기초 밑바닥부터
   </a>
  </li>
@@ -391,7 +391,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     7.4.3. 제1종 객체
+     7.4.3. 1종 객체
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -537,7 +537,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     7.4.3. 제1종 객체
+     7.4.3. 1종 객체
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1208,25 +1208,25 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div></div>
 <div class="section" id="id9">
-<h3><span class="section-number">7.4.3. </span>제1종 객체<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.3. </span>1종 객체<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>프로그래밍 언어에서
-<strong>제1종 객체</strong><font size="2">first-class object</font>는
+<strong>1종 객체</strong><font size="2">first-class object</font>는
 변수 할당, 함수의 인자, 함수의 반환값 등으로 사용될 수 있는
 객체<font size="2">object</font>를 가리킨다.
 반면에 그렇지 않은 객체는
 <strong>제2종 객체</strong><font size="2">second-class object</font>라고
 한다.</p>
 <div class="tip admonition">
-<p class="admonition-title">제1종 객체 대 일급 객체 </p>
+<p class="admonition-title">1종 객체 대 일급 객체 </p>
 <p>first-class object를 주로 ‘’일급 객체’’로 번역되지만
-“제1종 객체”가 개념상 보다 적절하다.
+“1종 객체”가 개념상 보다 적절하다.
 first-class와 second-class는 사용법상 구분을 나타내는 반면에
 일급, 이급 표현은 질적 차이를 내포한다.</p>
 </div>
-<p>프로그래밍 언어에 따라 제1종 객체의 기준이 다르다.
-대표적으로 C 언어의 경우 함수는 제1종 객체가 아니다.
+<p>프로그래밍 언어에 따라 1종 객체의 기준이 다르다.
+대표적으로 C 언어의 경우 함수는 1종 객체가 아니다.
 즉, 함수를 다른 함수의 인자 또는 반환값으로 사용할 수 없다.
-반면에 파이썬은 다룰 수 있는 모든 것이 제1종 객체이다.</p>
+반면에 파이썬은 다룰 수 있는 모든 것이 1종 객체이다.</p>
 <p><strong>함수 활용: 변수 할당</strong></p>
 <p>함수가 하나의 값이기에 예를 들어 다음과 같이
 <code class="docutils literal notranslate"><span class="pre">myPrint()</span></code> 함수를 변수 할당에 사용할 수 있다.
@@ -1246,16 +1246,16 @@ first-class와 second-class는 사용법상 구분을 나타내는 반면에
 </div>
 <div class="info admonition">
 <p class="admonition-title">C 언어의 포인터 활용</p>
-<p>C 언어는 제1종 객체의 범위가 매우 제한적이다.
+<p>C 언어는 1종 객체의 범위가 매우 제한적이다.
 반면에 파이썬,
 C++, C#,
 자바<font size="2">Java</font>,
 자바스크립트<font size="2">Javascript</font>,
 스위프트<font size="2">Swift</font> 등
 보다 현대적인 프로그래밍 언어는
-이미 또는 거의 모든 객체를 제1종 객체로 지원한다.</p>
+이미 또는 거의 모든 객체를 1종 객체로 지원한다.</p>
 <p>C 언어는 포인터<font size="2">pointer</font>를 이용하여
-함수, 구조체 등 제1종 객체가 아닌 대상을 다루며,
+함수, 구조체 등 1종 객체가 아닌 대상을 다루며,
 포인터가 C 언어에서 핵심적인 역할을 수행하는 이유가 바로 여기에 있다.</p>
 </div>
 <p><strong>함수 활용: 인자</strong></p>
