@@ -659,7 +659,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f4eac2a2e50&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f716870ec10&gt;)
 </pre></div>
 </div>
 </div>
@@ -1072,7 +1072,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results10m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f4eac2a8640&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results10m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f716bf8aac0&gt;)
 </pre></div>
 </div>
 </div>
@@ -1179,6 +1179,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_path</span> <span class="o">/</span> <span class="s2">&quot;diving_results.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;이름  5m점수  10m점수</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">scores</span> <span class="ow">in</span> <span class="n">diving_results_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">score1</span><span class="p">,</span> <span class="n">score2</span> <span class="o">=</span> <span class="n">scores</span>
         <span class="n">line</span> <span class="o">=</span> <span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;  &quot;</span> <span class="o">+</span> <span class="n">score1</span> <span class="o">+</span> <span class="s2">&quot;  &quot;</span> <span class="o">+</span> <span class="n">score2</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -1197,7 +1198,8 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>권준기  7.13  9.11
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>이름  5m점수  10m점수
+권준기  7.13  9.11
 김세윤  8.55  8.35
 나진서  9.02  7.12
 마동탁  8.35  8.65
@@ -1671,7 +1673,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/populations.txt&#39;),
- &lt;http.client.HTTPMessage at 0x7f4eac2d1d00&gt;)
+ &lt;http.client.HTTPMessage at 0x7f716bfaaf10&gt;)
 </pre></div>
 </div>
 </div>
