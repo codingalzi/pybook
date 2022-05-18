@@ -659,7 +659,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f716870ec10&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f0b1c1cacd0&gt;)
 </pre></div>
 </div>
 </div>
@@ -680,6 +680,19 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
     <span class="n">target_path</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">/</span> <span class="n">filename</span>
 
     <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">target_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>앞서의 긴 코드가 다음 한 줄 코드로 대체된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myWget</span><span class="p">(</span><span class="s2">&quot;results5m.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f0b1da46b80&gt;)
 </pre></div>
 </div>
 </div>
@@ -1072,7 +1085,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results10m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f716bf8aac0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results10m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f0b1da46700&gt;)
 </pre></div>
 </div>
 </div>
@@ -1184,7 +1197,6 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
         <span class="n">score1</span><span class="p">,</span> <span class="n">score2</span> <span class="o">=</span> <span class="n">scores</span>
         <span class="n">line</span> <span class="o">=</span> <span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;  &quot;</span> <span class="o">+</span> <span class="n">score1</span> <span class="o">+</span> <span class="s2">&quot;  &quot;</span> <span class="o">+</span> <span class="n">score2</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-    
 </pre></div>
 </div>
 </div>
@@ -1673,7 +1685,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/populations.txt&#39;),
- &lt;http.client.HTTPMessage at 0x7f716bfaaf10&gt;)
+ &lt;http.client.HTTPMessage at 0x7f0b1c1ce820&gt;)
 </pre></div>
 </div>
 </div>
