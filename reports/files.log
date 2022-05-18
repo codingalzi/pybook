@@ -17,14 +17,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import wc
+path = './data'
+url = 'https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/data/results10m.txt'
+fName = 'results10m.txt'
+
+myWget(path, url, fName)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1084/816188502.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mimport[0m [0mwc[0m[0;34m[0m[0;34m[0m[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m/tmp/ipykernel_1672/2215538898.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      3[0m [0mfName[0m [0;34m=[0m [0;34m'results10m.txt'[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;34m[0m[0m
+[0;32m----> 5[0;31m [0mmyWget[0m[0;34m([0m[0mpath[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0mfName[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mModuleNotFoundError[0m: No module named 'wc'
-ModuleNotFoundError: No module named 'wc'
+[0;31mNameError[0m: name 'myWget' is not defined
+NameError: name 'myWget' is not defined
 
