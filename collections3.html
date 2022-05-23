@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -306,7 +309,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#sec-iterators">
    14.2. 이터레이터
   </a>
  </li>
@@ -356,7 +359,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#sec-iterators">
    14.2. 이터레이터
   </a>
  </li>
@@ -534,8 +537,8 @@ b
 </div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2><span class="section-number">14.2. </span>이터레이터<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sec-iterators">
+<span id="id3"></span><h2><span class="section-number">14.2. </span>이터레이터<a class="headerlink" href="#sec-iterators" title="Permalink to this headline">¶</a></h2>
 <p><strong>이터레이터</strong><font size = "2">iterator</font>는 값을 하나씩 꺼낼 수 있는 객체로,
 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 메서드를 갖는다.
 예를 들어, 모든 이터러블 객체를 <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> 메서드를 이용하여 이터레이터로 변환시킬 수 있다.</p>
@@ -622,7 +625,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f51401bf490&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f466c2c3430&gt;
 </pre></div>
 </div>
 </div>
@@ -835,7 +838,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object squares at 0x7f5140180f90&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object squares at 0x7f466c2187b0&gt;
 </pre></div>
 </div>
 </div>
