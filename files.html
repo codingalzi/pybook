@@ -534,7 +534,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib.request</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
 
 <span class="c1"># 파일 서버 기본 주소</span>
 <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/data/&quot;</span>
@@ -547,12 +547,12 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 <span class="n">target_path_5m</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">/</span> <span class="s2">&quot;results5m.txt&quot;</span>
 
 <span class="c1"># 다운로드와 저장 실행</span>
-<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">file_url_5m</span><span class="p">,</span> <span class="n">target_path_5m</span><span class="p">)</span>
+<span class="n">urlretrieve</span><span class="p">(</span><span class="n">file_url_5m</span><span class="p">,</span> <span class="n">target_path_5m</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f5f30231fd0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f9d1461a4c0&gt;)
 </pre></div>
 </div>
 </div>
@@ -569,9 +569,10 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
     <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/data/&quot;</span>
     <span class="n">file_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">filename</span>
 
+    <span class="n">data_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span>
     <span class="n">target_path</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">/</span> <span class="n">filename</span>
 
-    <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">target_path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">urlretrieve</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">target_path</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -584,7 +585,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f5f312c41c0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f9d15e97d60&gt;)
 </pre></div>
 </div>
 </div>
@@ -930,7 +931,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 <td class="text-align:left"><p>기존 파일 끝에 추가하기</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>‘r+’</p></td>
-<td class="text-align:left"><p>새파일 생성 후 쓰기와 읽기. 기존 파일 내용 삭제</p></td>
+<td class="text-align:left"><p>기존 파일 읽기 및 쓰기. 기존 파일 없으면 새로 생성</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>‘a+’</p></td>
 <td class="text-align:left"><p>기존 파일 끝에 추가와 읽기</p></td>
@@ -976,7 +977,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results10m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f5f312a7cd0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results10m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f9d15e97e20&gt;)
 </pre></div>
 </div>
 </div>
