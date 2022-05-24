@@ -552,7 +552,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f9d1461a4c0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f0a24547d30&gt;)
 </pre></div>
 </div>
 </div>
@@ -566,10 +566,14 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myWget</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/data/&quot;</span>
+    <span class="c1"># 다운로드 대상 파일 경로</span>
     <span class="n">file_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">filename</span>
 
+    <span class="c1"># 저장위치 지정과 생성</span>
     <span class="n">data_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span>
+    <span class="n">data_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># 저장 경로와 파일명</span>
     <span class="n">target_path</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">/</span> <span class="n">filename</span>
 
     <span class="k">return</span> <span class="n">urlretrieve</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">target_path</span><span class="p">)</span>
@@ -585,7 +589,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f9d15e97d60&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f0a255bccd0&gt;)
 </pre></div>
 </div>
 </div>
@@ -977,7 +981,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results10m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f9d15e97e20&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results10m.txt&#39;), &lt;http.client.HTTPMessage at 0x7f0a245b25b0&gt;)
 </pre></div>
 </div>
 </div>
