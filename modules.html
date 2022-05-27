@@ -654,26 +654,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5141777869681606
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">np_random</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np_random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9406152211112201
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8229259101100339
 </pre></div>
 </div>
 </div>
@@ -687,6 +668,32 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="go">NameError: name &#39;numpy&#39; is not defined</span>
 </pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> 도 하나의 모듈이기에 그 안에 포함된 <code class="docutils literal notranslate"><span class="pre">random()</span></code> 함수만 따로 불러올 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>그러면 <code class="docutils literal notranslate"><span class="pre">random()</span></code> 함수를 바로 호출할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9905867078606437
+</pre></div>
+</div>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> 모듈과 <code class="docutils literal notranslate"><span class="pre">numpy.ranom.random()</span></code> 함수</p>
+<p>함수와 모듈이 이름이 동일하지만 함수와 모듈은 당연히 다른 객체이다.
+기본적으로 소괄호(<code class="docutils literal notranslate"><span class="pre">()</span></code>) 사용여부로 구분하면 된다.</p>
 </div>
 <p><strong>클래스 불러오기</strong></p>
 <p><a class="reference internal" href="casestudy_function_interfaces.html#ch-casestudy-function-interface"><span class="std std-ref">사례 연구: 함수 인터페이스</span></a>에서 소개한 <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈을
@@ -708,7 +715,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="info admonition">
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 메서드</p>
 <p><code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 인스턴스를 생성할 때 <code class="docutils literal notranslate"><span class="pre">Turtle()</span></code> 처럼 마치 하나의 함수를 호출하듯이 표현한다.
-실제로 객체를 생성할 때 클래스에 포함된 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 라는 특별한 메서드가 실행된다.</p>
+실제로 객체를 생성할 때 클래스에 포함된 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 라는 특별한 메서드가 실행된다.
+또한 클래스는 보통 대문자로 시작하기에 함수 호출과도 쉽게 구분된다.</p>
 </div>
 </div>
 <div class="section" id="id4">
@@ -754,7 +762,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/wc.py&#39;), &lt;http.client.HTTPMessage at 0x7ff0400bef70&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/wc.py&#39;), &lt;http.client.HTTPMessage at 0x7fc212b69370&gt;)
 </pre></div>
 </div>
 </div>
@@ -817,13 +825,13 @@ def linecount<span class="o">(</span>file_name<span class="o">)</span>:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/__init__.py&#39;), &lt;http.client.HTTPMessage at 0x7ff01f583b80&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/__init__.py&#39;), &lt;http.client.HTTPMessage at 0x7fc212b69c10&gt;)
 </pre></div>
 </div>
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">os</span></code> 모듈의 <code class="docutils literal notranslate"><span class="pre">listdir()</span></code> 함수를 이용하여
-<code class="docutils literal notranslate"><span class="pre">codes</span></code> 디렉토리에 두 개의 파일이 있음을 확인한다.</p>
+<code class="docutils literal notranslate"><span class="pre">codes</span></code> 디렉토리에 두 개의 파일이 포함되어 있음을 확인한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -837,6 +845,11 @@ def linecount<span class="o">(</span>file_name<span class="o">)</span>:
 </pre></div>
 </div>
 </div>
+</div>
+<div class="info admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">__pycache__</span></code> 디렉토리</p>
+<p>파이썬 코드를 실행하면 파이썬 실행기<font size='2'>interpreter</font>가 실행에 필요한
+파일들을 생성해서 보관하는 디렉토리로 사용한다.</p>
 </div>
 <p><strong>라이브러리 경로</strong></p>
 <p>현재 작업 디렉토리가 아닌 디렉토리에 포함된 파이썬 파일을 모듈로 불러오는 기본적인
