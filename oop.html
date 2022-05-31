@@ -459,23 +459,7 @@ OOP 역시 예외가 아니다.
 </div>
 <p><strong>스프라이트 클래스 선언</strong></p>
 <p>아래 그림에 있는 스프라이트 객체 생성에 사용될 클래스를 선언한다.</p>
-<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/collision_detection1.png" width="600"/></div><div class="info admonition">
-<p class="admonition-title">클래스와 객체</p>
-<p>클래스는 객체를 생성할 때 사용되는 설계도라고 이해할 수 있다.
-클래스의 객체는 설계도에 묘사된 상태를 띄게 되며,
-설계도에서 구현된 기능을 갖는다.</p>
-<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">up2three</span></code> 변수는 집합 <code class="docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">3}</span></code> 을 가리킨다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">up2three</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-</pre></div>
-</div>
-<p>이를 달리 표현하면, <code class="docutils literal notranslate"><span class="pre">up2three</span></code> 는 <code class="docutils literal notranslate"><span class="pre">set</span></code> 클래스의 객체인 <code class="docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">3}</span></code> 를 가리키는 변수다.
-이처럼 클래스를 함수 호출하는 방식과 유사하게 이용하여 해당 클래스의 객체를 생성한다.
-집합을 포함하여 지금까지 다뤄온 리스트, 사전, 정수, 부동소수점, 부울값 등 모든 값은
-해당 자료형 클래스의 객체다.</p>
-<p>집합 객체의 상태는 예를 들어, 집합의 원소, 원소의 개수 등을 가리키며,
-집합의 기능은 <code class="docutils literal notranslate"><span class="pre">union()</span></code>, <code class="docutils literal notranslate"><span class="pre">add()</span></code> 등 <a class="reference internal" href="collections2.html#sec-set-methods"><span class="std std-ref">집합 자료형의 다양한 메서드</span></a>로 지정된다.</p>
-</div>
-<p>각 스프라이트 객체는 지정된 위치로의 이동 및 자신의 이미지를 보여주는 기능을
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/collision_detection1.png" width="600"/></div><p>각 스프라이트 객체는 지정된 위치로의 이동 및 자신의 이미지를 보여주는 기능을
 수행하는 <code class="docutils literal notranslate"><span class="pre">render()</span></code> 메서드와 함께
 다른 스프라이트와의 충돌을 감지하는 기능을 갖는 세 종류의 메서드를 갖는다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sprite</span><span class="p">():</span>
@@ -535,25 +519,6 @@ OOP 역시 예외가 아니다.
 <span class="c1"># 스프라이트 모음 리스트</span>
 <span class="n">sprites</span> <span class="o">=</span> <span class="p">[</span><span class="n">wizard</span><span class="p">,</span> <span class="n">goblin</span><span class="p">,</span> <span class="n">pacman</span><span class="p">,</span> <span class="n">cherry</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">ball</span><span class="p">]</span>
 </pre></div>
-</div>
-<div class="info admonition">
-<p class="admonition-title">생성자</p>
-<p>아래 코드는 생성된 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 객체를 <code class="docutils literal notranslate"><span class="pre">wizard</span></code> 변수가 가리키도록 한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wizard</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;wizard.gif&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>즉, 아래 코드가 마치 함수 호출처럼 실행되면 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 객체가 하나 생성된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Sprite</span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;wizard.gif&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>실제로는 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 메서드가 아래 방식으로 적절한 인자들과 함께 호출된다.
-<code class="docutils literal notranslate"><span class="pre">self</span></code> 매개변수에 해당하는 인자는 생성되는 객체가 사용된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="n">wizard</span><span class="p">,</span> <span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;wizard.gif&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>엄밀히 말하면 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 메서드는 객체를 생성하는 게 아니라
-생성되는 객체의 초기 설정을 담당하지만
-생성자라는 표현이 일반적으로 사용된다.</p>
 </div>
 <p><strong>이벤트와 콜백 함수</strong></p>
 <p>마우스 클릭, 버튼 누루기, 키 입력 등을 사용하여
