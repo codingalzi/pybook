@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -346,7 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   17.3. 메서드
+   17.3. 인스턴스 메서드
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -422,7 +419,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   17.3. 메서드
+   17.3. 인스턴스 메서드
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -535,9 +532,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>메모리 상에서 <code class="docutils literal notranslate"><span class="pre">f35</span></code> 변수가 가리키는 분수 객체는 아래와 같이 구성된다.</p>
-<figure>
-<img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/fraction1.png" width="80%">
-</figure><div class="info admonition">
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/fraction1.png" width="80%"></div><div class="info admonition">
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">self</span></code>의 역할</p>
 <p><code class="docutils literal notranslate"><span class="pre">f35</span> <span class="pre">=</span> <span class="pre">Fraction(3,</span> <span class="pre">5)</span></code> 방식으로 변수 할당이 실행되면
 파이썬 해석기는 다음을 싱행한다.</p>
@@ -549,184 +544,548 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="id7">
 <h3><span class="section-number">17.2.2. </span>인스턴스 변수와 속성<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>클래스 내부에서 선언된 <code class="docutils literal notranslate"><span class="pre">self.top</span></code> 과 <code class="docutils literal notranslate"><span class="pre">self.bottom</span></code> 은
-<strong>인스턴스 변수</strong><font size='2'>instance variable</font>다.
-인스턴스 변수는 해당 클래스의 영역 내에서만 의미를 갖는다.
-일반적으로 생성자가 실행되는 동안 선언되지만
-클래스 내부에서 다른 방식으로 선언될 수도 있다.
-<strong>인스턴스 속성</strong><font size="2">instance attribute</font>은
-인스턴스 변수에 할당된 값이며,
-생성된 객체의 속성을 나타낸다.</p>
-<div class="info admonition">
-<p class="admonition-title">클래스 변수</p>
-<p>클래스 내부에서 선언되는 변수는
-<code class="docutils literal notranslate"><span class="pre">self</span></code> 와 함께 선언되는 인스턴스 변수와
-<code class="docutils literal notranslate"><span class="pre">self</span></code> 를 사용하지 않는 <strong>클래스 변수</strong><font size='2'>class variable</font> 로
-구분된다.
-여기서는 인스턴스 변수만 다루며 클래스 변수는 나중에 자세히 소개한다.</p>
+<p><strong>인스턴스 변수</strong><font size='2'>instance variable</font>는
+클래스 내부에서 <code class="docutils literal notranslate"><span class="pre">self</span></code>와 함께 선언된 변수를 가리킨다.
+<code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 인스턴스 변수는 <code class="docutils literal notranslate"><span class="pre">self.top</span></code> 과 <code class="docutils literal notranslate"><span class="pre">self.bottom</span></code> 두 개다.
+인스턴스 변수는 해당 클래스의 영역<font size='2'>scope</font> 내에서만 의미를 갖는다.
+인스턴스 변수는 일반적으로 생성자가 실행되는 동안 선언되지만
+클래스 내부 어딘가에서 일반 전역 변수처럼 선언될 수도 있다.</p>
+<p>클래스의 인스턴스는 인스턴스 변수가 가리키는 값을 속성을 갖게 되며,
+이런 의미에서 인스턴스 변수가 가리키는 값을
+<strong>인스턴스 속성</strong><font size="2">instance attribute</font>이라 부른다.
+인스턴스 속성은 따라서 클래스의 인스턴스가 생성되어야만 의미를 갖는다.</p>
+<p>인스턴스 변수 이외에 <code class="docutils literal notranslate"><span class="pre">self</span></code> 를 사용하지 않는
+<strong>클래스 변수</strong><font size='2'>class variable</font> 가 선언될 수도 있지만
+이에 대해서는 나중에 자세히 소개한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">f35</span></code> 가 가리키는 객체의 인스턴스 변수와 인스턴스 속성을 각각 키와 값으로 갖는
+항목들의 사전을 <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 의 속성으로 확인한다.
+<code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 는 모든 객체에 기본으로 포함되는 속성 중에 하나다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f35</span><span class="o">.</span><span class="vm">__dict__</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;top&#39;: 3, &#39;bottom&#39;: 5}
+</pre></div>
+</div>
+</div>
+</div>
+<p>모든 객체에 기본으로 포함된 속성 중에 해당 객체의 클래스 정보를 가리키는 <code class="docutils literal notranslate"><span class="pre">__class__</span></code> 속성도
+종종 사용된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f35</span><span class="o">.</span><span class="vm">__class__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__.Fraction
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">__main__</span></code> 은 현재 실행되는 코드가 저장된 모듈을 가리킨다.
+따라서 <code class="docutils literal notranslate"><span class="pre">__main__.Fraction</span></code> 는 현재 파일에서 정의된 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 객체라는
+사실을 확인해준다.</p>
 </div>
 </div>
 <div class="section" id="id8">
-<h2><span class="section-number">17.3. </span>메서드<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">17.3. </span>인스턴스 메서드<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>클래스 내부에 선언된 함수를 메서드라 부른다.
+이중에 첫째 매개변수로 <code class="docutils literal notranslate"><span class="pre">self</span></code> 를 사용하는 함수가 인스턴스 메서드다.
+인스턴스 메서드는 클래스의 인스턴스가 생성되어야만 활용될 수 있다.
+인스턴스 메서드 이외에 클래스 메서드, 정적 메서드 등이 있지만 여기서는 다루지 않는다.</p>
 <div class="section" id="id9">
 <h3><span class="section-number">17.3.1. </span>매직 메서드<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>매직 메서드<font size='2'>magic method</font>는 클래스에 기본적으로 포함되는 메서드다.
+매직 메서드의 이름은 밑줄 두 개로 감싸지며,
+클래스가 기본적으로 갖춰야 하는 기능을 제공한다.</p>
+<p>클래스에 기본으로 포함된 매직 메서드를 <code class="docutils literal notranslate"><span class="pre">dir()</span></code> 함수를 이용하여 확인할 수 있다.
+그러면 <code class="docutils literal notranslate"><span class="pre">__class__</span></code>, <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 등과 같은 기본 속성과 함께 다른 다양한 기본 속성과
+매직 메서드의 리스트를 확인할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">f35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;bottom&#39;,
+ &#39;top&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>이중에 중요한 매직 메서드 몇 개를 살펴본다.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">my_frantion</span></code>이 가리키는 분수는 ‘3/5’에 해당하는 분수이다.
+<p><code class="docutils literal notranslate"><span class="pre">f35</span></code> 는 ‘3/5’에 해당하는 분수를 가리킨다.
 그런데 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 이용하여 이 사실을 확인하려면
 이상한 결과만 확인한다.</p>
-<p>print(f35)</p>
-<p>이유는 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스가 자신의 인스턴스를 소개하는 기능을 제공하지 않았기 때문이다.
-결국 <code class="docutils literal notranslate"><span class="pre">f35</span></code> 입장에서는 자신이 어떤 클래스의 인스턴스이며
-자신이 저장된 메모리 주소만을 알려준다.</p>
-<p>파이썬의 모든 클래스는 생성자와 함께 기본적으로 포함하는 메서드 목록이 있다.
-이유는 파이썬의 모든 클래스는 기본적으로 최상위 클래스인 <code class="docutils literal notranslate"><span class="pre">object</span></code> 클래스를
-상속한다.
-따라서 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 엄밀한 정의는 다음과 같다.</p>
-<p>class Fraction(object):
-“””Fraction 클래스”””</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def __init__(self, top, bottom):
-    &quot;&quot;&quot;생성자 메서드
-    top: 분자
-    bottom: 분모
-    &quot;&quot;&quot;
-    self.top = top
-    self.bottom = bottom
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f35</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>상속을 통해 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 등 기본으로 지정된 메서드를 여러 개 함께 상속한다.
-이렇게 자동으로 상속받으며 두 개의 밑줄이 양쪽을 감싼느 메서드를 <strong>매직 메서드</strong>(magic method)라 부르며,
-이중에 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드도 포함된다.
-이 사실을  <code class="docutils literal notranslate"><span class="pre">dir()</span></code> 함수를 이용하여 확인할 수 있다.</p>
-<p>dir(Fraction)</p>
-<p>언급된 매직메서드 각자는 고유의 역할을 수행하기에 준비되었지만 대부분 본체가 없는,
-즉 제대로 정의되지 않은 채로 상속된다.
-이 중에 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드는 해당 클래스의 인스턴스를 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 통해
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7fa70f63c700&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>이유는 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스가 자신의 인스턴스를 소개하는 기능을 제공하지 않았기 때문이다.
+이런 상황에서 <code class="docutils literal notranslate"><span class="pre">f35</span></code> 입장에서는 자신이 어떤 클래스의 인스턴스이며
+자신이 저장된 메모리 주소만을 알려주게 된다.</p>
+<p>클래스의 인스턴스가 제대로 자신을 소개하도록 하려면 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드를
+사용하가 직접 정의해야 한다.
+즉, <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드는 해당 클래스의 인스턴스를 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 통해
 어떻게 보여줄 것인가를 문자열로 지정하는 함수로 활용된다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스를 선언할 때 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드를 아래처럼 재정의(overriding) 해보자.</p>
-<p>class Fraction:
-“””Fraction 클래스”””</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def __init__(self, top, bottom):
-    &quot;&quot;&quot;생성자 메서드
-    top: 분자
-    bottom: 분모
-    &quot;&quot;&quot;
-    self.top = top
-    self.bottom = bottom
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Fraction 클래스&quot;&quot;&quot;</span>
 
-def __str__(self):
-    return f&quot;{self.top}/{self.bottom}&quot;
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;생성자 메서드</span>
+<span class="sd">        top: 분자</span>
+<span class="sd">        bottom: 분모</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">bottom</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># 3/5, 1/2 형식으로 출력</span>
 </pre></div>
 </div>
-<p>f35 = Fraction(3, 5)</p>
-<p>이제 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수가 원했던 대로 작동한다.</p>
-<p>print(f35)</p>
+</div>
+</div>
+<p>클래스를 재정의 했으면 객체로 새로 생성해야 한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f35</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>이제 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 실행하면
+3/5, 1/2 등의 형식으로 출력한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3/5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;피자의 </span><span class="si">{</span><span class="n">f35</span><span class="si">}</span><span class="s2">를 먹었다.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>피자의 3/5를 먹었다.
+</pre></div>
+</div>
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드를 직접 호출해도 동일한 결과를 얻는다.</p>
-<p>f35.<strong>str</strong>()</p>
-<p>print(f”피자의 {f35}를 먹었다.”)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f35</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3/5&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">str()</span></code> 함수는 인자로 사용된 객체가 제공하는 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드를 내부에서 호출한다.</p>
-<p>str(f35)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">f35</span><span class="p">)</span> <span class="c1"># f35.__str__()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3/5&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> 메서드</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 잘 작동한다.
+하지만 그냥 <code class="docutils literal notranslate"><span class="pre">f35</span></code> 를 확인하려하면 여전히 제대로 보여지지 않는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f35</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction at 0x7fa70f61c700&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>이를 해결하려면 <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> 메서드를 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드처럼 추가해야 한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Fraction 클래스&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;생성자 메서드</span>
+<span class="sd">        top: 분자</span>
+<span class="sd">        bottom: 분모</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">bottom</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># 3/5, 1/2 형식으로 출력</span>
+    
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># 3/5, 1/2 형식으로 출력</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f35</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f35</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3/5
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> 를 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 와 다르게 정의해도 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Fraction 클래스&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;생성자 메서드</span>
+<span class="sd">        top: 분자</span>
+<span class="sd">        bottom: 분모</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">bottom</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># 3/5, 1/2 형식으로 출력</span>
+    
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">분의 </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># 5분의 3 형식으로 출력</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f35</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f35</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5분의 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3/5
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> 메서드를 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 대신 사용할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Fraction 클래스&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;생성자 메서드</span>
+<span class="sd">        top: 분자</span>
+<span class="sd">        bottom: 분모</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">bottom</span>
+
+<span class="c1">#     def __str__(self):</span>
+<span class="c1">#         return f&quot;{self.top}/{self.bottom}&quot;  # 3/5, 1/2 형식으로 출력</span>
+    
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">분의 </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># 5분의 3 형식으로 출력</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f35</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f35</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5분의 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5분의 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>따라서 <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> 와 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 를 동일하게 작동하게 하려면
+<code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> 메서드 하나만 구현하면 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Fraction 클래스&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;생성자 메서드</span>
+<span class="sd">        top: 분자</span>
+<span class="sd">        bottom: 분모</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">bottom</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># 3/5, 1/2 형식으로 출력</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 메서드</strong></p>
-<p>분수의 덧셈을 시도하면 오류가 발생한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">f2</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<p>아래 두 개의 이용하여 분수의 덧셈이 가능한지 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f14</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">f12</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>그런데 분수의 덧셈을 시도하면 오류가 발생한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">+</span> <span class="n">f2</span>
+<span class="go">TypeError                                 Traceback (most recent call last)</span>
+<span class="go">&lt;ipython-input-13-ad0256b81ae0&gt; in &lt;module&gt;</span>
+<span class="go">----&gt; 1 f1 + f2</span>
 
-<span class="n">f1</span> <span class="o">+</span> <span class="n">f2</span>
-<span class="o">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="n">ad0256b81ae0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">f1</span> <span class="o">+</span> <span class="n">f2</span>
-
-<span class="ne">TypeError</span><span class="p">:</span> <span class="n">unsupported</span> <span class="n">operand</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="o">+</span><span class="p">:</span> <span class="s1">&#39;Fraction&#39;</span> <span class="ow">and</span> <span class="s1">&#39;Fraction&#39;</span>
+<span class="go">TypeError: unsupported operand type(s) for +: &#39;Fraction&#39; and &#39;Fraction&#39;</span>
 </pre></div>
 </div>
 <p>이유는 덧셈 연산자 <code class="docutils literal notranslate"><span class="pre">+</span></code>가 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 인스턴스에 대해 지원되지 않기 때문이다.</p>
 <p>덧셈, 뺄셈 등 사칙연산에 대해 일반적으로 사용되는 기호를 사용하려면
 각각의 기호에 해당하는 매직 메서드를 선언해야 한다.
 예를 들어 분수의 덧셈을 위해 <code class="docutils literal notranslate"><span class="pre">+</span></code> 연산자를 사용하려면
-<code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스에 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 메서드가 적절하게 정의되어 있어야 한다.
-그러면 아래 표현식은 <code class="docutils literal notranslate"><span class="pre">f1</span> <span class="pre">+</span> <span class="pre">f2</span></code>에 해당하는 값을 가리키게 된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
-</pre></div>
-</div>
+<code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스에 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 메서드가 적절하게 정의되어 있어야 한다.</p>
+<div class="info admonition">
+<p class="admonition-title">분수의 덧셈</p>
 <p>분수의 덧셈은 아래와 같이 정의된다.</p>
 <div class="math notranslate nohighlight">
 \[\frac {a}{b} + \frac {c}{d} = \frac {ad}{bd} + \frac {cb}{bd} = \frac{ad+cb}{bd}\]</div>
-<p>이를 구현하는 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 메서드를 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스에 추가하자.</p>
-<p>class Fraction:
-“””Fraction 클래스”””</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def __init__(self, top, bottom):
-    &quot;&quot;&quot;생성자 메서드
-    top: 분자
-    bottom: 분모
-    &quot;&quot;&quot;
-    self.top = top
-    self.bottom = bottom
+</div>
+<p>분수의 덧셈을 지원하는 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 메서드를 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스에 추가하자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Fraction 클래스&quot;&quot;&quot;</span>
 
-def __str__(self):
-    return f&quot;{self.top}/{self.bottom}&quot;
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;생성자 메서드</span>
+<span class="sd">        top: 분자</span>
+<span class="sd">        bottom: 분모</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">bottom</span>
 
-def __add__(self, other_fraction):
-    new_num = self.top * other_fraction.den + \
-                self.bottom * other_fraction.num
-    new_den = self.bottom * other_fraction.den
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>
 
-    return Fraction(new_num, new_den)
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
+        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">top</span>
+        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span>
+
+        <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">new_top</span><span class="p">,</span> <span class="n">new_bottom</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>f1 = Fraction(1, 4)
-f2 = Fraction(1, 2)
-f3 = f1 + f2
-print(f3)</p>
-<p>덧셈이 잘 작동하지만 결과값이 기약분수의 형태가 아니다.
+</div>
+</div>
+<p>이제 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code>의 인스턴스는 생성자를 제외하고 두 개의 메서드를 더 갖는다.</p>
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/fraction2.png" width="80%"></div><p>덧셈도 잘 작동한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f14</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">f12</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">f14</span> <span class="o">+</span> <span class="n">f12</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6/8
+</pre></div>
+</div>
+</div>
+</div>
+<p>그런데 덧셈의 결과가 기약분수의 형태가 아니다.
 기약분수를 계산하려면 최대공약수(gcd)를 계산하는 알고리즘이 필요하다.</p>
-<div class="proof example admonition" id="euclid_gcd">
-<p class="admonition-title"><span class="caption-number">Example 17.1 </span> (유클리드 호젯법)</p>
-<div class="example-content section" id="proof-content">
+<div class="info admonition">
+<p class="admonition-title">유클리드 호젯법</p>
 <p>두 개의 정수 <span class="math notranslate nohighlight">\(m\)</span>과 <span class="math notranslate nohighlight">\(n\)</span>의 최대공약수를 가장 빠르고 효율적으로 계산하는 기법은 유클리드 호젯법이다.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(m\)</span>을 <span class="math notranslate nohighlight">\(n\)</span>으로 나눌 수 있으면 <span class="math notranslate nohighlight">\(n\)</span>이 최대공약수이다.</p></li>
 <li><p>그렇지 않으면 <span class="math notranslate nohighlight">\(n\)</span>과 <span class="math notranslate nohighlight">\(m\,\%\, n\)</span>의 최대공약수가 원하는 최대공약수이다.</p></li>
 </ul>
 </div>
-</div><p>위 기법을 구현하면 다음과 같다.</p>
-<p>def gcd(m, n):
-while m % n != 0:
-m, n = n, m % n
-return n</p>
-<p>print(gcd(20, 10))
-print(gcd(20, 30))</p>
-<p><code class="docutils literal notranslate"><span class="pre">gcd()</span></code> 함수를 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 함수의 정의에 활용하자.</p>
-<p>class Fraction:
-“””Fraction 클래스”””</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def __init__(self, top, bottom):
-    &quot;&quot;&quot;생성자 메서드
-    top: 분자
-    bottom: 분모
-    &quot;&quot;&quot;
-    self.top = top
-    self.bottom = bottom
-
-def __str__(self):
-    return f&quot;{self.top}/{self.bottom}&quot;
-
-def __add__(self, other_fraction):
-    new_num = self.top * other_fraction.den + \
-                 self.bottom * other_fraction.num
-    new_den = self.bottom * other_fraction.den
-    common = gcd(new_num, new_den)
-    
-    return Fraction(new_num // common, new_den // common)
+<p>아래 <code class="docutils literal notranslate"><span class="pre">gcd()</span></code> 함수는 유클리드 호젯섭을 구현한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">m</span> <span class="o">%</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">%</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">n</span>
 </pre></div>
 </div>
-<p>이제 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code>의 인스턴스는 생성자를 제외하고 두 개의 메서드를 더 갖는다.</p>
-<figure>
-<img src="https://raw.githubusercontent.com/codingalzi/problem_solving_with_algorithms/master/_sources/Introduction/Figures/fraction2.png" width="50%">
-</figure><p>이제 8/6이 아니라 3/4를 반환한다.</p>
-<p>f1 = Fraction(1, 4)
-f2 = Fraction(1, 2)
-f3 = f1 + f2
-print(f3)</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">gcd</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gcd</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">gcd()</span></code> 함수를 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 함수의 정의에 활용하자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Fraction 클래스&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;생성자 메서드</span>
+<span class="sd">        top: 분자</span>
+<span class="sd">        bottom: 분모</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">bottom</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
+        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> \
+                     <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">top</span>
+        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span>
+        <span class="n">common</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">new_top</span><span class="p">,</span> <span class="n">new_bottom</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">new_top</span> <span class="o">//</span> <span class="n">common</span><span class="p">,</span> <span class="n">new_bottom</span> <span class="o">//</span> <span class="n">common</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>이제 8/6 이 아니라 3/4 을 반환한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f14</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">f12</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">f14</span> <span class="o">+</span> <span class="n">f12</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3/4
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">__eq__()</span></code> 메서드: 객체의 동등성과 동일성</strong></p>
 <p>두 객체의 <strong>동일성</strong>(identity) 여부는 비교되는 두 객체가 동일한 메모리 주소에 저장되었는가에 따라 결정된다.
 반면에 메모리의 주소가 아니라 객체가 표현하는 값의 동일성 여부에 따라
@@ -735,17 +1094,51 @@ print(f3)</p>
 서로 다른 메모리에 저장되며, 따라서 두 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>와 <code class="docutils literal notranslate"><span class="pre">y</span></code>는 서로 다른 객체를 참조한다.
 따라서 두 변수가 참조하는 값은 동등하지 않다고 판정된다.
 이와같이 두 값의 동등성을 판단하는 것을 <strong>얕은 동등성</strong>(shallow equality)이라 부른다.</p>
-<p>x = Fraction(1, 2)
-y = Fraction(1, 2)
-x == y</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
 <p>물론 두 객체가 동일하지 않다고 판단된다.</p>
-<p>x is y</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>참고</strong>: <a class="reference external" href="https://pythontutor.com/visualize.html#code=class%20Fraction%3A%0A%20%20%20%20%22%22%22Fraction%20%ED%81%B4%EB%9E%98%EC%8A%A4%22%22%22%0A%0A%20%20%20%20def%20__init__%28self,%20top,%20bottom%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22%EC%83%9D%EC%84%B1%EC%9E%90%20%EB%A9%94%EC%84%9C%EB%93%9C%0A%20%20%20%20%20%20%20%20top%3A%20%EB%B6%84%EC%9E%90%0A%20%20%20%20%20%20%20%20bottom%3A%20%EB%B6%84%EB%AA%A8%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20self.top%20%3D%20top%0A%20%20%20%20%20%20%20%20self.bottom%20%3D%20bottom%0A%0A%20%20%20%20def%20__str__%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20f%22%7Bself.top%7D/%7Bself.bottom%7D%22%0A%0A%20%20%20%20def%20__add__%28self,%20other_fraction%29%3A%0A%20%20%20%20%20%20%20%20new_num%20%3D%20self.top%20*%20other_fraction.den%20%2B%20%5C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20self.bottom%20*%20other_fraction.num%0A%20%20%20%20%20%20%20%20new_den%20%3D%20self.bottom%20*%20other_fraction.den%0A%20%20%20%20%20%20%20%20common%20%3D%20gcd%28new_num,%20new_den%29%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20return%20Fraction%28new_num%20//%20common,%20new_den%20//%20common%29%0A%0Ax%20%3D%20Fraction%281,%202%29%0Ay%20%3D%20Fraction%281,%202%29%0Aprint%28x%20%3D%3D%20y%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor-얕은 동등성</a></p>
 <p>반면에 아래처럼 두 변수가 참조하는 객체를 동일(identical)하게 하면 당연히 다른 결과가 나온다.</p>
-<p>x = Fraction(1, 2)
-y = x
-print(x == y)
-print(x is y)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+</pre></div>
+</div>
+</div>
+</div>
 <figure>
 <img src="https://raw.githubusercontent.com/codingalzi/problem_solving_with_algorithms/master/_sources/Introduction/Figures/fraction3.png" width="80%">
 </figure><p>반면에 <strong>깊은 동등성</strong>(deep equality)은 두 객체가 (의도된) 동일한 값을
@@ -755,33 +1148,38 @@ print(x is y)</p>
 <div class="math notranslate nohighlight">
 \[\frac {a}{b} = \frac {c}{d} \Longleftrightarrow ad = bc\]</div>
 <p>이를 구현하는 <code class="docutils literal notranslate"><span class="pre">__eq__()</span></code> 메서드를 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스에 추가하자.</p>
-<p>class Fraction:
-“””Fraction 클래스”””</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def __init__(self, top, bottom):
-    &quot;&quot;&quot;생성자 메서드
-    top: 분자
-    bottom: 분모
-    &quot;&quot;&quot;
-    self.top = top
-    self.bottom = bottom
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Fraction 클래스&quot;&quot;&quot;</span>
 
-def __str__(self):
-    return f&quot;{self.top}/{self.bottom}&quot;
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;생성자 메서드</span>
+<span class="sd">        top: 분자</span>
+<span class="sd">        bottom: 분모</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">bottom</span>
 
-def __add__(self, other_fraction):
-    new_num = self.top * other_fraction.den + \
-                 self.bottom * other_fraction.num
-    new_den = self.bottom * other_fraction.den
-    common = gcd(new_num, new_den)
-    
-    return Fraction(new_num // common, new_den // common)
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>
 
-def __eq__(self, other_fraction):
-    first_num = self.top * other_fraction.den
-    second_num = other_fraction.num * self.bottom
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
+        <span class="n">new_num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">den</span> <span class="o">+</span> \
+                     <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">num</span>
+        <span class="n">new_den</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">den</span>
+        <span class="n">common</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">new_num</span><span class="p">,</span> <span class="n">new_den</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">new_num</span> <span class="o">//</span> <span class="n">common</span><span class="p">,</span> <span class="n">new_den</span> <span class="o">//</span> <span class="n">common</span><span class="p">)</span>
 
-    return first_num == second_num
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
+        <span class="n">first_num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">den</span>
+        <span class="n">second_num</span> <span class="o">=</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">num</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span>
+
+        <span class="k">return</span> <span class="n">first_num</span> <span class="o">==</span> <span class="n">second_num</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>이제 동등성이 의도한대로 작동한다.</p>
 <p>x = Fraction(1, 2)
