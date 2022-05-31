@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -53,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="17. 객체 지향 프로그래밍" href="oop.html" />
+    <link rel="next" title="17. 클래스, 인스턴스, 객체" href="classes_instances_objects.html" />
     <link rel="prev" title="15. 파일" href="files.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -174,13 +177,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="oop.html">
-   17. 객체 지향 프로그래밍
+  <a class="reference internal" href="classes_instances_objects.html">
+   17. 클래스, 인스턴스, 객체
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="classes_and_objects.html">
-   18. 클래스와 객체
+  <a class="reference internal" href="oop.html">
+   18. 객체 지향 프로그래밍
   </a>
  </li>
  <li class="toctree-l1">
@@ -659,7 +662,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5229386736856817
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.22456362615357217
 </pre></div>
 </div>
 </div>
@@ -690,7 +693,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3599729122992754
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7217046928012094
 </pre></div>
 </div>
 </div>
@@ -715,7 +718,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>클래스와 인스턴스에 대한 이야기는
-<a class="reference internal" href="oop.html#ch-oop"><span class="std std-numref">17장</span></a> <a class="reference internal" href="oop.html#ch-oop"><span class="std std-ref">객체 지향 프로그래밍</span></a>에서 자세히 다룬다.
+<a class="reference internal" href="oop.html#ch-oop"><span class="std std-numref">18장</span></a> <a class="reference internal" href="oop.html#ch-oop"><span class="std std-ref">객체 지향 프로그래밍</span></a>에서 자세히 다룬다.
 여기서는 인스턴스(객체)를 해당 클래스를 자료형으로 갖는 값 정도로 이해하면 된다.</p>
 <div class="info admonition">
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 메서드</p>
@@ -767,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/wc.py&#39;), &lt;http.client.HTTPMessage at 0x7f94ee14dca0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/wc.py&#39;), &lt;http.client.HTTPMessage at 0x7fca917d6e50&gt;)
 </pre></div>
 </div>
 </div>
@@ -830,7 +833,7 @@ def linecount<span class="o">(</span>file_name<span class="o">)</span>:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/__init__.py&#39;), &lt;http.client.HTTPMessage at 0x7f94ee14db80&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/__init__.py&#39;), &lt;http.client.HTTPMessage at 0x7fca917d6070&gt;)
 </pre></div>
 </div>
 </div>
@@ -1033,10 +1036,10 @@ def linecount<span class="o">(</span>file_name<span class="o">)</span>:
             <p class="prev-next-title"><span class="section-number">15. </span>파일</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="oop.html" title="next page">
+    <a class='right-next' id="next-link" href="classes_instances_objects.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">17. </span>객체 지향 프로그래밍</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>클래스, 인스턴스, 객체</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

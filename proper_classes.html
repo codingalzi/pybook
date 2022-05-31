@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="20. 상속" href="inheritance.html" />
-    <link rel="prev" title="18. 클래스와 객체" href="classes_and_objects.html" />
+    <link rel="prev" title="18. 객체 지향 프로그래밍" href="oop.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -172,13 +175,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="oop.html">
-   17. 객체 지향 프로그래밍
+  <a class="reference internal" href="classes_instances_objects.html">
+   17. 클래스, 인스턴스, 객체
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="classes_and_objects.html">
-   18. 클래스와 객체
+  <a class="reference internal" href="oop.html">
+   18. 객체 지향 프로그래밍
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -475,11 +478,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7f7abc194bb0&gt; 1
-&lt;__main__.MSDie object at 0x7f7abc194bb0&gt; 4
-&lt;__main__.MSDie object at 0x7f7abc194bb0&gt; 1
-&lt;__main__.MSDie object at 0x7f7abc194bb0&gt; 4
-&lt;__main__.MSDie object at 0x7f7abc194bb0&gt; 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7f599e1802b0&gt; 4
+&lt;__main__.MSDie object at 0x7f599e1802b0&gt; 1
+&lt;__main__.MSDie object at 0x7f599e1802b0&gt; 1
+&lt;__main__.MSDie object at 0x7f599e1802b0&gt; 5
+&lt;__main__.MSDie object at 0x7f599e1802b0&gt; 2
 </pre></div>
 </div>
 </div>
@@ -492,7 +495,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7f7abc194df0&gt;, &lt;__main__.MSDie object at 0x7f7abc194c10&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7f599e1809d0&gt;, &lt;__main__.MSDie object at 0x7f599e180910&gt;]
 </pre></div>
 </div>
 </div>
@@ -545,11 +548,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 1
 4
 1
+6
 </pre></div>
 </div>
 </div>
@@ -562,7 +565,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6): 1, MSDie(20): 8]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6): 6, MSDie(20): 10]
 </pre></div>
 </div>
 </div>
@@ -871,7 +874,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -884,7 +887,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -987,7 +990,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -999,7 +1002,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -1149,11 +1152,11 @@ private, default, protected, public 등과 같은
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="classes_and_objects.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="oop.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">18. </span>클래스와 객체</p>
+            <p class="prev-next-title"><span class="section-number">18. </span>객체 지향 프로그래밍</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="inheritance.html" title="next page">
