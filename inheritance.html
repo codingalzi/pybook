@@ -312,24 +312,29 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   21.1. 벡터의 내적
+   21.1. 모음 자료형의 상속 체계
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   21.2. 벡터의 내적
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#vector">
-     21.1.1. Vector 클래스
+     21.2.1. Vector 클래스
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     21.1.2. 메서드 재정의
+    <a class="reference internal nav-link" href="#id4">
+     21.2.2. 메서드 재정의
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   21.2. 연습문제
+  <a class="reference internal nav-link" href="#id5">
+   21.3. 연습문제
   </a>
  </li>
 </ul>
@@ -354,24 +359,29 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   21.1. 벡터의 내적
+   21.1. 모음 자료형의 상속 체계
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   21.2. 벡터의 내적
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#vector">
-     21.1.1. Vector 클래스
+     21.2.1. Vector 클래스
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     21.1.2. 메서드 재정의
+    <a class="reference internal nav-link" href="#id4">
+     21.2.2. 메서드 재정의
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   21.2. 연습문제
+  <a class="reference internal nav-link" href="#id5">
+   21.3. 연습문제
   </a>
  </li>
 </ul>
@@ -389,6 +399,8 @@ const thebe_selector_output = ".output, .cell_output"
 클래스를 선언할 때 다른 클래스의 속성과 메서드를 상속 받아 활용할 수 있다.
 상속을 받는 클래스를 <strong>자식 클래스</strong> 또는 <strong>하위 클래스</strong>,
 상속을 하는 클래스를 <strong>부모 클래스</strong> 또는 <strong>상위 클래스</strong>라고 부른다.</p>
+<div class="section" id="id2">
+<h2><span class="section-number">21.1. </span>모음 자료형의 상속 체계<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>아래 그림은 파이썬 모음 자료형의 상속 체계를 보여준다.
 예를 들어, <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스는 <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> 클래스를 상속하며,
 <code class="docutils literal notranslate"><span class="pre">Sequence</span></code>는 <code class="docutils literal notranslate"><span class="pre">Collection</span></code> 클래를 상속한다.
@@ -405,8 +417,9 @@ const thebe_selector_output = ".output, .cell_output"
 첫째, 기존에 작성된 코드를 필요에 따라 수정하고 재활용 할 수 있다는 것과
 둘째, 자식 클래스의 인스턴스들 사이의 관계를 보다 잘 이해할 수 있다는 것이다.</p>
 <p>두 가지 예제를 이용하여 상속을 설명한다.</p>
-<div class="section" id="id2">
-<h2><span class="section-number">21.1. </span>벡터의 내적<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">21.2. </span>벡터의 내적<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>벡터는 정수 또는 부동소수점의 리스트를 의미하며
 길이가 같은 두 벡터의 내적은 각 항목끼리의 곱셈의 합이다.
 예를 들어 <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code> 와 <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">6,</span> <span class="pre">9]</span></code> 두 벡터의 내적은 다음과 같다.</p>
@@ -416,7 +429,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>리스트 클래스 <code class="docutils literal notranslate"><span class="pre">list</span></code> 는 벡터의 내적 연산자를 지원하지 않는다.
 따라서 내적 연산을 지원하도록 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스의 기능을 확장해야 한다.</p>
 <div class="section" id="vector">
-<h3><span class="section-number">21.1.1. </span>Vector 클래스<a class="headerlink" href="#vector" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.2.1. </span>Vector 클래스<a class="headerlink" href="#vector" title="Permalink to this headline">¶</a></h3>
 <p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스를 상속하면서 내적 연산자를 지원하는 <code class="docutils literal notranslate"><span class="pre">Vector</span></code> 클래스를
 정의한다.</p>
 <ul class="simple">
@@ -623,8 +636,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3><span class="section-number">21.1.2. </span>메서드 재정의<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3><span class="section-number">21.2.2. </span>메서드 재정의<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>상속 받은 메서드를 재정의할 수 있다.
 사실 <code class="docutils literal notranslate"><span class="pre">Vector</span></code> 클래스의 생성자 메서드는
 부모 클래스인 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스의 생성자를 재정의 하였다.
@@ -747,8 +760,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2><span class="section-number">21.2. </span>연습문제<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2><span class="section-number">21.3. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-inheritance.ipynb">(실습) 상속</a></p>
 </div>
 </div>
