@@ -51,7 +51,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="20. 상속" href="inheritance.html" />
+    <link rel="next" title="20. 클래스 변수와 클래스 메서드" href="classVariables_and_classMethods.html" />
     <link rel="prev" title="18. 사례 연구: 객체 지향 프로그래밍" href="casestudy_oop.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -187,18 +187,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="classVariables_and_classMethods.html">
+   20. 클래스 변수와 클래스 메서드
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="inheritance.html">
-   20. 상속
+   21. 상속
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="type_annotations.html">
-   21. (부록) 자료형 힌트
+   22. (부록) 자료형 힌트
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="webapp_flask.html">
-   22. (부록) 웹앱: Flask
+   23. (부록) 웹앱: Flask
   </a>
  </li>
 </ul>
@@ -332,17 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   19.6. 클래스 변수 대 인스턴스 변수
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id8">
-   19.7. 인스턴스 메서드, 클래스 메서드, 스태틱 메서드
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
-   19.8. 연습문제
+   19.6. 연습문제
   </a>
  </li>
 </ul>
@@ -392,17 +387,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   19.6. 클래스 변수 대 인스턴스 변수
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id8">
-   19.7. 인스턴스 메서드, 클래스 메서드, 스태틱 메서드
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
-   19.8. 연습문제
+   19.6. 연습문제
   </a>
  </li>
 </ul>
@@ -475,11 +460,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7f9da0237130&gt; 2
-&lt;__main__.MSDie object at 0x7f9da0237130&gt; 3
-&lt;__main__.MSDie object at 0x7f9da0237130&gt; 5
-&lt;__main__.MSDie object at 0x7f9da0237130&gt; 2
-&lt;__main__.MSDie object at 0x7f9da0237130&gt; 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7fe1887ab130&gt; 3
+&lt;__main__.MSDie object at 0x7fe1887ab130&gt; 3
+&lt;__main__.MSDie object at 0x7fe1887ab130&gt; 1
+&lt;__main__.MSDie object at 0x7fe1887ab130&gt; 5
+&lt;__main__.MSDie object at 0x7fe1887ab130&gt; 3
 </pre></div>
 </div>
 </div>
@@ -492,7 +477,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7f9da0237fd0&gt;, &lt;__main__.MSDie object at 0x7f9da0237c40&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7fe1887a2d30&gt;, &lt;__main__.MSDie object at 0x7fe1887a2dc0&gt;]
 </pre></div>
 </div>
 </div>
@@ -546,10 +531,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-6
-3
 5
-6
+3
+3
+4
 </pre></div>
 </div>
 </div>
@@ -562,7 +547,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6): 5, MSDie(20): 9]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6): 3, MSDie(20): 2]
 </pre></div>
 </div>
 </div>
@@ -871,7 +856,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -884,7 +869,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -987,7 +972,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -999,7 +984,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -1113,13 +1098,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="section" id="id7">
-<h2><span class="section-number">19.6. </span>클래스 변수 대 인스턴스 변수<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id8">
-<h2><span class="section-number">19.7. </span>인스턴스 메서드, 클래스 메서드, 스태틱 메서드<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id9">
-<h2><span class="section-number">19.8. </span>연습문제<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6. </span>연습문제<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-proper_classes.ipynb">(실습) 클래스의 기본 요소</a></p>
 </div>
 </div>
@@ -1156,10 +1135,10 @@ private, default, protected, public 등과 같은
             <p class="prev-next-title"><span class="section-number">18. </span>사례 연구: 객체 지향 프로그래밍</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="inheritance.html" title="next page">
+    <a class='right-next' id="next-link" href="classVariables_and_classMethods.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">20. </span>상속</p>
+        <p class="prev-next-title"><span class="section-number">20. </span>클래스 변수와 클래스 메서드</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

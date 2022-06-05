@@ -187,18 +187,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="classVariables_and_classMethods.html">
+   20. 클래스 변수와 클래스 메서드
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="inheritance.html">
-   20. 상속
+   21. 상속
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="type_annotations.html">
-   21. (부록) 자료형 힌트
+   22. (부록) 자료형 힌트
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="webapp_flask.html">
-   22. (부록) 웹앱: Flask
+   23. (부록) 웹앱: Flask
   </a>
  </li>
 </ul>
@@ -544,6 +549,8 @@ b
 <p><strong>이터레이터</strong><font size = "2">iterator</font>는 값을 하나씩 꺼낼 수 있는 객체로,
 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 메서드를 갖는다.
 예를 들어, 모든 이터러블 객체를 <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> 메서드를 이용하여 이터레이터로 변환시킬 수 있다.</p>
+<div align="center"><img src="https://nvie.com/img/iterable-vs-iterator.png" style="width:600px;"></div>
+<p>그림 출처: <a class="reference external" href="https://nvie.com/posts/iterators-vs-generators/">Iterables vs. Iterators vs. Generators</a></p>
 <p>리스트는 이터러블 객체이기에 <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> 메서드를 호출할 수 있다.
 그러면 이터레이터 객체가 하나 생성된다.</p>
 <div class="cell docutils container">
@@ -627,7 +634,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7fabb84246d0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f82c9bbe0a0&gt;
 </pre></div>
 </div>
 </div>
@@ -799,9 +806,15 @@ b
 </div>
 <div class="section" id="id4">
 <h2><span class="section-number">14.3. </span>제너레이터<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p><strong>제너레이터</strong><font size = "2">generator</font>는 특별한 이터레이터이다.
-<code class="docutils literal notranslate"><span class="pre">__iter__()</span></code>와 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 메서드를 구체적으로 구현할 필요없이 두 가지 방식으로
-간단하게 제너레이터를 정의할 수 있다.</p>
+<p><strong>제너레이터</strong><font size = "2">generator</font>는 간단한 방식으로 구현할 수 있는 이터레이터이며,
+크게 두 가지 방식으로 생성된다.</p>
+<ul class="simple">
+<li><p>제너레이터 함수 활용</p></li>
+<li><p>제너레이터 표현식 활용</p></li>
+</ul>
+<p>이터러블, 이터레이터, 제너레이터 사이의 관계는 다음과 같다.</p>
+<div align="center"><img src="https://nvie.com/img/relationships.png" style="width:700px;"></div>
+<p>그림 출처: <a class="reference external" href="https://nvie.com/posts/iterators-vs-generators/">Iterables vs. Iterators vs. Generators</a></p>
 <p><strong>제너레이터 함수</strong></p>
 <p>제너레이터 함수는 일반 함수와 비슷한 방식으로 정의되는데, <code class="docutils literal notranslate"><span class="pre">return</span></code>키워드 대신 <code class="docutils literal notranslate"><span class="pre">yield</span></code> 키워드를 사용하여
 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 메서드가 반환해야 하는 값을 어떻게 생성할지 지정한다.</p>
@@ -840,7 +853,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object squares at 0x7fabb83dcf90&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object squares at 0x7f82c82ee040&gt;
 </pre></div>
 </div>
 </div>
@@ -1024,7 +1037,9 @@ b
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>강현은 3월달에 태어났다.
-나현은 2월달에 태어났다.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>나현은 2월달에 태어났다.
 다현은 9월달에 태어났다.
 </pre></div>
 </div>
@@ -1042,7 +1057,9 @@ b
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>강현은 3월 7일에 태어났다.
-나현은 2월 23일에 태어났다.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>나현은 2월 23일에 태어났다.
 </pre></div>
 </div>
 </div>
@@ -1257,6 +1274,82 @@ b
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>무한 피보나찌 수열 생성</strong></p>
+<p>아래 코드는 피보나찌 수열을 무한정 생성하는 제너레이터를 정의한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">():</span>
+    <span class="n">prev</span><span class="p">,</span> <span class="n">curr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">curr</span>
+        <span class="n">prev</span><span class="p">,</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">,</span> <span class="n">prev</span> <span class="o">+</span> <span class="n">curr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>피보나찌 수열의 처음 10개 항목은 다음과 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">fib</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 1 2 3 5 8 13 21 34 55 
+</pre></div>
+</div>
+</div>
+</div>
+<p>피보나찌 수열의 처음 n개의 항목을 출력하는 함수는 다음과 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">fib</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fibo</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 1 2 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fibo</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 1 2 3 5 8 13 21
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 34 55 
 </pre></div>
 </div>
 </div>
