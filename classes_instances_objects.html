@@ -656,7 +656,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f6539c9d070&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7fcd5e470940&gt;
 </pre></div>
 </div>
 </div>
@@ -758,7 +758,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction at 0x7f6539cfcc10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction at 0x7fcd5c3cdd30&gt;
 </pre></div>
 </div>
 </div>
@@ -1381,10 +1381,8 @@ False
 </div>
 </div>
 </div>
-<div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 17.1 </span> (라이프니츠 공식)</p>
-<div class="example-content section" id="proof-content">
-<p>원주율을 아래 라이프니츠 공식으로 구할 수 있다.</p>
+<p><strong>예제: 라이프니츠 공식</strong></p>
+<p>라이프니츠 공식을 이용하여 원주율을 임의로 정밀한 수준까지 계산할 수 있다.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
@@ -1393,14 +1391,15 @@ False
 &amp; = \sum_{k=0}^{\infty}  \frac{8}{(4k + 1)(4k + 3)} \\
 \end{align*}
 \end{split}\]</div>
-</div>
-</div><p>라이프니츠 공식을 이용하여 원주율을 임의로 정밀한 수준까지 원주율을 계산할 수 있다.</p>
+<p>아래 <code class="docutils literal notranslate"><span class="pre">leibniz()</span></code> 함수는 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 객체를 이용하여
+라이프니츠 공식을 구현한다.
+<code class="docutils literal notranslate"><span class="pre">leibniz(n)</span></code> 은 처음 <code class="docutils literal notranslate"><span class="pre">n</span></code> 개의 분수를 더한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">leibniz</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">pi_sum</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">kth_item</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="n">kth_item</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># 분수 연산</span>
         <span class="n">pi_sum</span> <span class="o">+=</span> <span class="n">kth_item</span>
         
     <span class="k">return</span> <span class="n">pi_sum</span><span class="o">.</span><span class="n">to_float</span><span class="p">()</span>
@@ -1457,10 +1456,22 @@ False
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">leibniz_float</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">pi_sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">kth_item</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="p">((</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="n">kth_item</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="p">((</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># 부동소수점 연산</span>
         <span class="n">pi_sum</span> <span class="o">+=</span> <span class="n">kth_item</span>
         
     <span class="k">return</span> <span class="n">pi_sum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">leibniz_float</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141092653621038
 </pre></div>
 </div>
 </div>
