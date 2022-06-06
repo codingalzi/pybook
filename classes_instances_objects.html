@@ -535,7 +535,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/fraction1.png" width="80%"></div><div class="info admonition">
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">self</span></code>의 역할</p>
 <p><code class="docutils literal notranslate"><span class="pre">f35</span> <span class="pre">=</span> <span class="pre">Fraction(3,</span> <span class="pre">5)</span></code> 방식으로 변수 할당이 실행되면
-파이썬 해석기는 다음을 싱행한다.</p>
+파이썬 실행기<font size='2'>interpreter</font>는 다음을 싱행한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="fm">__init__</span><span class="p">(</span><span class="n">f35</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -547,16 +547,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>인스턴스 변수</strong><font size='2'>instance variable</font>는
 클래스 내부에서 <code class="docutils literal notranslate"><span class="pre">self</span></code>와 함께 선언된 변수를 가리킨다.
 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 인스턴스 변수는 <code class="docutils literal notranslate"><span class="pre">self.top</span></code> 과 <code class="docutils literal notranslate"><span class="pre">self.bottom</span></code> 두 개다.
-인스턴스 변수는 해당 클래스의 영역<font size='2'>scope</font> 내에서만 의미를 갖는다.
-인스턴스 변수는 일반적으로 생성자가 실행되는 동안 선언되지만
-클래스 내부 어딘가에서 일반 전역 변수처럼 선언될 수도 있다.</p>
+인스턴스 변수는 해당 클래스의 영역<font size='2'>scope</font>에서만 의미를 가지며,
+일반적으로 생성자가 실행되는 동안 선언되지만
+클래스 내부 어디에서도 일반 전역 변수처럼 선언될 수도 있다.</p>
 <p>클래스의 인스턴스는 인스턴스 변수가 가리키는 값을 속성을 갖게 되며,
 이런 의미에서 인스턴스 변수가 가리키는 값을
 <strong>인스턴스 속성</strong><font size="2">instance attribute</font>이라 부른다.
 인스턴스 속성은 따라서 클래스의 인스턴스가 생성되어야만 의미를 갖는다.</p>
 <p>인스턴스 변수 이외에 <code class="docutils literal notranslate"><span class="pre">self</span></code> 를 사용하지 않는
 <strong>클래스 변수</strong><font size='2'>class variable</font> 가 선언될 수도 있지만
-이에 대해서는 나중에 자세히 소개한다.</p>
+여기서는 다루지 않는다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">f35</span></code> 가 가리키는 객체의 인스턴스 변수와 인스턴스 속성을 각각 키와 값으로 갖는
 항목들의 사전을 <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 의 속성으로 확인한다.
 <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 는 모든 객체에 기본으로 포함되는 속성 중에 하나다.</p>
@@ -656,7 +656,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f9132e02880&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f6539c9d070&gt;
 </pre></div>
 </div>
 </div>
@@ -758,7 +758,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction at 0x7f9130569af0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction at 0x7f6539cfcc10&gt;
 </pre></div>
 </div>
 </div>
@@ -981,16 +981,16 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
-        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">top</span>
-        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">top</span>
+        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span>
 
         <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">new_top</span><span class="p">,</span> <span class="n">new_bottom</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>이제 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code>의 인스턴스는 생성자를 제외하고 두 개의 메서드를 더 갖는다.</p>
+<p>이제 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code>의 인스턴스는 생성자 이외에 <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> 와 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 두 개의 메서드를 더 갖는다.</p>
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/fraction2.png" width="80%"></div><p>덧셈도 잘 작동한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1006,6 +1006,28 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+</div>
+<p>실제로는 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 메서드가 다음처럼 호출된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f14</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">f12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6/8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-self-other admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">self</span></code> 와 <code class="docutils literal notranslate"><span class="pre">other</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">f14.__add__(f12)</span></code> 이  실행되면 실제로는 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 메서드가 다음과 같이 호출된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="fm">__add__</span><span class="p">(</span><span class="n">f14</span><span class="p">,</span> <span class="n">f12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>즉, <code class="docutils literal notranslate"><span class="pre">self=f14</span></code>, <code class="docutils literal notranslate"><span class="pre">other=f12</span></code> 가 인자로 사용되며,
+이는 <code class="docutils literal notranslate"><span class="pre">f14</span></code> 를 중심(self)으로 해서 다른 값(other)과의 연산을 실행한다는 의미이다.</p>
 </div>
 <p>그런데 덧셈의 결과가 기약분수의 형태가 아니다.
 기약분수를 계산하려면 최대공약수(gcd)를 계산하는 알고리즘이 필요하다.</p>
@@ -1059,10 +1081,10 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
-        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> \
-                     <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">top</span>
-        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> \
+                     <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">top</span>
+        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span>
         <span class="n">common</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">new_top</span><span class="p">,</span> <span class="n">new_bottom</span><span class="p">)</span>
         
         <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">new_top</span> <span class="o">//</span> <span class="n">common</span><span class="p">,</span> <span class="n">new_bottom</span> <span class="o">//</span> <span class="n">common</span><span class="p">)</span>
@@ -1154,17 +1176,17 @@ True
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
-        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> \
-                     <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">top</span>
-        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> \
+                     <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">top</span>
+        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span>
         <span class="n">common</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">new_top</span><span class="p">,</span> <span class="n">new_bottom</span><span class="p">)</span>
         
         <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">new_top</span> <span class="o">//</span> <span class="n">common</span><span class="p">,</span> <span class="n">new_bottom</span> <span class="o">//</span> <span class="n">common</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
-        <span class="n">first_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span>
-        <span class="n">second_top</span> <span class="o">=</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">first_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span>
+        <span class="n">second_top</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span>
 
         <span class="k">return</span> <span class="n">first_top</span> <span class="o">==</span> <span class="n">second_top</span>
 </pre></div>
@@ -1189,7 +1211,33 @@ False
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">f1</span> <span class="pre">==</span> <span class="pre">f2</span></code> 는 <code class="docutils literal notranslate"><span class="pre">__eq__()</span></code> 메서드를 다음과 같이 호출한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
 <p>보다 다양한 매직 메서드에 대해서는 연습문제를 참고한다.</p>
+<div class="admonition-self-other admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">self</span></code> 와 <code class="docutils literal notranslate"><span class="pre">other</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">f14.__add__(f12)</span></code> 이  실행되면 실제로는 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 메서드가 다음과 같이 호출된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="fm">__add__</span><span class="p">(</span><span class="n">f14</span><span class="p">,</span> <span class="n">f12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>즉, <code class="docutils literal notranslate"><span class="pre">self=f14</span></code>, <code class="docutils literal notranslate"><span class="pre">other=f12</span></code> 가 인자로 사용된다.
+하지만 <code class="docutils literal notranslate"><span class="pre">f14</span></code> 를 기준(self)으로 해서 다른 값(other)과의 연산을 실행한다는 의미를
+강조하기 위해 관행적으로 <code class="docutils literal notranslate"><span class="pre">self</span></code> 와 <code class="docutils literal notranslate"><span class="pre">other</span></code> 를 매개변수로 사용한다.</p>
+<p>이런 관행은 덧셈과 동등성 비교 등 모든 이항 연산자를 정의할 때 활용된다.
+예를 들어 <code class="docutils literal notranslate"><span class="pre">f1</span> <span class="pre">==</span> <span class="pre">f2</span></code>,
+즉 <code class="docutils literal notranslate"><span class="pre">f1.__eq__(f2)</span></code>는 파이썬 실행기의 내부에서 <code class="docutils literal notranslate"><span class="pre">__eq__(f1,</span> <span class="pre">f2)</span></code> 로 처리된다.</p>
+</div>
 </div>
 <div class="section" id="id10">
 <h3><span class="section-number">17.3.2. </span>일반 인스턴스 메서드<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
@@ -1214,17 +1262,17 @@ False
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
-        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> \
-                     <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">top</span>
-        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> \
+                     <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">top</span>
+        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span>
         <span class="n">common</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">new_top</span><span class="p">,</span> <span class="n">new_bottom</span><span class="p">)</span>
         
         <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">new_top</span> <span class="o">//</span> <span class="n">common</span><span class="p">,</span> <span class="n">new_bottom</span> <span class="o">//</span> <span class="n">common</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
-        <span class="n">first_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span>
-        <span class="n">second_top</span> <span class="o">=</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">first_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span>
+        <span class="n">second_top</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span>
 
         <span class="k">return</span> <span class="n">first_top</span> <span class="o">==</span> <span class="n">second_top</span>
     
@@ -1288,17 +1336,17 @@ False
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bottom</span><span class="si">}</span><span class="s2">&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
-        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> \
-                     <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">top</span>
-        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">new_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+</span> \
+                     <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">top</span>
+        <span class="n">new_bottom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span>
         <span class="n">common</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">new_top</span><span class="p">,</span> <span class="n">new_bottom</span><span class="p">)</span>
         
         <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">new_top</span> <span class="o">//</span> <span class="n">common</span><span class="p">,</span> <span class="n">new_bottom</span> <span class="o">//</span> <span class="n">common</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_fraction</span><span class="p">):</span>
-        <span class="n">first_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">bottom</span>
-        <span class="n">second_top</span> <span class="o">=</span> <span class="n">other_fraction</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">first_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bottom</span>
+        <span class="n">second_top</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span>
 
         <span class="k">return</span> <span class="n">first_top</span> <span class="o">==</span> <span class="n">second_top</span>
     
@@ -1329,6 +1377,114 @@ False
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6666666666666666
+</pre></div>
+</div>
+</div>
+</div>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 17.1 </span> (라이프니츠 공식)</p>
+<div class="example-content section" id="proof-content">
+<p>원주율을 아래 라이프니츠 공식으로 구할 수 있다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\pi &amp; = 4 \left( \frac 1 1 - \frac 1 3 + \frac 1 5 - \frac 1 7 + \frac 1 9 - \frac{1}{11} + \frac{1}{13} - \frac{1}{15} + \frac{1}{17} - \frac{1}{19} + \cdots \right) \\
+&amp; = 4 \sum_{k=0}^{\infty} \left( \frac{1}{4k + 1} - \frac{1}{4k + 3} \right) \\
+&amp; = \sum_{k=0}^{\infty}  \frac{8}{(4k + 1)(4k + 3)} \\
+\end{align*}
+\end{split}\]</div>
+</div>
+</div><p>라이프니츠 공식을 이용하여 원주율을 임의로 정밀한 수준까지 원주율을 계산할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">leibniz</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">pi_sum</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">kth_item</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="n">pi_sum</span> <span class="o">+=</span> <span class="n">kth_item</span>
+        
+    <span class="k">return</span> <span class="n">pi_sum</span><span class="o">.</span><span class="n">to_float</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">leibniz</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0916238066678385
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">leibniz</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1365926848388166
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">leibniz</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141092653621043
+</pre></div>
+</div>
+</div>
+</div>
+<p>하지만 더 이상의 계산은 매우 어렵다.
+예를 들어 <code class="docutils literal notranslate"><span class="pre">leibniz(10000)</span></code> 은 언제 끝날지 모른다.
+이유는 이런 분수 형식의 계산이
+너무 오래 걸리기 때문이다.
+실제로 분수 덧셈의 통분에 사용되는 시간과 메모리 사용량이
+매우 크다.</p>
+<p>반면에 지난 수 십년동안 부동소수점 연산의 정확도와 속도를 최적하는 노력의 결과로
+부동소수점을 사용하는 연산은 매우 빠르고 보다 많은 반복무의 실행을 지원한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">leibniz_float</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">pi_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">kth_item</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="p">((</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="n">pi_sum</span> <span class="o">+=</span> <span class="n">kth_item</span>
+        
+    <span class="k">return</span> <span class="n">pi_sum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">leibniz_float</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1415426535898203
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">leibniz_float</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592153589902
 </pre></div>
 </div>
 </div>
