@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -461,15 +464,14 @@ C, C++, C#, 자바 등이 번역기를 사용하는 대표적인 프로그래밍
 </div>
 <div class="section" id="id4">
 <h2><span class="section-number">1.3. </span>파이썬<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>파이썬<font size="1">Python</font> 은 1991년
-귀도 반 로섬<font size="1">Guido van Rossum</font>이 개발한
-고수준 프로그래밍 언어이며
-거의 모든 운영체제에서 동작하는
-실행기 방식의 범용 프로그래밍 언어<font size="1">general-purpose programming language</font>이다.
+<p>파이썬<font size="1">Python</font> 은 고수준 프로그래밍 언어이며
+1991년 귀도 반 로섬<font size="1">Guido van Rossum</font>이 소개했다.
+파이썬은 실행기를 사용하며 컴퓨터가 다루는 모든 문제의 해결에 사용될 수 있는
+<strong>범용 프로그래밍 언어</strong><font size="1">general-purpose programming language</font>다.
 기존 프로그래밍 언어들의 한계를 극복하고자 만들어진 파이썬은
-자연어와 유사할 정도로 간결하고 쉬운 문법을 가지고 있다.</p>
-<p>예를 들어, 아래의 파이썬 코드는 <code class="docutils literal notranslate"><span class="pre">name</span></code>이 <code class="docutils literal notranslate"><span class="pre">members</span></code> 리스트에 없다면
-회원가입을 하라는 문구를 출력하는 코드이다.</p>
+자연어와 유사할 정도로 간결하고 쉬운 문법을 제공한다.</p>
+<p>예를 들어, 아래의 파이썬 코드는 <code class="docutils literal notranslate"><span class="pre">name</span></code>이 <code class="docutils literal notranslate"><span class="pre">members</span></code> 목록에 없다면
+회원가입을 하라는 문구를 출력한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;강현&#39;</span>
 <span class="n">members</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;민경&#39;</span><span class="p">,</span> <span class="s1">&#39;재석&#39;</span><span class="p">,</span> <span class="s1">&#39;윤진&#39;</span><span class="p">,</span> <span class="s1">&#39;태연&#39;</span><span class="p">]</span>
 
@@ -477,27 +479,19 @@ C, C++, C#, 자바 등이 번역기를 사용하는 대표적인 프로그래밍
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;회원가입 하세요.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>위 파이썬 코드는 프로그래밍에 대한 경험이 전혀 없는 사람도
-대략적으로 의미를 유추하는 것이 가능하다.
+<p>프로그래밍에 대한 경험이 전혀 없는 사람도
+위 파이썬 코드의 의미를 대략적으로 유추할 수 있다.
 이렇듯 파이썬 언어는 자연어와 유사하여
-입문자 교육용으로도 많이 사용된다.
-또한 파이썬의 간결하고 쉬운 문법은 오류가 발생할 가능성을 낮춰
-프로그램 개발 속도와 생산성을 높일 수 있다.
-이에 삼성, LG, 네이버, 다음, 구글<font size="1">Google</font>, 드롭박스<font size="1">Dropbox</font>,
-인스타그램<font size="1">Instagram</font> 등 많은 IT 기업에서 소프트웨어 개발에 파이썬을 사용한다.</p>
-<p>이뿐만 아니라 파이썬은 다양한 분야에서 사용할 수 있는 수많은 라이브러리를 제공하고 있다.</p>
+입문자 교육용으로도 많이 사용된다.</p>
+<p>이뿐만 아니라 파이썬은 다양한 분야에서 사용할 수 있는 수많은 라이브러리를 제공하고 있다.
+파이썬이 제공하는 강력한 라이브러리는 더 적은 코드로 더 많은 프로그램을
+효율적으로 구현할 수 있도록 도와준다.</p>
 <ul class="simple">
-<li><p>데이터 과학: Numpy, Pandas, Matplotlib, Keras, TensorFlow, PyTorch 등</p></li>
-<li><p>웹 프레임워크: Django, Flask 등</p></li>
+<li><p>데이터 과학: Numpy, SciPy, Pandas, Matplotlib 등</p></li>
+<li><p>인공지능: Scikit-learn, Keras, TensorFlow, PyTorch 등</p></li>
+<li><p>웹 프레임워크: Django, Flask, Pylongs, Pyramid, web2py 등</p></li>
+<li><p>게임: Turtle, PyGame 등</p></li>
 </ul>
-<p>파이썬이 제공하는 강력한 라이브러리는 더 적은 코드로 더 많은 프로그램을
-효율적으로 구현할 수 있도록 한다.
-즉, 프로그래머의 생산성을 향상시킨다.</p>
-<p>이외에도 파이썬은 C 나 C++ 와 연동이 가능하다.
-예를 들어 C 또는 C++ 로 구현된 프로그램을 파이썬에서 활용할 수 있다.
-대표적으로 데이터 분석에서 가장 중요한 라이브러리 중에 하나인
-넘파이<font size="2">NumPy</font>는 C 로 구현되어 있지만
-사용자는 파이썬 라이브러리로 사용한다.</p>
 <div class="section" id="id5">
 <h3><span class="section-number">1.3.1. </span>객체 지향 프로그래밍<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>파이썬은 C++, C#, 자바 등과 같이 OOP,  즉
