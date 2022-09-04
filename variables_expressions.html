@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -312,21 +309,33 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   4.1. 변수와 변수 할당
+   4.1. 변수와 값
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     4.1.1. 변수 할당
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     4.1.2. 변수의 이름
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id5">
    4.2. 함수와 표현식
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id6">
      4.2.1. 연산자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#id7">
      4.2.2. 함수
     </a>
    </li>
@@ -338,13 +347,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
-   4.3. 자료형
+  <a class="reference internal nav-link" href="#id9">
+   4.3. 값과 자료형
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     4.3.1. 변수의 자료형
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     4.3.2. 표현식의 자료형
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#type">
-     4.3.1.
+     4.3.3.
      <code class="docutils literal notranslate">
       <span class="pre">
        type()
@@ -354,13 +373,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     4.3.2. 변수의 자료형
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#input">
-     4.3.3. 문자열과
+     4.3.4. 문자열과
      <code class="docutils literal notranslate">
       <span class="pre">
        input()
@@ -372,51 +386,51 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
+  <a class="reference internal nav-link" href="#id12">
    4.4. 명령문
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id13">
      4.4.1. 기본 명령문
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+    <a class="reference internal nav-link" href="#id14">
      4.4.2. 함수 호출과 명령문
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
+  <a class="reference internal nav-link" href="#id15">
    4.5. 주석
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id13">
+  <a class="reference internal nav-link" href="#id16">
    4.6. 프로그램 오류와 디버깅
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
+    <a class="reference internal nav-link" href="#id17">
      4.6.1. 구문 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id15">
+    <a class="reference internal nav-link" href="#id18">
      4.6.2. 런타임 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
+    <a class="reference internal nav-link" href="#id19">
      4.6.3. 의미 오류
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id17">
+  <a class="reference internal nav-link" href="#id20">
    4.7. 연습문제
   </a>
  </li>
@@ -442,21 +456,33 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   4.1. 변수와 변수 할당
+   4.1. 변수와 값
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     4.1.1. 변수 할당
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     4.1.2. 변수의 이름
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id5">
    4.2. 함수와 표현식
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id6">
      4.2.1. 연산자
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#id7">
      4.2.2. 함수
     </a>
    </li>
@@ -468,13 +494,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
-   4.3. 자료형
+  <a class="reference internal nav-link" href="#id9">
+   4.3. 값과 자료형
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     4.3.1. 변수의 자료형
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     4.3.2. 표현식의 자료형
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#type">
-     4.3.1.
+     4.3.3.
      <code class="docutils literal notranslate">
       <span class="pre">
        type()
@@ -484,13 +520,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     4.3.2. 변수의 자료형
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#input">
-     4.3.3. 문자열과
+     4.3.4. 문자열과
      <code class="docutils literal notranslate">
       <span class="pre">
        input()
@@ -502,51 +533,51 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
+  <a class="reference internal nav-link" href="#id12">
    4.4. 명령문
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id13">
      4.4.1. 기본 명령문
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+    <a class="reference internal nav-link" href="#id14">
      4.4.2. 함수 호출과 명령문
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
+  <a class="reference internal nav-link" href="#id15">
    4.5. 주석
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id13">
+  <a class="reference internal nav-link" href="#id16">
    4.6. 프로그램 오류와 디버깅
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
+    <a class="reference internal nav-link" href="#id17">
      4.6.1. 구문 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id15">
+    <a class="reference internal nav-link" href="#id18">
      4.6.2. 런타임 오류
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
+    <a class="reference internal nav-link" href="#id19">
      4.6.3. 의미 오류
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id17">
+  <a class="reference internal nav-link" href="#id20">
    4.7. 연습문제
   </a>
  </li>
@@ -561,17 +592,27 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1><span class="section-number">4. </span>변수, 값, 표현식, 명령문<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p><strong>변수</strong><font size="2">variable</font>는
-(컴퓨터 메모리에) 저장된 하나의 값을 가리키는 이름이며,
-파이썬과 같은 명령형 프로그래밍 언어의 핵심 기능 중의 하나가
-바로 변수가 가리키는 값을 조작하는 일이다.
-여기서는 다양한 방식으로 <strong>값</strong><font size="2">value</font>을
-표현하는 <strong>표현식</strong><font size="2">expression</font>과,
-값을 조작하도록 하는 <strong>명령문</strong><font size="2">statement</font>의
-기본 개념을 소개한다.</p>
+<p>파이썬과 같은 (명령형) 프로그래밍언어의 핵심 기능 중의 하나가
+바로 (컴퓨터 메모리에) 저장된 값을 조작하는 일이다.
+이때 저장된 값을 가리키는 이름이 필요하며 이를 위해 변수를 사용한다.</p>
+<p>이번 장에서는 변수의 활용법과 함께
+파이썬에서 기본으로 제공하는 값의 종류, 값을 표현하는 표현식,
+그리고 값을 조작하는 명령문에 대해 알아본다.</p>
 <div class="section" id="id2">
-<h2><span class="section-number">4.1. </span>변수와 변수 할당<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>변수를 선언하려면 해당 변수가 하나의 값을 가리키도록 하는
+<h2><span class="section-number">4.1. </span>변수와 값<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><strong>변수</strong><font size="2">variable</font>는 한마디로 말해
+(컴퓨터 메모리에) 저장된 값을 가리키는 이름이며,
+컴퓨터 프로그램은 변수를 이용하여 원하는 결과를 만들어 낸다.</p>
+<p>반면에 <strong>값</strong><font size="2">value</font>은 컴퓨터에 저장해서
+활용할 수 있는 대상이며,
+정수와 유한 소수가 컴퓨터가 다룰 수 있는 대표적인 값들이다.
+그리고 ‘가’, ‘나’, ‘다’, ‘a’, ‘b’, ‘c’, ‘1’, ‘2’, ‘3’, ‘!’, ‘:’, ‘_’ 등의 임의의 문자, 숫자, 기호로
+구성된 단어를 가리키는 문자열이 있다.
+예를 들어, ‘파이썬 좋아요;)’, ‘Hello, World!’, ‘12.3 - 2.8’ 등이 문자열이다.
+이외에 파이썬은 리스트, 튜플, 집합, 사전 등 다양한 종류의 값을 제공한다.</p>
+<div class="section" id="id3">
+<h3><span class="section-number">4.1.1. </span>변수 할당<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>하나의 값을 가리키는 변수를 사용하기 위해서
 <strong>변수 할당</strong><font size="2">variable assignment</font>을 명령해야 한다.
 변수 할당 명령문의 형식은 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">변수</span> <span class="o">=</span> <span class="n">값</span>
@@ -584,6 +625,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greetings</span> <span class="o">=</span> <span class="s1">&#39;안녕하세요!&#39;</span>
 <span class="n">num</span> <span class="o">=</span> <span class="mi">17</span>
 <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926535897932</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="p">(</span><span class="mi">92</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">languages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;파이썬&quot;</span><span class="p">,</span> <span class="s2">&quot;자바스크립트&quot;</span><span class="p">,</span> <span class="s2">&quot;루비&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -594,11 +637,11 @@ const thebe_selector_output = ".output, .cell_output"
 항상 짝은따옴표 또는 큰따옴표로 감싸져야 하는
 <strong>문자열</strong><font size="2">string</font>이다.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">num</span></code> 변수가 가리키는 값은 정수<font size="2">integer</font> <code class="docutils literal notranslate"><span class="pre">17</span></code>이다.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pi</span></code> 변수가 가리키는 값은 유리수 <code class="docutils literal notranslate"><span class="pre">3.1415926535897932</span></code>이다.
-유리수는 공식적으로
+<li><p><code class="docutils literal notranslate"><span class="pre">pi</span></code> 변수가 가리키는 값은 유한소수 <code class="docutils literal notranslate"><span class="pre">3.1415926535897932</span></code>이다.
+유한소수는 공식적으로
 <strong>부동소수점</strong><font size="2">floating point</font>이라 불린다.</p></li>
 </ul>
-<p>선언된 변수는 할당된 값과 동일하게 취급된다.</p>
+<p>선언된 변수는 할당된 값과 동등하게 취급된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greetings</span>
@@ -635,6 +678,41 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span> <span class="o">=</span> <span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">scores</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">/</span><span class="mi">3</span>
+<span class="n">mean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>93.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">languages</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;파이썬&#39;, &#39;자바스크립트&#39;, &#39;루비&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">동치성</p>
+<p>변수 할당에 사용되는 등호 기호(<code class="docutils literal notranslate"><span class="pre">=</span></code>)는
+변수가 가리키는 값과 동일함을 나타내지 않는다.
+두 개의 값이 동일함을 나타내는 동치성 기호는 두 개의 등호기호(<code class="docutils literal notranslate"><span class="pre">==</span></code>)를 사용한다.
+예를 들어 <code class="docutils literal notranslate"><span class="pre">3+1</span></code>과 <code class="docutils literal notranslate"><span class="pre">2*2</span></code>가 동일한 값을 나타낸다는 사실은 다음과 같이 표기한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
 <p>그런데 변수가 가리키는 값은 변경될 수 있다.
 예를 들어, 변수 <code class="docutils literal notranslate"><span class="pre">num</span></code>에 <code class="docutils literal notranslate"><span class="pre">18</span></code>을 새롭게 할당하면
 이제는 <code class="docutils literal notranslate"><span class="pre">17</span></code>이 아닌 <code class="docutils literal notranslate"><span class="pre">18</span></code>을 가리킨다.</p>
@@ -659,11 +737,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>업데이트된 변수의 값을 동일한 변수 이름을 이용하여 가리키도록 할 수 있다.
 아래 코드는 변수 <code class="docutils literal notranslate"><span class="pre">num</span></code>이
-원래 가리키던 값 18의 두 배인 36일 가리키도록 한다.
-이런 의미에서 변수 할당에 사용되는 기호 <code class="docutils literal notranslate"><span class="pre">=</span></code>는
-값이 동일하다<font size="2">equal</font>라는
-의미와 전혀 상관이 없음을 기억해야 한다.
-두 표현식이 동일한 값을 가리키는지 여부를 다루는 기호는 나중에 소개한다.</p>
+원래 가리키던 값 18의 두 배인 36일 가리키도록 한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">2</span>
@@ -698,9 +772,24 @@ const thebe_selector_output = ".output, .cell_output"
 전역 변수에 대한 정의는 나중에 소개한다.</p></li>
 </ul>
 </div>
-<p><strong>변수의 이름</strong></p>
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">4.1.2. </span>변수의 이름<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>변수의 이름은 임의로 정할 수 있지만 할당되는 값과 연관된 이름을 사용할 것을 권장한다.
-또한 아래 제한 사항을 지켜야 한다.</p>
+예를 들어, 농구 시합에서 A 팀의 점수 72와 B 팀의 점수 80을
+가리키는 두 개의 변수를</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">72</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">80</span>
+</pre></div>
+</div>
+<p>이라고 하기 보다는</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_score</span> <span class="o">=</span> <span class="mi">72</span>
+<span class="n">B_score</span> <span class="o">=</span> <span class="mi">80</span>
+</pre></div>
+</div>
+<p>라고 하는 것이 프로그래밍이 보다 많은 도움이 된다.</p>
+<p><strong>변수 이름짓기 규정</strong></p>
+<p>변수의 이름을 지을 때 지켜야 하는 규칙이 몇 개 있다.</p>
 <ul>
 <li><p>알파벳, 숫자, 밑줄(_, underscore) 등을 조합해서 임의로 조합해서 사용한다.</p></li>
 <li><p>마침표(.), 연산 기호(+, -, *, /, !, %), 골뱅이 기호(&#64;), 물결 기호(~),
@@ -757,9 +846,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-<p><strong>소문자와 대문자</strong></p>
-<p>영어 알파벳의 소문자와 대문자는 엄연히 구분된다.
-예를 들어, <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>와 <code class="docutils literal notranslate"><span class="pre">'Hello'</span></code>는 서로 다른 단어, 즉 서로 다른 문자열이다.
+<p><strong>소문자와 대문자 구분하기</strong></p>
+<p>프로그래밍에서 영어 알파벳의 소문자와 대문자는 엄연히 구분된다.
+예를 들어, <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>와 <code class="docutils literal notranslate"><span class="pre">'Hello'</span></code>는 서로 다른 문자열이다.
 아래 식에서 사용되는 <code class="docutils literal notranslate"><span class="pre">==</span></code> 기호는 양편에 위치한 두 값의
 동치<font size="2">equality</font> 여부를 판단한다.</p>
 <div class="cell docutils container">
@@ -829,20 +918,15 @@ const thebe_selector_output = ".output, .cell_output"
 하지만 변수가 가리키는 값으로는 한글 등 다양한 언어가 활용된다.</p>
 </div>
 </div>
-<div class="section" id="id3">
-<h2><span class="section-number">4.2. </span>함수와 표현식<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">'안녕하세요!'</span></code>, <code class="docutils literal notranslate"><span class="pre">18</span></code>, <code class="docutils literal notranslate"><span class="pre">3.1415926535897932</span></code> 등은 변수에 할당하거나
-연산 등에 사용할 수 있는 <strong>값</strong><font size="2">value</font>이다.
-반면에 <code class="docutils literal notranslate"><span class="pre">num</span></code>이 하나의 값을 가리키면 <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">+</span> <span class="pre">2</span></code>도 하나의 값을 가리키며,
-<code class="docutils literal notranslate"><span class="pre">'hello'</span> <span class="pre">+</span> <span class="pre">'</span> <span class="pre">python'</span></code>는 <code class="docutils literal notranslate"><span class="pre">'hello</span> <span class="pre">python'</span></code>이라는 문자열을 가리킨다.
-이처럼 값들의 연산, 값과 변수들의 연산 등을 이용하여 새로운 값을
-가리키는 식을 <strong>표현식</strong><font size="2">expression</font>이라 한다.</p>
-<div class="section" id="id4">
-<h3><span class="section-number">4.2.1. </span>연산자<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">4.2. </span>함수와 표현식<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3><span class="section-number">4.2.1. </span>연산자<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>일반적으로 <strong>연산</strong><font size="2">operation</font>은 사칙연산 등
-숫자들을 대상으로 하는 <strong>계산 실행</strong>을 의미한다.
-하지만 연산은 수 이외에도 문자열의 연결 등 다른 종류의 값을 대상으로 실행될 수도 있다.
-이렇게 특정 종류의 값을 대상으로 계산 실행을 수행하는 기능을 갖춘 기호를
+숫자들을 대상으로 하는 <strong>계산</strong>을 의미한다.
+하지만 연산은 수 이외에도 두 문자열의 이어붙이기 등 다른 종류의 값을 대상으로도 실행될 수 있다.
+이렇게 특정 종류의 값을 대상으로 계산을 수행하도록 하는 기호를
 <strong>연산자</strong><font size="2">operator</font>라 부르며,
 가장 많이 사용되는 연산자는 다음과 같다.</p>
 <ul class="simple">
@@ -884,11 +968,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p><strong>연산자 우선순위</strong></p>
-<p>표현식이 나타내는 값은 파이썬 실행기가
-표현식에 사용된 연산자와 연관된 연산을 실행하는 방식으로 계산되며,
-계산 과정에서 연산자 별로 지정된 우선순위를 고려한다.
-사칙연산 등 많이 사용되는 수학 함수들의 우선순위는 일반적으로 알려진 것과 동일하다.</p>
+<div class="info admonition">
+<p class="admonition-title">연산자 우선순위</p>
+<p>하나의 표현식이 나타내는 값은
+표현식에 사용된 연산자를 실행하여 계산된다.
+사칙연산자 등 많이 사용되는 수학 연산자의
+우선순위는 일반적으로 알려진 것과 동일하다.</p>
 <ul>
 <li><p>괄호 안에 있는 표현식을 가장 먼저 계산한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="o">*</span><span class="mi">2</span> <span class="o">=&gt;</span> <span class="mi">4</span>
@@ -922,17 +1007,22 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h3><span class="section-number">4.2.2. </span>함수<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>함수는 기본적으로 아래와 같이 수학에서 다루는 함수를 가리킨다.</p>
+</div>
+<div class="section" id="id7">
+<h3><span class="section-number">4.2.2. </span>함수<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p><strong>수학에서의 함수</strong></p>
+<p>수학에서의 함수는 다음과 같이 사칙연산과 거듭제곱을 포함하여
+삼각함수와 지수 및 로그 함수 등
+주어진 값을 이용하여 새로운 값을 계산한다.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f(x) = ax + b\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(g(x, y) = a x^2 + b y^2\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(pow(x, y) = x ^ y\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(h(x) = \sin x\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(k(x) = \log x\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(pow(x, y) = x ^ y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(root(x) = \sqrt{x}\)</span></p></li>
 </ul>
-<p>언급된 함수 중에서 <span class="math notranslate nohighlight">\(\sin\)</span> 와 <span class="math notranslate nohighlight">\(\log\)</span>, 그리고 제곱근 함수 <span class="math notranslate nohighlight">\(\sqrt{\,\,\,}\)</span> 등은
+<p>언급된 함수 중에서 <span class="math notranslate nohighlight">\(\sin\)</span> 과 <span class="math notranslate nohighlight">\(\log\)</span>, 그리고 제곱근 함수 <span class="math notranslate nohighlight">\(\sqrt{\,\,\,}\)</span> 등은
 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈에 포함되어 있다.
 아나콘다 패키지를 설치한 경우 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 모듈도 많은 함수를 제공한다.</p>
 <p>언급된 함수들을 사용하려면 먼저 해당 모듈을 불러와야 한다.
@@ -952,14 +1042,14 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 원주율 </span>
-<span class="n">pi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
 
 <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9999996829318346
 </pre></div>
 </div>
 </div>
@@ -979,21 +1069,23 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">math.log()</span></code>는 자연로그 함수를 가리킨다.</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\log_2(10)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\log(10)\)</span></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">2.71</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.302585092994046
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9969486348916096
 </pre></div>
 </div>
 </div>
 </div>
+<p>상용로그 함수는 다음과 같다.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\log_{10}(10)\)</span></p></li>
 </ul>
@@ -1009,61 +1101,152 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">다른 종류의 함수</p>
-<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 경우처럼 일반 수학 함수와는 다른 종류의 함수도
-프로그래밍에서 사용된다.
-파이썬 함수의 정의와 활용법은
-<a class="reference internal" href="functions.html#ch-functions"><span class="std std-numref">7장</span></a>에서 자세히 다룬다.
-여기서는 대신 앞서 설명한 연산자들 또한 함수로 간주된다는 점과
-함수 인자의 종류와 개수가 함수마다 다르다는 점만을 강조한다.</p>
-</div>
+<p><strong>프로그래밍에서의 함수</strong></p>
+<p>앞서 보았듯이 수학에서의 함수를 프로그래밍에서 그대로 사용한다.
+하지만 프로그래밍에서 함수의 의미는 수학에서의 함수와는
+다른 역할도 가질 수 있다.</p>
+<p>예를 들어,
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 어떤 값을 계산하는 일은 하지 않고
+지정된 값을 화면에 출력하는 기능을 수행한다.
+프로그래밍에서의 함수의 기능에 대한 자세한 설명은
+<a class="reference internal" href="functions.html#ch-functions"><span class="std std-numref">7장</span></a>에서 다룬다.
+여기서는 앞서 수학에서 사용되는 함수들을 프로그래밍에서
+동일한 방식으로 사용할 수 있다는 점만을 강조한다.</p>
 </div>
 <div class="section" id="sec-representation">
-<span id="id6"></span><h3><span class="section-number">4.2.3. </span>표현식<a class="headerlink" href="#sec-representation" title="Permalink to this headline">¶</a></h3>
-<p>앞서 표현식을 연산자와 값을 조합한 식으로 설명하였다.
-하지만 일반적으로는 연산자 뿐만 아니라 임의의 함수와
-변수, 정수, 유리수, 문자열 등을 조합하여
-하나의 값(value)을 표현하도록 작성된 식을
+<span id="id8"></span><h3><span class="section-number">4.2.3. </span>표현식<a class="headerlink" href="#sec-representation" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">'안녕하세요!'</span></code>, <code class="docutils literal notranslate"><span class="pre">18</span></code>, <code class="docutils literal notranslate"><span class="pre">3.1415926535897932</span></code> 등은 변수에 할당하거나
+연산 등에 사용할 수 있는 값이다.
+반면에 <code class="docutils literal notranslate"><span class="pre">num</span></code>이 하나의 값을 가리키면 다음 표현들 모두 각각 하나의 값을 가리킨다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+<span class="p">[</span><span class="s1">&#39;파이썬&#39;</span><span class="p">,</span> <span class="s1">&#39;좋아요]</span>
+<span class="n">hello</span><span class="s1">&#39; + &#39;</span> <span class="n">python</span><span class="s1">&#39;</span>
+<span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39; python&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>이처럼 값들을 이용한 연산과 함수 적용, 값들의 리스트 또는 튜플 등 새로운 값을 무한정 만들어 낼 수 있다.
+이렇게 다양한 방식으로 값을 표현하는 데에 사용되는 식을
 <strong>표현식</strong><font size="2">expression</font>이라 부른다.</p>
-<p>예를 들어 <code class="docutils literal notranslate"><span class="pre">max</span></code>가 주어진 두 수의 최댓값을 계산하는 함수이고
-<code class="docutils literal notranslate"><span class="pre">num</span></code>이 정수 <code class="docutils literal notranslate"><span class="pre">5</span></code>를 가리키면
-<code class="docutils literal notranslate"><span class="pre">max(17,</span> <span class="pre">num)</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">/</span> <span class="pre">(num</span> <span class="pre">+</span> <span class="pre">1)</span></code> 는 유리수 <code class="docutils literal notranslate"><span class="pre">17.5</span></code>를 가리키는 표현식이 된다.</p>
 <div class="caution admonition">
 <p class="admonition-title">주의</p>
-<p>모든 표현식이 하나의 값을 가리키는 것은 아니다.
+<p>표현식을 작성할 때 사용되는 연산자나 함수의 특성을 고려해야 한다.
 예를 들어, 곱셈 연산자는 두 개의 인자를 받는데,
-문자열을 대상으로 하는 경우 인자 하나는 문자열을, 다른 인자는
-정수를 사용해야 한다.
-그렇지 않으면 실행중에 오류가 발생하며
-이런 이유로 적절한 표현식으로 허용되지 않는다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;hello&#39;</span> <span class="o">*</span> <span class="s1">&#39;python&#39;</span>
+정수 또는 유한소수 두 개의 곱을 표현하거나
+문자열과 정수의 곲을 표현해야 한다.
+만약에 두 문자열의 곱을 계산하려 하면 오류가 발생한다.
+즉, 적절한 표현식으로 인정받지 못한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;파이썬&#39;</span> <span class="o">*</span> <span class="s1">&#39;좋아요&#39;</span>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
 <span class="gr">TypeError</span>: <span class="n">can&#39;t multiply sequence by non-int of type &#39;str&#39;</span>
 </pre></div>
 </div>
 <p>동일한 이유로 아래 표현식들도 허용되지 않는다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Korean&#39;</span> <span class="o">-</span> <span class="s1">&#39;pop&#39;</span>
-<span class="s1">&#39;apple&#39;</span> <span class="o">/</span> <span class="s1">&#39;pie&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;파이썬&#39;</span> <span class="o">-</span> <span class="s1">&#39;k-팝&#39;</span>
+<span class="mi">3</span> <span class="o">/</span> <span class="s1">&#39;피자&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="id7">
-<h2><span class="section-number">4.3. </span>자료형<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<p>모든 값들은 각각 고유의 <strong>자료형</strong><font size="2">data type</font>에 속한다.
+<div class="section" id="id9">
+<h2><span class="section-number">4.3. </span>값과 자료형<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>모든 값들은 각각 고유의 <strong>자료형</strong><font size="2">data type</font>을 갖는다.
 예를 들어,</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-2</span></code>, <code class="docutils literal notranslate"><span class="pre">-1</span></code>, <code class="docutils literal notranslate"><span class="pre">0,</span></code> <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, … 등은 <strong>정수</strong> 자료형 <code class="docutils literal notranslate"><span class="pre">int</span></code>에 속하고,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">3.141592</span></code>, <code class="docutils literal notranslate"><span class="pre">2.71</span></code>, <code class="docutils literal notranslate"><span class="pre">-0.23</span></code> 등의 유리수는 <strong>부동소수점</strong> 자료형 <code class="docutils literal notranslate"><span class="pre">float</span></code>에 속하고,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">'강아지'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World!'</span></code>, <code class="docutils literal notranslate"><span class="pre">'파이썬은</span> <span class="pre">재밌어요!'</span></code> 등의 단어 또는 문장은
-<strong>문자열</strong> 자료형 <code class="docutils literal notranslate"><span class="pre">str</span></code>에 속한다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-2</span></code>, <code class="docutils literal notranslate"><span class="pre">-1</span></code>, <code class="docutils literal notranslate"><span class="pre">0,</span></code> <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, … 등 <strong>정수</strong>의 자료형은 <code class="docutils literal notranslate"><span class="pre">int</span></code>이고,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3.141592</span></code>, <code class="docutils literal notranslate"><span class="pre">2.71</span></code>, <code class="docutils literal notranslate"><span class="pre">-0.23</span></code> 등 유한소수의 자료형은 <strong>부동소수점</strong> 자료형인 <code class="docutils literal notranslate"><span class="pre">float</span></code>이고,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'강아지'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World!'</span></code>, <code class="docutils literal notranslate"><span class="pre">'파이썬은</span> <span class="pre">재밌어요!'</span></code> 등의 단어 또는 문장의 자료형은
+<strong>문자열</strong> 자료형인 <code class="docutils literal notranslate"><span class="pre">str</span></code>이다.</p></li>
 </ul>
+<div class="section" id="id10">
+<h3><span class="section-number">4.3.1. </span>변수의 자료형<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>선언된 변수의 자료형은 변수가 현재 가리키는 값의 자료형과 동일하다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<p>변수에 할당된 값이 달라지면 변수의 자료형도 달라질 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="s1">&#39;3.14&#39;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3><span class="section-number">4.3.2. </span>표현식의 자료형<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">Python!&quot;</span> <span class="pre">+</span> <span class="pre">&quot;!&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">math.sqrt(2)</span></code>, <code class="docutils literal notranslate"><span class="pre">x/2</span></code> 등의 표현식의 자료형은
+사용된 연산자와 함수가 계산하는 값의 자료형을 갖는다.
+반면에 튜플과 리스트의 자료형은 사용된 항목의 자료형에 상관 없다.
+즉, 튜플 언제나 튜플이고 리스트는 언제나 리스트이다.</p>
+<p>아래 표는 표현식과 해당 표현식이 표현하는 값, 그리고 값의 자료형 사이의 관계를 보여준다.
+단, <code class="docutils literal notranslate"><span class="pre">x</span></code> 는 정수 3을 가리킨다고 가정한다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>표현식</p></th>
+<th class="head"><p>값</p></th>
+<th class="head"><p>자료형</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x/2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">(x/2</span> <span class="pre">-</span> <span class="pre">1)</span> <span class="pre">&lt;</span> <span class="pre">0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">x/2-1,</span> <span class="pre">x+x+1)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">0.5,</span> <span class="pre">7)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">x*3/2,</span> <span class="pre">x**3+1]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">4.5,</span> <span class="pre">28]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="type">
-<h3><span class="section-number">4.3.1. </span><code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수는 인자의 자료형을 확인해준다.</p>
+<h3><span class="section-number">4.3.3. </span><code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수는 인자로 사용된 값의 자료형을 확인해준다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
@@ -1090,7 +1273,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Hello, World!&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;파이썬 좋아요!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1100,7 +1283,32 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p><strong>숫자 표기 주의사항</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">type</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>수 표기법</strong></p>
 <p>수<font size="2">number</font>를 표기할 때 다음 세 가지 사항들에 주의해야 한다.</p>
 <p>첫째, <code class="docutils literal notranslate"><span class="pre">'17'</span></code>, <code class="docutils literal notranslate"><span class="pre">'3.2'</span></code> 등은 작은따옴표로 둘러싸여 있어서
 수가 아닌 숫자 기호들로 이루어진 문자열이며,
@@ -1188,88 +1396,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="id8">
-<h3><span class="section-number">4.3.2. </span>변수의 자료형<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>변수의 자료형은 변수가 현재 가리키는 값의 자료형으로 지정된다.
-따라서 변수에 할당된 값의 자료형이 달라지면 변수의 자료형도 함께 달라진다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mf">3.14</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="s1">&#39;3.14&#39;</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
-</pre></div>
-</div>
-</div>
-</div>
-<div class="proof example admonition" id="exp-type">
-<p class="admonition-title"><span class="caption-number">Example 4.1 </span></p>
-<div class="example-content section" id="proof-content">
-<p>아래 표는 표현식과 해당 표현식이 표현하는 값, 그리고 값의 자료형 사이의 관계를 보여준다.
-단, <code class="docutils literal notranslate"><span class="pre">x</span></code> 는 정수 3을 가리킨다고 가정한다.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>표현식</p></th>
-<th class="head"><p>값</p></th>
-<th class="head"><p>자료형</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x/2</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">1.5</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">(x/2</span> <span class="pre">-</span> <span class="pre">1)</span> <span class="pre">&lt;</span> <span class="pre">0</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">x/2-1,</span> <span class="pre">x+x+1)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">0.5,</span> <span class="pre">7)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">x*3/2,</span> <span class="pre">x**3+1]</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">4.5,</span> <span class="pre">28]</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div></div>
 <div class="section" id="input">
-<h3><span class="section-number">4.3.3. </span>문자열과 <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.4. </span>문자열과 <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수를 이용하여 사용자로부터 값을 입력받을 수 있다.
 아래와 같이 <code class="docutils literal notranslate"><span class="pre">input()</span></code>을 입력하고 코드를 실행하면, 그 아래에 값을 입력하라는 창이 나온다.
 예를 들어 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">python!</span></code>을 입력하고 엔터 키 <kbd>Enter</kbd>를 누르면
@@ -1311,15 +1439,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="id9">
-<h2><span class="section-number">4.4. </span>명령문<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h2><span class="section-number">4.4. </span>명령문<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
 <p>컴퓨터에 명령을 내리려면
 <strong>명령문</strong><font size="2">statement</font>을 작성해야 하며,
 이를 위해 하나의 프로그래밍 언어를 선택해야 한다.
 모든 프로그래밍 언어는 고유의 명령문 작성 규칙을 제공하며,
 언어의 특성에 따라 명령문 작성법과 작성된 명령문의 모양이 많이 다를 수 있다.</p>
-<div class="section" id="id10">
-<h3><span class="section-number">4.4.1. </span>기본 명령문<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3><span class="section-number">4.4.1. </span>기본 명령문<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>파이썬 명령문은 <strong>기본 명령문</strong>을
 지정된 규칙에 따라 합성해서 생성한다.
 지금까지 간략하게나마 살펴본 기본 명령문은 다음과 같다.</p>
@@ -1342,8 +1470,8 @@ const thebe_selector_output = ".output, .cell_output"
 번역기<font size='2'>compiler</font> 등을 직접 구현해야 하는
 일을 하려면 반드시 알아야 한다.</p>
 </div>
-<div class="section" id="id11">
-<h3><span class="section-number">4.4.2. </span>함수 호출과 명령문<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3><span class="section-number">4.4.2. </span>함수 호출과 명령문<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>예를 들어, <code class="docutils literal notranslate"><span class="pre">print(&quot;맞았습니다!)</span></code> 를 실행하면 문자열 인자를 화면에 출력한다.
 이처럼 함수를 지정된 인자와 함께 실행하도록 하는 것이
 <strong>함수 호출</strong><font size="2">function call</font>이다.
@@ -1353,8 +1481,8 @@ const thebe_selector_output = ".output, .cell_output"
 하지만 함수 자체는 명령문이 아니다.</p>
 </div>
 </div>
-<div class="section" id="id12">
-<h2><span class="section-number">4.5. </span>주석<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h2><span class="section-number">4.5. </span>주석<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p>프로그램에 사용된 명령문에 설명을 추가하면
 작성된 프로그램의 작동 원리를 보다 쉽게 이해할 수 있다.
 이와 같이 프로그램의 실행과는 무관하지만 명령문, 함수 등의
@@ -1393,8 +1521,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="id13">
-<h2><span class="section-number">4.6. </span>프로그램 오류와 디버깅<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id16">
+<h2><span class="section-number">4.6. </span>프로그램 오류와 디버깅<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
 <p>변수 이름으로 <code class="docutils literal notranslate"><span class="pre">class</span></code> 등의 지정어를 사용하거나, <code class="docutils literal notranslate"><span class="pre">odd~job</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">US$</span></code>처럼
 허용되지 않은 기호를 포함하는 경우에 파이썬 실행기는
 <strong>오류</strong><font size="2">error</font>를 발생시키며 곧바로 프로그램의 실행을 멈춘다.
@@ -1409,14 +1537,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p>오류가 발생하면 오류의 원인을 찾아 해결해야 한다.
 이렇게 프로그램의 오류를 찾아 해결하는 과정을 <strong>디버깅</strong>(debugging)이라 부른다.</p>
 <p>프로그램의 오류는 크게 세 가지 유형으로 나뉜다.</p>
-<div class="section" id="id14">
-<h3><span class="section-number">4.6.1. </span>구문 오류<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3><span class="section-number">4.6.1. </span>구문 오류<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p>변수의 이름을 잘못 지정하면 <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">invalid</span> <span class="pre">syntax</span></code>와
 같은 <strong>구문 오류</strong><font size="2">syntax error</font>가 발생한다.
 구문 오류는 실행기가 프로그램을 실행하기 전에 일종의 문법 검사를 통해 찾아낸다.</p>
 </div>
-<div class="section" id="id15">
-<h3><span class="section-number">4.6.2. </span>런타임 오류<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3><span class="section-number">4.6.2. </span>런타임 오류<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <p><strong>런타임 오류</strong><font size="2">runtime error</font>는
 프로그램이 실행되는 중간에 발생하는 오류이다.
 프로그램 실행 중간에 예외 상황을 발생시키는 오류라는 의미에서 런타임 오류를
@@ -1424,7 +1552,7 @@ const thebe_selector_output = ".output, .cell_output"
 런타임 오류는 다양한 경우에 발생한다.
 여기서는 두 가지 경우를 살펴본다.</p>
 <div class="proof example admonition" id="zerodivision">
-<p class="admonition-title"><span class="caption-number">Example 4.2 </span> (ZeroDivisionError)</p>
+<p class="admonition-title"><span class="caption-number">Example 4.1 </span> (ZeroDivisionError)</p>
 <div class="example-content section" id="proof-content">
 <p>런타임 에러의 대표적인 예는 <strong>0으로 나누기 오류</strong>이다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1440,7 +1568,7 @@ const thebe_selector_output = ".output, .cell_output"
 오류가 발생한다.</p>
 </div>
 </div><div class="proof example admonition" id="nameerror">
-<p class="admonition-title"><span class="caption-number">Example 4.3 </span> (NameError)</p>
+<p class="admonition-title"><span class="caption-number">Example 4.2 </span> (NameError)</p>
 <div class="example-content section" id="proof-content">
 <p>아래 코드를 실행하면 ‘a_number’ 라는 이름이 선언되어 있지 않기 때문에 문제가 발생한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_Number</span> <span class="o">=</span> <span class="mf">327.68</span>
@@ -1453,8 +1581,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>자세히 살펴보면 ‘a_number’와 ‘a_Number’ 둘 중에 하나는 오타임을 알 수 있다.</p>
 </div>
 </div></div>
-<div class="section" id="id16">
-<h3><span class="section-number">4.6.3. </span>의미 오류<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h3><span class="section-number">4.6.3. </span>의미 오류<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <p>프로그램 실행은 잘 되지만 원하는 결과를 가져오지 못한다면 프로그램
 어딘가에 논리적 오류가 존재한다는 의미이다.
 이와같은 오류를
@@ -1496,8 +1624,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="id17">
-<h2><span class="section-number">4.7. </span>연습문제<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id20">
+<h2><span class="section-number">4.7. </span>연습문제<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-variables_expressions.ipynb">(실습) 변수, 값, 표현식, 명령문</a></p>
 </div>
 </div>

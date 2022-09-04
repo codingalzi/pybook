@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -662,7 +659,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5628117145435604
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5134894805067122
 </pre></div>
 </div>
 </div>
@@ -693,7 +690,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.04551584507541562
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.05445800686694757
 </pre></div>
 </div>
 </div>
@@ -770,7 +767,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/wc.py&#39;), &lt;http.client.HTTPMessage at 0x7f46d54525b0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/wc.py&#39;), &lt;http.client.HTTPMessage at 0x7f9dd96f8610&gt;)
 </pre></div>
 </div>
 </div>
@@ -833,7 +830,7 @@ def linecount<span class="o">(</span>file_name<span class="o">)</span>:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/__init__.py&#39;), &lt;http.client.HTTPMessage at 0x7f46d8477b50&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/__init__.py&#39;), &lt;http.client.HTTPMessage at 0x7f9dd96f86a0&gt;)
 </pre></div>
 </div>
 </div>
@@ -849,7 +846,7 @@ def linecount<span class="o">(</span>file_name<span class="o">)</span>:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__pycache__&#39;, &#39;collision_detection&#39;, &#39;__init__.py&#39;, &#39;wc.py&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;collision_detection&#39;, &#39;wc.py&#39;, &#39;__init__.py&#39;, &#39;__pycache__&#39;]
 </pre></div>
 </div>
 </div>
@@ -878,7 +875,7 @@ def linecount<span class="o">(</span>file_name<span class="o">)</span>:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/home/gslee/Documents/GitHub/pybook/jupyter-book&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/mnt/c/Users/gslee/Documents/GitHub/pybook/jupyter-book&#39;,
  &#39;/home/gslee/anaconda3/lib/python39.zip&#39;,
  &#39;/home/gslee/anaconda3/lib/python3.9&#39;,
  &#39;/home/gslee/anaconda3/lib/python3.9/lib-dynload&#39;,
@@ -900,7 +897,7 @@ def linecount<span class="o">(</span>file_name<span class="o">)</span>:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/gslee/Documents/GitHub/pybook/jupyter-book/codes&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/mnt/c/Users/gslee/Documents/GitHub/pybook/jupyter-book/codes&#39;)
 </pre></div>
 </div>
 </div>
@@ -921,7 +918,7 @@ def linecount<span class="o">(</span>file_name<span class="o">)</span>:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/home/gslee/Documents/GitHub/pybook/jupyter-book&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/mnt/c/Users/gslee/Documents/GitHub/pybook/jupyter-book&#39;,
  &#39;/home/gslee/anaconda3/lib/python39.zip&#39;,
  &#39;/home/gslee/anaconda3/lib/python3.9&#39;,
  &#39;/home/gslee/anaconda3/lib/python3.9/lib-dynload&#39;,
@@ -930,7 +927,7 @@ def linecount<span class="o">(</span>file_name<span class="o">)</span>:
  &#39;/home/gslee/anaconda3/lib/python3.9/site-packages/locket-0.2.1-py3.9.egg&#39;,
  &#39;/home/gslee/anaconda3/lib/python3.9/site-packages/IPython/extensions&#39;,
  &#39;/home/gslee/.ipython&#39;,
- &#39;/home/gslee/Documents/GitHub/pybook/jupyter-book/codes&#39;]
+ &#39;/mnt/c/Users/gslee/Documents/GitHub/pybook/jupyter-book/codes&#39;]
 </pre></div>
 </div>
 </div>

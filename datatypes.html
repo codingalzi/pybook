@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -619,7 +616,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="id3">
 <h2><span class="section-number">6.2. </span>부동소수점<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p><strong>부동소수점</strong>은 유리수, 실수 등을 가리키며 <code class="docutils literal notranslate"><span class="pre">float</span></code> 유형의 값이다.
+<p><strong>부동소수점</strong>은 유한소수를 가리키며 <code class="docutils literal notranslate"><span class="pre">float</span></code> 유형의 값이다.
 1.2, 0.333, -1.2, -3.7680, 4.0 등은 모두 부동소수점형(<code class="docutils literal notranslate"><span class="pre">float</span></code>)이다.
 정수와 마찬가지로 사칙연산, 변수 할당 등에 사용된다.</p>
 <p>부동소수점은 원래 실수를 컴퓨터에서 다루기 위해 개발되었으나 실제로는 유한 소수만을 다룬다.
@@ -2086,7 +2083,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-06-28 09:30:00&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-09-04 09:30:00&#39;)
 </pre></div>
 </div>
 </div>
@@ -2166,7 +2163,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-06-28 20:08:05.002888&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-09-04 22:03:00.028991&#39;)
 </pre></div>
 </div>
 </div>
@@ -2191,7 +2188,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8303 days 10:38:05.002888&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8371 days 12:33:00.028991&#39;)
 </pre></div>
 </div>
 </div>
@@ -2210,7 +2207,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8303, hours=10, minutes=38, seconds=5, milliseconds=2, microseconds=888, nanoseconds=0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8371, hours=12, minutes=33, seconds=0, milliseconds=28, microseconds=991, nanoseconds=0)
 </pre></div>
 </div>
 </div>
@@ -2223,7 +2220,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8303
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8371
 </pre></div>
 </div>
 </div>
@@ -2246,7 +2243,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.732997481108313
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.919176431935167
 </pre></div>
 </div>
 </div>
