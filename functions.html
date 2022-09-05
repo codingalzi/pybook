@@ -104,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="variables_expressions.html">
-   4. 변수, 값, 표현식, 명령문
+   4. 변수, 값, 표현식
   </a>
  </li>
  <li class="toctree-l1">
@@ -610,7 +610,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="id2">
 <h2><span class="section-number">7.1. </span>함수 호출<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p><strong>함수 호출</strong><font size="2">function call</font>은
-함수 이름과 연관된 명령문을 실행하도록 하는 일종의 명령문이다.
+함수 이름과 연관된 명령문을 실행하도록 하는 방법이다.
 함수 호출의 일반적인 형식은 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">함수이름</span><span class="p">(</span><span class="n">인자1</span><span class="p">,</span> <span class="n">인자2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">인자n</span><span class="p">)</span>
 </pre></div>
@@ -696,7 +696,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3><span class="section-number">7.1.2. </span>함수의 반환값과 <code class="docutils literal notranslate"><span class="pre">return</span></code> 키워드<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h3>
 <p>함수를 호출하면 함수에 의해 지정된 명령문을 실행한 후에
 최종적으로 어떤 값을
-반환<font size="2">return</font>하기도 한다.
+반환<font size="2">return</font>한다.
 반환값은 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">반환값</span></code> 형식의 명령문으로 지정된다.</p>
 <p>예를 들어 <code class="docutils literal notranslate"><span class="pre">int(3.14)</span></code>는 정수 <code class="docutils literal notranslate"><span class="pre">3</span></code>을,
 <code class="docutils literal notranslate"><span class="pre">type(2.37)</span></code>은 부동소수점의 자료형인 <code class="docutils literal notranslate"><span class="pre">float</span></code>를
@@ -714,12 +714,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-</div>
-<div class="info admonition">
-<p class="admonition-title">자료형과 값</p>
-<p><code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> 등과 같은 자료형도 하나의 값으로 취급한다.
-앞으로 보겠지만, 파이썬에서 다루는 모든 <strong>객체</strong><font size="2">object</font>는
-값으로 사용될 수 있다.</p>
 </div>
 </div>
 <div class="section" id="none">
@@ -773,6 +767,15 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">함수 호출과 표현식</p>
+<p><code class="docutils literal notranslate"><span class="pre">int(3.14)</span></code> 와 같은 함수 호출은 구문상 명령문이 아닌 표현식이며,
+<code class="docutils literal notranslate"><span class="pre">int()</span></code> 함수가 반환하는 값을 가리킨다.
+따라서 <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">int(3.14)</span></code> 가 변수 할당 명령문으로 인정된다.</p>
+<p>반면에 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">print(3.14)</span></code> 에서 알 수 있듯이 <code class="docutils literal notranslate"><span class="pre">print(3.14)</span></code> 자체는 <code class="docutils literal notranslate"><span class="pre">None</span></code> 값을 가리키는 함수 호출 표현식이지만
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 “화면에 지정된 값을 출력하라” 라는 명령문도 함께 수행한다.
+바로 이 부분이 수학에서의 함수와의 차이를 잘 보여준다.</p>
 </div>
 </div>
 </div>

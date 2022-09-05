@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="6. 기본자료형" href="datatypes.html" />
-    <link rel="prev" title="4. 변수, 값, 표현식, 명령문" href="variables_expressions.html" />
+    <link rel="prev" title="4. 변수, 값, 표현식" href="variables_expressions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -102,7 +102,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="variables_expressions.html">
-   4. 변수, 값, 표현식, 명령문
+   4. 변수, 값, 표현식
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -355,8 +355,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   5.6. 프로그램 오류와 디버깅
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#try-except-continue">
-   5.6. 업그레이드 5편:
+   5.7. 업그레이드 5편:
    <code class="docutils literal notranslate">
     <span class="pre">
      try-except
@@ -372,8 +377,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   5.7. 연습문제
+  <a class="reference internal nav-link" href="#id4">
+   5.8. 연습문제
   </a>
  </li>
 </ul>
@@ -446,8 +451,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   5.6. 프로그램 오류와 디버깅
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#try-except-continue">
-   5.6. 업그레이드 5편:
+   5.7. 업그레이드 5편:
    <code class="docutils literal notranslate">
     <span class="pre">
      try-except
@@ -463,8 +473,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   5.7. 연습문제
+  <a class="reference internal nav-link" href="#id4">
+   5.8. 연습문제
   </a>
  </li>
 </ul>
@@ -522,23 +532,46 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> 조건문: 숨겨진 수를 맞혔는지 여부 출력</p></li>
 </ul>
-<p>앞서 언급한 요소들에 대해 주석을 추가하면
-해당 요소들의 배치 논리를 이해할 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 숨겨진 수 지정</span>
-<span class="n">secret</span> <span class="o">=</span> <span class="mi">17</span>
-
-<span class="c1"># 입력할 수의 범위 안내 및 입력값 저장</span>
-<span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;1부터 100 사이의 정수 하나를 입력하세요: &quot;</span><span class="p">))</span>
-
-<span class="c1"># 두 수의 동치 여부에 따른 명령문 실행</span>
-<span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secret</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;맞았습니다!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;틀렸습니다!&quot;</span><span class="p">)</span>
-
-<span class="c1"># 종료 확인</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;게임 종료!&quot;</span><span class="p">)</span>
+<div class="info admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수</p>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수는 사용자로부터 입력받은 값을 저장할 때 사용한다.
+아래와 같이 <code class="docutils literal notranslate"><span class="pre">input()</span></code>을 입력하고 코드를 실행하면, 그 아래에 값을 입력하라는 창이 나온다.
+예를 들어 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">python!</span></code>을 입력하고 엔터 키 <kbd>Enter</kbd>를 누르면
+입력한 내용이 그대로 출력된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span><span class="p">()</span>
+<span class="go">Hello, Python!</span>
+<span class="go">&#39;Hello, Python!&#39;</span>
 </pre></div>
+</div>
+<p>문자열을 <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수의 인자로 지정하여 입력할 사항에 대한 안내를 할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">input_num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;정수를 입력하세요 : &quot;</span><span class="p">)</span>
+<span class="go">정수를 입력하세요 : 23</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는 &quot;</span> <span class="o">+</span> <span class="n">input_num</span> <span class="o">+</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
+<span class="go">입력하신 정수는 23입니다.</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수를 이용하여 입력받은 내용을 변수에 할당할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">like</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="go">파이썬 좋아!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;진짜로 &#39;</span> <span class="o">+</span> <span class="n">like</span><span class="p">)</span>
+<span class="go">진짜로 파이썬 좋아!</span>
+</pre></div>
+</div>
+<p>그런데 저장되는 값은 모두 문자열로 처리된다.
+사용자가 숫자를 입력하더라도 마찬가지다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="go">17</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+</pre></div>
+</div>
+<p>따라서 입력받은 정수를 연산에 활용하려면
+먼저 <code class="docutils literal notranslate"><span class="pre">int()</span></code> 함수 또는 <code class="docutils literal notranslate"><span class="pre">float()</span></code> 함수를 이용하여 정수 또는 부동소수점으로
+자료형을 변환해야 한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="go">5.666666666666667</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="if-elif-else">
@@ -747,8 +780,105 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<div class="section" id="id3">
+<h2><span class="section-number">5.6. </span>프로그램 오류와 디버깅<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>변수 이름으로 <code class="docutils literal notranslate"><span class="pre">class</span></code> 등의 지정어를 사용하거나, <code class="docutils literal notranslate"><span class="pre">odd~job</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">US$</span></code>처럼
+허용되지 않은 기호를 포함하는 경우에 파이썬 실행기는
+<strong>오류</strong><font size="2">error</font>를 발생시키며 곧바로 프로그램의 실행을 멈춘다.
+예를 들어, 아래와 같이 변수 이름에 공백을 사용하여 실행한 결과를 확인해 보자.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bad</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">5</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
+    <span class="n">bad</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="p p-Marker">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>오류가 발생하면 오류의 원인을 찾아 해결해야 한다.
+이렇게 프로그램의 오류를 찾아 해결하는 과정을 <strong>디버깅</strong>(debugging)이라 부른다.</p>
+<p>프로그램의 오류는 크게 세 가지 유형으로 나뉜다.</p>
+<p><strong>구문 오류</strong></p>
+<p>변수의 이름을 잘못 지정하면 <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">invalid</span> <span class="pre">syntax</span></code>와
+같은 <strong>구문 오류</strong><font size="2">syntax error</font>가 발생한다.
+구문 오류는 실행기가 프로그램을 실행하기 전에 일종의 문법 검사를 통해 찾아낸다.</p>
+<p><strong>런타임 오류</strong></p>
+<p><strong>런타임 오류</strong><font size="2">runtime error</font>는
+프로그램이 실행되는 중간에 발생하는 오류이다.
+프로그램 실행 중간에 예외 상황을 발생시키는 오류라는 의미에서 런타임 오류를
+<strong>예외</strong><font size="2">exception</font>라고 부르기도 한다.
+런타임 오류는 다양한 경우에 발생한다.
+여기서는 두 가지 경우를 살펴본다.</p>
+<div class="proof example admonition" id="zerodivision">
+<p class="admonition-title"><span class="caption-number">Example 5.1 </span> (ZeroDivisionError)</p>
+<div class="example-content section" id="proof-content">
+<p>런타임 에러의 대표적인 예는 <strong>0으로 나누기 오류</strong>이다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="n">num</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">ZeroDivisionError</span>: <span class="n">division by zero</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> 라고 표시되는데,
+이는 0으로 나눗셈을 시도하는 경우 발생한다.
+<code class="docutils literal notranslate"><span class="pre">3/num</span></code>은 문법적으로 전혀 문제가 없지만 실제 계산 중에 <code class="docutils literal notranslate"><span class="pre">num</span></code>에 할당된 값이 0이라는 것으로 확인되어
+오류가 발생한다.</p>
+</div>
+</div><div class="proof example admonition" id="nameerror">
+<p class="admonition-title"><span class="caption-number">Example 5.2 </span> (NameError)</p>
+<div class="example-content section" id="proof-content">
+<p>아래 코드를 실행하면 ‘a_number’ 라는 이름이 선언되어 있지 않기 때문에 문제가 발생한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_Number</span> <span class="o">=</span> <span class="mf">327.68</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">a_number</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">NameError</span>: <span class="n">name &#39;a_number&#39; is not defined</span>
+</pre></div>
+</div>
+<p>자세히 살펴보면 ‘a_number’와 ‘a_Number’ 둘 중에 하나는 오타임을 알 수 있다.</p>
+</div>
+</div><p><strong>의미 오류</strong></p>
+<p>프로그램 실행은 잘 되지만 원하는 결과를 가져오지 못한다면 프로그램
+어딘가에 논리적 오류가 존재한다는 의미이다.
+이와같은 오류를
+<strong>의미 오류</strong><font size="2">semantic error</font>라 부르며,
+발생원인은 다양하며,
+프로그램이 정상적으로 작동하기 때문에 구문 오류나 런타임 오류와는 다르게
+오류의 원인을 바로 확인하기 어려울 수 있다.</p>
+<p>수학 문제를 풀다가 계산실수를 하거나, 기호를 다르게 적거나,
+문제를 잘못 이해했거나 해서
+풀 수 있었던 문제를 틀렸던 경험이 있을 것이다.
+프로그래밍 과정에서도 유사한 실수를 수없이 하게 된다.
+예를 들어, 아래 프로그램은 두 배 계산 대신에 제곱 계산을 하는 실수를 보여준다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">doubleNum</span> <span class="o">=</span> <span class="n">num</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력한 값&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="s2">&quot;의 두 배는&quot;</span><span class="p">,</span> <span class="n">doubleNum</span><span class="p">,</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>입력한 값 3 의 두 배는 9 입니다.
+</pre></div>
+</div>
+</div>
+</div>
+<p>두 배하려면 <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">*</span> <span class="pre">2</span></code>를 사용했어야 하는데 실수로 <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">**</span> <span class="pre">2</span></code>를 사용하여서
+결과적으로 입력한 값의 제곱을 계산하게 된다.
+수천, 수만 줄로 이루어진 프로그램에서 이런 형식의 오류의 원인을 찾는 일은
+경우에 따라 모래사장에서 바늘찾기처럼 매우 어렵거나 불가능할 수 있다.</p>
+<div class="info admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 인자</p>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수가 여러 개의 인자를 받으면
+모든 인자를 한 줄에 차례대로 출력한다.
+인자들 사이는 스페이스 여백으로 구분한다.
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> 에 대해서는 <a class="reference internal" href="functions.html#sec-keyword-arguments"><span class="std std-numref">7.4.4절</span></a>에서
+보다 자세히 설명한다.</p>
+</div>
+</div>
 <div class="section" id="try-except-continue">
-<h2><span class="section-number">5.6. </span>업그레이드 5편: <code class="docutils literal notranslate"><span class="pre">try-except</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> 명령문<a class="headerlink" href="#try-except-continue" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.7. </span>업그레이드 5편: <code class="docutils literal notranslate"><span class="pre">try-except</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> 명령문<a class="headerlink" href="#try-except-continue" title="Permalink to this headline">¶</a></h2>
 <p>정수가 아닌 값을 입력하면 오류가 발생하면서 게임 자체의 실행이 멈춘다.
 이유는 아래 할당문에서 사용된 <code class="docutils literal notranslate"><span class="pre">int()</span></code> 함수가 정수 모양의 문자열만
 형변환할 수 있기 때문이다.</p>
@@ -824,8 +954,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2><span class="section-number">5.7. </span>연습문제<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2><span class="section-number">5.8. </span>연습문제<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-casestudy_planning.ipynb">(실습) 사례 연구: 프로그램 구상</a></p>
 </div>
 </div>
@@ -859,7 +989,7 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4. </span>변수, 값, 표현식, 명령문</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>변수, 값, 표현식</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="datatypes.html" title="next page">
