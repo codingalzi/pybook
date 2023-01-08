@@ -1445,9 +1445,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.12
+17.12
 17.123
 </pre></div>
 </div>
@@ -1547,14 +1545,24 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 <div class="warning admonition">
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">==</span></code> vs. <code class="docutils literal notranslate"><span class="pre">=</span></code></p>
-<p>등호 기호가 하나인 경우와 두 개인 경우는 완전히 다르다.
-두 개의 등호 기호 <code class="docutils literal notranslate"><span class="pre">==</span></code> 는 등가<font size="2">equality</font>
-여부를 판단하는 비교 연산자인 반면에
-하나의 등호 기호 <code class="docutils literal notranslate"><span class="pre">=</span></code> 는 변수 할당에 사용되는 특별한 기호이다.</p>
-<p>만약 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">3</span></code> 이 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>와 정수 <code class="docutils literal notranslate"><span class="pre">3</span></code>이 동일함을 의미한다면
+<p>표현식 A와 B가 동일한 값을 표현하거나 가리킬 때 서로 <strong>등가</strong><font size="2">equality</font>라고 말하며,
+이때 <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">==</span> <span class="pre">B</span></code>를 <code class="docutils literal notranslate"><span class="pre">True</span></code>로 간주한다.
+예를 들어 <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">1</span></code>과 <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span></code>가 동일한 값을 나타낸다는 사실은
+아래 코드와 같이 실행할 때 결과가 <code class="docutils literal notranslate"><span class="pre">True</span></code>로 나오는 것으로 확인된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>반면에 <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">==</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">1</span></code>는 서로 등가가 아니라고 판명된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>반면에 하나의 등호 기호 <code class="docutils literal notranslate"><span class="pre">=</span></code> 는 변수 할당에 사용되는 특별한 기호이다.
+만약 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">3</span></code> 이 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>와 정수 <code class="docutils literal notranslate"><span class="pre">3</span></code>이 등가임을 의미한다면
 <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">=</span> <span class="pre">x</span></code> 또한 의미가 있어야 한다.
 그런데 이는 허용되지 않는 구문이다.
-파이썬을 포함한 대부분의 프로그래밍 언어는 등호 기호 왼편애 변수만 허용한다.</p>
+파이썬을 포함한 대부분의 프로그래밍 언어는 변수를 선언할 때 변수는 등호 기호 왼편애 위치하도록 강요한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">=</span> <span class="n">x</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
@@ -2249,7 +2257,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2023-01-08 09:55:20.908586&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2023-01-08 10:30:16.283474&#39;)
 </pre></div>
 </div>
 </div>
@@ -2274,7 +2282,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8497 days 00:25:20.908586&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8497 days 01:00:16.283474&#39;)
 </pre></div>
 </div>
 </div>
@@ -2293,7 +2301,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8497, hours=0, minutes=25, seconds=20, milliseconds=908, microseconds=586, nanoseconds=0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8497, hours=1, minutes=0, seconds=16, milliseconds=283, microseconds=474, nanoseconds=0)
 </pre></div>
 </div>
 </div>

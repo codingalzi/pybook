@@ -609,25 +609,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="info admonition">
-<p class="admonition-title">등가 판단</p>
-<p>변수 할당에 사용되는 등호 기호(<code class="docutils literal notranslate"><span class="pre">=</span></code>)는
-선언되는 변수와 변수가 가리키는 값과 서로 동일하다는 의미가 아니다.
-두 개의 값이 동일한 값을 표현하거나 가리킨다는 <strong>등가성</strong><font size='2'>equality</font>은
-두 개의 등호 기호(<code class="docutils literal notranslate"><span class="pre">==</span></code>)를 이용하여 표현한다.
-<code class="docutils literal notranslate"><span class="pre">==</span></code>는 하지만 양쪽에 위치한 두 값이 등가 여부를 판단한다.
-예를 들어 <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">1</span></code>과 <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span></code>가 동일한 값을 나타낸다는 사실은
-아래 코드와 같이 실행할 때 결과가 <code class="docutils literal notranslate"><span class="pre">True</span></code>로 나오는 것으로 확인된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<p>반면에 <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">==</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">1</span></code>는 서로 등가가 아니라고 판면된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-</div>
 <p>그런데 변수가 가리키는 값은 변경될 수 있다.
 예를 들어, 변수 <code class="docutils literal notranslate"><span class="pre">num</span></code>에 <code class="docutils literal notranslate"><span class="pre">18</span></code>을 새롭게 할당하면
 이제는 <code class="docutils literal notranslate"><span class="pre">17</span></code>이 아닌 <code class="docutils literal notranslate"><span class="pre">18</span></code>을 가리킨다.</p>
@@ -764,6 +745,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>소문자와 대문자 구분하기</strong></p>
 <p>프로그래밍에서 영어 알파벳의 소문자와 대문자는 엄연히 구분된다.
 예를 들어, <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>와 <code class="docutils literal notranslate"><span class="pre">'Hello'</span></code>는 서로 다른 문자열이다.</p>
+<p>아래 코드에서 사용된 두 개의 등호 기호 연산자는 양 옆에 위치한 두 개의 값이 동일한 값을 가리키는지 여부,
+즉 등가 여부를 판단한다.
+<code class="docutils literal notranslate"><span class="pre">hello</span></code>와 <code class="docutils literal notranslate"><span class="pre">Hello</span></code>는 서로 다른 문자열로 판단되기에 <code class="docutils literal notranslate"><span class="pre">False</span></code>로 계산된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;hello&#39;</span> <span class="o">==</span> <span class="s1">&#39;Hello&#39;</span>
