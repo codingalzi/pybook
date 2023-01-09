@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6. 기본자료형 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>6. 기초 자료형 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -117,7 +114,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   6. 기본자료형
+   6. 기초 자료형
   </a>
  </li>
  <li class="toctree-l1">
@@ -339,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     6.3.2. 문자열 기본 연산
+     6.3.2. 문자열 기초 연산
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -401,21 +398,9 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#id16">
    6.6. 기타 자료형
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
-     6.6.1. 날짜와 시간
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     6.6.2. 날짜와 시간 연산
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id19">
+  <a class="reference internal nav-link" href="#id17">
    6.7. 연습문제
   </a>
  </li>
@@ -429,7 +414,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>기본자료형</h1>
+                <h1>기초 자료형</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -468,7 +453,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     6.3.2. 문자열 기본 연산
+     6.3.2. 문자열 기초 연산
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -530,21 +515,9 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#id16">
    6.6. 기타 자료형
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
-     6.6.1. 날짜와 시간
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     6.6.2. 날짜와 시간 연산
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id19">
+  <a class="reference internal nav-link" href="#id17">
    6.7. 연습문제
   </a>
  </li>
@@ -558,12 +531,12 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">6. </span>기본자료형<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6. </span>기초 자료형<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>일반적으로 <strong>자료형</strong>으로 불리는 <strong>자료 유형</strong><font size = "2">data type</font>은
 사용되는 값과 관련된 많은 정보를 제공한다.
 파이썬 실행기<font size = "2">python interpreter</font>는
 자료형에 포함된 정보를 이용하여 주어진 값의 사용법을 확인하고 이용한다.
-이번 장에서는 파이썬 프로그래밍 언어가 제공하는 네 종류의 기본 자료형 간단히 살펴본다.</p>
+이번 장에서는 파이썬 프로그래밍 언어가 제공하는 네 종류의 기초 자료형 간단히 살펴본다.</p>
 <ul class="simple">
 <li><p>정수</p></li>
 <li><p>부동소수점</p></li>
@@ -759,7 +732,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="id4">
 <h3><span class="section-number">6.2.1. </span>정수와 부동소수점 연산<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>파이썬의 기본 연산을 표로 정리하면 아래와 같다.</p>
+<p>파이썬이 제공하는 기초 연산을 표로 정리하면 아래와 같다.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>연산 기호</p></th>
@@ -1119,7 +1092,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div></div>
 <div class="section" id="id7">
-<h3><span class="section-number">6.3.2. </span>문자열 기본 연산<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2. </span>문자열 기초 연산<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>연산 기호</p></th>
@@ -1604,7 +1577,7 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 <p>논리식은 기본적으로 등식, 부등식 등의 <strong>비교 연산자</strong>를 이용하여 표현하며,
 <strong>논리 연산자</strong>를 이용하여 보다 복잡한 논리식을 구성한다.</p>
 <p>비교 연산자는 수, 문자열 등의 크기를 비교할 수 있으며
-아래 연산자를 기본으로 지원한다.</p>
+아래 연산자를 지원한다.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>연산 기호</p></th>
@@ -2110,296 +2083,21 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 <div class="section" id="id16">
 <h2><span class="section-number">6.6. </span>기타 자료형<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
-<p>파이썬이 기본으로 제공하는 자료형은 지금까지 살펴 본 정수, 부동소수점, 문자열, 부울값 이외에
-<a class="reference internal" href="collections1.html#ch-collections"><span class="std std-numref">12장</span></a>에서 자세히 다룰
+<p>파이썬은 많은 자료형을 제공한다.
+정수, 부동소수점, 문자열, 부울값 등 기초 자료형 이외에 파이썬이 함께
+기본으로 제공하는 자료형은 <a class="reference internal" href="collections1.html#ch-collections"><span class="std std-numref">12장</span></a>에서 자세히 다룰
 리스트, 튜플, 사전, 집합 등의
-모음<font size="2">collection</font> 자료형이 있다.
-그리고 사용자가 원하면 직접 새로운 자료형을 정의해서 사용할 수 있는 기능을
-파이썬이 제공한다.</p>
-<p>자료형을 직접 정의하는 방법은 나중에
+<strong>모음</strong><font size="2">collection</font> 자료형이 있다.</p>
+<p>파이썬에 추가 모듈 또는 패키지를 설치하면 더 많은 자료형이 함께 제공된다.
+그리고 필요에 따라 직접 새로운 자료형을 정의해서 사용할 수 있는 기능도
+파이썬이 제공한다.
+자료형을 직접 정의하는 방법은 나중에
 <a class="reference internal" href="proper_classes.html#ch-classes"><span class="std std-numref">20장</span></a>에서
-클래스를 다룰 때 자세히 살펴볼 것이다.
-여기서는 판다스<font size="2">Pandas</font> 라는
-파이썬 추가 패키지가 제공하는 자료형인 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 를 소개한다.</p>
+클래스를 다룰 때 자세히 살펴볼 것이다.</p>
+</div>
 <div class="section" id="id17">
-<h3><span class="section-number">6.6.1. </span>날짜와 시간<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
-<p>판다스의 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형은 날짜와 시간에 특화된 문자열 자료형으로 생각할 수 있다.
-하지만 문자열과는 달리 날짜와 시간과 관련된 연산을 지원한다.
-예를 들어 다음과 같이 1999년 10월 4일과
-오전 9시 30분을 문자열로 지정해보자.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_str</span> <span class="o">=</span> <span class="s1">&#39;October 4, 1999&#39;</span>  <span class="c1"># 문자열로 작성된 날짜</span>
-<span class="n">time_str</span> <span class="o">=</span> <span class="s1">&#39;9:30:00&#39;</span>          <span class="c1"># 문자열로 작성된 시간</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="info admonition">
-<p class="admonition-title">참고</p>
-<p>한글이 아닌 영어식 날짜를 사용하는 이유는 이어서 소개할 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형이
-영어만 지원하기 때문이다.</p>
-</div>
-<p>이렇게 문자열로 지정된 날짜와 시간은 일상에서 사용되는 날짜와 시간의 연산에 활용될 수 있다.
-예를 들어 1999년 10월 4일은 오늘 기준으로 며칠 전인지를 알고 싶거나,
-오전 9시 30분에서 3시간 15분 뒤는 몇 시 몇 분인지 알고 싶을 때
-문자열을 이용해서 바로 답을 구할 수 없다.
-하지만 판다스의 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형으로 변환하면 일상적인 연산이 가능해진다.</p>
-<p>판다스 모듈은 관습적으로 <code class="docutils literal notranslate"><span class="pre">pd</span></code> 라는 이름으로 사용되며
-아래와 같이 불러와야 한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>문자열로 작성된 날짜와 시간을 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형으로 변환하려면
-다음 방식으로 형변환한다.</p>
-<p>날짜만 지정되면 시간은 새벽 0시 0분 0초로 설정된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;1999-10-04 00:00:00&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<p>시간만 지정되면 날짜는 코드가 실행된 날의 정보를 이용한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">time_str</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2023-01-08 09:30:00&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<p>날짜와 시간을 모두 지정할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthday</span> <span class="o">=</span> <span class="n">date_str</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">time_str</span>
-<span class="n">birthday</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;October 4, 1999 9:30:00&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_of_birth</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">birthday</span><span class="p">)</span>
-<span class="n">date_of_birth</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;1999-10-04 09:30:00&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 값으로부터 년, 월, 일, 시, 분, 초 정보를 확인할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_of_birth</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">date_of_birth</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">date_of_birth</span><span class="o">.</span><span class="n">day</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1999, 10, 4)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_of_birth</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="n">date_of_birth</span><span class="o">.</span><span class="n">minute</span><span class="p">,</span> <span class="n">date_of_birth</span><span class="o">.</span><span class="n">second</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(9, 30, 0)
-</pre></div>
-</div>
-</div>
-</div>
-<p>달과 요일을 영어 표현으로 확인할 수도 있다.
-1999년 10월 4일은 월요일이었다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_of_birth</span><span class="o">.</span><span class="n">day_name</span><span class="p">(),</span> <span class="n">date_of_birth</span><span class="o">.</span><span class="n">month_name</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Monday&#39;, &#39;October&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<p>현재 시각을 알고자 하면 <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 클래스의 <code class="docutils literal notranslate"><span class="pre">now()</span></code> 메서드를 호출한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">now</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-<span class="n">now</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2023-01-08 10:30:16.283474&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="info admonition">
-<p class="admonition-title">메서드</p>
-<p><strong>메서드</strong><font size="2">method</font>는 특정 자료형과
-함께 사용되는 함수이다.
-<a class="reference internal" href="collections1.html#ch-collections"><span class="std std-numref">12장에서</span></a>
-모음 자료형을 설명할 때 다양한 메서드를 살펴볼 것이다.</p>
-</div>
-</div>
-<div class="section" id="id18">
-<h3><span class="section-number">6.6.2. </span>날짜와 시간 연산<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형은 특정 연산을 지원한다.
-예를 들어 나이는 현재 시간과 생일 사이의 차이로 계산된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">date_of_birth</span>
-<span class="n">age</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;8497 days 01:00:16.283474&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<p>뺄셈 연산 결과는 <code class="docutils literal notranslate"><span class="pre">Timedelta</span></code> 자료형의 값으로 지정되며
-일, 시, 분, 초, 마이크로초(<span class="math notranslate nohighlight">\(10^{-6}\)</span>초) 단위로 계산된다.</p>
-<div class="seealso admonition">
-<p class="admonition-title">델타</p>
-<p>델타<font size="2">delta</font>는 그리스어 알파벳(<span class="math notranslate nohighlight">\(\Delta\)</span>)이지만 증가량 또는 차이를 나타내는 의미로 많이 사용된다.</p>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">components</span></code> 속성에 차이 내용을 별도로 저장된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span><span class="o">.</span><span class="n">components</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Components(days=8497, hours=1, minutes=0, seconds=16, milliseconds=283, microseconds=474, nanoseconds=0)
-</pre></div>
-</div>
-</div>
-</div>
-<p>차이를 일 단위로 따로 확인할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span><span class="o">.</span><span class="n">days</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8497
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">Timedelta</span></code> 에 저장되는 가장 큰 단위는 년(year)이 아니라 일(day)이다.
-사실 일 년이 365일이기도 하고 366일 이기도 하기에 년 단위로 계산하면 부정확해진다.
-실제로 지구의 공전 주기는 약 365.24일이다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_year</span> <span class="o">=</span> <span class="mf">365.24</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>이 정보를 이용하여 나이를 계산하면 다음과 같다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span><span class="o">.</span><span class="n">days</span> <span class="o">/</span> <span class="n">a_year</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.264155076114335
-</pre></div>
-</div>
-</div>
-</div>
-<p>나이를 말할 때 보통 소수점 이하는 버린다.
-이를 위해 넘파이 모듈의 <code class="docutils literal notranslate"><span class="pre">floor()</span></code> 함수를 사용할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">age</span><span class="o">.</span><span class="n">days</span> <span class="o">/</span> <span class="mf">365.24</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.0
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">ceil()</span></code> 함수를 이용하여 나이를 올림할 수도 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">age</span><span class="o">.</span><span class="n">days</span> <span class="o">/</span> <span class="mf">365.24</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="proof example admonition" id="exp_timestamp_comparison">
-<p class="admonition-title"><span class="caption-number">Example 6.6 </span></p>
-<div class="example-content section" id="proof-content">
-<p><code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> 자료형의 값들을 서로 크기 비교가 가능하다.
-예를 들어 생일이 지났는지 여부를 다음과 같이 확인할 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 올해의 생일 날짜</span>
-<span class="n">bday_this_year</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
-                              <span class="n">date_of_birth</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> 
-                              <span class="n">date_of_birth</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
-<span class="n">bday_this_year</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2022-10-04 00:00:00&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>크기 비교 연산자 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 를 이용하여 <code class="docutils literal notranslate"><span class="pre">now</span></code> 가 가리키는 값과 비교하면 생일이 지났는지 여부를
-알 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">now</span> <span class="o">&gt;</span> <span class="n">bday_this_year</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span>
-</pre></div>
-</div>
-</div>
-</div></div>
-</div>
-<div class="section" id="id19">
-<h2><span class="section-number">6.7. </span>연습문제<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
-<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-datatypes.ipynb">(실습) 기본자료형</a></p>
+<h2><span class="section-number">6.7. </span>연습문제<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-datatypes.ipynb">(실습) 기초 자료형</a></p>
 </div>
 </div>
 
