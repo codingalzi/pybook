@@ -493,7 +493,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     4.3.4. 수 표기법
+     4.3.4. 수 표기법 주의사항
     </a>
    </li>
   </ul>
@@ -589,7 +589,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     4.3.4. 수 표기법
+     4.3.4. 수 표기법 주의사항
     </a>
    </li>
   </ul>
@@ -1225,7 +1225,7 @@ title="Print to PDF"
 <section id="id11">
 <h3><span class="section-number">4.3.2. </span>표현식의 자료형<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">Python&quot;</span> <span class="pre">+</span> <span class="pre">&quot;!&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">math.sqrt(2)</span></code>, <code class="docutils literal notranslate"><span class="pre">x/2</span></code> 등의 표현식의 자료형은
-표현식이 가리키는 값의 자료형을 갖는다.
+표현식이 표현하는 값의 자료형을 갖는다.
 반면에 튜플과 리스트의 자료형은 사용된 항목의 자료형에 상관 없다.
 즉, 튜플 언제나 튜플이고 리스트는 언제나 리스트이다.</p>
 <p>아래 표는 표현식과 해당 표현식이 표현하는 값, 그리고 값의 자료형 사이의 관계를 보여준다.
@@ -1275,7 +1275,7 @@ title="Print to PDF"
 </section>
 <section id="type">
 <h3><span class="section-number">4.3.3. </span><code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수<a class="headerlink" href="#type" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수는 인자로 사용된 값의 자료형을 확인해준다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수는 인자로 사용된 값과 표현식의 자료형을 확인해준다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
@@ -1339,9 +1339,9 @@ title="Print to PDF"
 </div>
 </section>
 <section id="id12">
-<h3><span class="section-number">4.3.4. </span>수 표기법<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.3.4. </span>수 표기법 주의사항<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>수<font size="2">number</font>를 표기할 때 다음 사항들에 주의해야 한다.</p>
-<p>첫째, <code class="docutils literal notranslate"><span class="pre">'17'</span></code>, <code class="docutils literal notranslate"><span class="pre">'3.2'</span></code> 등은 작은따옴표로 둘러싸여 있어서
+<p>첫째, <code class="docutils literal notranslate"><span class="pre">'17'</span></code>, <code class="docutils literal notranslate"><span class="pre">'3.2'</span></code> 등은 따옴표로 둘러싸여 있어서
 수가 아닌 숫자 기호들로 이루어진 문자열이며,
 연산이 다르게 작동한다.</p>
 <div class="cell docutils container">
