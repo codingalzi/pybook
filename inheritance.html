@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>19. 상속 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>18. 상속 &#8212; 파이썬 프로그래밍 기초</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="20. (부록) 클래스의 기본 요소" href="proper_classes.html" />
-    <link rel="prev" title="18. 사례 연구: 객체 지향 프로그래밍" href="casestudy_oop.html" />
+    <link rel="next" title="19. (부록) 클래스의 기본 요소" href="proper_classes.html" />
+    <link rel="prev" title="17. 사례 연구: 객체 지향 프로그래밍" href="casestudy_oop.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -123,48 +123,43 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="casestudy_planning.html">
-   5. 사례 연구: 프로그램 구상
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="datatypes.html">
-   6. 기초 자료형
+   5. 기초 자료형
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="functions.html">
-   7. 함수
+   6. 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_function_interfaces.html">
-   8. 사례 연구: 함수 인터페이스
+   7. 사례 연구: 함수 인터페이스
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="conditionals.html">
-   9. 조건문
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="recursion.html">
-   10. 재귀 함수
+   8. 조건문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="iterations.html">
-   11. 반복문
+   9. 반복문
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="casestudy_planning.html">
+   10. 사례 연구: 프로그램 구상
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections1.html">
-   12. 모음 자료형 1부: 문자열, 리스트, 튜플
+   11. 모음 자료형 1부: 문자열, 리스트, 튜플
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections2.html">
-   13. 모음 자료형 2부: 집합, 사전,
+   12. 모음 자료형 2부: 집합, 사전,
    <code class="docutils literal notranslate">
     <span class="pre">
      range
@@ -175,37 +170,42 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_collections.html">
-   14. 사례 연구: 이터러블, 이터레이터, 제너레이터
+   13. 사례 연구: 이터러블, 이터레이터, 제너레이터
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   15. 파일
+   14. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   16. 모듈
+   15. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="classes_instances_objects.html">
-   17. 클래스, 인스턴스, 객체
+   16. 클래스, 인스턴스, 객체
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_oop.html">
-   18. 사례 연구: 객체 지향 프로그래밍
+   17. 사례 연구: 객체 지향 프로그래밍
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   19. 상속
+   18. 상속
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="proper_classes.html">
-   20. (부록) 클래스의 기본 요소
+   19. (부록) 클래스의 기본 요소
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="recursion.html">
+   20. (부록) 재귀 함수
   </a>
  </li>
  <li class="toctree-l1">
@@ -426,29 +426,29 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   19.1. 모음 자료형의 상속 체계
+   18.1. 모음 자료형의 상속 체계
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   19.2. 벡터의 내적
+   18.2. 벡터의 내적
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#vector">
-     19.2.1. Vector 클래스
+     18.2.1. Vector 클래스
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     19.2.2. 메서드 재정의
+     18.2.2. 메서드 재정의
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   19.3. 연습문제
+   18.3. 연습문제
   </a>
  </li>
 </ul>
@@ -472,29 +472,29 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   19.1. 모음 자료형의 상속 체계
+   18.1. 모음 자료형의 상속 체계
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   19.2. 벡터의 내적
+   18.2. 벡터의 내적
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#vector">
-     19.2.1. Vector 클래스
+     18.2.1. Vector 클래스
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     19.2.2. 메서드 재정의
+     18.2.2. 메서드 재정의
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   19.3. 연습문제
+   18.3. 연습문제
   </a>
  </li>
 </ul>
@@ -508,7 +508,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ch-inheritance">
-<span id="id1"></span><h1><span class="section-number">19. </span>상속<a class="headerlink" href="#ch-inheritance" title="Permalink to this headline">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">18. </span>상속<a class="headerlink" href="#ch-inheritance" title="Permalink to this headline">#</a></h1>
 <p><strong>상속</strong><font size='2'>inheritance</font>은 객체 지향 프로그래밍의 또 다른 주요 요소이다.
 클래스를 선언할 때 다른 클래스의 속성과 메서드를 상속 받아 활용할 수 있다.
 상속을 받는 클래스를 <strong>자식 클래스</strong> 또는 <strong>하위 클래스</strong>,
@@ -519,7 +519,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <section id="id2">
-<h2><span class="section-number">19.1. </span>모음 자료형의 상속 체계<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">18.1. </span>모음 자료형의 상속 체계<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>아래 그림은 파이썬 모음 자료형의 상속 체계를 보여준다.
 예를 들어, <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스는 <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> 클래스를 상속하며,
 <code class="docutils literal notranslate"><span class="pre">Sequence</span></code>는 <code class="docutils literal notranslate"><span class="pre">Collection</span></code> 클래를 상속한다.
@@ -538,7 +538,7 @@ title="Print to PDF"
 <p>두 가지 예제를 이용하여 상속을 설명한다.</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">19.2. </span>벡터의 내적<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">18.2. </span>벡터의 내적<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>벡터는 정수 또는 부동소수점의 리스트를 의미하며
 길이가 같은 두 벡터의 내적은 각 항목끼리의 곱셈의 합이다.
 예를 들어 <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code> 와 <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">6,</span> <span class="pre">9]</span></code> 두 벡터의 내적은 다음과 같다.</p>
@@ -548,7 +548,7 @@ title="Print to PDF"
 <p>리스트 클래스 <code class="docutils literal notranslate"><span class="pre">list</span></code> 는 벡터의 내적 연산자를 지원하지 않는다.
 따라서 내적 연산을 지원하도록 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스의 기능을 확장해야 한다.</p>
 <section id="vector">
-<h3><span class="section-number">19.2.1. </span>Vector 클래스<a class="headerlink" href="#vector" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">18.2.1. </span>Vector 클래스<a class="headerlink" href="#vector" title="Permalink to this headline">#</a></h3>
 <p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스를 상속하면서 내적 연산자를 지원하는 <code class="docutils literal notranslate"><span class="pre">Vector</span></code> 클래스를
 정의한다.</p>
 <ul class="simple">
@@ -756,7 +756,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="id4">
-<h3><span class="section-number">19.2.2. </span>메서드 재정의<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">18.2.2. </span>메서드 재정의<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>상속 받은 메서드를 재정의할 수 있다.
 사실 <code class="docutils literal notranslate"><span class="pre">Vector</span></code> 클래스의 생성자 메서드는
 부모 클래스인 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스의 생성자를 재정의 하였다.
@@ -880,7 +880,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="id5">
-<h2><span class="section-number">19.3. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">18.3. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-inheritance.ipynb">(실습) 상속</a></p>
 </section>
 </section>
@@ -916,13 +916,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">18. </span>사례 연구: 객체 지향 프로그래밍</p>
+            <p class="prev-next-title"><span class="section-number">17. </span>사례 연구: 객체 지향 프로그래밍</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="proper_classes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">20. </span>(부록) 클래스의 기본 요소</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>(부록) 클래스의 기본 요소</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

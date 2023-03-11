@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5. 사례 연구: 프로그램 구상 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>10. 사례 연구: 프로그램 구상 &#8212; 파이썬 프로그래밍 기초</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. 기초 자료형" href="datatypes.html" />
-    <link rel="prev" title="4. 변수, 값, 표현식" href="variables_expressions.html" />
+    <link rel="next" title="11. 모음 자료형 1부: 문자열, 리스트, 튜플" href="collections1.html" />
+    <link rel="prev" title="9. 반복문" href="iterations.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -122,49 +122,44 @@ const thebe_selector_output = ".output, .cell_output"
    4. 변수, 값, 표현식
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   5. 사례 연구: 프로그램 구상
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="datatypes.html">
-   6. 기초 자료형
+   5. 기초 자료형
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="functions.html">
-   7. 함수
+   6. 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_function_interfaces.html">
-   8. 사례 연구: 함수 인터페이스
+   7. 사례 연구: 함수 인터페이스
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="conditionals.html">
-   9. 조건문
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="recursion.html">
-   10. 재귀 함수
+   8. 조건문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="iterations.html">
-   11. 반복문
+   9. 반복문
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   10. 사례 연구: 프로그램 구상
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections1.html">
-   12. 모음 자료형 1부: 문자열, 리스트, 튜플
+   11. 모음 자료형 1부: 문자열, 리스트, 튜플
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="collections2.html">
-   13. 모음 자료형 2부: 집합, 사전,
+   12. 모음 자료형 2부: 집합, 사전,
    <code class="docutils literal notranslate">
     <span class="pre">
      range
@@ -175,37 +170,42 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_collections.html">
-   14. 사례 연구: 이터러블, 이터레이터, 제너레이터
+   13. 사례 연구: 이터러블, 이터레이터, 제너레이터
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="files.html">
-   15. 파일
+   14. 파일
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   16. 모듈
+   15. 모듈
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="classes_instances_objects.html">
-   17. 클래스, 인스턴스, 객체
+   16. 클래스, 인스턴스, 객체
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="casestudy_oop.html">
-   18. 사례 연구: 객체 지향 프로그래밍
+   17. 사례 연구: 객체 지향 프로그래밍
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="inheritance.html">
-   19. 상속
+   18. 상속
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="proper_classes.html">
-   20. (부록) 클래스의 기본 요소
+   19. (부록) 클래스의 기본 요소
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="recursion.html">
+   20. (부록) 재귀 함수
   </a>
  </li>
  <li class="toctree-l1">
@@ -426,12 +426,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   5.1. 수 알아맞히기 게임
+   10.1. 수 알아맞히기 게임
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if-elif-else">
-   5.2. 업그레이드 1편:
+   10.2. 업그레이드 1편:
    <code class="docutils literal notranslate">
     <span class="pre">
      if-elif-else
@@ -442,7 +442,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while">
-   5.3. 업그레이드 2편:
+   10.3. 업그레이드 2편:
    <code class="docutils literal notranslate">
     <span class="pre">
      while
@@ -453,7 +453,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#random">
-   5.4. 업그레이드 3편:
+   10.4. 업그레이드 3편:
    <code class="docutils literal notranslate">
     <span class="pre">
      random
@@ -464,7 +464,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#break">
-   5.5. 업그레이드 4편:
+   10.5. 업그레이드 4편:
    <code class="docutils literal notranslate">
     <span class="pre">
      break
@@ -475,17 +475,17 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   5.6. 프로그램 오류와 디버깅
+   10.6. 프로그램 오류와 디버깅
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   5.7. 예외 처리
+   10.7. 예외 처리
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#continue">
-   5.8. 업그레이드 5편:
+   10.8. 업그레이드 5편:
    <code class="docutils literal notranslate">
     <span class="pre">
      continue
@@ -496,7 +496,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   5.9. 연습문제
+   10.9. 연습문제
   </a>
  </li>
 </ul>
@@ -520,12 +520,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   5.1. 수 알아맞히기 게임
+   10.1. 수 알아맞히기 게임
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if-elif-else">
-   5.2. 업그레이드 1편:
+   10.2. 업그레이드 1편:
    <code class="docutils literal notranslate">
     <span class="pre">
      if-elif-else
@@ -536,7 +536,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while">
-   5.3. 업그레이드 2편:
+   10.3. 업그레이드 2편:
    <code class="docutils literal notranslate">
     <span class="pre">
      while
@@ -547,7 +547,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#random">
-   5.4. 업그레이드 3편:
+   10.4. 업그레이드 3편:
    <code class="docutils literal notranslate">
     <span class="pre">
      random
@@ -558,7 +558,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#break">
-   5.5. 업그레이드 4편:
+   10.5. 업그레이드 4편:
    <code class="docutils literal notranslate">
     <span class="pre">
      break
@@ -569,17 +569,17 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   5.6. 프로그램 오류와 디버깅
+   10.6. 프로그램 오류와 디버깅
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   5.7. 예외 처리
+   10.7. 예외 처리
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#continue">
-   5.8. 업그레이드 5편:
+   10.8. 업그레이드 5편:
    <code class="docutils literal notranslate">
     <span class="pre">
      continue
@@ -590,7 +590,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   5.9. 연습문제
+   10.9. 연습문제
   </a>
  </li>
 </ul>
@@ -604,7 +604,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="case-guessing-numbers">
-<span id="id1"></span><h1><span class="section-number">5. </span>사례 연구: 프로그램 구상<a class="headerlink" href="#case-guessing-numbers" title="Permalink to this headline">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">10. </span>사례 연구: 프로그램 구상<a class="headerlink" href="#case-guessing-numbers" title="Permalink to this headline">#</a></h1>
 <p>특정 문제를 해결하는 프로그램을 구현하기 위해
 먼저 해결 방법과 과정을 상세하게 묘사한
 <strong>알고리즘</strong><font size="2">algorithm</font>을 설계한다.
@@ -614,7 +614,7 @@ title="Print to PDF"
 <p>여기서는 <strong>수 알아맞히기</strong> 게임을 구현하는 과정을
 단계별로 확인하면서 프로그램 구상 및 구현 과정을 자세히 살펴본다.</p>
 <section id="id2">
-<h2><span class="section-number">5.1. </span>수 알아맞히기 게임<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.1. </span>수 알아맞히기 게임<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>하나의 수를 입력받는 방식으로 숨겨진 수 17을 맞히면
 <code class="docutils literal notranslate"><span class="pre">&quot;맞았습니다&quot;</span></code>를, 틀리면 <code class="docutils literal notranslate"><span class="pre">&quot;틀렸습니다&quot;</span></code>를 출력하는
 <strong>수 알아맞히기</strong> 게임을 다음과 같이 간단하게 구현할 수 있다.
@@ -692,7 +692,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="if-elif-else">
-<h2><span class="section-number">5.2. </span>업그레이드 1편: <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> 조건문<a class="headerlink" href="#if-elif-else" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.2. </span>업그레이드 1편: <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> 조건문<a class="headerlink" href="#if-elif-else" title="Permalink to this headline">#</a></h2>
 <p>앞서 소개한 게임은 숨겨진 수에 대한 아무런 정보를 주지 않기 때문에 불공정하다.
 공정성을 높이기 위해 두 수를 대상으로 크기 비교도 실행해서
 참여자가 입력한 값이 너무 큰지 또는 너무 작은지 여부를 알려주도록 해보자.</p>
@@ -738,7 +738,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="while">
-<h2><span class="section-number">5.3. </span>업그레이드 2편: <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.3. </span>업그레이드 2편: <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">#</a></h2>
 <p>게임의 공정성이 조금 개선되었지만 아직 부족하다.
 예를 들어, 추측이 틀려도 게임이 바로 멈추기 때문에 참여자 입장에서는 조금 허무해질 수 있다.
 이점을 보완하기 위해 참여자가 숨겨진 수를 맞힐 때까지 프로그램이 실행되도록 해보자.</p>
@@ -791,7 +791,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="random">
-<h2><span class="section-number">5.4. </span>업그레이드 3편: <code class="docutils literal notranslate"><span class="pre">random</span></code> 모듈<a class="headerlink" href="#random" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.4. </span>업그레이드 3편: <code class="docutils literal notranslate"><span class="pre">random</span></code> 모듈<a class="headerlink" href="#random" title="Permalink to this headline">#</a></h2>
 <p>앞서 개선한 코드는 참여자가 숨겨진 값을 맞출 수 있도록 유도한다.
 그런데 숨겨진 수가 17로 고정되었기 때문에 한 번만 할 수 있는 게임이다.
 게임을 보다 흥미롭게 만들기 위해 게임이 실행될 때마다 숨겨진 수가
@@ -841,7 +841,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="break">
-<h2><span class="section-number">5.5. </span>업그레이드 4편: <code class="docutils literal notranslate"><span class="pre">break</span></code> 명령문<a class="headerlink" href="#break" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.5. </span>업그레이드 4편: <code class="docutils literal notranslate"><span class="pre">break</span></code> 명령문<a class="headerlink" href="#break" title="Permalink to this headline">#</a></h2>
 <p>숨겨진 수를 맞히지 못하더라도 참여자가 언제나 게임을 종료하게 만들 수 있게 해보자.
 예를 들어 사용자가 숫자 0을 입력하면
 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 실행을 바로 멈추게 하기 위해 <code class="docutils literal notranslate"><span class="pre">break</span></code> 명령문을 이용할 수 있다.</p>
@@ -898,7 +898,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">5.6. </span>프로그램 오류와 디버깅<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.6. </span>프로그램 오류와 디버깅<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>오류 없는 완벽한 프로그램은 현실적으로 불가능하며, 프로그램을 구현하고 실행하면 거의 항상 오류가 발생한다.
 프로그래밍 단계에서부터 발생할 수 있는 오류의 종류와 원인을 미리 예상해서
 오류가 발생하더라도 시스템이 다운되지 않도록 대비해야 한다.</p>
@@ -928,7 +928,7 @@ title="Print to PDF"
 런타임 오류는 다양한 경우에 발생한다.
 여기서는 두 가지 경우를 살펴본다.</p>
 <div class="proof example admonition" id="zerodivision">
-<p class="admonition-title"><span class="caption-number">Example 5.1 </span> (ZeroDivisionError)</p>
+<p class="admonition-title"><span class="caption-number">Example 10.1 </span> (ZeroDivisionError)</p>
 <section class="example-content" id="proof-content">
 <p>런타임 에러의 대표적인 예는 <strong>0으로 나누기 오류</strong>이다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
@@ -944,7 +944,7 @@ title="Print to PDF"
 오류가 발생한다.</p>
 </section>
 </div><div class="proof example admonition" id="nameerror">
-<p class="admonition-title"><span class="caption-number">Example 5.2 </span> (NameError)</p>
+<p class="admonition-title"><span class="caption-number">Example 10.2 </span> (NameError)</p>
 <section class="example-content" id="proof-content">
 <p>아래 코드를 실행하면 ‘a_number’ 라는 이름이 선언되어 있지 않기 때문에 문제가 발생한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_Number</span> <span class="o">=</span> <span class="mf">327.68</span>
@@ -993,12 +993,12 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수가 여러 개의 인자를 받으면
 모든 인자를 한 줄에 차례대로 출력한다.
 인자들 사이는 스페이스 여백으로 구분한다.
-<code class="docutils literal notranslate"><span class="pre">print()</span></code> 에 대해서는 <a class="reference internal" href="functions.html#sec-keyword-arguments"><span class="std std-numref">7.4.4절</span></a>에서
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> 에 대해서는 <a class="reference internal" href="functions.html#sec-keyword-arguments"><span class="std std-numref">6.4.4절</span></a>에서
 보다 자세히 설명한다.</p>
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">5.7. </span>예외 처리<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.7. </span>예외 처리<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>발생할 수 있는 오류에 미리 대비하는 것을 <strong>예외 처리</strong><font size='2'>exception handling</font>라 한다.
 여기서는 함수에 적절하지 않은 인자가 사용될 때 발생하는 오류를 이용하여
 예외 처리의 사용법을 살펴본다.</p>
@@ -1235,7 +1235,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="continue">
-<h2><span class="section-number">5.8. </span>업그레이드 5편: <code class="docutils literal notranslate"><span class="pre">continue</span></code> 명령문<a class="headerlink" href="#continue" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.8. </span>업그레이드 5편: <code class="docutils literal notranslate"><span class="pre">continue</span></code> 명령문<a class="headerlink" href="#continue" title="Permalink to this headline">#</a></h2>
 <p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">try-except</span></code> 명령문을 이용하여 예외 처리를 추가하였다.
 <code class="docutils literal notranslate"><span class="pre">except</span></code> 블록에는 <code class="docutils literal notranslate"><span class="pre">continue</span></code> 명령문을 작성하여
 정수가 아닌 값이 입력되면 다시 입력값을 지정하도록 유도한다.</p>
@@ -1292,7 +1292,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="id5">
-<h2><span class="section-number">5.9. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.9. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-casestudy_planning.ipynb">(실습) 사례 연구: 프로그램 구상</a></p>
 </section>
 </section>
@@ -1324,17 +1324,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="variables_expressions.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="iterations.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4. </span>변수, 값, 표현식</p>
+            <p class="prev-next-title"><span class="section-number">9. </span>반복문</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="datatypes.html" title="next page">
+    <a class='right-next' id="next-link" href="collections1.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>기초 자료형</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>모음 자료형 1부: 문자열, 리스트, 튜플</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
