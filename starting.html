@@ -2090,11 +2090,25 @@ ame
 <p>특정 조건의 성립여부에 따라 다른 일을 실행하게 만드는 명령문을 <strong>조건문</strong>이라 부른다.
 예를 들어 <code class="docutils literal notranslate"><span class="pre">guess</span></code> 와 <code class="docutils literal notranslate"><span class="pre">secret</span></code> 두 변수가 가리키는 값의 등가 여부에 따라
 다른 문장을 출력하도록 하려면 아래와 같이 한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secret</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">secret</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secret</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;맞았습니다!&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;틀렸습니다!&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>맞았습니다!
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="for">
