@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -2106,7 +2109,8 @@ ame
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>틀렸습니다!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>guess
+맞았습니다!
 </pre></div>
 </div>
 </div>
@@ -2165,6 +2169,7 @@ ame
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문이 실행되는 동안 <code class="docutils literal notranslate"><span class="pre">item</span></code> 변수가 1부터 10까지의 수를
 차례대로 가리키며 <code class="docutils literal notranslate"><span class="pre">sum</span></code>은 그만큼씩 증가한다.</p>
+<p>참고: <a class="reference external" href="https://pythontutor.com/visualize.html#code=num_list%20%3D%20%5B1,%202,%203,%204,%205,%206,%207,%208,%209,%2010%5D%0A%0Asum%20%3D%200%0Afor%20item%20in%20num_list%3A%0A%20%20%20%20sum%20%2B%3D%20item%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20sum%20%3D%20sum%20%2B%20item%0A%0Aprint%28sum%29%0A&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: for 반복문 활용 모든 항목 합</a></p>
 </div>
 </div><div class="proof example admonition" id="for-loop_even-sum">
 <p class="admonition-title"><span class="caption-number">Example 3.3 </span> (짝수 항목의 합)</p>
@@ -2216,6 +2221,7 @@ ame
 <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>                          <span class="c1"># 항목을 차례대로 더한 값. 시작은 0부터.</span>
 <span class="k">for</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_list</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">+=</span> <span class="n">num_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>       <span class="c1"># sum = sum + item 과 동일한 의미</span>
+    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
     
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;모든 항목의 합:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
 </pre></div>
@@ -2225,6 +2231,7 @@ ame
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 실행되는 동안 <code class="docutils literal notranslate"><span class="pre">index</span></code> 변수가 0부터 9까지 차례대로 가리키고
 그럴 때마다 <code class="docutils literal notranslate"><span class="pre">sum</span></code>은 해당 인덱스의 값만큼씩 증가한다.</p>
+<p>참고: <a class="reference external" href="https://pythontutor.com/visualize.html#code=num_list%20%3D%20%5B1,%202,%203,%204,%205,%206,%207,%208,%209,%2010%5D%0A%0Asum%20%3D%200%0Aindex%20%3D%200%20%23%20%EC%9D%B8%EB%8D%B1%EC%8A%A4%20%ED%99%9C%EC%9A%A9%0Awhile%20index%20%3C%2010%3A%0A%20%20%20%20sum%20%2B%3D%20num_list%5Bindex%5D%20%20%23%20sum%20%3D%20sum%20%2B%20num_list%5Bindex%5D%0A%20%20%20%20index%20%2B%3D%201%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20index%20%3D%20index%20%2B%201%0A%0Aprint%28sum%29%0A&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: while 반복문 활용 모든 항목 합</a></p>
 </div>
 </div><div class="proof example admonition" id="while-loop_even_sum">
 <p class="admonition-title"><span class="caption-number">Example 3.5 </span> (짝수 항목의 합)</p>
@@ -2238,6 +2245,7 @@ ame
     <span class="n">item</span> <span class="o">=</span> <span class="n">num_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>  <span class="c1"># item 변수를 선언하면 편함</span>
     <span class="k">if</span> <span class="n">item</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">sum</span> <span class="o">+=</span> <span class="n">item</span>         <span class="c1"># sum = sum + item 과 동일한 의미</span>
+    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
     
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;짝수 항목의 합:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
 </pre></div>
