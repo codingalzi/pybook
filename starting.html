@@ -38,12 +38,9 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -2136,33 +2133,31 @@ ame
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문이 실행되는 동안 <code class="docutils literal notranslate"><span class="pre">item</span></code> 변수가 차례대로 <code class="docutils literal notranslate"><span class="pre">'안'</span></code>, <code class="docutils literal notranslate"><span class="pre">'녕'</span></code>, <code class="docutils literal notranslate"><span class="pre">'하'</span></code>, <code class="docutils literal notranslate"><span class="pre">'세'</span></code>, <code class="docutils literal notranslate"><span class="pre">'요'</span></code> 를 가리킬 때마다 출력된다.</p>
 </div>
 </div><div class="proof example admonition" id="for-loop_list-indexing">
-<p class="admonition-title"><span class="caption-number">Example 3.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 3.2 </span> (모든 항목의 합)</p>
 <div class="example-content section" id="proof-content">
 <p>정수 리스트에 포함된 모든 항목의 합을 계산하는 코드는 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
 <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>                <span class="c1"># 항목을 차례대로 더한 값. 시작은 0부터.</span>
-
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">num_list</span><span class="p">:</span>
     <span class="nb">sum</span> <span class="o">+=</span> <span class="n">item</span>        <span class="c1"># sum = sum + item 과 동일한 의미</span>
     
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1부터 10까지의 합:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;모든 항목의 합:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="n">부터</span> <span class="mi">10</span><span class="n">까지의</span> <span class="n">합</span><span class="p">:</span> <span class="mi">55</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">모든</span> <span class="n">항목의</span> <span class="n">합</span><span class="p">:</span> <span class="mi">55</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문이 실행되는 동안 <code class="docutils literal notranslate"><span class="pre">item</span></code> 변수가 1부터 10까지의 수를
 차례대로 가리키며 <code class="docutils literal notranslate"><span class="pre">sum</span></code>은 그만큼씩 증가한다.</p>
 </div>
 </div><div class="proof example admonition" id="for-loop_even-sum">
-<p class="admonition-title"><span class="caption-number">Example 3.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 3.3 </span> (짝수항목의 합)</p>
 <div class="example-content section" id="proof-content">
 <p>정수 리스트에 포함된 항목 중에서 짝수들만의 합을 계산하는 코드는 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
 <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>               <span class="c1"># 항목을 차례대로 더한 값. 시작은 0부터.</span>
-
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">num_list</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">item</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">sum</span> <span class="o">+=</span> <span class="n">item</span>   <span class="c1"># 짝수인 경우 합에 추가</span>
@@ -2196,66 +2191,47 @@ ame
 다음 명령문이 실행된다.</p>
 </li>
 </ul>
-<div class="proof example admonition" id="while-fibonacci">
-<p class="admonition-title"><span class="caption-number">Example 3.4 </span> (피보나치 수열)</p>
+<div class="proof example admonition" id="while-loop_list-indexing">
+<p class="admonition-title"><span class="caption-number">Example 3.4 </span> (모든 항목의 합)</p>
 <div class="example-content section" id="proof-content">
-<p><strong>피보나치 수열</strong><font size="2">Fibonacci sequence</font>의
-항목을 생성하는 코드를 구현해보자.
-피보나치 수열의 항목을 생성하는 알고리즘은 다음과 같다.</p>
-<ul class="simple">
-<li><p>첫째, 둘째 항목은 0과 1</p></li>
-<li><p>가장 최근에 생성된 두 개의 값을 더해 새로운 항목을 생성하는 과정 반복</p></li>
-</ul>
-<p>위 알고리즘을 이용하여 피보나치 수열의 처음 10개 항목을 생성하려면
-먼저 첫째, 둘째 항목을 변수로 지정한 다음에 최근에 생성된
-두 개의 값을 더하는 과정을 8번 정도 반복한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<p>while 반복문을 이용하여 정수 리스트에 포함된 모든 항목의 합을 계산하는 코드는 다음과 같다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
-<span class="c1"># 첫째, 둘째 항목 출력</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-
-<span class="c1"># 셋째 항목부터는 이전 두 항목의 합으로 지정한다.</span>
-<span class="n">count</span> <span class="o">=</span> <span class="mi">2</span>           <span class="c1"># 반복횟수 저장</span>
-<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>        <span class="c1"># 새로 생성된 항목</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>      <span class="c1"># 생성된 항목 수 1 증가</span>
+<span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>                          <span class="c1"># 항목을 차례대로 더한 값. 시작은 0부터.</span>
+<span class="k">for</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_list</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">num_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>       <span class="c1"># sum = sum + item 과 동일한 의미</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;모든 항목의 합:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
-<span class="mi">1</span>
-<span class="mi">1</span>
-<span class="mi">2</span>
-<span class="mi">3</span>
-<span class="mi">5</span>
-<span class="mi">8</span>
-<span class="mi">13</span>
-<span class="mi">21</span>
-<span class="mi">34</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">모든</span> <span class="n">항목의</span> <span class="n">합</span><span class="p">:</span> <span class="mi">55</span>
 </pre></div>
 </div>
-<p>위 코드에 사용된 주요 명령문의 실행과정은 다음과 같다.</p>
-<ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">1</span></code>: 변수 <code class="docutils literal notranslate"><span class="pre">a</span></code> 에는 <code class="docutils literal notranslate"><span class="pre">0</span></code>을, 변수 <code class="docutils literal notranslate"><span class="pre">b</span></code> 에는 <code class="docutils literal notranslate"><span class="pre">1</span></code>을 할당한다.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">=</span> <span class="pre">2</span></code>: 생성된 항목 수를 가리킨다. 이미 두 개가 생성되었다.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">count</span> <span class="pre">&lt;</span> <span class="pre">10:</span></code> 변수 <code class="docutils literal notranslate"><span class="pre">count</span></code> 가 가리키는 값이 <code class="docutils literal notranslate"><span class="pre">10</span></code> 보다 작은 동안 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 본문 코드를 반복 실행하라. 즉, 항목 10개를 만들 때까지  본문을 반복한다.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문 본문</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">b,</span> <span class="pre">a+b</span></code></p>
-<ul>
-<li><p>변수 <code class="docutils literal notranslate"><span class="pre">a</span></code> 가 가리키는 값을 변수 <code class="docutils literal notranslate"><span class="pre">b</span></code> 가 이전에 가리키던 값으로 변경하라.</p></li>
-<li><p>변수 <code class="docutils literal notranslate"><span class="pre">b</span></code> 가 가리키는 값을 변수 <code class="docutils literal notranslate"><span class="pre">a</span></code> 와 변수 <code class="docutils literal notranslate"><span class="pre">b</span></code> 가 이전에
-가리키던 값의 합으로 변경하라.</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">print(a)</span></code>: 변수 <code class="docutils literal notranslate"><span class="pre">a</span></code> 가 현재 가리키는 값을 출력하라.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">+=</span> <span class="pre">1</span></code>: 생성된 항목 수를 1 증가시킨다.</p></li>
-</ul>
-</li>
-<li><p>단계 3 으로 돌아가서 <code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> 조건이 참인지 여부를 확인하고,
-참이면 단계 4 를 실행하고 거짓이면 실행을 종료한다.</p></li>
-</ol>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 실행되는 동안 <code class="docutils literal notranslate"><span class="pre">index</span></code> 변수가 0부터 9까지 차례대로 가리키고
+그럴 때마다 <code class="docutils literal notranslate"><span class="pre">sum</span></code>은 해당 인덱스의 값만큼씩 증가한다.</p>
+</div>
+</div><div class="proof example admonition" id="while-loop_even_sum">
+<p class="admonition-title"><span class="caption-number">Example 3.5 </span> (짝수 항목의 합)</p>
+<div class="example-content section" id="proof-content">
+<p>while 반복문을 이용하여 정수 리스트에 포함된 모든 짝수 항목의 합을 계산하는 코드는 다음과 같다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>                     <span class="c1"># 짝수 항목을 차례대로 더한 값. 시작은 0부터.</span>
+<span class="k">for</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_list</span><span class="p">):</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">num_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>  <span class="c1"># item 변수를 선언하면 편함</span>
+    <span class="k">if</span> <span class="n">item</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">item</span>         <span class="c1"># sum = sum + item 과 동일한 의미</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;짝수 항목의 합:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">짝수</span> <span class="n">항목의</span> <span class="n">합</span><span class="p">:</span> <span class="mi">30</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 실행되는 동안 <code class="docutils literal notranslate"><span class="pre">index</span></code> 변수가 0부터 9까지 차례대로 가리키고
+해당 인덱스의 값이 짝수일 때마다 <code class="docutils literal notranslate"><span class="pre">sum</span></code>은 그 값만큼씩 증가한다.</p>
 </div>
 </div></div>
 </div>
