@@ -321,17 +321,17 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   7.2. 단순 반복
+   7.2. 반복문의 중요성
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   7.3. 함수 선언과 일반화
+   7.3. 함수화와 일반화
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     7.3.1. 함수 선언
+     7.3.1. 함수화
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -394,17 +394,17 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   7.2. 단순 반복
+   7.2. 반복문의 중요성
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   7.3. 함수 선언과 일반화
+   7.3. 함수화와 일반화
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     7.3.1. 함수 선언
+     7.3.1. 함수화
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -448,10 +448,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈을 이용하여 다양한 그림을 그리는 함수를 직접 구현하면서
 반복문과 함수의 활용을 좀 더 자세히 살펴본다.
 또한 클래스, 인스턴스, 메서드 등을 활용하는 객체 지향 프로그래밍(OOP)의
-기본 구성 요소를 소개한다.</p>
+기본 구성 요소를 한 번 살펴본다.</p>
 <div class="section" id="turtle">
 <h2><span class="section-number">7.1. </span><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈<a class="headerlink" href="#turtle" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈은 간단한 그림을 그리는 다양한 도구를 제공하며,
+<p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈은 간단한 2차원 그림을 그리는 다양한 도구를 제공하며,
 파이썬에 기본 모듈로 포함되어 있다.
 <a class="reference external" href="https://aisw.tistory.com/5">IDLE 를 이용</a>하여 아래 명령문을 실행하면 그림 창이 하나 새로 나타나고
 그 안에 정해진 그림이 그려져야 한다.</p>
@@ -478,7 +478,7 @@ const thebe_selector_output = ".output, .cell_output"
 단, 캔버스 객체는 하나만 생성할 수 있다.
 이렇게 하나의 인스턴스만 허용하는 클래스를 <strong>싱글톤 클래스</strong><font size='2'>singleton class</font>라 한다.</p>
 <p>반면에 <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스를 포함하여 파이썬의 클래스는 일반적으로 임의의 개수의 인스턴스 생성을 허용한다.</p>
-<p><strong>거북이 메서드</strong></p>
+<p><strong>거북이 객체 메서드</strong></p>
 <p>거북이를 움직이게 하거나 거북이의 상태를 지정하는 많은
 <a class="reference external" href="https://docs.python.org/3/library/turtle.html"><code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 메서드</a>가 존재한다.
 그중 일부는 단축어를 갖는데 가장 많이 사용되는 메서는 다음과 같다.</p>
@@ -526,7 +526,7 @@ const thebe_selector_output = ".output, .cell_output"
 </table>
 </div>
 <div class="section" id="id2">
-<h2><span class="section-number">7.2. </span>단순 반복<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2. </span>반복문의 중요성<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>아래 명령문은 정사각형을 그린다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bob</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">bob</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
@@ -548,13 +548,8 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <div class="proof example admonition" id="exp_oop">
-<p class="admonition-title"><span class="caption-number">Example 7.1 </span> (객체 중심 프로그래밍(OOP))</p>
+<p class="admonition-title"><span class="caption-number">Example 7.1 </span> (여러 개의 거북이 객체 활용)</p>
 <div class="example-content section" id="proof-content">
-<p>클래스를 이용하여 생성한 객체(클래스의 인스턴스)들은 기본적으로 상호 독립적으로 활용된다.
-하지만 경우에 따라 객체들 사이에 상호 교감도 가능하게 할 수 있다.
-각각의 객체가 수행하는 기능과 객체들 사이의 교감을 중심으로 하는 일이
-<strong>객체 중심 프로그래밍</strong><font size='2'>Object-Oriented Programming</font>(OOP)의 핵심이다.</p>
-<p>여기서는 Turtle 클래스의 인스턴스를 두 개 생성하여, 생성된 두 객체를 상호 독립적으로 활용하는 방법을 설명한다. 객체들 사이의 교감을 구현하는 방식은 나중에 다룰 것이다.</p>
 <p>아래 코드에서 Turtle 클래스의 인스턴스가 두 번 생성되었다.
 <code class="docutils literal notranslate"><span class="pre">alice</span></code> 객체에 대해서만 인스턴스의 속성을 변경하는 메서드가 추가로 사용되었다.
 <code class="docutils literal notranslate"><span class="pre">alice</span></code> 의 속성을 변경한다 하더라도 <code class="docutils literal notranslate"><span class="pre">bob</span></code> 의 속성은 전혀 변하지 않는다.</p>
@@ -597,18 +592,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div><div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle05.png" width="300"/></div></div>
 <div class="section" id="id3">
-<h2><span class="section-number">7.3. </span>함수 선언과 일반화<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3. </span>함수화와 일반화<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>프로그램 구현에 가장 필수적인 요소는
-함수 선언과 일반화<font size="2">generalization</font>이다.</p>
+함수화과 일반화<font size="2">generalization</font>이다.</p>
 <ol class="simple">
 <li><p>함수를 사용하지 않는 간단한 프로그램 작성</p></li>
-<li><p>함수 선언: 작성한 프로그램이 잘 작동하면 하나의 함수로 선언</p></li>
+<li><p>함수화: 작성한 프로그램이 잘 작동하면 하나의 함수로 선언</p></li>
 <li><p>일반화: 적절한 매개변수<font size='2'>parameters</font>를 추가하여 함수의 기능 확장</p></li>
 <li><p>원하는 수준의 함수를 얻을 때까지 위 과정 반복</p></li>
 </ol>
-<p>앞서 다룬 코드에서 출발하여 함수 선언과 일반화를 연습한다.</p>
+<p>앞서 다룬 코드에서 출발하여 함수화와 일반화를 연습한다.</p>
 <div class="section" id="id4">
-<h3><span class="section-number">7.3.1. </span>함수 선언<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.1. </span>함수화<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>거북이를 지정해서 사각형을 그리도록 하는 함수는 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
