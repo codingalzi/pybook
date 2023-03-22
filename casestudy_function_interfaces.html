@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -323,12 +326,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   7.3. 캡슐화와 일반화
+   7.3. 함수 선언과 일반화
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     7.3.1. 캡슐화
+     7.3.1. 함수 선언
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -345,7 +348,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   7.5. 리팩토링
+   7.5. 리팩토링: 코드 재구성
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -396,12 +399,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   7.3. 캡슐화와 일반화
+   7.3. 함수 선언과 일반화
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     7.3.1. 캡슐화
+     7.3.1. 함수 선언
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -418,7 +421,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   7.5. 리팩토링
+   7.5. 리팩토링: 코드 재구성
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -461,7 +464,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">bob</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>             <span class="c1"># 왼쪽으로 90도 회전</span>
 <span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>          <span class="c1"># 바라보는 방향으로 75 픽셀 전진</span>
 
-<span class="n">wn</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>          <span class="c1"># 캔버스에 클릭할 때까지 대기</span>
+<span class="c1"># wn.exitonclick()          # 캔버스에 클릭할 때까지 대기</span>
 <span class="c1"># wn.mainloop()             # X 버튼을 눌러 창을 닫을 때까지 대기</span>
 </pre></div>
 </div>
@@ -564,7 +567,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
 <span class="n">wn</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;lightyellow&quot;</span><span class="p">)</span>               <span class="c1"># 배경화면 색깔 정하기</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hello, Bob and Alice!&quot;</span><span class="p">)</span>       <span class="c1"># 그래픽 제목 정하기</span>
+<span class="c1"># wn.title(&quot;Hello, Bob and Alice!&quot;)       # 그래픽 제목 정하기</span>
 
 <span class="c1"># bob 생성</span>
 <span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
@@ -588,27 +591,27 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">alice</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
     <span class="n">alice</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>                    <span class="c1"># 시계방향으로 회전</span>
 
-<span class="n">wn</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>                           <span class="c1"># X 버튼을 누를 때까지 캔버스 유지</span>
+<span class="c1"># wn.mainloop()                           # X 버튼을 누를 때까지 캔버스 유지</span>
 </pre></div>
 </div>
 </div>
 </div><div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle05.png" width="300"/></div></div>
 <div class="section" id="id3">
-<h2><span class="section-number">7.3. </span>캡슐화와 일반화<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>프로그램을 구현에 가장 필수적인 요소는
-<strong>캡슐화</strong><font size="2">encapsulation</font>와
-<strong>일반화</strong><font size="2">generalization</font>이다.</p>
+<h2><span class="section-number">7.3. </span>함수 선언과 일반화<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>프로그램 구현에 가장 필수적인 요소는
+함수 선언과 일반화<font size="2">generalization</font>이다.</p>
 <ol class="simple">
-<li><p>함수를 사용하지 않는 간단한 프로그램 작성</p></li>
-<li><p>(캡슐화) 작성한 프로그램이 잘 작동하면 변수에 의존하지 않는 부분을 함수로 감싸 하나의 캡슐처럼 만든다.</p></li>
-<li><p>(일반화) 함수에 적절한 매개변수<font size='2'>parameter</font>를
-추가하여 함수가 보다 다양한 기능을 갖도록 한다.</p></li>
-<li><p>원하는 수준의 함수를 얻을 때까지 위 과정을 반복한다.</p></li>
-<li><p>(리팩토링) 프로그램에서 중복되는 부분을 캡슐화하여 함수로 만들 수 있는지 잘 살펴본다.</p></li>
+<li><p>함수를 사용하지 않는 간단한 프로그램 작성</p>
+<ol class="simple">
+<li><p>함수 선언: 작성한 프로그램이 잘 작동하면 하나의 함수로 선언</p></li>
+<li><p>일반화: 적절한 매개변수<font size='2'>parameters</font>를 추가하여 함수의 기능 확장</p></li>
 </ol>
-<p>앞서 다룬 코드에서 출발하여 캡슐화와 일반화를 연습한다.</p>
+</li>
+<li><p>원하는 수준의 함수를 얻을 때까지 위 과정 반복</p></li>
+</ol>
+<p>앞서 다룬 코드에서 출발하여 함수 선언과 일반화를 연습한다.</p>
 <div class="section" id="id4">
-<h3><span class="section-number">7.3.1. </span>캡슐화<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.1. </span>함수 선언<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>거북이를 지정해서 사각형을 그리도록 하는 함수는 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
@@ -686,7 +689,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>함수의 인터페이스는 함수 사용법의 요약문이다.</p>
 <ul class="simple">
 <li><p>어떤 매개변수 사용?</p></li>
-<li><p>함수가 하는 일은?</p></li>
+<li><p>함수의 기능, 즉 함수가 하는 일은?</p></li>
 <li><p>함수의 반환값은?</p></li>
 </ul>
 <p>사용자가 함수를 적절하게 사용하기 위해 전혀 불편함이 없도록 인터페이스를 구현해야 한다.</p>
@@ -731,8 +734,8 @@ n-각형의 한 변의 길이는 3 정도로 제한하는 게 보다 좋다.
 </div>
 </div>
 <div class="section" id="id7">
-<h2><span class="section-number">7.5. </span>리팩토링<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<p>프로그램을 개선하기 위해 코드를 재배치 하거나 재구성 하는 기법이
+<h2><span class="section-number">7.5. </span>리팩토링: 코드 재구성<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>프로그램을 개선하기 위해 코드를 재구성 하는 기법이
 <strong>리팩토링</strong><font size='2'>refactoring</font>이다.</p>
 <p>프로젝트를 시작할 때 모든 것을 고려할 수 있다면 처음부터 모든 상황에 유연하게
 대처하는 프로그램을 작성할 수 있을 것이다.
