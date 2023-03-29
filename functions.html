@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>6. 함수 &#8212; 파이썬 프로그래밍 기초</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,17 +18,21 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -38,21 +40,20 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="7. 사례 연구: 함수 인터페이스" href="casestudy_function_interfaces.html" />
@@ -64,21 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -87,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -223,17 +209,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -241,191 +222,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/jupyter-book/functions.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/codingalzi/pybook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Ffunctions.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/functions.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/codingalzi/pybook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Ffunctions.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/jupyter-book/functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    6.1. 함수 호출
@@ -524,11 +408,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>함수</h1>
@@ -643,12 +528,11 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="ch-functions">
-<span id="id1"></span><h1><span class="section-number">6. </span>함수<a class="headerlink" href="#ch-functions" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="ch-functions">
+<span id="id1"></span><h1><span class="section-number">6. </span>함수<a class="headerlink" href="#ch-functions" title="Permalink to this headline">¶</a></h1>
 <p>프로그램은 명령문의 합성으로 구현된다.
 그런데 특정 기능을 수행하는 명령문의 일부가 너무 길거나,
 반복적으로 사용되어 보다 편하게 사용하고 싶거나
@@ -669,8 +553,8 @@ title="Print to PDF"
 <p><strong>슬라이드</strong></p>
 <p>본문 내용을 요약한 <a class="reference external" href="https://github.com/codingalzi/pybook/raw/master/slides/slides-functions.pdf">슬라이드</a>를
 다운로드할 수 있다.</p>
-<section id="id2">
-<h2><span class="section-number">6.1. </span>함수 호출<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id2">
+<h2><span class="section-number">6.1. </span>함수 호출<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p><strong>함수 호출</strong><font size="2">function call</font>은
 함수 이름과 연결된 명령문을 실행하도록 하는 방법이다.
 함수 호출의 일반적인 형식은 다음과 같다.</p>
@@ -734,8 +618,8 @@ title="Print to PDF"
 </div>
 <p><strong>내장 함수</strong><font size="2">built-in function</font>란 파이썬에서 기본으로 제공하는 함수라는 의미이다.</p>
 </div>
-<section id="id3">
-<h3><span class="section-number">6.1.1. </span>함수의 인자<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<div class="section" id="id3">
+<h3><span class="section-number">6.1.1. </span>함수의 인자<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>모든 함수는 호출될 때 적절한 개수의 인자를 사용해야 한다.
 그렇지 않은 경우 오류가 발생한다.
 예를 들어, <code class="docutils literal notranslate"><span class="pre">type()</span></code> 함수는 1개 또는 3개의 인자와 함께
@@ -754,9 +638,9 @@ title="Print to PDF"
 반면에 세 개의 인자를 사용하는 경우는 특정 클래스의 객체를
 생성할 때 사용하며, 여기서는 자세히 다루지 않는다.</p>
 </div>
-</section>
-<section id="id4">
-<h3><span class="section-number">6.1.2. </span>함수의 반환값<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">6.1.2. </span>함수의 반환값<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>함수를 호출하면 함수에 의해 지정된 명령문을 실행한 후에
 최종적으로 어떤 값을
 반환<font size="2">return</font>한다.</p>
@@ -777,9 +661,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="none">
-<h3><span class="section-number">6.1.3. </span><code class="docutils literal notranslate"><span class="pre">None</span></code> 반환값<a class="headerlink" href="#none" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="none">
+<h3><span class="section-number">6.1.3. </span><code class="docutils literal notranslate"><span class="pre">None</span></code> 반환값<a class="headerlink" href="#none" title="Permalink to this headline">¶</a></h3>
 <p>파이썬은 모든 함수가 반환값을 갖도록 강제한다.
 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수처럼 반환값이 없는 것처럼 보이는 함수도
 공식적으로는 아무런 의미가 없는 값을 의미하는 <code class="docutils literal notranslate"><span class="pre">None</span></code>을
@@ -831,9 +715,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="id5">
-<h3><span class="section-number">6.1.4. </span>수식 계산 함수<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="id5">
+<h3><span class="section-number">6.1.4. </span>수식 계산 함수<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p><span class="math notranslate nohighlight">\(\sin x\)</span>, <span class="math notranslate nohighlight">\(\cos x\)</span>, <span class="math notranslate nohighlight">\(\sqrt{x}\)</span>, <span class="math notranslate nohighlight">\(\log x\)</span>, <span class="math notranslate nohighlight">\(e^x\)</span> 등
 수식 계산에 많이 사용되는 함수를 파이썬에서 기본으로 제공한다.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈</strong></p>
@@ -943,7 +827,7 @@ title="Print to PDF"
 </div>
 <div class="proof example admonition" id="degree2radian">
 <p class="admonition-title"><span class="caption-number">Example 6.1 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>일반각의 각도<font size="2">degree</font>를
 호도법의 라디안<font size="2">radian</font>으로
 변환하는 공식은 다음과 같다.</p>
@@ -960,7 +844,7 @@ title="Print to PDF"
 <span class="n">Out</span><span class="p">[</span><span class="mi">45</span><span class="p">]:</span> <span class="mf">1.0</span>
 </pre></div>
 </div>
-</section>
+</div>
 </div><p><strong>NumPy 패키지</strong></p>
 <p><a class="reference external" href="https://numpy.org">넘파이<font size="2">NumPy</font></a>는
 행렬, 다차원 배열 등을 효율적으로 빠르게
@@ -1025,7 +909,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.718281828459045e+00
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.718281828459045
 </pre></div>
 </div>
 </div>
@@ -1057,9 +941,9 @@ title="Print to PDF"
 <strong>함수 중복 정의</strong> 또는 <strong>함수 오버로딩</strong><font size="2">function overloading</font>이라 한다.
 파이썬과 C 언어는 이 기능을 지원하지 않는 반면에 Java, C++, C# 등은 지원한다.</p>
 </div>
-</section>
-<section id="id6">
-<h3><span class="section-number">6.1.5. </span>함수 호출과 표현식<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="id6">
+<h3><span class="section-number">6.1.5. </span>함수 호출과 표현식<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">f(x1,</span> <span class="pre">...,</span> <span class="pre">xn)</span></code>와 같은 함수 호출 표현식이 가리키는 값은 해당 함수의 반환값이다.
 예를 들어 아래 코드에서 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code> 가 가리키는 값은 <code class="docutils literal notranslate"><span class="pre">int()</span></code> 함수가
 <code class="docutils literal notranslate"><span class="pre">float('3.14')</span></code>를 인자로 사용해서 계산된 반환값을 가리킨다.</p>
@@ -1076,10 +960,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="id7">
-<h2><span class="section-number">6.2. </span>함수 정의<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><span class="section-number">6.2. </span>함수 정의<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>파이썬에서 사용자가 임의로 함수를 정의해서 사용할 수 있다.
 함수를 정의하는 방식은 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">함수이름</span><span class="p">(</span><span class="n">매개변수1</span><span class="p">,</span> <span class="n">매개변수2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">매개변수n</span><span class="p">):</span>
@@ -1095,8 +979,8 @@ title="Print to PDF"
 <li><p>함수 본문에 사용되는 명령문은 들여쓰며, 보통 한 번의 탭<font size="2">tab</font> 키 누르기에
 해당한다.</p></li>
 </ul>
-<section id="return">
-<h3><span class="section-number">6.2.1. </span>함수의 반환값과 <code class="docutils literal notranslate"><span class="pre">return</span></code> 키워드<a class="headerlink" href="#return" title="Permalink to this headline">#</a></h3>
+<div class="section" id="return">
+<h3><span class="section-number">6.2.1. </span>함수의 반환값과 <code class="docutils literal notranslate"><span class="pre">return</span></code> 키워드<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h3>
 <p>함수의 반환값은 본문에 사용된 명령문을 실행하다가
 어느 순간 아래 모양의 기초 명령문을 실행하는 순간 결정된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">표현식</span>
@@ -1106,7 +990,7 @@ title="Print to PDF"
 지정된 <code class="docutils literal notranslate"><span class="pre">표현식</span></code>이 가리키는 값이 반환되면서 함수의 실행이 멈춘다.</p>
 <div class="proof example admonition" id="no-returns">
 <p class="admonition-title"><span class="caption-number">Example 6.2 </span> (<code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문이 없는 함수)</p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>아래에 정의된 <code class="docutils literal notranslate"><span class="pre">double_print()</span></code> 함수는 반환값을 지정하지 않는다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_print</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
@@ -1119,10 +1003,10 @@ title="Print to PDF"
     <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 </div>
-</section>
-</div></section>
-<section id="id8">
-<h3><span class="section-number">6.2.2. </span>매개 변수와 인자<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+</div>
+</div></div>
+<div class="section" id="id8">
+<h3><span class="section-number">6.2.2. </span>매개 변수와 인자<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p><strong>매개 변수</strong><font size="2">parameter</font>는
 함수 호출에 사용되는 <strong>인자</strong><font size="2">argument</font>를
 함수 본문 명령문에 전달하는 역할을 수행한다.
@@ -1169,9 +1053,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="id9">
-<h3><span class="section-number">6.2.3. </span>1종 객체<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="id9">
+<h3><span class="section-number">6.2.3. </span>1종 객체<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>프로그래밍 언어에서
 <strong>1종 객체</strong><font size="2">first-class object</font>는
 변수 할당, 함수의 인자, 함수의 반환값 등으로 사용될 수 있는
@@ -1203,7 +1087,7 @@ first-class와 second-class는 사용법상의 구분만을 나타내는 반면�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>함수: &lt;function myAdd at 0x7fbfee0a9310&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>함수: &lt;function myAdd at 0x7fb496a160d0&gt;
 </pre></div>
 </div>
 </div>
@@ -1316,7 +1200,7 @@ first-class와 second-class는 사용법상의 구분만을 나타내는 반면�
 </div>
 <div class="proof example admonition" id="map_function">
 <p class="admonition-title"><span class="caption-number">Example 6.3 </span> (<code class="docutils literal notranslate"><span class="pre">map()</span></code> 함수)</p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p><code class="docutils literal notranslate"><span class="pre">map()</span></code> 함수는 하나의 함수 <code class="docutils literal notranslate"><span class="pre">fn</span></code>과  하나의 리스트 또는 튜플 등 모음 자료형 값 <code class="docutils literal notranslate"><span class="pre">iter</span></code>를 인자로 받는다.
 그러면 함수 <code class="docutils literal notranslate"><span class="pre">fn</span></code>을 <code class="docutils literal notranslate"><span class="pre">iter</span></code>에 포함된 각 항목에 적용하여 반환된 값들로 이루어진
 <code class="docutils literal notranslate"><span class="pre">map</span></code> 자료형의 값을 반환한다.</p>
@@ -1328,10 +1212,10 @@ first-class와 second-class는 사용법상의 구분만을 나타내는 반면�
 <span class="n">Out</span><span class="p">[</span><span class="mi">77</span><span class="p">]:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
 </pre></div>
 </div>
-</section>
-</div></section>
-<section id="sec-keyword-arguments">
-<span id="id10"></span><h3><span class="section-number">6.2.4. </span>위치 인자와 키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this headline">#</a></h3>
+</div>
+</div></div>
+<div class="section" id="sec-keyword-arguments">
+<span id="id10"></span><h3><span class="section-number">6.2.4. </span>위치 인자와 키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this headline">¶</a></h3>
 <p>함수의 인자는 위치 인자와 키워드 인자 두 종류로 구분되며,
 위치 인자를 먼저, 키워드 인자를 나중에 작성한다.
 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 여러 개의 인자를 받을 수 있다.
@@ -1439,7 +1323,7 @@ Python
 </div>
 <div class="proof example admonition" id="keyword_argument">
 <p class="admonition-title"><span class="caption-number">Example 6.4 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">myAdd10()</span></code> 함수를 키워드 인자를 이용하여
 정의하는 방식을 보여준다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myAdd10</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
@@ -1457,11 +1341,11 @@ Python
 <span class="n">Out</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="mi">25</span>
 </pre></div>
 </div>
-</section>
-</div></section>
-</section>
-<section id="sec-boolean-functions">
-<span id="id11"></span><h2><span class="section-number">6.3. </span>부울값 함수와 논리식<a class="headerlink" href="#sec-boolean-functions" title="Permalink to this headline">#</a></h2>
+</div>
+</div></div>
+</div>
+<div class="section" id="sec-boolean-functions">
+<span id="id11"></span><h2><span class="section-number">6.3. </span>부울값 함수와 논리식<a class="headerlink" href="#sec-boolean-functions" title="Permalink to this headline">¶</a></h2>
 <p>부울값을 반환하는 함수는 논리식에 사용되며 복잡한 테스트를 진행할 때 활용하면 좋다.
 예를 들어 아래 함수는 두 정수를 대상으로 약수, 배수의 관계가 있는지 여부를 판단할 때
 사용될 수 있다.</p>
@@ -1528,7 +1412,7 @@ Python
 </div>
 <div class="proof example admonition" id="filter">
 <p class="admonition-title"><span class="caption-number">Example 6.5 </span> (<code class="docutils literal notranslate"><span class="pre">filter()</span></code> 함수)</p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p><code class="docutils literal notranslate"><span class="pre">filter()</span></code> 함수는 첫째 인자로 부울값 함수를, 둘째 인자로 리스트, 튜플 등을 사용한다.
 단, 부울값 함수 인자는 한 개의 인자만 사용하는 함수이어야 한다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">filter(f,</span> <span class="pre">aList)</span></code> 방식으로 호출하면 <code class="docutils literal notranslate"><span class="pre">aList</span></code> 에 포함된 항목 <code class="docutils literal notranslate"><span class="pre">item</span></code> 중에서 <code class="docutils literal notranslate"><span class="pre">f(item)</span></code> 이
@@ -1543,10 +1427,10 @@ Python
 <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 </pre></div>
 </div>
-</section>
-</div></section>
-<section id="id12">
-<h2><span class="section-number">6.4. </span>람다 함수<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+</div>
+</div></div>
+<div class="section" id="id12">
+<h2><span class="section-number">6.4. </span>람다 함수<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
 <p>파이썬은 람다<font size='2'>lambda</font> 함수를 사용하면 간결하게 코드를 작성할 수 있다. 람다 함수의 형식은 아래와 같다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">arguments</span> <span class="p">:</span> <span class="n">expression</span>
 </pre></div>
@@ -1637,9 +1521,9 @@ Python
 </div>
 </div>
 </div>
-</section>
-<section id="id13">
-<h2><span class="section-number">6.5. </span>지역 변수와 전역 변수<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="id13">
+<h2><span class="section-number">6.5. </span>지역 변수와 전역 변수<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <p>함수를 선언할 때 사용되는 매개 변수와 함수 본문에서 선언되는 변수는
 함수가 실행되는 동안에만 의미를 가지며,
 이런 의미에서 <strong>지역 변수</strong><font size="2">local variable</font>라 한다.
@@ -1692,7 +1576,7 @@ Python
 <code class="docutils literal notranslate"><span class="pre">hour</span></code>와 <code class="docutils literal notranslate"><span class="pre">minutes</span></code>의 생존주기, 즉, 언제 생성되고 언제 사라지는지를 시각적으로 확인할 수 있다.</p>
 <div class="proof example admonition" id="local_global1">
 <p class="admonition-title"><span class="caption-number">Example 6.6 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>아래 코드에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 가 전역 변수와 지역 변수로 사용된다.
 하지만 두 변수는 서로 상관이 없으며
 맨 마지막에 호출되는 <code class="docutils literal notranslate"><span class="pre">print(one_hour)</span></code> 는 60을 출력한다.</p>
@@ -1709,10 +1593,10 @@ Python
 </pre></div>
 </div>
 <p><a class="reference external" href="https://pythontutor.com/visualize.html#code=one_hour%20%3D%2060%20%20%20%20%20%20%20%23%201%EC%8B%9C%EA%B0%84%EC%9D%80%2060%EB%B6%84%0A%0Adef%20hour2min%28hour%29%3A%0A%20%20%20%20one_hour%20%3D%20600%20%20%23%20600%EB%B6%84%EC%9C%BC%EB%A1%9C%20%EC%98%A4%ED%83%80%0A%20%20%20%20minutes%20%3D%20hour%20*%20one_hour%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour2min%282%29%0A%0Aprint%28one_hour%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수와 전역 변수 2</a>에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 의 두 역할을 시각적으로 확인할 수 있다.</p>
-</section>
+</div>
 </div><div class="proof example admonition" id="local_global2">
 <p class="admonition-title"><span class="caption-number">Example 6.7 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>반면에 아래 코드에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 는 하나의 전역 변수로만 사용된다.
 함수 내에서 <code class="docutils literal notranslate"><span class="pre">global</span></code> 명령문으로 변수를 지정한 후에 해당 전역 변수를
 함수 본체에서 수정하면 함수 밖에도 영향을 미친다.
@@ -1732,10 +1616,10 @@ Python
 </div>
 <p><a class="reference external" href="https://pythontutor.com/visualize.html#code=one_hour%20%3D%2060%20%20%20%20%20%20%20%23%201%EC%8B%9C%EA%B0%84%EC%9D%80%2060%EB%B6%84%0A%0Adef%20hour2min%28hour%29%3A%0A%20%20%20%20global%20one_hour%0A%20%20%20%20one_hour%20%3D%20600%20%20%23%20600%EB%B6%84%EC%9C%BC%EB%A1%9C%20%EC%98%A4%ED%83%80%0A%20%20%20%20minutes%20%3D%20hour%20*%20one_hour%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour2min%282%29%0A%0Aprint%28one_hour%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수와 전역 변수 3</a>에서 <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">one_hour</span></code> 의 의미를
 시각적으로 확인할 수 있다.</p>
-</section>
-</div></section>
-<section id="id14">
-<h2><span class="section-number">6.6. </span>프레임과 콜 스택<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+</div>
+</div></div>
+<div class="section" id="id14">
+<h2><span class="section-number">6.6. </span>프레임과 콜 스택<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <p>파이썬 프로그램의 실행은 기본적으로
 “위에서 아래로”와 “왼쪽에서 오른쪽으로”의 두 기준으로
 더 이상 실행할 명령문이 없을 때까지 진행된다.</p>
@@ -1817,12 +1701,12 @@ Python
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hour2min</span> <span class="n">프레임</span> <span class="o">=&gt;</span> <span class="n">hour2sec</span> <span class="n">프레임</span> <span class="o">=&gt;</span> <span class="n">Global</span> <span class="n">frame</span>
 </pre></div>
 </div>
-</section>
-<section id="id15">
-<h2><span class="section-number">6.7. </span>연습문제<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="id15">
+<h2><span class="section-number">6.7. </span>연습문제<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-functions.ipynb">(실습) 함수</a></p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1846,11 +1730,9 @@ Python
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="datatypes.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1866,28 +1748,24 @@ Python
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By 코딩알지 & HJ<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By 코딩알지 & HJ<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

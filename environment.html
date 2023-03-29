@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2. 프로그래밍 개발 환경 &#8212; 파이썬 프로그래밍 기초</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,17 +18,21 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -38,13 +40,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,21 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -85,10 +72,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -221,17 +207,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -239,191 +220,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/jupyter-book/environment.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/codingalzi/pybook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Fenvironment.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/environment.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/environment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/codingalzi/pybook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Fenvironment.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/jupyter-book/environment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    2.1. 온라인 개발 환경: 구글 코랩
@@ -475,11 +359,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>프로그래밍 개발 환경</h1>
@@ -547,12 +432,11 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">2. </span>프로그래밍 개발 환경<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1><span class="section-number">2. </span>프로그래밍 개발 환경<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>파이썬으로 프로그래밍을 하려면 적절한 개발환경을 준비해야 한다.
 파이썬 프로그래밍 개발 환경은 크게 오프라인 환경과 온라인 환경으로 나뉜다.</p>
 <ul class="simple">
@@ -560,8 +444,8 @@ title="Print to PDF"
 <li><p>오프라인 개발 환경: 편집기와 파이썬 실행기를 PC에 직접 설치해서 활용하는 환경</p></li>
 </ul>
 <p>프로그래밍이 처음이라면 먼저 온라인 방식을 사용해서 파이썬과 어느 정도 친숙해진 다음에 오프라인 방식을 시도할 것을 추천한다.</p>
-<section id="id2">
-<h2><span class="section-number">2.1. </span>온라인 개발 환경: 구글 코랩<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id2">
+<h2><span class="section-number">2.1. </span>온라인 개발 환경: 구글 코랩<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://colab.research.google.com/?hl=ko">구글 코랩<font size="2">Google Colab</font></a>은
 구글에서 제공하는 파이썬 전용 온라인 주피터 노트북이다.
 웹브라우저를 이용하여 어떤 준비 없이 바로 파이썬 프로그래밍을 시작할 수 있다.</p>
@@ -600,21 +484,21 @@ title="Print to PDF"
 </ul>
 <div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/anaconda_prompt_start.jpg" style="width:750px"></div>
 </div>
-</section>
-<section id="id3">
-<h2><span class="section-number">2.2. </span>오프라인 개발 환경: 아나콘다<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">2.2. </span>오프라인 개발 환경: 아나콘다<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>인터넷 연결 문제, 보안 등의 이유로 인터넷이 단절된 상황에서의 개발 환경이며
 개발자가 직접 자신의 컴퓨터에 설정한다.</p>
-<section id="id4">
-<h3><span class="section-number">2.2.1. </span>파이썬 설치<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<div class="section" id="id4">
+<h3><span class="section-number">2.2.1. </span>파이썬 설치<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>파이썬 개발환경 설치가 처음이라면
 데이터 분석 관련 중요 라이브러리, 스파이더 편집기, 주피터 노트북을 모두 포함하는
 <a class="reference external" href="https://www.anaconda.com">아나콘다<font size='2'>Anaconda</font> 파이썬 패키지</a>를 추천한다.
 자세한 설치 요령은 <a class="reference external" href="https://codingalzi.github.io/pybook/environment_setting.html#sec-anaconda-install">아나콘다 설치</a>를
 참고한다.</p>
-</section>
-<section id="id5">
-<h3><span class="section-number">2.2.2. </span>주피터 노트북 실행<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="id5">
+<h3><span class="section-number">2.2.2. </span>주피터 노트북 실행<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span> <span class="pre">(anaconda3)</span></code> 등 임의의 터미널에서 아래 명령을 차례대로 실행하면 주피터 노트북<font size="2">Jupyter notebook</font>을 열거나 새로 작성할 수 있다.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span> $ jupyter notebook
 </pre></div>
@@ -631,10 +515,10 @@ title="Print to PDF"
 아나콘다의 설치 과정과 주피터 노트북의 기초 사용법에 대한 보다 상세한 설명은
 <a class="reference external" href="https://www.youtube.com/watch?v=dJfq-eCi7KI&amp;t=2298s">유튜버 나도코딩의 동영상</a>을 참고하면 좋다.</p>
 </div>
-</section>
-</section>
-<section id="ide">
-<h2><span class="section-number">2.3. </span>오프라인 통합 개발 환경(IDE)<a class="headerlink" href="#ide" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="ide">
+<h2><span class="section-number">2.3. </span>오프라인 통합 개발 환경(IDE)<a class="headerlink" href="#ide" title="Permalink to this headline">¶</a></h2>
 <p>대형 프로젝트를 진행하면 많은 코드 파일을
 작성하고 관리해야 한다.
 이때 코드 편집과 실행, 디버깅, 파일 관리 등
@@ -654,34 +538,34 @@ Pro 와 Community 두 버전을 지원하며 입문자는 무료 버전인 Commu
 VS Code의 설치 과정과 사용법은 <a class="reference internal" href="environment_setting.html#sec-vs-code"><span class="std std-ref">비주얼 스튜디오 코드 설치</span></a>와
 <a class="reference external" href="https://www.youtube.com/watch?v=K8qVH8V0VvY&amp;t=337s">생활코딩의 동영상</a>을
 참고한다.</p>
-</section>
-<section id="ipython">
-<h2><span class="section-number">2.4. </span>IPython 소개<a class="headerlink" href="#ipython" title="Permalink to this headline">#</a></h2>
-<section id="id6">
-<h3><span class="section-number">2.4.1. </span>대화식 프로그래밍<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="ipython">
+<h2><span class="section-number">2.4. </span>IPython 소개<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3><span class="section-number">2.4.1. </span>대화식 프로그래밍<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>주피터 노트북의 코드 셀<font size="2">code cell</font>은
 대화식 프로그래밍<font size="2">interactive programming</font>을 지원하는
 <a class="reference external" href="https://ipython.org">IPython</a>을 활용한다.
 Anaconda Prompt (anaconda3) 터미널에서 IPython 콘솔을 사용하는 방식은 다음과 같다.</p>
 <div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/anaconda_ipython.jpg" style="width:750px"></div><p>아래 사진은 주피터 노트북의 코드 셀에서 IPython이 작동하는 형식을 보여준다.</p>
 <div align="center"><img src="https://raw.githubusercontent.com/codingalzi/datapy/master/jupyter-book/images/jupyter-1.png" style="width:750px"></div><p>반면에 파이썬이 기본으로 지원하는 python 콘솔은 다음 모양의 대화식 코딩을 지원한다.</p>
-<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/anaconda_python.jpg" style="width:750px"></div></section>
-<section id="id7">
-<h3><span class="section-number">2.4.2. </span>매직 명령어<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/anaconda_python.jpg" style="width:750px"></div></div>
+<div class="section" id="id7">
+<h3><span class="section-number">2.4.2. </span>매직 명령어<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>IPython 콘솔은 파이썬 프로그래밍 이외에 보다 다양한 기능을 지원한다.
 예를 들어 매직 명령어<font size='2'>magic commands</font>라는 명령어를
 이용하여 파이썬 프로그래밍을 도와주는 특별한 기능을 수행할 수 있다.</p>
 <p>아래 사진은 무작위로 생성된 1000x1000 크기의 넘파이 행렬의 각 항목을 두 배하는 코드의 실행시간을 측정하는 <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> 매직 명령문의 활용을 보여준다.</p>
 <div align="center"><img src="https://raw.githubusercontent.com/codingalzi/datapy/master/jupyter-book/images/jupyter-2.png" style="width:750px"></div><p>보다 다양한 매직 명령어와 주피터 노트북에서 사용할 수 있는 단축키에 대한 간략한 설명은
 <a class="reference external" href="https://compmath.korea.ac.kr/appmath/PythonIPythonJupyterBasics.html#Jupyter-%EB%85%B8%ED%8A%B8%EB%B6%81">IPython 기초</a>를 참고한다. 여기서는 앞으로 필요할 때 하나씩 소개한다.</p>
-</section>
-<section id="matplotlib">
-<h3><span class="section-number">2.4.3. </span>matplotlib 통합<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="matplotlib">
+<h3><span class="section-number">2.4.3. </span>matplotlib 통합<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h3>
 <p>IPython은 주피터 노트북과 함께 사용될 때 장점이 극대화된다.
 특히 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> 라이브러리를 이용한 데이터 시각화가 바로 지원된다.</p>
-<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/datapy/master/jupyter-book/images/jupyter-matplotlib-1.png" style="width:750px"></div></section>
-</section>
-</section>
+<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/datapy/master/jupyter-book/images/jupyter-matplotlib-1.png" style="width:750px"></div></div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -705,11 +589,9 @@ Anaconda Prompt (anaconda3) 터미널에서 IPython 콘솔을 사용하는 방�
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="programming.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -725,28 +607,24 @@ Anaconda Prompt (anaconda3) 터미널에서 IPython 콘솔을 사용하는 방�
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By 코딩알지 & HJ<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By 코딩알지 & HJ<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

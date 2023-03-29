@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>9. 반복문 &#8212; 파이썬 프로그래밍 기초</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,17 +18,21 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -38,21 +40,20 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="10. 사례 연구: 프로그램 구상" href="casestudy_planning.html" />
@@ -64,21 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -87,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -223,17 +209,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -241,191 +222,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/jupyter-book/iterations.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/codingalzi/pybook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Fiterations.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/iterations.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/iterations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/codingalzi/pybook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Fiterations.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/codingalzi/pybook/master?urlpath=tree/jupyter-book/iterations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sec-variable-reassignment">
    9.1. 변수 재할당/업데이트
@@ -459,11 +343,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>반복문</h1>
@@ -513,26 +398,26 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">9. </span>반복문<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<p>특정 명령문을 자동으로 반복<font size="2">iteration</font> 실행하는 장치인 <strong>반복문</strong>을 소개한다.
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1><span class="section-number">9. </span>반복문<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>특정 명령문을 반복<font size="2">iteration</font> 실행하는 명령문인
+<strong>반복문</strong><font size='2'>iteration</font>을 소개한다.
 파이썬은 세 종류의 반복문을 제공한다.</p>
 <ul class="simple">
-<li><p>재귀</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문</p></li>
+<li><p>재귀</p></li>
 </ul>
-<p>재귀는 <a class="reference internal" href="recursion.html#ch-recursion"><span class="std std-numref">20장</span></a>에서,
-<code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문은 <a class="reference internal" href="starting.html#sec-for-loop"><span class="std std-numref">3.7.2절</span></a> 에서 간단한 활용법을 살펴보았다.
-여기서는 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 보다 자세히 소개한다.</p>
-<p>앞으로 문자열, 리스트, 튜플, 사전 등 모음 자료형을 소개할 때
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문은 <a class="reference internal" href="starting.html#sec-for-loop"><span class="std std-numref">3.7.2절</span></a> 에서 간단한 활용법을 살펴보았다.
+여기서는 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 보다 자세히 소개하며,
+재귀는 <a class="reference internal" href="recursion.html#ch-recursion"><span class="std std-numref">20장</span></a>에서 다룬다.
+앞으로 문자열, 리스트, 튜플, 사전 등 모음 자료형을 소개할 때
 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문과 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 보다 다양한 활용법을 보게 될 것이다.</p>
-<section id="sec-variable-reassignment">
-<span id="id2"></span><h2><span class="section-number">9.1. </span>변수 재할당/업데이트<a class="headerlink" href="#sec-variable-reassignment" title="Permalink to this headline">#</a></h2>
+<div class="section" id="sec-variable-reassignment">
+<span id="id2"></span><h2><span class="section-number">9.1. </span>변수 재할당/업데이트<a class="headerlink" href="#sec-variable-reassignment" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 작동 과정을 이해하려면 먼저 변수가 가리키는 값을 변경하는 변수 재할당과
 변수 업데이트를 이해해야 한다.</p>
 <p><strong>변수 재할당</strong></p>
@@ -552,42 +437,42 @@ title="Print to PDF"
 실제로 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>는 12로 계산된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 </pre></div>
 </div>
 </div>
 </div>
-<p>이는 <a class="reference internal" href="datatypes.html#sec-boolean-expression"><span class="std std-numref">5.4.2절</span></a>에서 설명한대로 하나의 등호 기호 <code class="docutils literal notranslate"><span class="pre">=</span></code> 는
-두 값의 등가 여부가 아니라 왼편에 위치한 변수가 오른 편에 위치한 값을 가리키도록 하는
-명령문에 사용되는 특별한 의미를 갖기 때문이다.
-<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span></code> 가 실행될 당시에 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 5를 가리키고 있었기 때문에
+<p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span></code> 가 실행될 당시에 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 5를 가리키고 있었기 때문에
 <code class="docutils literal notranslate"><span class="pre">y</span></code> 또한 5를 가리키도록 지정되었다.
-이후에 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값을 변경해도 <code class="docutils literal notranslate"><span class="pre">y</span></code>에게는 전혀 영향을 주지 않는다.</p>
+하지만 이후에 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값을 변경해도 <code class="docutils literal notranslate"><span class="pre">y</span></code>에게는 전혀 영향을 주지 않는다.
+메모리 상에서의 변화를 <a class="reference external" href="https://pythontutor.com/visualize.html#code=x%20%3D%205%0Ay%20%3D%20x%0Ax%20%3D%207%0Az%20%3D%20x%20%2B%20y&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 변수 재할당</a>에서 확인할 수 있다.</p>
 <p><strong>변수 업데이트</strong></p>
-<p>반복문의 핵심은 변수가 가리키던 값을 이용하여 새로운 값을 생성한 후에 그 값을
+<p>반복문의 핵심은
+변수가 가리키던 값을 이용하여 새로이 생성한 값을 다시
 동일한 변수에 재할당하는 것이며, 이를
 <strong>변수 업데이트</strong><font size="2">variable update</font>라 한다.
 대표적으로 아래와 같은 표현식이 반복문에 자주 사용된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>위 할당문은 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키던 값에 1을 더한 값을 다시
 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>에 할당하라고 명령한다.
 만약에 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code> 가 0을 가리키고 있었다면 위 명령문이 반복 실행될 때마다
-<code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값은 1, 2, 3 등으로 계속해서 변한다.
+<code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값은 1, 2, 3, … 등 계속해서 변한다.
 반면에 아래 명령문은 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키던 값을
 1만큼 줄여서 재할당한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p><strong>간편 변수 업데이트</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x+1</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">x</span></code> 등과 같은 간단한 변수 업데이트는 보다 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*=</span> <span class="pre">2</span></code> 등으로
-보다 간편하게 나타낼 수 있다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x+1</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">x</span></code> 등과 같은 간단한 변수 업데이트는 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*=</span> <span class="pre">2</span></code> 등으로
+간편하게 나타낼 수 있다.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>연산 기호</p></th>
@@ -640,50 +525,51 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="while">
-<h2><span class="section-number">9.2. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">#</a></h2>
-<p><a class="reference internal" href="recursion.html#ch-recursion"><span class="std std-numref">20장</span></a>에서 살펴 본 다음 재귀 함수는 카운트다운을 출력한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;발사!&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-        <span class="n">countdown</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</div>
+<div class="section" id="while">
+<h2><span class="section-number">9.2. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 형식은 다음과 같다.
+함수, 조건문, <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문의 경우에서처럼
+헤더는 콜론(<code class="docutils literal notranslate"><span class="pre">:</span></code>)으로 마무리하고 본문은 들여쓴다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">논리식</span><span class="p">:</span>
+    <span class="n">명령문</span>
 </pre></div>
 </div>
-<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>을 실행하면이 주어지면 다음과 같이 출력한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countdown</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="go">3</span>
-<span class="go">2</span>
-<span class="go">1</span>
-<span class="go">발사!</span>
-</pre></div>
-</div>
-<p>이유는 <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>, <code class="docutils literal notranslate"><span class="pre">countdown(2)</span></code>, <code class="docutils literal notranslate"><span class="pre">countdown(1)</span></code>, <code class="docutils literal notranslate"><span class="pre">countdown(0)</span></code> 이
-차례대로 호출되기 때문이며 그럴 때마다 함수의 인자를 화면에 출력한다.</p>
-<p>따라서 <code class="docutils literal notranslate"><span class="pre">countdown(n)</span></code> 호출되면 다음 과정이 재귀적으로 실행된다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>이 0을 가리키면 <code class="docutils literal notranslate"><span class="pre">'발사!'</span></code> 를 출력한다.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>이 0보다 크면 먼저 <code class="docutils literal notranslate"><span class="pre">n</span></code> 을 출력한다.
-이후 <code class="docutils literal notranslate"><span class="pre">n</span></code>이 가리키는 값을 1만큼 줄인다.</p></li>
-</ul>
-<p>다음 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 바로 <code class="docutils literal notranslate"><span class="pre">n</span></code> 이 0보다 큰 경우를 다룬다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/while-loop.png" style="width:250px"></div><p>위 명령문의 실행은 아래 세 단계로 이루어진다.</p>
+<ol class="simple">
+<li><p>헤더의 <code class="docutils literal notranslate"><span class="pre">논리식</span></code>의 참, 거짓 여부를 확인한다.</p></li>
+<li><p>헤더의 <code class="docutils literal notranslate"><span class="pre">논리식</span></code> 이 <code class="docutils literal notranslate"><span class="pre">False</span></code> 인 경우: <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문 전체를 건너 뛰고 다음 명령문을 실행한다.</p></li>
+<li><p>헤더의 <code class="docutils literal notranslate"><span class="pre">논리식</span></code> 이 <code class="docutils literal notranslate"><span class="pre">True</span></code> 인 경우:
+본문에 위치한 명령문을 실행한 후에
+다시 1단계로 이동한다.</p></li>
+</ol>
+<p>아래 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문은 <code class="docutils literal notranslate"><span class="pre">n</span></code> 이 0보다 큰 동안은 계속해서 <code class="docutils literal notranslate"><span class="pre">n</span></code>을 출력한 다음에
+마지막에 ‘발사’를 추가로 출력한다. 단, <code class="docutils literal notranslate"><span class="pre">n</span></code>은 반복할 때마다 1씩 줄어든다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;발사&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>즉, 위 명령문은 <code class="docutils literal notranslate"><span class="pre">n</span></code>이 0보다 크면 <code class="docutils literal notranslate"><span class="pre">countdown()</span></code> 함수의 <code class="docutils literal notranslate"><span class="pre">else</span></code> 키워드의
-본문 명령문을 실행하며,
-언젠가 <code class="docutils literal notranslate"><span class="pre">n</span></code>이 0을 가리키게 되면, 즉 기저 조건에 다다르면 더이상 실행되지 않고
-다음 명령문으로 이동한다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">countdown()</span></code> 함수를 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 이용하여 구현하면 다음과 같다.
-본문의 마지막 줄은 <code class="docutils literal notranslate"><span class="pre">n</span></code> 이 0인 경우를 다룬다.</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+2
+1
+발사
+</pre></div>
+</div>
+</div>
+</div>
+<p>위 코드를 함수화하면 다음과 같이 하나의 매개변수를 이용하도록 할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>     <span class="c1"># n 이 0 보다 큰 경우</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>     <span class="c1"># n 이 0 보다 큰 경우</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
         <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
         
@@ -701,83 +587,55 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 2
+1
 발사!
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 형식은 다음과 같다.
-함수, 조건문, <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문의 경우에서처럼
-헤더는 콜론(<code class="docutils literal notranslate"><span class="pre">:</span></code>)으로 마무리하고 본문은 들여쓴다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">부울식</span><span class="p">:</span>
-    <span class="n">명령문</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countdown</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>위 명령문의 실행은 아래 세 단계로 이루어진다.</p>
-<ol class="simple">
-<li><p>헤더의 <code class="docutils literal notranslate"><span class="pre">부울식</span></code>의 참, 거짓 여부를 확인한다.</p></li>
-<li><p>헤더의 <code class="docutils literal notranslate"><span class="pre">부울식</span></code> 이 <code class="docutils literal notranslate"><span class="pre">False</span></code> 인 경우: <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문 전체를 건너 뛰고 다음 명령문을 실행한다.</p></li>
-<li><p>헤더의 <code class="docutils literal notranslate"><span class="pre">부울식</span></code> 이 <code class="docutils literal notranslate"><span class="pre">True</span></code> 인 경우:
-본문에 위치한 명령문을 실행한 후에
-다시 1단계로 이동한다.</p></li>
-</ol>
-</section>
-<section id="id3">
-<h2><span class="section-number">9.3. </span>무한 루프<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
-<p>헤더의 <code class="docutils literal notranslate"><span class="pre">부울식</span></code>이 계속해서 참이면 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 본문이 무한히 반복되어 실행된다.
-예를 들어 역시 <a class="reference internal" href="recursion.html#ch-recursion"><span class="std std-numref">20장</span></a>에서 살펴본 아래 재귀 함수를 다시 살펴보자.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_infinitely</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    <span class="n">count_finitely</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+4
+3
+2
+1
+발사!
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">count_infinitely(n)</span></code> 이 실행되면 다음 두 가지 일이 실행된다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> 을 출력한다.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>을 1 키운 후 재귀를 실행한다.</p></li>
-</ul>
-<p>따라서 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 다음과 같이 이용하여 <code class="docutils literal notranslate"><span class="pre">count_infinitely()</span></code> 함수를 구현할 수 있다.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">9.3. </span>무한 루프<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>헤더의 조건을 나타내는 논리식이 계속해서 참이면 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 무한정 반복되어 실행될 수 있다.</p>
+<p>예를 들어 다음 함수를 살펴보자.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_infinitely</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
         <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>재귀 함수로 정의했을 때 기저 조건이 없었기에 <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> 이 거짓인 경우에
-실행될 명령문이 없다.
-따라서 <code class="docutils literal notranslate"><span class="pre">count_infinitely(1)</span></code>을 호출하면 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 무한 반복되며
+<p><code class="docutils literal notranslate"><span class="pre">count_infinitely(1)</span></code>을 호출하면 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 무한 반복된다.
+이유는 <code class="docutils literal notranslate"><span class="pre">n</span></code>이 무한정 커지기 때문이다.
 이런 현상을 <strong>무한 루프</strong><font size="2">infinite loop</font>라 한다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문으로 인해 무한 루프가 발생하는지 여부를
 경우에 따라 판단하기 매우 어렵거나 불가능할 수 있다.
 여기서는 콜라츠 추측에 사용된 알고리즘을 이용하여
 판단이 매우 어려운 경우를 소개한다.</p>
-<div class="proof example admonition" id="exp:collatz_while">
-<p class="admonition-title"><span class="caption-number">Example 9.1 </span> (콜라츠 추측과 무한 루프)</p>
-<section class="example-content" id="proof-content">
-<p><a class="reference internal" href="recursion.html#sec-collatz"><span class="std std-numref">20.4.4절</span></a>에서 재귀로 구현한 <code class="docutils literal notranslate"><span class="pre">collatz()</span></code> 함수는 다음과 같다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>                        <span class="c1"># 기저 조건</span>
-        <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">num</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>                    <span class="c1"># 짝수인 경우</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span>
-        <span class="n">collatz</span><span class="p">(</span><span class="n">num</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>                               <span class="c1"># 홀수인 경우</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span>
-        <span class="n">collatz</span><span class="p">(</span><span class="n">num</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>함수 본문에서 반복되는 내용은 다음과 같다.</p>
-<ul class="simple">
-<li><p>기저 조건: <code class="docutils literal notranslate"><span class="pre">1</span></code> 출력</p></li>
-<li><p>짝수인 경우: 자신 출력 후 2로 나눈 값에 대해 재귀 적용</p></li>
-<li><p>홀수인 경우: 자신 출력 후 세 배 더하기 1한 값에 대해 재귀 적용</p></li>
-</ul>
-<p>따라서 <code class="docutils literal notranslate"><span class="pre">n</span></code>을 출력한 후에 짝수 또는 홀수인 경우에 따라 <code class="docutils literal notranslate"><span class="pre">n</span></code>의 값을 업데이트하는
-과정을 반복하는 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문으로 재귀를 대신할 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<p><strong>콜라츠 추측과 무한 루프</strong></p>
+<p>아래 함수를 인자 <code class="docutils literal notranslate"><span class="pre">n</span></code>과 함께 호출하면 <code class="docutils literal notranslate"><span class="pre">n</span></code>을 출력한 후에 짝수 또는 홀수인 경우에 따라 <code class="docutils literal notranslate"><span class="pre">n</span></code>의 값을 업데이트하는 과정을 반복한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; -&gt; &quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>          <span class="c1"># 짝수인 경우</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="k">2</span> == 0:          # 짝수인 경우
             <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span>
         <span class="k">else</span><span class="p">:</span>                 <span class="c1"># 홀수인 경우</span>
             <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
@@ -785,12 +643,51 @@ title="Print to PDF"
     <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                  <span class="c1"># 기저 조건</span>
 </pre></div>
 </div>
-<p>이미 <a class="reference internal" href="recursion.html#sec-collatz"><span class="std std-numref">20.4.4절</span></a>에서 언급하였듯이 콜라츠 추측은 여전히 미해결 문제로
-남아 있다.
-즉, <code class="docutils literal notranslate"><span class="pre">collatz()</span></code> 함수의 본문에 사용된 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 경우에 따라
-무한 루프를 유발하는지 여부가 아직 알려지지 않았다.</p>
-</section>
-</div><p><strong>무한루프와 <code class="docutils literal notranslate"><span class="pre">break</span></code> 명령문</strong></p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatz</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 -&gt; 10 -&gt; 5 -&gt; 16 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatz</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7 -&gt; 22 -&gt; 11 -&gt; 34 -&gt; 17 -&gt; 52 -&gt; 26 -&gt; 13 -&gt; 40 -&gt; 20 -&gt; 10 -&gt; 5 -&gt; 16 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatz</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>111 -&gt; 334 -&gt; 167 -&gt; 502 -&gt; 251 -&gt; 754 -&gt; 377 -&gt; 1132 -&gt; 566 -&gt; 283 -&gt; 850 -&gt; 425 -&gt; 1276 -&gt; 638 -&gt; 319 -&gt; 958 -&gt; 479 -&gt; 1438 -&gt; 719 -&gt; 2158 -&gt; 1079 -&gt; 3238 -&gt; 1619 -&gt; 4858 -&gt; 2429 -&gt; 7288 -&gt; 3644 -&gt; 1822 -&gt; 911 -&gt; 2734 -&gt; 1367 -&gt; 4102 -&gt; 2051 -&gt; 6154 -&gt; 3077 -&gt; 9232 -&gt; 4616 -&gt; 2308 -&gt; 1154 -&gt; 577 -&gt; 1732 -&gt; 866 -&gt; 433 -&gt; 1300 -&gt; 650 -&gt; 325 -&gt; 976 -&gt; 488 -&gt; 244 -&gt; 122 -&gt; 61 -&gt; 184 -&gt; 92 -&gt; 46 -&gt; 23 -&gt; 70 -&gt; 35 -&gt; 106 -&gt; 53 -&gt; 160 -&gt; 80 -&gt; 40 -&gt; 20 -&gt; 10 -&gt; 5 -&gt; 16 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>콜라츠 추측</strong><font size='2'>Collatz cojecture</font>은
+위 함수가 임의의 양의 정수 <code class="docutils literal notranslate"><span class="pre">n</span></code>에 대해
+항상 언젠가는 1을 출력하고 실행을 멈춘다는 가정이다.
+그런데 <code class="docutils literal notranslate"><span class="pre">collatz()</span></code> 함수의 실행이 항상 멈춘다는 증명도,
+멈추지 않는 경우가 있다는 증명도 아직 없다.
+즉, 콜라츠 추측은 여전히 미해결 문제로 남아 있다.</p>
+<p><strong>무한루프와 <code class="docutils literal notranslate"><span class="pre">break</span></code> 명령문</strong></p>
 <p>사용자로부터 <code class="docutils literal notranslate"><span class="pre">'중지'</span></code> 단어가 입력될 때 까지
 단어를 입력 받는 프로그램은 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -821,9 +718,14 @@ title="Print to PDF"
 이와 같이 반복 횟수를 미리 지정할 수 없지만
 특별한 상황이 발생하면 무한 루프를 중지시켜야 할 때
 <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code>와 <code class="docutils literal notranslate"><span class="pre">break</span></code>를 함께 활용한다.</p>
-</section>
-<section id="id4">
-<h2><span class="section-number">9.4. </span>무한 루프 활용: 뉴튼 방법<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<div class="info admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">1</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code> 대신에 <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">1</span></code>을 사용하곤 한다.
+이유는 <code class="docutils literal notranslate"><span class="pre">while</span></code> 다음에는 논리식이 위치해야 하기에 <code class="docutils literal notranslate"><span class="pre">1</span></code>이 참으로 간주되기 때문이다.</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">9.4. </span>무한 루프 활용: 뉴튼 방법<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>무한 루프를 어떤 값의 근사치를 계산하는 데에 활용하곤 한다.
 예를 들어, 제곱근을 계산하기 위해
 <strong>뉴튼 방법</strong><font size="2">Newton’s method</font>에 사용된 알고리즘을
@@ -837,8 +739,8 @@ x_{n+1} &amp; = \frac{x_n + \frac{a}{x_n}}{2}
 \end{align*}
 \end{split}\]</div>
 <p>파이썬에서 위 점화식은 아래와 같은 변수 업데이트로 구현된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>예를 들어 <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> 를 뉴튼 방법으로 계산해보자.
@@ -979,22 +881,31 @@ x_{n+1} &amp; = \frac{x_n + \frac{a}{x_n}}{2}
     <span class="k">return</span> <span class="n">y</span>
 </pre></div>
 </div>
-<div class="warning admonition">
-<p class="admonition-title">부동소수점 비교</p>
-<p><code class="docutils literal notranslate"><span class="pre">x</span></code> 와 <code class="docutils literal notranslate"><span class="pre">y</span></code> 가 각각 부동소수점을 가리킬 때,
-<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">!=</span> <span class="pre">y</span></code> 처럼
-부동소수점<font size="2">floating point</font>의 등가성을
-비교하는 일은 매우 조심해서 사용해야 한다.
-예를 들어 아래와 기대와 다른 결과를 얻을 수 있기 때문이다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">==</span> <span class="mf">0.3</span>
-<span class="go">False</span>
+<p>그런데 이렇게 해도 무한루프에 빠질 가능성이 높다.
+이유는 아래 조건문에서 사용되는 두 부동소수점의 비교가
+참이될 가능성이 높지 않기 때문이다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+    <span class="k">break</span>
 </pre></div>
 </div>
-<p>이에 대한 이유는 이 강의노트의 수준을 많이 벗어나기에 더 이상 설명하지 않는다.</p>
+<p>일반적으로 두 부동소수점<font size="2">floating point</font>의 등가성을
+비교하는 일은 매우 조심해서 사용해야 한다.
+예를 들어 아래와 기대와 다른 결과를 얻을 수 있기 때문이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">==</span> <span class="mf">0.3</span>
+</pre></div>
 </div>
-<p>두 부동소수점의 등가성 여부를 판단해야 하는 경우
-보통은 두 수의 오차가 일정 범위 안에 있는지 여부를 판단하는 하는 것으로 대신한다.
-즉, 오차가 충분히 작아지면 알고리즘의 실행을 멈추도록 하는 게 일반적이다.
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>이에 대한 이유는 이 강의노트의 수준을 많이 벗어나기에 더 이상 설명하지 않는다.</p>
+<p>부동소수점의 등가성 대신 보통은 두 수의 오차가 충분히 작으면
+실행을 멈추도록 한다.
 이 아이디어를 <code class="docutils literal notranslate"><span class="pre">my_sqrt()</span></code> 함수에 적용하면 다음과 같다.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">abs()</span></code> 함수는 절댓값을 반환한다.</p></li>
@@ -1041,12 +952,12 @@ x_{n+1} &amp; = \frac{x_n + \frac{a}{x_n}}{2}
 </div>
 </div>
 </div>
-</section>
-<section id="id5">
-<h2><span class="section-number">9.5. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">9.5. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-iterations.ipynb">(실습) 반복문</a></p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1070,11 +981,9 @@ x_{n+1} &amp; = \frac{x_n + \frac{a}{x_n}}{2}
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="conditionals.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1090,28 +999,24 @@ x_{n+1} &amp; = \frac{x_n + \frac{a}{x_n}}{2}
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By 코딩알지 & HJ<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By 코딩알지 & HJ<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
