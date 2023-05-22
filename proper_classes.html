@@ -213,6 +213,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/jupyter-book/proper_classes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -443,11 +474,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7faa743f7700&gt; 2
-&lt;__main__.MSDie object at 0x7faa743f7700&gt; 4
-&lt;__main__.MSDie object at 0x7faa743f7700&gt; 2
-&lt;__main__.MSDie object at 0x7faa743f7700&gt; 5
-&lt;__main__.MSDie object at 0x7faa743f7700&gt; 4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7fa6f9069ab0&gt; 4
+&lt;__main__.MSDie object at 0x7fa6f9069ab0&gt; 3
+&lt;__main__.MSDie object at 0x7fa6f9069ab0&gt; 3
+&lt;__main__.MSDie object at 0x7fa6f9069ab0&gt; 3
+&lt;__main__.MSDie object at 0x7fa6f9069ab0&gt; 6
 </pre></div>
 </div>
 </div>
@@ -460,7 +491,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7faa743f4bb0&gt;, &lt;__main__.MSDie object at 0x7faa743f7d30&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7fa6f9069ae0&gt;, &lt;__main__.MSDie object at 0x7fa6f9069ba0&gt;]
 </pre></div>
 </div>
 </div>
@@ -513,9 +544,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-2
-4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+3
+1
 1
 2
 </pre></div>
@@ -530,7 +561,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6): 1, MSDie(20): 19]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6): 3, MSDie(20): 11]
 </pre></div>
 </div>
 </div>
@@ -714,7 +745,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -751,7 +782,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;_MSDie__hidden1&#39;: 3, &#39;_hidden2&#39;: 7, &#39;num_sides&#39;: 6, &#39;current_value&#39;: 5}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;_MSDie__hidden1&#39;: 3, &#39;_hidden2&#39;: 7, &#39;num_sides&#39;: 6, &#39;current_value&#39;: 2}
 </pre></div>
 </div>
 </div>
@@ -839,7 +870,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -852,7 +883,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -955,7 +986,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -967,7 +998,7 @@ private, default, protected, public 등과 같은
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
