@@ -628,7 +628,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f76126a0580&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7ffaac590a90&gt;
 </pre></div>
 </div>
 </div>
@@ -730,7 +730,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction at 0x7f76126a1960&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction at 0x7ffaac591660&gt;
 </pre></div>
 </div>
 </div>
@@ -991,15 +991,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</div>
-<div class="admonition-self-other admonition">
-<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">self</span></code> 와 <code class="docutils literal notranslate"><span class="pre">other</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">f14.__add__(f12)</span></code> 이  실행되면 실제로는 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 메서드가 다음과 같이 호출된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="fm">__add__</span><span class="p">(</span><span class="n">f14</span><span class="p">,</span> <span class="n">f12</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>즉, <code class="docutils literal notranslate"><span class="pre">self=f14</span></code>, <code class="docutils literal notranslate"><span class="pre">other=f12</span></code> 가 인자로 사용되며,
-이는 <code class="docutils literal notranslate"><span class="pre">f14</span></code> 를 중심(self)으로 해서 다른 값(other)과의 연산을 실행한다는 의미이다.</p>
 </div>
 <p>그런데 덧셈의 결과가 기약분수의 형태가 아니다.
 기약분수를 계산하려면 최대공약수(gcd)를 계산하는 알고리즘이 필요하다.</p>
