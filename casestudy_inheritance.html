@@ -492,9 +492,9 @@ document.write(`
 		<span class="bp">self</span><span class="o">.</span><span class="n">jump</span> <span class="o">=</span> <span class="n">jump</span>                             <span class="c1"># jump 기능 지정</span>
 
 	<span class="c1"># 점프 기능 담당 메서드: jump=True일 경우에만 작동.</span>
-    <span class="k">def</span> <span class="nf">hop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">hop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
 		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">jump</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-			<span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">300</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">distance</span>
 </pre></div>
 </div>
 <p><strong>객체 생성</strong></p>
@@ -528,8 +528,8 @@ document.write(`
     <span class="n">pacman</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">30</span>
 
 <span class="c1"># 팩맨 점프</span>
-<span class="k">def</span> <span class="nf">jump_pacman</span><span class="p">():</span>
-    <span class="n">pacman</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">300</span>
+<span class="k">def</span> <span class="nf">jump_pacman</span><span class="p">(</span><span class="n">distance</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
+    <span class="n">pacman</span><span class="o">.</span><span class="n">hop</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
 
 <span class="c1"># 야구공 이동</span>
 <span class="k">def</span> <span class="nf">move_ball</span><span class="p">():</span>
@@ -653,9 +653,9 @@ document.write(`
 		<span class="bp">self</span><span class="o">.</span><span class="n">jump</span> <span class="o">=</span> <span class="n">jump</span>                             <span class="c1"># jump 기능 지정</span>
 
 	<span class="c1"># 점프 기능 담당 메서드: jump=True일 경우에만 작동.</span>
-    <span class="k">def</span> <span class="nf">hop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">hop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
 		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">jump</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-			<span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">300</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">distance</span>
 
 <span class="n">wizard</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;wizard.gif&quot;</span><span class="p">)</span>
 <span class="n">goblin</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;goblin.gif&quot;</span><span class="p">)</span>
@@ -678,8 +678,8 @@ document.write(`
     <span class="n">pacman</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">30</span>
 
 <span class="c1"># 팩맨 점프</span>
-<span class="k">def</span> <span class="nf">jump_pacman</span><span class="p">():</span>
-    <span class="n">pacman</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">300</span>
+<span class="k">def</span> <span class="nf">jump_pacman</span><span class="p">(</span><span class="n">distance</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
+    <span class="n">pacman</span><span class="o">.</span><span class="n">hop</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
 
 <span class="c1"># 야구공 이동</span>
 <span class="k">def</span> <span class="nf">move_ball</span><span class="p">():</span>
