@@ -392,12 +392,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">18.1. 모음 자료형의 상속 체계</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">18.2. 벡터의 내적</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector">18.2.1. Vector 클래스</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#font-size-2-overriding-font">18.2.2. 메서드 재정의<font size="2">overriding</font></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">18.3. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector">18.2. Vector 클래스</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">18.3. 메서드 재정의</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">18.4. 벡터 합</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">18.5. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -439,8 +437,8 @@ document.write(`
 둘째, 자식 클래스의 인스턴스들 사이의 관계를 보다 잘 이해할 수 있다는 것이다.</p>
 <p>두 가지 예제를 이용하여 상속을 설명한다.</p>
 </section>
-<section id="id3">
-<h2><span class="section-number">18.2. </span>벡터의 내적<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="vector">
+<h2><span class="section-number">18.2. </span>Vector 클래스<a class="headerlink" href="#vector" title="Permalink to this heading">#</a></h2>
 <p>벡터는 정수 또는 부동소수점의 리스트를 의미하며
 길이가 같은 두 벡터의 내적은 각 항목끼리의 곱셈의 합이다.
 예를 들어 <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code> 와 <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">6,</span> <span class="pre">9]</span></code> 두 벡터의 내적은 다음과 같다.</p>
@@ -448,16 +446,14 @@ document.write(`
 </pre></div>
 </div>
 <p>리스트 클래스 <code class="docutils literal notranslate"><span class="pre">list</span></code> 는 벡터의 내적 연산자를 지원하지 않는다.
-따라서 내적 연산을 지원하도록 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스의 기능을 확장해야 한다.</p>
-<section id="vector">
-<h3><span class="section-number">18.2.1. </span>Vector 클래스<a class="headerlink" href="#vector" title="Permalink to this heading">#</a></h3>
-<p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스를 상속하면서 내적 연산자를 지원하는 <code class="docutils literal notranslate"><span class="pre">Vector</span></code> 클래스를
+따라서 내적 연산을 지원하도록 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스의 기능을 확장해야 한다.
+아래 코드는 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스를 상속하면서 벡터 내적 연산을 지원하는 <code class="docutils literal notranslate"><span class="pre">Vector</span></code> 클래스를
 정의한다.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code>: 부모 클래스의 생성자 호출.
 자식 클래스의 생성자를 호출할 때 호출되면
 부모 클래스의 속성과 메서드를 모두 상속받음.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dot()</span></code> 메서드: 추가되는 메서드. 내적 반환.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dot()</span></code> 메서드: 추가되는 메서드. 두 벡터의 내적 반환.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">len</span></code> 속성: 추가되는 인스턴스 속성. 벡터의 길이.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -513,7 +509,7 @@ document.write(`
 그리고 인덱싱, 슬라이싱 등
 리스트의 모든 기능을 활용할 수 있다.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 메서드 지원</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -528,8 +524,24 @@ document.write(`
 </div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">append()</span></code> 메서드</p></li>
+<li><p>내적: 내적 연산도 잘 작동함</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># 2*5 + 3*6 + 4*9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">18.3. </span>메서드 재정의<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">append()</span></code> 메서드도 잘 작동한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -560,7 +572,7 @@ document.write(`
 따라서 시초에 한 번 확인된 항목의 수가 그대로 유지되는 문제가 발생한다.</p>
 <p>이 문제를 해결하려면 <code class="docutils literal notranslate"><span class="pre">append()</span></code>, <code class="docutils literal notranslate"><span class="pre">pop()</span></code> 등 항목의 개수에 영향을 주는 메서드가
 실행되면 자동으로 항목의 수를 조정하도록 해야 한다.
-여기서는 예시를 위해 <code class="docutils literal notranslate"><span class="pre">append()</span></code>와 <code class="docutils literal notranslate"><span class="pre">pop()</span></code> 두 메서드를 재정의 한다.</p>
+여기서는 예시를 위해 상속받은 <code class="docutils literal notranslate"><span class="pre">append()</span></code>와 <code class="docutils literal notranslate"><span class="pre">pop()</span></code> 두 메서드를 재정의 한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># list 클래스 상속</span>
@@ -721,28 +733,6 @@ document.write(`
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>내적</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>106
-</pre></div>
-</div>
-</div>
-</div>
 <p>벡터의 내적을 자주 활용한다면 함수로 지정하는 게 좋다.
 아래 <code class="docutils literal notranslate"><span class="pre">dot()</span></code> 함수는 벡터 인자에 대해서만 작동하도록 구현되었다.</p>
 <div class="cell docutils container">
@@ -751,6 +741,19 @@ document.write(`
     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Vector</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">Vector</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 7]
 </pre></div>
 </div>
 </div>
@@ -768,16 +771,10 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="font-size-2-overriding-font">
-<h3><span class="section-number">18.2.2. </span>메서드 재정의<font size='2'>overriding</font><a class="headerlink" href="#font-size-2-overriding-font" title="Permalink to this heading">#</a></h3>
-<p>상속 받은 메서드를 재정의할 수 있다.
-사실 <code class="docutils literal notranslate"><span class="pre">Vector</span></code> 클래스의 생성자 메서드는
-부모 클래스인 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스의 생성자를 재정의 하였다.
-생성자 이외의 상속 받은 다른 메서드도 필요에 따라 재정의할 수 있다.</p>
-<p><strong>벡터 합</strong></p>
-<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">+</span></code> 연산자는 두 개의 리스트를 이어붙인다.
-반면에 벡터의 덧셈은 동일한 위치의 항목들의 합으로 이루어진 벡터를 계산한다.
-이런 벡터 연산을 지원하며려 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 메서드를 재정의하면 된다.</p>
+<section id="id4">
+<h2><span class="section-number">18.4. </span>벡터 합<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>길이가 동일한 두 벡터의 합(<code class="docutils literal notranslate"><span class="pre">+</span></code>)을 항목별 합으로 정의하려 한다.
+그러려면 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 매직 메서드를 재정의해야 한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># list 클래스 상속</span>
@@ -902,9 +899,8 @@ document.write(`
 </div>
 </div>
 </section>
-</section>
-<section id="id4">
-<h2><span class="section-number">18.3. </span>연습문제<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h2><span class="section-number">18.5. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-inheritance.ipynb">(실습) 상속</a></p>
 </section>
 </section>
@@ -977,12 +973,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">18.1. 모음 자료형의 상속 체계</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">18.2. 벡터의 내적</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector">18.2.1. Vector 클래스</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#font-size-2-overriding-font">18.2.2. 메서드 재정의<font size="2">overriding</font></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">18.3. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector">18.2. Vector 클래스</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">18.3. 메서드 재정의</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">18.4. 벡터 합</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">18.5. 연습문제</a></li>
 </ul>
   </nav></div>
 
