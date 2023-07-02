@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>21. (부록) 재귀 함수 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>22. (부록) 재귀 함수 &#8212; 파이썬 프로그래밍 기초</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'recursion';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="22. (부록) 자료형 힌트" href="type_annotations.html" />
-    <link rel="prev" title="20. (부록) 클래스의 기본 요소" href="proper_classes.html" />
+    <link rel="next" title="23. (부록) 자료형 힌트" href="type_annotations.html" />
+    <link rel="prev" title="21. (부록) 클래스의 기본 요소" href="proper_classes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,19 +156,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="conditionals.html">8. 조건문</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iterations.html">9. 반복문</a></li>
 <li class="toctree-l1"><a class="reference internal" href="casestudy_planning.html">10. 사례 연구: 프로그램 구상</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collections1.html">11. 모음 자료형 1부: 문자열, 리스트, 튜플</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collections2.html">12. 모음 자료형 2부: 집합, 사전, <code class="docutils literal notranslate"><span class="pre">range</span></code>, 조건제시법</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_collections.html">13. 사례 연구: 이터러블, 이터레이터, 제너레이터</a></li>
-<li class="toctree-l1"><a class="reference internal" href="files.html">14. 파일</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">15. 모듈</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">16. 클래스, 인스턴스, 객체</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">17. 사례 연구: 객체 지향 프로그래밍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance.html">18. 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">19. 사례 연구: 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">20. (부록) 클래스의 기본 요소</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">21. (부록) 재귀 함수</a></li>
-<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">22. (부록) 자료형 힌트</a></li>
-<li class="toctree-l1"><a class="reference internal" href="webapp_flask.html">23. (부록) 웹앱: Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">11. 문자열</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists_tuples.html">12. 리스트와 튜플</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">13. 사전과 집합</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_collections.html">14. 사례 연구: 이터러블, 이터레이터, 제너레이터</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">15. 파일</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">16. 모듈</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">17. 클래스, 인스턴스, 객체</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">18. 사례 연구: 객체 지향 프로그래밍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance.html">19. 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">20. 사례 연구: 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">21. (부록) 클래스의 기본 요소</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">22. (부록) 재귀 함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">23. (부록) 자료형 힌트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_flask.html">24. (부록) 웹앱: Flask</a></li>
 </ul>
 
     </div>
@@ -393,23 +394,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">21.1. 기저 조건과 무한 재귀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">21.2. 재귀 함수의 반환값</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">21.3. 재귀 함수의 콜 스택</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">21.4. 재귀 함수 예제</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">21.4.1. 리스트 합</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">21.4.2. 계승</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">21.4.3. 피보나치 수열</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-collatz">21.4.4. 콜라츠 추측</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-hanoi">21.4.5. 하노이의 탑</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">22.1. 기저 조건과 무한 재귀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">22.2. 재귀 함수의 반환값</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">22.3. 재귀 함수의 콜 스택</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">22.4. 재귀 함수 예제</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">22.4.1. 리스트 합</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">22.4.2. 계승</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">22.4.3. 피보나치 수열</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-collatz">22.4.4. 콜라츠 추측</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-hanoi">22.4.5. 하노이의 탑</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">21.5. 재귀 시각화</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">21.5.1. 소용돌이</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">21.5.2. 프랙탈 트리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">22.5. 재귀 시각화</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">22.5.1. 소용돌이</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">22.5.2. 프랙탈 트리</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">21.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">22.6. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -422,7 +423,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-recursion">
-<span id="id1"></span><h1><span class="section-number">21. </span>(부록) 재귀 함수<a class="headerlink" href="#ch-recursion" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">22. </span>(부록) 재귀 함수<a class="headerlink" href="#ch-recursion" title="Permalink to this heading">#</a></h1>
 <p>하나의 함수가 실행되는 동안 다른 함수를 호출할 수 있으며
 심지어 실행되는 함수 자신을 다시 호출할 수 있다.
 예를 들어 아래 <code class="docutils literal notranslate"><span class="pre">countdown()</span></code> 함수의 본문에 현재 정의되고 있는 자신에 대한 호출이 포함되어 있다.</p>
@@ -464,7 +465,7 @@ document.write(`
 <p>함수 본문에 자신을 호출하는 함수를 기능을 <strong>재귀</strong><font size="2">recursion</font>라 하며,
 <strong>재귀 함수</strong><font size="2">recursive function</font>는 재귀를 활용하는 함수이다.</p>
 <section id="id2">
-<h2><span class="section-number">21.1. </span>기저 조건과 무한 재귀<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">22.1. </span>기저 조건과 무한 재귀<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>재귀 함수의 실행이 멈추려면 재귀 호출 과정에서 언젠가는 더 이상 자신을 호출하지 않아야 한다.
 <code class="docutils literal notranslate"><span class="pre">countdown()</span></code> 함수는 <code class="docutils literal notranslate"><span class="pre">0</span></code>과 함께 호출될 때 더 이상 재귀 호출을 하지 않는다.
 이렇게 더 이상 재귀 호출이 발생하지 않도록 하는 경우를
@@ -511,7 +512,7 @@ document.write(`
 주의를 기울여야 한다.</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">21.2. </span>재귀 함수의 반환값<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">22.2. </span>재귀 함수의 반환값<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>함수의 반환값을 지정하는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">표현식</span></code>이 여러 번
 사용될 수 있다.
 예를 들어 짝수이면 0, 홀수이면 1을 반환하는 함수는 다음과 같이 정의한다.</p>
@@ -637,12 +638,12 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">21.3. </span>재귀 함수의 콜 스택<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">22.3. </span>재귀 함수의 콜 스택<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>재귀 함수의 실행과정 동안 많은 프레임의 생성과 소멸이 발생하여
 콜 스택의 변화가 경우에 따라 매우 복잡해지기도 한다.
 아래 그림은 <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>을 호출했을 때의 콜 스택의 상태를 스택 다이어그램으로 보여준다.</p>
 <div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/count_down.jpg" style="width:300px;"></div><div class="proof example admonition" id="exp_collatz">
-<p class="admonition-title"><span class="caption-number">Example 21.1 </span> (PythonTutor: 콜라츠 추측)</p>
+<p class="admonition-title"><span class="caption-number">Example 22.1 </span> (PythonTutor: 콜라츠 추측)</p>
 <section class="example-content" id="proof-content">
 <p><a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20collatz%28num%29%3A%0A%20%20%20%20if%20num%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20print%28num%29%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20elif%20num%252%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D',%20'%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num//2%29%20%2B%201%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28num,%20end%3D',%20'%29%0A%20%20%20%20%20%20%20%20return%20collatz%28num*3%20%2B%201%29%20%2B%201%0A%20%20%20%20%20%20%20%20%0Acollatz%287%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 콜라츠 추측</a>에서
 재귀 함수 호출 과정 동안 메모리에서 벌어지는 프레임의 생성과 소멸 과정,
@@ -650,9 +651,9 @@ document.write(`
 </section>
 </div></section>
 <section id="id5">
-<h2><span class="section-number">21.4. </span>재귀 함수 예제<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">22.4. </span>재귀 함수 예제<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <section id="id6">
-<h3><span class="section-number">21.4.1. </span>리스트 합<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">22.4.1. </span>리스트 합<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>리스트 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">7,</span> <span class="pre">9]</span></code>에 포함된 수들의 합을 구해보자.
 먼저, <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 이용하면 다음과 같다.</p>
 <ul class="simple">
@@ -777,7 +778,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h3><span class="section-number">21.4.2. </span>계승<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">22.4.2. </span>계승<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>음이 아닌 정수 <span class="math notranslate nohighlight">\(n\)</span>이 주어졌을 때 1부터 <span class="math notranslate nohighlight">\(n\)</span> 까지의 곱을 <span class="math notranslate nohighlight">\(n\)</span>의 계승 또는
 팩토리얼<font size="2">factorial</font>이라 하고 <span class="math notranslate nohighlight">\(n!\)</span>로 표시한다.</p>
 <div class="math notranslate nohighlight">
@@ -807,7 +808,7 @@ n! &amp; = n \, (n-1)!\quad\text{단, $n&gt;0$.}
 </div>
 </section>
 <section id="id8">
-<h3><span class="section-number">21.4.3. </span>피보나치 수열<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">22.4.3. </span>피보나치 수열<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p><strong>피보나치 수열</strong><font size="2">Fibonacci sequence</font>은
 처음엔 1과 1로 시작한 후에 이후의 항목은 이전 두 개의 항목의 합으로 생성된다.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
@@ -861,7 +862,7 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 </div>
 </section>
 <section id="sec-collatz">
-<span id="id9"></span><h3><span class="section-number">21.4.4. </span>콜라츠 추측<a class="headerlink" href="#sec-collatz" title="Permalink to this heading">#</a></h3>
+<span id="id9"></span><h3><span class="section-number">22.4.4. </span>콜라츠 추측<a class="headerlink" href="#sec-collatz" title="Permalink to this heading">#</a></h3>
 <p>독일 수학자 콜라츠(Collatz -&gt; L.)가 1937년에 아래 알고리즘을
 얼마나 많이 반복하면 최종적으로 숫자 1에 다다를 것인가를 질문했다.</p>
 <ul class="simple">
@@ -999,7 +1000,7 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 이라 부른다.</p>
 </section>
 <section id="sec-hanoi">
-<span id="id10"></span><h3><span class="section-number">21.4.5. </span>하노이의 탑<a class="headerlink" href="#sec-hanoi" title="Permalink to this heading">#</a></h3>
+<span id="id10"></span><h3><span class="section-number">22.4.5. </span>하노이의 탑<a class="headerlink" href="#sec-hanoi" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 이용하여 해결하기 어려운 문제를
 재귀 알고리즘으로 상대적으로 훨씬 간단하게 해결하는 예제로 하노이의 탑 문제를 다룬다.</p>
 <p><strong>하노이의 탑</strong><font size='2'>Tower of Hanoi</font> 문제는 세 개의 기둥 중에
@@ -1092,11 +1093,11 @@ C에서 B로 탑 원판 옮기기
 </section>
 </section>
 <section id="id11">
-<h2><span class="section-number">21.5. </span>재귀 시각화<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">22.5. </span>재귀 시각화<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
 <p>재귀를 이해하기 위해 재귀 알고리즘의 작동과정을 시각화 해보자.
 시각화를 위해 <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈을 이용한다.</p>
 <section id="id12">
-<h3><span class="section-number">21.5.1. </span>소용돌이<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">22.5.1. </span>소용돌이<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>재귀로 정의된 <code class="docutils literal notranslate"><span class="pre">draw_spiral()</span></code> 함수는 아래 그림과 같은 소용돌이를 그린다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 
@@ -1117,7 +1118,7 @@ C에서 B로 탑 원판 옮기기
 <div align="center"><img src="https://raw.githubusercontent.com/codingalzi/algopy/master/notebooks/_images/draw_spiral.png" width="60%"></div>
 </figure></section>
 <section id="id13">
-<h3><span class="section-number">21.5.2. </span>프랙탈 트리<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">22.5.2. </span>프랙탈 트리<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>아래 이미지처럼 아무리 확대하더라도 항상 동일한 구조를 보여주는 사물이
 <strong>프랙탈</strong><font size='2'>fractal</font>이다.</p>
 <figure>
@@ -1184,7 +1185,7 @@ C에서 B로 탑 원판 옮기기
 </figure></section>
 </section>
 <section id="id14">
-<h2><span class="section-number">21.6. </span>연습문제<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">22.6. </span>연습문제<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-recursion.ipynb">(실습) 재귀 함수</a></p>
 </section>
 </section>
@@ -1226,7 +1227,7 @@ C에서 B로 탑 원판 옮기기
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">20. </span>(부록) 클래스의 기본 요소</p>
+        <p class="prev-next-title"><span class="section-number">21. </span>(부록) 클래스의 기본 요소</p>
       </div>
     </a>
     <a class="right-next"
@@ -1234,7 +1235,7 @@ C에서 B로 탑 원판 옮기기
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">22. </span>(부록) 자료형 힌트</p>
+        <p class="prev-next-title"><span class="section-number">23. </span>(부록) 자료형 힌트</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1256,23 +1257,23 @@ C에서 B로 탑 원판 옮기기
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">21.1. 기저 조건과 무한 재귀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">21.2. 재귀 함수의 반환값</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">21.3. 재귀 함수의 콜 스택</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">21.4. 재귀 함수 예제</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">21.4.1. 리스트 합</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">21.4.2. 계승</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">21.4.3. 피보나치 수열</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-collatz">21.4.4. 콜라츠 추측</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-hanoi">21.4.5. 하노이의 탑</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">22.1. 기저 조건과 무한 재귀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">22.2. 재귀 함수의 반환값</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">22.3. 재귀 함수의 콜 스택</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">22.4. 재귀 함수 예제</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">22.4.1. 리스트 합</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">22.4.2. 계승</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">22.4.3. 피보나치 수열</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-collatz">22.4.4. 콜라츠 추측</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-hanoi">22.4.5. 하노이의 탑</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">21.5. 재귀 시각화</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">21.5.1. 소용돌이</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">21.5.2. 프랙탈 트리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">22.5. 재귀 시각화</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">22.5.1. 소용돌이</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">22.5.2. 프랙탈 트리</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">21.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">22.6. 연습문제</a></li>
 </ul>
   </nav></div>
 

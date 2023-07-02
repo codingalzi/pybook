@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>15. 모듈 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>16. 모듈 &#8212; 파이썬 프로그래밍 기초</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'modules';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="16. 클래스, 인스턴스, 객체" href="classes_instances_objects.html" />
-    <link rel="prev" title="14. 파일" href="files.html" />
+    <link rel="next" title="17. 클래스, 인스턴스, 객체" href="classes_instances_objects.html" />
+    <link rel="prev" title="15. 파일" href="files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,19 +156,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="conditionals.html">8. 조건문</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iterations.html">9. 반복문</a></li>
 <li class="toctree-l1"><a class="reference internal" href="casestudy_planning.html">10. 사례 연구: 프로그램 구상</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collections1.html">11. 모음 자료형 1부: 문자열, 리스트, 튜플</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collections2.html">12. 모음 자료형 2부: 집합, 사전, <code class="docutils literal notranslate"><span class="pre">range</span></code>, 조건제시법</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_collections.html">13. 사례 연구: 이터러블, 이터레이터, 제너레이터</a></li>
-<li class="toctree-l1"><a class="reference internal" href="files.html">14. 파일</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. 모듈</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">16. 클래스, 인스턴스, 객체</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">17. 사례 연구: 객체 지향 프로그래밍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance.html">18. 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">19. 사례 연구: 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">20. (부록) 클래스의 기본 요소</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursion.html">21. (부록) 재귀 함수</a></li>
-<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">22. (부록) 자료형 힌트</a></li>
-<li class="toctree-l1"><a class="reference internal" href="webapp_flask.html">23. (부록) 웹앱: Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">11. 문자열</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists_tuples.html">12. 리스트와 튜플</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">13. 사전과 집합</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_collections.html">14. 사례 연구: 이터러블, 이터레이터, 제너레이터</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">15. 파일</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. 모듈</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">17. 클래스, 인스턴스, 객체</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">18. 사례 연구: 객체 지향 프로그래밍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance.html">19. 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">20. 사례 연구: 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">21. (부록) 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursion.html">22. (부록) 재귀 함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">23. (부록) 자료형 힌트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_flask.html">24. (부록) 웹앱: Flask</a></li>
 </ul>
 
     </div>
@@ -393,15 +394,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">15.1. 모듈, 패키지, 라이브러리, 프레임워크</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15.2. 모듈 불러오기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">15.3. 사용자 정의 모듈</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">15.3.1. 파이썬 파일 저장</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">15.3.2. 사용자 정의 모듈 불러오기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.1. 모듈, 패키지, 라이브러리, 프레임워크</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.2. 모듈 불러오기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.3. 사용자 정의 모듈</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">16.3.1. 파이썬 파일 저장</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">16.3.2. 사용자 정의 모듈 불러오기</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">15.4. 부록: 파이썬 파일 실행</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">15.5. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">16.4. 부록: 파이썬 파일 실행</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">16.5. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -414,7 +415,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-module">
-<span id="id1"></span><h1><span class="section-number">15. </span>모듈<a class="headerlink" href="#ch-module" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">16. </span>모듈<a class="headerlink" href="#ch-module" title="Permalink to this heading">#</a></h1>
 <p>한 번 구현한 파이썬 코드를 다른 파이썬 파일의 코드에서 공유해서 사용할 수 있도록 하기 위해
 <strong>모듈</strong><font size='2'>module</font>을 활용한다.
 파이썬 모듈은 간단하게 말하면 하나의 파이썬 소스코드 파일이며, 확장자로 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 가 사용된다.
@@ -423,7 +424,7 @@ document.write(`
 <code class="docutils literal notranslate"><span class="pre">random</span></code> 모듈은 무작위수 생성과 관련된 많은 함수를,
 <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈은 간단한 그래픽 관련 함수와 클래스를 제공한다.</p>
 <section id="id2">
-<h2><span class="section-number">15.1. </span>모듈, 패키지, 라이브러리, 프레임워크<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.1. </span>모듈, 패키지, 라이브러리, 프레임워크<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>하나의 모듈이 독립적으로 제공되기도 하지만 다른 모듈과 함께 하나의 모음집으로 제공되기도 한다.
 모음집의 크기와 용도에 따라 패키지, 라이브러리, 프레임워크 등 다양한 이름으로 불린다.</p>
 <p><strong>패키지</strong></p>
@@ -499,7 +500,7 @@ document.write(`
 </ul>
 </section>
 <section id="id3">
-<h2><span class="section-number">15.2. </span>모듈 불러오기<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.2. </span>모듈 불러오기<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>예를 들어, <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈을 활용하는 방식은 다음과 같다.</p>
 <p><strong>방식 1: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">...</span></code></strong></p>
 <p>먼저 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈 불러온 다음에 모듈에 포함된 임의의 함수를 사용한다.</p>
@@ -669,7 +670,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8028393275374782
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7455167451273483
 </pre></div>
 </div>
 </div>
@@ -689,7 +690,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4916748067272851
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5149778465995783
 </pre></div>
 </div>
 </div>
@@ -720,7 +721,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.31561597378913564
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.16835292860668682
 </pre></div>
 </div>
 </div>
@@ -745,7 +746,7 @@ document.write(`
 </pre></div>
 </div>
 <p>클래스와 인스턴스에 대한 이야기는
-<a class="reference internal" href="casestudy_oop.html#ch-oop"><span class="std std-numref">17장</span></a> <a class="reference internal" href="casestudy_oop.html#ch-oop"><span class="std std-ref">사례 연구: 객체 지향 프로그래밍</span></a>에서 자세히 다룬다.
+<a class="reference internal" href="casestudy_oop.html#ch-oop"><span class="std std-numref">18장</span></a> <a class="reference internal" href="casestudy_oop.html#ch-oop"><span class="std std-ref">사례 연구: 객체 지향 프로그래밍</span></a>에서 자세히 다룬다.
 여기서는 인스턴스(객체)를 해당 클래스를 자료형으로 갖는 값 정도로 이해하면 된다.</p>
 <div class="info admonition">
 <p class="admonition-title">클래스의 인스턴스 생성</p>
@@ -756,9 +757,9 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">15.3. </span>사용자 정의 모듈<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.3. </span>사용자 정의 모듈<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <section id="id5">
-<h3><span class="section-number">15.3.1. </span>파이썬 파일 저장<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.3.1. </span>파이썬 파일 저장<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>아래 코드를 담고 있는 <code class="docutils literal notranslate"><span class="pre">wc.py</span></code> 파일을 모듈로 불러와서 활용해보자.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linecount</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -798,7 +799,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/wc.py&#39;), &lt;http.client.HTTPMessage at 0x7f65bb4b2800&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/wc.py&#39;), &lt;http.client.HTTPMessage at 0x7ffa1dcae860&gt;)
 </pre></div>
 </div>
 </div>
@@ -824,7 +825,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3><span class="section-number">15.3.2. </span>사용자 정의 모듈 불러오기<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.3.2. </span>사용자 정의 모듈 불러오기<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>만약에 <code class="docutils literal notranslate"><span class="pre">wc.py</span></code> 파일이 <code class="docutils literal notranslate"><span class="pre">codes</span></code> 폴더가 아닌 현재 작업 디렉토리에 저장되어 있다면
 단순히 아래 방식을 사용하면 된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">wc</span>
@@ -847,7 +848,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/__init__.py&#39;), &lt;http.client.HTTPMessage at 0x7f65bb4b26e0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;codes/__init__.py&#39;), &lt;http.client.HTTPMessage at 0x7ffa1dcae770&gt;)
 </pre></div>
 </div>
 </div>
@@ -865,6 +866,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;collision_detection&#39;,
  &#39;collision_detection.zip&#39;,
+ &#39;lc.py&#39;,
  &#39;wc.py&#39;,
  &#39;__init__.py&#39;,
  &#39;__pycache__&#39;]
@@ -977,7 +979,7 @@ document.write(`
 </section>
 </section>
 <section id="id7">
-<h2><span class="section-number">15.4. </span>부록: 파이썬 파일 실행<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.4. </span>부록: 파이썬 파일 실행<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <p>모듈엔 자주 사용될 수 있는 함수, 클래스, 상수 등을 저장한다.
 그런데 모듈에 기타 명령문이 포함되어 있으면 파일을 불러올 때 모든 명령문이 실행된다.
 따라서 불필요한 코드를 모듈에 포함시키는 일은 삼가한다.</p>
@@ -1019,7 +1021,7 @@ document.write(`
 </div>
 </section>
 <section id="id8">
-<h2><span class="section-number">15.5. </span>연습문제<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.5. </span>연습문제<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-modules.ipynb">(실습) 모듈</a></p>
 </section>
 </section>
@@ -1061,7 +1063,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>파일</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>파일</p>
       </div>
     </a>
     <a class="right-next"
@@ -1069,7 +1071,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>클래스, 인스턴스, 객체</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>클래스, 인스턴스, 객체</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1091,15 +1093,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">15.1. 모듈, 패키지, 라이브러리, 프레임워크</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15.2. 모듈 불러오기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">15.3. 사용자 정의 모듈</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">15.3.1. 파이썬 파일 저장</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">15.3.2. 사용자 정의 모듈 불러오기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.1. 모듈, 패키지, 라이브러리, 프레임워크</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.2. 모듈 불러오기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.3. 사용자 정의 모듈</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">16.3.1. 파이썬 파일 저장</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">16.3.2. 사용자 정의 모듈 불러오기</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">15.4. 부록: 파이썬 파일 실행</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">15.5. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">16.4. 부록: 파이썬 파일 실행</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">16.5. 연습문제</a></li>
 </ul>
   </nav></div>
 
