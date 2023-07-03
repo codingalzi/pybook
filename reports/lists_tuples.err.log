@@ -17,14 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-a_list[2 : 5]
+sum_of_list_items(one2five)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[24], line 1[0m
-[0;32m----> 1[0m [43ma_list[49m[[38;5;241m2[39m : [38;5;241m5[39m]
+Cell [0;32mIn[60], line 1[0m
+[0;32m----> 1[0m [43msum_of_list_items[49m(one2five)
 
-[0;31mNameError[0m: name 'a_list' is not defined
-NameError: name 'a_list' is not defined
+[0;31mNameError[0m: name 'sum_of_list_items' is not defined
+NameError: name 'sum_of_list_items' is not defined
 
