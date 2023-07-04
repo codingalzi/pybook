@@ -1763,8 +1763,8 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">sum_of_list_items()</span></code> 함수를 다음과 같이
 <code class="docutils literal notranslate"><span class="pre">sum_list</span></code>의 초기값을 <code class="docutils literal notranslate"><span class="pre">sec</span></code>의 첫째 항목으로 지정하고
 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문은 1번 인덱스 이후부터 적용하는 방식으로 정의할 수 있다.
-굳이 첫째 항목의 자료형을 확인하지 않고도 나머지 항목과의
-<code class="docutils literal notranslate"><span class="pre">+</span></code> 연산이 자연스럽게 실행되기 때문이다.</p>
+그러면 첫째 항목의 자료형을 확인하지 않고도 나머지 항목과의
+<code class="docutils literal notranslate"><span class="pre">+</span></code> 연산이 자연스럽게 실행된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_of_list_items</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
     <span class="n">sum_list</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>    <span class="c1"># 0번 인덱스 항목으로 누적합 초기화</span>
 
@@ -1828,6 +1828,64 @@ document.write(`
 </div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">append()</span></code> 메서드</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">list('abc')</span></code> 와 동일하게 작동하는 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 활용</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
+<span class="n">list_s</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="nb">chr</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+    <span class="n">list_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">list_s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;abccba&#39;</span>
+<span class="n">list_s</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="nb">chr</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">chr</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_s</span><span class="p">:</span>
+        <span class="n">list_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">list_s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;basic python programming&#39;</span>
+<span class="n">list_s</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="nb">chr</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">chr</span> <span class="ow">in</span> <span class="n">vowels</span> <span class="ow">and</span> <span class="nb">chr</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_s</span><span class="p">:</span>
+        <span class="n">list_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">list_s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;i&#39;, &#39;o&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">food</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;durian&#39;</span><span class="p">))</span>
@@ -2095,18 +2153,8 @@ document.write(`
 </section>
 <section id="id7">
 <h3><span class="section-number">12.2.5. </span>리스트 연습문제<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kgh</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5, &#39;제주&#39;]
-</pre></div>
-</div>
-</div>
-</div>
+<p>6명의 정보를 담은 표를 중첩 리스트를 이용하여
+다음과 같이 저장하였다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_list</span>
@@ -2120,6 +2168,75 @@ document.write(`
  [&#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2, &#39;부산&#39;],
  [&#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;],
  [&#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3, &#39;강원&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>문제 1</strong></p>
+<p>6명의 전화번호로 구성된 리스트를 <code class="docutils literal notranslate"><span class="pre">phone_list</span></code> 변수가 가리키도록 하라.
+단, <code class="docutils literal notranslate"><span class="pre">info_list</span></code>와 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문, 인덱싱, <code class="docutils literal notranslate"><span class="pre">append()</span></code> 메서드를 활용한다.</p>
+<p><em>견본 답안</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phone_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="n">phone_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">phone_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;010-1234-5678&#39;,
+ &#39;02-9871-1234&#39;,
+ &#39;01-3456-7891&#39;,
+ &#39;070-4321-1111&#39;,
+ &#39;010-3333-8888&#39;,
+ &#39;010-7654-2345&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>문제 2</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="n">info</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5],
+ [&#39;황현&#39;, &#39;02-9871-1234&#39;, 19, 163.5],
+ [&#39;남궁수현&#39;, &#39;01-3456-7891&#39;, 21, 156.7],
+ [&#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2],
+ [&#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6],
+ [&#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>문제 3</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="n">age_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="n">age_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -2647,7 +2764,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7fc02fff7a00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f9ceafa51c0&gt;
 </pre></div>
 </div>
 </div>
@@ -2756,7 +2873,7 @@ thon
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7fc02c0bb600&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f9d03e7de80&gt;
 </pre></div>
 </div>
 </div>
