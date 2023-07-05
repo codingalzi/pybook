@@ -1313,7 +1313,7 @@ document.write(`
 그러면 다음 명령문인 <code class="docutils literal notranslate"><span class="pre">print(sum_list)</span></code>가 실행되어 15가 출력된다(아래 그림 참고).</p>
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/list-for-03.png" width="800"/></div>
 <p><div style="text-align: center">&lt;그림 출처: <a href="https://pythontutor.com/render.html#code=one2five%20%3D%20%5B1,%202,%203,%204,%205%5D%0A%0Asum_list%20%3D%200%0Afor%20item%20in%20one2five%3A%0A%20%20%20%20sum_list%20%2B%3D%20item%0A%0Aprint%28sum_list%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Python Tutor</a>&gt;</div></p><p><strong><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문과 리스트 인덱싱</strong></p>
-<p>리스트의 항목을 대상으로 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을
+<p>리스트를 대상으로 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을
 실행하려면 인덱싱을 활용한다.
 이유는 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문과는 달리 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문은 리스트의 항목을
 직접 가리키는 기능을 제공하지 않기 때문이다.
@@ -1758,7 +1758,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="info admonition">
+<div class="note admonition">
 <p class="admonition-title">중첩 리스트 항목들의 합</p>
 <p><code class="docutils literal notranslate"><span class="pre">sum_of_list_items()</span></code> 함수를 다음과 같이
 <code class="docutils literal notranslate"><span class="pre">sum_list</span></code>의 초기값을 <code class="docutils literal notranslate"><span class="pre">sec</span></code>의 첫째 항목으로 지정하고
@@ -1775,7 +1775,8 @@ document.write(`
 </pre></div>
 </div>
 <p>그런데 위 코드는 중첩 리스트에 포함된 항목들의 합을 계산할 때
-첫째 항목인 <code class="docutils literal notranslate"><span class="pre">seq[0]</span></code>의 값을 변경하는 부작용<font size='2'>side-effect</font>을 유발한다.
+<code class="docutils literal notranslate"><span class="pre">seq[0]</span></code>이 가리키는 중첩 리스트의 첫재 항목으로 사용된 리스트를 변경하는
+부작용<font size='2'>side-effect</font>을 유발한다.
 이유는 파이썬이 리스트를 처리하는 방식때문인데 자세한 설명은 생락한다.
 관심 있는 경우 <a class="reference external" href="https://pythontutor.com/render.html#code=sec%20%3D%20%5B%5B1,%202,%203%5D,%20%5B4,%205,%206%5D%5D%0A%0Adef%20sum_of_list_items%28seq%29%3A%0A%20%20%20%20sum_list%20%3D%20seq%5B0%5D%0A%0A%20%20%20%20for%20item%20in%20seq%5B1%3A%5D%3A%0A%20%20%20%20%20%20%20%20sum_list%20%2B%3D%20item%0A%0A%20%20%20%20return%20sum_list%0A%20%20%20%20%0Asum_of_list_items%28sec%29%0A%0Aprint%28sec%5B0%5D%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">Python Tutor</a>에서
 <code class="docutils literal notranslate"><span class="pre">sec[0]</span></code>의 값이 의도치 않게 변경됨을 확인할 수 있다.</p>
@@ -1784,39 +1785,55 @@ document.write(`
 <section id="id6">
 <h3><span class="section-number">12.2.4. </span>리스트 메서드<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>리스트 자료형이 제공하는 주요 메서드는 아래와 같다.</p>
-<table class="table">
+<table class="table" id="id15">
+<caption><span class="caption-number">Table 12.1 </span><span class="caption-text">리스트 메서드</span><a class="headerlink" href="#id15" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head text-left"><p>메서드</p></th>
-<th class="head text-left"><p>설명</p></th>
+<tr class="row-odd"><th class="head"><p>기능</p></th>
+<th class="head"><p>메서드</p></th>
+<th class="head"><p>설명</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">append()</span></code></p></td>
-<td class="text-left"><p>리스트 끝에 항목 추가. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<tr class="row-even"><td><p>추가/확장</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">append()</span></code></p></td>
+<td><p>리스트 끝에 항목 추가. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">extend()</span></code></p></td>
-<td class="text-left"><p>리스트를 연결하여 확장. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<tr class="row-odd"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">extend()</span></code></p></td>
+<td><p>다른 리스트를 연결하여 확장. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">insert()</span></code></p></td>
-<td class="text-left"><p>지정된 인덱스에 항목 추가. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<tr class="row-even"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">insert()</span></code></p></td>
+<td><p>지정된 인덱스에 항목 추가. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code></p></td>
-<td class="text-left"><p>지정된 인덱스의 항목 삭제 후 삭제된 값 반환. 인덱스를 지정하지 않으면 마지막 항목 삭제 후 삭제된 값 반환</p></td>
+<tr class="row-odd"><td><p>삭제</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code></p></td>
+<td><p>지정된 인덱스의 항목 삭제 후 삭제된 값 반환. 인덱스 기본값은 마지막 인덱스.</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove()</span></code></p></td>
-<td class="text-left"><p>지정된 항목이 처음으로 사용된 위치에서 삭제. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<tr class="row-even"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">remove()</span></code></p></td>
+<td><p>가장 왼쪽에 위치한 지정된 항목 삭제. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sort()</span></code></p></td>
-<td class="text-left"><p>리스트의 항목을 크기 순으로 정렬. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<tr class="row-odd"><td><p>정렬</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sort()</span></code></p></td>
+<td><p>리스트의 항목을 크기 순으로 정렬. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">reverse()</span></code></p></td>
-<td class="text-left"><p>리스트의 항목들 순서 뒤집기. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<tr class="row-even"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reverse()</span></code></p></td>
+<td><p>리스트의 항목들 순서 뒤집기. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">index()</span></code></p></td>
-<td class="text-left"><p>지정된 항목이 처음 위치한 인덱스 반환</p></td>
+<tr class="row-odd"><td><p>탐색</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">index()</span></code></p></td>
+<td><p>가장 왼쪽에 위치한 지정된 항목의 인덱스 반환.</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">count()</span></code></p></td>
-<td class="text-left"><p>지정된 항목이 등장한 횟수 반환</p></td>
+<tr class="row-even"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">count()</span></code></p></td>
+<td><p>지정된 항목이 등장한 횟수 반환</p></td>
 </tr>
 </tbody>
 </table>
@@ -1949,7 +1966,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="info admonition">
+<div class="note admonition">
 <p class="admonition-title">참고</p>
 <p>두 개의 리스트를 덧셈 기호를 이용하여 확장할 수도 있지만, 원래의 리스트를 변경하는 것이 아니라 새로운 리스트를 생성한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;coconut&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">]</span>
@@ -2153,8 +2170,7 @@ document.write(`
 </section>
 <section id="id7">
 <h3><span class="section-number">12.2.5. </span>리스트 연습문제<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
-<p>6명의 정보를 담은 표를 중첩 리스트를 이용하여
-다음과 같이 저장하였다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">info_list</span></code> 변수는 6명의 정보를 담은 중첩 리스트를 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_list</span>
@@ -2173,15 +2189,17 @@ document.write(`
 </div>
 </div>
 <p><strong>문제 1</strong></p>
-<p>6명의 전화번호로 구성된 리스트를 <code class="docutils literal notranslate"><span class="pre">phone_list</span></code> 변수가 가리키도록 하라.
-단, <code class="docutils literal notranslate"><span class="pre">info_list</span></code>와 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문, 인덱싱, <code class="docutils literal notranslate"><span class="pre">append()</span></code> 메서드를 활용한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">info_list</span></code>에 포함된 6명의 전화번호만으로 구성된 리스트를 가리키는 <code class="docutils literal notranslate"><span class="pre">phone_list</span></code> 변수를 선언하라.
+단, <code class="docutils literal notranslate"><span class="pre">info_list</span></code>와 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문, 인덱싱, <code class="docutils literal notranslate"><span class="pre">append()</span></code> 메서드를 반드시 활용한다.</p>
 <p><em>견본 답안</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">phone_list</span></code>를 빈 리스트로 초기화한 다음에 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문과 인덱싱을 이용하여
+6명 각각의 정보를 담은 리스트에서 전화번호 정보가 위치한 1번 인덱스 항목을 <code class="docutils literal notranslate"><span class="pre">phone_list</span></code>에
+<code class="docutils literal notranslate"><span class="pre">append()</span></code> 메서드로 추가한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phone_list</span> <span class="o">=</span> <span class="p">[]</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phone_list</span> <span class="o">=</span> <span class="p">[]</span>                <span class="c1"># 전화번호를 저장할 리스트 초기화</span>
 <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
-    <span class="n">phone_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">phone_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 전화번호만 추출해서 phone_list에 추가</span>
 
 <span class="n">phone_list</span>
 </pre></div>
@@ -2199,14 +2217,38 @@ document.write(`
 </div>
 </div>
 <p><strong>문제 2</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">info_list</span></code>에 포함된 6명의 출생지로 구성된 리스트를 가리키는 <code class="docutils literal notranslate"><span class="pre">birthplace_list</span></code> 변수를 선언하면서
+동시에 <code class="docutils literal notranslate"><span class="pre">info_list</span></code>에서 출생지 정보를 삭제하라.
+즉, <code class="docutils literal notranslate"><span class="pre">info_list</span></code>가 다음 모양의 중첩 리스트를 가리켜야 한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;010-1234-5678&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">172.5</span><span class="p">],</span>
+ <span class="p">[</span><span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;02-9871-1234&#39;</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mf">163.5</span><span class="p">],</span>
+ <span class="p">[</span><span class="s1">&#39;남궁수현&#39;</span><span class="p">,</span> <span class="s1">&#39;01-3456-7891&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">156.7</span><span class="p">],</span>
+ <span class="p">[</span><span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;070-4321-1111&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">187.2</span><span class="p">],</span>
+ <span class="p">[</span><span class="s1">&#39;김선주&#39;</span><span class="p">,</span> <span class="s1">&#39;010-3333-8888&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mf">164.6</span><span class="p">],</span>
+ <span class="p">[</span><span class="s1">&#39;함중아&#39;</span><span class="p">,</span> <span class="s1">&#39;010-7654-2345&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mf">178.3</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>단, <code class="docutils literal notranslate"><span class="pre">info_list</span></code>와 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문, <code class="docutils literal notranslate"><span class="pre">pop()</span></code> 메서드를 반드시 활용한다.</p>
+<p><em>견본 답안</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">pop()</span></code> 메서드는 인자를 지정하지 않으면 리스트의 마지막 항목을 반환하면서 동시에 리스트에서 삭제한다.
+이점만 이용하면 <code class="docutils literal notranslate"><span class="pre">birthplace_list</span></code>는 <code class="docutils literal notranslate"><span class="pre">phone_list</span></code>와 거의 유사한 방식으로 정의된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
-    <span class="n">info</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthplace_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="n">birthplace_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="c1"># 출생지를 리스트에서 삭제하면서 동시에 birthplace_list에 추가</span>
+
+<span class="n">birthplace_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;제주&#39;, &#39;서울&#39;, &#39;경기&#39;, &#39;부산&#39;, &#39;광주&#39;, &#39;강원&#39;]
 </pre></div>
 </div>
 </div>
 </div>
+<p>출생지가 모든 사람의 정보에서 삭제되었음을 확인할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_list</span>
@@ -2225,13 +2267,18 @@ document.write(`
 </div>
 </div>
 <p><strong>문제 3</strong></p>
+<p>6명 중에서 나이가 21세인 사람은 몇 명인지 확인하는 코드를 작성하라.
+단, 리스트의 <code class="docutils literal notranslate"><span class="pre">count()</span></code> 메서드를 이용한다.</p>
+<p><em>견본 답안</em></p>
+<p>먼저 나이만을 추출해서 담은 <code class="docutils literal notranslate"><span class="pre">age_list</span></code>를 <code class="docutils literal notranslate"><span class="pre">phone_list</span></code>와 유사하게 선언한 다음에
+<code class="docutils literal notranslate"><span class="pre">count()</span></code> 메서드를 적용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age_list</span> <span class="o">=</span> <span class="p">[]</span>               <span class="c1"># 나이 정보만 저장할 리스트</span>
 <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
     <span class="n">age_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
-<span class="n">age_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
+<span class="n">age_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>          <span class="c1"># 21살인 사람의 수 확인</span>
 </pre></div>
 </div>
 </div>
@@ -2764,7 +2811,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f9ceafa51c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f03142ab4c0&gt;
 </pre></div>
 </div>
 </div>
@@ -2873,7 +2920,7 @@ thon
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f9d03e7de80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f031428cac0&gt;
 </pre></div>
 </div>
 </div>
