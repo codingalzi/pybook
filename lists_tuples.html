@@ -400,23 +400,24 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">12.2.2. 인덱싱과 슬라이싱</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range">12.2.3. <code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수와 리스트</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">12.2.4. 리스트와 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">12.2.5. 리스트 메서드</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">12.2.6. 리스트 연습문제</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">12.2.5. 중첩 리스트와 인덱싱/슬라이싱/반복문</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">12.2.6. 리스트 메서드</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">12.2.7. 리스트 연습문제</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-tuple">12.3. 튜플</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">12.3.1. 튜플 연산</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">12.3.2. 튜플 인덱싱/슬라이싱</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">12.3.3. 튜플 메서드</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">12.3.1. 튜플 연산</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">12.3.2. 튜플 인덱싱/슬라이싱</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">12.3.3. 튜플 메서드</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">12.4. 순차 자료형 해체</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">12.5. 순차 자료형에 유용한 함수</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">12.4. 순차 자료형 해체</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">12.5. 순차 자료형에 유용한 함수</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate">12.5.1. <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zip">12.5.2. <code class="docutils literal notranslate"><span class="pre">zip()</span></code> 함수</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">12.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">12.6. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -455,7 +456,7 @@ document.write(`
 <td class="text-center"><p>163.5</p></td>
 <td class="text-center"><p>서울</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>남궁수현</p></td>
+<tr class="row-even"><td class="text-center"><p>남궁현</p></td>
 <td class="text-center"><p>010-3456-7891</p></td>
 <td class="text-center"><p>21</p></td>
 <td class="text-center"><p>156.7</p></td>
@@ -547,8 +548,8 @@ document.write(`
 참고로 파이썬에서 리스트는 대괄호 <code class="docutils literal notranslate"><span class="pre">[]</span></code>로, 튜플은 소괄호 <code class="docutils literal notranslate"><span class="pre">()</span></code>로 항목들의 목록을 감싼다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;남궁수현&#39;</span><span class="p">,</span> <span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;김선주&#39;</span><span class="p">,</span> <span class="s1">&#39;함중아&#39;</span><span class="p">]</span>
-<span class="n">name_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;남궁수현&#39;</span><span class="p">,</span> <span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;김선주&#39;</span><span class="p">,</span> <span class="s1">&#39;함중아&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;남궁현&#39;</span><span class="p">,</span> <span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;김선주&#39;</span><span class="p">,</span> <span class="s1">&#39;함중아&#39;</span><span class="p">]</span>
+<span class="n">name_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;남궁현&#39;</span><span class="p">,</span> <span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;김선주&#39;</span><span class="p">,</span> <span class="s1">&#39;함중아&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -592,7 +593,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁수현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
 </pre></div>
 </div>
 </div>
@@ -673,7 +674,7 @@ document.write(`
 <p>동일한 방식으로 6명의 정보를 담은 중첩 리스트를 정의할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">namgung</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;남궁수현&#39;</span><span class="p">,</span> <span class="s1">&#39;01-3456-7891&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">156.7</span><span class="p">,</span> <span class="s1">&#39;경기&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">namgung</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;남궁현&#39;</span><span class="p">,</span> <span class="s1">&#39;010-3456-7891&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">156.7</span><span class="p">,</span> <span class="s1">&#39;경기&#39;</span><span class="p">]</span>
 <span class="n">choihs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;070-4321-1111&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">187.2</span><span class="p">,</span> <span class="s1">&#39;부산&#39;</span><span class="p">]</span>
 <span class="n">sjkim</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;김선주&#39;</span><span class="p">,</span> <span class="s1">&#39;010-3333-8888&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mf">164.6</span><span class="p">,</span> <span class="s1">&#39;광주&#39;</span><span class="p">]</span>
 <span class="n">ja</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;함중아&#39;</span><span class="p">,</span> <span class="s1">&#39;010-7654-2345&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mf">178.3</span><span class="p">,</span> <span class="s1">&#39;강원&#39;</span><span class="p">]</span>
@@ -693,7 +694,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.3, &#39;제주&#39;],
  [&#39;황현&#39;, &#39;02-9871-1234&#39;, 19, 163.5, &#39;서울&#39;],
- [&#39;남궁수현&#39;, &#39;01-3456-7891&#39;, 21, 156.7, &#39;경기&#39;],
+ [&#39;남궁현&#39;, &#39;010-3456-7891&#39;, 21, 156.7, &#39;경기&#39;],
  [&#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2, &#39;부산&#39;],
  [&#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;],
  [&#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3, &#39;강원&#39;]]
@@ -736,7 +737,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">!=</span> <span class="p">[</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;남궁수현&#39;</span><span class="p">,</span> <span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;김선주&#39;</span><span class="p">,</span> <span class="s1">&#39;함중아&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">!=</span> <span class="p">[</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;남궁현&#39;</span><span class="p">,</span> <span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;김선주&#39;</span><span class="p">,</span> <span class="s1">&#39;함중아&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1489,7 +1490,7 @@ Hello world!
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5, &#39;제주&#39;]
 [&#39;황현&#39;, &#39;02-9871-1234&#39;, 19, 163.5, &#39;서울&#39;]
-[&#39;남궁수현&#39;, &#39;01-3456-7891&#39;, 21, 156.7, &#39;경기&#39;]
+[&#39;남궁현&#39;, &#39;010-3456-7891&#39;, 21, 156.7, &#39;경기&#39;]
 [&#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2, &#39;부산&#39;]
 [&#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;]
 [&#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3, &#39;강원&#39;]
@@ -1508,7 +1509,7 @@ Hello world!
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5, &#39;제주&#39;]
-[&#39;남궁수현&#39;, &#39;01-3456-7891&#39;, 21, 156.7, &#39;경기&#39;]
+[&#39;남궁현&#39;, &#39;010-3456-7891&#39;, 21, 156.7, &#39;경기&#39;]
 [&#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;]
 </pre></div>
 </div>
@@ -1995,7 +1996,7 @@ Hello world!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5, &#39;제주&#39;, &#39;황현&#39;, &#39;02-9871-1234&#39;, 19, 163.5, &#39;서울&#39;, &#39;남궁수현&#39;, &#39;01-3456-7891&#39;, 21, 156.7, &#39;경기&#39;, &#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2, &#39;부산&#39;, &#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;, &#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3, &#39;강원&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5, &#39;제주&#39;, &#39;황현&#39;, &#39;02-9871-1234&#39;, 19, 163.5, &#39;서울&#39;, &#39;남궁현&#39;, &#39;010-3456-7891&#39;, 21, 156.7, &#39;경기&#39;, &#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2, &#39;부산&#39;, &#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;, &#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3, &#39;강원&#39;]
 </pre></div>
 </div>
 </div>
@@ -2025,7 +2026,147 @@ Hello world!
 </div>
 </section>
 <section id="id6">
-<h3><span class="section-number">12.2.5. </span>리스트 메서드<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.2.5. </span>중첩 리스트와 인덱싱/슬라이싱/반복문<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">info_list</span></code>와 같은 중첩 리스트는 리스트의 항목이 또다른 리스트이기에
+항목의 항목을 확인/추출/변경 하려면 인덱싱, 슬라이싱, <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을
+중첩해서 활용해야 할 때가 있다.</p>
+<p>예를 들어 김강현의 이름은 <code class="docutils literal notranslate"><span class="pre">info_list</span></code>의 첫째 항목인 리스트의 첫째 항목이기에
+다음과 같이 확인할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kgh_1</span> <span class="o">=</span> <span class="n">info_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">kgh_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;김강현&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>위 코드를 줄여서 다음과 같이 하나의 표현식으로 나타낼 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;김강현&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>1번 인덱스에 위치한 황현의 나이를 확인하려면 1번, 2번 인덱싱을 연속 적용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+</div>
+</div>
+<p>황현의 이름과 나이를 함께 적어주는 게 좋아 보인다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hwang_name</span> <span class="o">=</span> <span class="n">info_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">hwang_age</span> <span class="o">=</span> <span class="n">info_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hwang_name</span><span class="si">}</span><span class="s2">의 나이: </span><span class="si">{</span><span class="n">hwang_age</span><span class="si">}</span><span class="s2">세&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>황현의 나이: 19세
+</pre></div>
+</div>
+</div>
+</div>
+<p>인덱싱과 인덱싱을 조합하듯이 인덱싱과 슬라이싱 또한 원하는 대로 조합할 수 있다.
+아래 코드는 예를 들어 김강현과 황현의 나이만 확인한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">[:</span><span class="mi">2</span><span class="p">]:</span>    <span class="c1"># 김강현과 황현만 대상</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">person</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 이름과 나이</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>김강현 20
+황현 19
+</pre></div>
+</div>
+</div>
+</div>
+<p>2중으로 중첩된 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 사용하여 6명 각자의 정보를 일일이 나열할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>      <span class="c1"># 6명 모두를 대상으로 반복</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># 한 사람의 모든 정보 출력. 항목들 사이는 탭으로 구분</span>
+    
+    <span class="nb">print</span><span class="p">()</span>                   <span class="c1"># 사람들 사이의 구분을 위해 줄 바꿈</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>김강현	010-1234-5678	20	172.5	제주	
+황현	02-9871-1234	19	163.5	서울	
+남궁현	010-3456-7891	21	156.7	경기	
+최흥선	070-4321-1111	21	187.2	부산	
+김선주	010-3333-8888	22	164.6	광주	
+함중아	010-7654-2345	18	178.3	강원	
+</pre></div>
+</div>
+</div>
+</div>
+<p>아래 코드는 나이가 21살인 사람의 정보만 출력한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="mi">21</span> <span class="o">==</span> <span class="n">person</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>              <span class="c1"># 나이가 21살인 사람만 선택</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+        <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>남궁현	010-3456-7891	21	156.7	경기	
+최흥선	070-4321-1111	21	187.2	부산	
+</pre></div>
+</div>
+</div>
+</div>
+<p>아래 방식도 가능하다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="mi">21</span> <span class="ow">in</span> <span class="n">person</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]:</span>              <span class="c1"># 21이 포함된 사람만 대상</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+        <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>남궁현	010-3456-7891	21	156.7	경기	
+최흥선	070-4321-1111	21	187.2	부산	
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h3><span class="section-number">12.2.6. </span>리스트 메서드<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>모든 모음 자료형의 기본 용도는 여러 개의 항목을 묶어
 하나의 값으로 다루면서 필요에 따라 항목을 탐색하고 추출해서 활용하는 것이다.
 리스트, 사전, 집합처럼 가변인 모음 자료형은 또한
@@ -2100,7 +2241,7 @@ Hello world!
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5, &#39;제주&#39;],
  [&#39;황현&#39;, &#39;02-9871-1234&#39;, 19, 163.5, &#39;서울&#39;],
- [&#39;남궁수현&#39;, &#39;01-3456-7891&#39;, 21, 156.7, &#39;경기&#39;],
+ [&#39;남궁현&#39;, &#39;010-3456-7891&#39;, 21, 156.7, &#39;경기&#39;],
  [&#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2, &#39;부산&#39;],
  [&#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;],
  [&#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3, &#39;강원&#39;]]
@@ -2366,7 +2507,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <p>동일한 작업을 6명 전원에 대해 적용하려면 <code class="docutils literal notranslate"><span class="pre">info_list</span></code>의 항목을 대상으로
 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 싱행한다.
 하지만 아래 방식은 곤란하다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
     <span class="o">...</span>
 </pre></div>
 </div>
@@ -2388,7 +2529,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5, &#39;제주&#39;, 65.3, 21.9],
  [&#39;황현&#39;, &#39;02-9871-1234&#39;, 19, 163.5, &#39;서울&#39;, 51.5, 19.3],
- [&#39;남궁수현&#39;, &#39;01-3456-7891&#39;, 21, 156.7, &#39;경기&#39;, 48.0, 19.5],
+ [&#39;남궁현&#39;, &#39;010-3456-7891&#39;, 21, 156.7, &#39;경기&#39;, 48.0, 19.5],
  [&#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2, &#39;부산&#39;, 81.4, 23.2],
  [&#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;, 53.8, 19.9],
  [&#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3, &#39;강원&#39;, 90.1, 28.3]]
@@ -2437,12 +2578,12 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁수현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>남궁수현 이름을 리스트에서 삭제하면서 동시에 반환하려면 남궁수현이 위치한 곳의 인덱스인 2를 인자로 지정한다.</p>
+<p>남궁현 이름을 리스트에서 삭제하면서 동시에 반환하려면 남궁현이 위치한 곳의 인덱스인 2를 인자로 지정한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">namgung_name</span> <span class="o">=</span> <span class="n">name_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -2472,7 +2613,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;남궁수현&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;남궁현&#39;
 </pre></div>
 </div>
 </div>
@@ -2492,7 +2633,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁수현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
 </pre></div>
 </div>
 </div>
@@ -2525,7 +2666,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁수현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
 </pre></div>
 </div>
 </div>
@@ -2534,9 +2675,9 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 6명 각각의 리스트에서 오른쪽 맨 끝에 위치한 두 개의 항목을 삭제하면 되기에 <code class="docutils literal notranslate"><span class="pre">pop()</span></code> 메서드를 두 번씩 적용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
-    <span class="n">info</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-    <span class="n">info</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 
 <span class="n">info_list</span>
 </pre></div>
@@ -2545,7 +2686,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5, &#39;제주&#39;],
  [&#39;황현&#39;, &#39;02-9871-1234&#39;, 19, 163.5, &#39;서울&#39;],
- [&#39;남궁수현&#39;, &#39;01-3456-7891&#39;, 21, 156.7, &#39;경기&#39;],
+ [&#39;남궁현&#39;, &#39;010-3456-7891&#39;, 21, 156.7, &#39;경기&#39;],
  [&#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2, &#39;부산&#39;],
  [&#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;],
  [&#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3, &#39;강원&#39;]]
@@ -2566,7 +2707,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;김강현&#39;, &#39;남궁수현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;김강현&#39;, &#39;남궁현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
 </pre></div>
 </div>
 </div>
@@ -2587,7 +2728,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;황현&#39;, &#39;김강현&#39;, &#39;남궁수현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;황현&#39;, &#39;김강현&#39;, &#39;남궁현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
 </pre></div>
 </div>
 </div>
@@ -2601,7 +2742,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;황현&#39;, &#39;남궁수현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;황현&#39;, &#39;남궁현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
 </pre></div>
 </div>
 </div>
@@ -2615,7 +2756,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁수현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
 </pre></div>
 </div>
 </div>
@@ -2633,7 +2774,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁수현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남궁현&#39;, &#39;최흥선&#39;, &#39;김선주&#39;, &#39;함중아&#39;]
 </pre></div>
 </div>
 </div>
@@ -2653,7 +2794,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;김선주&#39;, &#39;남궁수현&#39;, &#39;최흥선&#39;, &#39;함중아&#39;, &#39;황현&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;김선주&#39;, &#39;남궁현&#39;, &#39;최흥선&#39;, &#39;함중아&#39;, &#39;황현&#39;]
 </pre></div>
 </div>
 </div>
@@ -2673,7 +2814,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;황현&#39;, &#39;함중아&#39;, &#39;최흥선&#39;, &#39;남궁수현&#39;, &#39;김선주&#39;, &#39;김강현&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;황현&#39;, &#39;함중아&#39;, &#39;최흥선&#39;, &#39;남궁현&#39;, &#39;김선주&#39;, &#39;김강현&#39;]
 </pre></div>
 </div>
 </div>
@@ -2745,7 +2886,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5, &#39;제주&#39;],
  [&#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;],
- [&#39;남궁수현&#39;, &#39;01-3456-7891&#39;, 21, 156.7, &#39;경기&#39;],
+ [&#39;남궁현&#39;, &#39;010-3456-7891&#39;, 21, 156.7, &#39;경기&#39;],
  [&#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2, &#39;부산&#39;],
  [&#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3, &#39;강원&#39;],
  [&#39;황현&#39;, &#39;02-9871-1234&#39;, 19, 163.5, &#39;서울&#39;]]
@@ -2906,8 +3047,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 </section>
-<section id="id7">
-<h3><span class="section-number">12.2.6. </span>리스트 연습문제<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<section id="id8">
+<h3><span class="section-number">12.2.7. </span>리스트 연습문제<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">info_list</span></code> 변수는 6명의 정보를 담은 중첩 리스트를 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2918,7 +3059,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5, &#39;제주&#39;],
  [&#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;],
- [&#39;남궁수현&#39;, &#39;01-3456-7891&#39;, 21, 156.7, &#39;경기&#39;],
+ [&#39;남궁현&#39;, &#39;010-3456-7891&#39;, 21, 156.7, &#39;경기&#39;],
  [&#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2, &#39;부산&#39;],
  [&#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3, &#39;강원&#39;],
  [&#39;황현&#39;, &#39;02-9871-1234&#39;, 19, 163.5, &#39;서울&#39;]]
@@ -2936,8 +3077,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phone_list</span> <span class="o">=</span> <span class="p">[]</span>                <span class="c1"># 전화번호를 저장할 리스트 초기화</span>
-<span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
-    <span class="n">phone_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 전화번호만 추출해서 phone_list에 추가</span>
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="n">phone_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 전화번호만 추출해서 phone_list에 추가</span>
 
 <span class="n">phone_list</span>
 </pre></div>
@@ -2946,7 +3087,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;010-1234-5678&#39;,
  &#39;010-3333-8888&#39;,
- &#39;01-3456-7891&#39;,
+ &#39;010-3456-7891&#39;,
  &#39;070-4321-1111&#39;,
  &#39;010-7654-2345&#39;,
  &#39;02-9871-1234&#39;]
@@ -2960,7 +3101,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 즉, <code class="docutils literal notranslate"><span class="pre">info_list</span></code>가 다음 모양의 중첩 리스트를 가리켜야 한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;010-1234-5678&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">172.5</span><span class="p">],</span>
  <span class="p">[</span><span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;02-9871-1234&#39;</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mf">163.5</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;남궁수현&#39;</span><span class="p">,</span> <span class="s1">&#39;01-3456-7891&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">156.7</span><span class="p">],</span>
+ <span class="p">[</span><span class="s1">&#39;남궁현&#39;</span><span class="p">,</span> <span class="s1">&#39;01-3456-7891&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">156.7</span><span class="p">],</span>
  <span class="p">[</span><span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;070-4321-1111&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">187.2</span><span class="p">],</span>
  <span class="p">[</span><span class="s1">&#39;김선주&#39;</span><span class="p">,</span> <span class="s1">&#39;010-3333-8888&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mf">164.6</span><span class="p">],</span>
  <span class="p">[</span><span class="s1">&#39;함중아&#39;</span><span class="p">,</span> <span class="s1">&#39;010-7654-2345&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mf">178.3</span><span class="p">]]</span>
@@ -2973,8 +3114,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthplace_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
-    <span class="n">birthplace_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="c1"># 출생지를 리스트에서 삭제하면서 동시에 birthplace_list에 추가</span>
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="n">birthplace_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="c1"># 출생지를 리스트에서 삭제하면서 동시에 birthplace_list에 추가</span>
 
 <span class="n">birthplace_list</span>
 </pre></div>
@@ -2996,7 +3137,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;김강현&#39;, &#39;010-1234-5678&#39;, 20, 172.5],
  [&#39;김선주&#39;, &#39;010-3333-8888&#39;, 22, 164.6],
- [&#39;남궁수현&#39;, &#39;01-3456-7891&#39;, 21, 156.7],
+ [&#39;남궁현&#39;, &#39;010-3456-7891&#39;, 21, 156.7],
  [&#39;최흥선&#39;, &#39;070-4321-1111&#39;, 21, 187.2],
  [&#39;함중아&#39;, &#39;010-7654-2345&#39;, 18, 178.3],
  [&#39;황현&#39;, &#39;02-9871-1234&#39;, 19, 163.5]]
@@ -3013,8 +3154,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age_list</span> <span class="o">=</span> <span class="p">[]</span>               <span class="c1"># 나이 정보만 저장할 리스트</span>
-<span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
-    <span class="n">age_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="n">age_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
 <span class="n">age_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>          <span class="c1"># 21살인 사람의 수 확인</span>
 </pre></div>
@@ -3060,7 +3201,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </section>
 </section>
 <section id="sec-tuple">
-<span id="id8"></span><h2><span class="section-number">12.3. </span>튜플<a class="headerlink" href="#sec-tuple" title="Permalink to this heading">#</a></h2>
+<span id="id9"></span><h2><span class="section-number">12.3. </span>튜플<a class="headerlink" href="#sec-tuple" title="Permalink to this heading">#</a></h2>
 <p>튜플은 리스트와 거의 비슷하지만, 변경 불가능<font size = "2">immutable</font>하다는 점이 다르다.
 따라서 튜플을 활용하는 메서드가 많이 제공되지 않는다.
 소괄호 <code class="docutils literal notranslate"><span class="pre">()</span></code>를 사용하고, 각 항목은 콤마(<code class="docutils literal notranslate"><span class="pre">,</span></code>)로 구분한다.</p>
@@ -3150,8 +3291,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <span class="n">empty_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
 </pre></div>
 </div>
-<section id="id9">
-<h3><span class="section-number">12.3.1. </span>튜플 연산<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<section id="id10">
+<h3><span class="section-number">12.3.1. </span>튜플 연산<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자</strong></p>
 <p>튜플의 항목으로 등장하는지 여부를 알려주는 논리 연산자이다.</p>
 <div class="cell docutils container">
@@ -3258,8 +3399,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 </section>
-<section id="id10">
-<h3><span class="section-number">12.3.2. </span>튜플 인덱싱/슬라이싱<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<section id="id11">
+<h3><span class="section-number">12.3.2. </span>튜플 인덱싱/슬라이싱<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>튜플도 문자열과 리스트처럼 인덱싱과 슬라이싱이 가능하다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3352,8 +3493,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <div align="center">
     <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/hj617kim/ch04/tuple02.png" style="width:300px;">
 </div></section>
-<section id="id11">
-<h3><span class="section-number">12.3.3. </span>튜플 메서드<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<section id="id12">
+<h3><span class="section-number">12.3.3. </span>튜플 메서드<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>튜플 자료형의 메서드는 많지 않다. 많이 사용되는 두 개의 메소드를 살펴보자.</p>
 <table class="table">
 <thead>
@@ -3405,8 +3546,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </section>
 </section>
-<section id="id12">
-<h2><span class="section-number">12.4. </span>순차 자료형 해체<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<section id="id13">
+<h2><span class="section-number">12.4. </span>순차 자료형 해체<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
 <p>순자 자료형의 항목 각각에 대해 변수 할당을 진행할 수 있다.
 단, 사용되는 변수의 수는 항목의 수와 일치해야 한다.</p>
 <div class="cell docutils container">
@@ -3555,8 +3696,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 </section>
-<section id="id13">
-<h2><span class="section-number">12.5. </span>순차 자료형에 유용한 함수<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<section id="id14">
+<h2><span class="section-number">12.5. </span>순차 자료형에 유용한 함수<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <p>문자열, 튜플, 리스트처럼 항목들의 순서가 중요한 순차 자료형과 함께 유용하게 사용되는 네 개의 함수를 소개한다.</p>
 <section id="enumerate">
 <h3><span class="section-number">12.5.1. </span><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수<a class="headerlink" href="#enumerate" title="Permalink to this heading">#</a></h3>
@@ -3580,7 +3721,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f1888538680&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7ff3ec115140&gt;
 </pre></div>
 </div>
 </div>
@@ -3689,7 +3830,7 @@ thon
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f188852e000&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7ff3ec1159c0&gt;
 </pre></div>
 </div>
 </div>
@@ -3821,8 +3962,8 @@ thon
 </div>
 </section>
 </section>
-<section id="id14">
-<h2><span class="section-number">12.6. </span>연습문제<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<section id="id15">
+<h2><span class="section-number">12.6. </span>연습문제<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-lists_tuples.ipynb">(실습) 리스트와 튜플</a></p>
 </section>
 </section>
@@ -3900,23 +4041,24 @@ thon
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">12.2.2. 인덱싱과 슬라이싱</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range">12.2.3. <code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수와 리스트</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">12.2.4. 리스트와 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">12.2.5. 리스트 메서드</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">12.2.6. 리스트 연습문제</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">12.2.5. 중첩 리스트와 인덱싱/슬라이싱/반복문</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">12.2.6. 리스트 메서드</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">12.2.7. 리스트 연습문제</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-tuple">12.3. 튜플</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">12.3.1. 튜플 연산</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">12.3.2. 튜플 인덱싱/슬라이싱</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">12.3.3. 튜플 메서드</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">12.3.1. 튜플 연산</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">12.3.2. 튜플 인덱싱/슬라이싱</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">12.3.3. 튜플 메서드</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">12.4. 순차 자료형 해체</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">12.5. 순차 자료형에 유용한 함수</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">12.4. 순차 자료형 해체</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">12.5. 순차 자료형에 유용한 함수</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate">12.5.1. <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zip">12.5.2. <code class="docutils literal notranslate"><span class="pre">zip()</span></code> 함수</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">12.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">12.6. 연습문제</a></li>
 </ul>
   </nav></div>
 
