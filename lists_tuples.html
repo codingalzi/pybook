@@ -394,7 +394,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.1. 시퀀스</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.1. 파이썬 내장 자료구조</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-list">12.2. 리스트</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">12.2.1. 리스트 연산</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">12.2.2. 인덱싱과 슬라이싱</a></li>
@@ -431,8 +431,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-lists-tuples">
 <span id="id1"></span><h1><span class="section-number">12. </span>리스트와 튜플<a class="headerlink" href="#ch-lists-tuples" title="Permalink to this heading">#</a></h1>
-<section id="id2">
-<h2><span class="section-number">12.1. </span>시퀀스<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>아래 표에 여섯 명의 이름, 전화번호, 나이, 키, 출생지 정보를 담겨 있다.</p>
 <table class="table">
 <thead>
@@ -511,17 +509,19 @@ document.write(`
 이름을 입력하면 전화번호를 확인하는 프로그램을 작성할 수 있을까?
 지금까지 살펴 본 기초 자료형만으로는 이런 일을 처리하는 일은 어려워 보인다.
 사실 가능하긴 하지만 누구나 쉽게 할 수 있는 일은 아니다.</p>
-<p>파이썬은 이런 일을 매우 간단하게 처리할 수 있도록 도와주는 네 개의
+<section id="id2">
+<h2><span class="section-number">12.1. </span>파이썬 내장 자료구조<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>파이썬은 여러 개의 값을 하나의 값으로 묶어 처리할 수 있도록 도와주는 네 개의
 <strong>내장 자료구조</strong><font size='2'>built-in data structure</font>
 리스트, 튜플, 사전, 그리고 집합을 제공한다.
 여기서 내장이라 함은 코드를 작성할 때 다른 추가 설정 없이 사용할 수 있음을 의미한다.</p>
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/built-in-types.png" width="350"/></div>
 <br><p>리스트, 튜플, 사전, 집합은 각자 고유의 방식으로 여러 개의 값을 묶어 하나의 값으로 다룰 수 있는 기능을 제공한다.
 이런 의미에서 이들을 <strong>모음 자료형</strong>이라 부르며 경우에 따라
-컬렉션<font size='2'>collection</font>, 컨테이너<font size='2'>container</font> 등으로도 불린다.
+<strong>컬렉션</strong><font size='2'>collection</font>, <strong>컨테이너</strong><font size='2'>container</font> 등으로도 불린다.
 반면에 정수, 부동소수점, 불리언 등은 하나의 값으로만 구성되었다는 의미에서
 <strong>스칼라</strong><font size='2'>scalar</font> 자료형이라 부른다.</p>
-<p>자료구조는 보통 여러 종률의 자료형의 값으로 구성된 보다 복잡한 구조의 대상을 가리킨다.
+<p>자료구조는 보통 여러 종류의 자료형의 값으로 구성된 보다 복잡한 구조의 대상을 가리킨다.
 하지만 파이썬에서는 리스트, 튜플, 사전, 집합 또한 하나의 값으로 처리된다.
 이것이 가능한 이유는 파이썬에서 다루는 모든 것이 <strong>객체</strong><font size='2'>object</font>로 정의되기 때문이다.
 파이썬 객체는 일반적으로 특정의 값들과, 그리고 값들과 관련된 속성을 저장하며, 저장된 값과 속성을 다룰 수 있는 기능을 제공한다.객체의 엄밀한 정의는 나중에 클래스를 설명할 때 다룬다.
@@ -561,7 +561,7 @@ document.write(`
 <li><p>인덱싱과 슬라이싱</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문</p></li>
 </ul>
-<p>여기서는 리스트와 튜플을 생성하고 수정하고 활용하는 다양한 방식을 살펴보고,
+<p>여기서는 리스트와 튜플, 즉 두 개의 시퀀스 자료형을 생성하고 수정하고 활용하는 다양한 방식을 살펴보고,
 다음 장에서는 비순차 자료형인 사전과 집합에 대해 자세히 알아본다.</p>
 </section>
 <section id="sec-list">
@@ -3743,7 +3743,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7fa6c81ec440&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f1dc83d4f80&gt;
 </pre></div>
 </div>
 </div>
@@ -3852,7 +3852,7 @@ thon
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7fa6c82867c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f1dc83ad900&gt;
 </pre></div>
 </div>
 </div>
@@ -4057,7 +4057,7 @@ thon
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.1. 시퀀스</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.1. 파이썬 내장 자료구조</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-list">12.2. 리스트</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">12.2.1. 리스트 연산</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">12.2.2. 인덱싱과 슬라이싱</a></li>
