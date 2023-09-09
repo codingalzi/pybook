@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">18. 사례 연구: 객체 지향 프로그래밍</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inheritance.html">19. 상속</a></li>
 <li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">20. 사례 연구: 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">21. (부록) 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">21. 클래스의 기본 요소</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursion.html">22. (부록) 재귀 함수</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_annotations.html">23. (부록) 자료형 힌트</a></li>
 <li class="toctree-l1"><a class="reference internal" href="webapp_flask.html">24. (부록) 웹앱: Flask</a></li>
@@ -3224,43 +3224,38 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </section>
 <section id="sec-tuple">
 <span id="id9"></span><h2><span class="section-number">12.3. </span>튜플<a class="headerlink" href="#sec-tuple" title="Permalink to this heading">#</a></h2>
-<p>튜플은 리스트와 거의 비슷하지만, 변경 불가능<font size = "2">immutable</font>하다는 점이 다르다.
-따라서 튜플을 활용하는 메서드가 많이 제공되지 않는다.
-소괄호 <code class="docutils literal notranslate"><span class="pre">()</span></code>를 사용하고, 각 항목은 콤마(<code class="docutils literal notranslate"><span class="pre">,</span></code>)로 구분한다.</p>
+<p>튜플은 리스트와 아주 비슷하다.
+다만 한 번 생성되면 항목의 추가, 삭제, 변경 등 일체의 수정이 불가능한
+불변<font size = "2">immutable</font> 자료형이라는 점이 다르다.
+튜플의 항목을 수정하지 않고 활용하는 방법은 리스트의 그것과 동일하다.
+예를 들어, 연산, 인덱싱, 슬라싱, <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 활용 등은 리스트의 경우와 완전히 동일하다.</p>
+<p>튜플은 항목들을 소괄호 <code class="docutils literal notranslate"><span class="pre">()</span></code>로  감싸고, 각각 항목은 쉼표(<code class="docutils literal notranslate"><span class="pre">,</span></code>)로 구분된다.
+예를 들어, 1부터 5까지의 정수로 구성된 튜플을 가리키는 변수를 다음과 같이 선언한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">one2five_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>다음 튜플은 영어 알파벳 a부터 c까지로 구성된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2c_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>소괄호를 생략해도 튜플로 자동 처리된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2c_tuple</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span>
+<span class="n">a2c_tuple</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 4, 5)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<p>소괄호를 사용하지 않아도 튜플로 처리된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_tuple</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span>
-<span class="n">a_tuple</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)
 </pre></div>
 </div>
 </div>
@@ -3268,8 +3263,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <p>길이가 1인 튜플인 경우 항목 뒤에 반드시 쉽표를 붙혀야 한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tup1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">tup1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tup_3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">tup_3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3279,11 +3274,12 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 </div>
-<p>그렇지 않으면 튜플로 간주되지 않는다.</p>
+<p>쉼표를 사용하지 않으면 튜플로 간주되지 않을 수 있다.
+아래 코드에서 <code class="docutils literal notranslate"><span class="pre">non_tup_3</span></code>은 3을 포함한 튜플이 아닌 정수 3을 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tup1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">tup1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">non_tup_3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">non_tup_3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3293,26 +3289,39 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 </div>
-<p>튜플 또한 여러 종류의 값을 포함할 수 있다.</p>
+<p>튜플의 항목으로 여러 종류의 값이 사용될 수 있다.
+다음 <code class="docutils literal notranslate"><span class="pre">mixed_tuple</span></code>은 항목으로 정수, 부동소수점, 문자열, 부울값, 리스트, 튜플을 포함한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ab&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">mixed_tuple</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2.3, &#39;abc&#39;, False, [&#39;ab&#39;, &#39;c&#39;], (2, 4))
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong>빈 튜플</strong></p>
-<p>빈 튜플은 아무것도 포함하지 않는 튜플을 의미한다. 빈 튜플를 만드는 방법은 아래와 같다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">empty_tuple</span> <span class="o">=</span> <span class="p">()</span>
-<span class="n">empty_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+<p>빈 튜플<font size='2'>empty tuple</font>은 아무것도 포함하지 않는 튜플을 의미한다.
+다음 두 가지 방식으로 빈 튜플을 선언할 수 있다.</p>
+<ul class="simple">
+<li><p>방법 1: 소괄호 활용</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_tuple</span> <span class="o">=</span> <span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
+<ul class="simple">
+<li><p>방법 2: <code class="docutils literal notranslate"><span class="pre">tuple()</span></code> 함수 활용</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>중첩 튜플</strong></p>
 <section id="id10">
 <h3><span class="section-number">12.3.1. </span>튜플 연산<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자</strong></p>
@@ -3743,7 +3752,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f1dc83d4f80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f49a454cec0&gt;
 </pre></div>
 </div>
 </div>
@@ -3852,7 +3861,7 @@ thon
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f1dc83ad900&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f49a4515c00&gt;
 </pre></div>
 </div>
 </div>
