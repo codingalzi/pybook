@@ -156,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="programming.html">1. 컴퓨터 프로그래밍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environment.html">2. 프로그래밍 개발 환경</a></li>
-<li class="toctree-l1"><a class="reference internal" href="starting.html">3. 프로그래밍 시작하기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">2. 프로그램 개발 환경</a></li>
+<li class="toctree-l1"><a class="reference internal" href="starting.html">3. 프로그래밍 맛보기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variables_expressions.html">4. 변수, 값, 표현식</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datatypes.html">5. 기초 자료형</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">6. 함수</a></li>
@@ -519,11 +519,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7f326d3d12d0&gt; 2
-&lt;__main__.MSDie object at 0x7f326d3d12d0&gt; 3
-&lt;__main__.MSDie object at 0x7f326d3d12d0&gt; 6
-&lt;__main__.MSDie object at 0x7f326d3d12d0&gt; 5
-&lt;__main__.MSDie object at 0x7f326d3d12d0&gt; 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x0000024EFACE4040&gt; 2
+&lt;__main__.MSDie object at 0x0000024EFACE4040&gt; 3
+&lt;__main__.MSDie object at 0x0000024EFACE4040&gt; 6
+&lt;__main__.MSDie object at 0x0000024EFACE4040&gt; 1
+&lt;__main__.MSDie object at 0x0000024EFACE4040&gt; 2
 </pre></div>
 </div>
 </div>
@@ -571,11 +571,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSDie(6) - 가리키는 값은 5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSDie(6) - 가리키는 값은 4
 MSDie(6) - 가리키는 값은 5
 MSDie(6) - 가리키는 값은 6
 MSDie(6) - 가리키는 값은 1
-MSDie(6) - 가리키는 값은 4
+MSDie(6) - 가리키는 값은 1
 </pre></div>
 </div>
 </div>
@@ -588,7 +588,7 @@ MSDie(6) - 가리키는 값은 4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie at 0x7f326d3eb9d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie at 0x24eface5a50&gt;
 </pre></div>
 </div>
 </div>
@@ -604,7 +604,7 @@ MSDie(6) - 가리키는 값은 4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7f326d378d90&gt;, &lt;__main__.MSDie object at 0x7f326d378ad0&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x0000024EFACE45E0&gt;, &lt;__main__.MSDie object at 0x0000024EFACE5420&gt;]
 </pre></div>
 </div>
 </div>
@@ -648,7 +648,7 @@ MSDie(6) - 가리키는 값은 4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6):2, MSDie(20):8]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6):2, MSDie(20):19]
 </pre></div>
 </div>
 </div>
@@ -695,11 +695,11 @@ MSDie(6) - 가리키는 값은 4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSDie(6):4
-MSDie(6):3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSDie(6):6
 MSDie(6):6
 MSDie(6):3
-MSDie(6):2
+MSDie(6):1
+MSDie(6):5
 </pre></div>
 </div>
 </div>
@@ -712,7 +712,7 @@ MSDie(6):2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6):2, MSDie(20):20]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6):4, MSDie(20):9]
 </pre></div>
 </div>
 </div>
@@ -1146,7 +1146,6 @@ True
  &#39;__ge__&#39;,
  &#39;__reduce_ex__&#39;,
  &#39;__reduce__&#39;,
- &#39;__getstate__&#39;,
  &#39;__subclasshook__&#39;,
  &#39;__init_subclass__&#39;,
  &#39;__format__&#39;,
@@ -1176,7 +1175,6 @@ True
  &#39;__format__&#39;,
  &#39;__ge__&#39;,
  &#39;__getattribute__&#39;,
- &#39;__getstate__&#39;,
  &#39;__gt__&#39;,
  &#39;__hash__&#39;,
  &#39;__init__&#39;,
@@ -1210,7 +1208,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
