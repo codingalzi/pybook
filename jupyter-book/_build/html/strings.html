@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -143,7 +143,6 @@ const thebe_selector_output = ".output, .cell_output"
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -403,14 +402,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.1. 소개</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.1.1. 문자열 연산</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.1.2. 문자열 인덱싱</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">11.1.3. 문자열 슬라이싱</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">11.1.4. 문자열 메서드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.1. 이스케이프 시퀀스</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.1.1. 날 문자열</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">11.2. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.2. 문자열 연산</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">11.3. 순차 자료형: 문자열</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">11.3.1. 문자열 인덱싱</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">11.3.2. 문자열 슬라이싱</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">11.3.3. 문자열 변경</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">11.4. 문자열 메서드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">11.5. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -424,50 +428,369 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-strings">
 <span id="id1"></span><h1><span class="section-number">11. </span>문자열<a class="headerlink" href="#ch-strings" title="Permalink to this heading">#</a></h1>
-<section id="id2">
-<h2><span class="section-number">11.1. </span>소개<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>문자들을 나열한 값들을 일컫는 자료형으로 작은 따옴표(<code class="docutils literal notranslate"><span class="pre">'</span></code>) 또는 큰 따옴표(<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>)를 사용한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hello, Python!&#39;</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello, Python!&quot;</span>
-</pre></div>
-</div>
-<p>문자열은 순차 자료형이며, 따라서 항목의 순서 또는 개수가 다르면 서로 다른 문자열로 처리된다.</p>
+<p>문자열은 문자와 기호를 나열한 값들을 일컫는 값으로 작은 따옴표(<code class="docutils literal notranslate"><span class="pre">'</span></code>) 또는 큰 따옴표(<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>)로 감싸인다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ab&#39;</span> <span class="o">==</span> <span class="s1">&#39;ba&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello_python</span> <span class="o">=</span> <span class="s1">&#39;Hello, Python!&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;aa&#39;</span> <span class="o">==</span> <span class="s1">&#39;aaa&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">like_python</span> <span class="o">=</span> <span class="s2">&quot;파이썬 좋아!&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>문자열을 화면에 출력하기 위해
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 문자열과 함께 호출하면
+문자열을 감싸는 따옴표는 보여주지 않는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">hello_python</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, Python!
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>빈 문자열</strong></p>
-<p>빈 문자열은 아무것도 포함하지 않는 문자열이다.
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">like_python</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>파이썬 좋아!
+</pre></div>
+</div>
+</div>
+</div>
+<p>어떤 문자나 기호고 포함하지 않은 경우를 빈 문자열이라 하며 문자열로 간주한다.
 빈 문자열을 만드는 방법은 다음 세 가지 방법이 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">empty_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="n">empty_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="n">empty_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_str1</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">empty_str2</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">empty_str3</span> <span class="o">=</span> <span class="nb">str</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+</div>
+<p>빈 문자열을 출력하면 아무 것도 보이지 않는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">empty_str1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h2><span class="section-number">11.1. </span>이스케이프 시퀀스<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>큰따옴표로 감싸인 문자열에 작은따옴표가 포함될 수 있다.
+이는 큰따옴표를 이용한 문자열의 시작과 끝이 작은따옴표가 포함되었음에도 불구하고 명확하기 때문이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fan_python</span> <span class="o">=</span> <span class="s2">&quot;I&#39;am a fan of python&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fan_python</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I&#39;am a fan of python
+</pre></div>
+</div>
+</div>
+</div>
+<p>동일한 이유로 작은따옴표로 감싸인 문자열이 큰따옴표를 포함할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">me_too</span> <span class="o">=</span> <span class="s1">&#39;나도 &quot;그렇다&quot; 라고 답했다.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">me_too</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>나도 &quot;그렇다&quot; 라고 답했다.
+</pre></div>
+</div>
+</div>
+</div>
+<p>반면에 큰따옴표로 감싸진 문자열에 큰따옴표를,
+작따옴표로 감싸진 문자열에 작은따옴표를 그냥 사용할 수는 없다.
+이유는 문자열의 끝이 명확하지 않기 때문이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fan_python_1</span> <span class="o">=</span> <span class="s1">&#39;I&#39;</span><span class="n">am</span> <span class="n">a</span> <span class="n">fan</span> <span class="n">of</span> <span class="n">python</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">fan_python_1</span> <span class="o">=</span> <span class="s1">&#39;I&#39;</span><span class="n">am</span> <span class="n">a</span> <span class="n">fan</span> <span class="n">of</span> <span class="n">python</span><span class="s1">&#39;</span>
+                                        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unterminated string literal (detected at line 1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">me_too_1</span> <span class="o">=</span> <span class="s2">&quot;나도 &quot;</span><span class="n">그렇다</span><span class="s2">&quot; 라고 답했다.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">me_too_1</span> <span class="o">=</span> <span class="s2">&quot;나도 &quot;</span><span class="n">그렇다</span><span class="s2">&quot; 라고 답했다.&quot;</span>
+                    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>위와 같은 오류를 방지하기 위해 문자열을 감싸는 문자열과 포함된 문자열을 항상 다르게 할 수는 없다.
+예를 들어 아래의 경우처럼 큰따옴표와 작은 따옴표가 모두 사용되는 경우가 그렇다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I&#39;ve also said &quot;</span><span class="n">yes</span><span class="s2">&quot;!&quot;</span>
+</pre></div>
+</div>
+<p>또는</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>&#39;I&#39;ve also said &quot;yes&quot;!&#39;
+</pre></div>
+</div>
+<p>이런 경우엔 이스케이프 문자를 사용한다.
+<strong>이스케이스 문자</strong><font size='2'>escape character</font>는
+문자와 기호의 원래 기능과는 다르게 작동하도록 하는 문자열이다.
+모든 이스케이프 문자는 백슬래시<font size='2'>backslach</font> 기호 <code class="docutils literal notranslate"><span class="pre">\</span></code>로 시작하며
+다음 이스케이프 문자가 많이 사용된다.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>이스케이프 문자</p></th>
+<th class="head text-left"><p>의미</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">\'</span></code></p></td>
+<td class="text-left"><p>작은따옴표</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">\&quot;</span></code></p></td>
+<td class="text-left"><p>큰따옴표</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">\\</span></code></p></td>
+<td class="text-left"><p>백슬래시</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">\n</span></code></p></td>
+<td class="text-left"><p>줄바꿈</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">\t</span></code></p></td>
+<td class="text-left"><p>탭추가</p></td>
+</tr>
+</tbody>
+</table>
+<div class="note admonition">
+<p class="admonition-title">백슬래시 기호(\)와 원화 기호(₩)</p>
+<p>백슬래시 키는 키보드의 <kbd>Enter</kbd> 키 바로 위에 위치하는데
+한글 키보드의 경우 원화 기호 키 <kbd>₩</kbd> 가 대신
+자리잡고 있을 수 있다.
+그리고 모니터 화면에도 사용하는 운영체제의 언어 설정에 따라
+원화 기호(₩)와 백슬래시 기호(\) 둘 중에 하나로만 보인다.
+하지만 단순한 언어 설정의 차이일 뿐 기능은 동일하다.</p>
+</div>
+<p><strong>인용부호 활용</strong></p>
+<p>이스케이프 문자를 이용하면 큰따옴표와 작은따옴표를 제한없이 활용할 수 있다.
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 또한 이스케이프 문자의 기능을 적절히 반영해서 화면에 출력한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">said_yes_1</span> <span class="o">=</span> <span class="s2">&quot;I</span><span class="se">\&#39;</span><span class="s2">ve also said </span><span class="se">\&quot;</span><span class="s2">yes</span><span class="se">\&quot;</span><span class="s2">!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">said_yes_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I&#39;ve also said &quot;yes&quot;!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">said_yes_2</span> <span class="o">=</span> <span class="s1">&#39;I</span><span class="se">\&#39;</span><span class="s1">ve also said </span><span class="se">\&quot;</span><span class="s1">yes</span><span class="se">\&quot;</span><span class="s1">!&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">said_yes_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I&#39;ve also said &quot;yes&quot;!
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>백슬래시 기호</strong></p>
+<p>백슬래시 기호를 이스케이프 문자의 기능이 아닌 백슬래시 기호 자체로 문자열에 포함시키고자
+할 때는 백슬래시를 두 번 연속 사용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">using_backslash</span> <span class="o">=</span> <span class="s1">&#39;백슬래시 기호 </span><span class="se">\\</span><span class="s1">는 이스케이프 문자를 만들 때 사용함.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">\\</span></code>에서 첫째 백슬래시는 이스케이프 기능으로, 둘째 백슬래시는 백슬래시 문자 자체로 이해된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">using_backslash</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>백슬래시 기호 \는 이스케이프 문자를 만들 때 사용함.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>줄바꿈</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">\n</span></code>은 줄바꿈을 의미하는 이스케이프 문자다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">two_lines</span> <span class="o">=</span> <span class="s1">&#39;첫째줄</span><span class="se">\n</span><span class="s1">둘째줄.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 이용하면 실제 의도한 대로 두 줄로 표현된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">two_lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>첫째줄
+둘째줄.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>탭 추가</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">\t</span></code>는 두 문자열 사이에 탭을 추가하는 이스케이프 문자다.
+탭은 보통 네 개의 스페이스키를 누르는 것에 해당한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">using_tabs</span> <span class="o">=</span> <span class="s1">&#39;하나</span><span class="se">\t</span><span class="s1">둘</span><span class="se">\t</span><span class="s1">셋&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 이용하면 탭이 두 번 사용되었음을 확인할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">using_tabs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>하나	둘	셋
+</pre></div>
+</div>
+</div>
 </div>
 <section id="id3">
-<h3><span class="section-number">11.1.1. </span>문자열 연산<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.1.1. </span>날 문자열<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>앞서의 경우처럼 작은따옴표, 큰따옴표, 특수 문자에 대해 백슬래시를 사용하냐,
+그렇지 않냐를 걱정하는 것 대신에
+<strong>날 문자열</strong><font size="2">raw string</font>을 사용하면 보다 편리하다.
+날 문자열은 문자열 앞에 <code class="docutils literal notranslate"><span class="pre">r</span></code>을 추가해서 얻어지며
+그러면 문자열 안에 포함된 모든 특수 문자들의 기능이 제거된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C:\some</span><span class="se">\n</span><span class="s1">ame&#39;</span><span class="p">)</span>  <span class="c1"># 일반 문자열 사용. 줄바꿈 적용됨.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\some
+ame
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\some\name&#39;</span><span class="p">)</span>  <span class="c1"># 날 문자열 사용. 줄바꿈 없음.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\some\name
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2><span class="section-number">11.2. </span>문자열 연산<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">+</span></code>와 <code class="docutils literal notranslate"><span class="pre">*</span></code> 연산자</strong></p>
+<p>문자열의 <code class="docutils literal notranslate"><span class="pre">+</span></code> 와 <code class="docutils literal notranslate"><span class="pre">*</span></code> 두 기호를 이용한 연산을 지원한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">+</span></code> 연산자는 두 문자열을 이어붙인다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="s1">&#39;python&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hellopython&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;hello, &#39;</span> <span class="o">+</span> <span class="s1">&#39;python&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello, python&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">*</span></code> 연산자는 정수와 문자열을 인자로 받아 정수 만큼 복제해서 이어붙인다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="s1">&#39;hello&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hellohellohello&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="s1">&#39;hello, &#39;</span> <span class="o">+</span> <span class="s2">&quot;python&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello, hello, python&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자</strong></p>
 <p>문자열의 일부로 포함된 부분 문자열인지 여부를 판단하는 논리 연산자이다.</p>
 <div class="cell docutils container">
@@ -506,6 +829,31 @@ document.write(`
 </div>
 </div>
 </div>
+<p>빈 문자열과 함께 <code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자를 사용하면 항상 거짓이 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;b&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>크기 비교 연산</strong></p>
 <p>문자열은 사전식의 순서를 사용하며 공백문자, 소문자, 대문자 순으로 크기가 정해진다.</p>
 <div class="cell docutils container">
@@ -540,6 +888,19 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>빈 문자열은 다른 문자열보다 항상 작다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_str1</span> <span class="o">&lt;</span> <span class="s1">&#39;a&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -594,6 +955,25 @@ document.write(`
 </div>
 </div>
 </div>
+<p>빈 문자열은 최대, 최소가 존재하지 않는다.
+따라서 <code class="docutils literal notranslate"><span class="pre">min()</span></code>, <code class="docutils literal notranslate"><span class="pre">max()</span></code> 함수와 함께 호출하면 오류가 발생한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">empty_str1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">max</span><span class="p">(</span><span class="n">empty_str1</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: max() arg is an empty sequence
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">len()</span></code> 함수</strong></p>
 <p>문자열의 길이, 즉 문자열에 포함된 기호의 개수를 반환한다.</p>
 <div class="cell docutils container">
@@ -633,12 +1013,69 @@ document.write(`
 </div>
 </div>
 </div>
+<p>빈 문자열의 길이는 0이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">empty_str2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="id4">
-<h3><span class="section-number">11.1.2. </span>문자열 인덱싱<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
-<p>문자열에 포함된 모든 문자는 인덱스<font size = "2">index</font>라는 고유한 번호를 갖는다.
-인덱스는 0부터 시작하며, 오른쪽으로 한 문자씩 이동할 때마다 증가한다.
-<strong>인덱싱</strong><font size = "2">indexing</font>은 인덱스를 활용하여 문자열에 포함된 특정 문자를 확인한다.</p>
+<section id="id5">
+<h2><span class="section-number">11.3. </span>순차 자료형: 문자열<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>문자열은 포함된 문자와 기호의 순서를 중요하게 여기는
+<strong>순차 자료형</strong><font size='2'>sequence type</font>이다.
+따라서 문자열의 항목으로 포함된 문자와 기호의 순서 또는 개수가 다르면 서로 다른 문자열로 처리된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ab&#39;</span> <span class="o">==</span> <span class="s1">&#39;ba&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;aa&#39;</span> <span class="o">==</span> <span class="s1">&#39;aaa&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>영어 알파벳의 경우 대소문자도 구별된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;python&quot;</span> <span class="o">==</span> <span class="s2">&quot;Python&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id6">
+<h3><span class="section-number">11.3.1. </span>문자열 인덱싱<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>문자열은 문자 여러 개의 나열이며 문자들 사이의 순서가 중요하다.
+이때 문자열 왼편에 위치한 문자부터 차례대로 0, 1, 2, 3 등의
+<strong>인덱스</strong><font size="2">index</font>를 부여받는다.
+<strong>인덱싱</strong><font size="2">indexing</font>은
+인덱스를 이용하여 문자열의 항목을 확인하는 기능이다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="s1">&#39;red, blue, yellow&#39;</span>
@@ -681,8 +1118,7 @@ document.write(`
 <span class="go">IndexError: string index out of range</span>
 </pre></div>
 </div>
-<p>인덱스 값으로 음의 정수를 사용할 수 있다.
--1을 마지막 문자의 인덱스로 사용하고, 왼쪽으로 한 문자씩 이동할 때마다 감소한다.</p>
+<p>인덱스를 문자열 오른쪽에서부터 차례대로 -1, -2, -3 등 음수로 지정할 수도 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># 오른쪽 끝에 위치한 문자</span>
@@ -708,16 +1144,16 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id5">
-<h3><span class="section-number">11.1.3. </span>문자열 슬라이싱<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h3><span class="section-number">11.3.2. </span>문자열 슬라이싱<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>인덱스의 특정 구간에 해당하는 부분 문자열을 확인하려 할 때는
 <strong>슬라이싱</strong><font size = "2">slicing</font>을 사용한다.
 슬라이싱은 다음과 같이 실행한다.</p>
 <ul class="simple">
-<li><p>시작 인덱스 : 해당 인덱스부터 문자 확인</p></li>
-<li><p>끝 인덱스 : 해당 인덱스 이전까지의 문자 확인</p></li>
-<li><p>계단: 시작 인덱스부터 몇 계단씩 건너뛰며 문자를 추출할지 결정.
-계단의 크기가 1이면 생략 가능.</p></li>
+<li><p>시작 인덱스 : 시작 인덱스부터 문자 확인</p></li>
+<li><p>끝 인덱스 : 끝 인덱스 이전까지의 문자 확인</p></li>
+<li><p>보폭: 시작 인덱스부터 몇 보폭씩 건너뛰며 문자를 추출할지 결정.
+보폭의 크기가 1이면 생략 가능.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -729,7 +1165,19 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">colors</span></code>에서 <code class="docutils literal notranslate"><span class="pre">red</span></code>를 추출하고 싶다면 다음과 같이 하면 된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span> <span class="p">:</span> <span class="mi">3</span> <span class="p">:</span> <span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;red&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -742,7 +1190,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">colors</span></code>에서 <code class="docutils literal notranslate"><span class="pre">b</span></code>부터 끝까지 하나씩 건너서 추출하려면 다음과 같이 하면 된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="mi">5</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span> <span class="p">:</span> <span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -755,7 +1203,7 @@ document.write(`
 <p>양의 정수와 음의 정수를 섞어서 인덱스로 사용할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="mi">5</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -765,16 +1213,16 @@ document.write(`
 </div>
 </div>
 </div>
-<p>시작인덱스, 끝인덱스, 계단 각각의 인자는 경우에 따라 생략될 수도 있다.
+<p>시작인덱스, 끝인덱스, 보폭 각각의 인자는 경우에 따라 생략될 수도 있다.
 그럴 때는 각각의 위치에 대해 설정된 기본값이 사용된다.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">시작</span> <span class="pre">인덱스</span></code>의 기본값 : <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">끝</span> <span class="pre">인덱스</span></code>의 기본값 : 문자열의 길이</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">계단</span></code>의 기본값 : <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">보폭</span></code>의 기본값 : <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span> <span class="p">:</span> <span class="mi">3</span> <span class="p">:</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[:</span><span class="mi">3</span><span class="p">:]</span>
 </pre></div>
 </div>
 </div>
@@ -786,7 +1234,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span> <span class="p">:</span> <span class="mi">3</span><span class="p">]</span> <span class="c1">#계단을 생략할 떄는 콜론(:)도 함께 생략가능</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="c1">#보폭을 생략할 떄는 콜론(:)도 함께 생략가능</span>
 </pre></div>
 </div>
 </div>
@@ -798,7 +1246,21 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="mi">5</span> <span class="p">:</span> <span class="p">:</span> <span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="mi">5</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;bu,ylo&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>문자열의 인덱스 범위를 벗어나는 값으로 슬라이싱을 실행해도 오류가 발생하지 않는다.
+대신 문자열의 좌 또는 우 끝까지만 슬라이싱이 적용된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">100</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -810,11 +1272,11 @@ document.write(`
 </div>
 <p><strong>역순 슬라이싱</strong></p>
 <p>슬라이싱은 기본적으로 작은 인덱스에서 큰 인덱스 방향으로 확인한다.
-하지만 역순으로 확인하고자 한다면 계단에 음의 정수를 사용하면 된다.
-계단이 <code class="docutils literal notranslate"><span class="pre">-1</span></code>이고, 시작 인덱스와 끝 인덱스를 생략하면 문자열 전체를 역순으로 확인한다.</p>
+하지만 역순으로 확인하고자 한다면 보폭에 음의 정수를 사용하면 된다.
+보폭이 <code class="docutils literal notranslate"><span class="pre">-1</span></code>이고, 시작 인덱스와 끝 인덱스를 생략하면 문자열 전체를 역순으로 확인한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span> <span class="p">:</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -824,23 +1286,59 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="caution admonition">
-<p class="admonition-title">주의</p>
-<p>문자열은 불변 자료형이라 인덱싱 또는 슬라이싱을 사용하여 값의 일부를 변경할 수 없다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_word</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a_word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span>
-<span class="go">TypeError                                 Traceback (most recent call last)</span>
-<span class="go">/tmp/ipykernel_1817/217255829.py in &lt;module&gt;</span>
-<span class="go">      1 a_word = &#39;hello&#39;</span>
-<span class="go">----&gt; 2 a_word[0] = &#39;H&#39;</span>
-
-<span class="go">TypeError: &#39;str&#39; object does not support item assignment</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">8</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;olley &#39;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="id6">
-<h3><span class="section-number">11.1.4. </span>문자열 메서드<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<section id="id8">
+<h3><span class="section-number">11.3.3. </span>문자열 변경<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p>문자열은 불변 자료형이라 인덱싱 또는 슬라이싱을 사용하여 값의 일부를 변경할 수 없다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+<span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">70</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span>
+
+<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>문자열을 수정하는 대신 인덱싱, 슬라이싱, 문자열 연산을 활용하여
+필요한 문자열을 생성해야 한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;H&#39;</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id9">
+<h2><span class="section-number">11.4. </span>문자열 메서드<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <p>문자열 자료형에만 사용하는 함수들이 있다. 이와같이 특정 자료형에만 사용하는 함수들을 메서드<font size = "2">method</font>라 부른다.
 메서드는 일반적인 함수들과는 달리, 특정 자료형의 값을 먼저 언급하고 바로 이어서 점(<code class="docutils literal notranslate"><span class="pre">.</span></code>)을 찍은 다음 호출한다.</p>
 <p>문자열 자료형이 제공하는 주요 메서드는 아래 표와 같다.</p>
@@ -1037,9 +1535,8 @@ document.write(`
 </div>
 </div>
 </section>
-</section>
-<section id="id7">
-<h2><span class="section-number">11.2. </span>연습문제<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h2><span class="section-number">11.5. </span>연습문제<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-strings.ipynb">(실습) 문자열</a></p>
 </section>
 </section>
@@ -1107,14 +1604,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.1. 소개</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.1.1. 문자열 연산</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.1.2. 문자열 인덱싱</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">11.1.3. 문자열 슬라이싱</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">11.1.4. 문자열 메서드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.1. 이스케이프 시퀀스</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.1.1. 날 문자열</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">11.2. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.2. 문자열 연산</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">11.3. 순차 자료형: 문자열</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">11.3.1. 문자열 인덱싱</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">11.3.2. 문자열 슬라이싱</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">11.3.3. 문자열 변경</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">11.4. 문자열 메서드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">11.5. 연습문제</a></li>
 </ul>
   </nav></div>
 
@@ -1162,8 +1664,8 @@ By 코딩알지 & HJ
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
