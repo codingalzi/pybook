@@ -405,15 +405,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-variable-reassignment">9.1. 변수 재할당/업데이트</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while">9.2. <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.3. 무한 반복</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.4. 무한 반복 활용</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.4.1. 게임 프로그래밍</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.4.2. 제곱근 계산: 뉴튼 방법</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while">9.1. <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.2. 무한 반복</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.3. 무한 반복 활용</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.3.1. 게임 프로그래밍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.3.2. 제곱근 계산: 뉴튼 방법</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">9.5. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.4. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -443,118 +442,8 @@ document.write(`
 <p><strong>슬라이드</strong></p>
 <p>본문 내용을 요약한 <a class="reference external" href="https://github.com/codingalzi/pybook/raw/master/slides/slides-iterations.pdf">슬라이드</a>를
 다운로드할 수 있다.</p>
-<section id="sec-variable-reassignment">
-<span id="id2"></span><h2><span class="section-number">9.1. </span>변수 재할당/업데이트<a class="headerlink" href="#sec-variable-reassignment" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 작동 과정을 이해하려면 먼저 변수가 가리키는 값을 변경하는 변수 재할당과
-변수 업데이트를 이해해야 한다.</p>
-<p><strong>변수 재할당</strong></p>
-<p>변수 재할당은
-변수가 가리키는 값을 변경하는 것이다.
-예를 들어 아래 코드는 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값을 5에서 7로 재할당한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>반면에 변수 <code class="docutils literal notranslate"><span class="pre">y</span></code>는 계속해서 5를 가리킨다.
-실제로 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>는 12로 계산된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span></code> 가 실행될 당시에 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 5를 가리키고 있었기 때문에
-<code class="docutils literal notranslate"><span class="pre">y</span></code> 또한 5를 가리키도록 지정되었다.
-하지만 이후에 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값을 변경해도 <code class="docutils literal notranslate"><span class="pre">y</span></code>에게는 전혀 영향을 주지 않는다.
-메모리 상에서의 변화를 <a class="reference external" href="https://pythontutor.com/visualize.html#code=x%20%3D%205%0Ay%20%3D%20x%0Ax%20%3D%207%0Az%20%3D%20x%20%2B%20y&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 변수 재할당</a>에서 확인할 수 있다.</p>
-<p><strong>변수 업데이트</strong></p>
-<p>반복문의 핵심은
-변수가 가리키던 값을 이용하여 새로이 생성한 값을 다시
-동일한 변수에 재할당하는 것이며, 이를
-<strong>변수 업데이트</strong><font size="2">variable update</font>라 한다.
-대표적으로 아래와 같은 표현식이 반복문에 자주 사용된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>위 할당문은 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키던 값에 1을 더한 값을 다시
-변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>에 할당하라고 명령한다.
-만약에 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code> 가 0을 가리키고 있었다면 위 명령문이 반복 실행될 때마다
-<code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값은 1, 2, 3, … 등 계속해서 변한다.
-반면에 아래 명령문은 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키던 값을
-1만큼 줄여서 재할당한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>변수 간편 업데이트</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x+1</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">x</span></code> 등과 같은 간단한 변수 업데이트는 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*=</span> <span class="pre">2</span></code> 등으로
-간편하게 나타낼 수 있다.</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>활용</p></th>
-<th class="head text-center"><p>의미</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-=</span> <span class="pre">1</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">-</span> <span class="pre">1</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*=</span> <span class="pre">2</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">2*x</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/=</span> <span class="pre">2</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">/</span> <span class="pre">2</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**=</span> <span class="pre">2</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x**2</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">//=</span> <span class="pre">2</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">//2</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%=</span> <span class="pre">2</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">%</span> <span class="pre">2</span></code></p></td>
-</tr>
-</tbody>
-</table>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">x</span> <span class="o">/=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="while">
-<h2><span class="section-number">9.2. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.1. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 형식은 다음과 같다.
 함수, 조건문, <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문의 경우에서처럼
 헤더는 콜론(<code class="docutils literal notranslate"><span class="pre">:</span></code>)으로 마무리하고 본문은 들여쓴다.</p>
@@ -665,8 +554,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id3">
-<h2><span class="section-number">9.3. </span>무한 반복<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2><span class="section-number">9.2. </span>무한 반복<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>헤더의 조건을 나타내는 논리식이 계속해서 참이면 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 무한정 반복되어 실행될 수 있다.</p>
 <p>예를 들어 다음 함수를 살펴보자.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_infinitely</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -778,10 +667,10 @@ document.write(`
 이유는 <code class="docutils literal notranslate"><span class="pre">while</span></code> 다음에는 논리식이 위치해야 하기에 <code class="docutils literal notranslate"><span class="pre">1</span></code>이 참으로 간주되기 때문이다.</p>
 </div>
 </section>
+<section id="id3">
+<h2><span class="section-number">9.3. </span>무한 반복 활용<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <section id="id4">
-<h2><span class="section-number">9.4. </span>무한 반복 활용<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<section id="id5">
-<h3><span class="section-number">9.4.1. </span>게임 프로그래밍<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">9.3.1. </span>게임 프로그래밍<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>무한 반복은 게임 프로그래밍에서 자주 사용된다.
 게임 종료가 언제 이뤄지는가는 게임의 전개 과정에 의존하기에 미리 알 수 없다.
 게임 사용자가 언제든지 게임을 그만 둘 수도 있다.
@@ -812,8 +701,8 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="id6">
-<h3><span class="section-number">9.4.2. </span>제곱근 계산: 뉴튼 방법<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3><span class="section-number">9.3.2. </span>제곱근 계산: 뉴튼 방법<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>무한 반복을 어떤 값의 근사치를 계산하는 데에 활용하곤 한다.
 예를 들어, 제곱근을 계산하기 위해
 <strong>뉴튼 방법</strong><font size="2">Newton’s method</font>에 사용된 알고리즘을
@@ -1046,8 +935,8 @@ x_{n+1} &amp; = \frac{x_n + \frac{a}{x_n}}{2}
 </div>
 </section>
 </section>
-<section id="id7">
-<h2><span class="section-number">9.5. </span>연습문제<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h2><span class="section-number">9.4. </span>연습문제<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-iterations.ipynb">(실습) 반복문</a></p>
 </section>
 </section>
@@ -1115,15 +1004,14 @@ x_{n+1} &amp; = \frac{x_n + \frac{a}{x_n}}{2}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-variable-reassignment">9.1. 변수 재할당/업데이트</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while">9.2. <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.3. 무한 반복</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.4. 무한 반복 활용</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.4.1. 게임 프로그래밍</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.4.2. 제곱근 계산: 뉴튼 방법</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while">9.1. <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.2. 무한 반복</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.3. 무한 반복 활용</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.3.1. 게임 프로그래밍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.3.2. 제곱근 계산: 뉴튼 방법</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">9.5. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.4. 연습문제</a></li>
 </ul>
   </nav></div>
 
