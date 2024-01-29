@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -1479,6 +1479,27 @@ Python
 </div>
 <p><a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20hour_to_min%28hour%29%3A%0A%20%20%20%20minutes%20%3D%20hour%20*%2060%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour_to_min%282%29%0Aprint%28minutes%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수와 전역 변수 1</a>에서
 <code class="docutils literal notranslate"><span class="pre">hour</span></code>와 <code class="docutils literal notranslate"><span class="pre">minutes</span></code>의 생존주기, 즉, 언제 생성되고 언제 사라지는지를 시각적으로 확인할 수 있다.</p>
+<div class="info admonition">
+<p class="admonition-title">파이썬 튜터와 프레임</p>
+<p>변수 할당은 <strong>컴퓨터 메모리</strong> 상에서 이루어지며,
+변수와 변수에 할당된 값 사이의 관계는
+<strong>프레임</strong><font size="2">frame</font>을 통해 관리된다.
+컴퓨터 메모리 상에서 일어나는 변화를 직접 눈으로 볼 수는 없다.
+하지만 <strong>파이썬 튜터</strong>(<a class="reference external" href="https://pythontutor.com/">https://pythontutor.com/</a>)를
+이용하면 프레임의 변화를 시각적으로 추적할 수 있다.
+앞서 변수 다섯 개의 할당을 실행하면 프레임이 어떻게 변하는지
+<a class="reference external" href="https://pythontutor.com/visualize.html#code=greetings%20%3D%20'%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!'%0Anum%20%3D%2017%0Api%20%3D%203.1415926535897932%0Ascores%20%3D%20%2892,%2087,%20100%29%0Alanguages%20%3D%20%5B%22Python%22,%20%22JavaScript%22,%20%22Rust%22,%20%22C%2B%2B%22%5D%0A%0Amean%20%3D%20%28scores%5B0%5D%20%2B%20scores%5B1%5D%20%2B%20scores%5B2%5D%29/3%0Aprint%28mean%29%0A%0Aprint%28%22%3D%3D%3D%22%29%0A%0Aprint%28num%29%0A%0Anum%20%3D%2018%0Aprint%28num%29%0A%0Anum%20%3D%20num%20%2B%202%0Aprint%28num%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">파이썬 튜터: 변수 할당</a>에
+접속해서 확인할 수 있다.</p>
+<p>파이썬튜터의 사용법은 다음과 같다.</p>
+<ul class="simple">
+<li><p>해당 사이트에 접속해서 코드 확인 및 수정 후 <kbd>Visualize Execution</kbd> 버튼을 누른다.</p></li>
+<li><p>이후 화면에서 <kbd>Next&gt;</kbd> 버튼을 반복해서 누르면
+각각의 명령문이 차례대로 실행되는 과정에서 발생하는 프레임의 변화를 확인할 수 있다.</p></li>
+<li><p><strong>Global frame</strong>은 <strong>전역 변수</strong><font size="2">global variable</font>를
+담당하는 <strong>전역 프레임</strong>을 가리킨다.
+전역 변수에 대한 정의는 나중에 소개한다.</p></li>
+</ul>
+</div>
 <div class="proof example admonition" id="local_global1">
 <p class="admonition-title"><span class="caption-number">Example 6.6 </span></p>
 <section class="example-content" id="proof-content">
@@ -1743,8 +1764,8 @@ By 코딩알지 & HJ
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>
