@@ -11,7 +11,6 @@ chapters:
 - file: environment
 - file: starting
 - file: variables_expressions
-- file: datatypes
 - file: functions
 - file: casestudy_function_interfaces
 - file: conditionals
