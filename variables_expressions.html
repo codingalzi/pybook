@@ -409,7 +409,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.2. 연산자와 함수</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-expressions">4.3. 표현식</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.4. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.4. 값 입력/출력</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.5. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -561,11 +562,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>93.0
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>변수 재할당</strong></p>
 <p>변수 재할당은 변수에 할당된 값을 다른 값으로 대체하는 일이다.
@@ -625,7 +621,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;x&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -638,29 +640,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
-</pre></div>
-</div>
-</div>
 </div>
 <p>변수 업데이트 명령문을 보다 간편하게 표현할 수 있다.
 예를 들어 아래 명령문은 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x+1</span></code>을 대신한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># x = x + 1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -669,18 +655,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">/=</span> <span class="mi">2</span> <span class="c1"># x = x / 2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1306,7 +1281,45 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h2><span class="section-number">4.4. </span>연습문제<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4. </span>값 입력/출력<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>아래 코드를 실행한 다음에 키보드에서 숫자 3을 입력하고 <kbd>Enter</kbd> 키를 누르면 <code class="docutils literal notranslate"><span class="pre">'맞았습니다</span></code>를 출력한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;숫자맞히기 게임에 환영합니다.&quot;</span><span class="p">)</span>
+
+<span class="n">secret</span> <span class="o">=</span> <span class="s1">&#39;3&#39;</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;0부터 9 사이의 숫자 하나를 입력하세요: &quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secret</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;맞았습니다!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;틀렸습니다!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;게임 종료!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>숫자맞히기 게임에 환영합니다.
+0부터 9 사이의 숫자 하나를 입력하세요: 3
+맞았습니다!
+게임 종료!
+</pre></div>
+</div>
+</div>
+</div>
+<p>이유는 <code class="docutils literal notranslate"><span class="pre">secret</span></code> 변수에 할당되어 있는 값이 3이고
+<code class="docutils literal notranslate"><span class="pre">guess</span></code> 변수에는 사용자가 입력한 값인 3인 할당되는 데
+그러면 <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span> <span class="pre">...</span></code> 명령문에서 두 값이 같을 때의 본문 명령문인
+<code class="docutils literal notranslate"><span class="pre">print(&quot;맞았습니다!&quot;)</span></code>가 실행되기 때문이다.</p>
+<p>사용자가 입력한 숫자 3은 <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수에 의해 변수 <code class="docutils literal notranslate"><span class="pre">guess</span></code>에 할당된다.
+키보드를 이용하여 입력한 값이 어떻게 변수 할당에 사용되는가는
+<a class="reference internal" href="functions.html#ch-functions"><span class="std std-numref">5장</span></a>에서 자세히 설명된다.
+여기서는 다만 <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수의 사용법만 기억한다.</p>
+<p>앞서 살펴 본 코드에서 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 인자가 표현하는 값을 컴퓨터 화면에 출력한다.</p>
+</section>
+<section id="id8">
+<h2><span class="section-number">4.5. </span>연습문제<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-variables_expressions.ipynb">(실습) 변수, 값, 표현식</a></p>
 </section>
 </section>
@@ -1381,7 +1394,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.2. 연산자와 함수</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-expressions">4.3. 표현식</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.4. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.4. 값 입력/출력</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.5. 연습문제</a></li>
 </ul>
   </nav></div>
 
