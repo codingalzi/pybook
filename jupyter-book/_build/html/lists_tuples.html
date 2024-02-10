@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -1474,7 +1474,7 @@ Hello world!
 </div>
 <p>위 코드에서 인덱스를 가리키는 변수 <code class="docutils literal notranslate"><span class="pre">i</span></code>의 값을
 반복문이 한 번 실행될 때마다 인위적으로 1씩 키워줘야 하고
-언제 언제 반복이 멈춰야 하는지를 조건식으로 명시해줘야 하는 점이
+언제 언제 반복이 멈춰야 하는지를 논리식으로 명시해줘야 하는 점이
 리스트를 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문과 함께 사용할 때와 다르다.</p>
 <p>코드에 포함된 다음 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복분이 실행될 때
 <code class="docutils literal notranslate"><span class="pre">i</span></code> 변수는 먼저 0을 가리키기에 <code class="docutils literal notranslate"><span class="pre">item</span></code> 변수는 0번째 인덱스의 값인 1을 가리킨다.
@@ -1492,7 +1492,7 @@ Hello world!
 <code class="docutils literal notranslate"><span class="pre">i</span></code>는 2, <code class="docutils literal notranslate"><span class="pre">item</span></code>은 3을 가리키지만
 <code class="docutils literal notranslate"><span class="pre">sum_list</span></code>는 아직 업데이트 이전 상태를 보여준다.</p>
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/list-while-02.png" width="800"/></div>
-<p><div style="text-align: center">&lt;그림 출처: <a href="https://pythontutor.com/render.html#code=one2five%20%3D%20%5B1,%202,%203,%204,%205%5D%0A%0Asum_list%20%3D%200%0Ai%20%3D%200%0A%0Awhile%20i%20%3C%20len%28one2five%29%3A%0A%20%20%20%20item%20%3D%20one2five%5Bi%5D%0A%20%20%20%20sum_list%20%2B%3D%20item%0A%20%20%20%20i%20%2B%3D%201%0A%0Aprint%28sum_list%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Python Tutor</a>&gt;</div></p><p><code class="docutils literal notranslate"><span class="pre">while</span> </code>반복문이 계속 실행되어 <code class="docutils literal notranslate"><span class="pre">i</span></code>가 5가 되면 조건식 <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">len(one2five)</span></code>가 거짓이 되고
+<p><div style="text-align: center">&lt;그림 출처: <a href="https://pythontutor.com/render.html#code=one2five%20%3D%20%5B1,%202,%203,%204,%205%5D%0A%0Asum_list%20%3D%200%0Ai%20%3D%200%0A%0Awhile%20i%20%3C%20len%28one2five%29%3A%0A%20%20%20%20item%20%3D%20one2five%5Bi%5D%0A%20%20%20%20sum_list%20%2B%3D%20item%0A%20%20%20%20i%20%2B%3D%201%0A%0Aprint%28sum_list%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Python Tutor</a>&gt;</div></p><p><code class="docutils literal notranslate"><span class="pre">while</span> </code>반복문이 계속 실행되어 <code class="docutils literal notranslate"><span class="pre">i</span></code>가 5가 되면 논리식 <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">len(one2five)</span></code>가 거짓이 되고
 반복문을 더 이상 실행하지 않는다.
 <code class="docutils literal notranslate"><span class="pre">sum_list</span></code>는 모든 항목이 더해진 상태인 15를 가리킨다.</p>
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/list-while-03.png" width="800"/></div>
@@ -4022,8 +4022,8 @@ By 코딩알지 & HJ
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
 
   <footer class="bd-footer">
   </footer>
