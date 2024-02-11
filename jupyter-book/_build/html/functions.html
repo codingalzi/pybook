@@ -63,8 +63,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'functions';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -411,17 +409,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#none">5.2.3. <code class="docutils literal notranslate"><span class="pre">None</span></code> 반환값</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.3. 수식 계산 함수</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.3.1. 1종 객체</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-keyword-arguments">5.3.2. 위치 인자와 키워드 인자</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range">5.3.3. <code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-boolean-functions">5.4. 부울값 함수와 논리식</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.5. 람다 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">5.6. 지역 변수와 전역 변수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">5.7. 프레임과 콜 스택</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">5.8. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-keyword-arguments">5.3. 위치 인자와 키워드 인자</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.4. 람다 함수</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.5. 지역 변수와 전역 변수</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.6. 프레임과 콜 스택</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.7. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -542,12 +534,12 @@ document.write(`
 </div>
 </div>
 <p><strong>함수 호출 표현식</strong></p>
-<p>함수 호출이 값을 표현하는 대표적인 표현식(<a class="reference internal" href="variables_expressions.html#sec-expressions"><span class="std std-numref">4.3절</span></a>)이다.
+<p>함수 호출 표현식이 값을 표현하는 대표적인 표현식(<a class="reference internal" href="variables_expressions.html#sec-expressions"><span class="std std-numref">4.3절</span></a>)이다.
 예를 들어 <code class="docutils literal notranslate"><span class="pre">int(3.14)</span></code>는 정수 <code class="docutils literal notranslate"><span class="pre">3</span></code>을,
 <code class="docutils literal notranslate"><span class="pre">float('3.14')</span></code>는 부동소수점 <code class="docutils literal notranslate"><span class="pre">3.14</span></code>를
 <code class="docutils literal notranslate"><span class="pre">type(3.14)</span></code>는 부동소수점의 자료형인 <code class="docutils literal notranslate"><span class="pre">float</span></code>를
 <code class="docutils literal notranslate"><span class="pre">type('3.14')</span></code>는 문자열의 자료형인 <code class="docutils literal notranslate"><span class="pre">str</span></code>을 계산하는데
-이렇게 함수 호출에 의해 계산된 값이 바로 함수 호출 표현식이 가리키는 값이다.</p>
+이렇게 함수 호출에 의해 계산된 값이 바로 함수 호출 표현식이 표현하는 값이다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
@@ -651,19 +643,19 @@ document.write(`
 <ul class="simple">
 <li><p>함수 이름과 매개 변수 이름: 변수 이름 짓기와 동일한 조건을 따른다.</p></li>
 <li><p>매개 변수의 수와 각 매개 변수의 역할은 함수를 정의하는 사용자가 정한다.</p></li>
-<li><p>함수 본문에 사용되는 명령문은 들여쓴다. 들여쓰기는 보통 <kbd>Tab</kbd> 키를 이용한다.</p></li>
+<li><p>함수의 헤더의 끝에 콜론 <code class="docutils literal notranslate"><span class="pre">:</span></code>을 작성하고, 함수 본문에 사용되는 명령문은 들여쓴다. 들여쓰기는 보통 <kbd>Tab</kbd> 키를 이용한다.</p></li>
 </ul>
 <section id="id4">
 <h3><span class="section-number">5.2.1. </span>매개 변수와 인자<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p><strong>매개 변수</strong><font size="2">parameter</font>는 <strong>함수의 본문에서만 사용되는 변수</strong>이며
 함수를 호출할 때 사용하는 <strong>인자</strong><font size="2">argument</font>를
-함수 본문 명령문에 전달한다.
+함수 본문의 명령문에 전달한다.
 예를 들어 아래 코드는 정수 또는 부동소수점 두 개가 주어지면
 두 수의 합을 계산하는 함수 <code class="docutils literal notranslate"><span class="pre">myAdd</span></code>를 정의한다.
 두 개의 수를 인자로 받아 합을 계산해야 하기에 두 개의 매개 변수를 사용한다.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">left</span></code>: 덧셈 연산의 첫째 인자</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">right</span></code>: 덧셈의 연산의 둘째 인자</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">left</span></code> 매개 변수: 덧셈 연산의 첫째 인자</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">right</span></code> 매개 변수: 덧셈의 연산의 둘째 인자</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,7 +666,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">myAdd()</span></code> 함수를 두 개의 수 인자와 함께 호출하면 두 수의 합을 계산한다.
+<p>이제 <code class="docutils literal notranslate"><span class="pre">myAdd()</span></code> 함수를 두 개의 인자와 함께 호출하면 두 인자의 합을 계산한다.
 예를 들어 아래 코드는 -2와 5의 합을 계산한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -691,31 +683,35 @@ document.write(`
 </section>
 <section id="id5">
 <h3><span class="section-number">5.2.2. </span>함수의 반환값과 함수 호출 표현식<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">myAdd(-2,</span> <span class="pre">5)</span></code> 가 호출되었을 때 실제로 실행되는 프로그램은 다음과 같다.</p>
-<p>첫째, 매개 변수 각각에 대해 주어진 인자의 순서대로 변수 할당 명령문이 실행된다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">myAdd(-2,</span> <span class="pre">5)</span></code> 가 호출되었을 때 파이썬 실행기 내부에서 실제로 실행되는 명령문은
+두 단계로 구성된다.</p>
+<p>첫째, 매개 변수 각각에 대해 주어진 인자의 순서대로 변수 할당 명령문이 실행된다.
+<code class="docutils literal notranslate"><span class="pre">left</span></code>와 <code class="docutils literal notranslate"><span class="pre">right</span></code> 두 매개 변수가 함수의 본문에서 사용될 때
+이렇게 할당된 값을 이용한다.
+이런 의미에서 매개 변수가 인자를 함수의 본문에 전달한다고 말한다</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">left</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
 <span class="n">right</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></div>
 </div>
-<p>둘째, <code class="docutils literal notranslate"><span class="pre">myAdd()</span></code> 함수의 본문에 사용된 명령문이 차례대로 실행된다.</p>
+<p>둘째, <code class="docutils literal notranslate"><span class="pre">myAdd()</span></code> 함수의 본문에 사용된 명령문이 차례대로 실행된다.
+즉 <code class="docutils literal notranslate"><span class="pre">sum</span> <span class="pre">=</span> <span class="pre">left</span> <span class="pre">+</span> <span class="pre">right</span></code> 명령문이 실행되어 <code class="docutils literal notranslate"><span class="pre">sum</span></code> 변수에 정수 3이 할당된다.
+끝으로 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">sum</span></code> 명령문이 실행된 후에 바로 함수 호출의 실행 과정이 종료된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
 <span class="k">return</span> <span class="nb">sum</span>
 </pre></div>
 </div>
-<p>즉 <code class="docutils literal notranslate"><span class="pre">sum</span> <span class="pre">=</span> <span class="pre">left</span> <span class="pre">+</span> <span class="pre">right</span></code> 명령문이 실행되어 <code class="docutils literal notranslate"><span class="pre">sum</span></code> 변수에 정수 3이 할당된다.
-끝으로 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">sum</span></code> 명령문이 실행되고 바로 함수 호출의 실행 과정이 종료된다.</p>
 <p>함수는 호출되면 앞서 설명한 대로 매개 변수에 지정된 인자를 할당된 다음에
 본문 명령문이 차례대로 실행된다.
-그러다가 어느 순간 아래 모양의 반환 명령문이 실행되는 순간 바로 함수 호출의 실행을 종료한다.</p>
+그러다가 아래 모양의 반환 명령문이 실행되는 순간 바로 함수 호출의 실행을 종료한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">표현식</span>
 </pre></div>
 </div>
-<p>단 <code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문에 지정된 <code class="docutils literal notranslate"><span class="pre">표현식</span></code>이 가리키는 값을 종료하기 전에 반환한다.
-따라서 <code class="docutils literal notranslate"><span class="pre">myAdd(-2,</span> <span class="pre">5)</span></code>가 호출되면 <code class="docutils literal notranslate"><span class="pre">sum</span></code> 변수에 할당된 3이 함수의 종료와 함께
-<strong>반환값</strong><font size='2'>return value</font>로 지정된다.</p>
-<p>함수가 호출되어 실행을 종료하면서 지정된 함수의 반환값은
-바로 다른 계산에 사용되거나 변수에 할당될 수 있다.
-예를 들어 아래 코드는 <code class="docutils literal notranslate"><span class="pre">myAdd(-2,</span> <span class="pre">5)</span></code> 함수 호출의 결과인 반환값을 변수 할당에 활용한다.</p>
+<p>그런데 함수 호출의 실행을 완전히 종료하기 전에 <code class="docutils literal notranslate"><span class="pre">return</span></code> 명령문에 지정된 <code class="docutils literal notranslate"><span class="pre">표현식</span></code>이
+표현하는 값을 <strong>반환값</strong>으로 지정한다.
+예를 들어 <code class="docutils literal notranslate"><span class="pre">myAdd(-2,</span> <span class="pre">5)</span></code>가 호출되면 <code class="docutils literal notranslate"><span class="pre">sum</span></code> 변수에 할당된 3이 함수의 종료와 함께
+반환값으로 지정된다.</p>
+<p>반환값으로 지정된 값은 다른 계산에 사용되거나 변수에 할당될 수 있다.
+예를 들어 아래 코드는 <code class="docutils literal notranslate"><span class="pre">myAdd(-2,</span> <span class="pre">5)</span></code> 함수 호출의 반환값을 변수 할당에 활용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_of_minus2_5</span> <span class="o">=</span> <span class="n">myAdd</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -745,14 +741,22 @@ document.write(`
 즉, 반환값을 지정하지 않는다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_int</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="n">square</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_int</span><span class="p">(</span><span class="n">num_param</span><span class="p">):</span>
+    <span class="n">square_param</span> <span class="o">=</span> <span class="n">num_param</span> <span class="o">*</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>예를 들어 5와 함께 호출되어 실행되어도 아무런 값이 계산되지 않는다.
-아래 코드처럼 <code class="docutils literal notranslate"><span class="pre">double_int(5)</span></code>에 의해 계산된 값을 화면에 출력하려 하면
+<p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">...</span></code> 명령문이 없는 함수를 호출하면 반환값이 지정되지 않는다.
+예를 들어 <code class="docutils literal notranslate"><span class="pre">double_int(5)</span></code>를 실행해도 아무런 값이 표시되지 않는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">double_int</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>아래 코드처럼 <code class="docutils literal notranslate"><span class="pre">double_int(5)</span></code>에 의해 계산된 값을 화면에 출력하려 하면
 <code class="docutils literal notranslate"><span class="pre">None</span></code> 이라는 이상한 값이 출력된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -766,27 +770,68 @@ document.write(`
 </div>
 </div>
 </div>
-<p>앞서 설명한 대로 <code class="docutils literal notranslate"><span class="pre">double_int(5)</span></code>가 호출되어 실행되면
-함수의 본문인 <code class="docutils literal notranslate"><span class="pre">square</span> <span class="pre">=</span> <span class="pre">num</span> <span class="pre">*</span> <span class="pre">2</span></code> 변수 할당문이 실행되어
-<code class="docutils literal notranslate"><span class="pre">square</span></code> 변수에 10이 할당된다.
-그런데 이후에 실행할 아무런 명령문도 없기에
+<p>앞서 설명한 대로 <code class="docutils literal notranslate"><span class="pre">double_int(5)</span></code>가 호출되면
+아래 코드가 실행된다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num_param</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">square_param</span> <span class="o">=</span> <span class="n">num_param</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>따라서 <code class="docutils literal notranslate"><span class="pre">square_param</span></code> 변수에 10이 할당되는데 이후에 실행할 아무런 명령문도 없기에
 반환값이 지정되지 않은 채 함수의 실행이 종료된다.
-함수 호출이 종료될 때 반환값이 지정되지 않으면
-함수가 실행되는 과정에 계산된 모든 값은 함수의 종료와 함께 컴퓨터 메모리에서 삭제되어
-코드의 다른 곳에서 사용될 수 없다.</p>
-<p>반환값을 지정하는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">...</span></code> 명령문이 실행되지 않으면서
-종료되는 함수의 반환값은 자동으로 <code class="docutils literal notranslate"><span class="pre">None</span></code>으로 지정된다.
-따라서 <code class="docutils literal notranslate"><span class="pre">double_int()</span></code> 함수는 실제로는
+파이썬 실행기는 이런 경우에 반환값을 <code class="docutils literal notranslate"><span class="pre">None</span></code>으로 강제 지정한다.</p>
+<p>따라서 <code class="docutils literal notranslate"><span class="pre">double_int()</span></code> 함수는 실제로는
 아래 코드처럼 정의된 것으로 간주된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_int</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="n">square</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_int</span><span class="p">(</span><span class="n">num_param</span><span class="p">):</span>
+    <span class="n">square_param</span> <span class="o">=</span> <span class="n">num_param</span> <span class="o">*</span> <span class="mi">2</span>
     <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>함수가 실행되는 과정에서 활용된 변수와 값은 반환값을 제외하고
+모두 함수의 실행이 종료되는 순간 컴퓨터 메모리에서 삭제되어 더 이상 사용될 수 없다.
+예를 들어, <code class="docutils literal notranslate"><span class="pre">num_param</span></code>과 <code class="docutils literal notranslate"><span class="pre">square_param</span></code>은 더 이상 존재하지 않기에
+아래 두 코드를 실행하면 모두 변수가 존재하지 않는다는 의미의
+<code class="docutils literal notranslate"><span class="pre">NameError</span></code> 오류가 발생한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_param</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">num_param</span>
+
+<span class="ne">NameError</span>: name &#39;num_param&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_param</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">square_param</span>
+
+<span class="ne">NameError</span>: name &#39;square_param&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>따라서 함수 호출 과정에서 계산된 값들 중에 일부를 함수 호출이 끝난 후에도 활용하려면
+반환값으로 지정하는 방법 외엔 없다.</p>
+<p><strong>None 값</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">None</span></code>도 하나의 값이라서 변수 할당에 사용되어 저장될 수 있다.
 하지만 연산 등에 사용하면
 연산에 사용될 수 없는 자료형의 값을 사용했다는 의미의 <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> 오류가 발생한다.</p>
@@ -812,7 +857,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;NoneType&#39; and &#39;int&#39;
@@ -820,23 +865,30 @@ document.write(`
 </div>
 </div>
 </div>
-<p>마치 기호 0이 하나도 없다를 표현하는 숫자인 것처럼 <code class="docutils literal notranslate"><span class="pre">None</span></code>은 이처럼 아무런 의미도 갖지 않아서 활용할 수 없는 값을 가리킨다.
-<code class="docutils literal notranslate"><span class="pre">None</span></code>이라는 값이 필요한 이유는 앞으로 다른 예제를 통해 배울 것이다.</p>
+<p>마치 기호 0이 하나도 없다를 표현하는 숫자인 것처럼 <code class="docutils literal notranslate"><span class="pre">None</span></code>은 아무런 의미도 갖지 않아서 활용할 수 없는 값을 가리킨다.
+<code class="docutils literal notranslate"><span class="pre">None</span></code>은 앞서 본 것처럼 함수의 반환값이 필요하지 않은 경우에 사용되는 역할
+이외에도 다른 용도로 활용되며 앞으로 다른 예제를 통해 <code class="docutils literal notranslate"><span class="pre">None</span></code> 값의 활용법을 배울 것이다.</p>
 <p><strong>print() 함수의 반환값</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수처럼 반환값이 없는 것처럼 보이는 함수도
-공식적으로는 아무런 의미가 없는 값을 의미하는 <code class="docutils literal notranslate"><span class="pre">None</span></code>을
-반환값으로 사용한다.
-즉, 아래 명령문이 항상 마지막에 실행된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="kc">None</span>
+<p>반환값이 <code class="docutils literal notranslate"><span class="pre">None</span></code>인 대표적인 함수는 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수이다.
+그런데 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 아래와 같이 활용하면 마치 인자를 그대로 반환하는 것처럼 보인다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>반면에 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수에 의해
-화면에 출력되는 문자열은 반환값이 아니다.
-다만 화면에 지정된 값을 출력하는 명령문의 실행 결과에 불과하다.</p>
-<p>함수의 반환값은 변수에 할당해서 활용할 수 있지만
-화면에 출력된 문자열은 그럴 수 없다는 데서 그 차이를 알 수 있다.
-예를 들어 아래 할당 명령문을 실행할 때 화면에 보여지는 <code class="docutils literal notranslate"><span class="pre">3.14</span></code>는
-변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 아니다.</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
+</pre></div>
+</div>
+</div>
+</div>
+<p>하지만 화면에 출력되는 문자열은 반환값이 아니다.
+다만 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 본문에 포함된 명령문 중에서
+지정된 값을 화면에 출력하는 명령문이 실행된 결과에 불과하다.
+앞서 설명한 대로 <code class="docutils literal notranslate"><span class="pre">print(3.14)</span></code>의 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code>임을 아래 코드가 확인해준다.</p>
+<p>먼저 <code class="docutils literal notranslate"><span class="pre">print(3.14)</span></code> 가 가리키는 값을 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>에 할당하자.
+아래 코드를 실행했을 때 보여지는 3.14는 반환값이 아니라 지정된 인자가 화면에 출력된 결과이다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">print</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
@@ -849,7 +901,15 @@ document.write(`
 </div>
 </div>
 </div>
-<p>변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>는 <code class="docutils literal notranslate"><span class="pre">None</span></code>을 가리킨다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code>에 할당된 값을 확인하려 하면 아무 것도 보여지지 않는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>화면에 출력하도록 해야 겨우 <code class="docutils literal notranslate"><span class="pre">None</span></code>으로 확인된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -864,928 +924,196 @@ document.write(`
 </div>
 </section>
 </section>
-<section id="id6">
-<h2><span class="section-number">5.3. </span>수식 계산 함수<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\sin x\)</span>, <span class="math notranslate nohighlight">\(\cos x\)</span>, <span class="math notranslate nohighlight">\(\sqrt{x}\)</span>, <span class="math notranslate nohighlight">\(\log x\)</span>, <span class="math notranslate nohighlight">\(e^x\)</span> 등
-수식 계산에 많이 사용되는 함수를 파이썬에서 기본으로 제공한다.</p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈</strong></p>
-<p>파이썬에서 기본으로 제공하는 다양한 수식 계산 함수를 사용하려면 먼저
-<code class="docutils literal notranslate"><span class="pre">math</span></code> 라는 모듈<font size="2">module</font>을
-불러와야<font size="2">import</font> 한다.
-모듈은 <a class="reference internal" href="modules.html#ch-module"><span class="std std-numref">15 장</span></a>에서 자세히 살펴볼 것이며,
-여기서는 모듈이 다양한 함수를 모아 놓은 파이썬 코드 파일이라는
-사실 정도만 기억하면 된다.
-<code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈을 불러오는 방식은 다음과 같다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="info admonition">
-<p class="admonition-title">자료형과 값</p>
-<p>앞서 언급했듯이 파이썬에 다루는 모든 객체는 특정
-자료형에 속하는 하나의 값이다.
-<code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈 조차도 하나의 값이며
-<code class="docutils literal notranslate"><span class="pre">module</span></code> 자료형에 속한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="n">math</span>
-         <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">module</span>
-</pre></div>
-</div>
-</div>
-<p>모듈에 포함된 함수를 호출하려면 모듈과 함수를 구두점으로 구분해서 명시해야 한다.
-예를 들어 정수 10을 밑으로 하는 상용로그 함수 <span class="math notranslate nohighlight">\(\log_{10}\)</span>에 해당하는
-<code class="docutils literal notranslate"><span class="pre">log10()</span></code> 함수를 사용하는 방법은 다음과 같다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">**</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">math.log()</span></code>는 자연로그 함수(<span class="math notranslate nohighlight">\(\ln = \log_e\)</span>)를 가리킨다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.302585092994046
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">2.718281828459045</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code>는 제곱근 함수 <span class="math notranslate nohighlight">\(\sqrt{x}\)</span>를 가리킨다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4142135623730951
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">math.exp()</span></code>는 지수 함수 <span class="math notranslate nohighlight">\(e^x\)</span>를 가리킨다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.718281828459045
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>NumPy 패키지</strong></p>
-<p><a class="reference external" href="https://numpy.org">넘파이<font size="2">NumPy</font></a>는
-행렬, 다차원 배열 등을 효율적으로 빠르게
-처리하는 많은 수식 계산 함수를 지원하는 파이썬 라이브러리이며
-데이터분석, 계산과학 등 컴퓨터를 이용한 계산이 필요한 영역에서 많이 활용된다.
-파이썬의 기본 패키지에는 포함되지 않지만
-<a class="reference external" href="https://www.anaconda.com">아나콘다 파이썬 배포판<font size="2">Anaconda Python distribution</font></a>에는 포함되어 있다.</p>
-<p>넘파이는 앞서 언급한 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈에서 지원하는 함수들을 포함해서 보다 많은 함수와 기능을 지원한다.
-앞으로 필요할 때마다 하나씩 넘파이가 제공하는 기능을 활용할 것이다.
-넘파이를 사용하려면 먼저 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 모듈을 불러오면 된다.
-그런데 <code class="docutils literal notranslate"><span class="pre">numpy</span></code>를 보통 <code class="docutils literal notranslate"><span class="pre">np</span></code>라는 약칭으로 아래처럼 불러온다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>모듈에 포함된 함수를 사용하는 방식은 <code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code> 처럼 구두점을 사용한다.
-다만 약칭이 지정된 모듈은 반드시 이용해서 사용해야 한다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈에 포함된 함수의 이름이 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 모듈에서 거의 동일하게 사용되었다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">2.72</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.000631880307906
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4142135623730951
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.718281828459045
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degree</span> <span class="o">=</span> <span class="mi">90</span>
-<span class="n">radian</span> <span class="o">=</span> <span class="n">degree</span> <span class="o">/</span> <span class="mf">180.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-<span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">radian</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="info admonition">
-<p class="admonition-title">함수 중복 정의</p>
-<p><code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 두 모듈에 포함된 많은 함수가 동일한 이름을 사용한다.
-하지만 다른 모듈의 동일한 이름의 두 함수는 서로 다른 함수이다.
-일반 구문상 <code class="docutils literal notranslate"><span class="pre">math.exp()</span></code>와 <code class="docutils literal notranslate"><span class="pre">np.exp()</span></code> 처럼 모듈의 이름으로 구분된다.</p>
-<p>동일한 기능을 수해하는 함수라 하더라도
-각 함수의 본문에 사용된 명령문은 기본적으로 다르다.
-실제로 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 모듈이 제공하는 수식 계산 함수가 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈이
-제공하는 동일 이름의 수식 계산 함수보다 실행속도가 빠른 경우가 많다.</p>
-<p>하나의 모듈에서 동일한 이름의 두 함수를 지원하는 기능을
-<strong>함수 중복 정의</strong> 또는 <strong>함수 오버로딩</strong><font size="2">function overloading</font>이라 한다.
-파이썬과 C 언어는 이 기능을 지원하지 않는 반면에 Java, C++, C# 등은 지원한다.</p>
-</div>
-<section id="id7">
-<h3><span class="section-number">5.3.1. </span>1종 객체<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
-<p>프로그래밍 언어에서
-<strong>1종 객체</strong><font size="2">first-class object</font>는
-변수 할당, 함수의 인자, 함수의 반환값 등으로 사용될 수 있는
-객체<font size="2">object</font>를 가리킨다.
-반면에 그렇지 않은 객체는
-<strong>2종 객체</strong><font size="2">second-class object</font>라고
-한다.</p>
-<div class="tip admonition">
-<p class="admonition-title">1종 객체 대 일급 객체 </p>
-<p>first-class object가 주로 ‘’일급 객체’’로 번역되지만
-“1종 객체”가 개념상 보다 적절하다.
-first-class와 second-class는 사용법상의 구분만을 나타내는 반면에
-일급, 이급 표현은 질적 차이를 내포하기 때문이다.</p>
-</div>
-<p>프로그래밍 언어에 따라 1종 객체의 기준이 다르다.
-대표적으로 C 언어의 경우 함수는 1종 객체가 아니다.
-즉, 함수를 다른 함수의 인자 또는 반환값으로 사용할 수 없다.
-반면에 파이썬은 다룰 수 있는 모든 것이 1종 객체이다.</p>
-<p><strong>함수 활용: 변수 할당</strong></p>
-<p>함수가 하나의 값이기에 예를 들어 다음과 같이
-<code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 변수 할당에 사용할 수 있다.
-단, 함수를 하나의 값으로 취급할 때는 괄호를 전혀
-사용하지 않는다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_function</span> <span class="o">=</span> <span class="n">myAdd</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;함수:&quot;</span><span class="p">,</span> <span class="n">a_function</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>함수: &lt;function myAdd at 0x000001D19DB14430&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<p>괄호을 사용하면 함수 호출을 의미하기에 아래 코드는 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수가
-호출된 후에 반환한 <code class="docutils literal notranslate"><span class="pre">None</span></code>이 변수 할당에 사용된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_return_value</span> <span class="o">=</span> <span class="n">myAdd</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;반환값:&quot;</span><span class="p">,</span> <span class="n">a_return_value</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>반환값: 3
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>함수 활용: 인자</strong></p>
-<p>함수를 다른 함수의 인자로 사용할 수 있다.
-예를 들어 아래 <code class="docutils literal notranslate"><span class="pre">do_twice()</span></code> 함수를 살펴보자.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_twice</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
-    <span class="n">x1</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-    <span class="n">x2</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">x2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>위 함수의 인자와 반환값은 다음과 같다.</p>
-<ul class="simple">
-<li><p>첫째 인자: 하나의 인자를 받는 함수</p></li>
-<li><p>둘째 인자: 첫째 인자로 사용된 함수의 인자로 사용될 값</p></li>
-<li><p>반환값: 둘째 인자로 들어온 값에 대해 첫째 인자 함수를 두 번 연속 적용한 값</p></li>
-</ul>
-<p>다음 <code class="docutils literal notranslate"><span class="pre">three_times()</span></code> 함수는 인자의 세 배를 계산하여 반환한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">three_times</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">3</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">three_times()</span></code> 함수를 정수 <code class="docutils literal notranslate"><span class="pre">2</span></code>에 대해 연속으로 적용한 값은 18이다.
-실제로 2의 세 배는 6, 6의 세 배는 18이다.
-다음과 같이 확인할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">three_times</span><span class="p">(</span><span class="n">three_times</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">do_twice()</span></code> 함수를 이용하여 동일한 결과를 얻는다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do_twice</span><span class="p">(</span><span class="n">three_times</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>함수 활용: 반환값</strong></p>
-<p>함수를 반환하는 함수를 정의할 수 있다.
-예를 들어 다음 <code class="docutils literal notranslate"><span class="pre">adding_n_func(n)</span></code>를 호출하면 <code class="docutils literal notranslate"><span class="pre">n</span></code>을 더하는 함수 <code class="docutils literal notranslate"><span class="pre">myAdd_n()</span></code>을 반환한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">adding_n_func</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">myAdd_n</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">m</span>
-    
-    <span class="k">return</span> <span class="n">myAdd_n</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">myAdd_n()</span></code> 함수는 <code class="docutils literal notranslate"><span class="pre">adding_n_func()</span></code> 함수의 본문에서 정의되는 함수이다.
-따라서 <code class="docutils literal notranslate"><span class="pre">adding_n_func()</span></code> 함수 밖에서는 절대 사용될 수 없는 일종의
-지역 변수이며, 이런 의미로 <strong>지역 함수</strong><font size="2">local function</font>라고 불린다.</p>
-<p>실제로 <code class="docutils literal notranslate"><span class="pre">myAdd_n()</span></code> 함수를 사용하려면 <code class="docutils literal notranslate"><span class="pre">n</span></code> 에 해당하는 값이 필요한데 그 값은
-<code class="docutils literal notranslate"><span class="pre">adding_n_func(10)</span></code> 등이 먼저 실행되어야 정해진다.</p>
-<p>이 성질을 이용하여 입력값에 10을 더한 값을 반환하는 함수 <code class="docutils literal notranslate"><span class="pre">myAdd10()</span></code> 를 다음과 같이 정의하여
-활용할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myAdd10</span> <span class="o">=</span> <span class="n">adding_n_func</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 10 을 더하는 함수</span>
-<span class="n">myAdd10</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                   <span class="c1"># 10 + 3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
-</pre></div>
-</div>
-</div>
-</div>
-<div class="proof example admonition" id="map_function">
-<p class="admonition-title"><span class="caption-number">Example 5.1 </span> (<code class="docutils literal notranslate"><span class="pre">map()</span></code> 함수)</p>
-<section class="example-content" id="proof-content">
-<p><code class="docutils literal notranslate"><span class="pre">map()</span></code> 함수는 하나의 함수 <code class="docutils literal notranslate"><span class="pre">fn</span></code>과  하나의 리스트 또는 튜플 등 모음 자료형 값 <code class="docutils literal notranslate"><span class="pre">iter</span></code>를 인자로 받는다.
-그러면 함수 <code class="docutils literal notranslate"><span class="pre">fn</span></code>을 <code class="docutils literal notranslate"><span class="pre">iter</span></code>에 포함된 각 항목에 적용하여 반환된 값들로 이루어진
-<code class="docutils literal notranslate"><span class="pre">map</span></code> 자료형의 값을 반환한다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">map</span></code> 자료형은 리스트 또는 튜플과 매우 유사하며, <code class="docutils literal notranslate"><span class="pre">list()</span></code> 함수를 이용하여
-쉽게 리스트로 변환된다.
-예를 들어, 리스트 <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6]</span></code> 의 각 항목에 10을 더하기 위해
-<code class="docutils literal notranslate"><span class="pre">myAdd10()</span></code> 함수를 <code class="docutils literal notranslate"><span class="pre">map()</span></code> 함수의 인자로 다음과 같이 사용하면 된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">77</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">myAdd10</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">77</span><span class="p">]:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
-</pre></div>
-</div>
-</section>
-</div></section>
 <section id="sec-keyword-arguments">
-<span id="id8"></span><h3><span class="section-number">5.3.2. </span>위치 인자와 키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this heading">#</a></h3>
-<p>함수의 인자는 위치 인자와 키워드 인자 두 종류로 구분되며,
-위치 인자를 먼저, 키워드 인자를 나중에 작성한다.</p>
-</section>
-<section id="range">
-<h3><span class="section-number">5.3.3. </span><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수<a class="headerlink" href="#range" title="Permalink to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수는 리스트와 매우 유사한 값을 생성한다.
-예를 들어, <code class="docutils literal notranslate"><span class="pre">range(10)</span></code>는 0부터 10 이전까지,
-즉 0부터 9까지의 정수를 포함하는 리스트와 유사한 값을 생성한다.</p>
+<span id="id6"></span><h2><span class="section-number">5.3. </span>위치 인자와 키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this heading">#</a></h2>
+<p>함수의 인자는 <strong>위치 인자</strong>와 <strong>키워드 인자</strong> 두 종류로 구분된다.</p>
+<ul class="simple">
+<li><p>위치 인자<font size="2">positional argument</font>: 반드시 지정해야 하는 인자</p></li>
+<li><p>키워드 인자<font size="2">keyword argument</font>: 필요에 따라 추가로 지정할 수 있는 인자</p></li>
+</ul>
+<p>함수를 정의할 때
+한 종류의 인자만 사용하도록 해도 되고 두 종류의 인자를 섞어서 사용하도록 해도 된다.
+단, 두 종류의 인자를 모두 사용하도록 하려면
+위치 인자를 먼저, 키워드 인자를 나중에 오도록 해야 한다.
+파이썬 프로그래밍에서 매우 유용하게 활용되는
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수를 이용하여 위치 인자와 키워드 인자의 활용법을 소개한다.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 인자</strong></p>
+<p>여러 개의 값을 화면에 출력하려면 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수에 여러 개의 인자를 지정하여 호출한다.
+그러면 인자들이 공백으로 구분되어 함께 한 줄에 출력된다.
+예를 들어 아래 코드는 <code class="docutils literal notranslate"><span class="pre">안녕</span></code>, <code class="docutils literal notranslate"><span class="pre">파이썬</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code> 세 개의 문자열을 공백으로 구분하면서 한 줄에 출력한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;파이썬&#39;</span><span class="p">,</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 10)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>파이썬 안녕 !
 </pre></div>
 </div>
 </div>
 </div>
-<p>아니면 0을 첫째 인자로, 10을 둘째 인자로 사용해도 동일한 모양의 값을 생성한다.</p>
+<p>출력 대상으로 지정된 세 개의 인자가 공백으로 구분되어 한 줄에 출력되는 이유는
+<code class="docutils literal notranslate"><span class="pre">sep</span></code>이라는 숨겨진 키워드 인자때문이다.
+위 코드를 실행하면 파이썬 실행기는 실제로는 아래 코드를 실행한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;파이썬&#39;</span><span class="p">,</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 10)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>파이썬 안녕 !
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수가 생성하는 값의 자료형은 <code class="docutils literal notranslate"><span class="pre">range</span></code> 이다.</p>
+<p>변수 할당 명령문 형식처럼 생긴 <code class="docutils literal notranslate"><span class="pre">sep='</span> <span class="pre">'</span></code>은 화면에 출력해야할 인자들을 공백으로 구분하여 한 줄에 출력하도록 한다.
+그런데 키워드 인자에 할당된 값은 임의로 바꿀 수 있다.
+예를 들어, 출력 대상으로 지정된 각각의 인자를 하이픈 기호<code class="docutils literal notranslate"><span class="pre">'-'</span></code>로 구분하려면
+즉, 인자와 인자를 하이픈으로 연결하려면
+아래 코드에서처럼 키워드 인자 <code class="docutils literal notranslate"><span class="pre">sep</span></code>에 문자열 <code class="docutils literal notranslate"><span class="pre">'-'</span></code>이 할당되도록 한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;파이썬&#39;</span><span class="p">,</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>파이썬-안녕-!
 </pre></div>
 </div>
 </div>
 </div>
-<p>그런데 <code class="docutils literal notranslate"><span class="pre">range(10)</span></code>의 내부를 바로 보여주지는 않는다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 10)
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">range</span></code> 객체에 포함되는 값을 확인하는 가장 간단한 방법은
-리스트로의 형변환이다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-</pre></div>
-</div>
-</div>
-</div>
-<p>아니면 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 이용할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></div>
-</div>
-</div>
-</div>
-<p>이렇듯 <code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수가 생성하는 <code class="docutils literal notranslate"><span class="pre">range</span></code> 객체는 내부를 바로 보여주지는 않지만
-<code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문에서 아래와 같은 리스트를 대신해서 유용하게 활용된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note admonition">
-<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수와 이터러블 자료형</p>
-<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수가 생성하는 <code class="docutils literal notranslate"><span class="pre">range</span></code> 객체에 대한 자세한 설명은 <a class="reference internal" href="casestudy_collections.html#ch-collections3"><span class="std std-numref">13장</span></a> 을 참고한다.
-하지만 파이썬 프로그래밍에 어느 정도 익숙해진 다음에 참고할 것을 추천한다.</p>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수는 최대 3 개의 인자를 받을 수 있다.
-<code class="docutils literal notranslate"><span class="pre">range(10)</span></code>이 <code class="docutils literal notranslate"><span class="pre">range(0,</span> <span class="pre">10)</span></code>과 동일한 모양의 값을 생성한다고 말했듯이
-하나의 인자만 사용하면 첫째 인자가 0인 두 개의 인자를 사용하는 경우와 동일하다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수는 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문에서 리스트 대신에 매우 유용하게 활용된다.
-예를 들어 아래 코드는 <code class="docutils literal notranslate"><span class="pre">range(10)</span></code>가
-리스트 <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9]</span></code> 대신 사용될 수 있음을 보여준다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수가 계산하는 구간의 시작을 0이 아닌 다른 정수로 하려면 반드시 두 개의 인자를 사용해야 한다.
-예를 들어, 아래 코드는 1부터 10까지의 정수로 구성된 리스트에 해당하는 값을 계산한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">one2ten_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>실제로 <code class="docutils literal notranslate"><span class="pre">list()</span></code> 형변환 함수를 이용하면 1부터 10까지의 정수를 포함한 리스트로 계산된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">one2ten_range</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-</pre></div>
-</div>
-</div>
-</div>
-<p>위 사실을 이용하면 1부터 10까지의 정수의 합을 계산하는 코드를
-아래처럼 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문과 <code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수를 이용하여 간단하게 구현할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">num</span>           <span class="c1"># 간편 변수 업데이트</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1부터 10까지 정수의 합:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1부터 10까지 정수의 합: 55
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수에 세 개의 인자를 사용하면
-첫째, 둘째 인자의 의미는 이전과 동일하다.
-그리고 셋째 인자는 보폭을 가리킨다.
-예를 들어 1부터 9까지의 정수 중에서 홀수만을
-대상으로 하는 <code class="docutils literal notranslate"><span class="pre">range</span></code> 객체를 생성한다.
-이유는 보폭이 2로 지정되었기에 1부터 시작해서 1씩이 아닌 2씩 증가시켜 값을 포함시키기 때문이다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(1, 10, 2)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 5, 7, 9]
-</pre></div>
-</div>
-</div>
-</div>
-<p>10보다 같거나 작은 자연수 중에서 짝수만을 포함하는 리스트를 다음과 같이 쉽게 생성할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 6, 8, 10]
-</pre></div>
-</div>
-</div>
-</div>
-<p>보폭을 인자로 사용하려면 반드시 세 개의 인자를 사용해야 한다.
-예를 들어 0을 짝수 리스트에 포함시키려면 다음과 같이 한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8, 10]
-</pre></div>
-</div>
-</div>
-</div>
-<p>만약에 0을 생략하면 보폭인자의 역할을 수행하지 않기에 엉뚱한 결과를 얻는다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
-</pre></div>
-</div>
-</div>
-</div>
-<p>위 코드는 아무 항목도 포함하지 않는 빈 리스트를 생성한다.
-이유는 시작은 11인데 2에서 끝나야 하기 때문이다.
-그런데 셋제 인자로 보폭이 주어지지 않으면 보폭은 자동 1로 지정된다.
-그런데 보폭이 1이면 11에서 출발해서 1씩 증가하는 방식으로 절대로 2에 도달할 수 없게된다.
-따라서 어떤 값도 <code class="docutils literal notranslate"><span class="pre">range(11,</span> <span class="pre">2,</span> <span class="pre">1)</span></code> 에 포함되지 못하게 된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
-</pre></div>
-</div>
-</div>
-</div>
-<p>반면에 11에서 1까지의 정수 중에서 홀수만을 역순으로 모아놓은
-리스트를 생성하기 위해 보폭을 -1로 줄 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11, 9, 7, 5, 3, 1]
-</pre></div>
-</div>
-</div>
-</div>
-<p>둘째 인자를 0으로 함에 주의한다.
-그래야 11부터 1씩 줄어들었을 때 0 이전의 값이 1이 되기 때문이다.
-다음처럼 1로 하면 1 이전의 값이 2가 되어 1이 포함되지 않게 된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11, 9, 7, 5, 3]
-</pre></div>
-</div>
-</div>
-</div>
-<p>따라서 큰 값에서 시작해서 값이 작아지는 쪽으로 리스트나 <code class="docutils literal notranslate"><span class="pre">range</span></code> 객체를 생성하려면
-음의 정수를 보폭으로 사용한다.
-예를 들어 아래 코드는 5부터 0까지의 정수를 역순으로 출력한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-4
-3
-2
-1
-0
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수는 여러 개의 인자를 받을 수 있다.
-그러면 각 인자를 공백<font size="2">space</font>으로 구분하여
-함께 한 줄에 출력한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello,&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, Python !
-</pre></div>
-</div>
-</div>
-</div>
-<p>그런데 각각의 인자를 서로 다른 줄에 출력하려면 아래와 같이 해야 한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello,&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello,
-Python
-!
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">sep='\n'</span></code>의 <code class="docutils literal notranslate"><span class="pre">sep</span></code>은 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 숨겨진 매개 변수이며
-인자를 굳이 지정하지 않으면 <strong>키워드 인자</strong><font size="2">keyword argument</font>로
-지정된 값을 사용한다.
-매개 변수 <code class="docutils literal notranslate"><span class="pre">sep</span></code>의 원래 키워드 인자는 한 칸 띄어쓰기를 의미하는 문자열(<code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code>)이며,
-사용된 인자들을 한 칸씩 띄어서 한 줄에 보여주도록 한다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">print()</span></code>함수에는
-<code class="docutils literal notranslate"><span class="pre">sep</span></code> 이외에 <code class="docutils literal notranslate"><span class="pre">end</span></code>, <code class="docutils literal notranslate"><span class="pre">file</span></code>, <code class="docutils literal notranslate"><span class="pre">flush</span></code>가
-키워드 인자를 갖는 매개 변수이다.
+<p>위 코드에서 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 호출할 때 사용된 위치 인자와 키워드 인자는 다음과 같다.</p>
+<ul class="simple">
+<li><p>위치 인자: 화면 출력에 사용되는 세 개의 인자, <code class="docutils literal notranslate"><span class="pre">'파이썬'</span></code>, <code class="docutils literal notranslate"><span class="pre">'안녕'</span></code>, <code class="docutils literal notranslate"><span class="pre">'!'</span></code></p></li>
+<li><p>키워드 인자: <code class="docutils literal notranslate"><span class="pre">sep</span></code> 매개 변수에 할당된 문자열 <code class="docutils literal notranslate"><span class="pre">'-'</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 위치 인자는 0개 이상 원하는 만큼 사용될 수 있다.
+반면에 키워드 인자는 <code class="docutils literal notranslate"><span class="pre">sep</span></code> 이외에 <code class="docutils literal notranslate"><span class="pre">end</span></code>, <code class="docutils literal notranslate"><span class="pre">file</span></code>, <code class="docutils literal notranslate"><span class="pre">flush</span></code> 매개 변수에 할당될 수 있다.
 실제로 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 헤더는 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>매개 변수 각각의 역할은 다음과 같다.
+키워드 인자들은 특별한 기능을 수행하며, 그 기능을 그대로 사용하는 경우
+함수 호출 과정에서 굳이 언급할 필요가 없다.</p>
 <ul class="simple">
-<li><p>둘째 매개 변수 자리에 위치한 말줄임표(<code class="docutils literal notranslate"><span class="pre">...</span></code>)는
-여러 개의 인자를 사용할 수 있음을 의미한다.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">end='\n'</span></code> 매개 변수는 지정된 인자들을 출력한 후에
-기본적으로 줄바꿈을 실행하는 것을 의미한다.
-<code class="docutils literal notranslate"><span class="pre">end=''</span></code>로 설정하면 줄바꿈을 하지 않게 된다.
-아래 두 경우를 비교하면 차이점을 확인할 수 있다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: 위치 인자. 출력에 사용할 값 하나를 인자로 받을 수 있음.</p></li>
+<li><p>말줄임표(<code class="docutils literal notranslate"><span class="pre">...</span></code>): 여러 개의 위치 인자를 사용할 수 있음을 의미함.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sep='</span> </code>: <code class="docutils literal notranslate"><span class="pre">sep</span></code> 매개 변수에 공백 문자 하나로 구성된 문자열이 기본 키워드 인자로 지정됨.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">end='\n'</span></code>: <code class="docutils literal notranslate"><span class="pre">end</span></code> 매개 변수에 줄바꿈 문자 하나로 구성된 문자열이 기본 키워드 인자로 지정됨.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file=sys.stdout</span></code>: <code class="docutils literal notranslate"><span class="pre">file</span></code> 매개 변수에 <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code>이 기본 키워드 인자로 지정됨.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flush=False</span></code>: <code class="docutils literal notranslate"><span class="pre">flush</span></code> 매개 변수에 <code class="docutils literal notranslate"><span class="pre">False</span></code>가 기본 키워드 인자로 지정됨.</p></li>
 </ul>
+<p>앞서 설명한 것처럼 <code class="docutils literal notranslate"><span class="pre">sep</span></code> 매개 변수의 키워드 인자는 출력해야할 값들을 구분하는 방식을 지정한다.
+<code class="docutils literal notranslate"><span class="pre">end</span></code> 매개 변수의 키워드 인자는 값들을 출력한 다음에 할 일을 지정한다.
+기본 키워드 인자가 줄바꿈이기에 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 호출한 다음엔 항상 줄바꿈이 실행된다.
+만약에 빈 문자열 <code class="docutils literal notranslate"><span class="pre">''</span></code>을 <code class="docutils literal notranslate"><span class="pre">end</span></code> 매개 변수에 할당하면 줄바꿈을 하지 않는다.
+아래 두 코드를 비교하면 <code class="docutils literal notranslate"><span class="pre">end</span></code> 매개 변수의 역할을 확인할 수 있다.</p>
+<ul class="simple">
+<li><p>기본 키워드 인자를 그대로 사용한 경우: 첫째 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수 호출에 의해 <code class="docutils literal notranslate"><span class="pre">'파이썬</span> <span class="pre">안녕</span> <span class="pre">!'</span></code>이 출력된 후에
+줄바꿈이 이뤄지고 그 다음에 둘째 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수 호출에 의해 <code class="docutils literal notranslate"><span class="pre">'==='</span></code> 문자열이 출력됨.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;파이썬&#39;</span><span class="p">,</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;===&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>파이썬 안녕 !
+===
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">end</span></code> 매개 변수의 인자를 빈 문자열로 지정한 경우: 첫째 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수 호출에 의해 <code class="docutils literal notranslate"><span class="pre">'파이썬</span> <span class="pre">안녕</span> <span class="pre">!'</span></code>이 출력된 후에
+줄바꿈을 하지 않은 채로 둘째 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수 호출에 의해 <code class="docutils literal notranslate"><span class="pre">'==='</span></code> 문자열이 출력됨.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;파이썬&#39;</span><span class="p">,</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;===&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>파이썬 안녕 !===
+</pre></div>
+</div>
+</div>
+</div>
+<p>키워드 인자를 다른 값으로 지정하기 위해 매개 변수를 함께 사용함에 주의한다.
+반드시 그럴 필요는 없지만 오류가 발생할 위험이 커지기에 추천되지 않는다.</p>
 <div class="info admonition">
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">file</span></code>과 <code class="docutils literal notranslate"><span class="pre">flush</span></code> 매개 변수</p>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 <code class="docutils literal notranslate"><span class="pre">file</span></code>과 <code class="docutils literal notranslate"><span class="pre">flush</span></code> 두 매개 변수는 특별한 경우에 활용되며
-간단한 예제는 <a class="reference external" href="https://velog.io/&#64;janeljs/python-print-sep-end-file-flush">이곳</a>에서 확인할 수 있다.</p>
+간단한 예제는 <a class="reference external" href="https://velog.io/&#64;janeljs/%EC%95%88%EB%85%95-print-sep-end-file-flush">이곳</a>에서 확인할 수 있다.</p>
 </div>
-<p>키워드 인자를 굳이 지정하지 않으면 기본값이 사용된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello,&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;===&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, Python !
-===
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">sep='\n'</span></code>으로 지정하면 항목을 출력할 때마다 줄바꿈이 실행된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello,&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;===&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello,
-Python
-!
-===
-</pre></div>
-</div>
-</div>
-</div>
-<p>아무런 문자도 포함하지 않는 빈 문자열 <code class="docutils literal notranslate"><span class="pre">''</span></code>를 <code class="docutils literal notranslate"><span class="pre">end</span></code> 매개 변수의 인자로 사용하면 다른 효과를 볼 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello,&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;===&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello,
-Python
-!===
-</pre></div>
-</div>
-</div>
-</div>
-<div class="proof example admonition" id="keyword_argument">
-<p class="admonition-title"><span class="caption-number">Example 5.2 </span></p>
-<section class="example-content" id="proof-content">
+<p><strong>키워드 인자 사용 함수 정의</strong></p>
 <p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">myAdd10()</span></code> 함수를 키워드 인자를 이용하여
-정의하는 방식을 보여준다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myAdd10</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+정의하는 방식을 보여준다.
+사용된 두 매개 변수의 역할은 다음과 같다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">left</span></code>: 덧셈의 왼쪽 인자로 사용될 값을 할당받을 매개 변수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">right</span></code>: 덧셈의 오른쪽 인자로 사용될 값을 할당받을 매개 변수. 10이 기본 키워드 인자로 지정됨.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myAdd10</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">add10</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
     <span class="k">return</span> <span class="n">add10</span>
 </pre></div>
 </div>
-<p>둘째 인자가 생략되면 자동으로 10이 대신 사용된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># right=10</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="mi">15</span>
-</pre></div>
 </div>
-<p>둘째 인자를 별도로 지정하면 지정된 값이 사용된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="mi">25</span>
-</pre></div>
 </div>
-</section>
-</div></section>
-</section>
-<section id="sec-boolean-functions">
-<span id="id9"></span><h2><span class="section-number">5.4. </span>부울값 함수와 논리식<a class="headerlink" href="#sec-boolean-functions" title="Permalink to this heading">#</a></h2>
-<p>부울값을 반환하는 함수는 논리식에 사용되며 복잡한 테스트를 진행할 때 활용하면 좋다.
-예를 들어 아래 함수는 두 정수를 대상으로 약수, 배수의 관계가 있는지 여부를 판단할 때
-사용될 수 있다.</p>
+<p>아래 코드에서처럼 <code class="docutils literal notranslate"><span class="pre">myAdd10()</span></code> 함수를 호출할 때 둘째 인자가 생략되면 자동으로 10이 대신 사용된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># right=10</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
 </pre></div>
 </div>
 </div>
 </div>
+<p>위 코드는 아래 코드와 동일하게 작동한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
 </pre></div>
 </div>
 </div>
 </div>
-<p>위 함수를 다음과 같이 보다 간단하게 정의할 수도 있다.</p>
+<p>10이 아닌 다른 값을 <code class="docutils literal notranslate"><span class="pre">right</span></code> 매개 변수의 키워드 인자로 지정하려면
+아래 코드와 같이 함수 호출을 실행한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>부울값 함수 호출을 조건문 등에 바로 사용해도 된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">16</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
-
-<span class="k">if</span> <span class="n">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> 을(를) </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1"> (으)로 나눌 수 있다.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16 을(를) 4 (으)로 나눌 수 있다.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
 </pre></div>
 </div>
 </div>
-</div>
-<div class="proof example admonition" id="filter">
-<p class="admonition-title"><span class="caption-number">Example 5.3 </span> (<code class="docutils literal notranslate"><span class="pre">filter()</span></code> 함수)</p>
-<section class="example-content" id="proof-content">
-<p><code class="docutils literal notranslate"><span class="pre">filter()</span></code> 함수는 첫째 인자로 부울값 함수를, 둘째 인자로 리스트, 튜플 등을 사용한다.
-단, 부울값 함수 인자는 한 개의 인자만 사용하는 함수이어야 한다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">filter(f,</span> <span class="pre">aList)</span></code> 방식으로 호출하면 <code class="docutils literal notranslate"><span class="pre">aList</span></code> 에 포함된 항목 <code class="docutils literal notranslate"><span class="pre">item</span></code> 중에서 <code class="docutils literal notranslate"><span class="pre">f(item)</span></code> 이
-참이 되는 <code class="docutils literal notranslate"><span class="pre">item</span></code> 만 모은다.
-반환값은 <code class="docutils literal notranslate"><span class="pre">filter</span></code> 유형의 값이지만 <code class="docutils literal notranslate"><span class="pre">list()</span></code> 함수를
-이용하면 쉽게 리스트로 반환된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divisible_by_3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">divisible_by_3</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]))</span>
-<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-</pre></div>
 </div>
 </section>
-</div></section>
-<section id="id10">
-<h2><span class="section-number">5.5. </span>람다 함수<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h2><span class="section-number">5.4. </span>람다 함수<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <p>파이썬은 람다<font size='2'>lambda</font> 함수를 사용하면 간결하게 코드를 작성할 수 있다. 람다 함수의 형식은 아래와 같다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">arguments</span> <span class="p">:</span> <span class="n">expression</span>
 </pre></div>
@@ -1877,8 +1205,8 @@ Python
 </div>
 </div>
 </section>
-<section id="id11">
-<h2><span class="section-number">5.6. </span>지역 변수와 전역 변수<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<section id="id8">
+<h2><span class="section-number">5.5. </span>지역 변수와 전역 변수<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <p>함수를 선언할 때 사용되는 매개 변수와 함수 본문에서 선언되는 변수는
 함수가 실행되는 동안에만 의미를 가지며,
 이런 의미에서 <strong>지역 변수</strong><font size="2">local variable</font>라 한다.
@@ -1951,7 +1279,7 @@ Python
 </ul>
 </div>
 <div class="proof example admonition" id="local_global1">
-<p class="admonition-title"><span class="caption-number">Example 5.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 5.1 </span></p>
 <section class="example-content" id="proof-content">
 <p>아래 코드에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 가 전역 변수와 지역 변수로 사용된다.
 하지만 두 변수는 서로 상관이 없으며
@@ -1971,7 +1299,7 @@ Python
 <p><a class="reference external" href="https://pythontutor.com/visualize.html#code=one_hour%20%3D%2060%20%20%20%20%20%20%20%23%201%EC%8B%9C%EA%B0%84%EC%9D%80%2060%EB%B6%84%0A%0Adef%20hour2min%28hour%29%3A%0A%20%20%20%20one_hour%20%3D%20600%20%20%23%20600%EB%B6%84%EC%9C%BC%EB%A1%9C%20%EC%98%A4%ED%83%80%0A%20%20%20%20minutes%20%3D%20hour%20*%20one_hour%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour2min%282%29%0A%0Aprint%28one_hour%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수와 전역 변수 2</a>에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 의 두 역할을 시각적으로 확인할 수 있다.</p>
 </section>
 </div><div class="proof example admonition" id="local_global2">
-<p class="admonition-title"><span class="caption-number">Example 5.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 5.2 </span></p>
 <section class="example-content" id="proof-content">
 <p>반면에 아래 코드에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 는 하나의 전역 변수로만 사용된다.
 함수 내에서 <code class="docutils literal notranslate"><span class="pre">global</span></code> 명령문으로 변수를 지정한 후에 해당 전역 변수를
@@ -1994,8 +1322,8 @@ Python
 시각적으로 확인할 수 있다.</p>
 </section>
 </div></section>
-<section id="id12">
-<h2><span class="section-number">5.7. </span>프레임과 콜 스택<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<section id="id9">
+<h2><span class="section-number">5.6. </span>프레임과 콜 스택<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <p>파이썬 프로그램의 실행은 기본적으로
 “위에서 아래로”와 “왼쪽에서 오른쪽으로”의 두 기준으로
 더 이상 실행할 명령문이 없을 때까지 진행된다.</p>
@@ -2078,8 +1406,8 @@ Python
 </pre></div>
 </div>
 </section>
-<section id="id13">
-<h2><span class="section-number">5.8. </span>연습문제<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h2><span class="section-number">5.7. </span>연습문제<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-functions.ipynb">(실습) 함수</a></p>
 </section>
 </section>
@@ -2154,17 +1482,11 @@ Python
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#none">5.2.3. <code class="docutils literal notranslate"><span class="pre">None</span></code> 반환값</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.3. 수식 계산 함수</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.3.1. 1종 객체</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-keyword-arguments">5.3.2. 위치 인자와 키워드 인자</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range">5.3.3. <code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-boolean-functions">5.4. 부울값 함수와 논리식</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.5. 람다 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">5.6. 지역 변수와 전역 변수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">5.7. 프레임과 콜 스택</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">5.8. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-keyword-arguments">5.3. 위치 인자와 키워드 인자</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.4. 람다 함수</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.5. 지역 변수와 전역 변수</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.6. 프레임과 콜 스택</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.7. 연습문제</a></li>
 </ul>
   </nav></div>
 
