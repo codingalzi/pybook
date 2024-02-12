@@ -1267,7 +1267,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 그런데 사전 자체는 정렬 기능을 제공하지 않는다.
 반면에 <code class="docutils literal notranslate"><span class="pre">items()</span></code> 메서드의 반환값에 대해 <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> 함수를 적용한 결과를 응용할 수는 있다.
 <code class="docutils literal notranslate"><span class="pre">key</span></code> 키워드 인자를 이용해서 아이텀의 둘째 인자인 점수를 기준으로 정렬하려면
-다음과 같이 정의된 익명 함수를 지정한다.</p>
+다음과 같이 정의된 람다 함수를 지정한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_scores_5m</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">scores_5m</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>

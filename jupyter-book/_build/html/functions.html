@@ -63,6 +63,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'functions';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -407,13 +409,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.2.1. 매개 변수와 인자</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.2.2. 함수의 반환값과 함수 호출 표현식</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#none">5.2.3. <code class="docutils literal notranslate"><span class="pre">None</span></code> 반환값</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.2.4. 람다 함수</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-keyword-arguments">5.3. 위치 인자와 키워드 인자</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.4. 람다 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.5. 지역 변수와 전역 변수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.6. 프레임과 콜 스택</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.7. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.4. 지역 변수와 전역 변수</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.5. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -734,15 +735,89 @@ document.write(`
 </div>
 <p>이처럼 함수의 반환값은 <code class="docutils literal notranslate"><span class="pre">myAdd(-2,</span> <span class="pre">5)</span></code>처럼 함수 호출과 동일하게 표현된다.
 즉, 함수 호출 표현식 자체가 함수의 반환값을 나타내는 표현식으로 사용된다.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">...</span></code> 명령문의 위치</strong></p>
+<p>함수를 호출하면 함수의 본문이 실행되는 도중에 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">...</span></code> 명령문이 실행되는 순간
+반환값을 지정하고 반환한다.
+따라서 함수의 반환값은 항상 하나이다.</p>
+<p>하지만 그렇다고 해서 함수 본문에 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">...</span></code> 명령문이 한 번만 사용된다는 의미는 아니다.
+예를 들어 아래 <code class="docutils literal notranslate"><span class="pre">myAddProd()</span></code> 함수는 두 인자의 크기 비교 결과에 따라
+덧셈 또는 곱셈을 실행한 결과를 반환값으로 지정한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myAddProd</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">:</span>
+        <span class="nb">sum</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
+        <span class="k">return</span> <span class="nb">sum</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">product</span> <span class="o">=</span> <span class="n">left</span> <span class="o">*</span> <span class="n">right</span>
+        <span class="k">return</span> <span class="n">product</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>하지만 인자가 지정되면 어떤 경우에도 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">sum</span></code> 과 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">product</span></code> 두 반환값 지정 명령문
+모두 실행되진 않는다.
+이런 의미에서 함수의 반환값은 항상 하나이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myAddProd</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myAddProd</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-10
+</pre></div>
+</div>
+</div>
+</div>
+<p>심지어 아래 <code class="docutils literal notranslate"><span class="pre">useless()</span></code> 함수처럼 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">...</span></code> 명령문을 연속해서
+작성하더라도 두 개 모두 실행되지는 않고
+먼저 실행된 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">sum</span></code> 명령문이 실행되어 <code class="docutils literal notranslate"><span class="pre">sum</span></code>에 할당된 값을 반환값으로
+지정한 후 더 이상의 코드는 실행하지 않는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">useless</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
+    <span class="n">prod</span> <span class="o">=</span> <span class="n">left</span> <span class="o">*</span> <span class="n">right</span>
+    <span class="k">return</span> <span class="nb">sum</span>
+    <span class="k">return</span> <span class="n">prod</span>          <span class="c1"># 절대 실행되지 않음</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">useless</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="none">
 <h3><span class="section-number">5.2.3. </span><code class="docutils literal notranslate"><span class="pre">None</span></code> 반환값<a class="headerlink" href="#none" title="Permalink to this heading">#</a></h3>
-<p>아래 코드에 정의된 <code class="docutils literal notranslate"><span class="pre">double_print()</span></code> 함수의 정의는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">...</span></code> 명령문을 사용하지 않는다.
+<p>아래 코드에 정의된 <code class="docutils literal notranslate"><span class="pre">double_int()</span></code> 함수의 정의는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">...</span></code> 명령문을 사용하지 않는다.
 즉, 반환값을 지정하지 않는다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_int</span><span class="p">(</span><span class="n">num_param</span><span class="p">):</span>
-    <span class="n">square_param</span> <span class="o">=</span> <span class="n">num_param</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="n">double_param</span> <span class="o">=</span> <span class="n">num_param</span> <span class="o">*</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
@@ -773,10 +848,10 @@ document.write(`
 <p>앞서 설명한 대로 <code class="docutils literal notranslate"><span class="pre">double_int(5)</span></code>가 호출되면
 아래 코드가 실행된다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num_param</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">square_param</span> <span class="o">=</span> <span class="n">num_param</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">double_param</span> <span class="o">=</span> <span class="n">num_param</span> <span class="o">*</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<p>따라서 <code class="docutils literal notranslate"><span class="pre">square_param</span></code> 변수에 10이 할당되는데 이후에 실행할 아무런 명령문도 없기에
+<p>따라서 <code class="docutils literal notranslate"><span class="pre">double_param</span></code> 변수에 10이 할당되는데 이후에 실행할 아무런 명령문도 없기에
 반환값이 지정되지 않은 채 함수의 실행이 종료된다.
 파이썬 실행기는 이런 경우에 반환값을 <code class="docutils literal notranslate"><span class="pre">None</span></code>으로 강제 지정한다.</p>
 <p>따라서 <code class="docutils literal notranslate"><span class="pre">double_int()</span></code> 함수는 실제로는
@@ -784,53 +859,12 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_int</span><span class="p">(</span><span class="n">num_param</span><span class="p">):</span>
-    <span class="n">square_param</span> <span class="o">=</span> <span class="n">num_param</span> <span class="o">*</span> <span class="mi">2</span>
-    <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">double_param</span> <span class="o">=</span> <span class="n">num_param</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="kc">None</span>                  <span class="c1"># None 반한값 지정</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>함수가 실행되는 과정에서 활용된 변수와 값은 반환값을 제외하고
-모두 함수의 실행이 종료되는 순간 컴퓨터 메모리에서 삭제되어 더 이상 사용될 수 없다.
-예를 들어, <code class="docutils literal notranslate"><span class="pre">num_param</span></code>과 <code class="docutils literal notranslate"><span class="pre">square_param</span></code>은 더 이상 존재하지 않기에
-아래 두 코드를 실행하면 모두 변수가 존재하지 않는다는 의미의
-<code class="docutils literal notranslate"><span class="pre">NameError</span></code> 오류가 발생한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_param</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">num_param</span>
-
-<span class="ne">NameError</span>: name &#39;num_param&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_param</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">square_param</span>
-
-<span class="ne">NameError</span>: name &#39;square_param&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p>따라서 함수 호출 과정에서 계산된 값들 중에 일부를 함수 호출이 끝난 후에도 활용하려면
-반환값으로 지정하는 방법 외엔 없다.</p>
 <p><strong>None 값</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">None</span></code>도 하나의 값이라서 변수 할당에 사용되어 저장될 수 있다.
 하지만 연산 등에 사용하면
@@ -857,7 +891,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;NoneType&#39; and &#39;int&#39;
@@ -877,11 +911,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
-</pre></div>
-</div>
-</div>
 </div>
 <p>하지만 화면에 출력되는 문자열은 반환값이 아니다.
 다만 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 본문에 포함된 명령문 중에서
@@ -892,11 +921,6 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">print</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
 </pre></div>
 </div>
 </div>
@@ -916,16 +940,57 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</div>
+</section>
+<section id="id6">
+<h3><span class="section-number">5.2.4. </span>람다 함수<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>함수는 보통 반복해서 사용되는 코드에 이름을 붙인 것이다.
+그런데 특별한 목적으로 한 번만 사용되는 함수가 필요할 때,
+그리고 함수의 본문이 매우 간단할 때
+아래 형식으로 이름을 지정하지 않으면서 함수를 정의할 수 있다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">arguments</span> <span class="p">:</span> <span class="n">expression</span>
+</pre></div>
+</div>
+<p>그리스어 알파벳 람다<font size='2'>lambda</font> <span class="math notranslate nohighlight">\(\lambda\)</span>의 발음을 이용하기에
+위와 같이 정의된 함수를 람다 함수라 부른다.</p>
+<p>예를 들어 두 인자의 곱을 반환하는 람다 함수는 아래와 같이 정의된다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>와 <code class="docutils literal notranslate"><span class="pre">b</span></code>: 매개 변수 2개</p></li>
+<li><p>콜론 기호 <code class="docutils literal notranslate"><span class="pre">:</span></code> 뒤의 표현식 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code>: 람다 함수의 반환값</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.&lt;lambda&gt;(a, b)&gt;
 </pre></div>
 </div>
 </div>
 </div>
+<p>람다 함수는 자신을 가리키는 이름이 없기에 람다 함수를 호출하려면 항상 람다 함수 정의 자체를 사용해야 해서
+조금 불편하다.
+아래 코드는 2와 5의 곱을 계산하는 람다 함수 호출이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<p>앞서 보았듯이 반복적으로 많이 사용되는 함수를 람다 함수로 정의하면 매우 불편해진다.
+하지만 <a class="reference internal" href="files.html#ch-files"><span class="std std-numref">14장</span></a>에서처럼 종종 람다 함수가 사용된 코드를 접하게 될 것이기에 여기서 간단하게 소개해 둔다.</p>
 </section>
 </section>
 <section id="sec-keyword-arguments">
-<span id="id6"></span><h2><span class="section-number">5.3. </span>위치 인자와 키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this heading">#</a></h2>
+<span id="id7"></span><h2><span class="section-number">5.3. </span>위치 인자와 키워드 인자<a class="headerlink" href="#sec-keyword-arguments" title="Permalink to this heading">#</a></h2>
 <p>함수의 인자는 <strong>위치 인자</strong>와 <strong>키워드 인자</strong> 두 종류로 구분된다.</p>
 <ul class="simple">
 <li><p>위치 인자<font size="2">positional argument</font>: 반드시 지정해야 하는 인자</p></li>
@@ -1052,7 +1117,7 @@ document.write(`
 <div class="info admonition">
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">file</span></code>과 <code class="docutils literal notranslate"><span class="pre">flush</span></code> 매개 변수</p>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 <code class="docutils literal notranslate"><span class="pre">file</span></code>과 <code class="docutils literal notranslate"><span class="pre">flush</span></code> 두 매개 변수는 특별한 경우에 활용되며
-간단한 예제는 <a class="reference external" href="https://velog.io/&#64;janeljs/%EC%95%88%EB%85%95-print-sep-end-file-flush">이곳</a>에서 확인할 수 있다.</p>
+간단한 예제는 <a class="reference external" href="https://velog.io/&#64;janeljs/python-print-sep-end-file-flush">이곳</a>에서 확인할 수 있다.</p>
 </div>
 <p><strong>키워드 인자 사용 함수 정의</strong></p>
 <p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">myAdd10()</span></code> 함수를 키워드 인자를 이용하여
@@ -1064,23 +1129,31 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myAdd10</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">add10</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
-    <span class="k">return</span> <span class="n">add10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myProduct</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">key</span><span class="p">:</span>
+        <span class="n">product</span><span class="o">=</span> <span class="n">left</span> <span class="o">*</span> <span class="n">right</span>
+        <span class="k">return</span> <span class="n">Product</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">left</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>아래 코드에서처럼 <code class="docutils literal notranslate"><span class="pre">myAdd10()</span></code> 함수를 호출할 때 둘째 인자가 생략되면 자동으로 10이 대신 사용되어
+<p>아래 코드에서처럼 <code class="docutils literal notranslate"><span class="pre">myProduct()</span></code> 함수를 호출할 때 둘째 인자가 생략되면 자동으로 10이 대신 사용되어
 인자가 주어지면 10을 더한 값이 반환되는 함수처럼 사용된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myProduct</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">36</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">myProduct</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: myProduct() missing 1 required positional argument: &#39;right&#39;
 </pre></div>
 </div>
 </div>
@@ -1088,12 +1161,12 @@ document.write(`
 <p>실제로는 아래 코드와 동일하게 작동한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myProduct</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -1102,7 +1175,39 @@ document.write(`
 아래 코드와 같이 함수 호출을 실행한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myAdd10</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myProduct</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h2><span class="section-number">5.4. </span>지역 변수와 전역 변수<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>아래 <code class="docutils literal notranslate"><span class="pre">square_return()</span></code> 함수는 수 하나와 함께 호출되면 제곱을 반환한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seventeen</span> <span class="o">=</span> <span class="mi">17</span>
+
+<span class="k">def</span> <span class="nf">square_return</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">square</span> <span class="o">=</span> <span class="n">number</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">square</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">square_return()</span></code> 함수의 매개 변수 <code class="docutils literal notranslate"><span class="pre">number</span></code>과 함수 본문에서 정의된 <code class="docutils literal notranslate"><span class="pre">squre_param</span></code> 두 변수는
+<code class="docutils literal notranslate"><span class="pre">square_return()</span></code> 함수와 독립적으로 사용될 수 없다.
+이는 함수가 호출되어 실행된 이후에도 마찬가지다.
+이유는 함수가 실행되는 과정에서 활용된 변수들과 반환값으로 지정된 값 이외의 값들은
+모두 함수의 실행이 종료되는 순간 컴퓨터 메모리에서 삭제되어 더 이상 사용될 수 없기 때문이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_return</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1112,303 +1217,111 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="id7">
-<h2><span class="section-number">5.4. </span>람다 함수<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
-<p>파이썬은 람다<font size='2'>lambda</font> 함수를 사용하면 간결하게 코드를 작성할 수 있다. 람다 함수의 형식은 아래와 같다.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">arguments</span> <span class="p">:</span> <span class="n">expression</span>
-</pre></div>
-</div>
-<p>예제와 함께 살펴보자. 예를 들어, 숫자를 인자로 받아 5를 더한 값을 반환하는 함수는 아래와 같이 정의할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus_10</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">:</span>
-    <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">10</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">plus_10</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">plus_10</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
-30
-</pre></div>
-</div>
-</div>
-</div>
-<p>동일한 기능의 함수를 람다 함수를 사용하면, 아래와 같이 작성할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">a</span> <span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.&lt;lambda&gt;(a)&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<p>두 인자의 곱을 반환하는 함수는 아래와 같이 정의할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.&lt;lambda&gt;(a, b)&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>람다 함수 호출</strong></p>
-<p>람다 함수는 이름이 없기에 호출하려면 함수 전체를 사용해야 한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span> <span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>람다 함수 활용</strong></p>
-<p>람다 함수는 한 번만 사용할 함수를 정의할 때 사용하면 좋다.
-예를 들어, 리스트 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>의 각 항목을 제곱한 다음 5를 더한 값을 항목으로 갖는 리스트 <code class="docutils literal notranslate"><span class="pre">[6,</span> <span class="pre">9,</span> <span class="pre">14,</span> <span class="pre">21,</span> <span class="pre">30]</span></code>을 만들 때,
-다음과 같이 코드를 작성할 수 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 9, 14, 21, 30]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id8">
-<h2><span class="section-number">5.5. </span>지역 변수와 전역 변수<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
-<p>함수를 선언할 때 사용되는 매개 변수와 함수 본문에서 선언되는 변수는
-함수가 실행되는 동안에만 의미를 가지며,
-이런 의미에서 <strong>지역 변수</strong><font size="2">local variable</font>라 한다.
-반면에 함수 밖에서도 의미를 갖는 변수는 <strong>전역 변수</strong><font size="2">global variable</font>이다.</p>
-<p>아래 코드에서 <code class="docutils literal notranslate"><span class="pre">hour_to_min()</span></code> 함수는 시간을 분으로 변환한 값을 반환한다.
-매개 변수 <code class="docutils literal notranslate"><span class="pre">hour</span></code>와 함수 본문에서 선언된 <code class="docutils literal notranslate"><span class="pre">minutes</span></code> 변수는 모두 지역 변수이다.
-반면에 <code class="docutils literal notranslate"><span class="pre">two_hour</span></code> <code class="docutils literal notranslate"><span class="pre">hour_to_min(2)</span></code>의 실행 결괏값을 가리키는 전역 변수이다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hour2min</span><span class="p">(</span><span class="n">hour</span><span class="p">):</span>
-    <span class="n">minutes</span> <span class="o">=</span> <span class="n">hour</span> <span class="o">*</span> <span class="mi">60</span>
-    <span class="k">return</span> <span class="n">minutes</span>
-
-<span class="n">two_hour</span> <span class="o">=</span> <span class="n">hour2min</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>위 코드의 실행 결과 <code class="docutils literal notranslate"><span class="pre">two_hour</span></code> 변수는 120을 가리킨다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2 시간은&quot;</span><span class="p">,</span> <span class="n">two_hour</span><span class="p">,</span> <span class="s2">&quot;분입니다.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 시간은 120 분입니다.
-</pre></div>
-</div>
-</div>
-</div>
-<p>반면에 <code class="docutils literal notranslate"><span class="pre">minutes</span></code>와 <code class="docutils literal notranslate"><span class="pre">hour</span></code> 두 지역변수는 더 이상 존재하지 않으며
-두 변수가 가리키는 값을 확인하려 시도하면 이름이 존재하지 않음을 의미하는
+<p>아래 두 코드를 실행하면 모두 변수가 존재하지 않는다는 의미의
 <code class="docutils literal notranslate"><span class="pre">NameError</span></code> 오류가 발생한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="n">minutes</span><span class="p">)</span>
-         <span class="o">---------------------------------------------------------------------------</span>
-         <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-           <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-         <span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;minutes&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="n">hour</span><span class="p">)</span>
-         <span class="o">---------------------------------------------------------------------------</span>
-         <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-           <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-         <span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;hour&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
-</pre></div>
-</div>
-<p><a class="reference external" href="http://pythontutor.com/visualize.html#code=def%20hour_to_min%28hour%29%3A%0A%20%20%20%20minutes%20%3D%20hour%20*%2060%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour_to_min%282%29%0Aprint%28minutes%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수와 전역 변수 1</a>에서
-<code class="docutils literal notranslate"><span class="pre">hour</span></code>와 <code class="docutils literal notranslate"><span class="pre">minutes</span></code>의 생존주기, 즉, 언제 생성되고 언제 사라지는지를 시각적으로 확인할 수 있다.</p>
-<div class="info admonition">
-<p class="admonition-title">파이썬 튜터와 프레임</p>
-<p>변수 할당은 <strong>컴퓨터 메모리</strong> 상에서 이루어지며,
-변수와 변수에 할당된 값 사이의 관계는
-<strong>프레임</strong><font size="2">frame</font>을 통해 관리된다.
-컴퓨터 메모리 상에서 일어나는 변화를 직접 눈으로 볼 수는 없다.
-하지만 <strong>파이썬 튜터</strong>(<a class="reference external" href="https://pythontutor.com/">https://pythontutor.com/</a>)를
-이용하면 프레임의 변화를 시각적으로 추적할 수 있다.
-앞서 변수 다섯 개의 할당을 실행하면 프레임이 어떻게 변하는지
-<a class="reference external" href="https://pythontutor.com/visualize.html#code=greetings%20%3D%20'%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!'%0Anum%20%3D%2017%0Api%20%3D%203.1415926535897932%0Ascores%20%3D%20%2892,%2087,%20100%29%0Alanguages%20%3D%20%5B%22Python%22,%20%22JavaScript%22,%20%22Rust%22,%20%22C%2B%2B%22%5D%0A%0Amean%20%3D%20%28scores%5B0%5D%20%2B%20scores%5B1%5D%20%2B%20scores%5B2%5D%29/3%0Aprint%28mean%29%0A%0Aprint%28%22%3D%3D%3D%22%29%0A%0Aprint%28num%29%0A%0Anum%20%3D%2018%0Aprint%28num%29%0A%0Anum%20%3D%20num%20%2B%202%0Aprint%28num%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">파이썬 튜터: 변수 할당</a>에
-접속해서 확인할 수 있다.</p>
-<p>파이썬튜터의 사용법은 다음과 같다.</p>
-<ul class="simple">
-<li><p>해당 사이트에 접속해서 코드 확인 및 수정 후 <kbd>Visualize Execution</kbd> 버튼을 누른다.</p></li>
-<li><p>이후 화면에서 <kbd>Next&gt;</kbd> 버튼을 반복해서 누르면
-각각의 명령문이 차례대로 실행되는 과정에서 발생하는 프레임의 변화를 확인할 수 있다.</p></li>
-<li><p><strong>Global frame</strong>은 <strong>전역 변수</strong><font size="2">global variable</font>를
-담당하는 <strong>전역 프레임</strong>을 가리킨다.
-전역 변수에 대한 정의는 나중에 소개한다.</p></li>
-</ul>
-</div>
-<div class="proof example admonition" id="local_global1">
-<p class="admonition-title"><span class="caption-number">Example 5.1 </span></p>
-<section class="example-content" id="proof-content">
-<p>아래 코드에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 가 전역 변수와 지역 변수로 사용된다.
-하지만 두 변수는 서로 상관이 없으며
-맨 마지막에 호출되는 <code class="docutils literal notranslate"><span class="pre">print(one_hour)</span></code> 는 60을 출력한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">one_hour</span> <span class="o">=</span> <span class="mi">60</span>       <span class="c1"># 1시간은 60분</span>
-
-<span class="k">def</span> <span class="nf">hour2min</span><span class="p">(</span><span class="n">hour</span><span class="p">):</span>
-    <span class="n">one_hour</span> <span class="o">=</span> <span class="mi">600</span>  <span class="c1"># 600분으로 오타</span>
-    <span class="n">minutes</span> <span class="o">=</span> <span class="n">hour</span> <span class="o">*</span> <span class="n">one_hour</span>
-    <span class="k">return</span> <span class="n">minutes</span>
-
-<span class="n">two_hour</span> <span class="o">=</span> <span class="n">hour2min</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">one_hour</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><a class="reference external" href="https://pythontutor.com/visualize.html#code=one_hour%20%3D%2060%20%20%20%20%20%20%20%23%201%EC%8B%9C%EA%B0%84%EC%9D%80%2060%EB%B6%84%0A%0Adef%20hour2min%28hour%29%3A%0A%20%20%20%20one_hour%20%3D%20600%20%20%23%20600%EB%B6%84%EC%9C%BC%EB%A1%9C%20%EC%98%A4%ED%83%80%0A%20%20%20%20minutes%20%3D%20hour%20*%20one_hour%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour2min%282%29%0A%0Aprint%28one_hour%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수와 전역 변수 2</a>에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 의 두 역할을 시각적으로 확인할 수 있다.</p>
-</section>
-</div><div class="proof example admonition" id="local_global2">
-<p class="admonition-title"><span class="caption-number">Example 5.2 </span></p>
-<section class="example-content" id="proof-content">
-<p>반면에 아래 코드에서 <code class="docutils literal notranslate"><span class="pre">one_hour</span></code> 는 하나의 전역 변수로만 사용된다.
-함수 내에서 <code class="docutils literal notranslate"><span class="pre">global</span></code> 명령문으로 변수를 지정한 후에 해당 전역 변수를
-함수 본체에서 수정하면 함수 밖에도 영향을 미친다.
-따라서 맨 마지막에 호출되는 <code class="docutils literal notranslate"><span class="pre">print(one_hour)</span></code> 는 600을 출력한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">one_hour</span> <span class="o">=</span> <span class="mi">60</span>  <span class="c1"># 1시간은 60분</span>
-
-<span class="k">def</span> <span class="nf">hour2min</span><span class="p">(</span><span class="n">hour</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">one_hour</span>
-    <span class="n">one_hour</span> <span class="o">=</span> <span class="mi">600</span>
-    <span class="n">minutes</span> <span class="o">=</span> <span class="n">hour</span> <span class="o">*</span> <span class="n">one_hour</span>
-    <span class="k">return</span> <span class="n">minutes</span>
-
-<span class="n">two_hour</span> <span class="o">=</span> <span class="n">hour2min</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">one_hour</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><a class="reference external" href="https://pythontutor.com/visualize.html#code=one_hour%20%3D%2060%20%20%20%20%20%20%20%23%201%EC%8B%9C%EA%B0%84%EC%9D%80%2060%EB%B6%84%0A%0Adef%20hour2min%28hour%29%3A%0A%20%20%20%20global%20one_hour%0A%20%20%20%20one_hour%20%3D%20600%20%20%23%20600%EB%B6%84%EC%9C%BC%EB%A1%9C%20%EC%98%A4%ED%83%80%0A%20%20%20%20minutes%20%3D%20hour%20*%20one_hour%0A%20%20%20%20return%20minutes%0A%0Atwo_hour%20%3D%20hour2min%282%29%0A%0Aprint%28one_hour%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor:지역 변수와 전역 변수 3</a>에서 <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">one_hour</span></code> 의 의미를
-시각적으로 확인할 수 있다.</p>
-</section>
-</div></section>
-<section id="id9">
-<h2><span class="section-number">5.6. </span>프레임과 콜 스택<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
-<p>파이썬 프로그램의 실행은 기본적으로
-“위에서 아래로”와 “왼쪽에서 오른쪽으로”의 두 기준으로
-더 이상 실행할 명령문이 없을 때까지 진행된다.</p>
-<p>그런데 프로그램 실행 도중에
-함수 호출이 발생하면 함수의 실행이 종료될 때까지 이후 명령문은 대기한다.
-함수 호출은 프로그램 실행 도중에 발생하는 일종의 “나들이”이다.
-즉, 프로그램 실행 도중 잠시 일을 멈추고 다른 일을 먼저 완료하는 기능이며
-나들이 도중에 얻어진 결과물을 이어서 활용할 수 있다.</p>
-<p>물론 함수 본문에서 다른 함수를 호출할 수도 있기 때문에
-프로그램의 실행은 무한정 복잡해질 수 있다.
-다행히도 파이썬 해석기가 프로그램의 실행 과정을 철저하게
-추적하고 관리한다.</p>
-<p><strong>프레임</strong></p>
-<p>함수가 실행되는 동안 발생하는 모든 정보는 컴퓨터 메모리 상에서
-<strong>프레임</strong><font size="2">frame</font> 형식으로 관리된다.
-프레임은 하나의 함수가 실행되는 동안 발생하는 지역 변수의 생성 및 값 할당,
-할당된 값 업데이트 등을 관리한다.
-함수의 실행과 함께 스택<font size='2'>stack</font> 메모리 영역에서 생성된 프레임은 함수의 실행이 종료되면 스택에서 사라진다.
-하지만 함수의 반환값은 지정된 변수에 할당되거나 다른 함수의 인자로 전달된다.</p>
-<p>다음 코드를 이용하여 함수 호출과 프레임 생성 및 사멸의 관계를 알아보자.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hour2min</span><span class="p">(</span><span class="n">hour</span><span class="p">):</span>
-    <span class="nb">min</span> <span class="o">=</span> <span class="n">hour</span> <span class="o">*</span> <span class="mi">60</span>
-    <span class="k">return</span> <span class="nb">min</span>
-
-<span class="k">def</span> <span class="nf">hour2sec</span><span class="p">(</span><span class="n">hour</span><span class="p">):</span>
-    <span class="nb">min</span> <span class="o">=</span> <span class="n">hour2min</span><span class="p">(</span><span class="n">hour</span><span class="p">)</span>
-    <span class="n">sec</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="nb">min</span>
-    <span class="k">return</span> <span class="n">sec</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2 시간은&quot;</span><span class="p">,</span> <span class="n">hour2sec</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;초입니다.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 시간은 7200 초입니다.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">41</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">number</span>
+
+<span class="ne">NameError</span>: name &#39;number&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-<p>아래 그림은 <code class="docutils literal notranslate"><span class="pre">hour2sec(2)</span></code>가 실행되면 이어서 바로 <code class="docutils literal notranslate"><span class="pre">hour2min(2)</span></code>가 호출되어
-<code class="docutils literal notranslate"><span class="pre">hour</span></code>와 <code class="docutils literal notranslate"><span class="pre">min</span></code> 두 지역 변수로 구성된 프레임이 포함된 콜 스택의 상태를 보여준다.</p>
-<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/stack-diagram.jpg" style="width:275px;"></div>
-<ul class="simple">
-<li><p>맨 위 프레임: Global frame은 전역적<font size="2">global</font>으로
-사용 가능한 함수 이름과 전역 변수를 관리한다.</p></li>
-<li><p>가운데 프레임: hour2sec 프레임은 <code class="docutils literal notranslate"><span class="pre">hour2sec()</span></code> 함수가 호출되면서
-생성된 프레임이며, 매개 변수 <code class="docutils literal notranslate"><span class="pre">hour</span></code>가
-지역 변수로 포함되어 있다.</p></li>
-<li><p>맨 아래 프레임: hour2min 프레임은
-변수 할당문 <code class="docutils literal notranslate"><span class="pre">min</span> <span class="pre">=</span> <span class="pre">hour2min(hour)</span></code>를 실행하면 먼저
-<code class="docutils literal notranslate"><span class="pre">hour2min()</span></code> 함수가 호출되기에 새로 생성된 프레임이다.
-매개 변수 <code class="docutils literal notranslate"><span class="pre">hour</span></code>와 지역 변수 <code class="docutils literal notranslate"><span class="pre">min</span></code>이 포함된다.</p></li>
-<li><p>hour2sec 프레임의 지역 변수 <code class="docutils literal notranslate"><span class="pre">sec</span></code>은 <code class="docutils literal notranslate"><span class="pre">hour2min(hour)</span></code> 의 반환값이 정해지면 그때 포함된다.</p></li>
-</ul>
-<p>위 코드의 전체 실행 과정을
-<a class="reference external" href="https://pythontutor.com/visualize.html#code=def%20hour2min%28hour%29%3A%0A%20%20%20%20min%20%3D%20hour%20*%2060%0A%20%20%20%20return%20min%0A%0Adef%20hour2sec%28hour%29%3A%0A%20%20%20%20min%20%3D%20hour2min%28hour%29%0A%20%20%20%20sec%20%3D%2060%20*%20min%0A%20%20%20%20return%20sec%0A%0Aprint%28%222%20%EC%8B%9C%EA%B0%84%EC%9D%80%22,%20hour2sec%282%29,%20%22%EC%B4%88%EC%9E%85%EB%8B%88%EB%8B%A4.%22%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 프레임의 생성과 사멸</a>에서
-확인해 보면 함수 호출이 발생할 때마다 프레임이 생성되고 또 함수의 실행이 완료될 때마다
-해당 함수의 프레임이 사멸하는 것을 확인할 수 있다.</p>
-<p><strong>콜 스택</strong></p>
-<p>프레임은 생성된 순서 역순으로 사멸한다.
-즉, 가장 나중에 생성된 프레임이 가장 먼저,
-가장 먼저 생성된 프레임이 가장 나중에 사멸한다.
-이렇게 작동하는 구조가 <strong>스택</strong><font size="2">stack</font> 이기에
-함수의 프레임으로 구성된 스택을 <strong>콜 스택</strong><font size="2">call stack</font>이라 부른다.
-<strong>스택 다이어그램</strong>(stack diagram)은 콜 스택의 변화를 다이어그램으로 표현한다.
-위 프로그램의 실행 과정에서의
-스택 다이어그램의 변화는 다음과 같다.</p>
-<ul class="simple">
-<li><p>프레임 생성 순서</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Global</span> <span class="n">frame</span> <span class="o">=&gt;</span> <span class="n">hour2sec</span> <span class="n">프레임</span> <span class="o">=&gt;</span> <span class="n">hour2min</span> <span class="n">프레임</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>프레임 사멸 순서</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hour2min</span> <span class="n">프레임</span> <span class="o">=&gt;</span> <span class="n">hour2sec</span> <span class="n">프레임</span> <span class="o">=&gt;</span> <span class="n">Global</span> <span class="n">frame</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">42</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">square</span>
+
+<span class="ne">NameError</span>: name &#39;square&#39; is not defined
 </pre></div>
 </div>
+</div>
+</div>
+<p>반면에 <code class="docutils literal notranslate"><span class="pre">seventeen</span></code> 변수는 언제나 사용할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;seventeen 변수:&quot;</span><span class="p">,</span> <span class="n">seventeen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>seventeen 변수: 17
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">number</span></code>와 <code class="docutils literal notranslate"><span class="pre">square</span></code> 변수처럼 함수를 선언할 때 사용되는 매개 변수와 함수 본문에서 선언되는 변수는
+함수가 실행되는 동안에만 의미를 갖는다는 의미에서 <strong>지역 변수</strong><font size="2">local variable</font>라 한다.
+반면에 <code class="docutils literal notranslate"><span class="pre">seventeen</span></code> 변수처럼 함수 밖에서도 의미를 갖는 변수는 <strong>전역 변수</strong><font size="2">global variable</font>라 부른다.</p>
+<p>함수 호출 과정에서 계산된 값들 중에 일부를 함수 호출이 끝난 후에도 활용하려면
+반환값으로 지정하는 방법 외엔 없다.
+예를 들어 17의 제곱을 계산해서 활용하고자 한다면 다음과 같이 반환값을 변수에 할당해서 활용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square17</span> <span class="o">=</span> <span class="n">square_return</span><span class="p">(</span><span class="n">seventeen</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;17의 제곱:&quot;</span><span class="p">,</span> <span class="n">square17</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17의 제곱: 289
+</pre></div>
+</div>
+</div>
+</div>
+<p>지역 변수와 전역 변수의 이름은 구분해서 작성하는 게 좋다.
+그렇지 않으면 아래 코드가 보여주듯이 혼란스러워질 수 있다.
+아래 코드에서 <code class="docutils literal notranslate"><span class="pre">square</span></code> 가 전역 변수와 지역 변수로 사용된다.
+하지만 두 변수는 서로 상관이 없다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seventeen</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="n">square</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">square_return</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">square</span> <span class="o">=</span> <span class="n">number</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">square</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>아래 코드에서 마지막에 호출되는 <code class="docutils literal notranslate"><span class="pre">print(squre)</span></code> 는 전연 변수 <code class="docutils literal notranslate"><span class="pre">square</span></code>에 할당된 2를 출력한다.
+이유는 <code class="docutils literal notranslate"><span class="pre">square_return()</span></code> 함수의 본문에 사용된 지역 변수 <code class="docutils literal notranslate"><span class="pre">square</span></code>는 함수가 호출되어 실행되는 과정에서만
+존재하고 함수의 실행이 종료되는 순간 컴퓨터 메모리에서 삭제되기 때문이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_return</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>물론 <code class="docutils literal notranslate"><span class="pre">squqre_return()</span></code> 함수의 본문에서 사용되는 <code class="docutils literal notranslate"><span class="pre">squre</span></code> 변수는 항상 지역 변수를 가리키기에
+<code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">square</span></code> 명령문의 <code class="docutils literal notranslate"><span class="pre">square</span></code>는 인자의 제곱을 가리킨다.</p>
 </section>
-<section id="id10">
-<h2><span class="section-number">5.7. </span>연습문제<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="id9">
+<h2><span class="section-number">5.5. </span>연습문제<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-functions.ipynb">(실습) 함수</a></p>
 </section>
 </section>
@@ -1481,13 +1394,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.2.1. 매개 변수와 인자</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.2.2. 함수의 반환값과 함수 호출 표현식</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#none">5.2.3. <code class="docutils literal notranslate"><span class="pre">None</span></code> 반환값</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.2.4. 람다 함수</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-keyword-arguments">5.3. 위치 인자와 키워드 인자</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.4. 람다 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.5. 지역 변수와 전역 변수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.6. 프레임과 콜 스택</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.7. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.4. 지역 변수와 전역 변수</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.5. 연습문제</a></li>
 </ul>
   </nav></div>
 
