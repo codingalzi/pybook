@@ -12,6 +12,7 @@ chapters:
 - file: starting
 - file: variables_expressions
 - file: functions
+- file: modules
 - file: casestudy_function_interfaces
 - file: conditionals
 - file: iterations
@@ -21,7 +22,6 @@ chapters:
 - file: dicts_sets
 - file: casestudy_collections
 - file: files
-- file: modules
 - file: classes_instances_objects
 - file: casestudy_oop
 - file: inheritance
