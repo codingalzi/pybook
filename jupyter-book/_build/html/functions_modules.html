@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5. 함수 &#8212; 파이썬 프로그래밍</title>
+    <title>5. 함수와 모듈 &#8212; 파이썬 프로그래밍</title>
   
   
   
@@ -65,10 +65,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'functions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'functions_modules';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. 모듈" href="modules.html" />
+    <link rel="next" title="6. 사례 연구: 함수 인터페이스" href="casestudy_function_interfaces.html" />
     <link rel="prev" title="4. 변수, 값, 표현식" href="variables_expressions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -161,22 +161,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="environment.html">2. 프로그램 개발 환경</a></li>
 <li class="toctree-l1"><a class="reference internal" href="starting.html">3. 프로그래밍 맛보기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variables_expressions.html">4. 변수, 값, 표현식</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. 함수</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">6. 모듈</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_function_interfaces.html">7. 사례 연구: 함수 인터페이스</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conditionals.html">8. 조건문</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iterations.html">9. 반복문</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_planning.html">10. 사례 연구: 프로그램 구상</a></li>
-<li class="toctree-l1"><a class="reference internal" href="strings.html">11. 문자열</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lists_tuples.html">12. 리스트와 튜플</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">13. 사전과 집합</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_collections.html">14. 사례 연구: 이터러블, 이터레이터, 제너레이터</a></li>
-<li class="toctree-l1"><a class="reference internal" href="files.html">15. 파일</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">16. 클래스, 인스턴스, 객체</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">17. 사례 연구: 객체 지향 프로그래밍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance.html">18. 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">19. 사례 연구: 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">20. 클래스의 기본 요소</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. 함수와 모듈</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_function_interfaces.html">6. 사례 연구: 함수 인터페이스</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditionals.html">7. 조건문</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterations.html">8. 반복문</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_planning.html">9. 사례 연구: 프로그램 구상</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">10. 문자열</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists_tuples.html">11. 리스트와 튜플</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">12. 사전과 집합</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_collections.html">13. 사례 연구: 이터러블, 이터레이터, 제너레이터</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">14. 파일</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">15. 클래스, 인스턴스, 객체</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">16. 사례 연구: 객체 지향 프로그래밍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance.html">17. 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">18. 사례 연구: 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">19. 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">20. (부록) 모듈 고급</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursion.html">21. (부록) 재귀 함수</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_annotations.html">22. (부록) 자료형 힌트</a></li>
 <li class="toctree-l1"><a class="reference internal" href="webapp_flask.html">23. (부록) 웹앱: Flask</a></li>
@@ -234,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/jupyter-book/functions.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/jupyter-book/functions_modules.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Ffunctions.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Ffunctions_modules.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/functions.ipynb" target="_blank"
+      <li><a href="_sources/functions_modules.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +394,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>함수</h1>
+    <h1>함수와 모듈</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -414,8 +414,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-keyword-arguments">5.3. 위치 인자와 키워드 인자</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.4. 지역 변수와 전역 변수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.5. 필수 예제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-module">5.5. 모듈 활용</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.6. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">5.7. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -427,22 +428,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ch-functions">
-<span id="id1"></span><h1><span class="section-number">5. </span>함수<a class="headerlink" href="#ch-functions" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ch-functions-modules">
+<span id="id1"></span><h1><span class="section-number">5. </span>함수와 모듈<a class="headerlink" href="#ch-functions-modules" title="Permalink to this heading">#</a></h1>
 <p>프로그램은 명령문의 합성으로 구현된다.
-많은 프로그램은 몇 백 또는 몇 천 줄의 명령문으로 구성된다.
-경우에 따라 몇 십만, 몇 백만 줄 이상의 명령문으로 구성되기도 한다.
+많은 프로그램은 몇 백 또는 몇 천 줄의 명령문으로 구성되며,
+경우에 따라 몇 십만, 몇 백만 줄 이상의 명령문으로 구성된 프로그램도 있다.
 몇 백 줄 이상의 명령문으로 구성된 프로그램을 구현하다 보면
 특정 기능을 수행하는 명령문을 반복해서 사용하곤 한다.
-반복적으로 활용되는 명령문에 이름을 주고 필요에 따라 해당 이름을 활용하면
-프로그램을 보다 체계적으로 구성할 수 있다.
-이처럼 특정 코드에 이름을 지어준 것이 함수다.</p>
+또한 프로그램의 소스코드를 여러 개의 소스코드 파일로 나누어
+작성하고 관리할 필요성도 대두된다.
+이때 함수와 모듈을 활용한다.</p>
+<p><strong>함수</strong><font size='2'>function</font>는 간단히 말해 명령문에 붙인 이름이다.
+반면에 <strong>모듈</strong><font size='2'>module</font>은 함수, 변수, 클래스 등의 정의가 작성된 파이썬 소스코드 파일이며
+파일명의 확장자는 <code class="docutils literal notranslate"><span class="pre">.py</span></code>이다.
+함수와 모듈을 효율적으로 활용하면
+보다 효율적으로 프로그래밍할 수 있다.</p>
 <p><strong>슬라이드</strong></p>
 <p>본문 내용을 요약한 <a class="reference external" href="https://github.com/codingalzi/pybook/raw/master/slides/slides-functions.pdf">슬라이드</a>를
 다운로드할 수 있다.</p>
 <section id="id2">
 <h2><span class="section-number">5.1. </span>함수 호출과 표현식<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p><strong>함수 호출</strong></p>
 <p>아래 코드를 실행하면 <code class="docutils literal notranslate"><span class="pre">&quot;함수란</span> <span class="pre">특정</span> <span class="pre">명령문을</span> <span class="pre">대신한다.&quot;</span></code> 라는 문장이 화면에 출력된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -987,7 +992,7 @@ document.write(`
 </div>
 </div>
 <p>앞서 보았듯이 반복적으로 많이 사용되는 함수를 람다 함수로 정의하면 매우 불편해진다.
-하지만 <a class="reference internal" href="files.html#ch-files"><span class="std std-numref">15장</span></a>에서처럼 종종 람다 함수가 사용된 코드를 접하게 될 것이기에 여기서 간단하게 소개해 둔다.</p>
+하지만 <a class="reference internal" href="files.html#ch-files"><span class="std std-numref">14장</span></a>에서처럼 종종 람다 함수가 사용된 코드를 접하게 될 것이기에 여기서 간단하게 소개해 둔다.</p>
 </section>
 </section>
 <section id="sec-keyword-arguments">
@@ -1318,16 +1323,290 @@ document.write(`
 </div>
 </div>
 </div>
-<p>물론 <code class="docutils literal notranslate"><span class="pre">squqre_return()</span></code> 함수의 본문에서 사용되는 <code class="docutils literal notranslate"><span class="pre">squre</span></code> 변수는 항상 지역 변수를 가리키기에
+<p>물론 <code class="docutils literal notranslate"><span class="pre">square_return()</span></code> 함수의 본문에서 사용되는 <code class="docutils literal notranslate"><span class="pre">squre</span></code> 변수는 항상 지역 변수를 가리키기에
 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">square</span></code> 명령문의 <code class="docutils literal notranslate"><span class="pre">square</span></code>는 인자의 제곱을 가리킨다.</p>
 </section>
-<section id="id9">
-<h2><span class="section-number">5.5. </span>필수 예제<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
-<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/examples/examples-functions.ipynb">(필수 예제) 함수</a></p>
+<section id="sec-module">
+<span id="id9"></span><h2><span class="section-number">5.5. </span>모듈 활용<a class="headerlink" href="#sec-module" title="Permalink to this heading">#</a></h2>
+<p><strong>모듈</strong><font size='2'>module</font>은 이미 선언된 함수, 변수, 클래스의 정의가
+포함된 코드 파일이다.
+예를 들어 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈은 다양한 수학에서 많이 활용되는 함수와 상수의 정의를,
+<code class="docutils literal notranslate"><span class="pre">random</span></code> 모듈은 무작위로 수를 생성하고 계산하는 다양한 함수의 정의를 포함한다.
+여기서는 이 두 모듈을 이용하여 모듈과 모듈에 포함된 함수, 변수 등을
+활용하는 일반적인 방법을 소개한다.</p>
+<p>현재 작성중인 파이썬 코드 파일이 아닌 누군가에 의해 이미 작성된
+모듈에 포함된 함수, 변수, 클래스 등을 사용하려면 먼저 해당 모듈을 불러와야 하며
+보통 다음 세 가지 방식으로 모듈을 불러온다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">모듈명</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">모듈명</span> <span class="pre">import</span> <span class="pre">...</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">모듈명</span> <span class="pre">as</span> <span class="pre">모듈별칭</span></code></p></li>
+</ul>
+<p><strong>모듈 활용법 1:</strong> <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">모듈명</span></code></p>
+<p>예를 들어 1부터 5까지의 정수 중에서 무작위로 하나의 정수를 계산하는
+함수가 필요할 때 <code class="docutils literal notranslate"><span class="pre">random</span></code> 모듈의 <code class="docutils literal notranslate"><span class="pre">randint()</span></code> 함수를 활용할 수 있다.
+이를 위해 먼저 <code class="docutils literal notranslate"><span class="pre">random</span></code> 모듈을 불러온다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>이제 <code class="docutils literal notranslate"><span class="pre">randint()</span></code> 함수를 다음과 같이 호출할 때마다 1부터 5까지의 정수 중에서
+하나의 정수가 무작위로 반환된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>그리고 <code class="docutils literal notranslate"><span class="pre">random</span></code> 모듈의 <code class="docutils literal notranslate"><span class="pre">random()</span></code> 함수는 0에서 1사의 구간에서 무작위로 하나의 부동소수점을
+생성한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.10015929263135459
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9656843187070547
+</pre></div>
+</div>
+</div>
+</div>
+<p>즉 모듈에 포함된 함수를 사용하려면 점을 사이에 두고 모듈 이름과 함수를 함께 표현한다.</p>
+<div class="note admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">random</span></code> 모듈과 <code class="docutils literal notranslate"><span class="pre">random()</span></code> 함수</p>
+<p>함수와 모듈의 이름이 동일하기에 구분을 위해서라도
+함수에는 항상 소괄호 <code class="docutils literal notranslate"><span class="pre">()</span></code>를 의도적으로 붙여서 함수임을 강조한다.</p>
+</div>
+<p><strong>모듈 활용법 2:</strong> <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">모듈명</span> <span class="pre">import</span> <span class="pre">...</span></code></p>
+<p>수학에서 많이 사용되는 <code class="docutils literal notranslate"><span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">cos</span></code> 등의 함수의 정의는 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈에 포함되어 있다.
+예를 들어 아래 코드는 정수 2의 자연로그값을 계산한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6931471805599453
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈엔 원주율 <code class="docutils literal notranslate"><span class="pre">pi</span></code>와 같은 중요한 상수도 변수로 정의되어 있으며 사용방법은 동일하다.
+단 변수는 소괄호 기호가 사용되지 않는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sin()</span></code>, <code class="docutils literal notranslate"><span class="pre">cos()</span></code> 등의 함수도 제공된다.
+아래 두 코드는 앞서 언급한 원주율 변수 <code class="docutils literal notranslate"><span class="pre">math.pi</span></code>를 인자로 활용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>그런데 <code class="docutils literal notranslate"><span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code> 등의 함수를 자주 사용한다면
+<code class="docutils literal notranslate"><span class="pre">math.log()</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">math.sin()</span></code> 처럼
+매번 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈명과 함께 함수 호출을 실행하는 게 불편할 수 있다.
+그런 경우 <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">...</span> <span class="pre">import</span> <span class="pre">...</span></code> 명령문을 사용하면 보다 편리하게
+자주 활용하는 함수를 호출할 수 있다.
+예를 들어 아래 코드는 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈에 <code class="docutils literal notranslate"><span class="pre">log()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">sin()</span></code> 함수, 그리고 원주율 <code class="docutils literal notranslate"><span class="pre">pi</span></code> 변수만 불러온다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>이제 <code class="docutils literal notranslate"><span class="pre">log()</span></code>, <code class="docutils literal notranslate"><span class="pre">sin()</span></code> 두 함수와 <code class="docutils literal notranslate"><span class="pre">pi</span></code> 변수를 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈을 언급하지 않은 채 사용할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6931471805599453
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>반면에 <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">math</span> <span class="pre">import</span> <span class="pre">log,</span> <span class="pre">sin,</span> <span class="pre">pi</span></code> 명령문에서
+언급되지 않은 <code class="docutils literal notranslate"><span class="pre">cos()</span></code> 함수는 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈을 언급하지 않고는 사용할 수 없다.
+예를 들어 아래 코드를 실행하면 <code class="docutils literal notranslate"><span class="pre">cos</span></code> 함수가 정의되어 있지 않다는 의미에서
+<code class="docutils literal notranslate"><span class="pre">NameError</span></code> 오류가 발생한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">55</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;cos&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>모듈 활용법 3:</strong> <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">모듈명</span> <span class="pre">as</span> <span class="pre">모듈별칭</span></code></p>
+<p>그런데 모듈명을 명시하지 않으면 사용되는 함수의 출처가 불명확해질 수 있다.
+따라서 자주 사용되는 모듈명에 보다 간단한 별칭을 대신 지정하여 함수 호출에 활용할 수 있다.
+예를 들어 아래 코드는 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈의 별칭을 <code class="docutils literal notranslate"><span class="pre">m</span></code>으로 지정하면서 불러온다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>그러면 <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈에 포함된 모든 함수와 변수를 <code class="docutils literal notranslate"><span class="pre">m.log()</span></code>, <code class="docutils literal notranslate"><span class="pre">m.pi</span></code> 등으로 사용할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6931471805599453
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="id10">
-<h2><span class="section-number">5.6. </span>연습문제<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
-<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-functions.ipynb">(연습) 함수</a></p>
+<h2><span class="section-number">5.6. </span>필수 예제<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/examples/examples-functions_modules.ipynb">(필수 예제) 함수와 모듈</a></p>
+</section>
+<section id="id11">
+<h2><span class="section-number">5.7. </span>연습문제<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-functions_modules.ipynb">(연습) 함수와 모듈</a></p>
 </section>
 </section>
 
@@ -1371,11 +1650,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="modules.html"
+       href="casestudy_function_interfaces.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>모듈</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>사례 연구: 함수 인터페이스</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1404,8 +1683,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-keyword-arguments">5.3. 위치 인자와 키워드 인자</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.4. 지역 변수와 전역 변수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.5. 필수 예제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-module">5.5. 모듈 활용</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.6. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">5.7. 연습문제</a></li>
 </ul>
   </nav></div>
 
