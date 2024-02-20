@@ -13,7 +13,7 @@ chapters:
 - file: variables_expressions
 - file: functions
 - file: modules
-- file: casestudy_function_interfaces
+- file: turtle_graphics
 - file: conditionals
 - file: iterations
 - file: casestudy_planning
@@ -30,4 +30,3 @@ chapters:
 - file: modules_advanced
 - file: recursion
 - file: type_annotations
-- file: webapp_flask
