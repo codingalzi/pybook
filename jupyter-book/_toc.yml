@@ -16,7 +16,7 @@ chapters:
 - file: functions
 - file: modules
 - file: turtle_graphics
-- file: casestudy_planning
+- file: exception_handling
 - file: strings
 - file: lists_tuples
 - file: dicts_sets
