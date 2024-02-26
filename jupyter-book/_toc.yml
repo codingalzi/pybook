@@ -26,7 +26,7 @@ chapters:
 - file: inheritance
 - file: casestudy_inheritance
 - file: proper_classes
-- file: casestudy_collections
+- file: iterator_generator
 - file: modules_advanced
 - file: recursion
 - file: type_annotations
