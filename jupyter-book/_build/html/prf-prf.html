@@ -163,22 +163,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="environment.html">2. 프로그램 개발 환경</a></li>
 <li class="toctree-l1"><a class="reference internal" href="starting.html">3. 프로그래밍 맛보기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variables_expressions.html">4. 변수, 값, 표현식</a></li>
-<li class="toctree-l1"><a class="reference internal" href="functions.html">5. 함수</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">6. 모듈</a></li>
-<li class="toctree-l1"><a class="reference internal" href="turtle_graphics.html">7. 거북이 그래픽: 함수와 모듈 활용</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conditionals.html">8. 조건문</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iterations.html">9. 반복문</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditionals.html">5. 조건문</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterations.html">6. 반복문</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">7. 함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">8. 모듈</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turtle_graphics.html">9. 거북이 그래픽</a></li>
 <li class="toctree-l1"><a class="reference internal" href="casestudy_planning.html">10. 사례 연구: 프로그램 구상</a></li>
 <li class="toctree-l1"><a class="reference internal" href="strings.html">11. 문자열</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lists_tuples.html">12. 리스트와 튜플</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">13. 사전과 집합</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_collections.html">14. 사례 연구: 이터러블, 이터레이터, 제너레이터</a></li>
-<li class="toctree-l1"><a class="reference internal" href="files.html">15. 파일</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">16. 클래스, 인스턴스, 객체</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">17. 사례 연구: 객체 지향 프로그래밍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance.html">18. 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">19. 사례 연구: 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">20. 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">14. 파일</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">15. 클래스, 인스턴스, 객체</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">16. 사례 연구: 객체 지향 프로그래밍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance.html">17. 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">18. 사례 연구: 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">19. 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_collections.html">20. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">21. (부록) 모듈 고급 활용법</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursion.html">22. (부록) 재귀 함수</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_annotations.html">23. (부록) 자료형 힌트</a></li>
@@ -335,10 +335,8 @@ document.write(`
    <div class="modindex-jumpbox">
    <a href="#cap-exp_collatz"><strong>exp_collatz</strong></a> | 
    <a href="#cap-exp_comparison"><strong>exp_comparison</strong></a> | 
-   <a href="#cap-exp_oop"><strong>exp_oop</strong></a> | 
    <a href="#cap-list-items-sum"><strong>list-items-sum</strong></a> | 
    <a href="#cap-logical_op1"><strong>logical_op1</strong></a> | 
-   <a href="#cap-logical_op2"><strong>logical_op2</strong></a> | 
    <a href="#cap-nameerror"><strong>nameerror</strong></a> | 
    <a href="#cap-odd-sum-upto-10"><strong>odd-sum-upto-10</strong></a> | 
    <a href="#cap-zerodivision"><strong>zerodivision</strong></a>
@@ -362,14 +360,6 @@ document.write(`
        <a href="conditionals.html#exp_comparison"><code class="xref">exp_comparison</code></a> <em>(conditionals)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-exp_oop"><td></td><td>
-       <strong>exp_oop</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="turtle_graphics.html#exp_oop"><code class="xref">exp_oop</code></a> <em>(turtle_graphics)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-list-items-sum"><td></td><td>
        <strong>list-items-sum</strong></td><td></td></tr>
      <tr>
@@ -384,14 +374,6 @@ document.write(`
        <td></td>
        <td>
        <a href="conditionals.html#logical_op1"><code class="xref">logical_op1</code></a> <em>(conditionals)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-logical_op2"><td></td><td>
-       <strong>logical_op2</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="conditionals.html#logical_op2"><code class="xref">logical_op2</code></a> <em>(conditionals)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-nameerror"><td></td><td>
