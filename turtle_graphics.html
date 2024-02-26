@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>9. 거북이 그래픽: 함수와 모듈 활용 &#8212; 파이썬 프로그래밍</title>
+    <title>9. 거북이 그래픽 &#8212; 파이썬 프로그래밍</title>
   
   
   
@@ -163,18 +163,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="iterations.html">6. 반복문</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">7. 함수</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">8. 모듈</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. 거북이 그래픽: 함수와 모듈 활용</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. 거북이 그래픽</a></li>
 <li class="toctree-l1"><a class="reference internal" href="casestudy_planning.html">10. 사례 연구: 프로그램 구상</a></li>
 <li class="toctree-l1"><a class="reference internal" href="strings.html">11. 문자열</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lists_tuples.html">12. 리스트와 튜플</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">13. 사전과 집합</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_collections.html">14. 사례 연구: 이터러블, 이터레이터, 제너레이터</a></li>
-<li class="toctree-l1"><a class="reference internal" href="files.html">15. 파일</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">16. 클래스, 인스턴스, 객체</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">17. 사례 연구: 객체 지향 프로그래밍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance.html">18. 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">19. 사례 연구: 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">20. 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">14. 파일</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">15. 클래스, 인스턴스, 객체</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">16. 사례 연구: 객체 지향 프로그래밍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance.html">17. 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">18. 사례 연구: 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">19. 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudy_collections.html">20. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">21. (부록) 모듈 고급 활용법</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursion.html">22. (부록) 재귀 함수</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_annotations.html">23. (부록) 자료형 힌트</a></li>
@@ -392,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>거북이 그래픽: 함수와 모듈 활용</h1>
+    <h1>거북이 그래픽</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -403,16 +403,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turtle">9.1. <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.2. 반복문 활용</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.3. 함수화와 일반화</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.3.1. 함수화</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.3.2. 일반화</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.4. 함수 인터페이스</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">9.5. 리팩토링: 코드 재구성</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">9.6. 독스트링: 문서화 문자열</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">9.7. 연습 문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.2. 실전 거북이 프로그래밍</a></li>
 </ul>
             </nav>
         </div>
@@ -425,15 +416,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-turtle-graphics">
-<span id="id1"></span><h1><span class="section-number">9. </span>거북이 그래픽: 함수와 모듈 활용<a class="headerlink" href="#ch-turtle-graphics" title="Permalink to this heading">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈을 이용하여 다양한 그림을 그리는 함수를 직접 구현하면서
-반복문과 함수의 활용을 좀 더 자세히 살펴본다.
-또한 클래스, 인스턴스, 메서드 등을 활용하는 객체 지향 프로그래밍(OOP)의
-기본 구성 요소를 한 번 살펴본다.</p>
-<p><strong>슬라이드</strong></p>
-<p>본문 내용을 요약한 <a class="reference external" href="https://github.com/codingalzi/pybook/raw/master/slides/slides-casestudy_function_interfaces.pdf">슬라이드</a>를
-다운로드할 수 있다.</p>
-<p><strong>참고: trinket 활용</strong>: <a class="reference external" href="https://hourofpython.trinket.io/a-visual-introduction-to-python#/welcome/an-hour-of-code">https://hourofpython.trinket.io/a-visual-introduction-to-python#/welcome/an-hour-of-code</a></p>
+<span id="id1"></span><h1><span class="section-number">9. </span>거북이 그래픽<a class="headerlink" href="#ch-turtle-graphics" title="Permalink to this heading">#</a></h1>
 <section id="turtle">
 <h2><span class="section-number">9.1. </span><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈<a class="headerlink" href="#turtle" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈은 간단한 2차원 컴퓨터 그래픽스를 지원하는 다양한 도구를 제공하며,
@@ -442,381 +425,41 @@ document.write(`
 그 안에 정해진 그림이 그려져야 한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 
-<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>      <span class="c1"># 캔버스 하나 생성</span>
-<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>    <span class="c1"># bob 란 이름의 거북이 하나 생성. 기본 모양은 화살촉</span>
+<span class="k">def</span> <span class="nf">draw_circle</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
 
-<span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>         <span class="c1"># 바라보는 방향으로 150 픽셀 전진</span>
-<span class="n">bob</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>             <span class="c1"># 왼쪽으로 90도 회전</span>
-<span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>          <span class="c1"># 바라보는 방향으로 75 픽셀 전진</span>
+<span class="n">tommy</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 
-<span class="c1"># wn.exitonclick()          # 캔버스에 클릭할 때까지 대기</span>
-<span class="c1"># wn.mainloop()             # X 버튼을 눌러 창을 닫을 때까지 대기</span>
+<span class="n">draw_circle</span><span class="p">(</span><span class="n">tommy</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_circle</span><span class="p">(</span><span class="n">tommy</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_circle</span><span class="p">(</span><span class="n">tommy</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">tommy</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;파이썬 함께 배워요!&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">))</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">80</span><span class="p">)</span>
 </pre></div>
 </div>
-<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle01.png" width="300"/></div><div class="info admonition">
-<p class="admonition-title">Trinket 사이트</p>
-<p>반면에 구글 코랩 등 대부분의 온라인 사이트에서는 지원되지 않는다.
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/trinket01.png" width="400"/></div><p>반면에 구글 코랩 등 대부분의 온라인 사이트에서는 지원되지 않는다.
 하지만 다행히도 <a class="reference external" href="https://trinket.io">트링킷<font size="2">Trinket</font></a>이 거북이 그래픽스를 지원한다.</p>
-</div>
-<p><strong>참고:</strong> 픽셀에 대한 설명은 아래 링크 참고</p>
-<ul class="simple">
-<li><p>픽셀: <a class="reference external" href="https://news.samsungdisplay.com/17578">디스플레이 용어 알기: 픽셀</a></p></li>
-<li><p>해상도: <a class="reference external" href="https://news.samsungdisplay.com/1655/">UHD 해상도</a></p></li>
-</ul>
-<p><strong>캔버스와 거북이 객체</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">turtle.Screen()</span></code> 은 <code class="docutils literal notranslate"><span class="pre">Screen</span></code> 클래스의 인스턴스, 즉 캔버스 객체를 하나 생성한다.
-단, 캔버스 객체는 하나만 생성할 수 있다.
-이렇게 하나의 인스턴스만 허용하는 클래스를 <strong>싱글톤 클래스</strong><font size='2'>singleton class</font>라 한다.</p>
-<p>반면에 <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스를 포함하여 파이썬의 클래스는 일반적으로 임의의 개수의 인스턴스 생성을 허용한다.</p>
-<p><strong>거북이 객체 메서드</strong></p>
-<p>거북이를 움직이게 하거나 거북이의 상태를 지정하는 많은
-<a class="reference external" href="https://docs.python.org/3/library/turtle.html"><code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 메서드</a>가 존재한다.
-그중 일부는 단축어를 갖는데 가장 많이 사용되는 메서는 다음과 같다.</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>메서드</p></th>
-<th class="head text-left"><p>단축어</p></th>
-<th class="head text-left"><p>의미</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p>forward()</p></td>
-<td class="text-left"><p>fd()</p></td>
-<td class="text-left"><p>전진</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>left()</p></td>
-<td class="text-left"><p>lt()</p></td>
-<td class="text-left"><p>반시계방향 회전</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>backward()</p></td>
-<td class="text-left"><p>bd()</p></td>
-<td class="text-left"><p>후진</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>right()</p></td>
-<td class="text-left"><p>rt()</p></td>
-<td class="text-left"><p>시계방향 회전</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>pendown()</p></td>
-<td class="text-left"><p>pd()/down()</p></td>
-<td class="text-left"><p>펜 내리기</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>penup()</p></td>
-<td class="text-left"><p>pu()/up()</p></td>
-<td class="text-left"><p>펜 들기</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>showturtle()</p></td>
-<td class="text-left"><p>st()</p></td>
-<td class="text-left"><p>거북이 보이기</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>hideturtle()</p></td>
-<td class="text-left"><p>ht()</p></td>
-<td class="text-left"><p>거북이 숨기기</p></td>
-</tr>
-</tbody>
-</table>
 </section>
 <section id="id2">
-<h2><span class="section-number">9.2. </span>반복문 활용<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>아래 명령문은 정사각형을 그린다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bob</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">bob</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">bob</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">bob</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">bob</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">bob</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">bob</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">bob</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>그런데 코드를 복붙(copy-and-paste)로 작성하였다.
-대신에 다음과 같이 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 이용하면 보다 효율적인 코드를 얻는다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
-    <span class="n">bob</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">bob</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="proof example admonition" id="exp_oop">
-<p class="admonition-title"><span class="caption-number">Example 9.1 </span> (여러 개의 거북이 객체 활용)</p>
-<section class="example-content" id="proof-content">
-<p>아래 코드에서 Turtle 클래스의 인스턴스가 두 번 생성되었다.
-<code class="docutils literal notranslate"><span class="pre">alice</span></code> 객체에 대해서만 인스턴스의 속성을 변경하는 메서드가 추가로 사용되었다.
-<code class="docutils literal notranslate"><span class="pre">alice</span></code> 의 속성을 변경한다 하더라도 <code class="docutils literal notranslate"><span class="pre">bob</span></code> 의 속성은 전혀 변하지 않는다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">shape()</span></code> 메서드: 해당 인스턴스의 펜 모양 지정</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">color()</span></code> 메서드: 해당 인스턴스의 선 색깔 지정</p></li>
-</ul>
-<p>코드를 실행하면 <code class="docutils literal notranslate"><span class="pre">bob</span></code> 은 정사각형을, <code class="docutils literal notranslate"><span class="pre">alice</span></code>는 빨강 역삼각형을 그린다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
-
-<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;lightyellow&quot;</span><span class="p">)</span>               <span class="c1"># 배경화면 색깔 정하기</span>
-<span class="c1"># wn.title(&quot;Hello, Bob and Alice!&quot;)       # 그래픽 제목 정하기</span>
-
-<span class="c1"># bob 생성</span>
-<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
-
-<span class="c1"># alice 생성</span>
-<span class="n">alice</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
-<span class="n">alice</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>                   <span class="c1"># 펜 모양을 거북이로 변경</span>
-<span class="n">alice</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>                      <span class="c1"># 선 색깔을 빨강으로 변경</span>
-
-<span class="n">alice</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>                           <span class="c1"># 펜 들기: 선 그리지 않음</span>
-<span class="n">alice</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>                     <span class="c1"># 뒤로 100픽셀 이동</span>
-<span class="n">alice</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>                         <span class="c1"># 펜 내리기: 선 그리기 시작함</span>
-
-<span class="c1"># bob 으로 사각형 그리기</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
-    <span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">bob</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="c1"># alice로 삼각형 그리기</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
-    <span class="n">alice</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">alice</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>                    <span class="c1"># 시계방향으로 회전</span>
-
-<span class="c1"># wn.mainloop()                           # X 버튼을 누를 때까지 캔버스 유지</span>
-</pre></div>
-</div>
-<br>
-<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle05.png" width="300"/></div>
-</section>
-</div></section>
-<section id="id3">
-<h2><span class="section-number">9.3. </span>함수화와 일반화<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>프로그램 구현에 가장 필수적인 요소는
-함수화과 일반화<font size="2">generalization</font>이다.</p>
-<ol class="arabic simple">
-<li><p>함수를 사용하지 않는 간단한 프로그램 작성</p></li>
-<li><p>함수화: 작성한 프로그램이 잘 작동하면 하나의 함수로 선언</p></li>
-<li><p>일반화: 적절한 매개변수<font size='2'>parameters</font>를 추가하여 함수의 기능 확장</p></li>
-<li><p>원하는 수준의 함수를 얻을 때까지 위 과정 반복</p></li>
-</ol>
-<p>앞서 다룬 코드에서 출발하여 함수화와 일반화를 연습한다.</p>
-<section id="id4">
-<h3><span class="section-number">9.3.1. </span>함수화<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
-<p>거북이를 지정해서 사각형을 그리도록 하는 함수는 다음과 같다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>그러면 <code class="docutils literal notranslate"><span class="pre">square()</span></code> 함수를 <code class="docutils literal notranslate"><span class="pre">bob</span></code> 과 함께 호출하면 <code class="docutils literal notranslate"><span class="pre">bob</span></code> 지정된 크기의 정사각형을 그린다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">square</span><span class="p">(</span><span class="n">bob</span><span class="p">)</span>
-</pre></div>
-</div>
-<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle02.png" width="300"/></div></section>
-<section id="id5">
-<h3><span class="section-number">9.3.2. </span>일반화<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
-<p><strong>길이 매개변수 추가</strong></p>
-<p>정사각형의 길이를 지정할 수 있도록 하기위해 <code class="docutils literal notranslate"><span class="pre">length</span></code> 매개변수를 추가한다.
-위 함수와 다른 점은 한 변의 길이를 나타냈던 100 대신에 <code class="docutils literal notranslate"><span class="pre">length</span></code> 매개변수를 사용한다는 것 뿐이다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>그러면 다양한 크기의 정사각형을 그릴 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">square</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">square</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>다각형 그리기</strong></p>
-<p>다각형을 그리는 함수는 거북이와 길이를 지정하는 매개변수 이외의 몇 각형인가를 결정하는
-매개변수도 필요하다.
-다음 <code class="docutils literal notranslate"><span class="pre">polygon()</span></code> 함수가 <code class="docutils literal notranslate"><span class="pre">square()</span></code> 함수를 일반화한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">polygon</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-    <span class="n">angle</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">/</span> <span class="n">n</span>
-    
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">:</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>다음은 정7각형을 그린다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polygon</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
-</pre></div>
-</div>
-<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle03.png" width="300"/></div><div class="info admonition">
-<p class="admonition-title">정 n-각형의 외각</p>
-<p>정 n-각형의 외각은 360/n 도 이다.</p>
-<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/ExternalAngles.png" width="200"/></div>
-<p>&lt;그림 출처: <a class="reference external" href="https://ko.wikipedia.org/wiki/%EB%82%B4%EA%B0%81%EA%B3%BC_%EC%99%B8%EA%B0%81">wikipedia.org</a>&gt;</p>
-</div>
-<p><strong>키워드 인자 활용</strong></p>
-<p>만약에 기본적으로 한 변의 길이가 70인 정7각을 그리고 경우에 따라 다른 값을 사용하고자 한다면
-<code class="docutils literal notranslate"><span class="pre">n=7</span></code> 과 <code class="docutils literal notranslate"><span class="pre">length=70</span></code> 을 키워드 인자로 지정하면 된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">polygon</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">70</span><span class="p">):</span>
-    <span class="n">angle</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">/</span> <span class="n">n</span>
-    
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>그러면 <code class="docutils literal notranslate"><span class="pre">n</span></code> 과 <code class="docutils literal notranslate"><span class="pre">length</span></code> 에 대한 값을 지정하지 않아도 동일한 정7각형을 얻는다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polygon</span><span class="p">(</span><span class="n">bob</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="id6">
-<h2><span class="section-number">9.4. </span>함수 인터페이스<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
-<p>함수의 인터페이스는 함수 사용법의 요약문이다.</p>
-<ul class="simple">
-<li><p>어떤 매개변수 사용?</p></li>
-<li><p>함수의 기능, 즉 함수가 하는 일은?</p></li>
-<li><p>함수의 반환값은?</p></li>
-</ul>
-<p>사용자가 함수를 적절하게 사용하기 위해 전혀 불편함이 없도록 인터페이스를 구현해야 한다.</p>
-<p>예를 들어, 반지름이 주어졌을 때 지정된 거북이가 원을 그리는 <code class="docutils literal notranslate"><span class="pre">circle()</span></code> 함수를 다음과 같이 구현할 수 있다.
-거북이는 원둘레를 50등분한 길이로 이루어진 다각형으로 표현한다.
-다각형은 <code class="docutils literal notranslate"><span class="pre">polygon()</span></code> 함수를 이용하여 그린다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-
-<span class="k">def</span> <span class="nf">circle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
-    <span class="n">circumference</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span>  <span class="c1"># 원둘레의 길이</span>
-    
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">50</span>                           <span class="c1"># 50-각형 그리기</span>
-    <span class="n">length</span> <span class="o">=</span> <span class="n">circumference</span> <span class="o">/</span> <span class="n">n</span>       <span class="c1"># 50-각형의 한 변의 길이</span>
-    
-    <span class="n">polygon</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>            <span class="c1"># 다각형 그리기</span>
-</pre></div>
-</div>
-<p>반지름이 200 픽셀인 원은 다음과 같다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">circle</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-</pre></div>
-</div>
-<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle04.png" width="300"/></div><p>원을 매우 큰 n 을 이용하여 n-각형으로 표현한다.
-다만 위 코드에서는 n=50 을 사용하며,
-n-각형 한 변의 길이를 원둘레를 50 등분한 값으로 지정한다.
-하지만 이렇게 하면 n-각형의 한 변의 길이가 반지름이 큰 원에 대해서는 너무 크고,
-작은 원에 대해서는 너무 작다.</p>
-<p>n 을 함수의 매개변수로 지정하여 따로 입력받게할 수도 있지만
-그보다는 다각형의 변의 개수를 반지름에 의존하게 하고,
-n-각형의 한 변의 길이는 3 정도로 제한하는 게 보다 좋다.
-3픽셀은 부드러운 곡선을 갖는 원을 그리는 데 충분히 작으면서
-동시에 원을 효율적으로 그리는데 적절하다.</p>
-<p>아래 코드에 사용된 <code class="docutils literal notranslate"><span class="pre">circumference</span> <span class="pre">/</span> <span class="pre">n</span></code> 약 3 정도의 값을 갖는다.
-또한 n 값에 사용된 <code class="docutils literal notranslate"><span class="pre">+3</span></code>은 최소 3각형을 그리도록 보장하기 위함이다.
-반환값은 원을 그릴 때 사용된 직선의 개수로 지정한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">circle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
-    <span class="n">circumference</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span>
-    
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">circumference</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span>  <span class="c1"># 원둘레의 1/3 정도에 해당하는 선분 수</span>
-    <span class="n">length</span> <span class="o">=</span> <span class="n">circumference</span> <span class="o">/</span> <span class="n">n</span>      <span class="c1"># 약 3 정도의 값</span>
-    
-    <span class="n">polygon</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">n</span>                        <span class="c1"># 사용된 직선의 개수 반환</span>
-</pre></div>
-</div>
-</section>
-<section id="id7">
-<h2><span class="section-number">9.5. </span>리팩토링: 코드 재구성<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
-<p>프로그램을 개선하기 위해 코드를 재구성 하는 기법이
-<strong>리팩토링</strong><font size='2'>refactoring</font>이다.</p>
-<p>프로젝트를 시작할 때 모든 것을 고려할 수 있다면 처음부터 모든 상황에 유연하게
-대처하는 프로그램을 작성할 수 있을 것이다.
-하지만 일반적으로는 그렇게 일이 진행되지는 못한다.
-따라서 문제에 대한 이해가 깊어지면서 처음에 구현된 프로그램을 개선하기 위해
-리팩토링을 진행하게 된다.</p>
-<p>여기서는 <code class="docutils literal notranslate"><span class="pre">circle()</span></code> 함수를 리팩토링 과정을 통해 원의 호<font size='2'>arc</font>를
-그리는 함수를 구현환다.</p>
-<p>먼저 <code class="docutils literal notranslate"><span class="pre">circle()</span></code> 함수의 본문에 <code class="docutils literal notranslate"><span class="pre">polygon()</span></code> 함수가 사용됨에 주의한다.
-이유는 다각형은 원의 호를 그리는 데에 별로 도움되지 않기 때문이다.
-즉, <code class="docutils literal notranslate"><span class="pre">circle()</span></code> 과 <code class="docutils literal notranslate"><span class="pre">polygon()</span></code> 을 원의 호를 그리는 데에 사용할 수 없다.</p>
-<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/circle_slices.png" width="200"/></div>
-<p>&lt;그림 출처: <a class="reference external" href="https://ko.wikipedia.org/wiki/%EC%9B%90_(%EA%B8%B0%ED%95%98%ED%95%99)">wikipedia.org</a>&gt;</p>
-<p>원의 호는 원의 일부이다.
-따라서 원의 둘레를 그리는 과정을 호의 크기에 맞춰 멈추도록 해야 하며,
-이 방식으로 <code class="docutils literal notranslate"><span class="pre">circle()</span></code> 함수를 수정하면
-다음 <code class="docutils literal notranslate"><span class="pre">arc()</span></code> 함수를 얻는다.
-<code class="docutils literal notranslate"><span class="pre">angle</span></code> 매개변수는 호와 두 지름으로 구성된 부채꼴의 중심각을 입력받는다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">arc</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
-    <span class="n">arc_length</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">angle</span> <span class="o">/</span> <span class="mi">360</span> <span class="c1"># 호의 길이</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">arc_length</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>                <span class="c1"># 호의 길이의 1/3 에 해당</span>
-    <span class="n">step_length</span> <span class="o">=</span> <span class="n">arc_length</span> <span class="o">/</span> <span class="n">n</span>               <span class="c1"># 선분의 길이</span>
-    <span class="n">step_angle</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">/</span> <span class="n">n</span>                     <span class="c1"># 호의 중심각의 1/n 에 해당</span>
-
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">step_length</span><span class="p">)</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">step_angle</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">arc()</span></code> 함수의 본체에 사용된 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문은
-<code class="docutils literal notranslate"><span class="pre">polygon()</span></code> 함수의 본체와 매우 닮았다.
-차이점은 <code class="docutils literal notranslate"><span class="pre">n</span></code> 이 호의 길이, 즉 중심각에 의존한다는 점 뿐이다.</p>
-<p>이 점에 착안하여 아래 <code class="docutils literal notranslate"><span class="pre">polyline()</span></code> 함수를 구현해서 활용한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">polyline</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>이제 <code class="docutils literal notranslate"><span class="pre">arc()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">polygon()</span></code> 함수 모두 <code class="docutils literal notranslate"><span class="pre">polyline</span></code> 함수를 이용하여 다시 구현할 수 있다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">polygon</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-    <span class="n">angle</span> <span class="o">=</span> <span class="mf">360.0</span> <span class="o">/</span> <span class="n">n</span>
-
-    <span class="n">polyline</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>  <span class="c1"># 360 도를 n 등분하여 n 번 회전하면 360도 회전함</span>
-
-<span class="k">def</span> <span class="nf">arc</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
-    <span class="n">arc_length</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">angle</span> <span class="o">/</span> <span class="mi">360</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">arc_length</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="n">step_length</span> <span class="o">=</span> <span class="n">arc_length</span> <span class="o">/</span> <span class="n">n</span>
-    <span class="n">step_angle</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
-    
-    <span class="n">polyline</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">step_length</span><span class="p">,</span> <span class="n">step_angle</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">circle()</span></code> 함수는 <code class="docutils literal notranslate"><span class="pre">arc()</span></code> 함수의 특별한 경우이다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">circle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
-    <span class="n">arc</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">360</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="id8">
-<h2><span class="section-number">9.6. </span>독스트링: 문서화 문자열<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
-<p>함수의 인터페이스를 설명하는 주석을 <strong>독스트링</strong><font size='2'>docstring</font> 또는
-<strong>문서화 문자열</strong>이라 한다.
-독스트링은 함수의 본체가 시작되기 전에 세 개의 큰 따옴표로 감싼 주석으로 작성된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">polyline</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;t: 거북이 객체</span>
-<span class="sd">    n: 선분 그리기 반복 횟수</span>
-<span class="sd">    length: 선분의 길이</span>
-<span class="sd">    angle: 회전 각도. 즉, 두 선분 사이의 각도</span>
-<span class="sd">    </span>
-<span class="sd">    지정된 크기와 각도를 이용하여 거북이 t 가 n 개의 선분을 그린다.</span>
-<span class="sd">    &quot;&quot;&quot;</span>    
-
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>독스트링은 함수의 정보를 확인하는 데에 사용된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">polyline</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Help</span> <span class="n">on</span> <span class="n">fuction</span> <span class="n">polyline</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
-    
-<span class="n">polyline</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
-<span class="n">t</span><span class="p">:</span> <span class="n">거북이</span> <span class="n">객체</span>
-<span class="n">n</span><span class="p">:</span> <span class="n">선분</span> <span class="n">그리기</span> <span class="n">반복</span> <span class="n">횟수</span>
-<span class="n">length</span><span class="p">:</span> <span class="n">선분의</span> <span class="n">길이</span>
-<span class="n">angle</span><span class="p">:</span> <span class="n">회전</span> <span class="n">각도</span><span class="o">.</span> <span class="n">즉</span><span class="p">,</span> <span class="n">두</span> <span class="n">선분</span> <span class="n">사이의</span> <span class="n">각도</span>
-
-<span class="n">지정된</span> <span class="n">크기와</span> <span class="n">각도를</span> <span class="n">이용하여</span> <span class="n">거북이</span> <span class="n">t</span> <span class="n">가</span> <span class="n">n</span> <span class="n">개의</span> <span class="n">선분을</span> <span class="n">그린다</span><span class="o">.</span>
-</pre></div>
-</div>
-</section>
-<section id="id9">
-<h2><span class="section-number">9.7. </span>연습 문제<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
-<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-casestudy_function_interfaces.ipynb">(실습) 사례 연구: 함수 인터페이스</a></p>
+<h2><span class="section-number">9.2. </span>실전 거북이 프로그래밍<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈의 활용법과 거북이 그래픽을 이용한 프로그래밍 학습은
+<a class="reference external" href="https://leegys_gmail_com.trinket.io/python-turtle">Trinket의 Python Turtle 소개</a> 사이트에서
+상세히 다룬다.</p>
 </section>
 </section>
 
@@ -884,16 +527,7 @@ n-각형의 한 변의 길이는 3 정도로 제한하는 게 보다 좋다.
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turtle">9.1. <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.2. 반복문 활용</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.3. 함수화와 일반화</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.3.1. 함수화</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.3.2. 일반화</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.4. 함수 인터페이스</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">9.5. 리팩토링: 코드 재구성</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">9.6. 독스트링: 문서화 문자열</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">9.7. 연습 문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.2. 실전 거북이 프로그래밍</a></li>
 </ul>
   </nav></div>
 
