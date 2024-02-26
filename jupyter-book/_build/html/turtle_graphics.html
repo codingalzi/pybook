@@ -425,20 +425,40 @@ document.write(`
 그 안에 정해진 그림이 그려져야 한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 
-<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>    <span class="c1"># bob 란 이름의 거북이 하나 생성. 기본 모양은 화살촉</span>
+<span class="k">def</span> <span class="nf">draw_circle</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
 
-<span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>         <span class="c1"># 바라보는 방향으로 150 픽셀 전진</span>
-<span class="n">bob</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>             <span class="c1"># 왼쪽으로 90도 회전</span>
-<span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>          <span class="c1"># 바라보는 방향으로 75 픽셀 전진</span>
+<span class="n">tommy</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="n">draw_circle</span><span class="p">(</span><span class="n">tommy</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_circle</span><span class="p">(</span><span class="n">tommy</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_circle</span><span class="p">(</span><span class="n">tommy</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">tommy</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;파이썬 함께 배워요!&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">))</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">80</span><span class="p">)</span>
 </pre></div>
 </div>
-<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle01.png" width="300"/></div><p>반면에 구글 코랩 등 대부분의 온라인 사이트에서는 지원되지 않는다.
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/trinket01.png" width="400"/></div><p>반면에 구글 코랩 등 대부분의 온라인 사이트에서는 지원되지 않는다.
 하지만 다행히도 <a class="reference external" href="https://trinket.io">트링킷<font size="2">Trinket</font></a>이 거북이 그래픽스를 지원한다.</p>
 </section>
 <section id="id2">
 <h2><span class="section-number">9.2. </span>실전 거북이 프로그래밍<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈의 활용법과 거북이 그래픽을 이용한 프로그래밍 학습은
-<a class="reference external" href="https://leegys_gmail_com.trinket.io/python-turtle">Trinkit의 Python Turtle</a>에서
+<a class="reference external" href="https://leegys_gmail_com.trinket.io/python-turtle">Trinket의 Python Turtle 소개</a> 사이트에서
 상세히 다룬다.</p>
 </section>
 </section>
