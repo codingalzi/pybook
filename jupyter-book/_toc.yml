@@ -11,10 +11,10 @@ chapters:
 - file: environment
 - file: starting
 - file: variables_expressions
-- file: conditionals
-- file: iterations
 - file: functions
 - file: modules
+- file: conditionals
+- file: iterations
 - file: turtle_graphics
 - file: exception_handling
 - file: strings
