@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>모음 자료형 1부: 문자열, 리스트, 튜플 &#8212; 파이썬 프로그래밍</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'collections1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,10 +70,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -119,11 +113,16 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -138,6 +137,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -150,7 +150,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">파이썬 프로그래밍</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="programming.html">1. 컴퓨터 프로그래밍</a></li>
@@ -360,6 +371,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -369,6 +381,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -435,10 +448,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-collections">
-<span id="id1"></span><h1>모음 자료형 1부: 문자열, 리스트, 튜플<a class="headerlink" href="#ch-collections" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1>모음 자료형 1부: 문자열, 리스트, 튜플<a class="headerlink" href="#ch-collections" title="Link to this heading">#</a></h1>
 <p>모음 자료형<font size = "2">collection data types</font>은
 여러 개의 값을 항목으로 포함하는 값들의 자료형이다.
 많은 값을 담고 있다는 의미에서
@@ -472,7 +485,7 @@ document.write(`
 <p>본문 내용을 요약한 <a class="reference external" href="https://github.com/codingalzi/pybook/raw/master/slides/slides-collections1.pdf">슬라이드</a>를
 다운로드할 수 있다.</p>
 <section id="id2">
-<h2>문자열<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>문자열<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>문자들을 나열한 값들을 일컫는 자료형으로 작은 따옴표(<code class="docutils literal notranslate"><span class="pre">'</span></code>) 또는 큰 따옴표(<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>)를 사용한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hello, Python!&#39;</span>
 </pre></div>
@@ -514,7 +527,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="id3">
-<h3>문자열 연산<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>문자열 연산<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자</strong></p>
 <p>문자열의 일부로 포함된 부분 문자열인지 여부를 판단하는 논리 연산자이다.</p>
 <div class="cell docutils container">
@@ -682,7 +695,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h3>문자열 인덱싱<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>문자열 인덱싱<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>문자열에 포함된 모든 문자는 인덱스<font size = "2">index</font>라는 고유한 번호를 갖는다.
 인덱스는 0부터 시작하며, 오른쪽으로 한 문자씩 이동할 때마다 증가한다.
 <strong>인덱싱</strong><font size = "2">indexing</font>은 인덱스를 활용하여 문자열에 포함된 특정 문자를 확인한다.</p>
@@ -756,7 +769,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3>문자열 슬라이싱<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>문자열 슬라이싱<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>인덱스의 특정 구간에 해당하는 부분 문자열을 확인하려 할 때는
 <strong>슬라이싱</strong><font size = "2">slicing</font>을 사용한다.
 슬라이싱은 다음과 같이 실행한다.</p>
@@ -887,7 +900,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3>문자열 메서드<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>문자열 메서드<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>문자열 자료형에만 사용하는 함수들이 있다. 이와같이 특정 자료형에만 사용하는 함수들을 메서드<font size = "2">method</font>라 부른다.
 메서드는 일반적인 함수들과는 달리, 특정 자료형의 값을 먼저 언급하고 바로 이어서 점(<code class="docutils literal notranslate"><span class="pre">.</span></code>)을 찍은 다음 호출한다.</p>
 <p>문자열 자료형이 제공하는 주요 메서드는 아래 표와 같다.</p>
@@ -1086,7 +1099,7 @@ document.write(`
 </section>
 </section>
 <section id="id7">
-<h2>리스트<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2>리스트<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <p>리스트는 유한개의 값들을 모아서 하나의 값으로 취급하는 자료형이다.
 대괄호(<code class="docutils literal notranslate"><span class="pre">[]</span></code>)를 사용하고, 각 항목은 콤마(<code class="docutils literal notranslate"><span class="pre">,</span></code>)로 구분한다.</p>
 <div class="cell docutils container">
@@ -1168,7 +1181,7 @@ document.write(`
 </div>
 </div>
 <section id="id8">
-<h3>리스트 연산<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>리스트 연산<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자</strong></p>
 <p>리스트의 항목으로 등장하는지 여부를 알려주는 논리 연산자이다.</p>
 <div class="cell docutils container">
@@ -1295,7 +1308,7 @@ document.write(`
 </div>
 </section>
 <section id="id9">
-<h3>리스트 인덱싱/슬라이싱<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>리스트 인덱싱/슬라이싱<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>리스트도 문자열처럼 인덱싱과 슬라이싱을 지원하며
 사용방식도 거의 동일하다.</p>
 <div class="cell docutils container">
@@ -1440,7 +1453,7 @@ document.write(`
 </div>
 </section>
 <section id="id10">
-<h3>리스트 메서드<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>리스트 메서드<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>리스트 자료형이 제공하는 주요 메서드는 아래와 같다.</p>
 <table class="table">
 <thead>
@@ -1753,7 +1766,7 @@ document.write(`
 </section>
 </section>
 <section id="id11">
-<h2>튜플<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<h2>튜플<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
 <p>튜플은 리스트와 거의 비슷하지만, 변경 불가능<font size = "2">immutable</font>하다는 점이 다르다.
 따라서 튜플을 활용하는 메서드가 많이 제공되지 않는다.
 소괄호 <code class="docutils literal notranslate"><span class="pre">()</span></code>를 사용하고, 각 항목은 콤마(<code class="docutils literal notranslate"><span class="pre">,</span></code>)로 구분한다.</p>
@@ -1844,7 +1857,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="id12">
-<h3>튜플 연산<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>튜플 연산<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자</strong></p>
 <p>튜플의 항목으로 등장하는지 여부를 알려주는 논리 연산자이다.</p>
 <div class="cell docutils container">
@@ -1952,7 +1965,7 @@ document.write(`
 </div>
 </section>
 <section id="id13">
-<h3>튜플 인덱싱/슬라이싱<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>튜플 인덱싱/슬라이싱<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>튜플도 문자열과 리스트처럼 인덱싱과 슬라이싱이 가능하다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2046,7 +2059,7 @@ document.write(`
     <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/hj617kim/ch04/tuple02.png" style="width:300px;">
 </div></section>
 <section id="id14">
-<h3>튜플 메서드<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>튜플 메서드<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p>튜플 자료형의 메서드는 많지 않다. 많이 사용되는 두 개의 메소드를 살펴보자.</p>
 <table class="table">
 <thead>
@@ -2099,7 +2112,7 @@ document.write(`
 </section>
 </section>
 <section id="id15">
-<h2>순차 자료형 해체<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<h2>순차 자료형 해체<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <p>순자 자료형의 항목 각각에 대해 변수 할당을 진행할 수 있다.
 단, 사용되는 변수의 수는 항목의 수와 일치해야 한다.</p>
 <div class="cell docutils container">
@@ -2249,10 +2262,10 @@ document.write(`
 </div>
 </section>
 <section id="id16">
-<h2>순차 자료형에 유용한 함수<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
+<h2>순차 자료형에 유용한 함수<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
 <p>문자열, 튜플, 리스트처럼 항목들의 순서가 중요한 순차 자료형과 함께 유용하게 사용되는 네 개의 함수를 소개한다.</p>
 <section id="enumerate">
-<h3><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수<a class="headerlink" href="#enumerate" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수<a class="headerlink" href="#enumerate" title="Link to this heading">#</a></h3>
 <p>튜플과 리스트의 인덱스를 튜플과 리스트 자체에서 눈으로 확인할 수 없다.
 하지만 항목과 해당 항목의 인덱스 정보를 함께 활용해야 할 때가 있는데
 이때 <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수가 매우 유용하다.</p>
@@ -2371,7 +2384,7 @@ thon
 </div>
 </section>
 <section id="zip">
-<h3><code class="docutils literal notranslate"><span class="pre">zip()</span></code> 함수<a class="headerlink" href="#zip" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">zip()</span></code> 함수<a class="headerlink" href="#zip" title="Link to this heading">#</a></h3>
 <p>문자열, 리스트, 튜플 등 순차 자료형 여러 개를 묶어 하나의 값으로 만든다.
 이때, 각 순차 자료형의 값에 사용된 순서를 반영한다.
 단, <code class="docutils literal notranslate"><span class="pre">zip()</span></code> 함수의 반환값은 구체적으로 명시되지 않는다.</p>
@@ -2515,7 +2528,7 @@ thon
 </section>
 </section>
 <section id="id17">
-<h2>연습문제<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
+<h2>연습문제<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-collections1.ipynb">(실습) 모음 자료형 1부: 문자열, 리스트, 튜플</a></p>
 </section>
 </section>
@@ -2548,7 +2561,7 @@ thon
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
 </div>
                 </footer>
@@ -2558,6 +2571,7 @@ thon
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2612,9 +2626,10 @@ By 코딩알지 & HJ
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -2638,8 +2653,8 @@ By 코딩알지 & HJ
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
