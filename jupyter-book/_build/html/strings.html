@@ -871,24 +871,24 @@ ame
 <section id="id5">
 <h3><span class="section-number">11.2.2. </span>문자열 포매팅<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p><strong>문자열 포매팅</strong><font size="2">string formatting</font>은
-문자열 안에 변수 또는 표현식을 사용하여 변하는 값을
-반영하여 문자열을 생성하도록 한다.
-여러 방식이 있지만 여기서는 가장 최신 방법인
-<strong>f-문자열</strong><font size="2">f-string</font>을
-활용하는 방법을 소개한다.
-f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span class="pre">f</span></code>를 붙이며,
-문자열 안에 임의의 표현식이 중괄호로 감싸여서 사용될 수 있다.</p>
+문자열 내부에 변수 또는 표현식을 변하는 값을 처리할 수 있도록 한다.
+문자열 포매팅을 처리하는 여러 방식이 있지만 여기서는 가장 최신 방법인
+<strong>f-문자열</strong><font size="2">f-string</font>을 활용하는 방법만 소개한다.</p>
+<p><strong>f-문자열</strong></p>
+<p>f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span class="pre">f</span></code>를 붙이며,
+문자열 중간에 중괄호 <code class="docutils literal notranslate"><span class="pre">{}</span></code>로 감싸인 표현식을 사용할 수 있다.
+예를 들어, 아래 코드는 <code class="docutils literal notranslate"><span class="pre">name</span></code>과 <code class="docutils literal notranslate"><span class="pre">age</span></code> 두 변수를 이용한 표현식을 문자열에 포함시킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;강현&#39;</span>
 <span class="n">age</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">이는 만으로 </span><span class="si">{</span><span class="n">age</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s1">살이다.&#39;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">이는 </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s1">살이다.&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>강현이는 만으로 2살이다.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>강현이는 3살이다.
 </pre></div>
 </div>
 </div>
@@ -906,7 +906,10 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 </div>
-<p>출력되는 문자열의 길이를 지정하고 좌우로 정렬할 수 있다.</p>
+<p><strong>문자열 정렬</strong></p>
+<p>출력되는 문자열이 차지하는 총 길이를 지정하고 좌우로 정렬할 수 있다.
+길이가 다른 여러 개의 문자열을 정렬하여 출력할 때 매우 유용하다.
+아래 코드는 총 10칸의 자리를 이용할 때 길이가 2인 문자열을 좌, 우, 중앙에 위치시키는 방법을 소개한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hi&#39;</span>
@@ -914,84 +917,174 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>왼쪽으로 정렬</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">&lt;10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">&gt;10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">^10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hi        
-        hi
-    hi    
 </pre></div>
 </div>
 </div>
 </div>
-<p>남은 자리를 지정된 문자로 채울 수 있다.</p>
+<ul class="simple">
+<li><p>오른쪽으로 정렬</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">&gt;10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        hi
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>중앙에 정렬</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">^10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    hi    
+</pre></div>
+</div>
+</div>
+</div>
+<p>정렬 후 남은 빈 자리를 지정된 문자로 채울 수 있다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> 기호로 채우기</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">+&lt;10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">0&gt;10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">-^10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hi++++++++
-00000000hi
-----hi----
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> 기호로 채우기</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">0&gt;10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00000000hi
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> 기호로 채우기</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">-^10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----hi----
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>부동소수점 자릿수 지정</strong></p>
 <p>부동소수점의 소수점 이하 자릿수를 지정하려면 <code class="docutils literal notranslate"><span class="pre">{표현식:.1f}</span></code> 와 같은 형식을 사용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mf">17.123456789</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.1
-17.12
-17.123
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mf">17.153742</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>전체 자릿수를 지정하려면 <code class="docutils literal notranslate"><span class="pre">{표현식:3.2f}</span></code> 와 같은 형식을 사용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">15.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;소수점 둘째 자리에서 반올림: </span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          17.12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>소수점 둘째 자리에서 반올림: 17.2
 </pre></div>
 </div>
 </div>
 </div>
-<p>좌우 정렬도 가능하다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">&lt;15.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">&gt;15.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">0&gt;15.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;소수점 셋째 자리에서 반올림: </span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.12346       
-       17.12346
-000000017.12346
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>소수점 셋째 자리에서 반올림: 17.15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;소수점 넷째 자리에서 반올림: </span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>소수점 넷째 자리에서 반올림: 17.154
+</pre></div>
+</div>
+</div>
+</div>
+<p>전체 자릿수를 지정하려면 <code class="docutils literal notranslate"><span class="pre">{표현식:15.2f}</span></code> 와 같은 형식을 사용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;총 15칸을 차지할 때: </span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">15.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>총 15칸을 차지할 때:           17.15
+</pre></div>
+</div>
+</div>
+</div>
+<p>좌우 정렬, 기호로 채우기 등도 가능하다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;총 15칸 사용: </span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">&lt;15.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;총 15칸 사용: </span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">0&lt;15.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;총 15칸 사용: </span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">^15.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;총 15칸 사용: </span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">-^15.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;총 15칸 사용: </span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">&gt;15.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;총 15칸 사용: </span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s1">+&gt;15.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>총 15칸 사용: 17.15374       
+총 15칸 사용: 17.153740000000
+총 15칸 사용:    17.15374    
+총 15칸 사용: ---17.15374----
+총 15칸 사용:        17.15374
+총 15칸 사용: +++++++17.15374
 </pre></div>
 </div>
 </div>
@@ -1004,15 +1097,15 @@ f-문자열은 문자열 앞에 <code class="docutils literal notranslate"><span
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>연산자</p></th>
-<th class="head text-center"><p>의미</p></th>
+<th class="head text-left"><p>의미</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
-<td class="text-center"><p>이어붙이기</p></td>
+<td class="text-left"><p>이어붙이기</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
-<td class="text-center"><p>연속 복제</p></td>
+<td class="text-left"><p>복제 후 이어붙이기</p></td>
 </tr>
 </tbody>
 </table>
