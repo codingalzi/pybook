@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>12. 리스트와 튜플 &#8212; 파이썬 프로그래밍</title>
   
@@ -29,36 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lists_tuples';</script>
@@ -450,7 +449,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-lists-tuples">
-<span id="id1"></span><h1><span class="section-number">12. </span>리스트와 튜플<a class="headerlink" href="#ch-lists-tuples" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">12. </span>리스트와 튜플<a class="headerlink" href="#ch-lists-tuples" title="Link to this heading">#</a></h1>
 <p>아래 표에 여섯 명의 이름, 전화번호, 나이, 키, 출생지 정보를 담겨 있다.</p>
 <table class="table">
 <thead>
@@ -530,7 +529,7 @@ document.write(`
 지금까지 살펴 본 기초 자료형만으로는 이런 일을 처리하는 일은 어려워 보인다.
 사실 가능하긴 하지만 누구나 쉽게 할 수 있는 일은 아니다.</p>
 <section id="id2">
-<h2><span class="section-number">12.1. </span>파이썬 내장 자료구조<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">12.1. </span>파이썬 내장 자료구조<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>파이썬은 여러 개의 값을 하나의 값으로 묶어 처리할 수 있도록 도와주는 네 개의
 <strong>내장 자료구조</strong><font size='2'>built-in data structure</font>
 리스트, 튜플, 사전, 그리고 집합을 제공한다.
@@ -585,7 +584,7 @@ document.write(`
 다음 장에서는 비순차 자료형인 사전과 집합에 대해 자세히 알아본다.</p>
 </section>
 <section id="sec-list">
-<span id="id3"></span><h2><span class="section-number">12.2. </span>리스트<a class="headerlink" href="#sec-list" title="Permalink to this heading">#</a></h2>
+<span id="id3"></span><h2><span class="section-number">12.2. </span>리스트<a class="headerlink" href="#sec-list" title="Link to this heading">#</a></h2>
 <p>리스트는 보통 관련된 값들을 모아서 하나의 값으로 취급하는 자료형이다.
 대괄호(<code class="docutils literal notranslate"><span class="pre">[]</span></code>)로 항목들의 목록을 감싸고, 각각의 항목은 쉼표(<code class="docutils literal notranslate"><span class="pre">,</span></code>)로 구분한다.
 예를 들어, 1부터 5까지의 정수로 구성된 리스트를 가리키는 변수를 다음과 같이 선언한다.</p>
@@ -768,7 +767,7 @@ document.write(`
 </div>
 </div>
 <section id="id4">
-<h3><span class="section-number">12.2.1. </span>리스트 연산<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.2.1. </span>리스트 연산<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>문자열, 리스트, 튜플, 사전, 집합 등의 모음 자료형은 모두 항목의 포함 여부를 판단하는 <code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자와
 항목의 개수를 확인해주는 <code class="docutils literal notranslate"><span class="pre">len()</span></code> 함수의 인자로 사용된다.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자</strong></p>
@@ -882,7 +881,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3><span class="section-number">12.2.2. </span>인덱싱과 슬라이싱<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.2.2. </span>인덱싱과 슬라이싱<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>문자열, 리스트, 튜플 등 모든 시퀀스는 대괄호와 정수를 사용하는 인덱싱과 슬라이싱을 지원하며,
 사용 방식도 거의 동일하다.</p>
 <p><strong>인덱싱</strong></p>
@@ -1298,7 +1297,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3><span class="section-number">12.2.3. </span>중첩 리스트와 인덱싱/슬라이싱/반복문<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.2.3. </span>중첩 리스트와 인덱싱/슬라이싱/반복문<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">info_list</span></code>와 같은 중첩 리스트는 리스트의 항목이 또다른 리스트이기에
 항목의 항목을 확인/추출/변경 하려면 인덱싱, 슬라이싱, <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을
 중첩해서 활용해야 할 때가 있다.</p>
@@ -1460,7 +1459,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h3><span class="section-number">12.2.4. </span>리스트 메서드<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.2.4. </span>리스트 메서드<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>모든 모음 자료형의 기본 용도는 여러 개의 항목을 묶어
 하나의 값으로 다루면서 필요에 따라 항목을 탐색하고 추출해서 활용하는 것이다.
 리스트, 사전, 집합처럼 가변인 모음 자료형은 또한
@@ -1468,11 +1467,11 @@ document.write(`
 리스트는 여기에 더해 항목들을 크기 순으로 정렬하거나 순서를 지정할 수 있는 기능도 지원한다.
 가장 활용도가 높은 리스트 메서드는 다음과 같다.</p>
 <table class="table" id="list-methods">
-<caption><span class="caption-number">Table 12.1 </span><span class="caption-text">리스트 주요 메서드</span><a class="headerlink" href="#list-methods" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-number">Table 12.1 </span><span class="caption-text">리스트 주요 메서드</span><a class="headerlink" href="#list-methods" title="Link to this table">#</a></caption>
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 17%" />
-<col style="width: 63%" />
+<col style="width: 20.0%" />
+<col style="width: 16.7%" />
+<col style="width: 63.3%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>기능</p></th>
@@ -2342,7 +2341,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </section>
 <section id="id8">
-<h3><span class="section-number">12.2.5. </span>리스트 연습문제<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.2.5. </span>리스트 연습문제<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">info_list</span></code> 변수는 6명의 정보를 담은 중첩 리스트를 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2495,7 +2494,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </section>
 </section>
 <section id="sec-tuple">
-<span id="id9"></span><h2><span class="section-number">12.3. </span>튜플<a class="headerlink" href="#sec-tuple" title="Permalink to this heading">#</a></h2>
+<span id="id9"></span><h2><span class="section-number">12.3. </span>튜플<a class="headerlink" href="#sec-tuple" title="Link to this heading">#</a></h2>
 <p>튜플은 리스트와 아주 비슷하다.
 다만 한 번 생성되면 항목의 추가, 삭제, 변경 등 일체의 수정이 불가능한
 불변<font size = "2">immutable</font> 자료형이라는 점이 다르다.
@@ -2595,7 +2594,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 <p><strong>중첩 튜플</strong></p>
 <section id="id10">
-<h3><span class="section-number">12.3.1. </span>튜플 연산<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.3.1. </span>튜플 연산<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자</strong></p>
 <p>튜플의 항목으로 등장하는지 여부를 알려주는 논리 연산자이다.</p>
 <div class="cell docutils container">
@@ -2703,7 +2702,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </section>
 <section id="id11">
-<h3><span class="section-number">12.3.2. </span>튜플 인덱싱/슬라이싱<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.3.2. </span>튜플 인덱싱/슬라이싱<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p>튜플도 문자열과 리스트처럼 인덱싱과 슬라이싱이 가능하다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2797,7 +2796,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
     <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/hj617kim/ch04/tuple02.png" style="width:300px;">
 </div></section>
 <section id="id12">
-<h3><span class="section-number">12.3.3. </span>튜플 메서드<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.3.3. </span>튜플 메서드<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>튜플 자료형의 메서드는 많지 않다. 많이 사용되는 두 개의 메소드를 살펴보자.</p>
 <table class="table">
 <thead>
@@ -2850,7 +2849,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </section>
 </section>
 <section id="id13">
-<h2><span class="section-number">12.4. </span>순차 자료형 해체<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">12.4. </span>순차 자료형 해체<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <p>순자 자료형의 항목 각각에 대해 변수 할당을 진행할 수 있다.
 단, 사용되는 변수의 수는 항목의 수와 일치해야 한다.</p>
 <div class="cell docutils container">
@@ -3000,10 +2999,10 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </section>
 <section id="id14">
-<h2><span class="section-number">12.5. </span>순차 자료형에 유용한 함수<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">12.5. </span>순차 자료형에 유용한 함수<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
 <p>문자열, 튜플, 리스트처럼 항목들의 순서가 중요한 순차 자료형과 함께 유용하게 사용되는 네 개의 함수를 소개한다.</p>
 <section id="enumerate">
-<h3><span class="section-number">12.5.1. </span><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수<a class="headerlink" href="#enumerate" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.5.1. </span><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수<a class="headerlink" href="#enumerate" title="Link to this heading">#</a></h3>
 <p>튜플과 리스트의 인덱스를 튜플과 리스트 자체에서 눈으로 확인할 수 없다.
 하지만 항목과 해당 항목의 인덱스 정보를 함께 활용해야 할 때가 있는데
 이때 <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수가 매우 유용하다.</p>
@@ -3122,7 +3121,7 @@ thon
 </div>
 </section>
 <section id="zip">
-<h3><span class="section-number">12.5.2. </span><code class="docutils literal notranslate"><span class="pre">zip()</span></code> 함수<a class="headerlink" href="#zip" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.5.2. </span><code class="docutils literal notranslate"><span class="pre">zip()</span></code> 함수<a class="headerlink" href="#zip" title="Link to this heading">#</a></h3>
 <p>문자열, 리스트, 튜플 등 순차 자료형 여러 개를 묶어 하나의 값으로 만든다.
 이때, 각 순차 자료형의 값에 사용된 순서를 반영한다.
 단, <code class="docutils literal notranslate"><span class="pre">zip()</span></code> 함수의 반환값은 구체적으로 명시되지 않는다.</p>
@@ -3266,7 +3265,7 @@ thon
 </section>
 </section>
 <section id="id15">
-<h2><span class="section-number">12.6. </span>연습문제<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">12.6. </span>연습문제<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-lists_tuples.ipynb">(실습) 리스트와 튜플</a></p>
 </section>
 </section>

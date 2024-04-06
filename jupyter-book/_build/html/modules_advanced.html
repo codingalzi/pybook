@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>21. (부록) 모듈 고급 활용법 &#8212; 파이썬 프로그래밍</title>
   
@@ -29,36 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'modules_advanced';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -432,11 +431,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-module-advanced">
-<span id="id1"></span><h1><span class="section-number">21. </span>(부록) 모듈 고급 활용법<a class="headerlink" href="#ch-module-advanced" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">21. </span>(부록) 모듈 고급 활용법<a class="headerlink" href="#ch-module-advanced" title="Link to this heading">#</a></h1>
 <p>하나의 모듈이 독립적으로 제공되기도 하지만 다른 모듈과 함께 하나의 모음집으로 제공되기도 한다.
 모음집의 크기와 용도에 따라 패키지, 라이브러리, 프레임워크 등 다양한 이름으로 불린다.</p>
 <section id="id2">
-<h2><span class="section-number">21.1. </span>모듈, 패키지, 라이브러리, 프레임워크<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.1. </span>모듈, 패키지, 라이브러리, 프레임워크<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p><strong>패키지</strong></p>
 <p><strong>패키지</strong><font size='2'>package</font>는 모듈을 모아놓은 디렉토리(폴더)이며,
 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 모듈을 포함한다.
@@ -471,7 +470,7 @@ document.write(`
 쉽고 빠르게 구현할 수 있다.</p>
 </section>
 <section id="pip">
-<h2><span class="section-number">21.2. </span><code class="docutils literal notranslate"><span class="pre">pip</span></code> 파이썬 패키지 관리자<a class="headerlink" href="#pip" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.2. </span><code class="docutils literal notranslate"><span class="pre">pip</span></code> 파이썬 패키지 관리자<a class="headerlink" href="#pip" title="Link to this heading">#</a></h2>
 <p>파이썬 프로그래밍에 사용되는 모든 모듈, 패키지, 라이브러리, 프레임워크 등은
 일반적으로 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 이라는 파이썬 패키지 관리자를 이용하여 설치하고 관리한다.
 예를 들어 넘파이 모듈을 설치하려면 다음 명령을 실행한다.
@@ -512,7 +511,7 @@ document.write(`
 </ul>
 </section>
 <section id="id3">
-<h2><span class="section-number">21.3. </span>사용자 정의 모듈<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.3. </span>사용자 정의 모듈<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p><strong>파이썬 파일 저장</strong></p>
 <p>아래 코드를 담고 있는 <code class="docutils literal notranslate"><span class="pre">wc.py</span></code> 파일을 모듈로 불러와서 활용해보자.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linecount</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
@@ -588,7 +587,7 @@ document.write(`
 파이썬 실행기<font size='2'>interpreter</font>에 해당 패키지의 존재를 알려야 하기 때문이다.</p>
 </section>
 <section id="id4">
-<h2><span class="section-number">21.4. </span>패키지 지정<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.4. </span>패키지 지정<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>특정 폴더를 파이썬 패키지로 지정하려면 해당 폴더에 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 파일명을 가진 파일이 존재하면 된다.
 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 파일은 해당 패키지를 불러올 때 사용할 설정을 담은 모듈인데
 아무 설정도 하지 않는다면 비어두어도 된다.
@@ -635,7 +634,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h2><span class="section-number">21.5. </span>라이브러리 경로<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.5. </span>라이브러리 경로<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>현재 작업 디렉토리가 아닌 디렉토리에 포함된 파이썬 파일을 모듈로 불러오는 기본적인
 방법은 <strong>라이브러리 경로</strong><font size='2'>library path</font>에 해당 디렉토리를
 임시로 추가하는 것이다.</p>
@@ -730,7 +729,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h2><span class="section-number">21.6. </span>모듈 파일 실행<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.6. </span>모듈 파일 실행<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>모듈엔 자주 사용될 수 있는 함수, 클래스, 상수 등을 저장한다.
 그런데 모듈을 불러올 때 모듈 파일에 포함된 모든 명령문이 실행된다.
 따라서 불필요한 코드를 모듈에 포함시키는 일은 삼가한다.</p>
