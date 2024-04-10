@@ -1849,6 +1849,12 @@ hello+++++
 <tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">index()</span></code></p></td>
 <td class="text-left"><p>지정된 문자열이 처음 등장한 위치 반환. 지정된 문자열이 없다면 오류발생</p></td>
 </tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">startswith()</span></code></p></td>
+<td class="text-left"><p>지정된 문자열로 시작하는지 여부 판단</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">endswith()</span></code></p></td>
+<td class="text-left"><p>지정된 문자열로 끝나는지 여부 판단</p></td>
+</tr>
 <tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">lower()</span></code></p></td>
 <td class="text-left"><p>문자열에 사용된 문자를 모두 소문자로 변환한 문자열 반환</p></td>
 </tr>
@@ -1857,12 +1863,6 @@ hello+++++
 </tr>
 <tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">replace()</span></code></p></td>
 <td class="text-left"><p>하나의 문자열을 다른 문자열로 대체한 문자열 반환</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">lstrip()</span></code></p></td>
-<td class="text-left"><p>문자열 왼쪽에서 지정된 부분 문자열을 삭제한 문자열 반환. 지정된 부분 문자열이 없는 경우 왼쪽 공백들을 삭제한 문자열 반환</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">rstrip()</span></code></p></td>
-<td class="text-left"><p>문자열 오른쪽에서 지정된 부분 문자열을 삭제한 문자열 반환. 지정된 부분 문자열이 없는 경우 오른쪽 공백들을 삭제한 문자열 반환</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">strip()</span></code></p></td>
 <td class="text-left"><p>문자열 양쪽에서 지정된 부분 문자열을 삭제한 문자열 반환. 지정된 문자열이 없는 경우 양쪽 공백들을 삭제한 문자열 반환</p></td>
@@ -1969,6 +1969,72 @@ hello+++++
 </div>
 </div>
 </div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">startswith()</span></code> 메서드</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">words</span></code> 문자열은 <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">\tMy'</span></code> 문자열로 시작한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39; </span><span class="se">\t</span><span class="s1">My&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>반면에 <code class="docutils literal notranslate"><span class="pre">'My'</span></code> 문자열로 시작하진 않는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;My&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">endswith()</span></code> 메서드</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39; \tMy life is so so cool! \n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">words</span></code> 문자열은 <code class="docutils literal notranslate"><span class="pre">'cool!'</span></code> 문자열로 끝나지 않는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;cool!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>대신 <code class="docutils literal notranslate"><span class="pre">'cool!</span> <span class="pre">\n'</span></code> 문자열로 끝난다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;cool! </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>새로운 문자열 생성 메서드</strong></p>
 <p>지금부터 언급되는 메서드는 <code class="docutils literal notranslate"><span class="pre">word</span></code> 문자열 자체를 수정하는 게 아니라 새로운 문자열을 생성한다.
 앞서 언급한 대로 문자열 자체는 수정될 수 없음에 주의한다.</p>
@@ -2014,34 +2080,6 @@ hello+++++
 </div>
 </div>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">lstrip()</span></code> 메서드</strong></p>
-<p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">word</span></code> 문자열의 왼쪽 끝에 포함된 화이트 스페이스를 모두 삭제한 문자열을 생성한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;My life is so so cool! \n&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">rstrip()</span></code> 메서드</strong></p>
-<p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">word</span></code> 문자열의 오른쪽 끝에 포함된 화이트 스페이스를 모두 삭제한 문자열을 생성한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39; \tMy life is so so cool!&#39;
-</pre></div>
-</div>
-</div>
-</div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">strip()</span></code> 메서드</strong></p>
 <p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">word</span></code> 문자열의 양쪽 끝에 포함된 화이트 스페이스를 모두 삭제한 문자열을 생성한다.</p>
 <div class="cell docutils container">
@@ -2052,6 +2090,19 @@ hello+++++
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;My life is so so cool!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>화이트 스페이스를 무시할 경우 <code class="docutils literal notranslate"><span class="pre">words</span></code> 문자열을 <code class="docutils literal notranslate"><span class="pre">My</span></code>로 시작한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;My&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
