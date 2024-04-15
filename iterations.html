@@ -1375,6 +1375,61 @@ python
 미리 알 수 없다.
 따라서 경주를 진행하는 반복문이 <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code>로 시작하며
 한 마리의 거북이가 목표 지점에 다다르면 반복문의 실행이 멈추도록 <code class="docutils literal notranslate"><span class="pre">break</span></code> 명령문이 사용되었다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Tina 생성 후 출발점에 위치시키기</span>
+<span class="n">tina</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">tina</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">tina</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="n">tina</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">tina</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Tommy 생성 후 출발점에 위치시키기</span>
+<span class="n">tommy</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Tina의 목표지점에 원 그리고 출발점으로 되돌아오기</span>
+<span class="n">tina</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">170</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">tina</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="n">tina</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">tina</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">tina</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Tommy의 목표지점에 원 그리고 출발점으로 되돌아오기</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">170</span><span class="p">,</span><span class="o">-</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">tommy</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># 게임 실행</span>
+<span class="k">def</span> <span class="nf">rolling_dice</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">t_turn</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;엔터키를 누르면 주사위가 던져집니다!&quot;</span><span class="p">)</span>
+    <span class="n">die_outcome</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;주사위 값:&quot;</span><span class="p">,</span> <span class="n">die_outcome</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;전진 거리:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">die_outcome</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">die_outcome</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">rolling_dice</span><span class="p">(</span><span class="n">tina</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">tina</span><span class="o">.</span><span class="n">pos</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">130</span><span class="p">:</span>
+        <span class="n">tina</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;I won!&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tina won!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+
+    <span class="n">rolling_dice</span><span class="p">(</span><span class="n">tommy</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">tommy</span><span class="o">.</span><span class="n">pos</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">130</span><span class="p">:</span>
+        <span class="n">tommy</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;I won!&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tommy won!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
 </section>
 <section id="id3">
 <h2><span class="section-number">8.7. </span>필수 예제<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
