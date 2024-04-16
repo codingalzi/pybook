@@ -445,8 +445,7 @@ document.write(`
 다운로드할 수 있다.</p>
 <section id="if-else">
 <h2><span class="section-number">7.1. </span><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span> <span class="pre">...</span></code> 명령문<a class="headerlink" href="#if-else" title="Permalink to this heading">#</a></h2>
-<p><strong>조건문</strong><font size="2">conditional statement</font>은
-조건문의 일반적인 형식은 다음과 같다.</p>
+<p><strong>조건문</strong><font size="2">conditional statement</font>의 일반적인 형식은 다음과 같다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">논리식</span><span class="p">:</span>
     <span class="n">명령문1</span>
 <span class="k">else</span><span class="p">:</span>
@@ -476,7 +475,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>경우에 따라 <code class="docutils literal notranslate"><span class="pre">else</span></code> 이하의 코드가 없는 경우도 있다.
+<p><code class="docutils literal notranslate"><span class="pre">else</span></code> 키워드 부분을 사용하지 않아도 된다.
 아래 코드에서 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 0보다 작을 때 <code class="docutils literal notranslate"><span class="pre">'x는</span> <span class="pre">음수'</span></code>가 출력된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -484,22 +483,32 @@ document.write(`
 
 <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수&#39;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;음수만 처리합니다.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x는 음수
+음수만 처리합니다.
 </pre></div>
 </div>
 </div>
 </div>
-<p>하지만 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 0보다 작지 않으면 아무 것도 실행되지 않는다.</p>
+<p>변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 0보다 같거나 큰 경우는 무시된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수&#39;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;음수만 처리합니다.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>음수만 처리합니다.
 </pre></div>
 </div>
 </div>
@@ -511,6 +520,9 @@ document.write(`
 <code class="docutils literal notranslate"><span class="pre">if</span></code> 키워드와 참 또는 거짓을 가리키는 <strong>논리식</strong>으로 구성된다.
 예를 들어, 두 표현식의 등가 여부를 판단하는 연산자 <code class="docutils literal notranslate"><span class="pre">==</span></code>를
 이용한 논리식은 다음과 같다.</p>
+<ul class="simple">
+<li><p>참인 등가 논리식</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span>
@@ -523,6 +535,9 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>거짓인 등가 논리식</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span>  <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span>
@@ -534,14 +549,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</div>
-<div class="warning admonition">
-<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">==</span></code> vs. <code class="docutils literal notranslate"><span class="pre">=</span></code></p>
-<p>표현식 A와 B가 동일한 값을 표현하거나 가리킬 때 서로 <strong>등가</strong><font size="2">equality</font>라고 말하며,
-이때 <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">==</span> <span class="pre">B</span></code>를 <code class="docutils literal notranslate"><span class="pre">True</span></code>로 간주한다.</p>
-<p>반면에 하나의 등호 기호 <code class="docutils literal notranslate"><span class="pre">=</span></code> 는 변수 할당에 사용되는 특별한 기호이다.
-예를 들어 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">3</span></code>은 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>와 정수 <code class="docutils literal notranslate"><span class="pre">3</span></code>을 할당하여
-변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 <code class="docutils literal notranslate"><span class="pre">3</span></code> 대신 사용되도록 한다.</p>
 </div>
 <p>두 표현식이 서로 다른 값을 가리키는지 여부를 판단하는 연산자는 <code class="docutils literal notranslate"><span class="pre">!=</span></code>이며,
 <code class="docutils literal notranslate"><span class="pre">==</span></code> 와 반대로 작동한다.</p>
@@ -572,7 +579,8 @@ document.write(`
 <section id="bool">
 <h3><span class="section-number">7.2.1. </span><code class="docutils literal notranslate"><span class="pre">bool</span></code> 유형<a class="headerlink" href="#bool" title="Permalink to this heading">#</a></h3>
 <p>논리식이 표현하는 값은 <code class="docutils literal notranslate"><span class="pre">True</span></code>와 <code class="docutils literal notranslate"><span class="pre">False</span></code> 중에 하나이며,
-이 두 값으로만 구성된 자료형이 부울 자료형인 <code class="docutils literal notranslate"><span class="pre">bool</span></code>이다.</p>
+이 두 값으로만 구성된 자료형을 부울 자료형이라 부르며,
+<code class="docutils literal notranslate"><span class="pre">bool</span></code>이 부울 자료형을 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -627,7 +635,7 @@ document.write(`
 <p>논리식은 기본적으로 등식, 부등식 등의 <strong>비교 연산자</strong>를 이용하여 표현하며,
 <strong>논리 연산자</strong>를 이용하여 보다 복잡한 논리식을 구성한다.</p>
 <p>비교 연산자는 수, 문자열 등의 크기를 비교할 수 있으며
-아래 연산자를 지원한다.</p>
+대표적인 비교 연산자는 아래와 같다.</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>연산 기호</p></th>
@@ -669,7 +677,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>자료형이 다른 두 값에 대해 <code class="docutils literal notranslate"><span class="pre">==</span></code> 연산자는 항상 거짓으로 판정한다.</p>
+<p>자료형이 다른 두 값에 대해서 <code class="docutils literal notranslate"><span class="pre">==</span></code> 연산자는 기본적으로 거짓으로 판정한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.0</span> <span class="o">==</span> <span class="s1">&#39;1.0&#39;</span>
@@ -695,6 +703,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p><strong>문자열 비교 연산자</strong></p>
 <p>문자열도 비교 연산자를 지원하며 알파벳 순서를 따르는 순서 개념을 사용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -721,39 +730,14 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="proof example admonition" id="exp_comparison">
-<p class="admonition-title"><span class="caption-number">Example 7.1 </span></p>
-<section class="example-content" id="proof-content">
-<p>변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>에 할당된 값이 짝수이면 2로 나눈 값을,
-그렇지 않으면 두 배한 값을 출력하도록 해보자.</p>
-<p>정수의 짝수 여부는 2로 나눈 나머지가 0 또는 1인지 여부로 판단할 수 있다.
-파이썬의 나머지 연산자는 <code class="docutils literal notranslate"><span class="pre">%</span></code> 이다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">21</span> <span class="o">%</span> <span class="mi">6</span>
-<span class="go">3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mi">21</span> <span class="o">%</span> <span class="mi">4</span>
-<span class="go">1</span>
-</pre></div>
-</div>
-<p>따라서 다음 논리식이 짝수 여부를 판단한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
-</pre></div>
-</div>
-<p>정리하면 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 짝수일 때와 홀수일 때 지정된 일을 하도록 하는 명령문은 다음과 같다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
 </section>
-</div></section>
 <section id="id4">
 <h3><span class="section-number">7.2.3. </span>논리 연산자<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>영어의 <em>and</em>, <em>or</em>, <em>not</em> 의 개념과 거의(!) 유사하게 작동하는
 세 개의 논리 연산자를 이용하여 보다 복잡한 논리식을 구현할 수 있다.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">And</span> <span class="pre">B</span></code>: <code class="docutils literal notranslate"><span class="pre">A</span></code>와 <code class="docutils literal notranslate"><span class="pre">B</span></code> 모두 참일 때만 참</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">or</span> <span class="pre">B</span></code>: <code class="docutils literal notranslate"><span class="pre">A</span></code>와 <code class="docutils literal notranslate"><span class="pre">B</span></code> 둘 중에 하나라도 참일 때 참</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">and</span> <span class="pre">B</span></code>: <code class="docutils literal notranslate"><span class="pre">A</span></code>와 <code class="docutils literal notranslate"><span class="pre">B</span></code> 모두 참일 때만 참으로 판정됨</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">or</span> <span class="pre">B</span></code>: <code class="docutils literal notranslate"><span class="pre">A</span></code>가 참이거나 <code class="docutils literal notranslate"><span class="pre">A</span></code>가 거짓일 때 <code class="docutils literal notranslate"><span class="pre">B</span></code>가 참이면 참으로 판정됨</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">A</span></code>: <code class="docutils literal notranslate"><span class="pre">A</span></code> 가 거짓일 때만 참</p></li>
 </ul>
 <table class="table">
@@ -783,8 +767,10 @@ document.write(`
 </tbody>
 </table>
 <p><strong>우선 순위</strong></p>
-<p>논리 연산자들 사이의 우선순위는 <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>  순으로 높다.
-예를 들어</p>
+<p>논리 연산자들 사이의 우선순위는 <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>  순으로 높다.</p>
+<ul class="simple">
+<li><p>예제 1</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span>
 </pre></div>
 </div>
@@ -817,7 +803,9 @@ True
 </div>
 </div>
 </div>
-<p>그리고</p>
+<ul class="simple">
+<li><p>예제 2</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span>
 </pre></div>
 </div>
@@ -840,6 +828,42 @@ True
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">((</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">)</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>예제 3</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span>
+</pre></div>
+</div>
+<p>는</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">or</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>와는 서로 등가이지만</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>와는 그렇지 않다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">7</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">or</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1003,7 +1027,8 @@ False
 </div>
 </div>
 </div>
-<p>두 논리 연산자 <code class="docutils literal notranslate"><span class="pre">and</span></code> 와 <code class="docutils literal notranslate"><span class="pre">or</span></code> 가 영어 단어 <em>and</em> 와 <em>or</em> 와는 조금 다르게 작동한다.
+<p><strong><code class="docutils literal notranslate"><span class="pre">and</span></code>와 <code class="docutils literal notranslate"><span class="pre">or</span></code> 연산자</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">and</span></code> 와 <code class="docutils literal notranslate"><span class="pre">or</span></code> 두 연산자는 영어 단어 <em>and</em> 와 <em>or</em> 와는 조금 다르게 작동한다.
 예를 들어, 아래와 같이  <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">3/0</span></code>를 실행하면 <code class="docutils literal notranslate"><span class="pre">False</span></code>로 계산되는데
 좀 이상하다.
 왜냐하면 <code class="docutils literal notranslate"><span class="pre">3/0</span></code> 이 <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> 라는 오류를 발생시켜야 할 것으로
