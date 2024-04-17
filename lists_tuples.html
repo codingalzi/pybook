@@ -416,28 +416,33 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.1. 파이썬 내장 자료구조</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.1. 파이썬 내장 자료 구조</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">12.1.1. 모음 자료형 대 스칼라 자료형</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">12.1.2. 모음 자료형 구분</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">12.1.3. 순차 자료형: 리스트, 튜플, 문자열</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-list">12.2. 리스트</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">12.2.1. 리스트 연산</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">12.2.2. 인덱싱과 슬라이싱</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">12.2.3. 중첩 리스트와 인덱싱/슬라이싱/반복문</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">12.2.4. 리스트 메서드</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">12.2.5. 리스트 연습문제</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">12.2.1. 리스트 연산</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">12.2.2. 인덱싱과 슬라이싱</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">12.2.3. 중첩 리스트와 인덱싱/슬라이싱/반복문</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">12.2.4. 리스트 메서드</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">12.2.5. 리스트 연습문제</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-tuple">12.3. 튜플</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">12.3.1. 튜플 연산</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">12.3.2. 튜플 인덱싱/슬라이싱</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">12.3.3. 튜플 메서드</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">12.3.1. 튜플 연산</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">12.3.2. 튜플 인덱싱/슬라이싱</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">12.3.3. 튜플 메서드</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">12.4. 순차 자료형 해체</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">12.5. 순차 자료형에 유용한 함수</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">12.4. 순차 자료형 해체</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">12.5. 순차 자료형에 유용한 함수</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate">12.5.1. <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zip">12.5.2. <code class="docutils literal notranslate"><span class="pre">zip()</span></code> 함수</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">12.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">12.6. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -451,7 +456,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-lists-tuples">
 <span id="id1"></span><h1><span class="section-number">12. </span>리스트와 튜플<a class="headerlink" href="#ch-lists-tuples" title="Permalink to this heading">#</a></h1>
-<p>아래 표에 여섯 명의 이름, 전화번호, 나이, 키, 출생지 정보를 담겨 있다.</p>
+<p>아래 표에 여섯 명의 이름, 전화번호, 나이, 키, 출생지 정보가 담겨 있다.</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>이름</p></th>
@@ -503,15 +508,12 @@ document.write(`
 <p>예를 들어 김강현, 최흥선 등의 전화번호를 알고 싶으면 이름 칸에서
 김강현과 최흥선이 위치한 행을 찾아 전화번호를 확인하면 된다.
 하지만 만약에 여섯 명이 아니라 수천, 수만명의 정보를 담겨 있다면
-특정인의 전화번호, 나이, 키, 출생지 등을 확인하는 일이 더 이상 간단하지 않다.
-그럴 때는 컴퓨터를 활용해서 검색해야 하는데
-컴퓨터는 일런 일을 매우 빠르고 정확하게 처리한다.</p>
-<p>컴퓨터로 정보를 검색하려면 먼저 위 표의 내용을 컴퓨터 프로그램으로
-다룰 수 있어야 한다.
-표에 사용된 이름, 전화번호, 나이, 키 각각은
-앞서 소개한 파이선 기초 자료형을 이용하여 다룰 수 있다.
-한 사람의 이름, 전화번호, 출생지는 각기 하나의 문자열로,
-나이는 하나의 정수로, 키는 하나의 부동소수점으로 처리한다.
+특정인의 전화번호, 나이, 키, 출생지 등을 확인하는 일이 매우 어려워진다.</p>
+<p>반면에 컴퓨터는 컴퓨터는 일런 일을 매우 빠르고 정확하게 처리한다.
+단, 컴퓨터가 정보를 처리할 수 있도록 먼저 위 표의 내용을
+하나의 값으로 저장되어 있어야 한다.</p>
+<p>이름, 전화번호, 나이, 키 각각은 문자열, 정수, 부동소수점 등
+적절한 자료형의 값으로 변수에 할당하여 저장할 수 있다.
 예를 들어 김강현의 데이터는 아래와 같이 다룰 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -524,71 +526,79 @@ document.write(`
 </div>
 </div>
 </div>
-<p>반면에 예를 들어 표에 사용된 여섯 명의 이름으로 구성된 목록을 하나의 값으로 다룰 수 있을까?
-이름과 전화번호를 하나의 쌍으로 묶어서 전화번호부를 만든 다음에
-이름을 입력하면 전화번호를 확인하는 프로그램을 작성할 수 있을까?
-지금까지 살펴 본 기초 자료형만으로는 이런 일을 처리하는 일은 어려워 보인다.
-사실 가능하긴 하지만 누구나 쉽게 할 수 있는 일은 아니다.</p>
+<p>반면에 지금까지 살펴 본 기초 자료형만으로는 아래 질문에 제대로 답할 수 없다.</p>
+<ul class="simple">
+<li><p>표에 언급된 여섯 명의 이름으로 구성된 목록을 하나의 값으로 다룰 수 있을까?</p></li>
+<li><p>이름과 전화번호를 하나의 쌍으로 묶어서 전화번호부를 만든 다음에 이름을 입력하면 전화번호를 확인하는 프로그램을 작성할 수 있을까?</p></li>
+</ul>
+<p>즉, 기초 자료형 이외에 여러 개의 값을 하나로 묶어 처리할 수 있는 기능이 필요하다.</p>
 <section id="id2">
-<h2><span class="section-number">12.1. </span>파이썬 내장 자료구조<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">12.1. </span>파이썬 내장 자료 구조<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>파이썬은 여러 개의 값을 하나의 값으로 묶어 처리할 수 있도록 도와주는 네 개의
-<strong>내장 자료구조</strong><font size='2'>built-in data structure</font>
-리스트, 튜플, 사전, 그리고 집합을 제공한다.
-여기서 내장이라 함은 코드를 작성할 때 다른 추가 설정 없이 사용할 수 있음을 의미한다.</p>
+<strong>내장 자료 구조</strong><font size='2'>built-in data structure</font>를 제공한다.
+여기서 내장<font size='2'>built-in</font>이라 함은 코드를 작성할 때 다른 추가 설정 없이
+바로 사용할 수 있음을 의미한다.</p>
+<p>반면에 <strong>자료 구조</strong><font size='2'>data structure</font>는 여러 개의 값으로 구성된 보다 복잡한 대상을 가리킨다.
+그리고 파이썬은 이런 대상도 하나의 값으로 취급한다.
+즉 리스트, 튜플, 사전, 집합 또한 하나의 값이다.</p>
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/built-in-types.png" width="350"/></div>
-<br><p>리스트, 튜플, 사전, 집합은 각자 고유의 방식으로 여러 개의 값을 묶어 하나의 값으로 다룰 수 있는 기능을 제공한다.
+<br><section id="id3">
+<h3><span class="section-number">12.1.1. </span>모음 자료형 대 스칼라 자료형<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>리스트, 튜플, 사전, 집합은 각자 고유의 방식으로 여러 개의 값을 모아서 하나의 값으로 다룬다.
 이런 의미에서 이들을 <strong>모음 자료형</strong>이라 부르며 경우에 따라
 <strong>컬렉션</strong><font size='2'>collection</font>, <strong>컨테이너</strong><font size='2'>container</font> 등으로도 불린다.
 반면에 정수, 부동소수점, 불리언 등은 하나의 값으로만 구성되었다는 의미에서
 <strong>스칼라</strong><font size='2'>scalar</font> 자료형이라 부른다.</p>
-<p>자료구조는 보통 여러 종류의 자료형의 값으로 구성된 보다 복잡한 구조의 대상을 가리킨다.
-하지만 파이썬에서는 리스트, 튜플, 사전, 집합 또한 하나의 값으로 처리된다.
-이것이 가능한 이유는 파이썬에서 다루는 모든 것이 <strong>객체</strong><font size='2'>object</font>로 정의되기 때문이다.
-파이썬 객체는 일반적으로 특정의 값들과, 그리고 값들과 관련된 속성을 저장하며, 저장된 값과 속성을 다룰 수 있는 기능을 제공한다.객체의 엄밀한 정의는 나중에 클래스를 설명할 때 다룬다.
-여기서는 변수에 할당될 수 있는 하나의 값으로 선언될 수 있는 대상 정도로 기억해 둔다.
-따라서 리스트 객체, 튜플 객체, 사전 객체, 집합 객체 모두 하나의 값으로 변수에 할당될 수 있다.</p>
+<p>이것이 가능한 이유는 파이썬에서 다루는 모든 것이 <strong>객체</strong><font size='2'>object</font>로 정의되기 때문이다.
+파이썬 객체는 일반적으로 값과 값과 관련된 속성을 저장하며,
+저장된 값과 속성을 다룰 수 있는 다양한 기능을 제공한다.</p>
+<p>객체의 엄밀한 정의는 <a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">15</span></a>장에서 클래스를 설명할 때 다룬다.
+여기서는 변수에 할당될 수 있는 값을 표현하는 전문 용어로 이해하면 된다.</p>
+</section>
+<section id="id4">
+<h3><span class="section-number">12.1.2. </span>모음 자료형 구분<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>모음 자료형을 일반적으로 다음 두 가지 기준으로 구분한다.</p>
 <p>첫째, 항목의 순서와 중복 허용 여부</p>
 <ul class="simple">
-<li><p><strong>순차 자료형</strong><font size="2">sequence type</font>: 항목의 순서와 항목의 중복 사용 허용</p></li>
+<li><p><strong>순차 자료형</strong><font size="2">sequence type</font>: 항목의 순서와 항목의 중복 사용 허용. <strong>시퀀스</strong><font size='2'>sequences</font>라고도 불림.</p></li>
 <li><p><strong>비순차 자료형</strong><font size='2'>non-sequence type</font>: 항목의 순서와 중복된 항목 무시</p></li>
 </ul>
-<p>둘째, 항목 변경의 허용여부</p>
+<p>둘째, 항목 변경의 허용 여부</p>
 <ul class="simple">
 <li><p><strong>가변 자료형</strong><font size = "2">mutable type</font>: 항목의 추가, 삭제, 변경 등 허용</p></li>
-<li><p><strong>불변 자료형</strong><font size = "2">immutable type</font>: 생성된 객체의 어떠한 수정도 불가능</p></li>
+<li><p><strong>불변 자료형</strong><font size = "2">immutable type</font>: 생성된 객체의 어떠한 변경도 불가능</p></li>
 </ul>
-<p>여기서 소개하는 리스트와 튜플 모두 순서를 고려하는 순차 자료형이다.
+<p>리스트와 튜플은 모두 순서를 고려하는 순차 자료형이다.
+<a class="reference internal" href="strings.html#ch-strings"><span class="std std-numref">11장</span></a>에서 살펴 본 문자열 또한 순차 모음 자료형으로 간주된다.
 반면에 리스트는 수정이 가능한 가변 자료형이지만 튜플은 불변 자료형이다.
-다음 장에서 소개할 사전과 집합은 비순차 자료형이면서 동시에 가변 자료형이다.</p>
-<p>리스트와 튜플과 같은 순차 자료형을 <strong>시퀀스</strong><font size='2'>sequences</font>라 부르기도 한다.
-고등학교 수학에서 다루는 수열 또한 시퀀스의 한 종류이며, 실제로 수열을 영어로 sequence로 부른다.
-다만 수열은 말 그대로 수의 나열을 가리키지만 리스트와 튜플은 수 이외에도 어떤 종류의 값도 항목으로 사용할 수 있다.
-예를 들어 위 표에 포함된 이름으로 구성된 리스트와 튜플을 정의할 수 있다.
-참고로 파이썬에서 리스트는 대괄호 <code class="docutils literal notranslate"><span class="pre">[]</span></code>로, 튜플은 소괄호 <code class="docutils literal notranslate"><span class="pre">()</span></code>로 항목들의 목록을 감싼다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;남세원&#39;</span><span class="p">,</span> <span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;김현선&#39;</span><span class="p">,</span> <span class="s1">&#39;함중아&#39;</span><span class="p">]</span>
-<span class="n">name_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;남세원&#39;</span><span class="p">,</span> <span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;김현선&#39;</span><span class="p">,</span> <span class="s1">&#39;함중아&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>파이썬의 또 다른 순차 자료형은 <a class="reference internal" href="strings.html#ch-strings"><span class="std std-numref">11장</span></a>에서 살펴 본 문자열이다.
-그리고 문자열에 대해서처럼 리스트, 튜플 등 순차 자료형에 대해서도 다음 세 가지 기능을 거의 동일하게 적용할 수 있다.</p>
+그리고 사전과 집합은 비순차 자료형이면서 동시에 가변 자료형이다.</p>
+</section>
+<section id="id5">
+<h3><span class="section-number">12.1.3. </span>순차 자료형: 리스트, 튜플, 문자열<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p>문자열에 대해서처럼 리스트, 튜플 자료형에 대해서도 다음 세 가지 기능을 거의 동일한 방식으로 적용할 수 있다.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자</p></li>
 <li><p>인덱싱과 슬라이싱</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문</p></li>
 </ul>
-<p>여기서는 리스트와 튜플, 즉 두 개의 시퀀스 자료형을 생성하고 수정하고 활용하는 다양한 방식을 살펴보고,
-다음 장에서는 비순차 자료형인 사전과 집합에 대해 자세히 알아본다.</p>
+<p>여기서는 리스트와 튜플, 즉 두 개의 순차(시퀀스) 자료형을 생성, 수정, 활용하는 다양한 방식을 살펴보고,
+다음 장에서는 비순차 자료형인 사전과 집합을 소개한다.</p>
+</section>
 </section>
 <section id="sec-list">
-<span id="id3"></span><h2><span class="section-number">12.2. </span>리스트<a class="headerlink" href="#sec-list" title="Permalink to this heading">#</a></h2>
-<p>리스트는 보통 관련된 값들을 모아서 하나의 값으로 취급하는 자료형이다.
-대괄호(<code class="docutils literal notranslate"><span class="pre">[]</span></code>)로 항목들의 목록을 감싸고, 각각의 항목은 쉼표(<code class="docutils literal notranslate"><span class="pre">,</span></code>)로 구분한다.
-예를 들어, 1부터 5까지의 정수로 구성된 리스트를 가리키는 변수를 다음과 같이 선언한다.</p>
+<span id="id6"></span><h2><span class="section-number">12.2. </span>리스트<a class="headerlink" href="#sec-list" title="Permalink to this heading">#</a></h2>
+<p>리스트는 관련된 값들을 모아서 하나의 값으로 취급하는 자료형이다.
+대괄호 <code class="docutils literal notranslate"><span class="pre">[]</span></code>로 항목들의 목록을 감싸고, 각각의 항목은 쉼표 <code class="docutils literal notranslate"><span class="pre">,</span></code>로 구분한다.
+예를 들어 위 표에 포함된 이름으로 구성된 리스트를
+가리키는 변수 <code class="docutils literal notranslate"><span class="pre">name_list</span></code>는 다음과 같이 선언한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;남세원&#39;</span><span class="p">,</span> <span class="s1">&#39;최흥선&#39;</span><span class="p">,</span> <span class="s1">&#39;김현선&#39;</span><span class="p">,</span> <span class="s1">&#39;함중아&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>그리고 아래 <code class="docutils literal notranslate"><span class="pre">one2five</span></code> 변수는 1부터 5까지의 정수로 구성된 리스트를 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">one2five</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -596,32 +606,12 @@ document.write(`
 </div>
 </div>
 </div>
-<p>리스트는 수열과 달리 임의의 값을 항목으로 가질 수 있다.
-아래 리스트는 영어 알파벳 a부터 c까지로 구성된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2c</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>앞서 언급한 <code class="docutils literal notranslate"><span class="pre">name_list</span></code>는 표에 언급된 사람들의 이름, 즉 문자열로 구성된 리스트를 가리킨다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;김강현&#39;, &#39;황현&#39;, &#39;남세원&#39;, &#39;최흥선&#39;, &#39;김현선&#39;, &#39;함중아&#39;]
-</pre></div>
-</div>
-</div>
-</div>
+<p><strong>리스트 항목의 자료형</strong></p>
 <p>리스트의 항목이 반드시 동일한 자료형을 가질 필요는 없으며,
 서로 다른 자료형의 항목이 사용될 수도 있다.
-예를 들어 아래 리스트는 김강현의 이름, 전화번호, 나이, 키, 출생지로 구성된
-리스트를 정의한다.</p>
+예를 들어 아래 리스트는 김강현과 황현의 이름, 전화번호, 나이, 키, 출생지로 구성된
+리스트를 정의한다.
+전화번호가 문자열로 지정되었음에 주의한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kgh</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;010-1234-5678&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">172.3</span><span class="p">,</span> <span class="s1">&#39;제주&#39;</span><span class="p">]</span>
@@ -629,8 +619,15 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">whang</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;02-9871-1234&#39;</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mf">163.5</span><span class="p">,</span> <span class="s1">&#39;서울&#39;</span><span class="p">]</span> <span class="c1"># 황현 정보</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>빈 리스트</strong></p>
-<p>빈 리스트<font size = "2">empty list</font>는 아무것도 포함하지 않는 리스트를 의미한다.
+<p>빈 리스트는 아무것도 포함하지 않는 리스트를 의미한다.
 다음 두 가지 방식으로 빈 리스트를 선언할 수 있다.</p>
 <ul class="simple">
 <li><p>방법 1: 대괄호 활용</p></li>
@@ -653,12 +650,12 @@ document.write(`
 </div>
 </div>
 <p><strong>중첩 리스트</strong></p>
-<p>리스트의 항목으로 임의의 값이 사용될 수 있기에 당연히 리스트로 구성된 리스트를 정의할 수도 있다.
+<p>임의의 값이 리스트의 항목으로 사용될 수 있다.
+따라서 리스트가 다른 리스트의 항목으로 허용된다.
 아래 코드는 김강현과 황현 두 사람의 정보로 구성된 길이가 2인 리트스를 정의한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">whang</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;황현&#39;</span><span class="p">,</span> <span class="s1">&#39;02-9871-1234&#39;</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mf">163.5</span><span class="p">,</span> <span class="s1">&#39;서울&#39;</span><span class="p">]</span> <span class="c1"># 황현 정보</span>
-<span class="n">kgh_whang</span> <span class="o">=</span> <span class="p">[</span><span class="n">kgh</span><span class="p">,</span> <span class="n">whang</span><span class="p">]</span> <span class="c1"># 김강현, 황현 두 사람 정보</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kgh_whang</span> <span class="o">=</span> <span class="p">[</span><span class="n">kgh</span><span class="p">,</span> <span class="n">whang</span><span class="p">]</span> <span class="c1"># 김강현, 황현 두 사람 정보</span>
 </pre></div>
 </div>
 </div>
@@ -677,8 +674,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>리스트의 길이는 2이다.
-즉, 항목으로 사용된 리스트의 길이는 전체 리스트의 길이와 무관하다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">kgh_whang</span></code>이 가리키는 리스트에 포함된 항목의 개수, 리스트의 길이는 2다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">kgh_whang</span><span class="p">)</span>
@@ -691,7 +687,33 @@ document.write(`
 </div>
 </div>
 </div>
-<p>동일한 방식으로 6명의 정보를 담은 중첩 리스트를 정의할 수 있다.</p>
+<p>반면에 <code class="docutils literal notranslate"><span class="pre">kgh</span></code>와 <code class="docutils literal notranslate"><span class="pre">whang</span></code> 두 변수가 가리키는 리스트의 길이는 5다.
+즉, 중첩 리스트의 길이는 항목으로 사용된 리스트의 길이와 무관하다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">kgh</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">whang</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>아래 코드에서 <code class="docutils literal notranslate"><span class="pre">info_list</span></code>는 나머지 4명의 정보까지 항목으로 포함하는 (중첩) 리스트를 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">namgung</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;남세원&#39;</span><span class="p">,</span> <span class="s1">&#39;010-3456-7891&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">156.7</span><span class="p">,</span> <span class="s1">&#39;경기&#39;</span><span class="p">]</span>
@@ -704,7 +726,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>6명 전체 정보를 담은 표를 중첩 리스트로 정희하였다.</p>
+<p>확인하면 다음과 같다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_list</span>
@@ -722,7 +744,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>리스트의 길이는 6이다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">info_list</span></code> 변수가 가리키는 리스트의 길이는 6이다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">info_list</span><span class="p">)</span>
@@ -736,9 +758,9 @@ document.write(`
 </div>
 </div>
 <p><strong>리스트는 시퀀스!</strong></p>
-<p>리스트는 시퀀스이기에 항목의 순서가 다르거나 특정 항목의 개수가 다르면 서로 다른 리스트로 간주된다.</p>
+<p>리스트는 시퀀스 자료형이기에 항목의 순서가 다르거나 특정 항목의 개수가 다르면 서로 다른 리스트로 간주된다.</p>
 <ul class="simple">
-<li><p>순서가 다른 경우: 항목의 순서가 다르면 서로 다른 리스트로 간주된다.</p></li>
+<li><p>순서가 다른 경우: <code class="docutils literal notranslate"><span class="pre">one2five</span></code>는 1부터 5까지의 순서로 되어 있기에 5부터 1까지로 구성된 리스트와 다르다고 간주된다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -767,8 +789,8 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="id4">
-<h3><span class="section-number">12.2.1. </span>리스트 연산<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h3><span class="section-number">12.2.1. </span>리스트 연산<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>문자열, 리스트, 튜플, 사전, 집합 등의 모음 자료형은 모두 항목의 포함 여부를 판단하는 <code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자와
 항목의 개수를 확인해주는 <code class="docutils literal notranslate"><span class="pre">len()</span></code> 함수의 인자로 사용된다.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자</strong></p>
@@ -881,8 +903,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id5">
-<h3><span class="section-number">12.2.2. </span>인덱싱과 슬라이싱<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="id8">
+<h3><span class="section-number">12.2.2. </span>인덱싱과 슬라이싱<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>문자열, 리스트, 튜플 등 모든 시퀀스는 대괄호와 정수를 사용하는 인덱싱과 슬라이싱을 지원하며,
 사용 방식도 거의 동일하다.</p>
 <p><strong>인덱싱</strong></p>
@@ -1297,8 +1319,8 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="id6">
-<h3><span class="section-number">12.2.3. </span>중첩 리스트와 인덱싱/슬라이싱/반복문<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<section id="id9">
+<h3><span class="section-number">12.2.3. </span>중첩 리스트와 인덱싱/슬라이싱/반복문<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">info_list</span></code>와 같은 중첩 리스트는 리스트의 항목이 또다른 리스트이기에
 항목의 항목을 확인/추출/변경 하려면 인덱싱, 슬라이싱, <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을
 중첩해서 활용해야 할 때가 있다.</p>
@@ -1459,8 +1481,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id7">
-<h3><span class="section-number">12.2.4. </span>리스트 메서드<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<section id="id10">
+<h3><span class="section-number">12.2.4. </span>리스트 메서드<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p>모든 모음 자료형의 기본 용도는 여러 개의 항목을 묶어
 하나의 값으로 다루면서 필요에 따라 항목을 탐색하고 추출해서 활용하는 것이다.
 리스트, 사전, 집합처럼 가변인 모음 자료형은 또한
@@ -2341,8 +2363,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 </section>
-<section id="id8">
-<h3><span class="section-number">12.2.5. </span>리스트 연습문제<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<section id="id11">
+<h3><span class="section-number">12.2.5. </span>리스트 연습문제<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">info_list</span></code> 변수는 6명의 정보를 담은 중첩 리스트를 가리킨다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2495,7 +2517,7 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </section>
 </section>
 <section id="sec-tuple">
-<span id="id9"></span><h2><span class="section-number">12.3. </span>튜플<a class="headerlink" href="#sec-tuple" title="Permalink to this heading">#</a></h2>
+<span id="id12"></span><h2><span class="section-number">12.3. </span>튜플<a class="headerlink" href="#sec-tuple" title="Permalink to this heading">#</a></h2>
 <p>튜플은 리스트와 아주 비슷하다.
 다만 한 번 생성되면 항목의 추가, 삭제, 변경 등 일체의 수정이 불가능한
 불변<font size = "2">immutable</font> 자료형이라는 점이 다르다.
@@ -2594,8 +2616,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 <p><strong>중첩 튜플</strong></p>
-<section id="id10">
-<h3><span class="section-number">12.3.1. </span>튜플 연산<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<section id="id13">
+<h3><span class="section-number">12.3.1. </span>튜플 연산<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> 연산자</strong></p>
 <p>튜플의 항목으로 등장하는지 여부를 알려주는 논리 연산자이다.</p>
 <div class="cell docutils container">
@@ -2702,8 +2724,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 </section>
-<section id="id11">
-<h3><span class="section-number">12.3.2. </span>튜플 인덱싱/슬라이싱<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<section id="id14">
+<h3><span class="section-number">12.3.2. </span>튜플 인덱싱/슬라이싱<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <p>튜플도 문자열과 리스트처럼 인덱싱과 슬라이싱이 가능하다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2796,8 +2818,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 <div align="center">
     <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/hj617kim/ch04/tuple02.png" style="width:300px;">
 </div></section>
-<section id="id12">
-<h3><span class="section-number">12.3.3. </span>튜플 메서드<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<section id="id15">
+<h3><span class="section-number">12.3.3. </span>튜플 메서드<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>튜플 자료형의 메서드는 많지 않다. 많이 사용되는 두 개의 메소드를 살펴보자.</p>
 <table class="table">
 <thead>
@@ -2849,8 +2871,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </section>
 </section>
-<section id="id13">
-<h2><span class="section-number">12.4. </span>순차 자료형 해체<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<section id="id16">
+<h2><span class="section-number">12.4. </span>순차 자료형 해체<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
 <p>순자 자료형의 항목 각각에 대해 변수 할당을 진행할 수 있다.
 단, 사용되는 변수의 수는 항목의 수와 일치해야 한다.</p>
 <div class="cell docutils container">
@@ -2999,8 +3021,8 @@ i번 인덱스에 해당하는 사람의 체질량 지수는 다음과 같이 �
 </div>
 </div>
 </section>
-<section id="id14">
-<h2><span class="section-number">12.5. </span>순차 자료형에 유용한 함수<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<section id="id17">
+<h2><span class="section-number">12.5. </span>순차 자료형에 유용한 함수<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
 <p>문자열, 튜플, 리스트처럼 항목들의 순서가 중요한 순차 자료형과 함께 유용하게 사용되는 네 개의 함수를 소개한다.</p>
 <section id="enumerate">
 <h3><span class="section-number">12.5.1. </span><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수<a class="headerlink" href="#enumerate" title="Permalink to this heading">#</a></h3>
@@ -3265,8 +3287,8 @@ thon
 </div>
 </section>
 </section>
-<section id="id15">
-<h2><span class="section-number">12.6. </span>연습문제<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<section id="id18">
+<h2><span class="section-number">12.6. </span>연습문제<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-lists_tuples.ipynb">(실습) 리스트와 튜플</a></p>
 </section>
 </section>
@@ -3335,28 +3357,33 @@ thon
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.1. 파이썬 내장 자료구조</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.1. 파이썬 내장 자료 구조</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">12.1.1. 모음 자료형 대 스칼라 자료형</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">12.1.2. 모음 자료형 구분</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">12.1.3. 순차 자료형: 리스트, 튜플, 문자열</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-list">12.2. 리스트</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">12.2.1. 리스트 연산</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">12.2.2. 인덱싱과 슬라이싱</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">12.2.3. 중첩 리스트와 인덱싱/슬라이싱/반복문</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">12.2.4. 리스트 메서드</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">12.2.5. 리스트 연습문제</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">12.2.1. 리스트 연산</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">12.2.2. 인덱싱과 슬라이싱</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">12.2.3. 중첩 리스트와 인덱싱/슬라이싱/반복문</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">12.2.4. 리스트 메서드</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">12.2.5. 리스트 연습문제</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-tuple">12.3. 튜플</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">12.3.1. 튜플 연산</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">12.3.2. 튜플 인덱싱/슬라이싱</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">12.3.3. 튜플 메서드</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">12.3.1. 튜플 연산</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">12.3.2. 튜플 인덱싱/슬라이싱</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">12.3.3. 튜플 메서드</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">12.4. 순차 자료형 해체</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">12.5. 순차 자료형에 유용한 함수</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">12.4. 순차 자료형 해체</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">12.5. 순차 자료형에 유용한 함수</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate">12.5.1. <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zip">12.5.2. <code class="docutils literal notranslate"><span class="pre">zip()</span></code> 함수</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">12.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">12.6. 연습문제</a></li>
 </ul>
   </nav></div>
 
