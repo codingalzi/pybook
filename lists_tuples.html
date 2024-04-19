@@ -1009,7 +1009,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">34</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">kgh</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
 
 <span class="ne">IndexError</span>: list index out of range
@@ -1303,7 +1303,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">53</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">54</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a2f</span><span class="p">[:</span><span class="mi">3</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">]</span>
 
 <span class="ne">ValueError</span>: attempt to assign sequence of size 3 to extended slice of size 2
@@ -1318,8 +1318,7 @@ document.write(`
 항목의 항목을 확인/추출/변경 하려면 인덱싱, 슬라이싱, <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을
 연속적으로 또는중첩해서 적용해야 한다.</p>
 <p><strong>인덱싱 연속 적용</strong></p>
-<p>예를 들어 김강현의 이름은 <code class="docutils literal notranslate"><span class="pre">info_list</span></code>의 첫째 항목 리스트의 첫째 항목이기에
-다음과 같이 확인한다.</p>
+<p>예를 들어 김강현의 이름은 <code class="docutils literal notranslate"><span class="pre">info_list</span></code>의 첫째 항목 리스트의 첫째 항목이다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_list</span>
@@ -1337,6 +1336,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p>따라서 김강현의 이름은 다음과 같이 확인한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kgh_name</span> <span class="o">=</span> <span class="n">info_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -1350,7 +1350,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>위 코드를 줄여서 다음과 같이 하나의 표현식으로 나타낼 수 있다.</p>
+<p>인덱싱을 연속 적용하는 과정을 다음과 같이 줄여서 하나의 표현식으로 나타낼 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -1363,7 +1363,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>아래 코드는 1번 인덱스에 위치한 황현의 이름과 나이를 확인한다.</p>
+<p>반면에 아래 코드는 황현의 이름과 나이를 확인한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hwang_name</span> <span class="o">=</span> <span class="n">info_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -1414,11 +1414,11 @@ document.write(`
 <p>2중으로 중첩된 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 사용하여 6명 각자의 정보를 일일이 나열할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>      <span class="c1"># 6명 모두를 대상으로 반복</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>  <span class="c1"># 6명 모두를 대상으로 반복</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># 한 사람의 모든 정보 출력. 항목들 사이는 탭으로 구분</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>       <span class="c1"># 한 사람의 모든 정보 출력. 항목들 사이는 탭으로 구분</span>
 
-    <span class="nb">print</span><span class="p">()</span>                   <span class="c1"># 사람들 사이의 구분을 위해 줄 바꿈</span>
+    <span class="nb">print</span><span class="p">()</span>               <span class="c1"># 사람들 사이의 구분을 위해 줄 바꿈</span>
 </pre></div>
 </div>
 </div>
@@ -1462,8 +1462,29 @@ document.write(`
 </div>
 </div>
 </div>
-<p>원하는 정보만 뽑기위해서도 중첩된 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문이 필요할 수 있다.
-예를 들어 아래 코드는 나이가 21살인 사람의 정보만 출력한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수의 <code class="docutils literal notranslate"><span class="pre">end='\n'</span></code> 키워드 옵션을 변경하여 한 줄에 한 사람 정보를 모두 출력할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># 한 사람의 정보는 탭으로 구분</span>
+
+    <span class="nb">print</span><span class="p">()</span>             
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>김강현	010-1234-5678	20	172.5	제주	
+황현	02-9871-1234	19	163.5	서울	
+남세원	010-3456-7891	21	156.7	경기	
+최흥선	070-4321-1111	21	187.2	부산	
+김현선	010-3333-8888	22	164.6	광주	
+함중아	010-7654-2345	18	178.3	강원	
+</pre></div>
+</div>
+</div>
+</div>
+<p>아래 코드는 나이가 21살인 사람의 정보만 출력한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
@@ -1482,11 +1503,11 @@ document.write(`
 </div>
 </div>
 </div>
-<p>반면에 아래 코드는 이름에 “현” 자가 포함된 사람의 정보만 출력한다.</p>
+<p>반면에 이름에 “현” 자가 포함된 사람의 정보만 출력하러면 다음과 같이 한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
-    <span class="k">if</span> <span class="s1">&#39;현&#39;</span> <span class="ow">in</span> <span class="n">person</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>         <span class="c1"># 이름에 &quot;현&quot; 자가 포함된 사람만 선택</span>
+    <span class="k">if</span> <span class="s1">&#39;현&#39;</span> <span class="ow">in</span> <span class="n">person</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="c1"># 이름에 &quot;현&quot; 자가 포함된 사람만 선택</span>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
     
@@ -1506,7 +1527,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">person</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;현&#39;</span><span class="p">):</span>         <span class="c1"># 이름이 &quot;현&quot; 자로 끝나난 사람만 선택</span>
+    <span class="k">if</span> <span class="n">person</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;현&#39;</span><span class="p">):</span> <span class="c1"># 이름이 &quot;현&quot; 자로 끝나는 사람만 선택</span>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
     
@@ -1521,14 +1542,36 @@ document.write(`
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">startswith()</span></code> 문자열 메서드를 이용하여 김씨 성만 추출할 수도 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">person</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;김&#39;</span><span class="p">):</span> <span class="c1"># 김씨 성 정보만 선택</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+        <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>김강현	010-1234-5678	20	172.5	제주	
+김현선	010-3333-8888	22	164.6	광주	
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="id10">
 <h3><span class="section-number">12.2.4. </span>리스트 메서드<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
-<p>모든 모음 자료형의 기본 용도는 여러 개의 항목을 묶어
-하나의 값으로 다루면서 필요에 따라 항목을 탐색하고 추출해서 활용하는 것이다.
-리스트, 사전, 집합처럼 가변인 모음 자료형은 또한
-항목을 추가하고 삭제할 수 있는 기능도 지원한다.
-리스트는 여기에 더해 항목들을 크기 순으로 정렬하거나 순서를 지정할 수 있는 기능도 지원한다.
+<p>모음 자료형의 기본 용도는 여러 개의 값을 모아 하나의 값으로 다루면서
+필요에 따라 유용한 항목을 탐색하고 추출하는 기능이다.
+<a class="reference internal" href="strings.html#ch-strings"><span class="std std-numref">11장</span></a>에서 살펴 본 문자열 메서드처럼
+리스트 자료형에 대해서만 사용할 수 있는 함수들인
+리스트 메서드가 다양하게 제공된다.</p>
+<p>문자열 자료형과는 달리 리스트는 변경을 허용하는 가변 자료형이기에
+항목의 탐색과 추출뿐만 아니라 항목의 추가와 삭제, 항목들의 정렬을
+수행하는 메서드도 제공된다.
 가장 활용도가 높은 리스트 메서드는 다음과 같다.</p>
 <table class="table" id="list-methods">
 <caption><span class="caption-number">Table 12.1 </span><span class="caption-text">리스트 주요 메서드</span><a class="headerlink" href="#list-methods" title="Link to this table">#</a></caption>
