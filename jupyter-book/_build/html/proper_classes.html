@@ -412,25 +412,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">20.1. 클래스 일반</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">20.1.1. 다면체 주사위 클래스</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-repr">20.1.2. <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 대 <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">20.1. 클래스 선언</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">20.2. 매직 메서드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">20.3. 객체 출력</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">20.4. 객체 비교</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">20.5. 공개 여부</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">20.6. 게터와 세터</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">20.7. 컨테이너 클래스</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">20.7.1. 벡터 자료형 정의</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">20.7.2. <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 지원</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">20.7.3. 인덱싱 지원</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">20.2. 비교 가능 클래스</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">20.3. 공개 여부</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">20.3.1. <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 속성</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dir">20.3.2. <code class="docutils literal notranslate"><span class="pre">__dir__()</span></code> 매직 메서드</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">20.3.3. 게터와 세터</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">20.4. 컨테이너 클래스</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">20.4.1. 벡터 자료형 정의</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">20.4.2. <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 지원</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">20.4.3. 인덱싱 지원</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">20.5. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">20.8. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -454,7 +448,7 @@ document.write(`
 <p><strong>참고</strong></p>
 <p>참고: 아래 내용은 <a class="reference external" href="https://runestone.academy/ns/books/published/pythonds3/index.html">Problem Solving with Algorithms and Data Structures using Python</a>의 2장 내용을 일부 활용한다.</p>
 <section id="id2">
-<h2><span class="section-number">20.1. </span>클래스 일반<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.1. </span>클래스 선언<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>클래스를 선언할 때 기본적으로 아래 요소들이 지원되도록 해야 한다.</p>
 <ul>
 <li><p>문서화: <strong>문서화 문자열</strong>(독스트링, docstring) 기능을 이용하여 해당 클래스의 기능과 사용법을 설명한다.
@@ -480,9 +474,10 @@ document.write(`
 <li><p>공개 여부</p></li>
 <li><p>읽기 전용 여부</p></li>
 </ul>
-<p>다면체 주사위 클래스를 이용하여 파이썬 클래스 선언에 기본적으로 필요한 요소들을 확인한다.</p>
-<section id="id3">
-<h3><span class="section-number">20.1.1. </span>다면체 주사위 클래스<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>리스트, 튜플 처럼 여러 개의 항목을 포함하는 모음 자료형 객체를 선언할 때 사용되는 컨테이너 클래스는 이외에도 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문, 인덱싱 등을 지원하는 다양한 메서드를 제공해야 한다.</p>
+<p>두 개의 클래스를 선언하고 기능을 확장시키는 과정을 통해 클래스의 용도에 따라 필요한 매직 메서드들의 기능을 소개한다.
+매직 메서드의 기본 기능을 설명하기 위해 먼저 다면체 주사위 클래스를 간단하게 선언하여 살펴 본다.</p>
+<p><strong>다면체 주사위 클래스</strong></p>
 <p>다면체 주사위 객체 생성에 사용되는 <code class="docutils literal notranslate"><span class="pre">MSDie</span></code> 클래스를 선언한 후에 한 단계씩
 업데이트 하는 과정을 살펴본다.
 <code class="docutils literal notranslate"><span class="pre">MSDie</span></code> 클래스에 기본으로 포함되는 두 메서드는 다음과 같다.</p>
@@ -528,18 +523,67 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x0000024EFACE4040&gt; 2
-&lt;__main__.MSDie object at 0x0000024EFACE4040&gt; 3
-&lt;__main__.MSDie object at 0x0000024EFACE4040&gt; 6
-&lt;__main__.MSDie object at 0x0000024EFACE4040&gt; 1
-&lt;__main__.MSDie object at 0x0000024EFACE4040&gt; 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie object at 0x7f51f8dfe050&gt; 4
+&lt;__main__.MSDie object at 0x7f51f8dfe050&gt; 2
+&lt;__main__.MSDie object at 0x7f51f8dfe050&gt; 2
+&lt;__main__.MSDie object at 0x7f51f8dfe050&gt; 2
+&lt;__main__.MSDie object at 0x7f51f8dfe050&gt; 6
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="str-repr">
-<h3><span class="section-number">20.1.2. </span><code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 대 <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code><a class="headerlink" href="#str-repr" title="Permalink to this heading">#</a></h3>
+<section id="id3">
+<h2><span class="section-number">20.2. </span>매직 메서드<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>매직 메서드<font size='2'>magic method</font>는 클래스에 기본적으로 포함되는 메서드다.
+매직 메서드의 이름은 밑줄 두 개로 감싸지며,
+클래스가 기본적으로 갖춰야 하는 기능을 제공한다.</p>
+<p>클래스에 기본으로 포함된 매직 메서드를 <code class="docutils literal notranslate"><span class="pre">dir()</span></code> 함수를 이용하여 확인할 수 있다.
+그러면 <code class="docutils literal notranslate"><span class="pre">__class__</span></code>, <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 등과 같은 기본 속성과 함께 다른 다양한 기본 속성과
+매직 메서드의 리스트를 확인할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">MSDie</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getstate__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;roll&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>이중에 중요한 매직 메서드 몇 개의 기능을 알아본다.</p>
+</section>
+<section id="id4">
+<h2><span class="section-number">20.3. </span>객체 출력<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">print(my_die)</span></code>가 <code class="docutils literal notranslate"><span class="pre">num_sides</span></code>와 <code class="docutils literal notranslate"><span class="pre">current_value</span></code>를 활용하여 적절한 출력을
 만들어 내도록 하려면 <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 매직 메서드가 적절한 문자열을 출력하도록 해야 한다.</p>
 <div class="cell docutils container">
@@ -580,11 +624,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSDie(6) - 가리키는 값은 4
-MSDie(6) - 가리키는 값은 5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSDie(6) - 가리키는 값은 6
 MSDie(6) - 가리키는 값은 6
+MSDie(6) - 가리키는 값은 3
 MSDie(6) - 가리키는 값은 1
-MSDie(6) - 가리키는 값은 1
+MSDie(6) - 가리키는 값은 5
 </pre></div>
 </div>
 </div>
@@ -597,7 +641,7 @@ MSDie(6) - 가리키는 값은 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie at 0x24eface5a50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MSDie at 0x7f51f8e10910&gt;
 </pre></div>
 </div>
 </div>
@@ -613,7 +657,7 @@ MSDie(6) - 가리키는 값은 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x0000024EFACE45E0&gt;, &lt;__main__.MSDie object at 0x0000024EFACE5420&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.MSDie object at 0x7f51f8e12ad0&gt;, &lt;__main__.MSDie object at 0x7f51f8e12a10&gt;]
 </pre></div>
 </div>
 </div>
@@ -657,7 +701,7 @@ MSDie(6) - 가리키는 값은 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6):2, MSDie(20):19]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6):2, MSDie(20):5]
 </pre></div>
 </div>
 </div>
@@ -705,10 +749,10 @@ MSDie(6) - 가리키는 값은 1
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSDie(6):6
-MSDie(6):6
-MSDie(6):3
-MSDie(6):1
 MSDie(6):5
+MSDie(6):3
+MSDie(6):6
+MSDie(6):2
 </pre></div>
 </div>
 </div>
@@ -721,15 +765,14 @@ MSDie(6):5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6):4, MSDie(20):9]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[MSDie(6):3, MSDie(20):13]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-</section>
-<section id="id4">
-<h2><span class="section-number">20.2. </span>비교 가능 클래스<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h2><span class="section-number">20.4. </span>객체 비교<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p><strong>비교 연산자</strong></p>
 <p>두 주사위 객체의 동등성(equality) 여부를 어떻게 판단할까?
 두 주사위가 가리키는 값이 같을 때? 주사위 면의 수가 다르면?
@@ -987,8 +1030,8 @@ True
 </div>
 </div>
 </section>
-<section id="id5">
-<h2><span class="section-number">20.3. </span>공개 여부<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h2><span class="section-number">20.5. </span>공개 여부<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>자바 언어의 클래스 선언에 사용되는 private, default, protected, public 등과 같은
 접근 제어자는 파이썬에서 지원되지 않는다.
 파이썬에서 클래스의 모든 것은 공개(public)되기에
@@ -1048,7 +1091,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -1085,8 +1128,7 @@ True
 <span class="go">AttributeError: &#39;MSDie&#39; object has no attribute &#39;__randNum&#39;</span>
 </pre></div>
 </div>
-<section id="dict">
-<h3><span class="section-number">20.3.1. </span><code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 속성<a class="headerlink" href="#dict" title="Permalink to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 속성</strong></p>
 <p>객체 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 갖는 인스턴스 속성을 확인하면 다음과 같이
 속성 변수와 해당 속성값으로 이루어진 사전을 얻는다.</p>
 <div class="cell docutils container">
@@ -1096,7 +1138,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;_MSDie__hidden1&#39;: 3, &#39;_hidden2&#39;: 7, &#39;num_sides&#39;: 6, &#39;current_value&#39;: 6}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;_MSDie__hidden1&#39;: 3, &#39;_hidden2&#39;: 7, &#39;num_sides&#39;: 6, &#39;current_value&#39;: 2}
 </pre></div>
 </div>
 </div>
@@ -1117,9 +1159,7 @@ True
 </div>
 </div>
 </div>
-</section>
-<section id="dir">
-<h3><span class="section-number">20.3.2. </span><code class="docutils literal notranslate"><span class="pre">__dir__()</span></code> 매직 메서드<a class="headerlink" href="#dir" title="Permalink to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">__dir__()</span></code> 매직 메서드</strong></p>
 <p>객체가 사용할 수 있는 모든 속성과 메서드를 리스트로 보려면
 <code class="docutils literal notranslate"><span class="pre">__dir__()</span></code> 매직 메서드를 사용한다.</p>
 <div class="cell docutils container">
@@ -1155,6 +1195,7 @@ True
  &#39;__ge__&#39;,
  &#39;__reduce_ex__&#39;,
  &#39;__reduce__&#39;,
+ &#39;__getstate__&#39;,
  &#39;__subclasshook__&#39;,
  &#39;__init_subclass__&#39;,
  &#39;__format__&#39;,
@@ -1184,6 +1225,7 @@ True
  &#39;__format__&#39;,
  &#39;__ge__&#39;,
  &#39;__getattribute__&#39;,
+ &#39;__getstate__&#39;,
  &#39;__gt__&#39;,
  &#39;__hash__&#39;,
  &#39;__init__&#39;,
@@ -1217,7 +1259,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -1225,8 +1267,8 @@ True
 <p>결론적으로 이름 뒤섞기는 일부 속성과 메서드의 이름이 외부로 쉽게 노출되지 않도록 하는 기법이다.
 단, 완전히 차단하는 것은 아니다.</p>
 </section>
-<section id="id6">
-<h3><span class="section-number">20.3.3. </span>게터와 세터<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h2><span class="section-number">20.6. </span>게터와 세터<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <p>하나의 밑줄을 사용하는 <code class="docutils literal notranslate"><span class="pre">_hidden2</span></code>는 숨길 것 까지는 아니지만 클래스 내부용이란 사실을 반영한 이름이다.
 그리고 이런 변수와 메서드는 사용자가 직접 값을 수정하기 보다는
 <strong>세터</strong>(setter)와 <strong>게터</strong>(getter) 메서드를 이용하여
@@ -1431,9 +1473,8 @@ True
 찾아볼 수 있다.</p>
 </div>
 </section>
-</section>
-<section id="id7">
-<h2><span class="section-number">20.4. </span>컨테이너 클래스<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<section id="id8">
+<h2><span class="section-number">20.7. </span>컨테이너 클래스<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <p>모음 자료형을 추상 자료형 클래스를 이용하여 정의하려면
 경우에 따라 아래 사항들도 고려해야 한다.</p>
 <ul class="simple">
@@ -1444,8 +1485,8 @@ True
 <p>모음 자료형 객체가 속하는 클래스를 일명 <strong>컨테이너 클래스</strong>라 하며,
 앞으로 스택, 큐, 그래프, 트리 등을 다룰 때 중요한 역할을 수행한다.
 여기서는 <code class="docutils literal notranslate"><span class="pre">Vector</span></code> 클래스를 이용하여 앞서 언급한 요소들을 구현하는 과정을 살펴본다.</p>
-<section id="id8">
-<h3><span class="section-number">20.4.1. </span>벡터 자료형 정의<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<section id="id9">
+<h3><span class="section-number">20.7.1. </span>벡터 자료형 정의<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">Vector</span></code> 클래스를 직접 구현한다.
 <a class="reference internal" href="inheritance.html#ch-inheritance"><span class="std std-ref">상속</span></a>에서 정의한 <code class="docutils literal notranslate"><span class="pre">Vector</span></code> 클래스와는 다르게
 <code class="docutils literal notranslate"><span class="pre">list</span></code> 클래스를 상속하지 않고, 다만 저장 장치로 이용만 한다.</p>
@@ -1671,7 +1712,7 @@ True
 </div>
 </section>
 <section id="for">
-<h3><span class="section-number">20.4.2. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 지원<a class="headerlink" href="#for" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">20.7.2. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 지원<a class="headerlink" href="#for" title="Permalink to this heading">#</a></h3>
 <p>아직은 포함된 항목들을 대상으로 반복문을 실행할 수 없다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">oneD1</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -1824,8 +1865,8 @@ True
 </div>
 </div>
 </section>
-<section id="id9">
-<h3><span class="section-number">20.4.3. </span>인덱싱 지원<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<section id="id10">
+<h3><span class="section-number">20.7.3. </span>인덱싱 지원<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p>항목들의 순서를 고려해서 항목을 확인하고자 하면 오류가 발생한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">oneD2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">TypeError                                 Traceback (most recent call last)</span>
@@ -2095,8 +2136,8 @@ True
 </div>
 </section>
 </section>
-<section id="id10">
-<h2><span class="section-number">20.5. </span>연습문제<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="id11">
+<h2><span class="section-number">20.8. </span>연습문제<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/github/codingalzi/algopy/blob/master/excs/exc-python_basic_4.ipynb">(실습) 파이썬 기초 4부: 클래스 기본 요소</a></p></li>
 </ol>
@@ -2167,25 +2208,19 @@ True
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">20.1. 클래스 일반</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">20.1.1. 다면체 주사위 클래스</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-repr">20.1.2. <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> 대 <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">20.1. 클래스 선언</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">20.2. 매직 메서드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">20.3. 객체 출력</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">20.4. 객체 비교</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">20.5. 공개 여부</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">20.6. 게터와 세터</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">20.7. 컨테이너 클래스</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">20.7.1. 벡터 자료형 정의</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">20.7.2. <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 지원</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">20.7.3. 인덱싱 지원</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">20.2. 비교 가능 클래스</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">20.3. 공개 여부</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">20.3.1. <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> 속성</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dir">20.3.2. <code class="docutils literal notranslate"><span class="pre">__dir__()</span></code> 매직 메서드</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">20.3.3. 게터와 세터</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">20.4. 컨테이너 클래스</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">20.4.1. 벡터 자료형 정의</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">20.4.2. <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문 지원</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">20.4.3. 인덱싱 지원</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">20.5. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">20.8. 연습문제</a></li>
 </ul>
   </nav></div>
 
