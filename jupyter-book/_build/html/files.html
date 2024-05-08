@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>14. 파일 &#8212; 파이썬 프로그래밍</title>
   
@@ -28,36 +29,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'files';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -179,14 +180,12 @@
 <li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">13. 사전과 집합</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">14. 파일</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">15. 클래스, 인스턴스, 객체</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">16. 사례 연구: 객체 지향 프로그래밍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance.html">17. 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">18. 사례 연구: 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">19. 클래스의 기본 요소</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iterator_generator.html">20. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">21. (부록) 모듈 고급 활용법</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursion.html">22. (부록) 재귀 함수</a></li>
-<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">23. (부록) 자료형 힌트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance.html">16. 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">17. (부록) 모듈 고급 활용법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator_generator.html">18. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursion.html">19. (부록) 재귀 함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">20. (부록) 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">21. (부록) 자료형 힌트</a></li>
 </ul>
 
     </div>
@@ -430,7 +429,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-files">
-<span id="id1"></span><h1><span class="section-number">14. </span>파일<a class="headerlink" href="#ch-files" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">14. </span>파일<a class="headerlink" href="#ch-files" title="Permalink to this heading">#</a></h1>
 <p>열 명의 5미터 다이빙 경기의 점수를 저장한 텍스트 파일에서
 필요한 정보를 추출하는 과정을 살펴본다.
 파일의 내용은 다음과 같이 첫째 줄엔 ‘이름’과 ‘점수’라는 구분이 표시되어 있으며,
@@ -450,7 +449,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="id2">
-<h2><span class="section-number">14.1. </span>파일의 종류와 경로<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.1. </span>파일의 종류와 경로<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p><strong>텍스트 파일과 바이너리 파일</strong></p>
 <p>파일은 <strong>텍스트</strong><font size='2'>text</font> 파일과
 <strong>바이너리</strong><font size='2'>binary</font> 파일 두 가지로 나뉜다.</p>
@@ -511,7 +510,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </ul>
 </section>
 <section id="id3">
-<h2><span class="section-number">14.2. </span>파일 준비<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.2. </span>파일 준비<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>먼저 위에서 언급된 파일을 다운 받아서 파이썬 코딩을 실습하는 디렉토리에 저장한다.
 여기서는 <code class="docutils literal notranslate"><span class="pre">data</span></code>라는 하위디렉토리에 <code class="docutils literal notranslate"><span class="pre">results5m.txt</span></code>라는 파일로 저장한다.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> 클래스: 디렉토리 지정</strong></p>
@@ -992,7 +991,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </table>
 </section>
 <section id="id4">
-<h2><span class="section-number">14.3. </span>텍스트 파일 생성<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.3. </span>텍스트 파일 생성<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>10명 선수들의 5미터 다이빙 기록 이외에 아래 10미터 다이빙 기록이 담긴 <code class="docutils literal notranslate"><span class="pre">results10m.txt</span></code> 파일이 존재한다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">이름</span>  <span class="n">점수</span>
 <span class="n">권준기</span>  <span class="mf">9.11</span>
@@ -1171,7 +1170,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </section>
 <section id="sec-exp-diving-5m">
-<span id="id5"></span><h2><span class="section-number">14.4. </span>활용 예제: 종목별 등수 확인<a class="headerlink" href="#sec-exp-diving-5m" title="Link to this heading">#</a></h2>
+<span id="id5"></span><h2><span class="section-number">14.4. </span>활용 예제: 종목별 등수 확인<a class="headerlink" href="#sec-exp-diving-5m" title="Permalink to this heading">#</a></h2>
 <p>선수들의 5미터 다이빙 점수를 기준으로 등수를 확인해보자.</p>
 <p><strong>리스트 활용</strong></p>
 <p>단순히 몇 등 점수를 확인하려면 점수만으로 구성된 리스트를 생성한 후에 정렬하면 된다.
@@ -1332,7 +1331,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </section>
 <section id="id6">
-<h2><span class="section-number">14.5. </span>연습문제<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.5. </span>연습문제<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-files.ipynb">(실습) 파일</a></p>
 </section>
 </section>

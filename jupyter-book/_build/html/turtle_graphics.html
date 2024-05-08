@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>9. 거북이 그래픽 &#8212; 파이썬 프로그래밍</title>
   
@@ -28,36 +29,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'turtle_graphics';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -179,14 +180,12 @@
 <li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">13. 사전과 집합</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">14. 파일</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">15. 클래스, 인스턴스, 객체</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_oop.html">16. 사례 연구: 객체 지향 프로그래밍</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance.html">17. 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudy_inheritance.html">18. 사례 연구: 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">19. 클래스의 기본 요소</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iterator_generator.html">20. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">21. (부록) 모듈 고급 활용법</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursion.html">22. (부록) 재귀 함수</a></li>
-<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">23. (부록) 자료형 힌트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance.html">16. 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">17. (부록) 모듈 고급 활용법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator_generator.html">18. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursion.html">19. (부록) 재귀 함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">20. (부록) 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">21. (부록) 자료형 힌트</a></li>
 </ul>
 
     </div>
@@ -427,10 +426,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-turtle-graphics">
-<span id="id1"></span><h1><span class="section-number">9. </span>거북이 그래픽<a class="headerlink" href="#ch-turtle-graphics" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">9. </span>거북이 그래픽<a class="headerlink" href="#ch-turtle-graphics" title="Permalink to this heading">#</a></h1>
 <p>게임 프로그래밍을 지원하는 파이썬의 기본 라이브러리를 소개한다.</p>
 <section id="turtle">
-<h2><span class="section-number">9.1. </span><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈<a class="headerlink" href="#turtle" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.1. </span><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈<a class="headerlink" href="#turtle" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈은 간단한 2차원 컴퓨터 그래픽스를 지원하는 다양한 도구를 제공하며,
 파이썬에 기본 모듈로 포함되어 있다.
 <a class="reference external" href="https://aisw.tistory.com/5">IDLE 를 이용</a>하여 아래 명령문을 실행하면 그림 창이 하나 새로 나타나고
@@ -466,10 +465,10 @@ document.write(`
 </div>
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/trinket01.png" width="400"/></div></section>
 <section id="id2">
-<h2><span class="section-number">9.2. </span>실전 거북이 프로그래밍<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.2. </span>실전 거북이 프로그래밍<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈의 활용법과 거북이 그래픽을 이용한 프로그래밍 학습은
 <a class="reference external" href="https://trinket.io">트링킷<font size="2">Trinket</font></a> 사이트의
-<a class="reference external" href="https://leegys_gmail_com.trinket.io/python-turtle">Trinket의 Python Turtle 소개</a>에서
+<a class="reference external" href="https://leegys_gmail_com.trinket.io/python-turtle">Python Turtle 소개</a>에서
 상세히 다룬다.</p>
 </section>
 </section>
