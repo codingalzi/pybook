@@ -22,9 +22,7 @@ chapters:
 - file: dicts_sets
 - file: files
 - file: classes_instances_objects
-- file: casestudy_oop
 - file: inheritance
-- file: casestudy_inheritance
 - file: proper_classes
 - file: iterator_generator
 - file: modules_advanced
