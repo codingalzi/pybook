@@ -2193,7 +2193,8 @@ hello+++++
 <p><strong><code class="docutils literal notranslate"><span class="pre">join()</span></code> 메서드</strong></p>
 <p>여러 개의 문자열을 결합한다.
 인자로 문자열을 포함하여 문자열로 구성된 리스트, 튜플 등이 사용된다.
-예를 들어 아래 코드는 <code class="docutils literal notranslate"><span class="pre">hello</span></code> 문자열에 포함된 모든 문자열들 사이에 별표 기호를 추가하여 새로운 문자열을 생성한다.</p>
+<code class="docutils literal notranslate"><span class="pre">join()</span></code> 메서드를 호출하는 문자열은 지정된 항목들을 이어붙이는 연결고리 역할을 수행한다.</p>
+<p>예를 들어 아래 코드는 <code class="docutils literal notranslate"><span class="pre">hello</span></code> 문자열에 포함된 모든 문자열들 사이에 별표 기호를 추가하여 새로운 문자열을 생성한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;*&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
@@ -2213,7 +2214,19 @@ hello+++++
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words_splitted</span> <span class="o">=</span> <span class="n">hyphen_words</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
-<span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words_splitted</span><span class="p">)</span>
+<span class="n">words_splitted</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;My&#39;, &#39;life&#39;, &#39;is&#39;, &#39;so&#39;, &#39;so&#39;, &#39;cool!&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words_splitted</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
