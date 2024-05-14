@@ -469,8 +469,8 @@ document.write(`
 <p><strong>객체 지향 프로그래밍</strong><font size='2'>Object-Oriented Programming</font>은
 객체들 사이의 유기적인 관계를 묘사하는 프로그래밍 기법이며,
 줄여서 보통 <strong>OOP</strong>라고 부른다.
-OOP를 지원하는 <strong>객체 지향 언어</strong>로
-파이썬, 자바, C++, C#, 루비, 자바스크립트 등 대부분의 프로그래밍 언어가 사용된다.</p>
+파이썬, 자바, C++, C#, 루비, 자바스크립트 등 대부분의 프로그래밍 언어가
+OOP를 지원하는 <strong>객체 지향 언어</strong>다.</p>
 <p>OOP와 대비되는 개념으로 <strong>절차 지향 프로그래밍</strong>이 있다.
 절차 지향 프로그래밍은 수행해야 할 일을 순차적으로 처리하는 과정을 묘사하는 것을 가장 중요하게 여기며
 프로그램 전체가 유기적으로 연결되도록 만드는 프로그래밍 기법이다.
@@ -489,15 +489,49 @@ OOP는 다만 구현해야 할 객체들을 선택하고 객체들 사이의 유
 <li><p>객체(object)란 무엇인가?</p></li>
 <li><p>“객체를 중심으로 프로그래밍한다” 라는 말의 의미는 무엇인가?</p></li>
 </ol>
-<p>여기서는 두 질문에 대한 직접적인 설명 대신에 객체가 어떻게 활용되는가를 실전 예제를 통해 소개한다.</p>
+<p>두 질문에 대한 대답을 여기서는 두 객체의 충돌을 표현하고 다루는 방법을 소개하는 것으로 대신한다.</p>
 </section>
 <section id="id3">
 <h2><span class="section-number">15.3. </span>OOP 예제: 객체 충돌 감지<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/collision-detection-modes-hero.jpg" width="600"/></div>
-<p><div style="text-align: center">&lt;그림 출처: <a href="https://blog.terresquall.com/2019/12/collision-detection-modes-in-unitys-rigidbody-component/">terresquall blog </a>&gt;</div></p><p>여기서는 두 객체가 충돌하는 것을 서로 어떻게 감지하는가를 설명하면서 객체 지향 프로그래밍의 핵심을 전달한다.
-그래픽 요소를 사용하는 예제를 구현하기 위해 거북이 그래픽을 활용한다.
+<p>여기서는 두 객체가 충돌하는 것을 서로 어떻게 감지하는가를 설명하면서 두 질문에 답한다.
+객체 충돌 예제를 구현하기 위해 필요한 그래픽 요소는 거북이 그래픽으로 처리한다.
 거북이 그래픽에 시용되는 <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈의 기초 활용법은 <a class="reference internal" href="turtle_graphics.html#ch-turtle-graphics"><span class="std std-numref">9장</span></a>을 참고한다.</p>
-<p><strong>기본 설정</strong></p>
+<p><strong>충돌이 감지되는 경우</strong></p>
+<p>아래 두 그림은 팩맨 객체와 체리 객체의 충돌 이전과 이후를 보여준다.
+오른쪽 팩맨이 체리와 접촉하는 순간 체리가 X 자로 변하여 잡아먹히는 장면이다.</p>
+<table>
+    <tr>
+        <td style="padding:1px">
+            <figure>
+                <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/collision_detection1a.png" style="width:100%" title="객체 충돌 전">
+                <figcaption>충돌 전</figcaption>
+            </figure>
+        </td>
+        <td style="padding:1px">
+            <figure>
+                <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/collision_detection2.png" style="width:100%" title="객체 충돌 후">
+                <figcaption>충돌 후</figcaption>
+            </figure>
+        </td>        
+    </tr>
+</table><p><strong>충돌이 감지되지 못하는 경우</strong></p>
+<p>반면에 아래 두 그림은 팩맨 객체와 체리 객체가 서로의 충돌을 감지하지 못하여 그냥 통과하는 장면을 보여준다.</p>
+<table>
+    <tr>
+        <td style="padding:1px">
+            <figure>
+                <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/collision_detection1b.png" style="width:100%" title="객체 충돌 미감지">
+                <figcaption>충돌 미감지</figcaption>
+            </figure>
+        </td>
+        <td style="padding:1px">
+            <figure>
+                <img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/collision_detection1c.png" style="width:100%" title="객체 통과 후">
+                <figcaption>그냥 통과</figcaption>
+            </figure>
+        </td>        
+    </tr>
+</table><p><strong>기본 설정</strong></p>
 <p>캔버스(<code class="docutils literal notranslate"><span class="pre">wn</span></code>)와 펜(<code class="docutils literal notranslate"><span class="pre">pen</span></code>)을 준비한다.
 또한 스프라이트에 사용될 7개의 이미지를 이미지 라이브러리에 추가한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
