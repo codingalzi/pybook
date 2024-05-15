@@ -415,12 +415,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop">15.1. OOP와 객체</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">15.2. 거북이 그래픽</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15.3. 객체의 독립성</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">15.3.1. 예제 4</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">15.4. 필수 예제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">15.5. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15.3. 객체의 독립성</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">15.4. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">15.5. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -542,6 +539,7 @@ OOP는 다만 구현해야 할 객체들을 선택하고 객체들 사이의 유
 객체들 사이의 교감을 활용하는 프로그램 기법을 의미한다.</p>
 <p>여기서는 거북이 객체를 두 개 생성하여 생성된 두 객체를 상호 독립적으로 활용하는 방법을 소개한다.
 두 거북이 객체들 사이의 교감을 구현하는 방식은 <a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">16장</span></a>에서 다룬다.</p>
+<p><strong>예제 1</strong></p>
 <p>아래 코드를 실행하면 두 개의 거북이 객체에 의해 검정 사각형 빨강 삼각형이 도화지 위에 그려진다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 
@@ -580,42 +578,47 @@ OOP는 다만 구현해야 할 객체들을 선택하고 객체들 사이의 유
 <li><p><code class="docutils literal notranslate"><span class="pre">color()</span></code> 메서드: 거북이 객체의 색 지정. 이동할 때 그려지는 선의 색도 함께 변경됨</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">right()</span></code> 메서드: 거북이 객체가 바라보는 방향을 기준으로 시계 방향으로 지정된 각도만큼 회전</p></li>
 </ul>
-<section id="id4">
-<h3><span class="section-number">15.3.1. </span>예제 4<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
-<p>아래 코드를 <code class="docutils literal notranslate"><span class="pre">mypolygon4.py</span></code> 파일에 저장하고 실행하면
-회오리 모양으로 움직이면서 점차 가속도가 붙는 거북이를 확인할 수 있다.</p>
+<p><strong>예제 2</strong></p>
+<p>아래 코드를 실행하면 두 개의 거북이 객체에 의해 파랑 회오리와 빨강 회오리가 그려진다.
+새로이 사용된 메서드는 다음과 같다.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">penup</span></code>: <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 인스턴스 메서드. 그림 그리지 않는 상태로 전환.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stamp</span></code>: <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 인스턴스 메서드. 도장 찍기.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bgcolor()</span></code>: 스크린 객체인 도화지의 바탕화면 색 지정</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">penup()</span></code>: 거북이 객체의 선 그리기 기능 해제</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stamp()</span></code>: 거북이 객체의 모양 도장 찍기</p></li>
 </ul>
-<hr class="docutils" />
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
 <span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
 <span class="n">wn</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;lightyellow&quot;</span><span class="p">)</span>
-<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
-<span class="n">bob</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>        <span class="c1"># 화살촉 대신 거북이 모양 선택</span>
-<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
 
-<span class="n">bob</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>                <span class="c1"># 펜 들기 (이동할 때 선을 그리지 않게 됨)</span>
-<span class="n">size</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
-   <span class="n">bob</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>             <span class="c1"># 거북이 모양 도장 찍기</span>
-   <span class="n">size</span> <span class="o">=</span> <span class="n">size</span> <span class="o">+</span> <span class="mi">3</span>         <span class="c1"># 회전을 점차 크게 돌도록 만들기</span>
-   <span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>       <span class="c1"># size 크기만큼 전진하기</span>
-   <span class="n">bob</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>           <span class="c1"># 24도 우회전하기</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">]</span>
 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="mi">40</span>
+
+    <span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+
+    <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">step</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">26</span><span class="p">):</span>
+       <span class="n">t</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span> 
+       <span class="n">step</span> <span class="o">=</span> <span class="n">step</span> <span class="o">+</span> <span class="mi">5</span>
+       <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">step</span><span class="p">)</span> 
+       <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+    
 <span class="n">wn</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle03.png" width="500"/></div></section>
-</section>
-<section id="id5">
-<h2><span class="section-number">15.4. </span>필수 예제<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h2><span class="section-number">15.4. </span>필수 예제<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/examples/examples-oop.ipynb">(필수 예제) 객체 지향 프로그래밍</a></p>
 </section>
-<section id="id6">
-<h2><span class="section-number">15.5. </span>연습문제<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h2><span class="section-number">15.5. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-oop.ipynb">(연습) 객체 지향 프로그래밍</a></p>
 </section>
 </section>
@@ -686,12 +689,9 @@ OOP는 다만 구현해야 할 객체들을 선택하고 객체들 사이의 유
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop">15.1. OOP와 객체</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">15.2. 거북이 그래픽</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15.3. 객체의 독립성</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">15.3.1. 예제 4</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">15.4. 필수 예제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">15.5. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15.3. 객체의 독립성</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">15.4. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">15.5. 연습문제</a></li>
 </ul>
   </nav></div>
 
