@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>18. (부록) 이터러블, 이터레이터, 제너레이터 &#8212; 파이썬 프로그래밍</title>
+    <title>19. (부록) 이터러블, 이터레이터, 제너레이터 &#8212; 파이썬 프로그래밍</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'iterator_generator';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="19. (부록) 재귀 함수" href="recursion.html" />
-    <link rel="prev" title="17. (부록) 모듈 고급 활용법" href="modules_advanced.html" />
+    <link rel="next" title="20. (부록) 재귀 함수" href="recursion.html" />
+    <link rel="prev" title="18. (부록) 모듈 고급 활용법" href="modules_advanced.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,13 +179,14 @@
 <li class="toctree-l1"><a class="reference internal" href="lists_tuples.html">12. 리스트와 튜플</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">13. 사전과 집합</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">14. 파일</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">15. 클래스, 인스턴스, 객체</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance.html">16. 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">17. (부록) 모듈 고급 활용법</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursion.html">19. (부록) 재귀 함수</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">20. (부록) 클래스의 기본 요소</a></li>
-<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">21. (부록) 자료형 힌트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oop.html">15. 객체 지향 프로그래밍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">16. 클래스, 인스턴스, 객체</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance.html">17. 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">18. (부록) 모듈 고급 활용법</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">19. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursion.html">20. (부록) 재귀 함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">21. (부록) 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">22. (부록) 자료형 힌트</a></li>
 </ul>
 
     </div>
@@ -412,12 +413,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">18.1. 이터러블</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-iterators">18.2. 이터레이터</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">18.3. 제너레이터</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">18.4. 이터러블 자료형에 유용한 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">18.5. 적극적 계산과 소극적 계산</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">18.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">19.1. 이터러블</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-iterators">19.2. 이터레이터</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">19.3. 제너레이터</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">19.4. 이터러블 자료형에 유용한 함수</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">19.5. 적극적 계산과 소극적 계산</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">19.6. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -430,14 +431,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-iterator-generator">
-<span id="id1"></span><h1><span class="section-number">18. </span>(부록) 이터러블, 이터레이터, 제너레이터<a class="headerlink" href="#ch-iterator-generator" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">19. </span>(부록) 이터러블, 이터레이터, 제너레이터<a class="headerlink" href="#ch-iterator-generator" title="Permalink to this heading">#</a></h1>
 <p>파이썬은 <strong>덕 타이핑</strong><font size='2'>duck typing</font>을 지원한다.
 덕 타이핑은 원래 ‘오리처럼 걷고 꽥꽥 울면 오리가 맞다” 라는 속담에서 유래한다.
 하지만 파이썬에서는 주어진 클래스가 특정 이름의 메소드를 지원하는지 여부에만 관심을 둘 때 사용하는 관용적 표현이다.</p>
 <p>예를 들어, <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> 라는 메소드를 지원하는 클래스는 이터러블 자료형이라 불리며
 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 작성할 때 사용될 수 있는 모음 자료형 역할을 수행한다.</p>
 <section id="id2">
-<h2><span class="section-number">18.1. </span>이터러블<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.1. </span>이터러블<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p><strong>이터러블</strong><font size = "2">iterable</font> 자료형의 값은
 필요한 경우 포함된 항목을 한 번에 하나씩 전달할 수 있는 기능을 제공하는 갖는 객체이다.
 예를 들어 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문과 함께 사용될 수 있는
@@ -580,7 +581,7 @@ b
 </div>
 </section>
 <section id="sec-iterators">
-<span id="id3"></span><h2><span class="section-number">18.2. </span>이터레이터<a class="headerlink" href="#sec-iterators" title="Permalink to this heading">#</a></h2>
+<span id="id3"></span><h2><span class="section-number">19.2. </span>이터레이터<a class="headerlink" href="#sec-iterators" title="Permalink to this heading">#</a></h2>
 <p><strong>이터레이터</strong><font size = "2">iterator</font>는 값을 하나씩 꺼낼 수 있는 객체로,
 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 메서드를 갖는다.
 예를 들어, 모든 이터러블 객체를 <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> 메서드를 이용하여 이터레이터로 변환시킬 수 있다.</p>
@@ -840,7 +841,7 @@ b
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">18.3. </span>제너레이터<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.3. </span>제너레이터<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p><strong>제너레이터</strong><font size = "2">generator</font>는 간단한 방식으로 구현할 수 있는 이터레이터이며,
 크게 두 가지 방식으로 생성된다.</p>
 <ul class="simple">
@@ -998,7 +999,7 @@ b
 </div>
 </section>
 <section id="id5">
-<h2><span class="section-number">18.4. </span>이터러블 자료형에 유용한 함수<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.4. </span>이터러블 자료형에 유용한 함수<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p><strong><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> 함수</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">enumerate(iterable,</span> <span class="pre">start</span> <span class="pre">=</span> <span class="pre">0)</span></code> 함수는
 카운트와 <code class="docutils literal notranslate"><span class="pre">iterable</span></code>의 항목을 튜플로 묶은 형태로 이터레이터를 만들어 반환한다.</p>
@@ -1258,7 +1259,7 @@ b
 </div>
 </section>
 <section id="id6">
-<h2><span class="section-number">18.5. </span>적극적 계산과 소극적 계산<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.5. </span>적극적 계산과 소극적 계산<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">range</span></code> 객체처럼 모든 값을 미리 생성해서 준비해 놓는 대신에 필요할 때 필요한 항목을 생성하는 것을
 <strong>소극적</strong><font size='2'>lazy</font> 계산이라 부른다.
 반면에 호출 되자마자 바로 실행하는 것은 <strong>적극적</strong><font size='2'>eager</font> 계산이다.
@@ -1384,7 +1385,7 @@ b
 </div>
 </section>
 <section id="id7">
-<h2><span class="section-number">18.6. </span>연습문제<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.6. </span>연습문제<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-casestudy_collections.ipynb">(실습) 사례 연구: 이터러블, 이터레이터, 제너레이터</a></p>
 </section>
 </section>
@@ -1425,7 +1426,7 @@ b
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">17. </span>(부록) 모듈 고급 활용법</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>(부록) 모듈 고급 활용법</p>
       </div>
     </a>
     <a class="right-next"
@@ -1433,7 +1434,7 @@ b
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">19. </span>(부록) 재귀 함수</p>
+        <p class="prev-next-title"><span class="section-number">20. </span>(부록) 재귀 함수</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1453,12 +1454,12 @@ b
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">18.1. 이터러블</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-iterators">18.2. 이터레이터</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">18.3. 제너레이터</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">18.4. 이터러블 자료형에 유용한 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">18.5. 적극적 계산과 소극적 계산</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">18.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">19.1. 이터러블</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-iterators">19.2. 이터레이터</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">19.3. 제너레이터</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">19.4. 이터러블 자료형에 유용한 함수</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">19.5. 적극적 계산과 소극적 계산</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">19.6. 연습문제</a></li>
 </ul>
   </nav></div>
 
