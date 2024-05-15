@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>16. 상속 &#8212; 파이썬 프로그래밍</title>
+    <title>17. 상속 &#8212; 파이썬 프로그래밍</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'inheritance';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="17. (부록) 모듈 고급 활용법" href="modules_advanced.html" />
-    <link rel="prev" title="15. 클래스, 인스턴스, 객체" href="classes_instances_objects.html" />
+    <link rel="next" title="18. (부록) 모듈 고급 활용법" href="modules_advanced.html" />
+    <link rel="prev" title="16. 클래스, 인스턴스, 객체" href="classes_instances_objects.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,13 +179,14 @@
 <li class="toctree-l1"><a class="reference internal" href="lists_tuples.html">12. 리스트와 튜플</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">13. 사전과 집합</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">14. 파일</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">15. 클래스, 인스턴스, 객체</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. 상속</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">17. (부록) 모듈 고급 활용법</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iterator_generator.html">18. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursion.html">19. (부록) 재귀 함수</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">20. (부록) 클래스의 기본 요소</a></li>
-<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">21. (부록) 자료형 힌트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oop.html">15. 객체 지향 프로그래밍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">16. 클래스, 인스턴스, 객체</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">17. 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">18. (부록) 모듈 고급 활용법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator_generator.html">19. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursion.html">20. (부록) 재귀 함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">21. (부록) 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">22. (부록) 자료형 힌트</a></li>
 </ul>
 
     </div>
@@ -412,9 +413,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.1. 클래스 상속</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.2. 모듈 활용 클래스 상속</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.3. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.1. 클래스 상속</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.2. 모듈 활용 클래스 상속</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.3. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -427,10 +428,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-inheritance">
-<span id="id1"></span><h1><span class="section-number">16. </span>상속<a class="headerlink" href="#ch-inheritance" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">17. </span>상속<a class="headerlink" href="#ch-inheritance" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2><span class="section-number">16.1. </span>클래스 상속<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p><a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">15장</span></a>에서 사용한 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 상속해서
+<h2><span class="section-number">17.1. </span>클래스 상속<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p><a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">16장</span></a>에서 사용한 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 상속해서
 캐릭터에 새로운 기능을 추가한다.</p>
 <p><strong>참고</strong></p>
 <p>여기서 사용하는 코드는
@@ -588,7 +589,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">16.2. </span>모듈 활용 클래스 상속<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.2. </span>모듈 활용 클래스 상속<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>다른 파이썬 파일(모듈)에 정의된 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 상속하는 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스를 선언한다.</p>
 <p><strong>참고</strong></p>
 <p>여기서 사용하는 코드는
@@ -735,7 +736,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">16.3. </span>연습문제<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.3. </span>연습문제<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-casestudy_inheritance.ipynb">(실습) 사례 연구: 상속</a></p>
 </section>
 </section>
@@ -776,7 +777,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>클래스, 인스턴스, 객체</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>클래스, 인스턴스, 객체</p>
       </div>
     </a>
     <a class="right-next"
@@ -784,7 +785,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">17. </span>(부록) 모듈 고급 활용법</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>(부록) 모듈 고급 활용법</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -804,9 +805,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.1. 클래스 상속</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.2. 모듈 활용 클래스 상속</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.3. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.1. 클래스 상속</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.2. 모듈 활용 클래스 상속</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.3. 연습문제</a></li>
 </ul>
   </nav></div>
 

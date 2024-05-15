@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>17. (부록) 모듈 고급 활용법 &#8212; 파이썬 프로그래밍</title>
+    <title>18. (부록) 모듈 고급 활용법 &#8212; 파이썬 프로그래밍</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'modules_advanced';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="18. (부록) 이터러블, 이터레이터, 제너레이터" href="iterator_generator.html" />
-    <link rel="prev" title="16. 상속" href="inheritance.html" />
+    <link rel="next" title="19. (부록) 이터러블, 이터레이터, 제너레이터" href="iterator_generator.html" />
+    <link rel="prev" title="17. 상속" href="inheritance.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,13 +179,14 @@
 <li class="toctree-l1"><a class="reference internal" href="lists_tuples.html">12. 리스트와 튜플</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">13. 사전과 집합</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">14. 파일</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">15. 클래스, 인스턴스, 객체</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance.html">16. 상속</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">17. (부록) 모듈 고급 활용법</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iterator_generator.html">18. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursion.html">19. (부록) 재귀 함수</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">20. (부록) 클래스의 기본 요소</a></li>
-<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">21. (부록) 자료형 힌트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oop.html">15. 객체 지향 프로그래밍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">16. 클래스, 인스턴스, 객체</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance.html">17. 상속</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. (부록) 모듈 고급 활용법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator_generator.html">19. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursion.html">20. (부록) 재귀 함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">21. (부록) 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">22. (부록) 자료형 힌트</a></li>
 </ul>
 
     </div>
@@ -412,13 +413,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.1. 모듈, 패키지, 라이브러리, 프레임워크</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip">17.2. <code class="docutils literal notranslate"><span class="pre">pip</span></code> 파이썬 패키지 관리자</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.3. 사용자 정의 모듈</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.4. 패키지 지정</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.5. 라이브러리 경로</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">17.6. 모듈 파일 실행</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">17.7. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">18.1. 모듈, 패키지, 라이브러리, 프레임워크</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip">18.2. <code class="docutils literal notranslate"><span class="pre">pip</span></code> 파이썬 패키지 관리자</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">18.3. 사용자 정의 모듈</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">18.4. 패키지 지정</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">18.5. 라이브러리 경로</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">18.6. 모듈 파일 실행</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">18.7. 필수 예제</a></li>
 </ul>
             </nav>
         </div>
@@ -431,11 +432,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-module-advanced">
-<span id="id1"></span><h1><span class="section-number">17. </span>(부록) 모듈 고급 활용법<a class="headerlink" href="#ch-module-advanced" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">18. </span>(부록) 모듈 고급 활용법<a class="headerlink" href="#ch-module-advanced" title="Permalink to this heading">#</a></h1>
 <p>하나의 모듈이 독립적으로 제공되기도 하지만 다른 모듈과 함께 하나의 모음집으로 제공되기도 한다.
 모음집의 크기와 용도에 따라 패키지, 라이브러리, 프레임워크 등 다양한 이름으로 불린다.</p>
 <section id="id2">
-<h2><span class="section-number">17.1. </span>모듈, 패키지, 라이브러리, 프레임워크<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.1. </span>모듈, 패키지, 라이브러리, 프레임워크<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p><strong>패키지</strong></p>
 <p><strong>패키지</strong><font size='2'>package</font>는 모듈을 모아놓은 디렉토리(폴더)이며,
 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 모듈을 포함한다.
@@ -470,7 +471,7 @@ document.write(`
 쉽고 빠르게 구현할 수 있다.</p>
 </section>
 <section id="pip">
-<h2><span class="section-number">17.2. </span><code class="docutils literal notranslate"><span class="pre">pip</span></code> 파이썬 패키지 관리자<a class="headerlink" href="#pip" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2. </span><code class="docutils literal notranslate"><span class="pre">pip</span></code> 파이썬 패키지 관리자<a class="headerlink" href="#pip" title="Permalink to this heading">#</a></h2>
 <p>파이썬 프로그래밍에 사용되는 모든 모듈, 패키지, 라이브러리, 프레임워크 등은
 일반적으로 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 이라는 파이썬 패키지 관리자를 이용하여 설치하고 관리한다.
 예를 들어 넘파이 모듈을 설치하려면 다음 명령을 실행한다.
@@ -511,7 +512,7 @@ document.write(`
 </ul>
 </section>
 <section id="id3">
-<h2><span class="section-number">17.3. </span>사용자 정의 모듈<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.3. </span>사용자 정의 모듈<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p><strong>파이썬 파일 저장</strong></p>
 <p>아래 코드를 담고 있는 <code class="docutils literal notranslate"><span class="pre">wc.py</span></code> 파일을 모듈로 불러와서 활용해보자.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linecount</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
@@ -587,7 +588,7 @@ document.write(`
 파이썬 실행기<font size='2'>interpreter</font>에 해당 패키지의 존재를 알려야 하기 때문이다.</p>
 </section>
 <section id="id4">
-<h2><span class="section-number">17.4. </span>패키지 지정<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.4. </span>패키지 지정<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>특정 폴더를 파이썬 패키지로 지정하려면 해당 폴더에 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 파일명을 가진 파일이 존재하면 된다.
 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 파일은 해당 패키지를 불러올 때 사용할 설정을 담은 모듈인데
 아무 설정도 하지 않는다면 비어두어도 된다.
@@ -634,7 +635,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h2><span class="section-number">17.5. </span>라이브러리 경로<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.5. </span>라이브러리 경로<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>현재 작업 디렉토리가 아닌 디렉토리에 포함된 파이썬 파일을 모듈로 불러오는 기본적인
 방법은 <strong>라이브러리 경로</strong><font size='2'>library path</font>에 해당 디렉토리를
 임시로 추가하는 것이다.</p>
@@ -729,7 +730,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h2><span class="section-number">17.6. </span>모듈 파일 실행<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.6. </span>모듈 파일 실행<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>모듈엔 자주 사용될 수 있는 함수, 클래스, 상수 등을 저장한다.
 그런데 모듈을 불러올 때 모듈 파일에 포함된 모든 명령문이 실행된다.
 따라서 불필요한 코드를 모듈에 포함시키는 일은 삼가한다.</p>
@@ -789,7 +790,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h2><span class="section-number">17.7. </span>필수 예제<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.7. </span>필수 예제<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/examples/examples-modules_advanced.ipynb">(필수 예제) 모듈 고급 활용법</a></p>
 </section>
 </section>
@@ -830,7 +831,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>상속</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>상속</p>
       </div>
     </a>
     <a class="right-next"
@@ -838,7 +839,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">18. </span>(부록) 이터러블, 이터레이터, 제너레이터</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>(부록) 이터러블, 이터레이터, 제너레이터</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -858,13 +859,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.1. 모듈, 패키지, 라이브러리, 프레임워크</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip">17.2. <code class="docutils literal notranslate"><span class="pre">pip</span></code> 파이썬 패키지 관리자</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.3. 사용자 정의 모듈</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.4. 패키지 지정</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.5. 라이브러리 경로</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">17.6. 모듈 파일 실행</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">17.7. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">18.1. 모듈, 패키지, 라이브러리, 프레임워크</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip">18.2. <code class="docutils literal notranslate"><span class="pre">pip</span></code> 파이썬 패키지 관리자</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">18.3. 사용자 정의 모듈</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">18.4. 패키지 지정</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">18.5. 라이브러리 경로</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">18.6. 모듈 파일 실행</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">18.7. 필수 예제</a></li>
 </ul>
   </nav></div>
 

@@ -1,0 +1,1015 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>15. 객체 지향 프로그래밍 &#8212; 파이썬 프로그래밍</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'oop';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="16. 클래스, 인스턴스, 객체" href="classes_instances_objects.html" />
+    <link rel="prev" title="14. 파일" href="files.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">파이썬 프로그래밍</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="programming.html">1. 컴퓨터 프로그래밍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">2. 프로그램 개발 환경</a></li>
+<li class="toctree-l1"><a class="reference internal" href="starting.html">3. 프로그래밍 맛보기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variables_expressions.html">4. 변수, 값, 표현식</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">5. 함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">6. 모듈</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditionals.html">7. 조건문</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterations.html">8. 반복문</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turtle_graphics.html">9. 거북이 그래픽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exception_handling.html">10. 프로그램 오류와 예외 처리</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">11. 문자열</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists_tuples.html">12. 리스트와 튜플</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dicts_sets.html">13. 사전과 집합</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">14. 파일</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. 객체 지향 프로그래밍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes_instances_objects.html">16. 클래스, 인스턴스, 객체</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance.html">17. 상속</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_advanced.html">18. (부록) 모듈 고급 활용법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator_generator.html">19. (부록) 이터러블, 이터레이터, 제너레이터</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursion.html">20. (부록) 재귀 함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proper_classes.html">21. (부록) 클래스의 기본 요소</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_annotations.html">22. (부록) 자료형 힌트</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/jupyter-book/oop.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/codingalzi/pybook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/codingalzi/pybook/issues/new?title=Issue%20on%20page%20%2Foop.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/oop.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>객체 지향 프로그래밍</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop">15.1. OOP와 객체</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">15.2. 거북이 그래픽</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15.3. 클래스와 인스턴스</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#screen">15.3.1. <code class="docutils literal notranslate"><span class="pre">Screen</span></code> 함수의 리턴값</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">15.3.2. 변수와 메서드 종류</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">15.4. 객체 중심 프로그래밍 예제</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">15.4.1. 예제 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">15.4.2. 예제 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turtle">15.5. <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈 정보</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">15.5.1. <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 메서드 소개</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">15.5.2. 예제 4</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">15.6. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">15.7. 연습문제</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">15. </span>객체 지향 프로그래밍<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p><strong>객체 지향 프로그래밍</strong><font size='2'>Object-Oriented Programming</font>은
+객체들 사이의 유기적인 관계를 묘사하는 프로그래밍 기법이며,
+줄여서 보통 <strong>OOP</strong>라고 부른다.
+파이썬, 자바, C++, C#, 루비, 자바스크립트 등 대부분의 프로그래밍 언어가
+OOP를 지원하는 <strong>객체 지향 언어</strong>다.</p>
+<p>OOP와 대비되는 개념으로 <strong>절차 지향 프로그래밍</strong>이 있다.
+절차 지향 프로그래밍은 수행해야 할 일을 순차적으로 처리하는 과정을 묘사하는 것을 가장 중요하게 여기며
+프로그램 전체가 유기적으로 연결되도록 만드는 프로그래밍 기법이다.
+C, HTML 등이 대표적인 절차 지향 프로그래밍언어다.</p>
+<p>“해야 할 일을 순차적으로 처리한다”는 표현은 가장 기초적인 프로그래밍 기법이며,
+모든 프로그램은 원하는 결과를 얻기 위한 과정을 논리적이며 순차적으로
+처리하도록 구현되어야 한다.
+OOP 역시 예외가 아니다.
+OOP는 다만 구현해야 할 객체들을 선택하고 객체들 사이의 유기적인 관계를
+이용하는 과정을 논리적으로 묘사하는 데에 보다 많은 방점을 둘 뿐이다.</p>
+<section id="oop">
+<h2><span class="section-number">15.1. </span>OOP와 객체<a class="headerlink" href="#oop" title="Permalink to this heading">#</a></h2>
+<p>OOP를 이해하려면 아래 두 가지 질문에 답할 수 있어야 한다.</p>
+<ol class="arabic simple">
+<li><p>객체(object)란 무엇인가?</p></li>
+<li><p>“객체를 중심으로 프로그래밍한다” 라는 말의 의미는 무엇인가?</p></li>
+</ol>
+<p>위 질문들에 대한 직접적인 설명 대신에 turtle 모듈의 거북이 그래픽에 포함되는 다양한 객체들을 이용하여
+객체가 생성되고 활용되는 과정을 다양한 예제를 통해 소개한다.</p>
+<p><strong>준비사항</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈을 사용하기에 구글 코랩에서는 실행되지 않는다.
+대신 <a class="reference external" href="https://replit.com/~">레플릿</a> 이용을 권장한다.
+여기서 사용하는 코드 또한 모두
+<a class="reference external" href="https://replit.com/&#64;codingalzi/oop">(레플릿) OOP</a>에서 확인하고 직접 실행할 수 있다.</p>
+<p>주의사항: 레플릿 사이트의 특성상 주 실행파일의 이름은 <code class="docutils literal notranslate"><span class="pre">main.py</span></code> 이어야 한다.</p>
+</section>
+<section id="id2">
+<h2><span class="section-number">15.2. </span>거북이 그래픽<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈은 파이썬에 기본적으로 포함되어 있다.
+<code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈에 대한 상세한 설명은
+<a class="reference internal" href="turtle_graphics.html#ch-turtle-graphics"><span class="std std-numref">9장</span></a>을 참고한다.
+여기서는 간단한 예제를 통해 객체(인스턴스)를 클래스의 인스턴스로
+선언하고 활용하는 과정을 소개한다.</p>
+<p>아래 코드를 실행하면 한 변의 길이가 100인 정사각형을 그리는 화살촉의 움직임을 볼 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">wn</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hello, Bob and Alice!&quot;</span><span class="p">)</span>
+
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">bob</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">wn</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle01-1.png" width="600"/></div><p>이제 위 코드를 한 줄씩 살펴보자.</p>
+<p><strong>모듈 불러오기</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+</pre></div>
+</div>
+<p><strong>스크린 객체</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈에서 정의된 <code class="docutils literal notranslate"><span class="pre">Screen</span></code> 클래스의 인스턴스를 생성해서 <code class="docutils literal notranslate"><span class="pre">wn</span></code> 변수에 할당한다.
+<code class="docutils literal notranslate"><span class="pre">Screen</span></code> 클래스의 인스턴스는 그림을 그릴 도화지 한 장에 해당하는 객체다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>스크린 객체 메서드</strong></p>
+<p>스크린 객체의 타이틀을 지정할 수 있다.
+기본값은 <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Turtle</span> <span class="pre">Graphics</span></code>이지만 <code class="docutils literal notranslate"><span class="pre">title()</span></code> 메서드를 이용하여 별도로 지정할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wn</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hello, Bob and Alice!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>반면에 아래 <code class="docutils literal notranslate"><span class="pre">mainloop()</span></code> 메서드는 도화지가 <code class="docutils literal notranslate"><span class="pre">X</span></code> 버튼이 눌릴 때까지 사라지지 않도록 한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wn</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>거북이 객체</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈에서 정의된 <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 인스턴스를 하나 생성해서 <code class="docutils literal notranslate"><span class="pre">bob</span></code> 변수에 할당한다.
+<code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 인스턴스는 아래 그림의 화살촉 모양처럼 선을 그리는 펜 역할을 수행하는 객체에 해당한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle01b-1.png" width="600"/></div><p><strong>거북이 객체 메서드</strong></p>
+<p>펜 객체의 <code class="docutils literal notranslate"><span class="pre">forward()</span></code> 메서드는 펜 자신이 가리 가리키는 방향으로 이동하면서 선을 그리도록 한다.
+아래 코드는 100만큼 전진시키면서 선을 긋도록 한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle01c-1.png" width="600"/></div><p>펜 객체의 <code class="docutils literal notranslate"><span class="pre">left()</span></code> 메서드는 또한 펜이 가리키는 방향을 기준으로 반시계 방향으로 회전시킨다.
+아래 코드는 펜이 가리키는 방향을 90도 반시계 방향으로 회전시킨다.
+단 이동은 하지 않는다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bob</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle01d-1.png" width="600"/></div><p>사각형을 그리기 위해 펜 객체가 전진과 회전을 총 4번 반복하도록 한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">bob</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">15.3. </span>클래스와 인스턴스<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>아래 내용을 기억하고 있어야 한다.</p>
+<ul class="simple">
+<li><p>클래스에는 변수와 함수들이 선언되어 있다.</p></li>
+<li><p>하나의 클래스에 포함된 변수와 함수들은 특별한 성질의 객체를 묘사하고 다루기 위해
+필요한 속성과 도구를 저장한다.</p></li>
+</ul>
+<p>클래스에서 선언된 변수와 함수들은 해당 클래스를 통하여 또는 해당 클래스의 인스턴스를 통하여 호출될 수 있다.</p>
+<ul class="simple">
+<li><p><strong>속성</strong>(attribute)</p>
+<ul>
+<li><p>클래스에서 선언된 변수</p></li>
+<li><p>생성되는 객체들이 사용하는 값 또는 특성값 저장</p></li>
+</ul>
+</li>
+<li><p><strong>메서드</strong>(method)</p>
+<ul>
+<li><p>클래스에서 선언된 함수</p></li>
+<li><p>속성 정보를 이용하고 다룰 수 있는 도구</p></li>
+</ul>
+</li>
+</ul>
+<p>특정 클래스의 <strong>인스턴스</strong>(instance)는 해당 클래스에서 선언된 속성과 기능을 모두 물려받는 대상을
+의미한다. <strong>객체</strong>(object)는 특정 클래스의 인스턴스를 부르는 보다 일반적인 표현이다.</p>
+<p><strong>참고:</strong> 파이썬에서 사용되는 모든 값은 특정 클래스의 인스턴스, 즉 객체로 선언된다.
+지금까지 사용해왔던 모든 자료형들도 모두 클래스로 정의되어 있다.
+심지어는 클래스 조차도 <code class="docutils literal notranslate"><span class="pre">type</span></code> 이라는 클래스의 객체이다.</p>
+<p>앞서 소개한 거북이 그래픽 예제에서 사용된 <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈과 관련된 프로그래밍 기본요소는 다음과 같다.</p>
+<ul class="simple">
+<li><p>모듈: <code class="docutils literal notranslate"><span class="pre">turtle</span></code></p></li>
+<li><p>함수: <code class="docutils literal notranslate"><span class="pre">Screen</span></code>  (대문자로 시작하는 이름에 주의)</p></li>
+<li><p>클래스: <code class="docutils literal notranslate"><span class="pre">TurtleScreen</span></code>, <code class="docutils literal notranslate"><span class="pre">Turtle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TurtleScreen</span></code>클래스</p>
+<ul>
+<li><p>인스턴스: <code class="docutils literal notranslate"><span class="pre">wn</span></code></p></li>
+<li><p>속성: <code class="docutils literal notranslate"><span class="pre">_title</span></code></p></li>
+<li><p>메서드: <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">mainloop</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스</p>
+<ul>
+<li><p>인스턴스: <code class="docutils literal notranslate"><span class="pre">bob</span></code></p></li>
+<li><p>속성: <code class="docutils literal notranslate"><span class="pre">_pencolor</span></code></p></li>
+<li><p>메서드: <code class="docutils literal notranslate"><span class="pre">pencolor</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">forward</span></code></p></li>
+</ul>
+</li>
+</ul>
+<section id="screen">
+<h3><span class="section-number">15.3.1. </span><code class="docutils literal notranslate"><span class="pre">Screen</span></code> 함수의 리턴값<a class="headerlink" href="#screen" title="Permalink to this heading">#</a></h3>
+<p>엄밀히 말하면 <code class="docutils literal notranslate"><span class="pre">Screen</span></code> 함수의 리턴값은 <code class="docutils literal notranslate"><span class="pre">TurtleScreen</span></code>의
+자식 클래스인 <code class="docutils literal notranslate"><span class="pre">_Screen</span></code> 클래스의 인스턴스이다.
+하지만 사용된 밑줄에서 알 수 있듯이 숨겨진 클래스이기 때문에 부모 클래스인 <code class="docutils literal notranslate"><span class="pre">TurtleScreen</span></code>을
+기본적으로 언급한다.</p>
+<p>또한 <code class="docutils literal notranslate"><span class="pre">Screen</span></code> 함수의 리턴값은 <code class="docutils literal notranslate"><span class="pre">_Screen</span></code> 클래스의 <strong>싱글턴 객체</strong>(singleton object)이다.
+싱글톤 객체라 함은 해당 클래스의 인스턴스가 하나 뿐이라는 말이다.
+따라서 <code class="docutils literal notranslate"><span class="pre">Screen</span></code> 함수를 이용하여 생성할 수 있는 도화지는 단 하나뿐이다.</p>
+</section>
+<section id="id4">
+<h3><span class="section-number">15.3.2. </span>변수와 메서드 종류<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>클래스에서 선언된 메서드와 변수를 사용법에 따라 여러 종류로 분류할 수 있다.</p>
+<ul class="simple">
+<li><p>변수 종류: 인스턴스 변수, 클래스 변수</p></li>
+<li><p>메서드 종류: 인스턴스 메서드, 클래스 메서드, 정적 메서드</p></li>
+</ul>
+<p>변수와 메서드의 종류에 대한 보다 상세한 설명은
+<a class="reference external" href="https://github.com/liganega/ProgInPython/blob/master/notebooks/PiPy08-ClassesAndInstances_Part1.ipynb">코드 추상화: 클래스와 객체 1부</a>와
+<a class="reference external" href="https://github.com/liganega/ProgInPython/blob/master/notebooks/PiPy09-ClassesAndInstances_Part2.ipynb">2부</a>에서
+다룬다.</p>
+</section>
+</section>
+<section id="id5">
+<h2><span class="section-number">15.4. </span>객체 중심 프로그래밍 예제<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>클래스를 이용하여 생성한 객체들은 기본적으로 상호 독립적으로 활용된다.
+하지만 객체들 사이의 상호 교감도 가능하다.
+따라서 각각의 객체가 수행하는 기능과
+객체들 사이의 교감을 중심으로 해서
+프로그램을 작성하는 것이
+<strong>객체를 중심으로 프로그래밍한다</strong>의 기본 의미이다.</p>
+<p>여기서는 <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 인스턴스를 두 개 생성하여,
+생성된 두 객체를 상호 독립적으로 활용하는 방법을 설명한다.
+객체들 사이의 교감을 구현하는 방식은 나중에 다룰 것이다.</p>
+<section id="id6">
+<h3><span class="section-number">15.4.1. </span>예제 2<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>아래 코드를 <code class="docutils literal notranslate"><span class="pre">mypolygon2.py</span></code> 파일에 저장하고 실행하면 두 개의 펜을 이용하여 사각형과 삼각형을 그린 결과를 얻을 것이다.
+<code class="docutils literal notranslate"><span class="pre">mypolygon.py</span></code>와는 달리 반복되는 코드를 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문으로 묶었다.</p>
+<p>아래 코드에서 <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 인스턴스가 두 번 생성되었다.
+또한 <code class="docutils literal notranslate"><span class="pre">alice</span></code> 객체에 대해세만 아래 인스턴스 메서드가 추가로 사용되었다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code>: 해당 인스턴스의 펜 모양을 지정된 모양으로 변경시킴</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: 해당 인스턴스의 선 색깔을 지정된 색깔로 변경시킴</p></li>
+</ul>
+<p><strong>주의:</strong> <code class="docutils literal notranslate"><span class="pre">alice</span></code>의 속성을 변경한다 하더라도 <code class="docutils literal notranslate"><span class="pre">bob</span></code>의 속성은 전혀 변하지 않는다.
+자세한 설명은
+<a class="reference external" href="https://github.com/liganega/ProgInPython/blob/master/notebooks/PiPy08-ClassesAndInstances_Part1.ipynb">코드 추상화: 클래스와 객체 1부</a>를
+참조한다.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+
+<span class="c1"># bob 생성</span>
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="c1"># alice 생성</span>
+<span class="n">alice</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">alice</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>       <span class="c1"># 펜 모양을 거북이로 변경</span>
+<span class="n">alice</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>          <span class="c1"># 선 색깔을 빨강으로 변경</span>
+
+<span class="n">alice</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>               <span class="c1"># 펜 들기: 선 그리지 않음</span>
+<span class="n">alice</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>         <span class="c1"># 뒤로 100픽셀 이동</span>
+<span class="n">alice</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>             <span class="c1"># 펜 내리기: 선 그리기 시작함</span>
+
+<span class="c1"># bob 으로 사각형 그리기</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">bob</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="c1"># alice로 삼각형 그리기</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">alice</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">alice</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>        <span class="c1"># 시계방향으로 회전</span>
+
+<span class="n">wn</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle06-1.png" width="600"/></div></section>
+<section id="id7">
+<h3><span class="section-number">15.4.2. </span>예제 3<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p>아래 코드를 <code class="docutils literal notranslate"><span class="pre">mypolygon3.py</span></code> 파일에 저장하고 실행하면
+이전 코드와는 달리 배경화면의 색깔과 그림 제목을 다르게 지정한 것을 확인 할 수 있다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bgcolor</span></code>: <code class="docutils literal notranslate"><span class="pre">Screen</span></code> 클래스의 인스턴스 메서드. 그림의 배경화면 색 지정</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code>: <code class="docutils literal notranslate"><span class="pre">Screen</span></code> 클래스의 인스턴스 메서드. 그림의 제목 지정</p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">wn</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;lightyellow&quot;</span><span class="p">)</span>               <span class="c1"># 배경화면 색깔 정하기</span>
+<span class="n">wn</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hello, Bob and Alice!&quot;</span><span class="p">)</span>       <span class="c1"># 그래픽 제목 정하기</span>
+
+<span class="c1"># bob 생성</span>
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="c1"># alice 생성</span>
+<span class="n">alice</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">alice</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="n">alice</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+
+<span class="n">alice</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">alice</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">alice</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+
+<span class="c1"># bob 으로 사각형 그리기</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">bob</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="c1"># alice로 삼각형 그리기</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">alice</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">alice</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+
+<span class="n">wn</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle06-2.png" width="600"/></div></section>
+</section>
+<section id="turtle">
+<h2><span class="section-number">15.5. </span><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈 정보<a class="headerlink" href="#turtle" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈에 포함된 클래스와 클래스 메서드와 속성의 활용법은
+<a class="reference external" href="https://docs.python.org/3.3/library/turtle.html?highlight=turtle#turtle.TurtleScreen">docs.python.org</a>를
+참조한다.
+또한 <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈의 소스코드는
+<a class="reference external" href="https://github.com/python/cpython/blob/master/Lib/turtle.py">cpython의 turtle.py</a>에서
+확인할 수 있다.</p>
+<section id="id8">
+<h3><span class="section-number">15.5.1. </span><code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 메서드 소개<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 메서드 일부를 소개한다.
+아래에 언급된 메서드의 기능은
+<a class="reference external" href="https://realpython.com/beginners-guide-python-turtle/#getting-started-with-turtle">realpython.com</a>에서
+확인할 수 있다.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">goto</span></code>: 도화지의 중심을 원점으로 하며 2차원 상의 좌표를 지정하여 거북이를 이동시킨다.</p>
+<ul class="simple">
+<li><p>예제: <code class="docutils literal notranslate"><span class="pre">bob.goto(100)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">home</span></code>: 원점, 즉, 도화지의 중심으로 거북이를 돌려 보낸 후, 오른쪽을 바라보도록 한다.</p>
+<ul class="simple">
+<li><p>예제: <code class="docutils literal notranslate"><span class="pre">bob.home()</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fd</span></code>, <code class="docutils literal notranslate"><span class="pre">forward</span></code>: 현재 바라보는 방향으로 전진</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bd</span></code>, <code class="docutils literal notranslate"><span class="pre">backward</span></code>: 현재 바라보는 방향 반대편으로 후진. 바라보는 방향 유지.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rt</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code>: 시계방향으로 90도 회전</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lt</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code>: 시계반대방향으로 90도 회전</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">circle</span></code>: 원 그리기. 인자는 반지름.</p>
+<ul class="simple">
+<li><p>예제: <code class="docutils literal notranslate"><span class="pre">bob.circle(100)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dot</span></code>: 원반 그리기. 원 내부는 색으로 채워짐. 원의 지름과 색깔 지정 가능.</p>
+<ul class="simple">
+<li><p>예제: <code class="docutils literal notranslate"><span class="pre">bob.circle(20)</span></code></p></li>
+<li><p>예제: <code class="docutils literal notranslate"><span class="pre">bob.circle(20,</span> </code>red<code class="docutils literal notranslate"><span class="pre">)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code>: 거북이 모양 설정. 기본은 화살촉 모양.</p>
+<ul class="simple">
+<li><p>예제: <code class="docutils literal notranslate"><span class="pre">bob.shape('turtle')</span></code></p></li>
+<li><p>사용 가능 모양</p>
+<ul>
+<li><p>확인법: <code class="docutils literal notranslate"><span class="pre">wn.getshapes()</span></code></p></li>
+<li><p>리턴값: <code class="docutils literal notranslate"><span class="pre">['arrow',</span> <span class="pre">'square',</span> <span class="pre">'triangle',</span> <span class="pre">'classic',</span> <span class="pre">'turtle',</span> <span class="pre">'circle']</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shapesize</span></code>: 거북이 크기 설정</p>
+<ul class="simple">
+<li><p>세 개의 인자 사용: 두께(width), 길이(length), 선두께(outline width)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pensize</span></code>: 선 두께 지정</p>
+<ul class="simple">
+<li><p>예제: <code class="docutils literal notranslate"><span class="pre">bob.pensize(5)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fillcolor</span></code>: 거북이 내부 색상 지정</p>
+<ul class="simple">
+<li><p>예제: <code class="docutils literal notranslate"><span class="pre">bob.fillcolor('red')</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: 선 및 내부 색상 지정</p>
+<ul class="simple">
+<li><p>예제: <code class="docutils literal notranslate"><span class="pre">bob.color('blue',</span> <span class="pre">'red')</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">begin_fill</span></code>과 <code class="docutils literal notranslate"><span class="pre">end_fill</span></code>: 두 메서드로 감싸인 코드에서 그린 도형 내부를 거북이 색으로 채우기</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bob</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed</span></code>: 펜 속도 조절하기</p>
+<ul class="simple">
+<li><p>예제: <code class="docutils literal notranslate"><span class="pre">bob.speed(1)</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">가장</span> <span class="n">빠름</span> <span class="p">:</span>  <span class="mi">0</span>
+<span class="n">빠름</span>     <span class="p">:</span>  <span class="mi">10</span>
+<span class="n">보통</span>     <span class="p">:</span>  <span class="mi">6</span>
+<span class="n">느림</span>     <span class="p">:</span>  <span class="mi">3</span>
+<span class="n">가장</span> <span class="n">느림</span> <span class="p">:</span>  <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pen</span></code>: <code class="docutils literal notranslate"><span class="pre">pencolor</span></code>, <code class="docutils literal notranslate"><span class="pre">fillcolor</span></code>, <code class="docutils literal notranslate"><span class="pre">pensize</span></code>, <code class="docutils literal notranslate"><span class="pre">speed</span></code> 등 펜과 관련된 여러 성질을 동시에 설정 가능.</p>
+<ul class="simple">
+<li><p>예제: <code class="docutils literal notranslate"><span class="pre">bob.pen(pencolor=&quot;purple&quot;,</span> <span class="pre">fillcolor=&quot;red&quot;,</span> <span class="pre">pensize=&quot;5&quot;,</span> <span class="pre">speed=&quot;8&quot;)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd</span></code>, <code class="docutils literal notranslate"><span class="pre">pendown</span></code>: 선 그리는 상태로 전환</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pu</span></code>, <code class="docutils literal notranslate"><span class="pre">penup</span></code>: 선 그리지 않는 상태로 전환</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stamp</span></code>: 도장 찍기</p>
+<ul class="simple">
+<li><p>예제 4 참조</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">down</span></code>: 거북이가 마지막으로 실행한 명령 취소</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clear</span></code>: 거북이가 그린 모든 도형 삭제. 거북이는 마직막 위치에 머무름.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reset</span></code>: 거북이가 그린 모든 도형 삭제 및 거북이 초기화.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clone</span></code>: 거북이 복제. 모든 상태 그대로 복제.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bobi</span> <span class="o">=</span> <span class="n">bob</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="n">bobi</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;magenta&quot;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">bobi</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id9">
+<h3><span class="section-number">15.5.2. </span>예제 4<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<p>아래 코드를 <code class="docutils literal notranslate"><span class="pre">mypolygon4.py</span></code> 파일에 저장하고 실행하면
+회오리 모양으로 움직이면서 점차 가속도가 붙는 거북이를 확인할 수 있다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">penup</span></code>: <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 인스턴스 메서드. 그림 그리지 않는 상태로 전환.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stamp</span></code>: <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 인스턴스 메서드. 도장 찍기.</p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">wn</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;lightyellow&quot;</span><span class="p">)</span>
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>        <span class="c1"># 화살촉 대신 거북이 모양 선택</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="n">bob</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>                <span class="c1"># 펜 들기 (이동할 때 선을 그리지 않게 됨)</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+   <span class="n">bob</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>             <span class="c1"># 거북이 모양 도장 찍기</span>
+   <span class="n">size</span> <span class="o">=</span> <span class="n">size</span> <span class="o">+</span> <span class="mi">3</span>         <span class="c1"># 회전을 점차 크게 돌도록 만들기</span>
+   <span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>       <span class="c1"># size 크기만큼 전진하기</span>
+   <span class="n">bob</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>           <span class="c1"># 24도 우회전하기</span>
+
+<span class="n">wn</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/turtle03.png" width="600"/></div></section>
+</section>
+<section id="id10">
+<h2><span class="section-number">15.6. </span>필수 예제<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/examples/examples-oop.ipynb">(필수 예제) 객체 지향 프로그래밍</a></p>
+</section>
+<section id="id11">
+<h2><span class="section-number">15.7. </span>연습문제<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-oop.ipynb">(연습) 객체 지향 프로그래밍</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="files.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>파일</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="classes_instances_objects.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>클래스, 인스턴스, 객체</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop">15.1. OOP와 객체</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">15.2. 거북이 그래픽</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15.3. 클래스와 인스턴스</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#screen">15.3.1. <code class="docutils literal notranslate"><span class="pre">Screen</span></code> 함수의 리턴값</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">15.3.2. 변수와 메서드 종류</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">15.4. 객체 중심 프로그래밍 예제</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">15.4.1. 예제 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">15.4.2. 예제 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turtle">15.5. <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈 정보</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">15.5.1. <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 메서드 소개</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">15.5.2. 예제 4</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">15.6. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">15.7. 연습문제</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 코딩알지 & HJ
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
