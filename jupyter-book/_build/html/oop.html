@@ -453,13 +453,12 @@ OOP는 다만 구현해야 할 객체들을 선택하고 객체들 사이의 유
 <li><p>객체(object)란 무엇인가?</p></li>
 <li><p>“객체를 중심으로 프로그래밍한다” 라는 말의 의미는 무엇인가?</p></li>
 </ol>
-<p>위 질문들에 대한 직접적인 설명 대신에 turtle 모듈의 거북이 그래픽에 포함되는 다양한 객체들을 이용하여
+<p>위 질문들에 대한 직접적인 설명 대신에 <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈의 거북이 그래픽에 포함되는 다양한 객체들을 이용하여
 객체가 생성되고 활용되는 과정을 다양한 예제를 통해 소개한다.</p>
 <p><strong>준비사항</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈을 사용하기에 구글 코랩에서는 실행되지 않는다.
 대신 <a class="reference external" href="https://replit.com/~">레플릿</a> 이용을 권장한다.
-여기서 사용하는 코드 또한 모두
-<a class="reference external" href="https://replit.com/&#64;codingalzi/oop">(레플릿) OOP</a>에서 확인하고 직접 실행할 수 있다.</p>
+여기서 사용하는 코드 또한 모두 레플릿에서 확인하고 직접 실행할 수 있다.</p>
 <p>주의사항: 레플릿 사이트의 특성상 주 실행파일의 이름은 <code class="docutils literal notranslate"><span class="pre">main.py</span></code> 이어야 한다.</p>
 </section>
 <section id="id2">
@@ -469,6 +468,7 @@ OOP는 다만 구현해야 할 객체들을 선택하고 객체들 사이의 유
 여기서는 간단한 예제를 통해 객체(인스턴스)를 클래스의 인스턴스로
 선언하고 활용하는 과정을 소개한다.</p>
 <p>아래 코드를 실행하면 한 변의 길이가 100인 정사각형을 그리는 화살촉의 움직임을 볼 수 있다.</p>
+<p>참고: <a class="reference external" href="https://replit.com/&#64;codingalzi/oop">(레플릿) 네모</a>에서 코드 실행</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 
 <span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
@@ -534,13 +534,14 @@ OOP는 다만 구현해야 할 객체들을 선택하고 객체들 사이의 유
 <section id="id3">
 <h2><span class="section-number">15.3. </span>객체의 독립성<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>클래스의 인스턴스로 생성된 객체들은 기본적으로 상호 독립적이다.
-하지만 두 객체 사이의 상호 교감도 가능한 경우도 있다.
-객체 지향 프로그래밍의 핵심은 객체 각각이 수행하는 기능과
+하지만 두 객체 사이의 상호 교감이 가능한 경우도 있다.
+객체 지향 프로그래밍은 객체 각각이 수행하는 기능과
 객체들 사이의 교감을 활용하는 프로그램 기법을 의미한다.</p>
-<p>여기서는 거북이 객체를 두 개 생성하여 생성된 두 객체를 상호 독립적으로 활용하는 방법을 소개한다.
-두 거북이 객체들 사이의 교감을 구현하는 방식은 <a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">16장</span></a>에서 다룬다.</p>
+<p>여기서는 거북이 객체를 두 개를 상호 독립적으로 활용하는 방법을 소개한다.
+객체들 사이의 교감을 구현하는 방식은 <a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">16장</span></a>에서 다룬다.</p>
 <p><strong>예제 1</strong></p>
 <p>아래 코드를 실행하면 두 개의 거북이 객체에 의해 검정 사각형 빨강 삼각형이 도화지 위에 그려진다.</p>
+<p>참고: <a class="reference external" href="https://replit.com/&#64;codingalzi/ooptrisquare">(레플릿) 네모-세모</a>에서 코드 실행</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 
 <span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
@@ -586,6 +587,7 @@ OOP는 다만 구현해야 할 객체들을 선택하고 객체들 사이의 유
 <li><p><code class="docutils literal notranslate"><span class="pre">penup()</span></code>: 거북이 객체의 선 그리기 기능 해제</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">stamp()</span></code>: 거북이 객체의 모양 도장 찍기</p></li>
 </ul>
+<p>참고: <a class="reference external" href="https://replit.com/&#64;codingalzi/oopstamp">(레플릿) 도장찍기</a>에서 코드 실행</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 
 <span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
