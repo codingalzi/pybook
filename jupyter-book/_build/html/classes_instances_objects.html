@@ -426,7 +426,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop">16.4. OOP 예제: 객체 충돌 게임</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">16.5. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">16.5. 필수 예제</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">16.6. 연습문제</a></li>
 </ul>
             </nav>
@@ -748,9 +748,10 @@ document.write(`
 <span class="n">sprites</span> <span class="o">=</span> <span class="p">[</span><span class="n">wizard</span><span class="p">,</span> <span class="n">goblin</span><span class="p">,</span> <span class="n">cherry</span><span class="p">,</span> <span class="n">pacman</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">ball</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>메모리 상에서 <code class="docutils literal notranslate"><span class="pre">wizard</span></code> 변수가 가리키는 스프라이트 객체는 아래와 같이 구성된다.
-<code class="docutils literal notranslate"><span class="pre">wizard</span></code>는 자신의 속성 뿐만 아니라 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스가 제공하는 모든 인스턴스 메서드를 활용할 수 있다.</p>
-<p><div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/Sprite2.png" width="75%"></div></p><p><strong>이벤트, 이벤트 처리, 콜백</strong></p>
+<p>메모리 상에서 <code class="docutils literal notranslate"><span class="pre">wizard</span></code> 변수가 가리키는 스프라이트 객체는 이제 아래와 같이 구성된다.
+<code class="docutils literal notranslate"><span class="pre">wizard</span></code>는 자신의 속성 뿐만 아니라 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스가 제공하는 <code class="docutils literal notranslate"><span class="pre">render()</span></code>와 충돌감지 메소드 등
+모든 인스턴스 메서드를 활용할 수 있다.</p>
+<p><div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/Sprite2.png" width="85%"></div></p><p><strong>이벤트, 이벤트 처리, 콜백</strong></p>
 <p>마우스 클릭, 버튼 누루기, 키 입력 등을 사용하여
 영향을 미치는 사건을 <strong>이벤트</strong><font size='2'>event</font>라 부르며,
 이벤트에 반응하도록 프로그램을 작성하는 것이
@@ -911,7 +912,28 @@ document.write(`
 <p>그런데 <code class="docutils literal notranslate"><span class="pre">wizard</span></code>가 <code class="docutils literal notranslate"><span class="pre">goblin</span></code>과 충돌하는지를 어떻게 감지하는가?
 <code class="docutils literal notranslate"><span class="pre">wizard</span></code>의 <code class="docutils literal notranslate"><span class="pre">is_overlapping_collision()</span></code> 메서드가
 자신과 <code class="docutils literal notranslate"><span class="pre">goblin</span></code>의 위치, 길이, 너비 정보를 이용하여 알아낸다.
-즉, <code class="docutils literal notranslate"><span class="pre">wizard</span></code>가 <code class="docutils literal notranslate"><span class="pre">goblin</span></code>의 속성 정보를 활용한다.</p>
+즉, <code class="docutils literal notranslate"><span class="pre">wizard</span></code>가 <code class="docutils literal notranslate"><span class="pre">goblin</span></code>의 속성 정보를 활용한다.
+반면에 <code class="docutils literal notranslate"><span class="pre">pacman</span></code>은 <code class="docutils literal notranslate"><span class="pre">cherry</span></code>와의 출동을 <code class="docutils literal notranslate"><span class="pre">is_distance_collision()</span></code> 메서드로 확인하고,
+<code class="docutils literal notranslate"><span class="pre">bar</span></code>는 <code class="docutils literal notranslate"><span class="pre">ball</span></code>과의 충돌을 <code class="docutils literal notranslate"><span class="pre">is_aabb_collision()</span></code> 메서드로 확인한다.</p>
+<p>충돌 감지에 사용되는 세 개의 메서드는 서로 다른 방식으로 두 객체의 충돌을 감지한다.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>충돌 감지 메서드</p></th>
+<th class="head text-left"><p>충돌 감지법</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">is_overlapping_collision()</span></code></p></td>
+<td class="text-left"><p>두 객체의 중심이 일치할 때 충돌 감지</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">is_distance_collision()</span></code></p></td>
+<td class="text-left"><p>두 객체 사이의 거리가 두 객체 너비의 평균값 보다 작을 때 충돌 감지</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">is_aabb_collision()</span></code></p></td>
+<td class="text-left"><p>객체를 둘러썬 경계상자가 겹칠 때 충돌 감지</p></td>
+</tr>
+</tbody>
+</table>
 <p>이처럼 상호 독립적인 객체들이 서로 공유할 수 있는 정보를 이용하여 객체의 상태와 행동을
 결정하는 프로그래밍 기법이 바로 객체 지향 프로그래밍이다.</p>
 <p><strong>코드 완성</strong></p>
@@ -1113,8 +1135,8 @@ document.write(`
 </div>
 </section>
 <section id="id11">
-<h2><span class="section-number">16.5. </span>연습문제<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
-<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-casestudy_oop.ipynb">(실습) 사례 연구: 객체 지향 프로그래밍</a></p>
+<h2><span class="section-number">16.5. </span>필수 예제<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/examples/examples-classes_instances_objects.ipynb">(필수 예제) 클래스, 인스턴스, 객체</a></p>
 </section>
 <section id="id12">
 <h2><span class="section-number">16.6. </span>연습문제<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
@@ -1200,7 +1222,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop">16.4. OOP 예제: 객체 충돌 게임</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">16.5. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">16.5. 필수 예제</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">16.6. 연습문제</a></li>
 </ul>
   </nav></div>
