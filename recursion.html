@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>20. (부록) 재귀 함수 &#8212; 파이썬 프로그래밍</title>
   
@@ -29,36 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'recursion';</script>
@@ -444,7 +443,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-recursion">
-<span id="id1"></span><h1><span class="section-number">20. </span>(부록) 재귀 함수<a class="headerlink" href="#ch-recursion" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">20. </span>(부록) 재귀 함수<a class="headerlink" href="#ch-recursion" title="Link to this heading">#</a></h1>
 <p>하나의 함수가 실행되는 동안 다른 함수를 호출할 수 있으며
 심지어 실행되는 함수 자신을 다시 호출할 수 있다.
 예를 들어 아래 <code class="docutils literal notranslate"><span class="pre">countdown()</span></code> 함수의 본문에 현재 정의되고 있는 자신에 대한 호출이 포함되어 있다.</p>
@@ -486,7 +485,7 @@ document.write(`
 <p>함수 본문에 자신을 호출하는 함수를 기능을 <strong>재귀</strong><font size="2">recursion</font>라 하며,
 <strong>재귀 함수</strong><font size="2">recursive function</font>는 재귀를 활용하는 함수이다.</p>
 <section id="id2">
-<h2><span class="section-number">20.1. </span>기저 조건과 무한 재귀<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.1. </span>기저 조건과 무한 재귀<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>재귀 함수의 실행이 멈추려면 재귀 호출 과정에서 언젠가는 더 이상 자신을 호출하지 않아야 한다.
 <code class="docutils literal notranslate"><span class="pre">countdown()</span></code> 함수는 <code class="docutils literal notranslate"><span class="pre">0</span></code>과 함께 호출될 때 더 이상 재귀 호출을 하지 않는다.
 이렇게 더 이상 재귀 호출이 발생하지 않도록 하는 경우를
@@ -533,7 +532,7 @@ document.write(`
 주의를 기울여야 한다.</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">20.2. </span>재귀 함수의 반환값<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.2. </span>재귀 함수의 반환값<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>함수의 반환값을 지정하는 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">표현식</span></code>이 여러 번
 사용될 수 있다.
 예를 들어 짝수이면 0, 홀수이면 1을 반환하는 함수는 다음과 같이 정의한다.</p>
@@ -659,7 +658,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">20.3. </span>재귀 함수의 콜 스택<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.3. </span>재귀 함수의 콜 스택<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>파이썬 프로그램의 실행은 기본적으로
 “위에서 아래로”와 “왼쪽에서 오른쪽으로”의 두 기준으로
 더 이상 실행할 명령문이 없을 때까지 진행된다.</p>
@@ -753,9 +752,9 @@ document.write(`
 </section>
 </div></section>
 <section id="id5">
-<h2><span class="section-number">20.4. </span>재귀 함수 예제<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.4. </span>재귀 함수 예제<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <section id="id6">
-<h3><span class="section-number">20.4.1. </span>리스트 합<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">20.4.1. </span>리스트 합<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>리스트 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">7,</span> <span class="pre">9]</span></code>에 포함된 수들의 합을 구해보자.
 먼저, <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 이용하면 다음과 같다.</p>
 <ul class="simple">
@@ -880,7 +879,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h3><span class="section-number">20.4.2. </span>계승<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">20.4.2. </span>계승<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>음이 아닌 정수 <span class="math notranslate nohighlight">\(n\)</span>이 주어졌을 때 1부터 <span class="math notranslate nohighlight">\(n\)</span> 까지의 곱을 <span class="math notranslate nohighlight">\(n\)</span>의 계승 또는
 팩토리얼<font size="2">factorial</font>이라 하고 <span class="math notranslate nohighlight">\(n!\)</span>로 표시한다.</p>
 <div class="math notranslate nohighlight">
@@ -910,7 +909,7 @@ n! &amp; = n \, (n-1)!\quad\text{단, $n&gt;0$.}
 </div>
 </section>
 <section id="id8">
-<h3><span class="section-number">20.4.3. </span>피보나치 수열<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">20.4.3. </span>피보나치 수열<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p><strong>피보나치 수열</strong><font size="2">Fibonacci sequence</font>은
 처음엔 1과 1로 시작한 후에 이후의 항목은 이전 두 개의 항목의 합으로 생성된다.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
@@ -964,7 +963,7 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 </div>
 </section>
 <section id="sec-collatz">
-<span id="id9"></span><h3><span class="section-number">20.4.4. </span>콜라츠 추측<a class="headerlink" href="#sec-collatz" title="Permalink to this heading">#</a></h3>
+<span id="id9"></span><h3><span class="section-number">20.4.4. </span>콜라츠 추측<a class="headerlink" href="#sec-collatz" title="Link to this heading">#</a></h3>
 <p>독일 수학자 콜라츠(Collatz -&gt; L.)가 1937년에 아래 알고리즘을
 얼마나 많이 반복하면 최종적으로 숫자 1에 다다를 것인가를 질문했다.</p>
 <ul class="simple">
@@ -1102,7 +1101,7 @@ f_n &amp; = f_{n-1} + f_{n-2} \quad \text{단, $n \ge 2$.}
 이라 부른다.</p>
 </section>
 <section id="sec-hanoi">
-<span id="id10"></span><h3><span class="section-number">20.4.5. </span>하노이의 탑<a class="headerlink" href="#sec-hanoi" title="Permalink to this heading">#</a></h3>
+<span id="id10"></span><h3><span class="section-number">20.4.5. </span>하노이의 탑<a class="headerlink" href="#sec-hanoi" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 이용하여 해결하기 어려운 문제를
 재귀 알고리즘으로 상대적으로 훨씬 간단하게 해결하는 예제로 하노이의 탑 문제를 다룬다.</p>
 <p><strong>하노이의 탑</strong><font size='2'>Tower of Hanoi</font> 문제는 세 개의 기둥 중에
@@ -1195,11 +1194,11 @@ C에서 B로 탑 원판 옮기기
 </section>
 </section>
 <section id="id11">
-<h2><span class="section-number">20.5. </span>재귀 시각화<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.5. </span>재귀 시각화<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
 <p>재귀를 이해하기 위해 재귀 알고리즘의 작동과정을 시각화 해보자.
 시각화를 위해 <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈을 이용한다.</p>
 <section id="id12">
-<h3><span class="section-number">20.5.1. </span>소용돌이<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">20.5.1. </span>소용돌이<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>재귀로 정의된 <code class="docutils literal notranslate"><span class="pre">draw_spiral()</span></code> 함수는 아래 그림과 같은 소용돌이를 그린다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 
@@ -1220,7 +1219,7 @@ C에서 B로 탑 원판 옮기기
 <div align="center"><img src="https://raw.githubusercontent.com/codingalzi/algopy/master/notebooks/_images/draw_spiral.png" width="60%"></div>
 </figure></section>
 <section id="id13">
-<h3><span class="section-number">20.5.2. </span>프랙탈 트리<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">20.5.2. </span>프랙탈 트리<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>아래 이미지처럼 아무리 확대하더라도 항상 동일한 구조를 보여주는 사물이
 <strong>프랙탈</strong><font size='2'>fractal</font>이다.</p>
 <figure>
@@ -1287,7 +1286,7 @@ C에서 B로 탑 원판 옮기기
 </figure></section>
 </section>
 <section id="id14">
-<h2><span class="section-number">20.6. </span>연습문제<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.6. </span>연습문제<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-recursion.ipynb">(실습) 재귀 함수</a></p>
 </section>
 </section>
