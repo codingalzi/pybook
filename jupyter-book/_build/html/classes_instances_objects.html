@@ -416,21 +416,20 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.1. 객체 교감: 충돌 감지</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.2. 클래스 선언과 생성자</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.2.1. 클래스, 인스턴스, 객체</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">16.2.2. 기본 세팅</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">16.2.3. 클래스 선언</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">16.2.4. 생성자</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">16.2.2. 클래스 선언</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">16.2.3. 생성자</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">16.3. 인스턴스와 객체</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">16.3.1. 인스턴스 생성</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">16.3.2. 인스턴스 변수와 속성</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">16.3.3. 인스턴스 메서드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">16.3. 인스턴스와 객체</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">16.3.1. 인스턴스 생성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">16.3.2. 인스턴스 변수와 속성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">16.3.3. 인스턴스 메서드</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">16.4. 스프라이트 충돌</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">16.4. 게임 세팅</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop">16.5. OOP의 핵심</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">16.6. 연습문제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">16.7. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">16.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">16.7. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -495,7 +494,7 @@ document.write(`
 </table></section>
 <section id="id3">
 <h2><span class="section-number">16.2. </span>클래스 선언과 생성자<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>아래 그림에 있는 스프라이트 객체를 생성할 때 사용되는 클래스를 선언하면서
+<p>아래 그림에 있는 스프라이트 객체를 생성할 때 사용되는 클래스를 확장하는 방식으로 선언하면서
 클래스 선언에 필요한 요소들을 하나씩 살펴 본다.</p>
 <p><div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/collision_detection1.png" width="500"/></div></p><section id="id4">
 <h3><span class="section-number">16.2.1. </span>클래스, 인스턴스, 객체<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
@@ -511,7 +510,182 @@ document.write(`
 생성된 인스턴스는 해당 클래스의 모든 메서드(기능)를 사용할 수 있다.</p>
 </section>
 <section id="id5">
-<h3><span class="section-number">16.2.2. </span>기본 세팅<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.2.2. </span>클래스 선언<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p>스프라이트들의 클래스를 정의해보자.
+클래스 정의는 다음 형식으로 이루어진다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sprite</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="c1"># 속성 지정 및 메서드 선언</span>
+</pre></div>
+</div>
+<p>각각의 스프라이트 객체는 고유의 모양을 가져야 하며 이동 기능과 충돌감지 기능을 갖는다.
+따라서 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스는 속성으로 스프라이트의 모양에 대한 정보를 저장하고,
+스프라이트의 이동, 충돌감지 기능을 정의해야 한다.</p>
+</section>
+<section id="id6">
+<h3><span class="section-number">16.2.3. </span>생성자<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>모든 파이썬 클래스는 클래스의 <strong>인스턴스</strong><font size='2'>instance</font>를 생성하는 <strong>생성자</strong> 메서드를 포함해야 한다.
+파이썬 클래스의 생성자는 항상 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수로 구현된다.</p>
+<p>생성자는 함수의 인자로 받는 값을 생성하는 인스턴스의 속성<font size='2'>attributes</font>과
+메서드의 기능을 지정하기 위해 사용한다.
+예를 들어 아래 코드에서 선언되는 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 생성자는
+생성되는 스프라이트 객체의 위치, 크기, 모양 등을 결정하는 요소를 지정한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sprite</span><span class="p">:</span>
+    <span class="c1"># 생성자: 스프라이트의 위치, 가로/세로 크기, 이미지 지정</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        x: x-좌표</span>
+<span class="sd">        y: y-좌표</span>
+<span class="sd">        width: 가로 크기</span>
+<span class="sd">        height: 세로 크기</span>
+<span class="sd">        image: 모양</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+</pre></div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">인스턴스 초기 설정</p>
+<p>엄밀히 말하면 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수는 객체를 생성하는 게 아니라
+생성되는 객체의 초기 설정을 담당하지만
+생성자라는 표현이 일반적으로 사용된다.</p>
+</div>
+</section>
+</section>
+<section id="id7">
+<h2><span class="section-number">16.3. </span>인스턴스와 객체<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p><strong>객체</strong><font size='2'>object</font>는 특정 클래스의 인스턴스를 가리키는 일반적인 이름이다.
+<code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 인스턴스를 이용하여 객체가 갖는 속성과 기능을 설명한다.</p>
+<section id="id8">
+<h3><span class="section-number">16.3.1. </span>인스턴스 생성<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 인스턴스를 생성하는 방식은 다음과 같이
+<code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 마치 하나의 함수처럼 호출한다.
+이때 사용되는 인자들은 생성자의 인자로 전달된다.
+단, <code class="docutils literal notranslate"><span class="pre">self</span></code>에 대한 인자는 지정하지 않는다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wizard</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;wizard.gif&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>그러면 생성자 함수 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>가 파이썬 실행기에 의해 다음과 같이 호출된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="n">wizard</span><span class="p">,</span> <span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;wizard.gif&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>메모리 상에서 <code class="docutils literal notranslate"><span class="pre">wizard</span></code> 변수가 가리키는 스프라이트 객체는 아래와 같이 구성된다.</p>
+<p><div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/Sprite1.png" width="75%"></div></p><p><strong><code class="docutils literal notranslate"><span class="pre">self</span></code>의 기능</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">self</span></code> 매개변수에는 현재 생성되는 객체가 인자로 자동 지정된다.
+이런 이유로 <code class="docutils literal notranslate"><span class="pre">self</span></code>에 대해서는 굳이 인자를 명시하지 않는다.</p>
+</section>
+<section id="id9">
+<h3><span class="section-number">16.3.2. </span>인스턴스 변수와 속성<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<p><strong>인스턴스 변수</strong><font size='2'>instance variable</font>는
+클래스 내부에서 <code class="docutils literal notranslate"><span class="pre">self</span></code>와 함께 선언된 변수를 가리킨다.
+앞서 선언된 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 인스턴스 변수는 아래 방식으로 선언된 <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, <code class="docutils literal notranslate"><span class="pre">image</span></code> 다섯 개다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">image</span>
+</pre></div>
+</div>
+<p>인스턴스 변수는 해당 클래스의 영역<font size='2'>scope</font>에서만 의미를 가지며,
+일반적으로 생성자가 실행되는 동안 선언되지만
+클래스 내부 어디에서도 선언될 수 있다.</p>
+<p>클래스의 인스턴스로 생성된 객체는 인스턴스 변수가 가리키는 값을 속성으로 갖는다.
+이런 의미에서 인스턴스 변수가 가리키는 값을
+<strong>인스턴스 속성</strong><font size="2">instance attribute</font>이라 부른다.</p>
+<p>인스턴스 변수 이외에 <code class="docutils literal notranslate"><span class="pre">self</span></code> 를 사용하지 않는
+<strong>클래스 변수</strong><font size='2'>class variable</font> 가 선언될 수도 있지만
+여기서는 다루지 않는다.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수의 매개 변수와 인스턴스 변수</strong></p>
+<p>함수를 호출할 때 매개 변수를 통해 함수 내부로 전달되는 인자는 해당 함수의 본문에서만 사용될 수 있다.
+반면에 <code class="docutils literal notranslate"><span class="pre">self.x</span></code>, <code class="docutils literal notranslate"><span class="pre">self.width</span></code> 처럼 선언되는 인스턴스 변수는 클래스 내부 어디에서도 사용될 수 있다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 생성자인 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수 내부에서 선언된 다섯 개의 인스턴스 변수명이
+매개 변수명과 동일하지만 이것은 의무사항이 아니다.
+여기서는 함수 내부에서 굳이 다른 변수명을 사용할 이유가 없기에 동일한 변수명을 사용했을 뿐이다.
+실제로 함수의 매개 변수와 클래스 내부에서 선언된 변수의 기능은 완전히 다르기 때문에 서로 충돌하지 않는다.</p>
+<p>프로그래밍 입문자에게 조금은 난해할 수도 있기 때문에 아래와 같이 다른 변수명을 사용할 수도 있어지만 일부러 그러지 않았다.
+이유는 많은 프로그래머가 유사한 방식으로 인스턴스 변수를 선언하기 때문이다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">y_</span><span class="p">,</span> <span class="n">width_</span><span class="p">,</span> <span class="n">height_</span><span class="p">,</span> <span class="n">image_</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y_</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width_</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height_</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image_</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h3><span class="section-number">16.3.3. </span>인스턴스 메서드<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<p>생성자 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수처럼 클래스 내부에 선언된 함수를 <strong>메서드</strong><font size='2'>method</font>라 부른다.
+메서드는 크게 인스턴스 메서드, 클래스 메서드, 정적 메서드로 나뉜다.
+하지만 여기서는 인스턴스 메서드만 소개한다.</p>
+<p>파이썬 인스턴스 메서드의 첫재 매개 변수는 항상 <code class="docutils literal notranslate"><span class="pre">self</span></code>로 지정한다.
+생성자 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수 또한 이런 의미에서 인스턴스 메서드이며,
+필요에 따라 인스턴스 메서드를 추가로 선언할 수 있다.</p>
+<p>아래 코드는 여러 개의 인스턴스 메서드를 추가한 완성된 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 선언한다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">render()</span></code> 메서드: 스프라이트 객체를 지정된 위치로 이동시킨 후에 지정된 이미지의 도장 찍기</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_overlapping_collision()</span></code>, <code class="docutils literal notranslate"><span class="pre">is_distance_collision()</span></code>, <code class="docutils literal notranslate"><span class="pre">is_aabb_collision()</span></code> 메서드: 두 스프라이트 객체의 충돌 감지</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sprite</span><span class="p">():</span>
+
+    <span class="c1">## 생성자: 스프라이트의 위치, 가로/세로 크기, 이미지 지정</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        x: x-좌표</span>
+<span class="sd">        y: y-좌표</span>
+<span class="sd">        width: 가로 크기</span>
+<span class="sd">        height: 세로 크기</span>
+<span class="sd">        image: 모양</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+
+    <span class="c1">## 인스턴스 메서드</span>
+
+    <span class="c1"># 지정된 위치로 스프라이트 이동 후 도장 찍기</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
+        <span class="n">pen</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">pen</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="p">)</span>
+        <span class="n">pen</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
+
+    <span class="c1"># 충돌 감지 방법 1: 두 객체의 중심이 일치할 때</span>
+    <span class="k">def</span> <span class="nf">is_overlapping_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># 충돌 감지 방법 2: 두 객체 사이의 거리가 두 객체 너비의 평균값 보다 작을 때</span>
+    <span class="k">def</span> <span class="nf">is_distance_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="p">(((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
+        <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># 충돌 감지 방법 3: 객체를 둘러썬 경계상자가 겹칠 때</span>
+    <span class="c1"># aabb: Axis Aligned Bounding Box</span>
+    <span class="k">def</span> <span class="nf">is_aabb_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">x_collision</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span>
+                                                           <span class="n">other</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+        <span class="n">y_collision</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">+</span>
+                                                           <span class="n">other</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">x_collision</span> <span class="ow">and</span> <span class="n">y_collision</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id11">
+<h2><span class="section-number">16.4. </span>게임 세팅<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<p><strong>기본 세팅</strong></p>
 <p>도화지 객체 <code class="docutils literal notranslate"><span class="pre">wn</span></code>와 거북이 객체 <code class="docutils literal notranslate"><span class="pre">pen</span></code>을 준비한다.
 또한 스프라이트에 사용될 사진 7 개를 거북이 객체의 모양 라이브러리에 추가한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
@@ -558,214 +732,6 @@ document.write(`
 </ul>
 <p>이제부터는 스프라이트 객체를 생성하기 위한 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 직접
 선언하면서 클래스의 주요 요소와 함께 인스턴스를 생성하는 방법을 살펴 본다.</p>
-</section>
-<section id="id6">
-<h3><span class="section-number">16.2.3. </span>클래스 선언<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
-<p>스프라이트들의 클래스를 정의해보자.
-클래스 정의는 다음 형식으로 이루어진다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sprite</span><span class="p">:</span>
-    <span class="o">...</span>
-    <span class="c1"># 속성 지정 및 메서드 선언</span>
-</pre></div>
-</div>
-<p>각각의 스프라이트 객체는 고유의 모양을 가져야 하며 이동 기능과 충돌감지 기능을 갖는다.
-따라서 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스는 속성으로 스프라이트의 모양에 대한 정보를 저장하고,
-스프라이트의 이동, 충돌감지 기능을 정의해야 한다.</p>
-</section>
-<section id="id7">
-<h3><span class="section-number">16.2.4. </span>생성자<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
-<p>모든 파이썬 클래스는 클래스의 <strong>인스턴스</strong><font size='2'>instance</font>를 생성하는 <strong>생성자</strong> 메서드를 포함해야 한다.
-파이썬 클래스의 생성자는 항상 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수로 구현된다.</p>
-<p>생성자는 함수의 인자로 받는 값을 생성하는 인스턴스의 속성<font size='2'>attributes</font>과
-메서드의 기능을 지정하기 위해 사용한다.
-예를 들어 아래 코드에서 선언되는 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 생성자는
-생성되는 스프라이트 객체의 위치, 크기, 모양 등을 결정하는 요소를 지정한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sprite</span><span class="p">:</span>
-    <span class="c1"># 생성자: 스프라이트의 위치, 가로/세로 크기, 이미지 지정</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        x: x-좌표</span>
-<span class="sd">        y: y-좌표</span>
-<span class="sd">        width: 가로 크기</span>
-<span class="sd">        height: 세로 크기</span>
-<span class="sd">        image: 모양</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
-</pre></div>
-</div>
-<div class="info admonition">
-<p class="admonition-title">인스턴스 초기 설정</p>
-<p>엄밀히 말하면 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수는 객체를 생성하는 게 아니라
-생성되는 객체의 초기 설정을 담당하지만
-생성자라는 표현이 일반적으로 사용된다.</p>
-</div>
-</section>
-</section>
-<section id="id8">
-<h2><span class="section-number">16.3. </span>인스턴스와 객체<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
-<p><strong>객체</strong><font size='2'>object</font>는 특정 클래스의 인스턴스를 가리키는 일반적인 이름이다.
-<code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 인스턴스를 이용하여 객체가 갖는 속성과 기능을 설명한다.</p>
-<section id="id9">
-<h3><span class="section-number">16.3.1. </span>인스턴스 생성<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 인스턴스를 생성하는 방식은 다음과 같이
-<code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 마치 하나의 함수처럼 호출한다.
-이때 사용되는 인자들은 생성자의 인자로 전달된다.
-단, <code class="docutils literal notranslate"><span class="pre">self</span></code>에 대한 인자는 지정하지 않는다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wizard</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;wizard.gif&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>그러면 생성자 함수 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>가 파이썬 실행기에 의해 다음과 같이 호출된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="n">wizard</span><span class="p">,</span> <span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;wizard.gif&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>메모리 상에서 <code class="docutils literal notranslate"><span class="pre">wizard</span></code> 변수가 가리키는 스프라이트 객체는 아래와 같이 구성된다.</p>
-<p><div align="center" border="1px"><img src="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/images/Sprite1.png" width="75%"></div></p><p><strong><code class="docutils literal notranslate"><span class="pre">self</span></code>의 기능</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">self</span></code> 매개변수는 현재 생성되는 항상 객체가 인자로 지정된다.
-이런 이유로 <code class="docutils literal notranslate"><span class="pre">self</span></code>에 대해서는 굳이 인자를 명시하지 않는다.</p>
-</section>
-<section id="id10">
-<h3><span class="section-number">16.3.2. </span>인스턴스 변수와 속성<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
-<p><strong>인스턴스 변수</strong><font size='2'>instance variable</font>는
-클래스 내부에서 <code class="docutils literal notranslate"><span class="pre">self</span></code>와 함께 선언된 변수를 가리킨다.
-앞서 선언된 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 인스턴스 변수는 아래 방식으로 선언된 <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, <code class="docutils literal notranslate"><span class="pre">image</span></code> 다섯 개다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">x</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">y</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">width</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">height</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">image</span>
-</pre></div>
-</div>
-<p>인스턴스 변수는 해당 클래스의 영역<font size='2'>scope</font>에서만 의미를 가지며,
-일반적으로 생성자가 실행되는 동안 선언되지만
-클래스 내부 어디에서도 선언될 수 있다.</p>
-<p>클래스의 인스턴스로 생성된 객체는 인스턴스 변수가 가리키는 값을 속성으로 갖는다.
-이런 의미에서 인스턴스 변수가 가리키는 값을
-<strong>인스턴스 속성</strong><font size="2">instance attribute</font>이라 부른다.</p>
-<p>인스턴스 변수 이외에 <code class="docutils literal notranslate"><span class="pre">self</span></code> 를 사용하지 않는
-<strong>클래스 변수</strong><font size='2'>class variable</font> 가 선언될 수도 있지만
-여기서는 다루지 않는다.</p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수의 매개 변수와 인스턴스 변수</strong></p>
-<p>함수를 호출할 때 매개 변수를 통해 함수 내부로 전달되는 인자는 해당 함수의 본문에서만 사용될 수 있다.
-반면에 <code class="docutils literal notranslate"><span class="pre">self.x</span></code>, <code class="docutils literal notranslate"><span class="pre">self.width</span></code> 처럼 선언되는 인스턴스 변수는 클래스 내부 어디에서도 사용될 수 있다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 생성자인 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수 내부에서 선언된 다섯 개의 인스턴스 변수명이
-매개 변수명과 동일하지만 이것은 의무사항이 아니다.
-여기서는 함수 내부에서 굳이 다른 변수명을 사용할 이유가 없기에 동일한 변수명을 사용했을 뿐이다.
-실제로 함수의 매개 변수와 클래스 내부에서 선언된 변수의 기능은 완전히 다르기 때문에 서로 충돌하지 않는다.</p>
-<p>프로그래밍 입문자에게 조금은 난해할 수도 있기 때문에 아래와 같이 다른 변수명을 사용할 수도 있어지만 일부러 그러지 않았다.
-이유는 많은 프로그래머가 유사한 방식으로 인스턴스 변수를 선언하기 때문이다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_param</span><span class="p">,</span> <span class="n">y_param</span><span class="p">,</span> <span class="n">width_param</span><span class="p">,</span> <span class="n">height_param</span><span class="p">,</span> <span class="n">image_param</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_param</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y_param</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width_param</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height_param</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image_param</span>
-</pre></div>
-</div>
-</section>
-<section id="id11">
-<h3><span class="section-number">16.3.3. </span>인스턴스 메서드<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
-<p>생성자 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수처럼 클래스 내부에 선언된 함수를 <strong>메서드</strong><font size='2'>method</font>라 부른다.
-메서드는 크게 인스턴스 메서드, 클래스 메서드, 정적 메서드로 나뉘며 여기서는 인스턴스 메서드만 소개한다.</p>
-<p>인스턴스 메서드의 첫재 매개 변수가 항상 <code class="docutils literal notranslate"><span class="pre">self</span></code>이며,
-생성자 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 함수 또한 이런 의미에서 인스턴스 메서드다.
-아래 코드는 <code class="docutils literal notranslate"><span class="pre">render()</span></code> 인스턴스 메서드를 추가하는 방식으로 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 새로 정의한다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">render()</span></code> 메서드: 스프라이트 객체를 지정된 위치로 이동시킨 후에 지정된 이미지의
-도장을 찍도록 할 때 사용된다.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sprite</span><span class="p">():</span>
-    
-    <span class="c1"># 생성자: 스프라이트의 위치, 가로/세로 크기, 이미지 지정</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        x: x-좌표</span>
-<span class="sd">        y: y-좌표</span>
-<span class="sd">        width: 가로 크기</span>
-<span class="sd">        height: 세로 크기</span>
-<span class="sd">        image: 모양</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
-        
-    <span class="c1"># 지정된 위치로 스프라이트 이동 후 도장 찍기</span>
-    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
-        <span class="n">pen</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-        <span class="n">pen</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="p">)</span>
-        <span class="n">pen</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="id12">
-<h2><span class="section-number">16.4. </span>스프라이트 충돌<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
-<p>스프라이트들의 충동을 감지하는 전체 코드를 확인한다.</p>
-<p>각 스프라이트 객체는 지정된 위치로의 이동 및 자신의 이미지를 보여주는 기능을
-수행하는 <code class="docutils literal notranslate"><span class="pre">render()</span></code> 메서드와 함께
-다른 스프라이트와의 충돌을 감지하는 기능을 갖는 세 종류의 메서드를 갖는다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sprite</span><span class="p">():</span>
-    
-    <span class="c1">## 생성자: 스프라이트의 위치, 가로/세로 크기, 이미지 지정</span>
-    
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
-
-    <span class="c1">## 스프라이트 메서드</span>
-    
-    <span class="c1"># 지정된 위치로 스프라이트 이동 후 도장 찍기</span>
-    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
-        <span class="n">pen</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-        <span class="n">pen</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="p">)</span>
-        <span class="n">pen</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
-            
-    <span class="c1"># 충돌 감지 방법 1: 두 스프라이트의 중심이 일치할 때 충돌 발생</span>
-    <span class="k">def</span> <span class="nf">is_overlapping_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span>
-            
-    <span class="c1"># 충돌 감지 방법 2: 두 스프라이트 사이의 거리가 두 객체의 너비의 평균값 보다 작을 때 충돌 발생</span>
-    <span class="k">def</span> <span class="nf">is_distance_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="n">distance</span> <span class="o">=</span> <span class="p">(((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">-</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">-</span><span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
-        <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">width</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span>
-        
-    <span class="c1"># 충돌 감지 방법 3: 각각의 스프라이트를 둘러썬 경계상자가 겹칠 때 충돌 발생</span>
-    <span class="c1"># aabb: Axis Aligned Bounding Box</span>
-    <span class="k">def</span> <span class="nf">is_aabb_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="n">x_collision</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
-        <span class="n">y_collision</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">x_collision</span> <span class="ow">and</span> <span class="n">y_collision</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition-self-other admonition">
-<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">self</span></code> 와 <code class="docutils literal notranslate"><span class="pre">other</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">f14.__add__(f12)</span></code> 이  실행되면 실제로는 <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> 메서드가 다음과 같이 호출된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="fm">__add__</span><span class="p">(</span><span class="n">f14</span><span class="p">,</span> <span class="n">f12</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>즉, <code class="docutils literal notranslate"><span class="pre">self=f14</span></code>, <code class="docutils literal notranslate"><span class="pre">other=f12</span></code> 가 인자로 사용된다.
-하지만 <code class="docutils literal notranslate"><span class="pre">f14</span></code> 를 기준(self)으로 해서 다른 값(other)과의 연산을 실행한다는 의미를
-강조하기 위해 관행적으로 <code class="docutils literal notranslate"><span class="pre">self</span></code> 와 <code class="docutils literal notranslate"><span class="pre">other</span></code> 를 매개변수로 사용한다.</p>
-<p>이런 관행은 덧셈과 동등성 비교 등 모든 이항 연산자를 정의할 때 활용된다.
-예를 들어 <code class="docutils literal notranslate"><span class="pre">f1</span> <span class="pre">==</span> <span class="pre">f2</span></code>,
-즉 <code class="docutils literal notranslate"><span class="pre">f1.__eq__(f2)</span></code>는 파이썬 실행기의 내부에서 <code class="docutils literal notranslate"><span class="pre">__eq__(f1,</span> <span class="pre">f2)</span></code> 로 처리된다.</p>
-</div>
 <p><strong>스프라이트 객체 생성</strong></p>
 <p>위 그림에 포함된 6 종류의 스프라이트 객체를 생성한다.
 스프라이트 중심의 x, y 좌표, 길이와 너비, 이미지 등이 지정된다.</p>
@@ -776,41 +742,52 @@ document.write(`
 <span class="n">cherry</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;cherry.gif&quot;</span><span class="p">)</span>
 
 <span class="n">bar</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">400</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="s2">&quot;bar.gif&quot;</span><span class="p">)</span>
-<span class="n">ball</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="s2">&quot;ball.gif&quot;</span><span class="p">)</span>
+<span class="n">ball</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="s2">&quot;ball.gif&quot;</span><span class="p">)</span>
 
-<span class="c1"># 스프라이트 모음 리스트</span>
-<span class="n">sprites</span> <span class="o">=</span> <span class="p">[</span><span class="n">wizard</span><span class="p">,</span> <span class="n">goblin</span><span class="p">,</span> <span class="n">pacman</span><span class="p">,</span> <span class="n">cherry</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">ball</span><span class="p">]</span>
+<span class="c1"># 스프라이트 리스트</span>
+<span class="n">sprites</span> <span class="o">=</span> <span class="p">[</span><span class="n">wizard</span><span class="p">,</span> <span class="n">goblin</span><span class="p">,</span> <span class="n">cherry</span><span class="p">,</span> <span class="n">pacman</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">ball</span><span class="p">]</span>
 </pre></div>
 </div>
-<p><strong>이벤트와 콜백 함수</strong></p>
+<p><strong>이벤트, 이벤트 처리, 콜백</strong></p>
 <p>마우스 클릭, 버튼 누루기, 키 입력 등을 사용하여
 영향을 미치는 사건을 <strong>이벤트</strong><font size='2'>event</font>라 부르며,
 이벤트에 반응하도록 프로그램을 작성하는 것이
 <strong>이벤트 처리</strong>다.
-여기서는 <code class="docutils literal notranslate"><span class="pre">goblin</span></code>, <code class="docutils literal notranslate"><span class="pre">pacman</span></code>, <code class="docutils literal notranslate"><span class="pre">ball</span></code> 객체를 각각 왼쪽, 오른쪽, 아래 방향으로
-움직이도록 하는 이벤트를 설정한다.</p>
-<p>이벤트 처리에 사용되는 함수를 <strong>콜백</strong><font size='2'>callback</font>라 부르는데
+여기서는 <code class="docutils literal notranslate"><span class="pre">goblin</span></code>, <code class="docutils literal notranslate"><span class="pre">pacman</span></code>, <code class="docutils literal notranslate"><span class="pre">ball</span></code> 등 움직일 대상인 스프라이트 객체를 선택한 후에 상하좌우 화살표 키를
+이용하여 움직이도록 하는 이벤트를 사용한다.</p>
+<p><strong>콜백</strong><font size='2'>callback</font>은 이벤트 처리에 사용되는 함수를 가리킨다.
 사용하는 패키지, 모듈 등에 따라 콜백 함수가 사용되는 방식이 달라진다.
-<code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈의 경우 <code class="docutils literal notranslate"><span class="pre">Screen.listen()</span></code> 메서드를 이용한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 고블린 이동</span>
-<span class="k">def</span> <span class="nf">move_goblin</span><span class="p">():</span>
-    <span class="n">goblin</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">64</span>
+<code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈의 경우 <code class="docutils literal notranslate"><span class="pre">Screen.listen()</span></code>, <code class="docutils literal notranslate"><span class="pre">turtle.listen()</span></code> 메서드가 이벤트 발생을 감지하며
+이후에 다양한 콜백 함수를 이용하여 마우스로 선택된 스프라이트 객체를 이동시킨다.</p>
+<p><strong>마우스 클릭 감지</strong></p>
+<p>아래 코드는 마우스가 눌린 지점의 좌표를 이용하여 마우스로 선택된 스프라이트 객체의 인덱스를 지정한다.
+객체의 인덱스 지정에 활용되는 <code class="docutils literal notranslate"><span class="pre">sprite_idx</span></code> 변수는 함수 밖에서 선언된 전역 변수를 가리킴에 주의한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (콜백) 마우스로 선택된 스프라이트 인덱스 지정</span>
+<span class="k">def</span> <span class="nf">sprite_idx_fn</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">y_</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">sprite_idx</span> <span class="c1"># 전역 변수 활용</span>
 
-<span class="c1"># 팩맨 이동</span>
-<span class="k">def</span> <span class="nf">move_pacman</span><span class="p">():</span>
-    <span class="n">pacman</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">30</span>
-    
-<span class="c1"># 야구공 이동</span>
-<span class="k">def</span> <span class="nf">move_ball</span><span class="p">():</span>
-    <span class="n">ball</span><span class="o">.</span><span class="n">y</span> <span class="o">-=</span> <span class="mi">24</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">sprite</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sprites</span><span class="p">):</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="p">(((</span><span class="n">sprite</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">sprite</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
+        <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">sprite</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">sprite_idx</span> <span class="o">=</span> <span class="n">idx</span>
 
-<span class="c1"># 이벤트 처리</span>
+
+<span class="c1"># 마우스 클릭 감지 후 콜백 함수 바로 실행</span>
 <span class="n">wn</span><span class="o">.</span><span class="n">listen</span><span class="p">()</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">onkeypress</span><span class="p">(</span><span class="n">move_goblin</span><span class="p">,</span> <span class="s2">&quot;Left&quot;</span><span class="p">)</span>  <span class="c1"># 왼쪽 방향 화살표 입력</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">onkeypress</span><span class="p">(</span><span class="n">move_pacman</span><span class="p">,</span> <span class="s2">&quot;Right&quot;</span><span class="p">)</span> <span class="c1"># 오른쪽 방향 화살표 입력</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">onkeypress</span><span class="p">(</span><span class="n">move_ball</span><span class="p">,</span> <span class="s2">&quot;Down&quot;</span><span class="p">)</span>    <span class="c1"># 아래방향 화살표 입력</span>
+<span class="n">wn</span><span class="o">.</span><span class="n">onclick</span><span class="p">(</span><span class="n">sprite_idx_fn</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>이동 화살표 선택 감지</strong></p>
+<p>아래 코드는 상하좌우 이동 화살표 키가 눌리는 이벤트를 감지할 때의 이벤트 처리를 담당한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 이벤트 처리: 선택된 이동 화살표에 따른 이벤트 지정</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">listen</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">onkey</span><span class="p">(</span><span class="n">move_left</span><span class="p">,</span> <span class="s2">&quot;Left&quot;</span><span class="p">)</span>   <span class="c1"># 왼쪽 방향 화살표 입력</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">onkey</span><span class="p">(</span><span class="n">move_right</span><span class="p">,</span> <span class="s2">&quot;Right&quot;</span><span class="p">)</span> <span class="c1"># 오른쪽 방향 화살표 입력</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">onkey</span><span class="p">(</span><span class="n">move_up</span><span class="p">,</span> <span class="s2">&quot;Up&quot;</span><span class="p">)</span>       <span class="c1"># 위쪽 방향 화살표 입력</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">onkey</span><span class="p">(</span><span class="n">move_down</span><span class="p">,</span> <span class="s2">&quot;Down&quot;</span><span class="p">)</span>   <span class="c1"># 아래쪽 방향 화살표 입력</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">move_left()</span></code> 함수 등은 선택된</p>
 <p><strong>게임 실행</strong></p>
 <p>게임 실행 중에 화살표 키가 입력될 때마다 지정된 콜백 함수가 실행되어
 의도된 스프라이트가 이동한다.
@@ -858,12 +835,12 @@ document.write(`
 <p>이처럼 객체들 사이에 주고 받을 수 있는 정보를 이용하여 객체의 상태와 행동을
 결정하는 프로그래밍 기법이 바로 객체 지향 프로그래밍이다.</p>
 </section>
-<section id="id13">
-<h2><span class="section-number">16.6. </span>연습문제<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<section id="id12">
+<h2><span class="section-number">16.6. </span>연습문제<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-casestudy_oop.ipynb">(실습) 사례 연구: 객체 지향 프로그래밍</a></p>
 </section>
-<section id="id14">
-<h2><span class="section-number">16.7. </span>연습문제<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<section id="id13">
+<h2><span class="section-number">16.7. </span>연습문제<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-classes_instances_objects.ipynb">(실습) 클래스, 인스턴스, 객체</a></p>
 </section>
 </section>
@@ -935,21 +912,20 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.1. 객체 교감: 충돌 감지</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.2. 클래스 선언과 생성자</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.2.1. 클래스, 인스턴스, 객체</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">16.2.2. 기본 세팅</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">16.2.3. 클래스 선언</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">16.2.4. 생성자</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">16.2.2. 클래스 선언</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">16.2.3. 생성자</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">16.3. 인스턴스와 객체</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">16.3.1. 인스턴스 생성</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">16.3.2. 인스턴스 변수와 속성</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">16.3.3. 인스턴스 메서드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">16.3. 인스턴스와 객체</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">16.3.1. 인스턴스 생성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">16.3.2. 인스턴스 변수와 속성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">16.3.3. 인스턴스 메서드</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">16.4. 스프라이트 충돌</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">16.4. 게임 세팅</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oop">16.5. OOP의 핵심</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">16.6. 연습문제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">16.7. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">16.6. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">16.7. 연습문제</a></li>
 </ul>
   </nav></div>
 
