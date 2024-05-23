@@ -533,33 +533,6 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">min()</span></code>/<code class="docutils literal notranslate"><span class="pre">max()</span></code> 함수</strong></p>
-<p>키로 사용된 값들 중에서 최솟값/최댓값을 확인한다.
-단, 키들의 기본적으로 자료형이 같고 크기 비교가 가능해야 한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">({</span><span class="mi">1</span> <span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="p">:</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="mi">3</span> <span class="p">:</span> <span class="s1">&#39;three&#39;</span><span class="p">})</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">({</span><span class="mi">1</span> <span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="p">:</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="mi">3</span> <span class="p">:</span> <span class="s1">&#39;three&#39;</span><span class="p">})</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="id4">
 <h3><span class="section-number">13.1.2. </span>사전 인덱싱<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
@@ -664,15 +637,6 @@ document.write(`
 <tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.get()</span></code></p></td>
 <td class="text-left"><p>key에 대응되는 value를 반환. 존재하지 않는 key를 사용하면 <code class="docutils literal notranslate"><span class="pre">None</span></code>을 반환</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.update()</span></code></p></td>
-<td class="text-left"><p>다른 사전과 합함. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.pop()</span></code></p></td>
-<td class="text-left"><p>key에 해당하는 항목을 삭제. 반환값은 key에 대응하는 value. key가 존재하지 않으면 오류 발생.</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.clear()</span></code></p></td>
-<td class="text-left"><p>사전 안의 모든 항목들을 삭제. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-</tr>
 </tbody>
 </table>
 <div class="cell docutils container">
@@ -755,71 +719,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">update()</span></code> 메서드: 여러 항목 추가</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Python&#39;</span> <span class="p">:</span> <span class="s1">&#39;파이썬&#39;</span><span class="p">,</span> <span class="s1">&#39;Programming&#39;</span> <span class="p">:</span> <span class="s1">&#39;프로그래밍&#39;</span><span class="p">})</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Hello&#39;: &#39;안녕&#39;, &#39;World&#39;: &#39;세계&#39;, &#39;Python&#39;: &#39;파이썬&#39;, &#39;Programming&#39;: &#39;프로그래밍&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">pop()</span></code> 메서드: 지정된 키 항목 삭제. 반환값은 키와 연관된 값</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;파이썬&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Hello&#39;: &#39;안녕&#39;, &#39;World&#39;: &#39;세계&#39;, &#39;Programming&#39;: &#39;프로그래밍&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">clear()</span></code> 메서드: 전체 항목 삭제</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
-</pre></div>
-</div>
-</div>
-</div>
+<p><strong>예제</strong></p>
+<p>6명 정보를 이용하여 키는 이름, 값은 해당 이름의 정보를 담은 리스트를 사용하는 사전을
+가리키는 <code class="docutils literal notranslate"><span class="pre">info_dict</span></code> 변수를 선언하라.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_list</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;김강현&#39;</span><span class="p">,</span> <span class="s1">&#39;010-1234-5678&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">172.5</span><span class="p">,</span> <span class="s1">&#39;제주&#39;</span><span class="p">],</span>
@@ -832,6 +734,30 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span> <span class="o">=</span> <span class="n">person</span>
+    <span class="n">info_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">rest</span>
+    
+<span class="n">info_dict</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;김강현&#39;: [&#39;010-1234-5678&#39;, 20, 172.5, &#39;제주&#39;],
+ &#39;황현&#39;: [&#39;02-9871-1234&#39;, 19, 163.5, &#39;서울&#39;],
+ &#39;남궁수현&#39;: [&#39;01-3456-7891&#39;, 21, 156.7, &#39;경기&#39;],
+ &#39;최흥선&#39;: [&#39;070-4321-1111&#39;, 21, 187.2, &#39;부산&#39;],
+ &#39;김선주&#39;: [&#39;010-3333-8888&#39;, 22, 164.6, &#39;광주&#39;],
+ &#39;함중아&#39;: [&#39;010-7654-2345&#39;, 18, 178.3, &#39;강원&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>예제</strong></p>
 <p>6명 정보를 이용하여 키는 나이, 값은 해당 나이를 갖는 사람의 수를 사용하는 사전을
 가리키는 <code class="docutils literal notranslate"><span class="pre">age_count_dict</span></code>를 선언하라.</p>
 </section>
