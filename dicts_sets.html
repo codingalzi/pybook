@@ -980,14 +980,18 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="caution admonition">
-<p class="admonition-title">주의</p>
-<p>빈 집합을 만들 때는 <code class="docutils literal notranslate"><span class="pre">set()</span></code>을 사용해야 한다. <code class="docutils literal notranslate"><span class="pre">{}</span></code>은 이어서 소개할
-빈 사전<font size="2">empty dictionary</font>을 가리킨다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="go">dict</span>
+<p><code class="docutils literal notranslate"><span class="pre">{}</span></code>은 빈 사전을 가리킨에 주의한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
 </div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">set()</span></code> 함수</strong></p>
@@ -1239,16 +1243,48 @@ document.write(`
 </section>
 <section id="id8">
 <h2><span class="section-number">13.3. </span>해시 가능성<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
-<p>집합의 항목으로 리스트 등 가변 자료형은 사용할 수 없다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">}</span>
-<span class="go">TypeError                                 Traceback (most recent call last)</span>
-<span class="go">/tmp/ipykernel_1817/2739416386.py in &lt;module&gt;</span>
-<span class="go">----&gt; 1 {[1, 3], 4}</span>
-
-<span class="go">TypeError: unhashable type: &#39;list&#39;</span>
+<p>집합의 항목으로 리스트, 사전, 집합과 같은 가변 자료형은 사용할 수 없다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">}</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">}</span>
+
+<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>사전의 키와 해시 가능성</strong></p>
+<p>사전의 키는 앞서 집합과 관련해서 설명한 것과 동일한 이유로
+정수, 부동소수점, 문자열, 튜플 등 해시 가능한 객체만 가능하다.
+예를 들어 리스트를 사전의 키로 이용하면 다음과 같이
+리스튼 해시 가능하지 않다는 설명과 함께 <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>오류가 발생한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">no_list_keys</span> <span class="o">=</span> <span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span> <span class="s2">&quot;리스트는 키로 사용할 수 없음&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">no_list_keys</span> <span class="o">=</span> <span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span> <span class="s2">&quot;리스트는 키로 사용할 수 없음&quot;</span><span class="p">}</span>
+
+<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <p>이유는 가변 자료형이 해시 가능하지 않기 때문이다.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">hash()</span></code> 함수</strong></p>
 <p>파이썬 객체의 해시 가능성은 <code class="docutils literal notranslate"><span class="pre">hash()</span></code> 함수의 인자로 사용될 수 있는가에 의해 결정된다.
 즉 <code class="docutils literal notranslate"><span class="pre">hash()</span></code> 함수와 함께 호출됐을 때 오류가 발생하지 않아야 한다.
 이렇게 <code class="docutils literal notranslate"><span class="pre">hash()</span></code> 함수의 인자로 사용될 수 있는 값을
@@ -1263,7 +1299,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5087701518476459756
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9083508160280966581
 </pre></div>
 </div>
 </div>
@@ -1275,7 +1311,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4947675745280263025
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-128734464318441906
 </pre></div>
 </div>
 </div>
@@ -1314,7 +1350,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">53</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">56</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">hash</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
@@ -1332,7 +1368,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">54</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">57</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">hash</span><span class="p">(([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>
 
 <span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
@@ -1343,28 +1379,6 @@ document.write(`
 <p>집합에 해시 가능한 값만 포함될 수 있는 이유는 두 항목을 구별하기 위해 <code class="docutils literal notranslate"><span class="pre">hash()</span></code> 함수를 이용하기 때문이다.
 반면에 리스트 등과 같은 가변 자료형의 값은 언제든 변할 수 있기에 정체를
 제대로 파악할 수 없다.</p>
-<p><strong>사전의 키와 해시 가능성</strong></p>
-<p>사전의 키는 앞서 집합과 관련해서 설명한 것과 동일한 이유로
-정수, 부동소수점, 문자열, 튜플 등 해시 가능한 객체만 가능하다.
-예를 들어 리스트를 사전의 키로 이용하면 다음과 같이
-리스튼 해시 가능하지 않다는 설명과 함께 <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>오류가 발생한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">no_list_keys</span> <span class="o">=</span> <span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span> <span class="s2">&quot;리스트는 키로 사용할 수 없음&quot;</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">55</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">no_list_keys</span> <span class="o">=</span> <span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span> <span class="s2">&quot;리스트는 키로 사용할 수 없음&quot;</span><span class="p">}</span>
-
-<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="sec-comprehension">
 <span id="id9"></span><h2><span class="section-number">13.4. </span>조건제시법<a class="headerlink" href="#sec-comprehension" title="Link to this heading">#</a></h2>
