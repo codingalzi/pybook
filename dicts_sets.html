@@ -760,6 +760,29 @@ document.write(`
 <p><strong>예제</strong></p>
 <p>6명 정보를 이용하여 키는 나이, 값은 해당 나이를 갖는 사람의 수를 사용하는 사전을
 가리키는 <code class="docutils literal notranslate"><span class="pre">age_count_dict</span></code>를 선언하라.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age_count_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">info_list</span><span class="p">:</span>
+    <span class="n">ages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20, 19, 21, 21, 22, 18]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ellipsis
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="id8">
@@ -846,33 +869,6 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">min()</span></code>/<code class="docutils literal notranslate"><span class="pre">max()</span></code> 함수</strong></p>
-<p>항목 중에서 최솟값/최댓값을 확인한다.
-단, 기본적으로 모든 값의 자료형이 갖고 크기 비교가 가능해야 한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">})</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">})</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1696,36 +1692,6 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P y t h o n   i s   l o v e l y ! 
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>집합과 반복문</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">aString</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">aSet</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;o&#39;, &#39;l&#39;, &#39;h&#39;, &#39;e&#39;, &#39;t&#39;, &#39;i&#39;, &#39; &#39;, &#39;s&#39;, &#39;n&#39;, &#39;v&#39;, &#39;y&#39;, &#39;!&#39;, &#39;P&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<p>집합은 중복을 허용하지 않음에 주의하라.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">aSet</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>o l h e t i   s n v y ! P 
 </pre></div>
 </div>
 </div>
