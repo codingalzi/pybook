@@ -2,6 +2,8 @@ import math
 import turtle
 
 ## 스프라이트 클래스 선언
+
+
 class Sprite():
 
     ## 생성자: 스프라이트의 위치, 가로/세로 크기, 이미지 지정
@@ -51,7 +53,7 @@ class Sprite():
         y_collision = (math.fabs(self.y - other.y) * 2) < (self.height +
                                                            other.height)
         return (x_collision and y_collision)
-        
+
 
 ## 게임 세팅
 
@@ -59,17 +61,18 @@ class Sprite():
 wn = turtle.Screen()
 wn.bgcolor("black")
 wn.title("Collision Detection")
-wn.tracer(0)     # 도화지 내용 한 번에 업데이트 되도록 지정
+wn.tracer(0)  # 도화지 내용 한 번에 업데이트 되도록 지정
 
 # 거북이 객체 설정
 pen = turtle.Turtle()
-pen.speed(0)     # 가장 빠르게 이동
-pen.hideturtle() # 숨김
+pen.speed(0)  # 가장 빠르게 이동
+pen.hideturtle()  # 숨김
 
 # 스프라이트 이미지 7개 등록
-shapes = ["wizard.gif", "goblin.gif", 
-          "pacman.gif", "cherry.gif",
-          "bar.gif", "ball.gif", "x.gif"]
+shapes = [
+    "wizard.gif", "goblin.gif", "pacman.gif", "cherry.gif", "bar.gif",
+    "ball.gif", "x.gif"
+]
 
 for shape in shapes:
     wn.register_shape(shape)
@@ -94,62 +97,23 @@ sprites = [wizard, goblin, cherry, pacman, bar, ball]
 # 마우스가 눌린 위치 정보를 활용하는 이벤트 처리 함수 fxn()에 의해 지정됨
 sprite_idx = None
 
+
 # (콜백) 이동 화살표 키 이벤트 처리 함수
 def move_left():
-    if sprite_idx == 0:
-        wizard.x -= 32
-    elif sprite_idx == 1:
-        goblin.x -= 32
-    elif sprite_idx == 2:
-        cherry.x -= 32
-    elif sprite_idx == 3:
-        pacman.x -= 32
-    elif sprite_idx == 4:
-        bar.x -= 32
-    elif sprite_idx == 5:
-        ball.x -= 32
+    sprites[sprite_idx].x -= 32
 
 def move_right():
-    if sprite_idx == 0:
-        wizard.x += 32
-    elif sprite_idx == 1:
-        goblin.x += 32
-    elif sprite_idx == 2:
-        cherry.x += 32
-    elif sprite_idx == 3:
-        pacman.x += 32
-    elif sprite_idx == 4:
-        bar.x += 32
-    elif sprite_idx == 5:
-        ball.x += 32
+    sprites[sprite_idx].x += 32
 
 def move_up():
-    if sprite_idx == 0:
-        wizard.y += 24
-    elif sprite_idx == 1:
-        goblin.y += 24
-    elif sprite_idx == 2:
-        cherry.y += 24
-    elif sprite_idx == 3:
-        pacman.y += 24
-    elif sprite_idx == 5:
-        ball.y += 24
+    sprites[sprite_idx].y += 24
 
 def move_down():
-    if sprite_idx == 0:
-        wizard.y -= 24
-    elif sprite_idx == 1:
-        goblin.y -= 24
-    elif sprite_idx == 2:
-        cherry.y -= 24
-    elif sprite_idx == 3:
-        pacman.y -= 24
-    elif sprite_idx == 5:
-        ball.y -= 24
+    sprites[sprite_idx].y -= 24
 
 # (콜백) 마우스로 선택된 스프라이트 인덱스 지정
 def sprite_idx_fn(x_, y_):
-    global sprite_idx # 전역 변수 활용
+    global sprite_idx  # 전역 변수 활용
 
     for idx, sprite in enumerate(sprites):
         distance = (((sprite.x - x_)**2) + ((sprite.y - y_)**2))**0.5
@@ -163,10 +127,10 @@ wn.onclick(sprite_idx_fn)
 
 # 이벤트 처리: 선택된 이동 화살표에 따른 이벤트 지정
 turtle.listen()
-turtle.onkey(move_left, "Left")   # 왼쪽 방향 화살표 입력
-turtle.onkey(move_right, "Right") # 오른쪽 방향 화살표 입력
-turtle.onkey(move_up, "Up")       # 위쪽 방향 화살표 입력
-turtle.onkey(move_down, "Down")   # 아래쪽 방향 화살표 입력
+turtle.onkey(move_left, "Left")  # 왼쪽 방향 화살표 입력
+turtle.onkey(move_right, "Right")  # 오른쪽 방향 화살표 입력
+turtle.onkey(move_up, "Up")  # 위쪽 방향 화살표 입력
+turtle.onkey(move_down, "Down")  # 아래쪽 방향 화살표 입력
 
 ## 게임 진행
 
