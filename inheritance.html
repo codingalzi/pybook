@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>17. 상속 &#8212; 파이썬 프로그래밍</title>
   
@@ -28,36 +29,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'inheritance';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -414,7 +415,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.1. 클래스 상속</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.2. 모듈 활용 클래스 상속</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.3. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.3. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.4. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -427,50 +429,45 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-inheritance">
-<span id="id1"></span><h1><span class="section-number">17. </span>상속<a class="headerlink" href="#ch-inheritance" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">17. </span>상속<a class="headerlink" href="#ch-inheritance" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2><span class="section-number">17.1. </span>클래스 상속<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p><a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">16장</span></a>에서 사용한 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 상속해서
+<h2><span class="section-number">17.1. </span>클래스 상속<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p><a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">16장</span></a>에서 정의한 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 상속해서
 캐릭터에 새로운 기능을 추가한다.</p>
 <p><strong>참고</strong></p>
 <p>여기서 사용하는 코드는
-<a class="reference external" href="https://replit.com/&#64;codingrg/collisiondectioninheritance1#main.py">(레플릿) 충돌 감지 - 상속 1</a>에서
-확인하고 직접 실행할 수 있다.</p>
-<p><strong>기본 설정</strong></p>
-<p>기본 설정은 이전과 동일하다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
-<span class="kn">import</span> <span class="nn">math</span>
-
-<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Collision Detection by @TokyoEdtech&quot;</span><span class="p">)</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="n">pen</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
-<span class="n">pen</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">pen</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
-
-<span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;wizard.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;goblin.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;pacman.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;bar.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;ball.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;x.gif&quot;</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">:</span>
-    <span class="n">wn</span><span class="o">.</span><span class="n">register_shape</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
-    
-</pre></div>
-</div>
+<a class="reference internal" href="#replit.com/&#64;codingalzi/collisiondectioninheritance"><span class="xref myst">(레플릿) 충돌 감지 - 상속</span></a>에서
+확인하고 직접 실행할 수 있다.
+오프라인 환경에서 실행하려면 먼저 아래 코드의 실행에 필요한
+<a class="reference external" href="https://github.com/codingalzi/pybook/raw/master/jupyter-book/codes/collision_detection.zip">이미지 파일과 소스코드</a>를
+다운로드해서 압축을 푼 다음에 <code class="docutils literal notranslate"><span class="pre">collision_dection_inheritance.py</span></code> 파일을 실행하면 된다.</p>
 <p><strong>스프라이트 클래스</strong></p>
-<p>이전에 정의했던 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스는 다음과 같다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sprite</span><span class="p">():</span>
-    
-    <span class="c1">## 생성자: 스프라이트의 위치, 가로/세로 크기, 이미지 지정</span>
+<p><a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">16장</span></a>에서 정의한
+<code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스는 다음과 같으며, 여기서는 <code class="docutils literal notranslate"><span class="pre">sprite.py</span></code> 파일에 저장되어 있다고 가정한다.
+저장된 파일을 하나의 모듈로 불러와서 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 활용한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
+<span class="c1">## 스프라이트 클래스 선언</span>
+
+<span class="k">class</span> <span class="nc">Sprite</span><span class="p">():</span>
+
+    <span class="c1">## 생성자: 스프라이트의 위치, 가로/세로 크기, 이미지 지정</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        x: x-좌표</span>
+<span class="sd">        y: y-좌표</span>
+<span class="sd">        width: 가로 크기</span>
+<span class="sd">        height: 세로 크기</span>
+<span class="sd">        image: 모양</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
 
-    <span class="c1">## 스프라이트 메서드</span>
+    <span class="c1">## 인스턴스 메서드</span>
 
     <span class="c1"># 지정된 위치로 스프라이트 이동 후 도장 찍기</span>
     <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
@@ -478,26 +475,28 @@ document.write(`
         <span class="n">pen</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="p">)</span>
         <span class="n">pen</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
 
-    <span class="c1"># 충돌 감지 방법 1: 두 스프라이트의 중심이 일치할 때 충돌 발생</span>
+    <span class="c1"># 충돌 감지 방법 1: 두 객체의 중심이 일치할 때</span>
     <span class="k">def</span> <span class="nf">is_overlapping_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="c1"># 충돌 감지 방법 2: 두 스프라이트 사이의 거리가 두 객체의 너비의 평균값 보다 작을 때 충돌 발생</span>
+    <span class="c1"># 충돌 감지 방법 2: 두 객체 사이의 거리가 두 객체 너비의 평균값 보다 작을 때</span>
     <span class="k">def</span> <span class="nf">is_distance_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="n">distance</span> <span class="o">=</span> <span class="p">(((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">-</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">-</span><span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
-        <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">width</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0</span><span class="p">:</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="p">(((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
+        <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="c1"># 충돌 감지 방법 3: 각각의 스프라이트를 둘러썬 경계상자가 겹칠 때 충돌 발생</span>
+    <span class="c1"># 충돌 감지 방법 3: 객체를 둘러썬 경계상자가 겹칠 때</span>
     <span class="c1"># aabb: Axis Aligned Bounding Box</span>
     <span class="k">def</span> <span class="nf">is_aabb_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="n">x_collision</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
-        <span class="n">y_collision</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+        <span class="n">x_collision</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span>
+                                                           <span class="n">other</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+        <span class="n">y_collision</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">+</span>
+                                                           <span class="n">other</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">x_collision</span> <span class="ow">and</span> <span class="n">y_collision</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -588,7 +587,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">17.2. </span>모듈 활용 클래스 상속<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.2. </span>모듈 활용 클래스 상속<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>다른 파이썬 파일(모듈)에 정의된 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 상속하는 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스를 선언한다.</p>
 <p><strong>참고</strong></p>
 <p>여기서 사용하는 코드는
@@ -735,8 +734,12 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">17.3. </span>연습문제<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-casestudy_inheritance.ipynb">(실습) 사례 연구: 상속</a></p>
+<h2><span class="section-number">17.3. </span>필수 예제<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/examples/examples-inheritance.ipynb">(필수 예제) 상속</a></p>
+</section>
+<section id="id5">
+<h2><span class="section-number">17.4. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-inheritance.ipynb">(실습) 상속</a></p>
 </section>
 </section>
 
@@ -806,7 +809,8 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.1. 클래스 상속</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.2. 모듈 활용 클래스 상속</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.3. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.3. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.4. 연습문제</a></li>
 </ul>
   </nav></div>
 

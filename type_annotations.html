@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>22. (부록) 자료형 힌트 &#8212; 파이썬 프로그래밍</title>
   
@@ -28,36 +29,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'type_annotations';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -434,9 +435,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-type-annotation">
-<span id="id1"></span><h1><span class="section-number">22. </span>(부록) 자료형 힌트<a class="headerlink" href="#ch-type-annotation" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">22. </span>(부록) 자료형 힌트<a class="headerlink" href="#ch-type-annotation" title="Permalink to this heading">#</a></h1>
 <section id="vs">
-<h2><span class="section-number">22.1. </span>동적 타이핑 vs  정적 타이핑<a class="headerlink" href="#vs" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">22.1. </span>동적 타이핑 vs  정적 타이핑<a class="headerlink" href="#vs" title="Permalink to this heading">#</a></h2>
 <p>파이썬은 <strong>동적 타이핑</strong><font size='2'>dynamic typing</font>을 지원하는 언어이다.
 즉, 함수나 변수를 선언할 때 변수들의 자료형을 명시적으로 제한하지 않는다.
 동적 타이핑 언어의 경우 프로그램 실행 과정에서 문제가 발생하지 않도록
@@ -534,7 +535,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">22.2. </span>파이썬과 자료형 힌트<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">22.2. </span>파이썬과 자료형 힌트<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>파이썬이 자료형 힌트를 지원하기 시작했지만 겉모습에만 한정된다.
 예를 들어 <code class="docutils literal notranslate"><span class="pre">add()</span></code> 함수가 자료형 힌트를 사용했다 하더라도
 여전히 문자열이나 리스트를 인자로 사용할 수 있다.</p>
@@ -555,7 +556,7 @@ document.write(`
 </div>
 </div>
 <section id="id3">
-<h3><span class="section-number">22.2.1. </span>자료형 힌트의 장점<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">22.2.1. </span>자료형 힌트의 장점<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>하지만 자료형 힌트가 형적적임에도 불구하고 여러 장점을 갖는다.</p>
 <p>첫째, 코드에 사용된 객체들의 자료형에 대한 정보를 제공한다.</p>
 <p>예를 위해, 먼저 벡터 자료형 <code class="docutils literal notranslate"><span class="pre">Vector</span></code> 를 실수들의 리스트 자료형으로 정의해보자.
@@ -635,7 +636,7 @@ document.write(`
 리스트의 메소드의 목록을 보여주며 코드 작성을 도와준다.</p>
 <div align="center"><img src="https://raw.githubusercontent.com/codingalzi/datapy/master/jupyter-book/images/type_annotation.png" width="90%"></div></section>
 <section id="id4">
-<h3><span class="section-number">22.2.2. </span>자료형 힌트 사용법<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">22.2.2. </span>자료형 힌트 사용법<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code> 등의 기초 자료형은 그대로 사용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -742,7 +743,7 @@ document.write(`
 </section>
 </section>
 <section id="typing">
-<h2><span class="section-number">22.3. </span><code class="docutils literal notranslate"><span class="pre">typing</span></code> 모듈<a class="headerlink" href="#typing" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">22.3. </span><code class="docutils literal notranslate"><span class="pre">typing</span></code> 모듈<a class="headerlink" href="#typing" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">typing</span></code> 모듈은 <code class="docutils literal notranslate"><span class="pre">List</span></code>, <code class="docutils literal notranslate"><span class="pre">Optional</span></code> 이외에도 타이핑 힌트에 사용될 수 있는 다른 많은 자료형을 포함한다.
 여기서는 그중에 일부만 다룰 예정이다.</p>
 <p>다음은 사전, 이터러블, 튜플의 자료형 힌트를 불러온다.</p>
@@ -832,7 +833,7 @@ document.write(`
 </div>
 </div>
 <section id="callable">
-<h3><span class="section-number">22.3.1. </span>함수의 자료형: <code class="docutils literal notranslate"><span class="pre">Callable</span></code><a class="headerlink" href="#callable" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">22.3.1. </span>함수의 자료형: <code class="docutils literal notranslate"><span class="pre">Callable</span></code><a class="headerlink" href="#callable" title="Permalink to this heading">#</a></h3>
 <p>파이썬에서 함수는 1종 객체이다.
 즉, 함수의 인자 또는 반환값으로 함수를 입력할 수 있다.
 따라서 함수의 자료형도 명시할 수 있어야 하며,
@@ -893,7 +894,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3><span class="section-number">22.3.2. </span>자료형 객체<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">22.3.2. </span>자료형 객체<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>자료형 힌트에 사용된 자료형들 자체도 1종 객체이며,
 따라서 변수에 할당될 수 있다.
 예를 들어, 복잡한 자료형에 단순한 이름을 지정할 수 있다.</p>
