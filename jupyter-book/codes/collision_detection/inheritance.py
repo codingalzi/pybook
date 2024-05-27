@@ -4,14 +4,15 @@ from sprite import Sprite
 
 # Character 클래스 정의: Sprite 클래스 상속
 class Character(Sprite):
-    def __init__(self, x, y, width, height, image, jump=False):
+    def __init__(self, x, y, width, height, image, jump=True):
         super().__init__(x, y, width, height, image)
         self.jump = jump
 
-    # 점프 기능 추
+    # 점프 기능 추가
     def hop(self):
         if self.jump == True:
             self.x += 100
+
 
 ## 게임 세팅
 
@@ -35,15 +36,15 @@ shapes = [
 for shape in shapes:
     wn.register_shape(shape)
 
-## 스프라이트 생성    
-wizard = Character(-128, 200, 128, 128, "wizard.gif")
+## 스프라이트 생성
+wizard = Character(-128, 200, 128, 128, "wizard.gif", jump=False)
 goblin = Sprite(128, 200, 108, 128, "goblin.gif")
 
-pacman = Character(-128, 0, 128, 128, "pacman.gif", jump=True)
+pacman = Character(-128, 0, 128, 128, "pacman.gif")
 cherry = Sprite(128, 0, 128, 128, "cherry.gif")
 
 bar = Sprite(0, -400, 128, 24, "bar.gif")
-ball = Sprite(0,-200, 32, 32, "ball.gif")
+ball = Sprite(0, -200, 32, 32, "ball.gif")
 
 # 스프라이트 리스트
 sprites = [wizard, goblin, cherry, pacman, bar, ball]
@@ -70,9 +71,10 @@ def move_down():
 
 # 점프
 def jump():
-    if sprite_idx == 3:
+    try:
         sprites[sprite_idx].hop()
-
+    except AttributeError:
+        pass
 
 # (콜백) 마우스로 선택된 스프라이트 인덱스 지정
 def sprite_idx_fn(x_, y_):
@@ -83,17 +85,18 @@ def sprite_idx_fn(x_, y_):
         if distance < sprite.width / 2:
             sprite_idx = idx
 
+
 # 마우스 클릭 감지 후 콜백 함수 바로 실행
 wn.listen()
 wn.onclick(sprite_idx_fn)
 
 # 이벤트 처리: 선택된 이동 화살표에 따른 이벤트 지정
 turtle.listen()
-turtle.onkey(move_left, "Left")    # 왼쪽 방향 화살표 입력
+turtle.onkey(move_left, "Left")  # 왼쪽 방향 화살표 입력
 turtle.onkey(move_right, "Right")  # 오른쪽 방향 화살표 입력
-turtle.onkey(move_up, "Up")        # 위쪽 방향 화살표 입력
-turtle.onkey(move_down, "Down")    # 아래쪽 방향 화살표 입력
-turtle.onkey(jump, "space")        # 스페이스 키 입력
+turtle.onkey(move_up, "Up")  # 위쪽 방향 화살표 입력
+turtle.onkey(move_down, "Down")  # 아래쪽 방향 화살표 입력
+turtle.onkey(jump, "space")  # 스페이스 키 입력
 
 ## 게임 진행
 
