@@ -413,10 +413,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.1. 클래스 상속</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.2. 모듈 활용 클래스 상속</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.3. 필수 예제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.4. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.1. 상속이란?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.1.1. 부모 클래스의 인스턴스는 자식 클래스를 모름!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.2. 메서드 오버라이딩</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.3. 예제: 스프라이트 클래스 상속</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">17.4. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">17.5. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -430,17 +434,429 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-inheritance">
 <span id="id1"></span><h1><span class="section-number">17. </span>상속<a class="headerlink" href="#ch-inheritance" title="Permalink to this heading">#</a></h1>
+<p>클래스와 객체를 보다 실용적으로 활용하는 상속을 소개한다.</p>
 <section id="id2">
-<h2><span class="section-number">17.1. </span>클래스 상속<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p><a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">16장</span></a>에서 정의한 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 상속해서
-캐릭터에 새로운 기능을 추가한다.</p>
-<p><strong>참고</strong></p>
+<h2><span class="section-number">17.1. </span>상속이란?<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p><strong>상속</strong><font size='2'>inheritance</font>은 기존에 정의된 <strong>부모 클래스</strong>에서 선언된 속성(변수)과 기능(메서드)을
+재활용, 수정, 또는 추가해서 새로운 <strong>자식 클래스</strong> 선언하여 보다 효율적으로 객체를 활용하는 OOP의 핵심 기법 중 하나다.</p>
+<p>클래스 상속은 다음과 같이 정의한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">자식</span> <span class="n">클래스</span><span class="p">(</span><span class="n">부모</span> <span class="n">클래스</span><span class="p">):</span>
+    <span class="n">본문</span>
+</pre></div>
+</div>
+<p><strong>부모 클래스 예제</strong></p>
+<p>예를 들어 아래 클래스는 영화 <strong>어벤저스</strong>의 주인공 캐릭터 생성에 활용되는 클래스를 선언한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Character</span><span class="p">:</span>
+    <span class="c1"># 생성자</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">damage</span><span class="p">,</span> <span class="n">inventory</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">=</span> <span class="n">power</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">damage</span> <span class="o">=</span> <span class="n">damage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span> <span class="o">=</span> <span class="n">inventory</span>
+        
+    <span class="c1"># 자기소개</span>
+    <span class="k">def</span> <span class="nf">introduction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;이름: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;파워: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;공격력: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">damage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;수트 능력: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">[</span><span class="s1">&#39;suit&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;무기: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">[</span><span class="s1">&#39;weapon&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+    <span class="c1"># 파워 정보 확인</span>
+    <span class="k">def</span> <span class="nf">getPower</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">power</span>
+    
+    <span class="c1"># 파워 업데이트</span>
+    <span class="k">def</span> <span class="nf">setPower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">power</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">+</span> <span class="n">power</span>
+        
+    <span class="c1"># 상대 캐릭터 공격력</span>
+    <span class="k">def</span> <span class="nf">attack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">의 </span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> 공격!&quot;</span><span class="p">)</span>
+        <span class="c1"># 공격력의 10% 만큼 상대 파워 감소시킴</span>
+        <span class="n">attackPower</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">damage</span> <span class="o">*</span> <span class="mf">0.1</span> 
+        <span class="n">other</span><span class="o">.</span><span class="n">setPower</span><span class="p">(</span><span class="o">-</span><span class="n">attackPower</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>아래 코드는 어벤저스 영화의 아이언맨과 데드풀 캐릭터를 생성한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;아이언맨&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;suit&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="s1">&#39;레이저&#39;</span><span class="p">})</span>
+<span class="n">deadpool</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;데드풀&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;suit&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="s1">&#39;장검&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">introduction()</span></code> 메서드: 캐릭터 자기소개</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span><span class="o">.</span><span class="n">introduction</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>이름: 아이언맨
+파워: 100
+공격력: 200
+수트 능력: 500
+무기: 레이저
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">getPower()</span></code>: 캐릭터의 파워 확인</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setPower()</span></code>: 캐릭터의 파워 조절</p></li>
+</ul>
+<p>예를 들어, 아이언맨 인스턴스의 파워를 키우고나서 확인하는 과정은 다음과 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ironman</span><span class="o">.</span><span class="n">getPower</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span><span class="o">.</span><span class="n">setPower</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ironman</span><span class="o">.</span><span class="n">getPower</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>150
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>게터와 세터</strong></p>
+<p>위 예제에서 살펴 본 <code class="docutils literal notranslate"><span class="pre">getPower()</span></code>와 <code class="docutils literal notranslate"><span class="pre">setPower()</span></code> 같이 인스턴스의 속성값을 확인하거나 지정하는 메서드를
+각각 <strong>게터</strong><font size='2'>getter</font> 메서드와 <strong>세터</strong><font size='2'>setter</font> 메서드라 부른다.
+관용적으로 게터/세터 메서드명은 <code class="docutils literal notranslate"><span class="pre">get</span></code>/<code class="docutils literal notranslate"><span class="pre">set</span></code>으로 시작한다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">attack()</span></code> 메서드: 게터와 세터 활용</p></li>
+</ul>
+<p>파워가 100인 침입자가 출현했다고 가정한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intruder</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;적군&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;suit&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="s1">&#39;독&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>이제 데드풀이 침입자를 공격하니 파워가 3만큼 줄게 된다.
+여기서 3은 데드풀의 공격력의 10분의 1을 가리킨다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deadpool</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="n">intruder</span><span class="p">)</span>
+<span class="n">intruder</span><span class="o">.</span><span class="n">getPower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>데드풀의 적군 공격!
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>자식 클래스 예제</strong></p>
+<p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스를 상속하면서 날기 기능이 추가된 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code>를 자식 클래스로 선언한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FlyingCharacter</span><span class="p">(</span><span class="n">Character</span><span class="p">):</span>
+    
+    <span class="c1"># fly 기능 추가</span>
+    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">speed</span><span class="si">}</span><span class="s2"> km/h로 날아요!!!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>속성과 메서드 상속</strong></p>
+<p>아이언맨의 경우 비행능력이 있으므로 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스가 아닌 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code> 클래스의
+인스턴스로 새로 지정한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span> <span class="o">=</span> <span class="n">FlyingCharacter</span><span class="p">(</span><span class="s1">&#39;아이언맨&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;suit&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="s1">&#39;레이저&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> 함수를 사용하여 <code class="docutils literal notranslate"><span class="pre">ironman</span></code>은 여전히 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의
+인스턴스임을 확인할 수 있다.
+즉, 자식 클래스의 인스턴스는 모두 부모 클래스의 인스턴스이기도 하다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ironman</span><span class="p">,</span> <span class="n">Character</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>따라서 <code class="docutils literal notranslate"><span class="pre">ironman</span></code>은 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 모든 메서드를 사용할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span><span class="o">.</span><span class="n">getPower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
+</pre></div>
+</div>
+</div>
+</div>
+<p>아이언맨은 비행능력도 당연히 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span><span class="o">.</span><span class="n">fly</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>아이언맨: 100 km/h로 날아요!!!
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h3><span class="section-number">17.1.1. </span>부모 클래스의 인스턴스는 자식 클래스를 모름!<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>헐크 캐릭터는 아예 비행능력이 없으므로 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 인스턴스로 선언한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hulk</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;헐크&#39;</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;suit&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="s1">&#39;주먹&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>앞서 언급한 대로 <code class="docutils literal notranslate"><span class="pre">ironman</span></code> 역시 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 기능을 공유한다.
+따라서, 예를 들어, <code class="docutils literal notranslate"><span class="pre">ironman</span></code>과 <code class="docutils literal notranslate"><span class="pre">hulk</span></code>가 서로 공격할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="n">hulk</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>아이언맨의 헐크 공격!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hulk</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="n">ironman</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>헐크의 아이언맨 공격!
+</pre></div>
+</div>
+</div>
+</div>
+<p>반면에 헐크는 비행능력이 없으며 <code class="docutils literal notranslate"><span class="pre">fly</span></code> 메서드를 아예 모른다.
+아래 코드는 오류발생을 피하기 위해 예외처리를 함께 사용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span> 
+    <span class="n">hulk</span><span class="o">.</span><span class="n">fly</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;헐크: 전 날지 못해요!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>헐크: 전 날지 못해요!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2><span class="section-number">17.2. </span>메서드 오버라이딩<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p><strong>자식 클래스의 생성자</strong></p>
+<p>모든 클래스에는 생성자 메서드인 <code class="docutils literal notranslate"><span class="pre">init()</span></code> 메서드가 포함되어야 한다.
+<code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code> 클래스에는 부모 클래스인 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의
+<code class="docutils literal notranslate"><span class="pre">init()</span></code> 메서드를 포함해서 모든 메서드를 상속받는다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code>의 인스턴스를 생성할 때 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 인스턴스를
+생성하는 것처럼 네 개의 인자를 사용한 이유가 여기에 있다.
+실제로 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code> 클래스의 생성자 메서드를 아래와 같이 선언하는 것과 동일하게 작동한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">damage</span><span class="p">,</span> <span class="n">inventory</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">damage</span><span class="p">,</span> <span class="n">inventory</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>위 코드에서
+<code class="docutils literal notranslate"><span class="pre">super()</span></code>는 부모 클래스인 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스를 가리킨다.
+따라서 <code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code>는 부모 클래스의 생성자 호출을 의미한다.</p>
+<p><strong>메서드 오버라이딩</strong></p>
+<p>자식 클래스의 생성자 메서드를 포함하여 부모 클래스로부터 상속받은 모든 메서드를 수정하여
+부모와는 다른 방식으로 인스턴스를 생성하고 다른 기능을 수행할 수 있다.
+이처럼 부모 클래스의 메서드를 재정의 하면서 상속하는 방식을
+<strong>메서드 오버라이딩</strong><font size='2'>method overriding</font>이라 부른다.</p>
+<p>예를 들어, 아래 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code> 클래스는 <code class="docutils literal notranslate"><span class="pre">suit</span></code>의 능력에 따라 비행 속도를 다르게 지정한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FlyingCharacter</span><span class="p">(</span><span class="n">Character</span><span class="p">):</span>
+    <span class="c1"># 생성자: hero 매개변수 추가</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">damage</span><span class="p">,</span> <span class="n">inventory</span><span class="p">,</span> <span class="n">hero</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">damage</span><span class="p">,</span> <span class="n">inventory</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">hero</span> <span class="o">=</span> <span class="n">hero</span>
+        
+        <span class="c1"># suit의 능력이 400 이상인 경우 두 배 속력으로 비행</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hero</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">[</span><span class="s1">&#39;suit&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">400</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speedUp</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speedUp</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="c1"># 영웅 캐릭터: 경우 지정 속도보다 두 배 빠르게!</span>
+    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">speed</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">speedUp</span><span class="si">}</span><span class="s2"> km/h로 날아요!!!&quot;</span><span class="p">)</span>
+        
+    <span class="c1"># attack 메서드 재정의</span>
+    <span class="c1"># 상대 캐릭터 공격력</span>
+    <span class="k">def</span> <span class="nf">attack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">의 </span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> 공격!&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># 영웅이 악당 공격할 때 타격효과 두 배</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hero</span><span class="p">:</span>
+            <span class="n">attackPower</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">damage</span> <span class="o">*</span> <span class="mf">0.2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">attackPower</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">damage</span> <span class="o">*</span> <span class="mf">0.1</span> 
+        
+        <span class="n">other</span><span class="o">.</span><span class="n">setPower</span><span class="p">(</span><span class="o">-</span><span class="n">attackPower</span><span class="p">)</span>        
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>생성자 오버라이딩</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code>의 새로운 생성자 메서드의 변화는 다음과 같다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hero</span></code>(영웅) 여부 추가</p></li>
+<li><p>영웅 캐릭터 여부와 <code class="docutils literal notranslate"><span class="pre">self.inventory[suit]</span></code> 값의 크기에 따라 <code class="docutils literal notranslate"><span class="pre">speedUp</span></code> 속성을 다르게 설정</p></li>
+</ul>
+<p>영웅 여부에 따라 정해진 <code class="docutils literal notranslate"><span class="pre">speedUp</span></code> 속성을 <code class="docutils literal notranslate"><span class="pre">fly</span></code> 메서드를 선언할 때 활용하였다.
+아래 코드는 아이언맨과 울트론을 생성한 후에 시속 100으로
+날으라고 할 때 두 캐릭터의 속도가 2배 차이나는 것을 보여준다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span> <span class="o">=</span> <span class="n">FlyingCharacter</span><span class="p">(</span><span class="s1">&#39;아이언맨&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;suit&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="s1">&#39;레이저&#39;</span><span class="p">})</span>
+<span class="n">ultron</span> <span class="o">=</span> <span class="n">FlyingCharacter</span><span class="p">(</span><span class="s1">&#39;울트론&#39;</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;suit&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="s1">&#39;플라즈마 빔&#39;</span><span class="p">},</span> <span class="n">hero</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ironman</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="n">ultron</span><span class="p">)</span>
+<span class="n">ultron</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="n">ironman</span><span class="p">)</span>
+<span class="c1"># 비행속도를 100으로 지정하면 아이언맨은 200으로 날아 오름.</span>
+<span class="n">ironman</span><span class="o">.</span><span class="n">fly</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ultron</span><span class="o">.</span><span class="n">fly</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>아이언맨의 울트론 공격!
+울트론의 아이언맨 공격!
+아이언맨: 200 km/h로 날아요!!!
+울트론: 100 km/h로 날아요!!!
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">attack()</span></code> 메서드 오버라이딩</strong></p>
+<p>부모 클래스의 <code class="docutils literal notranslate"><span class="pre">attack</span></code> 메서드는 공격자의 <code class="docutils literal notranslate"><span class="pre">damage</span></code> 파워의 10%만큼 상대방 파워(<code class="docutils literal notranslate"><span class="pre">power</span></code>)를 감소시켰다.
+반면에 자식 클래스에서는
+캐릭터의 파워가 400보다 크면 <code class="docutils literal notranslate"><span class="pre">damage</span></code> 파워의 10%가 아닌 20%만큼 상대방 파워를 감소시킨다.</p>
+<p>아래 코드는 아이언맨과 울트론이 서로 공격할 때 각 캐릭터의 파워가 다르게 줄어듦을 보여준다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span><span class="o">.</span><span class="n">introduction</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>이름: 아이언맨
+파워: 70.0
+공격력: 200
+수트 능력: 500
+무기: 레이저
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ultron</span><span class="o">.</span><span class="n">introduction</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>이름: 울트론
+파워: 360.0
+공격력: 300
+수트 능력: 300
+무기: 플라즈마 빔
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;아이언맨 파워:&#39;</span><span class="p">,</span> <span class="n">ironman</span><span class="o">.</span><span class="n">getPower</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;울트론 파워:&#39;</span><span class="p">,</span> <span class="n">ultron</span><span class="o">.</span><span class="n">getPower</span><span class="p">())</span>
+
+<span class="c1"># 10% 타격</span>
+<span class="n">ironman</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="n">ultron</span><span class="p">)</span>                      
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;울트론 파워:&#39;</span><span class="p">,</span> <span class="n">ultron</span><span class="o">.</span><span class="n">getPower</span><span class="p">())</span>
+
+<span class="c1"># 20% 타격</span>
+<span class="n">ultron</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="n">ironman</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;아이언맨 파워:&#39;</span><span class="p">,</span> <span class="n">ironman</span><span class="o">.</span><span class="n">getPower</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>아이언맨 파워: 70.0
+울트론 파워: 360.0
+아이언맨의 울트론 공격!
+울트론 파워: 320.0
+울트론의 아이언맨 공격!
+아이언맨 파워: 40.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2><span class="section-number">17.3. </span>예제: 스프라이트 클래스 상속<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p><strong>감사의 글</strong></p>
+<p>아래 내용은 <a class="reference external" href="https://www.youtube.com/watch?v=bFURdsszto0">(유튜브) Python Game Coding: Introduction to Collision Detection</a>의 내용을 참고합니다.</p>
+<p><strong>준비사항</strong></p>
 <p>여기서 사용하는 코드는
 <a class="reference external" href="https://replit.com/&#64;codingalzi/inheritance">(레플릿) 충돌 감지: 상속</a>에서
 확인하고 직접 실행할 수 있다.
 오프라인 환경에서 실행하려면 먼저 아래 코드의 실행에 필요한
 <a class="reference external" href="https://github.com/codingalzi/pybook/raw/master/jupyter-book/codes/collision_detection.zip">이미지 파일과 소스코드</a>를
 다운로드해서 압축을 푼 다음에 <code class="docutils literal notranslate"><span class="pre">inheritance.py</span></code> 파일을 실행하면 된다.</p>
+<p><a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">16장</span></a>에서 정의한 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 상속해서
+일부 캐릭터에 점프 기능을 추가한다.</p>
 <p><strong>스프라이트 클래스</strong></p>
 <p><a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">16장</span></a>에서 정의한
 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스는 다음과 같으며, 여기서는 <code class="docutils literal notranslate"><span class="pre">sprite.py</span></code> 파일에 저장되어 있다고 가정한다.
@@ -503,7 +919,7 @@ document.write(`
 하지만 <code class="docutils literal notranslate"><span class="pre">hop()</span></code> 함수를 실행했을 때
 점프 기능이 지정된 경우에만 작동하도록 설정한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Character</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">jump</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">jump</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">jump</span> <span class="o">=</span> <span class="n">jump</span>
 
@@ -513,228 +929,53 @@ document.write(`
             <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">100</span>
 </pre></div>
 </div>
-<p><strong>객체 생성</strong></p>
+<p><strong>스프라이트 객체 생성</strong></p>
 <p>부모 클래스와 자식 클래스 모두를 이용하여 객체를 생성할 수 있다.
 <code class="docutils literal notranslate"><span class="pre">wizard</span></code>와 <code class="docutils literal notranslate"><span class="pre">pacman</span></code>은 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 인스턴스로,
 나머지는 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 인스턴스로 선언된다.
 또한 <code class="docutils literal notranslate"><span class="pre">pacman</span></code> 객체는 점프 기능도 갖는다.
 <code class="docutils literal notranslate"><span class="pre">wizard</span></code> 객체는 점프 기능을 제대로 갖추지 못했기에 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 인스턴스와
 동일한 기능만 수행한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wizard</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;wizard.gif&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## 스프라이트 생성</span>
+<span class="n">wizard</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;wizard.gif&quot;</span><span class="p">,</span> <span class="n">jump</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">goblin</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;goblin.gif&quot;</span><span class="p">)</span>
 
-<span class="n">pacman</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;pacman.gif&quot;</span><span class="p">,</span> <span class="n">jump</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pacman</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;pacman.gif&quot;</span><span class="p">)</span>
 <span class="n">cherry</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;cherry.gif&quot;</span><span class="p">)</span>
 
 <span class="n">bar</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">400</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="s2">&quot;bar.gif&quot;</span><span class="p">)</span>
-<span class="n">ball</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="s2">&quot;ball.gif&quot;</span><span class="p">)</span>
+<span class="n">ball</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="s2">&quot;ball.gif&quot;</span><span class="p">)</span>
 
-<span class="c1"># 스프라이트 모음 리스트</span>
-<span class="n">sprites</span> <span class="o">=</span> <span class="p">[</span><span class="n">wizard</span><span class="p">,</span> <span class="n">goblin</span><span class="p">,</span> <span class="n">pacman</span><span class="p">,</span> <span class="n">cherry</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">ball</span><span class="p">]</span>
+<span class="c1"># 스프라이트 리스트</span>
+<span class="n">sprites</span> <span class="o">=</span> <span class="p">[</span><span class="n">wizard</span><span class="p">,</span> <span class="n">goblin</span><span class="p">,</span> <span class="n">cherry</span><span class="p">,</span> <span class="n">pacman</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">ball</span><span class="p">]</span>
 </pre></div>
 </div>
-<p><strong>이벤트와 콜백 함수</strong></p>
+<p><strong>참고</strong> <a class="reference external" href="https://pythontutor.com/render.html#code=import%20math%0A%0Aclass%20Sprite%28%29%3A%0A%0A%20%20%20%20def%20__init__%28self,%20x,%20y,%20width,%20height,%20image%29%3A%0A%20%20%20%20%20%20%20%20self.x%20%3D%20x%0A%20%20%20%20%20%20%20%20self.y%20%3D%20y%0A%20%20%20%20%20%20%20%20self.width%20%3D%20width%0A%20%20%20%20%20%20%20%20self.height%20%3D%20height%0A%20%20%20%20%20%20%20%20self.image%20%3D%20image%0A%0A%20%20%20%20def%20render%28self,%20pen%29%3A%0A%20%20%20%20%20%20%20%20pen.goto%28self.x,%20self.y%29%0A%20%20%20%20%20%20%20%20pen.shape%28self.image%29%0A%20%20%20%20%20%20%20%20pen.stamp%28%29%0A%0A%20%20%20%20def%20is_overlapping_collision%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20if%20self.x%20%3D%3D%20other.x%20and%20self.y%20%3D%3D%20other.y%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20False%0A%0A%20%20%20%20def%20is_distance_collision%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20distance%20%3D%20%28%28%28self.x%20-%20other.x%29**2%29%20%2B%20%28%28self.y%20-%20other.y%29**2%29%29**0.5%0A%20%20%20%20%20%20%20%20if%20distance%20%3C%20%28self.width%20%2B%20other.width%29%20/%202.0%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20False%0A%0A%20%20%20%20def%20is_aabb_collision%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20x_collision%20%3D%20%28math.fabs%28self.x%20-%20other.x%29%20*%202%29%20%3C%20%28self.width%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20other.width%29%0A%20%20%20%20%20%20%20%20y_collision%20%3D%20%28math.fabs%28self.y%20-%20other.y%29%20*%202%29%20%3C%20%28self.height%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20other.height%29%0A%20%20%20%20%20%20%20%20return%20%28x_collision%20and%20y_collision%29%0A%0Aclass%20Character%28Sprite%29%3A%0A%20%20%20%20def%20__init__%28self,%20x,%20y,%20width,%20height,%20image,%20jump%3DFalse%29%3A%0A%20%20%20%20%20%20%20%20super%28%29.__init__%28x,%20y,%20width,%20height,%20image%29%0A%20%20%20%20%20%20%20%20self.jump%20%3D%20jump%0A%0A%20%20%20%20def%20hop%28self%29%3A%0A%20%20%20%20%20%20%20%20if%20self.jump%20%3D%3D%20True%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20self.x%20%2B%3D%20100%0A%0A%0A%0Awizard%20%3D%20Character%28-128,%20200,%20128,%20128,%20%22wizard.gif%22%29%0Apacman%20%3D%20Character%28-128,%200,%20128,%20128,%20%22pacman.gif%22,%20jump%3DTrue%29&amp;amp;cumulative=false&amp;amp;curInstr=0&amp;amp;heapPrimitives=nevernest&amp;amp;mode=display&amp;amp;origin=opt-frontend.js&amp;amp;py=311&amp;amp;rawInputLstJSON=%5B%5D&amp;amp;textReferences=false">파이썬 튜터: 상속</a>에서
+상속된 클래스의 생성자가 객체를 생성하는 과정을 살펴볼 수 있다.</p>
+<p><strong>이벤트, 이벤트 처리, 콜백</strong></p>
 <p>팩맨의 점프 기능을 담당하는 콜백 함수와 이벤트 처리 기능이 추가된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 고블린 이동</span>
-<span class="k">def</span> <span class="nf">move_goblin</span><span class="p">():</span>
-    <span class="n">goblin</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">64</span>
-
-<span class="c1"># 팩맨 이동</span>
-<span class="k">def</span> <span class="nf">move_pacman</span><span class="p">():</span>
-    <span class="n">pacman</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">30</span>
-
-<span class="c1"># 팩맨 점프</span>
-<span class="k">def</span> <span class="nf">jump_pacman</span><span class="p">(</span><span class="n">distance</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
-    <span class="n">pacman</span><span class="o">.</span><span class="n">hop</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
-
-<span class="c1"># 야구공 이동</span>
-<span class="k">def</span> <span class="nf">move_ball</span><span class="p">():</span>
-    <span class="n">ball</span><span class="o">.</span><span class="n">y</span> <span class="o">-=</span> <span class="mi">24</span>
-
-<span class="c1"># 이벤트 처리</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">listen</span><span class="p">()</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">onkeypress</span><span class="p">(</span><span class="n">move_goblin</span><span class="p">,</span> <span class="s2">&quot;Left&quot;</span><span class="p">)</span>  <span class="c1"># 왼쪽 방향 화살표 입력</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">onkeypress</span><span class="p">(</span><span class="n">move_pacman</span><span class="p">,</span> <span class="s2">&quot;Right&quot;</span><span class="p">)</span> <span class="c1"># 오른쪽 방향 화살표 입력</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">onkeypress</span><span class="p">(</span><span class="n">jump_pacman</span><span class="p">,</span> <span class="s2">&quot;space&quot;</span><span class="p">)</span> <span class="c1"># 스페이크 키 입력</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">onkeypress</span><span class="p">(</span><span class="n">move_ball</span><span class="p">,</span> <span class="s2">&quot;Down&quot;</span><span class="p">)</span>    <span class="c1"># 아래방향 화살표 입력</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 이벤트 처리: 스페이키 담당</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">onkey</span><span class="p">(</span><span class="n">jump</span><span class="p">,</span> <span class="s2">&quot;space&quot;</span><span class="p">)</span>  <span class="c1"># 스페이스 키 입력</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 콜백: 점프 가능한 경우 활용</span>
+<span class="k">def</span> <span class="nf">jump</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">sprites</span><span class="p">[</span><span class="n">sprite_idx</span><span class="p">]</span><span class="o">.</span><span class="n">hop</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
 </pre></div>
 </div>
 <p><strong>게임 실행</strong></p>
-<p>게임 실행 코드는 이전과 동일하다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    
-    <span class="c1"># 각 스프라이트 위치 이동 및 도장 찍기</span>
-    <span class="k">for</span> <span class="n">sprite</span> <span class="ow">in</span> <span class="n">sprites</span><span class="p">:</span>
-        <span class="n">sprite</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">pen</span><span class="p">)</span>
-        
-    <span class="c1"># 충돌 여부 확인</span>
-    <span class="k">if</span> <span class="n">wizard</span><span class="o">.</span><span class="n">is_overlapping_collision</span><span class="p">(</span><span class="n">goblin</span><span class="p">):</span>
-        <span class="n">wizard</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;x.gif&quot;</span>
-        
-    <span class="k">if</span> <span class="n">pacman</span><span class="o">.</span><span class="n">is_distance_collision</span><span class="p">(</span><span class="n">cherry</span><span class="p">):</span>
-        <span class="n">cherry</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;x.gif&quot;</span>
-        
-    <span class="k">if</span> <span class="n">bar</span><span class="o">.</span><span class="n">is_aabb_collision</span><span class="p">(</span><span class="n">ball</span><span class="p">):</span>
-        <span class="n">ball</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;x.gif&quot;</span>
-        
-    <span class="n">wn</span><span class="o">.</span><span class="n">update</span><span class="p">()</span> <span class="c1"># 화면 업데이트</span>
-    <span class="n">pen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span> <span class="c1"># 스프라이트 이동흔적 삭제</span>
-</pre></div>
-</div>
+<p>게임 기본 세팅과 실행 코드는
+<a class="reference internal" href="classes_instances_objects.html#ch-classes-instances-objects"><span class="std std-numref">16장</span></a>과 동일하다.</p>
 </section>
-<section id="id3">
-<h2><span class="section-number">17.2. </span>모듈 활용 클래스 상속<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>다른 파이썬 파일(모듈)에 정의된 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스를 상속하는 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스를 선언한다.</p>
-<p><strong>참고</strong></p>
-<p>여기서 사용하는 코드는
-<a class="reference external" href="https://replit.com/&#64;codingrg/collisiondetectioninheritance2#main.py">(레플릿) 충돌 감지 - 상속 2</a>에서
-확인하고 직접 실행할 수 있다.
-레플릿 사이트의 특성상 주 실행파일의 이름은 <code class="docutils literal notranslate"><span class="pre">main.py</span></code> 이어야 한다.
-따라서 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스는 <code class="docutils literal notranslate"><span class="pre">collision_detection.py</span></code> 라는 다른 파일에 정의되어 있다.</p>
-<p><strong>파일 구성</strong></p>
-<p>아래 두 개의 파일로 구성된다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">collision_detection.py</span></code>: 캔버스 기본 설정과 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스 정의</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">main.py</span></code>: <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스 정의와 실행에 필요한 모든 코드</p></li>
-</ul>
-<p><strong><code class="docutils literal notranslate"><span class="pre">collision_dection.py</span></code> 파일</strong></p>
-<p>캔버스 기본 설정과 <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스의 정의가 포함된다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
-<span class="kn">import</span> <span class="nn">math</span>
-
-<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Collision Detection by @TokyoEdtech&quot;</span><span class="p">)</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="n">pen</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
-<span class="n">pen</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">pen</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
-
-<span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;wizard.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;goblin.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;pacman.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;bar.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;ball.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;x.gif&quot;</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">:</span>
-    <span class="n">wn</span><span class="o">.</span><span class="n">register_shape</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
-    
-<span class="k">class</span> <span class="nc">Sprite</span><span class="p">():</span>
-    
-    <span class="c1">## 생성자: 스프라이트의 위치, 가로/세로 크기, 이미지 지정</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
-
-    <span class="c1">## 스프라이트 메서드</span>
-
-    <span class="c1"># 지정된 위치로 스프라이트 이동 후 도장 찍기</span>
-    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
-        <span class="n">pen</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-        <span class="n">pen</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="p">)</span>
-        <span class="n">pen</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
-
-    <span class="c1"># 충돌 감지 방법 1: 두 스프라이트의 중심이 일치할 때 충돌 발생</span>
-    <span class="k">def</span> <span class="nf">is_overlapping_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span>
-
-    <span class="c1"># 충돌 감지 방법 2: 두 스프라이트 사이의 거리가 두 객체의 너비의 평균값 보다 작을 때 충돌 발생</span>
-    <span class="k">def</span> <span class="nf">is_distance_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="n">distance</span> <span class="o">=</span> <span class="p">(((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">-</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">-</span><span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
-        <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">width</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span>
-
-    <span class="c1"># 충돌 감지 방법 3: 각각의 스프라이트를 둘러썬 경계상자가 겹칠 때 충돌 발생</span>
-    <span class="c1"># aabb: Axis Aligned Bounding Box</span>
-    <span class="k">def</span> <span class="nf">is_aabb_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="n">x_collision</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
-        <span class="n">y_collision</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">x_collision</span> <span class="ow">and</span> <span class="n">y_collision</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">main.py</span></code> 파일</strong></p>
-<p>실행 관련 나머지 코드를 포함한다.
-단, <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스가 선언된 <code class="docutils literal notranslate"><span class="pre">collision_detection</span></code> 모듈에서 필요한 모든 것을 불러온다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collision_detection</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="k">class</span> <span class="nc">Character</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
-	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">jump</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span> <span class="c1"># 부모 클래스의 초기화 그대로 활용</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">jump</span> <span class="o">=</span> <span class="n">jump</span>                             <span class="c1"># jump 기능 지정</span>
-
-	<span class="c1"># 점프 기능 담당 메서드: jump=True일 경우에만 작동.</span>
-    <span class="k">def</span> <span class="nf">hop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
-		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">jump</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-			<span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">distance</span>
-
-<span class="n">wizard</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;wizard.gif&quot;</span><span class="p">)</span>
-<span class="n">goblin</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;goblin.gif&quot;</span><span class="p">)</span>
-
-<span class="n">pacman</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;pacman.gif&quot;</span><span class="p">,</span> <span class="n">jump</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">cherry</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;cherry.gif&quot;</span><span class="p">)</span>
-
-<span class="n">bar</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">400</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="s2">&quot;bar.gif&quot;</span><span class="p">)</span>
-<span class="n">ball</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="s2">&quot;ball.gif&quot;</span><span class="p">)</span>
-
-<span class="c1"># 스프라이트 모음 리스트</span>
-<span class="n">sprites</span> <span class="o">=</span> <span class="p">[</span><span class="n">wizard</span><span class="p">,</span> <span class="n">goblin</span><span class="p">,</span> <span class="n">pacman</span><span class="p">,</span> <span class="n">cherry</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">ball</span><span class="p">]</span>
-
-<span class="c1"># 고블린 이동</span>
-<span class="k">def</span> <span class="nf">move_goblin</span><span class="p">():</span>
-    <span class="n">goblin</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">64</span>
-
-<span class="c1"># 팩맨 이동</span>
-<span class="k">def</span> <span class="nf">move_pacman</span><span class="p">():</span>
-    <span class="n">pacman</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">30</span>
-
-<span class="c1"># 팩맨 점프</span>
-<span class="k">def</span> <span class="nf">jump_pacman</span><span class="p">(</span><span class="n">distance</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
-    <span class="n">pacman</span><span class="o">.</span><span class="n">hop</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
-
-<span class="c1"># 야구공 이동</span>
-<span class="k">def</span> <span class="nf">move_ball</span><span class="p">():</span>
-    <span class="n">ball</span><span class="o">.</span><span class="n">y</span> <span class="o">-=</span> <span class="mi">24</span>
-
-<span class="c1"># 이벤트 처리</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">listen</span><span class="p">()</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">onkeypress</span><span class="p">(</span><span class="n">move_goblin</span><span class="p">,</span> <span class="s2">&quot;Left&quot;</span><span class="p">)</span>  <span class="c1"># 왼쪽 방향 화살표 입력</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">onkeypress</span><span class="p">(</span><span class="n">move_pacman</span><span class="p">,</span> <span class="s2">&quot;Right&quot;</span><span class="p">)</span> <span class="c1"># 오른쪽 방향 화살표 입력</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">onkeypress</span><span class="p">(</span><span class="n">jump_pacman</span><span class="p">,</span> <span class="s2">&quot;space&quot;</span><span class="p">)</span> <span class="c1"># 스페이크 키 입력</span>
-<span class="n">wn</span><span class="o">.</span><span class="n">onkeypress</span><span class="p">(</span><span class="n">move_ball</span><span class="p">,</span> <span class="s2">&quot;Down&quot;</span><span class="p">)</span>    <span class="c1"># 아래방향 화살표 입력</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    
-    <span class="c1"># 각 스프라이트 위치 이동 및 도장 찍기</span>
-    <span class="k">for</span> <span class="n">sprite</span> <span class="ow">in</span> <span class="n">sprites</span><span class="p">:</span>
-        <span class="n">sprite</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">pen</span><span class="p">)</span>
-        
-    <span class="c1"># 충돌 여부 확인</span>
-    <span class="k">if</span> <span class="n">wizard</span><span class="o">.</span><span class="n">is_overlapping_collision</span><span class="p">(</span><span class="n">goblin</span><span class="p">):</span>
-        <span class="n">wizard</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;x.gif&quot;</span>
-        
-    <span class="k">if</span> <span class="n">pacman</span><span class="o">.</span><span class="n">is_distance_collision</span><span class="p">(</span><span class="n">cherry</span><span class="p">):</span>
-        <span class="n">cherry</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;x.gif&quot;</span>
-        
-    <span class="k">if</span> <span class="n">bar</span><span class="o">.</span><span class="n">is_aabb_collision</span><span class="p">(</span><span class="n">ball</span><span class="p">):</span>
-        <span class="n">ball</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;x.gif&quot;</span>
-        
-    <span class="n">wn</span><span class="o">.</span><span class="n">update</span><span class="p">()</span> <span class="c1"># 화면 업데이트</span>
-    <span class="n">pen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span> <span class="c1"># 스프라이트 이동흔적 삭제</span>
-</pre></div>
-</div>
-</section>
-<section id="id4">
-<h2><span class="section-number">17.3. </span>필수 예제<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h2><span class="section-number">17.4. </span>필수 예제<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/examples/examples-inheritance.ipynb">(필수 예제) 상속</a></p>
 </section>
-<section id="id5">
-<h2><span class="section-number">17.4. </span>연습문제<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h2><span class="section-number">17.5. </span>연습문제<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-inheritance.ipynb">(실습) 상속</a></p>
 </section>
 </section>
@@ -803,10 +1044,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.1. 클래스 상속</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.2. 모듈 활용 클래스 상속</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.3. 필수 예제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.4. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.1. 상속이란?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.1.1. 부모 클래스의 인스턴스는 자식 클래스를 모름!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.2. 메서드 오버라이딩</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.3. 예제: 스프라이트 클래스 상속</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">17.4. 필수 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">17.5. 연습문제</a></li>
 </ul>
   </nav></div>
 
