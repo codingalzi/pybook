@@ -762,8 +762,34 @@ document.write(`
 <code class="docutils literal notranslate"><span class="pre">turtle</span></code> 모듈의 경우 <code class="docutils literal notranslate"><span class="pre">Screen.listen()</span></code>, <code class="docutils literal notranslate"><span class="pre">turtle.listen()</span></code> 메서드가 이벤트 발생을 감지하며
 이후에 다양한 콜백 함수를 이용하여 마우스로 선택된 스프라이트 객체를 이동시킨다.</p>
 <p><strong>마우스 클릭 감지</strong></p>
-<p>아래 코드는 마우스가 눌린 지점의 좌표를 이용하여 마우스로 선택된 스프라이트 객체의 인덱스를 지정한다.
-객체의 인덱스 지정에 활용되는 <code class="docutils literal notranslate"><span class="pre">sprite_idx</span></code> 변수는 함수 밖에서 선언된 전역 변수를 가리킴에 주의한다.</p>
+<p>아래 <code class="docutils literal notranslate"><span class="pre">sprite_idx_fn()</span></code> 함수는 마우스가 클릭된 지점의 좌표를 이용하여 마우스로 선택된 스프라이트 객체의 인덱스를 지정한다.
+함수 정의에 사용된 변수들은 다음과 같다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sprite_idx</span></code> 변수</p>
+<ul>
+<li><p>마우스로 선택된 객체의 인덱스 지정.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">global</span></code> 키워드와 함께 선언되었기에 함수 밖에서 선언된 전역 변수를 가리킴.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sprite.x</span></code> 변수</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 객체의 인스턴스 변수인 <code class="docutils literal notranslate"><span class="pre">x</span></code>를 가리킴.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스에서 <code class="docutils literal notranslate"><span class="pre">self.x</span></code>로 선언되었지만 객체의 속성으로 사용될 때는 <code class="docutils literal notranslate"><span class="pre">self</span></code> 대신 객체명이 사용됨.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">distance</span></code> 변수</p>
+<ul>
+<li><p>마우스 클릭 위치와 <code class="docutils literal notranslate"><span class="pre">sprite</span></code>와의 거리</p></li>
+<li><p>측정된 거리가 특정 <code class="docutils literal notranslate"><span class="pre">sprite</span></code> 객체와의 거리가 해당 스프라이트 객체의 <code class="docutils literal notranslate"><span class="pre">width</span></code>의 절반 이하인 경우 해당 스프라이트의 인덱스 선택</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sprite.width</span></code> 변수</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 객체의 인스턴스 변수인 <code class="docutils literal notranslate"><span class="pre">width</span></code>를 가리킴.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sprite</span></code> 클래스에서 <code class="docutils literal notranslate"><span class="pre">self.width</span></code>로 선언되었지만 객체의 속성으로 사용될 때는 <code class="docutils literal notranslate"><span class="pre">self</span></code> 대신 객체명이 사용됨.</p></li>
+</ul>
+</li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (콜백) 마우스로 선택된 스프라이트 인덱스 지정</span>
 <span class="k">def</span> <span class="nf">sprite_idx_fn</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">y_</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">sprite_idx</span> <span class="c1"># 전역 변수 활용</span>
@@ -778,6 +804,11 @@ document.write(`
 <span class="n">wn</span><span class="o">.</span><span class="n">listen</span><span class="p">()</span>
 <span class="n">wn</span><span class="o">.</span><span class="n">onclick</span><span class="p">(</span><span class="n">sprite_idx_fn</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">global</span></code> 키워드와 전역 변수</p>
+<p>파이썬은 함수 밖에서 선언된 전역 변수의 값을 함수 내에서 재할당하려면 <code class="docutils literal notranslate"><span class="pre">global</span></code> 키워드와 함께 지정해야 한다.
+그렇게 하지 않으면 함수 내의 지역 변수로 취급되어 함수 밖의 전역 변수와 아무 상관이 없게 된다.</p>
 </div>
 <p><strong>방향키 선택 감지</strong></p>
 <p>아래 코드는 상하좌우 방향키가 눌리는 이벤트를 감지할 때의 이벤트 처리를 담당한다.</p>
@@ -852,6 +883,33 @@ document.write(`
 <span class="n">wn</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>위 코드에 사용된 객체, 인스턴스 속성, 인스턴스 메서드는 다음과 같다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">wn</span></code>: <code class="docutils literal notranslate"><span class="pre">Screen</span></code> 클래스의 인스턴스</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">wn.update()</span></code>: <code class="docutils literal notranslate"><span class="pre">wn</span></code> 객체의 메서드</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wn.mainloop()</span></code>: <code class="docutils literal notranslate"><span class="pre">wn</span></code> 객체의 메서드</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pen</span></code>: <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스의 인스턴스</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pen.clear()</span></code>: <code class="docutils literal notranslate"><span class="pre">pen</span></code> 객체의 메서드</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wizard</span></code>, <code class="docutils literal notranslate"><span class="pre">pacman</span></code>, <code class="docutils literal notranslate"><span class="pre">bar</span></code>: <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 인스턴스</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image</span></code> 변수</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 인스턴스 변수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wizard</span></code>, <code class="docutils literal notranslate"><span class="pre">pacman</span></code>, <code class="docutils literal notranslate"><span class="pre">bar</span></code> 세 객체의 모양을 가리키는 속성</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_overlapping_collision()</span></code>, <code class="docutils literal notranslate"><span class="pre">is_distance_collision()</span></code>, <code class="docutils literal notranslate"><span class="pre">is_aabb_collision()</span></code> 메서드</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 인스턴스 메서드</p></li>
+<li><p>각각 <code class="docutils literal notranslate"><span class="pre">wizard</span></code>, <code class="docutils literal notranslate"><span class="pre">pacman</span></code>, <code class="docutils literal notranslate"><span class="pre">bar</span></code>의 충돌 감지를 담당하는 메서드</p></li>
+</ul>
+</li>
+</ul>
 <p><strong>프레임</strong></p>
 <p>이전 코드의 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문이 한 번 실행되는 과정을 <strong>프레임</strong><font size='2'>frame</font>이라 부른다.
 1초당 몇 개의 프레임이 실행되는 가가 게임 동영상의 화질을 결정한다.</p>
