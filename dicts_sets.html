@@ -1172,6 +1172,9 @@ document.write(`
 </table>
 <p>여기서는 집합 메서드를 자세히 다루지 않는다.
 이유는 각각의 메서드의 기능이 중, 고등학교에서 배운 집합 연산과 동일하기 때문이다.</p>
+<ul class="simple">
+<li><p>합집합 생성</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
@@ -1192,6 +1195,9 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>교집합 생성</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
@@ -1204,6 +1210,9 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>차집합 생성</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
@@ -1216,6 +1225,9 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>부분집합 여부 확인</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
@@ -1240,6 +1252,9 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>항목(원소) 추가</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -1259,6 +1274,9 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>항목(원소) 삭제</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -1278,7 +1296,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>대신 아래 예제를 이용하여 중복을 없애는 <code class="docutils literal notranslate"><span class="pre">set()</span></code> 함수의 유용성을 소개한다.</p>
+<p>여기서는 아래 예제를 이용하여 중복을 없애는 <code class="docutils literal notranslate"><span class="pre">set()</span></code> 함수의 유용성을 소개한다.</p>
 <p><strong>예제</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">info_dict</span></code>를 이용하여 키는 나이, 값은 해당 나이를 갖는 사람의 수를 사용하는 사전을 가리키는
 <code class="docutils literal notranslate"><span class="pre">age_count_dict</span></code>를 선언하라.</p>
@@ -1413,7 +1431,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-8334786631385348751
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-6307178578295685641
 </pre></div>
 </div>
 </div>
@@ -1453,6 +1471,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">해시 함수의 반환값</p>
+<p><code class="docutils literal notranslate"><span class="pre">hash()</span></code> 함수의 반환값이 실행할 때마다 달라질 수 있다.
+이는 보안상의 이유로 무작위 기능이 적용되기 때문이다.
+항상 고정된 값을 반환하는 해시 함수도 있지만 여기서는 다루지 않는다.</p>
 </div>
 <p>반면에 리스트 등 가변 자료형의 객체는 해시 가능하지 않다.</p>
 <div class="cell docutils container">
