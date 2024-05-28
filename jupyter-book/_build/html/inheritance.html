@@ -434,15 +434,16 @@ document.write(`
 <p>클래스와 객체를 보다 실용적으로 활용하는 상속을 소개한다.</p>
 <section id="id2">
 <h2><span class="section-number">17.1. </span>상속이란?<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p><strong>상속</strong><font size='2'>inheritance</font>은 기존에 정의된 <strong>부모 클래스</strong>에서 선언된 속성(변수)과 기능(메서드)을
-재활용, 수정, 또는 추가해서 새로운 <strong>자식 클래스</strong> 선언하여 보다 효율적으로 객체를 활용하는 OOP의 핵심 기법 중 하나다.</p>
+<p><strong>상속</strong><font size='2'>inheritance</font>은 기존의 <strong>부모 클래스</strong>에서 선언된 속성(변수)과 기능(메서드)을
+재활용 또는 수정하거나,필요한 속성과 기능을 추가해서 새로운 <strong>자식 클래스</strong>를 선언하여
+객체를 보다 효율적으로 활용하는 OOP의 핵심 기법 중 하나다.</p>
 <p>클래스 상속은 다음과 같이 정의한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">자식</span> <span class="n">클래스</span><span class="p">(</span><span class="n">부모</span> <span class="n">클래스</span><span class="p">):</span>
     <span class="n">본문</span>
 </pre></div>
 </div>
 <p><strong>부모 클래스 예제</strong></p>
-<p>예를 들어 아래 클래스는 영화 <strong>어벤저스</strong>의 주인공 캐릭터 생성에 활용되는 클래스를 선언한다.</p>
+<p>아래 클래스는 영화 <strong>어벤저스</strong>의 주인공 캐릭터 생성에 활용되는 클래스를 선언한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Character</span><span class="p">:</span>
@@ -471,7 +472,7 @@ document.write(`
         
     <span class="c1"># 상대 캐릭터 공격력</span>
     <span class="k">def</span> <span class="nf">attack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">의 </span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> 공격!&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> 공격!&quot;</span><span class="p">)</span>
         <span class="c1"># 공격력의 10% 만큼 상대 파워 감소시킴</span>
         <span class="n">attackPower</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">damage</span> <span class="o">*</span> <span class="mf">0.1</span> 
         <span class="n">other</span><span class="o">.</span><span class="n">setPower</span><span class="p">(</span><span class="o">-</span><span class="n">attackPower</span><span class="p">)</span>
@@ -479,7 +480,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>아래 코드는 어벤저스 영화의 아이언맨과 데드풀 캐릭터를 생성한다.</p>
+<p>예를 들어 아이언맨과 데드풀 캐릭터 객체를 다음과 같이 생성한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;아이언맨&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;suit&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="s1">&#39;레이저&#39;</span><span class="p">})</span>
@@ -488,9 +489,8 @@ document.write(`
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">introduction()</span></code> 메서드: 캐릭터 자기소개</p></li>
-</ul>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Character</span></code> 메서드 활용</strong></p>
+<p>아이언맨이 자기를 소개할 때 <code class="docutils literal notranslate"><span class="pre">introduction()</span></code> 메서드를 활용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span><span class="o">.</span><span class="n">introduction</span><span class="p">()</span>
@@ -507,11 +507,7 @@ document.write(`
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">getPower()</span></code>: 캐릭터의 파워 확인</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">setPower()</span></code>: 캐릭터의 파워 조절</p></li>
-</ul>
-<p>예를 들어, 아이언맨 인스턴스의 파워를 키우고나서 확인하는 과정은 다음과 같다.</p>
+<p>아이언맨 파워의 확인과 업데이트는 각각 <code class="docutils literal notranslate"><span class="pre">getPower()</span></code>와 <code class="docutils literal notranslate"><span class="pre">setPower()</span></code>를 이용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ironman</span><span class="o">.</span><span class="n">getPower</span><span class="p">())</span>
@@ -537,14 +533,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>게터와 세터</strong></p>
-<p>위 예제에서 살펴 본 <code class="docutils literal notranslate"><span class="pre">getPower()</span></code>와 <code class="docutils literal notranslate"><span class="pre">setPower()</span></code> 같이 인스턴스의 속성값을 확인하거나 지정하는 메서드를
-각각 <strong>게터</strong><font size='2'>getter</font> 메서드와 <strong>세터</strong><font size='2'>setter</font> 메서드라 부른다.
-관용적으로 게터/세터 메서드명은 <code class="docutils literal notranslate"><span class="pre">get</span></code>/<code class="docutils literal notranslate"><span class="pre">set</span></code>으로 시작한다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">attack()</span></code> 메서드: 게터와 세터 활용</p></li>
-</ul>
-<p>파워가 100인 침입자가 출현했다고 가정한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">attack()</span></code> 메서드는 적을 공격해서 적의 파워를 줄인다.
+예를 들어, 파워가 100인 침입자가 출현했다고 가정한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intruder</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;적군&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;suit&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="s1">&#39;독&#39;</span><span class="p">})</span>
@@ -562,7 +552,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>데드풀의 적군 공격!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>데드풀: 적군 공격!
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97.0
@@ -570,8 +560,14 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="note admonition">
+<p class="admonition-title">게터와 세터</p>
+<p><code class="docutils literal notranslate"><span class="pre">getPower()</span></code>와 <code class="docutils literal notranslate"><span class="pre">setPower()</span></code> 같이 인스턴스의 속성값을 확인하거나 지정하는 메서드를
+각각 <strong>게터</strong><font size='2'>getter</font> 메서드와 <strong>세터</strong><font size='2'>setter</font> 메서드라 부른다.
+관용적으로 게터/세터 메서드명은 <code class="docutils literal notranslate"><span class="pre">get</span></code>/<code class="docutils literal notranslate"><span class="pre">set</span></code> 접두사를 붙인다.</p>
+</div>
 <p><strong>자식 클래스 예제</strong></p>
-<p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스를 상속하면서 날기 기능이 추가된 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code>를 자식 클래스로 선언한다.</p>
+<p>아래 코드는 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스를 상속하면서 비행 능력이 추가된 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code>를 자식 클래스로 선언한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FlyingCharacter</span><span class="p">(</span><span class="n">Character</span><span class="p">):</span>
@@ -584,8 +580,7 @@ document.write(`
 </div>
 </div>
 <p><strong>속성과 메서드 상속</strong></p>
-<p>아이언맨의 경우 비행능력이 있으므로 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스가 아닌 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code> 클래스의
-인스턴스로 새로 지정한다.</p>
+<p>아이언맨에게 비행 능력을 주기위해 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code> 클래스의 인스턴스로 새로 지정한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span> <span class="o">=</span> <span class="n">FlyingCharacter</span><span class="p">(</span><span class="s1">&#39;아이언맨&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;suit&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="s1">&#39;레이저&#39;</span><span class="p">})</span>
@@ -593,6 +588,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p><strong>자식 클래스는 부모 클래스의 모든 것을 물려 받는다.</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> 함수를 사용하여 <code class="docutils literal notranslate"><span class="pre">ironman</span></code>은 여전히 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의
 인스턴스임을 확인할 수 있다.
 즉, 자식 클래스의 인스턴스는 모두 부모 클래스의 인스턴스이기도 하다.</p>
@@ -621,7 +617,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>아이언맨은 비행능력도 당연히 있다.</p>
+<p>아이언맨은 날 수도 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span><span class="o">.</span><span class="n">fly</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -635,7 +631,7 @@ document.write(`
 </div>
 </div>
 <p><strong>객체 교감</strong></p>
-<p>헐크 캐릭터는 아예 비행능력이 없으므로 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 인스턴스로 선언한다.</p>
+<p>헐크 캐릭터는 아예 비행 능력이 없으므로 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 인스턴스로 선언한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hulk</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;헐크&#39;</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;suit&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="s1">&#39;주먹&#39;</span><span class="p">})</span>
@@ -653,7 +649,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>아이언맨의 헐크 공격!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>아이언맨: 헐크 공격!
 </pre></div>
 </div>
 </div>
@@ -665,13 +661,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>헐크의 아이언맨 공격!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>헐크: 아이언맨 공격!
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>부모 클래스의 인스턴스는 자식 클래스의 기능을 갖지 못함!</strong></p>
-<p>반면에 헐크는 비행능력이 없으며 <code class="docutils literal notranslate"><span class="pre">fly</span></code> 메서드를 아예 모른다.
+<p><strong>부모 클래스의 인스턴스는 자식 클래스의 기능을 갖지 못한다!</strong></p>
+<p>반면에 헐크는 비행 능력이 없으며 <code class="docutils literal notranslate"><span class="pre">fly</span></code> 메서드를 아예 모른다.
 아래 코드는 오류발생을 피하기 위해 예외처리를 함께 사용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -710,7 +706,14 @@ document.write(`
 부모와는 다른 방식으로 인스턴스를 생성하고 다른 기능을 수행할 수 있다.
 이처럼 부모 클래스의 메서드를 재정의 하면서 상속하는 방식을
 <strong>메서드 오버라이딩</strong><font size='2'>method overriding</font>이라 부른다.</p>
-<p>예를 들어, 아래 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code> 클래스는 <code class="docutils literal notranslate"><span class="pre">suit</span></code>의 능력에 따라 비행 속도를 다르게 지정한다.</p>
+<p><strong>생성자 오버라이딩</strong></p>
+<p>예를 들어, 아래 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code> 클래스는 <code class="docutils literal notranslate"><span class="pre">suit</span></code>의 능력에 따라 비행 속도를 다르게 지정한다.
+이를 위해 생성자를 새롭게 정의한다</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hero</span></code>(영웅) 여부 추가</p></li>
+<li><p>영웅 캐릭터 여부와 <code class="docutils literal notranslate"><span class="pre">self.inventory[suit]</span></code> 값의 크기에 따라 <code class="docutils literal notranslate"><span class="pre">speedUp</span></code> 속성을 다르게 설정</p></li>
+<li><p>영웅 여부에 따라 정해진 <code class="docutils literal notranslate"><span class="pre">speedUp</span></code> 속성을 <code class="docutils literal notranslate"><span class="pre">fly()</span></code> 메서드에서 활용</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FlyingCharacter</span><span class="p">(</span><span class="n">Character</span><span class="p">):</span>
@@ -746,14 +749,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>생성자 오버라이딩</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code>의 새로운 생성자 메서드의 변화는 다음과 같다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">hero</span></code>(영웅) 여부 추가</p></li>
-<li><p>영웅 캐릭터 여부와 <code class="docutils literal notranslate"><span class="pre">self.inventory[suit]</span></code> 값의 크기에 따라 <code class="docutils literal notranslate"><span class="pre">speedUp</span></code> 속성을 다르게 설정</p></li>
-</ul>
-<p>영웅 여부에 따라 정해진 <code class="docutils literal notranslate"><span class="pre">speedUp</span></code> 속성을 <code class="docutils literal notranslate"><span class="pre">fly</span></code> 메서드를 선언할 때 활용하였다.
-아래 코드는 아이언맨과 울트론을 생성한 후에 시속 100으로
+<p>아래 코드는 아이언맨과 울트론을 생성한 후에 시속 100으로
 날으라고 할 때 두 캐릭터의 속도가 2배 차이나는 것을 보여준다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -778,42 +774,9 @@ document.write(`
 </div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">attack()</span></code> 메서드 오버라이딩</strong></p>
-<p>부모 클래스의 <code class="docutils literal notranslate"><span class="pre">attack</span></code> 메서드는 공격자의 <code class="docutils literal notranslate"><span class="pre">damage</span></code> 파워의 10%만큼 상대방 파워(<code class="docutils literal notranslate"><span class="pre">power</span></code>)를 감소시켰다.
-반면에 자식 클래스에서는
-캐릭터의 파워가 400보다 크면 <code class="docutils literal notranslate"><span class="pre">damage</span></code> 파워의 10%가 아닌 20%만큼 상대방 파워를 감소시킨다.</p>
-<p>아래 코드는 아이언맨과 울트론이 서로 공격할 때 각 캐릭터의 파워가 다르게 줄어듦을 보여준다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ironman</span><span class="o">.</span><span class="n">introduction</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>이름: 아이언맨
-파워: 70.0
-공격력: 200
-수트 능력: 500
-무기: 레이저
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ultron</span><span class="o">.</span><span class="n">introduction</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>이름: 울트론
-파워: 360.0
-공격력: 300
-수트 능력: 300
-무기: 플라즈마 빔
-</pre></div>
-</div>
-</div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 <code class="docutils literal notranslate"><span class="pre">attack</span></code> 메서드는 공격자의 <code class="docutils literal notranslate"><span class="pre">damage</span></code> 공격력의 10%만큼 상대방 파워를 감소시켰다.
+반면에 <code class="docutils literal notranslate"><span class="pre">FlyingChracter</span></code>에서는 캐릭터의 파워가 400보다 크면 <code class="docutils literal notranslate"><span class="pre">damage</span></code> 공격력의 10%가 아닌 20%만큼 상대방의 파워를 감소시킨다.
+따라서 아이언맨과 울트론이 서로 공격할 때 각 캐릭터의 파워가 다르게 줄어든다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;아이언맨 파워:&#39;</span><span class="p">,</span> <span class="n">ironman</span><span class="o">.</span><span class="n">getPower</span><span class="p">())</span>
@@ -947,7 +910,7 @@ document.write(`
 <span class="n">sprites</span> <span class="o">=</span> <span class="p">[</span><span class="n">wizard</span><span class="p">,</span> <span class="n">goblin</span><span class="p">,</span> <span class="n">cherry</span><span class="p">,</span> <span class="n">pacman</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">ball</span><span class="p">]</span>
 </pre></div>
 </div>
-<p><strong>참고</strong> <a class="reference external" href="https://pythontutor.com/render.html#code=import%20math%0A%0Aclass%20Sprite%28%29%3A%0A%0A%20%20%20%20def%20__init__%28self,%20x,%20y,%20width,%20height,%20image%29%3A%0A%20%20%20%20%20%20%20%20self.x%20%3D%20x%0A%20%20%20%20%20%20%20%20self.y%20%3D%20y%0A%20%20%20%20%20%20%20%20self.width%20%3D%20width%0A%20%20%20%20%20%20%20%20self.height%20%3D%20height%0A%20%20%20%20%20%20%20%20self.image%20%3D%20image%0A%0A%20%20%20%20def%20render%28self,%20pen%29%3A%0A%20%20%20%20%20%20%20%20pen.goto%28self.x,%20self.y%29%0A%20%20%20%20%20%20%20%20pen.shape%28self.image%29%0A%20%20%20%20%20%20%20%20pen.stamp%28%29%0A%0A%20%20%20%20def%20is_overlapping_collision%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20if%20self.x%20%3D%3D%20other.x%20and%20self.y%20%3D%3D%20other.y%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20False%0A%0A%20%20%20%20def%20is_distance_collision%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20distance%20%3D%20%28%28%28self.x%20-%20other.x%29**2%29%20%2B%20%28%28self.y%20-%20other.y%29**2%29%29**0.5%0A%20%20%20%20%20%20%20%20if%20distance%20%3C%20%28self.width%20%2B%20other.width%29%20/%202.0%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20False%0A%0A%20%20%20%20def%20is_aabb_collision%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20x_collision%20%3D%20%28math.fabs%28self.x%20-%20other.x%29%20*%202%29%20%3C%20%28self.width%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20other.width%29%0A%20%20%20%20%20%20%20%20y_collision%20%3D%20%28math.fabs%28self.y%20-%20other.y%29%20*%202%29%20%3C%20%28self.height%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20other.height%29%0A%20%20%20%20%20%20%20%20return%20%28x_collision%20and%20y_collision%29%0A%0Aclass%20Character%28Sprite%29%3A%0A%20%20%20%20def%20__init__%28self,%20x,%20y,%20width,%20height,%20image,%20jump%3DFalse%29%3A%0A%20%20%20%20%20%20%20%20super%28%29.__init__%28x,%20y,%20width,%20height,%20image%29%0A%20%20%20%20%20%20%20%20self.jump%20%3D%20jump%0A%0A%20%20%20%20def%20hop%28self%29%3A%0A%20%20%20%20%20%20%20%20if%20self.jump%20%3D%3D%20True%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20self.x%20%2B%3D%20100%0A%0A%0A%0Awizard%20%3D%20Character%28-128,%20200,%20128,%20128,%20%22wizard.gif%22%29%0Apacman%20%3D%20Character%28-128,%200,%20128,%20128,%20%22pacman.gif%22,%20jump%3DTrue%29&amp;amp;cumulative=false&amp;amp;curInstr=0&amp;amp;heapPrimitives=nevernest&amp;amp;mode=display&amp;amp;origin=opt-frontend.js&amp;amp;py=311&amp;amp;rawInputLstJSON=%5B%5D&amp;amp;textReferences=false">파이썬 튜터: 상속</a>에서
+<p>참고로 <a class="reference external" href="https://pythontutor.com/render.html#code=import%20math%0A%0Aclass%20Sprite%28%29%3A%0A%0A%20%20%20%20def%20__init__%28self,%20x,%20y,%20width,%20height,%20image%29%3A%0A%20%20%20%20%20%20%20%20self.x%20%3D%20x%0A%20%20%20%20%20%20%20%20self.y%20%3D%20y%0A%20%20%20%20%20%20%20%20self.width%20%3D%20width%0A%20%20%20%20%20%20%20%20self.height%20%3D%20height%0A%20%20%20%20%20%20%20%20self.image%20%3D%20image%0A%0A%20%20%20%20def%20render%28self,%20pen%29%3A%0A%20%20%20%20%20%20%20%20pen.goto%28self.x,%20self.y%29%0A%20%20%20%20%20%20%20%20pen.shape%28self.image%29%0A%20%20%20%20%20%20%20%20pen.stamp%28%29%0A%0A%20%20%20%20def%20is_overlapping_collision%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20if%20self.x%20%3D%3D%20other.x%20and%20self.y%20%3D%3D%20other.y%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20False%0A%0A%20%20%20%20def%20is_distance_collision%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20distance%20%3D%20%28%28%28self.x%20-%20other.x%29**2%29%20%2B%20%28%28self.y%20-%20other.y%29**2%29%29**0.5%0A%20%20%20%20%20%20%20%20if%20distance%20%3C%20%28self.width%20%2B%20other.width%29%20/%202.0%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20False%0A%0A%20%20%20%20def%20is_aabb_collision%28self,%20other%29%3A%0A%20%20%20%20%20%20%20%20x_collision%20%3D%20%28math.fabs%28self.x%20-%20other.x%29%20*%202%29%20%3C%20%28self.width%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20other.width%29%0A%20%20%20%20%20%20%20%20y_collision%20%3D%20%28math.fabs%28self.y%20-%20other.y%29%20*%202%29%20%3C%20%28self.height%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20other.height%29%0A%20%20%20%20%20%20%20%20return%20%28x_collision%20and%20y_collision%29%0A%0Aclass%20Character%28Sprite%29%3A%0A%20%20%20%20def%20__init__%28self,%20x,%20y,%20width,%20height,%20image,%20jump%3DFalse%29%3A%0A%20%20%20%20%20%20%20%20super%28%29.__init__%28x,%20y,%20width,%20height,%20image%29%0A%20%20%20%20%20%20%20%20self.jump%20%3D%20jump%0A%0A%20%20%20%20def%20hop%28self%29%3A%0A%20%20%20%20%20%20%20%20if%20self.jump%20%3D%3D%20True%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20self.x%20%2B%3D%20100%0A%0A%0A%0Awizard%20%3D%20Character%28-128,%20200,%20128,%20128,%20%22wizard.gif%22%29%0Apacman%20%3D%20Character%28-128,%200,%20128,%20128,%20%22pacman.gif%22,%20jump%3DTrue%29&amp;amp;cumulative=false&amp;amp;curInstr=0&amp;amp;heapPrimitives=nevernest&amp;amp;mode=display&amp;amp;origin=opt-frontend.js&amp;amp;py=311&amp;amp;rawInputLstJSON=%5B%5D&amp;amp;textReferences=false">파이썬 튜터: 상속</a>에서
 상속된 클래스의 생성자가 객체를 생성하는 과정을 살펴볼 수 있다.</p>
 <p><strong>이벤트, 이벤트 처리, 콜백</strong></p>
 <p>팩맨의 점프 기능을 담당하는 콜백 함수와 이벤트 처리 기능이 추가된다.</p>
