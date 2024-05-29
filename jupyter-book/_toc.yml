@@ -27,5 +27,8 @@ chapters:
 - file: modules_advanced
 - file: iterator_generator
 - file: recursion
-- file: proper_classes
+- file: classes_advanced_1
+- file: classes_advanced_2
+- file: classes_advanced_3
+- file: classes_advanced_4
 - file: type_annotations
