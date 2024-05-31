@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>14. 파일 &#8212; 파이썬 프로그래밍</title>
   
@@ -29,36 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'files';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -433,7 +432,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-files">
-<span id="id1"></span><h1><span class="section-number">14. </span>파일<a class="headerlink" href="#ch-files" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">14. </span>파일<a class="headerlink" href="#ch-files" title="Link to this heading">#</a></h1>
 <p>열 명의 5미터 다이빙 경기의 점수를 저장한 텍스트 파일에서
 필요한 정보를 추출하는 과정을 살펴본다.
 파일의 내용은 다음과 같이 첫째 줄엔 ‘이름’과 ‘점수’라는 구분이 표시되어 있으며,
@@ -453,7 +452,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="id2">
-<h2><span class="section-number">14.1. </span>파일의 종류와 경로<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">14.1. </span>파일의 종류와 경로<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p><strong>텍스트 파일과 바이너리 파일</strong></p>
 <p>파일은 <strong>텍스트</strong><font size='2'>text</font> 파일과
 <strong>바이너리</strong><font size='2'>binary</font> 파일 두 가지로 나뉜다.</p>
@@ -493,7 +492,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/mnt/c/Users/gslee/Documents/GitHub/pybook/jupyter-book&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/content&#39;
 </pre></div>
 </div>
 </div>
@@ -514,7 +513,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </ul>
 </section>
 <section id="id3">
-<h2><span class="section-number">14.2. </span>파일 준비<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">14.2. </span>파일 준비<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>먼저 위에서 언급된 파일을 다운 받아서 파이썬 코딩을 실습하는 디렉토리에 저장한다.
 여기서는 <code class="docutils literal notranslate"><span class="pre">data</span></code>라는 하위디렉토리에 <code class="docutils literal notranslate"><span class="pre">results5m.txt</span></code>라는 파일로 저장한다.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> 클래스: 디렉토리 지정</strong></p>
@@ -543,7 +542,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/mnt/c/Users/gslee/Documents/GitHub/pybook/jupyter-book&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/content&#39;)
 </pre></div>
 </div>
 </div>
@@ -621,7 +620,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7fc3eed5fdd0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x78af56919d80&gt;)
 </pre></div>
 </div>
 </div>
@@ -641,7 +640,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
     <span class="c1"># 저장위치 지정과 생성</span>
     <span class="n">data_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span>
     <span class="n">data_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    
+
     <span class="c1"># 저장 경로와 파일명</span>
     <span class="n">target_path</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">/</span> <span class="n">filename</span>
 
@@ -658,7 +657,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x7fc3eecff410&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results5m.txt&#39;), &lt;http.client.HTTPMessage at 0x78af5691ab00&gt;)
 </pre></div>
 </div>
 </div>
@@ -667,7 +666,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 <p>컴퓨터에 저장된 파일을 활용하려면 먼저 파일 객체로 불러와야 한다.
 가장 기본적인 방식으로 <code class="docutils literal notranslate"><span class="pre">open()</span></code> 함수를 이용하여
 불러온 파일 객체를 변수에 할당한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">파일경로</span><span class="p">)</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">파일경로</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>다운로드가 잘못 되었거나 다른 곳에 저장되어 있다면 오류가 발생한다.
@@ -675,7 +674,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 이용하여 예외처리를 하기도 한다.
 <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> 는 지정된 파일이 존재하지 않을 때 발생하는 오류를 가리킨다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">파일경로</span><span class="p">)</span> 
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">파일경로</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;열고자 하는 파일이 존재하지 않습니다.&quot;</span><span class="p">)</span>
 </pre></div>
@@ -766,7 +765,8 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 </div>
-<p>불러온 파일을 다 사용했으면 닫아 주어야 한다.</p>
+<p>따라서 불러온 파일을 다 사용했으면 닫아 주어야 한다.
+그렇지 않으면 파일에 의도치 않은 수정이 가해질 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -779,7 +779,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path_5m</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span> 
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -821,8 +821,8 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 <p>언급한 것을 모두 반영하여 파일을 불러오고 내용을 확인하는 코드는 다음과 같다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path_5m</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path_5m</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -847,9 +847,9 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 <p><code class="docutils literal notranslate"><span class="pre">read()</span></code> 메서드는 파일 내용을 전체를 하나의 문자열로 불러온다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path_5m</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path_5m</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    
+
 <span class="n">lines</span>
 </pre></div>
 </div>
@@ -886,7 +886,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 <p><code class="docutils literal notranslate"><span class="pre">readline()</span></code> 메서드는 한 줄씩 반환한다. 일종의 이터레이터의 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 메서드와 유사하다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path_5m</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path_5m</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
@@ -914,7 +914,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path_5m</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-    
+
 <span class="n">lines</span>
 </pre></div>
 </div>
@@ -958,14 +958,14 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">Path.open()</span></code> 메서드: 저장된 파일 불러오기</strong></p>
+<p><strong>참고: <code class="docutils literal notranslate"><span class="pre">Path.open()</span></code> 메서드</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">Path</span></code> 객체의 <code class="docutils literal notranslate"><span class="pre">open()</span></code> 메서드를 이용하여 파일을 열 수도 있다.
 사용법은 기본적으로 동일하다.
 실제로 <code class="docutils literal notranslate"><span class="pre">Path</span></code> 객체의 <code class="docutils literal notranslate"><span class="pre">open()</span></code> 메서드를 호출하면 <code class="docutils literal notranslate"><span class="pre">open()</span></code> 함수가 실행된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">target_path_5m</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span> 
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -991,16 +991,16 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 먼저 선수 이름과 점수 사이의 관계를 담은 정보를 사전으로 선언한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5m 다이빙 점수 저장. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5m 다이빙 점수 저장.</span>
 <span class="c1"># 키: 선수 이름</span>
 <span class="c1"># 값: 점수</span>
 
 <span class="n">scores_5m</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/diving_results.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path_5m</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">name</span><span class="p">,</span> <span class="n">s_5m</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># 리스트 해체 활용</span>
-        
+        <span class="n">name</span><span class="p">,</span> <span class="n">s_5m</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  <span class="c1"># 리스트 해체 활용</span>
+
         <span class="k">try</span><span class="p">:</span>
             <span class="n">scores_5m</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">s_5m</span><span class="p">)</span>
         <span class="k">except</span><span class="p">:</span>
@@ -1089,7 +1089,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">14.3. </span>텍스트 파일 생성<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">14.3. </span>텍스트 파일 생성<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p><strong><code class="docutils literal notranslate"><span class="pre">mode</span></code> 옵션 인자</strong></p>
 <p>파일을 열 때 기본적으로 읽기 모드로 열린다.
 그러면 파일 내용을 읽을 수는 있지만 수정, 추가 등은 불가능하다.
@@ -1160,7 +1160,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results10m.txt&#39;), &lt;http.client.HTTPMessage at 0x7fc3eed99b50&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;data/results10m.txt&#39;), &lt;http.client.HTTPMessage at 0x78af56918f40&gt;)
 </pre></div>
 </div>
 </div>
@@ -1176,7 +1176,7 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
         <span class="n">name</span><span class="p">,</span> <span class="n">score</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">score</span> <span class="o">!=</span> <span class="s1">&#39;점수&#39;</span><span class="p">:</span>
             <span class="n">results_5m_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span>
-        
+
 <span class="n">results_5m_dict</span>
 </pre></div>
 </div>
@@ -1198,13 +1198,20 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/results10m.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target_path_10m</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">/</span> <span class="s2">&quot;results10m.txt&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path_10m</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">results_10m_dict</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">name</span><span class="p">,</span> <span class="n">score</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">score</span> <span class="o">!=</span> <span class="s1">&#39;점수&#39;</span><span class="p">:</span>
             <span class="n">results_10m_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span>
-        
+
 <span class="n">results_10m_dict</span>
 </pre></div>
 </div>
@@ -1301,11 +1308,11 @@ jpg, png, gif 등의 사진 파일 등 특정 소프트웨어를 사용해야만
 </div>
 </section>
 <section id="id5">
-<h2><span class="section-number">14.4. </span>필수 예제<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">14.4. </span>필수 예제<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/examples/examples-files.ipynb">(필수 예제) 파일</a></p>
 </section>
 <section id="id6">
-<h2><span class="section-number">14.5. </span>연습문제<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">14.5. </span>연습문제<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-files.ipynb">(실습) 파일</a></p>
 </section>
 </section>
