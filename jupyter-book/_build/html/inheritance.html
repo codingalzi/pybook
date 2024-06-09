@@ -457,7 +457,7 @@ document.write(`
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;이름: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;파워: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;공격력: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">damage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;수트 능력: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">[</span><span class="s1">&#39;suit&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;수트 성능: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">[</span><span class="s1">&#39;suit&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;무기: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">[</span><span class="s1">&#39;weapon&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         
     <span class="c1"># 파워 정보 확인</span>
@@ -499,7 +499,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>이름: 아이언맨
 파워: 100
 공격력: 200
-수트 능력: 500
+수트 성능: 500
 무기: 레이저
 </pre></div>
 </div>
@@ -685,6 +685,10 @@ document.write(`
 </section>
 <section id="id3">
 <h2><span class="section-number">17.2. </span>메서드 오버라이딩<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>자식 클래스의 생성자 메서드를 포함하여 부모 클래스로부터 상속받은 모든 메서드를 수정하여
+부모와는 다른 방식으로 인스턴스를 생성하고 다른 기능을 수행할 수 있다.
+이처럼 부모 클래스의 메서드를 재정의 하면서 상속하는 방식을
+<strong>메서드 오버라이딩</strong><font size='2'>method overriding</font>이라 부른다.</p>
 <p><strong>자식 클래스의 생성자</strong></p>
 <p>모든 클래스에는 생성자 메서드인 <code class="docutils literal notranslate"><span class="pre">init()</span></code> 메서드가 포함되어야 한다.
 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code> 클래스에는 부모 클래스인 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의
@@ -699,13 +703,8 @@ document.write(`
 <p>위 코드에서
 <code class="docutils literal notranslate"><span class="pre">super()</span></code>는 부모 클래스인 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스를 가리킨다.
 따라서 <code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code>는 부모 클래스의 생성자 호출을 의미한다.</p>
-<p><strong>메서드 오버라이딩</strong></p>
-<p>자식 클래스의 생성자 메서드를 포함하여 부모 클래스로부터 상속받은 모든 메서드를 수정하여
-부모와는 다른 방식으로 인스턴스를 생성하고 다른 기능을 수행할 수 있다.
-이처럼 부모 클래스의 메서드를 재정의 하면서 상속하는 방식을
-<strong>메서드 오버라이딩</strong><font size='2'>method overriding</font>이라 부른다.</p>
 <p><strong>생성자 오버라이딩</strong></p>
-<p>예를 들어, 아래 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code> 클래스는 <code class="docutils literal notranslate"><span class="pre">suit</span></code>의 능력에 따라 비행 속도를 다르게 지정한다.
+<p>예를 들어, 아래 <code class="docutils literal notranslate"><span class="pre">FlyingCharacter</span></code> 클래스는 영웅 캐릭터의 <code class="docutils literal notranslate"><span class="pre">suit</span></code> 성능에 따라 비행 속도를 다르게 지정한다.
 이를 위해 생성자를 새롭게 정의한다</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">hero</span></code>(영웅) 여부 추가</p></li>
@@ -773,7 +772,7 @@ document.write(`
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">attack()</span></code> 메서드 오버라이딩</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">Character</span></code> 클래스의 <code class="docutils literal notranslate"><span class="pre">attack</span></code> 메서드는 공격자의 <code class="docutils literal notranslate"><span class="pre">damage</span></code> 공격력의 10%만큼 상대방 파워를 감소시켰다.
-반면에 <code class="docutils literal notranslate"><span class="pre">FlyingChracter</span></code>에서는 캐릭터의 파워가 400보다 크면 <code class="docutils literal notranslate"><span class="pre">damage</span></code> 공격력의 10%가 아닌 20%만큼 상대방의 파워를 감소시킨다.
+반면에 <code class="docutils literal notranslate"><span class="pre">FlyingChracter</span></code>에서 영웅 캐릭터는<code class="docutils literal notranslate"><span class="pre">damage</span></code> 공격력의 10%가 아닌 20%만큼 상대방의 파워를 감소시킨다.
 따라서 아이언맨과 울트론이 서로 공격할 때 각 캐릭터의 파워가 다르게 줄어든다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
